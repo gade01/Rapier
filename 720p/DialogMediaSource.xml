@@ -19,11 +19,12 @@
 			</control>
 			
 			<control type="group">
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 				
 				<control type="label">
 					<description>Path</description>
+					<posy>8</posy>
 					<width>600</width>
 					<include>DialogHeadLabel</include>
 					<label>$LOCALIZE[1021]</label>
@@ -33,7 +34,7 @@
 				<control type="group" id="245">
 					<control type="image">
 						<description>Paths Background</description>
-						<top>20</top>
+						<posy>20</posy>
 						<width>475</width>
 						<height>115</height>
 						<texture border="5">controls/button-nofocus.png</texture>
@@ -41,8 +42,8 @@
 					
 					<control type="list" id="10">
 						<description>Paths</description>
-						<left>5</left>
-						<top>25</top>
+						<posx>5</posx>
+						<posy>25</posy>
 						<width>465</width>
 						<height>105</height>
 						<ondown>12</ondown>
@@ -50,7 +51,7 @@
 						<onright>9000</onright>
 						<itemlayout height="35">
 							<control type="label">
-								<left>5</left>
+								<posx>5</posx>
 								<width>455</width>
 								<height>35</height>
 								<font>ButtonFont2</font>
@@ -67,7 +68,7 @@
 								<visible>Control.HasFocus(10)</visible>
 							</control>
 							<control type="label">
-								<left>5</left>
+								<posx>5</posx>
 								<width>455</width>
 								<height>35</height>
 								<font>ButtonFont2</font>
@@ -79,8 +80,8 @@
 					</control>			
 			
 					<control type="grouplist" id="9000">			
-						<left>480</left>
-						<top>20</top>
+						<posx>480</posx>
+						<posy>20</posy>
 						<itemgap>5</itemgap>
 						<ondown>12</ondown>
 						<onleft>10</onleft>
@@ -117,7 +118,7 @@
 
 				<control type="label">
 					<description>Name</description>
-					<top>155</top>
+					<posy>163</posy>
 					<width>600</width>
 					<include>DialogHeadLabel</include>
 					<label>$LOCALIZE[1022]</label>
@@ -126,7 +127,7 @@
 				
 				<control type="button" id="12">
 					<description>Name Input</description>
-					<top>175</top>
+					<posy>175</posy>
 					<width>600</width>	
 					<include>DialogContentLabel</include>
 					<onup>245</onup>
@@ -138,8 +139,8 @@
 
 			<control type="grouplist" id="9001">			
 				<description>Dialog Button Area</description>			
-				<left>165</left>
-				<top>272</top>
+				<posx>165</posx>
+				<posy>272</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<onup>12</onup>	
@@ -150,13 +151,13 @@
 				</control>			
 				<control type="button" id="19">
 					<description>Cancel</description>
-					<left>170</left>
+					<posx>170</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[222]</label>
 				</control>		
 				<control type="button" id="20">
 					<description>Set Content</description>
-					<left>340</left>
+					<posx>340</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[20333]</label>
 				</control>

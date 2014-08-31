@@ -147,8 +147,8 @@
 	
 	<include name="ViewContentPanel">
 		<control type="image">
-			<left>30</left>
-			<top>106</top>
+			<posx>30</posx>
+			<posy>106</posy>
 			<width>1220</width>
 			<height>525</height>
 			<texture border="7">panels/content-panel.png</texture>
@@ -159,8 +159,8 @@
 
 	<include name="WideListViewContentPanel">
 		<control type="image">
-			<left>30</left>
-			<top>87</top>
+			<posx>30</posx>
+			<posy>87</posy>
 			<width>1220</width>
 			<height>544</height>	
 			<texture border="7">panels/content-panel.png</texture>
@@ -172,8 +172,8 @@
 	
 	<include name="ListInfoViewContentPanel">
 		<control type="image">
-			<left>30</left>
-			<top>328</top>
+			<posx>30</posx>
+			<posy>328</posy>
 			<width>1220</width>
 			<height>303</height>
 			<texture border="7">panels/content-panel.png</texture>
@@ -183,8 +183,8 @@
 		
 		<control type="image">
 			<description>Content Background</description>
-			<left>34</left>
-			<top>332</top>
+			<posx>34</posx>
+			<posy>332</posy>
 			<width>681</width>
 			<height>295</height>
 			<texture border="4">panels/panel-content-border2.png</texture>
@@ -195,8 +195,8 @@
 			<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)] | Container.Content(Seasons)</visible>
 			<control type="image">
 				<description>Genre Background</description>
-				<left>221</left>
-				<top>337</top>
+				<posx>221</posx>
+				<posy>337</posy>
 				<width>489</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -204,53 +204,19 @@
 			</control>
 			
 			<control type="image">
-				<description>Media Info Background</description>
-				<left>221</left>
-				<top>372</top>
-				<width>489</width>
-				<height>58</height>
-				<texture border="4">panels/panel3.png</texture>
-				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-			</control>
-			
-			<control type="image">
 				<description>Plot Background</description>
-				<left>221</left>
-				<top>434</top>
-				<width>489</width>
-				<height>153</height>
-				<texture border="4">panels/panel3.png</texture>
-				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-			</control>
-			
-			<control type="image">
-				<description>Plot Background</description>
-				<left>221</left>
-				<top>372</top>
+				<posx>221</posx>
+				<posy>372</posy>
 				<width>489</width>
 				<height>215</height>
 				<texture border="4">panels/panel3.png</texture>
 				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [!System.HasAddon(script.tv.show.next.aired) | [System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(EnableNextAiredInfo)]]</visible>
-			</control>
-			
-			<control type="image">
-				<description>Plot Background</description>
-				<left>221</left>
-				<top>372</top>
-				<width>489</width>
-				<height>215</height>
-				<texture border="4">panels/panel3.png</texture>
-				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>![Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			</control>
 			
 			<control type="image">
 				<description>Media Info Background</description>
-				<left>39</left>
-				<top>592</top>
+				<posx>39</posx>
+				<posy>592</posy>
 				<width>671</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -262,8 +228,8 @@
 			<visible>Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)</visible>
 			<control type="image">
 				<description>Plot Background</description>
-				<left>39</left>
-				<top>469</top>
+				<posx>39</posx>
+				<posy>469</posy>
 				<width>671</width>
 				<height>118</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -272,8 +238,8 @@
 			
 			<control type="image">
 				<description>Media Info Background</description>
-				<left>39</left>
-				<top>592</top>
+				<posx>39</posx>
+				<posy>592</posy>
 				<width>671</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -285,8 +251,8 @@
 			<visible>Window.IsActive(AddonBrowser) | Container.Content(Addons) | Window.IsActive(MusicLibrary)</visible>
 			<control type="image">
 				<description>Genre Background</description>
-				<left>294</left>
-				<top>337</top>
+				<posx>294</posx>
+				<posy>337</posy>
 				<width>416</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -295,8 +261,8 @@
 			
 			<control type="image">
 				<description>Plot Background</description>
-				<left>294</left>
-				<top>372</top>
+				<posx>294</posx>
+				<posy>372</posy>
 				<width>416</width>
 				<height>215</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -305,8 +271,8 @@
 			
 			<control type="image">
 				<description>Media Info Background</description>
-				<left>39</left>
-				<top>592</top>
+				<posx>39</posx>
+				<posy>592</posy>
 				<width>671</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -318,8 +284,8 @@
 			<visible>Container.Content(Episodes)</visible>
 			<control type="image">
 				<description>Genre Background</description>
-				<left>39</left>
-				<top>337</top>
+				<posx>39</posx>
+				<posy>337</posy>
 				<width>671</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -328,8 +294,8 @@
 			
 			<control type="image">
 				<description>Plot Background</description>
-				<left>378</left>
-				<top>372</top>
+				<posx>378</posx>
+				<posy>372</posy>
 				<width>332</width>
 				<height>215</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -338,8 +304,8 @@
 			
 			<control type="image">
 				<description>Media Info Background</description>
-				<left>39</left>
-				<top>592</top>
+				<posx>39</posx>
+				<posy>592</posy>
 				<width>671</width>
 				<height>30</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -422,8 +388,8 @@
 	<include name="DVDThumbsStyleOverlayImage">	
 		<control type="image">
 			<description>Overlay</description>
-			<left>96</left>
-			<top>133</top>
+			<posx>96</posx>
+			<posy>133</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -432,8 +398,8 @@
 		</control>
 		<control type="image">
 			<description>Watched Partial</description>
-			<left>96</left>
-			<top>133</top>
+			<posx>96</posx>
+			<posy>133</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$VAR[WatchedPartialAlt]</texture>
@@ -445,8 +411,8 @@
 	<include name="DVDThumbsStyleOverlayImageBanner">	
 		<control type="image">
 			<description>Overlay</description>
-			<left>355</left>
-			<top>45</top>
+			<posx>355</posx>
+			<posy>45</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -455,8 +421,8 @@
 		</control>
 		<control type="image">
 			<description>Watched Partial</description>
-			<left>355</left>
-			<top>45</top>
+			<posx>355</posx>
+			<posy>45</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$VAR[WatchedPartialAlt]</texture>
@@ -510,8 +476,8 @@
 		</control>
 		
 		<control type="image">
-			<left>5</left>
-			<top>5</top>
+			<posx>5</posx>
+			<posy>5</posy>
 			<width>259</width>
 			<height>132</height>
 			<bordersize>4</bordersize>
@@ -539,8 +505,8 @@
 
 		<control type="image">
 			<description>Overlay</description>
-			<left>236</left>
-			<top>9</top>
+			<posx>236</posx>
+			<posy>9</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -559,8 +525,8 @@
 		</control>
 
 		<control type="image">
-			<left>5</left>
-			<top>5</top>
+			<posx>5</posx>
+			<posy>5</posy>
 			<width>258</width>
 			<height>174</height>
 			<bordersize>4</bordersize>
@@ -579,7 +545,7 @@
 		</control>
 
 		<control type="image">
-			<top>14</top>
+			<posy>14</posy>
 			<width>268</width>
 			<height>184</height>
 			<bordersize>10</bordersize>
@@ -600,8 +566,8 @@
 
 		<control type="image">
 			<description>Overlay</description>
-			<left>230</left>
-			<top>10</top>
+			<posx>230</posx>
+			<posy>10</posy>
 			<width>28</width>
 			<height>28</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -752,8 +718,8 @@
 
 	<include name="DVDWallOverlayImage">
 		<control type="image">
-			<left>135</left>
-			<top>200</top>
+			<posx>135</posx>
+			<posy>200</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -762,8 +728,8 @@
 		</control>
 		<control type="image">
 			<description>Watched Partial</description>
-			<left>135</left>
-			<top>200</top>
+			<posx>135</posx>
+			<posy>200</posy>
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">$VAR[WatchedPartial]</texture>
@@ -809,8 +775,8 @@
 	
 	<include name="ListInfo2MediaInfoPanelCommon">
 		<control type="group">
-			<left>34</left>
-			<top>110</top>
+			<posx>34</posx>
+			<posy>110</posy>
 			
 			<control type="image">
 				<description>Content Background</description>
@@ -822,8 +788,8 @@
 			
 			<control type="image">
 				<description>Media Info Background</description>
-				<left>6</left>
-				<top>314</top>
+				<posx>6</posx>
+				<posy>314</posy>
 				<width>542</width>
 				<height>58</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -832,8 +798,8 @@
 			
 			<control type="image">
 				<description>Description Background</description>
-				<left>6</left>
-				<top>376</top>
+				<posx>6</posx>
+				<posy>376</posy>
 				<width>542</width>
 				<height>135</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -844,8 +810,8 @@
 	
 	<include name="ListInfo2PanelFanart">
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>542</width>
 			<height>304</height>
 			<texture background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
@@ -855,8 +821,8 @@
 	
 		<control type="image">
 			<description>Genre Background</description>
-			<left>43</left>
-			<top>119</top>
+			<posx>43</posx>
+			<posy>119</posy>
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
@@ -865,12 +831,13 @@
 					
 		<control type="label">
 			<description>Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -879,12 +846,13 @@
 		
 		<control type="label">
 			<description>Next Aired Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.Genre)][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -894,8 +862,8 @@
 	
 	<include name="ListInfo2PanelLandscape">
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>542</width>
 			<height>304</height>
 			<texture border="4">panels/panel3.png</texture>
@@ -903,8 +871,8 @@
 		</control>
 		
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>542</width>
 			<height>304</height>
 			<texture background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Thumb]</texture>
@@ -914,8 +882,8 @@
 		</control>
 		
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>542</width>
 			<height>304</height>
 			<texture background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Art(landscape)]</texture>
@@ -926,8 +894,8 @@
 	
 		<control type="image">
 			<description>Genre Background</description>
-			<left>43</left>
-			<top>119</top>
+			<posx>43</posx>
+			<posy>119</posy>
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
@@ -936,12 +904,13 @@
 					
 		<control type="label">
 			<description>Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -950,12 +919,13 @@
 		
 		<control type="label">
 			<description>Next Aired Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.Genre)][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -965,8 +935,8 @@
 
 	<include name="ListInfo2PanelExtraThumbs">	
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>269</width>
 			<height>150</height>
 			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb1.jpg</texture>
@@ -974,8 +944,8 @@
 		</control>
 
 		<control type="image">
-			<left>313</left>
-			<top>116</top>
+			<posx>313</posx>
+			<posy>116</posy>
 			<width>269</width>
 			<height>150</height>
 			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb2.jpg</texture>
@@ -983,8 +953,8 @@
 		</control>
 
 		<control type="image">
-			<left>40</left>
-			<top>270</top>
+			<posx>40</posx>
+			<posy>270</posy>
 			<width>269</width>
 			<height>150</height>
 			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb3.jpg</texture>
@@ -992,8 +962,8 @@
 		</control>
 
 		<control type="image">
-			<left>313</left>
-			<top>270</top>
+			<posx>313</posx>
+			<posy>270</posy>
 			<width>269</width>
 			<height>150</height>
 			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb4.jpg</texture>
@@ -1002,8 +972,8 @@
 		
 		<control type="image">
 			<description>Genre Background</description>
-			<left>43</left>
-			<top>119</top>
+			<posx>43</posx>
+			<posy>119</posy>
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
@@ -1012,12 +982,13 @@
 					
 		<control type="label">
 			<description>Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -1026,12 +997,13 @@
 		
 		<control type="label">
 			<description>Next Aired Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.Genre)][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -1041,8 +1013,8 @@
 	
 	<include name="ListInfo3MediaInfoPanelCommon">
 		<control type="group">
-			<left>34</left>
-			<top>110</top>
+			<posx>34</posx>
+			<posy>110</posy>
 			
 			<control type="image">
 				<description>Content Background</description>
@@ -1054,8 +1026,8 @@
 			
 			<control type="image">
 				<description>Media Info Background</description>
-				<left>6</left>
-				<top>238</top>
+				<posx>6</posx>
+				<posy>238</posy>
 				<width>404</width>
 				<height>58</height>
 				<texture border="4">panels/panel3.png</texture>
@@ -1063,66 +1035,32 @@
 			</control>
 			
 			<control type="image">
-				<description>Media Info Background</description>
-				<left>6</left>
-				<top>300</top>
-				<width>404</width>
-				<height>58</height>
-				<texture border="4">panels/panel3.png</texture>
-				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo) + Container.Content(TVShows)</visible>
-			</control>
-			
-			<control type="image">
 				<description>Description Background</description>
-				<left>6</left>
-				<top>362</top>
-				<width>404</width>
-				<height>149</height>
-				<texture border="4">panels/panel3.png</texture>
-				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo) + Container.Content(TVShows)</visible>
-			</control>
-			
-			<control type="image">
-				<description>Description Background</description>
-				<left>6</left>
-				<top>300</top>
+				<posx>6</posx>
+				<posy>300</posy>
 				<width>404</width>
 				<height>211</height>
 				<texture border="4">panels/panel3.png</texture>
 				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>Container.Content(TVShows) + [!System.HasAddon(script.tv.show.next.aired) | [System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(EnableNextAiredInfo)]]</visible>
-			</control>
-			
-			<control type="image">
-				<description>Description Background</description>
-				<left>6</left>
-				<top>300</top>
-				<width>404</width>
-				<height>211</height>
-				<texture border="4">panels/panel3.png</texture>
-				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				<visible>!Container.Content(TVShows)</visible>
 			</control>
 		</control>
 	</include>
 	
 	<include name="ListInfo3PanelFanart">
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>404</width>
 			<height>228</height>
 			<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
-			<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			<aspectratio scalediffuse="false">scale</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
 		</control>
 		
 		<control type="image">
 			<description>Genre Background</description>
-			<left>43</left>
-			<top>119</top>
+			<posx>43</posx>
+			<posy>119</posy>
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
@@ -1131,12 +1069,13 @@
 					
 		<control type="label">
 			<description>Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -1145,12 +1084,13 @@
 		
 		<control type="label">
 			<description>Next Aired Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.Genre)][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -1160,8 +1100,8 @@
 	
 	<include name="ListInfo3PanelLandscape">
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>404</width>
 			<height>228</height>
 			<texture border="4">panels/panel3.png</texture>
@@ -1169,31 +1109,31 @@
 		</control>
 		
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>404</width>
 			<height>228</height>
 			<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
-			<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			<aspectratio scalediffuse="false">scale</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>IsEmpty(ListItem.Art(landscape))</visible>
 		</control>
 		
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>404</width>
 			<height>228</height>
 			<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[ListItem.Art(landscape)]</texture>
-			<aspectratio scalediffuse="false">scale</aspectratio>
+			<aspectratio scalediffuse="false">keep</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!IsEmpty(ListItem.Art(landscape))</visible>
 		</control>
 		
 		<control type="image">
 			<description>Genre Background</description>
-			<left>43</left>
-			<top>119</top>
+			<posx>43</posx>
+			<posy>119</posy>
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
@@ -1202,12 +1142,13 @@
 					
 		<control type="label">
 			<description>Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -1216,12 +1157,13 @@
 		
 		<control type="label">
 			<description>Next Aired Genre</description>
-			<left>51</left>
-			<top>121</top>
+			<posx>51</posx>
+			<posy>130</posy>
 			<width>234</width>
 			<font>MediaInfoFont3</font>
 			<textcolor>WhiteColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>
 			<label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.Genre)][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="75" condition="true">Conditional</animation>
@@ -1231,8 +1173,8 @@
 
 	<include name="ListInfo3RightPanelCover">
 		<control type="group">					
-			<left>880</left>
-			<top>150</top>
+			<posx>880</posx>
+			<posy>150</posy>
 
 			<control type="image">
 				<description>Default Cover</description>
@@ -1254,7 +1196,7 @@
 				<bordersize>4</bordersize>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+				<visible>Container.Content(Movies)</visible>
 			</control>
 			
 			<control type="image">
@@ -1266,12 +1208,12 @@
 				<bordersize>4</bordersize>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>![Container.Content(Movies) | Container.Content(TVShows)]</visible>
+				<visible>!Container.Content(Movies)</visible>
 			</control>
 
 			<control type="image">
 				<description>Cover Reflection</description>
-				<top>400</top>
+				<posy>400</posy>
 				<width>320</width>
 				<height>400</height>
 				<texture background="true" flipy="true" diffuse="views/reflection.png">$VAR[PosterThumb]</texture>
@@ -1279,12 +1221,12 @@
 				<bordersize>4</bordersize>
 				<aspectratio aligny="top">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+				<visible>Container.Content(Movies)</visible>
 			</control>
 			
 			<control type="image">
 				<description>Cover Reflection</description>
-				<top>400</top>
+				<posy>400</posy>
 				<width>320</width>
 				<height>400</height>
 				<texture background="true" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Thumb]</texture>
@@ -1292,15 +1234,15 @@
 				<bordersize>4</bordersize>
 				<aspectratio aligny="top">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>![Container.Content(Movies) | Container.Content(TVShows)]</visible>
+				<visible>!Container.Content(Movies)</visible>
 			</control>
 		</control>
 	</include>
 
 	<include name="ListInfo3RightPanelEpisodeThumb">
 		<control type="image">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>404</width>
 			<height>228</height>
 			<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[ListItem.Thumb]</texture>
@@ -1311,8 +1253,8 @@
 
 	<include name="ListInfo3RightPanelEpisodeExtraThumbs">
 		<control type="multiimage">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 			<width>404</width>
 			<height>228</height>
 			<imagepath background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[ListItem.Path]extrathumbs</imagepath>
@@ -1325,8 +1267,8 @@
 	
 	<include name="ListInfo3RightPanelMovieExtraThumbs">
 		<control type="grouplist">
-			<left>880</left>
-			<top>116</top>
+			<posx>880</posx>
+			<posy>116</posy>
 			<width>320</width>
 			<height>505</height>
 			<align>center</align>
@@ -1376,7 +1318,7 @@
 
 	<include name="ListInfoViewDot">
 		<control type="image">
-			<top>2</top>
+			<posy>2</posy>
 			<width>28</width>
 			<height>45</height>
 			<texture>views/dot.png</texture>
@@ -1402,7 +1344,7 @@
 
 	<include name="WrapInfoViewDot">
 		<control type="image">
-			<top>2</top>
+			<posy>2</posy>
 			<width>28</width>
 			<height>33</height>
 			<texture>views/dot.png</texture>
@@ -1412,8 +1354,8 @@
 
 	<include name="LiveTVListInfoPanelCover">
 		<control type="group">
-			<left>40</left>
-			<top>116</top>
+			<posx>40</posx>
+			<posy>116</posy>
 
 			<control type="image">
 				<width>542</width>
@@ -1433,8 +1375,8 @@
 
 			<control type="videowindow">
 				<description>Video</description>
-				<left>4</left>
-				<top>4</top>
+				<posx>4</posx>
+				<posy>4</posy>
 				<width>534</width>
 				<height>296</height>
 				<aspectratio>stretch</aspectratio>

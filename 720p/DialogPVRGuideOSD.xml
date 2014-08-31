@@ -15,14 +15,14 @@
 
 			<control type="label">
 				<description>Title</description>
-				<width>420</width>
+				<width>400</width>
 				<label>$LOCALIZE[19222] - $INFO[VideoPlayer.ChannelName]</label>
 				<include>DialogTitle</include>
 			</control>
 
 			<control type="group">
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 
 				<control type="list" id="11">
 					<width>430</width>
@@ -36,7 +36,7 @@
 					<scrolltime tween="sine" easing="inout">300</scrolltime>
 					<itemlayout height="74">
 						<control type="image">
-							<left>0</left>
+							<posx>0</posx>
 							<width>430</width>
 							<height>74</height>	
 							<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -45,43 +45,46 @@
 
 						<control type="label">
 							<description>Time</description>
-							<left>75</left>
-							<top>13</top>
+							<posx>75</posx>
+							<posy>22</posy>
 							<width>74</width>
 							<font>ListFont</font>
 							<textcolor>MediaInfoItemColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$INFO[ListItem.StartTime]</label>
+							<aligny>center</aligny>
 							<align>right</align>
 						</control>
 
 						<control type="label">
 							<description>Label</description>
-							<left>88</left>
-							<top>13</top>
+							<posx>88</posx>
+							<posy>22</posy>
 							<width>300</width>
 							<font>ListFont</font>
 							<textcolor>ListColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$INFO[ListItem.Title]</label>
+							<aligny>center</aligny>
 							<scroll>yes</scroll>
 						</control>
 
 						<control type="label">
 							<description>Label2</description>
-							<left>88</left>
-							<top>38</top>
+							<posx>88</posx>
+							<posy>47</posy>
 							<width>300</width>
 							<font>ListFont2</font>
 							<textcolor>ListColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
+							<aligny>center</aligny>				
 							<label>$INFO[ListItem.StartDate]</label>
 						</control>
 					</itemlayout>
 
 					<focusedlayout height="74">	
 						<control type="image">
-							<left>0</left>
+							<posx>0</posx>
 							<width>430</width>
 							<height>74</height>	
 							<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -89,7 +92,7 @@
 						</control>
 
 						<control type="image">
-							<left>0</left>
+							<posx>0</posx>
 							<width>430</width>
 							<height>73</height>
 							<texture border="4">views/list-focus.png</texture>
@@ -100,7 +103,7 @@
 						</control>
 
 						<control type="image">
-							<left>0</left>
+							<posx>0</posx>
 							<width>430</width>
 							<height>73</height>
 							<texture border="4">views/list-alt-focus.png</texture>
@@ -113,36 +116,39 @@
 							<include>ListViewFocusAnim</include>
 							<control type="label">
 								<description>Time</description>
-								<left>75</left>
-								<top>13</top>
+								<posx>75</posx>
+								<posy>22</posy>
 								<width>74</width>
 								<font>ListFont</font>
 								<textcolor>MediaInfoItemColor</textcolor>
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label>$INFO[ListItem.StartTime]</label>
+								<aligny>center</aligny>
 								<align>right</align>
 							</control>
 
 							<control type="label">
 								<description>Label</description>
-								<left>88</left>
-								<top>13</top>
+								<posx>88</posx>
+								<posy>22</posy>
 								<width>300</width>
 								<font>ListFont</font>
 								<textcolor>SelectedColor</textcolor>
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label>$INFO[ListItem.Title]</label>
+								<aligny>center</aligny>
 								<scroll>yes</scroll>
 							</control>
 
 							<control type="label">
 								<description>Label2</description>
-								<left>88</left>
-								<top>38</top>
+								<posx>88</posx>
+								<posy>47</posy>
 								<width>300</width>
 								<font>ListFont2</font>
 								<textcolor>ListColor2</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>	
+								<shadowcolor>ShadowColor</shadowcolor>
+								<aligny>center</aligny>				
 								<label>$INFO[ListItem.StartDate]</label>
 							</control>
 						</control>
@@ -152,8 +158,8 @@
 
 			<control type="spincontrol" id="12">
 				<description>Next Page</description>
-				<left>425</left>
-				<top>513</top>
+				<posx>425</posx>
+				<posy>513</posy>
 				<font>-</font>
 				<onup>11</onup>
 			</control>

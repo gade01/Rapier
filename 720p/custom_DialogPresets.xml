@@ -19,12 +19,12 @@
 			</control>
 
 			<control type="group">		
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 
 				<control type="image">
 					<description>Divider</description>
-					<left>250</left>
+					<posx>250</posx>
 					<width>100</width>
 					<height>325</height>
 					<texture border="5">controls/button-nofocus.png</texture>				
@@ -32,11 +32,11 @@
 
 				<control type="image">
 					<description>Preview</description>
-					<left>255</left>
-					<top>30</top>
+					<posx>255</posx>
+					<posy>30</posy>
 					<width>90</width>
 					<height>90</height>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<texture background="true">$INFO[Container(450).ListItem.Icon]</texture>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<include>ControlsOpenCloseAnim</include>
@@ -44,8 +44,8 @@
 
 				<control type="list" id="450">
 					<description>Left List</description>
-					<left>5</left>
-					<top>22</top>
+					<posx>5</posx>
+					<posy>22</posy>
 					<width>235</width>
 					<height>280</height>
 					<pagecontrol>-</pagecontrol>
@@ -58,7 +58,7 @@
 					<onleft condition="![Control.IsVisible(151) | Control.IsVisible(152)]">9001</onleft>
 					<itemlayout height="35">
 						<control type="label">
-							<left>10</left>
+							<posx>10</posx>
 							<width>218</width>
 							<height>35</height>
 							<font>ButtonFont2</font>
@@ -86,7 +86,7 @@
 						<control type="group">
 							<include>ListViewFocusAnim</include>
 							<control type="label">
-								<left>10</left>
+								<posx>10</posx>
 								<width>218</width>
 								<height>35</height>
 								<font>ButtonFont2</font>
@@ -169,8 +169,8 @@
 
 				<control type="list" id="451">
 					<description>Right List</description>
-					<left>360</left>
-					<top>22</top>
+					<posx>360</posx>
+					<posy>22</posy>
 					<width>235</width>
 					<height>280</height>
 					<pagecontrol>-</pagecontrol>
@@ -183,7 +183,7 @@
 					<onright condition="![Control.IsVisible(251) | Control.IsVisible(252)]">9001</onright>
 					<itemlayout height="35">
 						<control type="label">
-							<left>10</left>
+							<posx>10</posx>
 							<width>218</width>
 							<height>35</height>
 							<font>ButtonFont2</font>
@@ -204,7 +204,7 @@
 						<control type="group">
 							<include>ListViewFocusAnim</include>
 							<control type="label">
-								<left>10</left>
+								<posx>10</posx>
 								<width>218</width>
 								<height>35</height>
 								<font>ButtonFont2</font>
@@ -834,7 +834,7 @@
 				
 				<control type="group" id="150">
 					<description>Left Scroll</description>
-					<left>114</left>
+					<posx>114</posx>
 
 					<control type="button" id="151">
 						<width>17</width>
@@ -852,7 +852,7 @@
 					</control>
 
 					<control type="button" id="152">
-						<top>313</top>
+						<posy>313</posy>
 						<width>17</width>
 						<height>12</height>
 						<onright>450</onright>
@@ -870,7 +870,7 @@
 
 				<control type="group" id="250">
 					<description>Right Scroll</description>
-					<left>469</left>
+					<posx>469</posx>
 
 					<control type="button" id="251">
 						<width>17</width>
@@ -888,7 +888,7 @@
 					</control>
 
 					<control type="button" id="252">
-						<top>313</top>
+						<posy>313</posy>
 						<width>17</width>
 						<height>12</height>
 						<onleft>451</onleft>
@@ -907,8 +907,8 @@
 
 			<control type="grouplist" id="9001">			
 				<description>Dialog Button Area</description>
-				<left>80</left>
-				<top>387</top>
+				<posx>80</posx>
+				<posy>387</posy>
 				<width>510</width>
 				<itemgap>0</itemgap>
 				<align>center</align>

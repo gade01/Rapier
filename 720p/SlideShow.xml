@@ -7,16 +7,16 @@
 			<visible>!Skin.HasSetting(Show_SlideShow_Paused)</visible>				
 			<control type="image">
 				<animation effect="fade" end="60" condition="true">Conditional</animation>
-				<left>1043</left>
-				<top>12</top>
+				<posx>1043</posx>
+				<posy>12</posy>
 				<width>120</width>
 				<height>35</height>
 				<texture border="4">black.png</texture>
 			</control>
 			<control type="label">
 				<description>paused label</description>
-				<left>1053</left>
-				<top>12</top>
+				<posx>1053</posx>
+				<posy>12</posy>
 				<width>100</width>
 				<height>35</height>
 				<align>center</align>
@@ -27,13 +27,13 @@
 			</control>
 			<control type="label">
 				<description>System Time</description>
-				<left>1100</left>
-				<top>12</top>
-				<width>150</width>
-				<align>right</align>
-				<font>FSInfoTitleFont</font>
+				<posx>1253</posx>
+				<posy>12</posy>
+				<width>200</width>
+				<font>FullMediaInfoTitleFont</font>
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
+				<align>right</align>
 				<info>System.Time</info>
 			</control>
 		</control>
@@ -42,8 +42,8 @@
 			<visible>Player.ShowInfo + Player.HasAudio</visible>
 			
 			<control type="image">
-				<left>28</left>
-				<top>-10</top>
+				<posx>28</posx>
+				<posy>-10</posy>
 				<width>1224</width>
 				<height>140</height>
 				<texture border="8">panels/panel.png</texture>
@@ -51,22 +51,29 @@
 			
 			<include>FSTopPanelOpenCloseAnim</include>
 			
-			<control type="label">
-				<description>System Time</description>
-				<left>1100</left>
-				<top>12</top>
-				<width>150</width>
+			<control type="grouplist">
+				<posx>875</posx>
+				<posy>0</posy>
+				<height>43</height>
+				<width>350</width>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>horizontal</orientation>
 				<align>right</align>
-				<font>FSInfoTitleFont</font>
-				<textcolor>FFFFFFFF</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<info>System.Time</info>
+				<control type="label">
+					<posx>-4</posx>
+					<posy>22</posy>
+					<width min="25" max="250">auto</width>
+					<font>FSInfoTitleFont</font>
+					<textcolor>BreadCrumbColor</textcolor>
+					<label>$INFO[System.Time]</label>
+					<aligny>center</aligny>
+				</control>
 			</control>
 			
 			<control type="image">
 				<description>Cover</description>
-				<left>55</left>
-				<top>11</top>
+				<posx>55</posx>
+				<posy>11</posy>
 				<width>104</width>
 				<height>104</height>
 				<texture diffuse="covers/player-album-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
@@ -74,10 +81,10 @@
 			</control>
 			
 			<control type="group">			
-				<left>179</left>
+				<posx>179</posx>
 				
 				<control type="grouplist">
-					<top>5</top>
+					<posy>5</posy>
 					<width>862</width>
 					<height>50</height>
 					<itemgap>15</itemgap>
@@ -94,7 +101,7 @@
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
-						<top>2</top>
+						<posy>2</posy>
 						<width>100</width>
 						<height>32</height>		
 						<texture>$INFO[Player.StarRating]</texture>
@@ -105,7 +112,7 @@
 				
 				<control type="label">
 					<description>Genre</description>
-					<top>35</top>
+					<posy>35</posy>
 					<width>862</width>
 					<font>FSInfoFont</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -114,7 +121,7 @@
 
 				<control type="grouplist">
 					<description>Media Flags Area</description>
-					<top>75</top>
+					<posy>75</posy>
 					<width>862</width>
 					<height>35</height>
 					<itemgap>5</itemgap>
@@ -128,8 +135,8 @@
 			
 			<control type="label">
 				<description>Party Mode</description>
-				<left>1225</left>
-				<top>67</top>
+				<posx>1225</posx>
+				<posy>67</posy>
 				<width>350</width>
 				<font>FSInfoFont2</font>
 				<textcolor>DefaultColor3</textcolor>
@@ -141,8 +148,8 @@
 				
 			<control type="grouplist">
 				<description>Next Track</description>
-				<left>725</left>
-				<top>89</top>
+				<posx>725</posx>
+				<posy>89</posy>
 				<width>500</width>
 				<align>right</align>
 				<orientation>horizontal</orientation>

@@ -20,8 +20,8 @@
 			</control>
 			
 			<control type="group">		
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 				
 				<control type="spincontrolex" id="10">
 					<description>Protocol Picker</description>
@@ -36,7 +36,7 @@
 
 				<control type="button" id="11">
 					<description>Server Name</description>
-					<top>37</top>
+					<posy>37</posy>
 					<width>475</width>	
 					<include>DialogContentLabel</include>
 					<onup>10</onup>
@@ -47,8 +47,8 @@
 				
 				<control type="button" id="12">
 					<description>Server Browse</description>
-					<left>480</left>
-					<top>37</top>
+					<posx>480</posx>
+					<posy>37</posy>
 					<include>DialogBtn</include>
 					<label>$LOCALIZE[1024]</label>
 					<onup>10</onup>
@@ -59,7 +59,7 @@
 
 				<control type="button" id="16">
 					<description>Shared Folder</description>
-					<top>74</top>
+					<posy>74</posy>
 					<width>600</width>	
 					<include>DialogContentLabel</include>
 					<onup>11</onup>
@@ -70,7 +70,7 @@
 		
 				<control type="button" id="13">
 					<description>Port</description>
-					<top>111</top>
+					<posy>111</posy>
 					<width>600</width>	
 					<include>DialogContentLabel</include>
 					<onup>16</onup>
@@ -81,7 +81,7 @@
 				
 				<control type="button" id="14">
 					<description>Username</description>
-					<top>148</top>
+					<posy>148</posy>
 					<width>600</width>	
 					<include>DialogContentLabel</include>
 					<label>$LOCALIZE[1014]</label>
@@ -93,7 +93,7 @@
 
 				<control type="button" id="15">
 					<description>Password</description>
-					<top>185</top>
+					<posy>185</posy>
 					<width>600</width>	
 					<include>DialogContentLabel</include>
 					<label>$LOCALIZE[15052]</label>
@@ -106,8 +106,8 @@
 
 			<control type="grouplist" id="9001">			
 				<description>Dialog Button Area</description>				
-				<left>165</left>
-				<top>282</top>
+				<posx>165</posx>
+				<posy>282</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>	
 				<onup>15</onup>
@@ -118,7 +118,7 @@
 				</control>			
 				<control type="button" id="19">
 					<description>Cancel</description>
-					<left>170</left>
+					<posx>170</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[222]</label>
 				</control>

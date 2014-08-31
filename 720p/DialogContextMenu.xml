@@ -14,7 +14,7 @@
 			
 			<control type="image" id="997">
 				<description>Context Menu Top</description>
-				<top>-32</top>
+				<posy>-32</posy>
 				<width>344</width>
 				<height>32</height>
 				<texture border="40,30,40,0">gui/context-menu-top.png</texture>
@@ -22,6 +22,7 @@
 			
 			<control type="image" id="999">
 				<description>Context Menu Middle</description>
+				<posy>0</posy>
 				<width>344</width>
 				<height max="720">auto</height>
 				<height>2</height>
@@ -30,13 +31,14 @@
 			
 			<control type="image" id="998">
 				<description>Context Menu Bottom</description>
+				<posy>0</posy>
 				<width>344</width>
-				<height>32</height>
+				<height>30</height>
 				<texture border="40,0,40,30">gui/context-menu-bottom.png</texture>
-			</control>			
+			</control>
 			
 			<control type="grouplist" id="996">
-				<left>32</left>
+				<posx>32</posx>
 				<width>280</width>
 				<height max="720">auto</height>
 				<include>DialogOpenCloseAnim</include>
@@ -49,20 +51,20 @@
 					<include>ContextMenuBtn</include>
 					<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 				</control>
-			</control>			
+			</control>
 			
 			<control type="button">
-				<left>284</left>
-				<top>-24</top>
+				<posx>284</posx>
+				<posy>-24</posy>
 				<include>DialogCloseBtn</include>
 			</control>
-			
+		
 			<control type="button" id="1000">
 				<description>Button Template</description>
-				<left>32</left>
+				<posx>32</posx>
 				<include>ContextMenuBtn</include>
 				<include>DialogOpenCloseAnim</include>
-			</control>
+			</control>			
 		</control>		
 	</controls>	
 </window>

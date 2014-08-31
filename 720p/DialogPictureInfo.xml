@@ -15,8 +15,8 @@
 			
 			<control type="label">
 				<description>Title</description>
-				<left>296</left>
-				<top>39</top>
+				<posx>296</posx>
+				<posy>39</posy>
 				<width>388</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -28,8 +28,8 @@
 				
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>254</width>
 				<height>254</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -40,8 +40,8 @@
 			
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>254</width>
 				<height>254</height>
 				<texture>DefaultPicture.png</texture>
@@ -52,8 +52,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>254</width>
 				<height>254</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[ListItem.Thumb]</texture>
@@ -62,8 +62,8 @@
 			
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>296</left>
-				<top>65</top>
+				<posx>296</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -101,8 +101,8 @@
 			</control>
 			
 			<control type="panel" id="5">
-				<left>296</left>
-				<top>65</top>
+				<posx>296</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<height>224</height>
 				<viewtype label="">list</viewtype>
@@ -115,8 +115,8 @@
 				<onright>101</onright>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>135</left>
-						<top>-1</top>
+						<posx>135</posx>
+						<posy>-1</posy>
 						<width>130</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -126,8 +126,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>145</left>
-						<top>-1</top>
+						<posx>145</posx>
+						<posy>-1</posy>
 						<width>238</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -144,8 +144,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>135</left>
-						<top>-1</top>
+						<posx>135</posx>
+						<posy>-1</posy>
 						<width>130</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -155,8 +155,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>145</left>
-						<top>-1</top>
+						<posx>145</posx>
+						<posy>-1</posy>
 						<width>238</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -169,8 +169,8 @@
 			
 			<control type="spincontrol" id="101">
 				<description>Next Page</description>
-				<left>625</left>
-				<top>306</top>
+				<posx>618</posx>
+				<posy>306</posy>
 				<align>right</align>
 				<onup>5</onup>
 				<ondown>5</ondown>
@@ -179,10 +179,9 @@
 			</control>
 			
 			<control type="group">			
-				<description>Dialog Button Area</description>			
-				<centerleft>360</centerleft>
-				<top>298</top>
-				<width>170</width>
+				<description>Dialog Button Area</description>
+				<posx>275</posx>
+				<posy>298</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<control type="button" id="9001">

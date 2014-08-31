@@ -3,8 +3,8 @@
 	<allowoverlay>no</allowoverlay>
 	<coordinates>
 		<system>1</system>
-		<left>0</left>
-		<top>0</top>
+		<posx>0</posx>
+		<posy>0</posy>
 	</coordinates>
 	<include>ControlsOpenCloseAnim</include>
 
@@ -17,13 +17,13 @@
 		<!--EPG INFO-->
 
 		<control type="group">
-			<left>40</left>
-			<top>490</top>
+			<posx>40</posx>
+			<posy>490</posy>
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="image">
 				<description>Logo</description>
-				<left>15</left>
+				<posx>15</posx>
 				<width>205</width>
 				<height>205</height>
 				<texture background="true" fallback="pvr/DefaultPVRLogo.png">$INFO[Control.GetLabel(503)]</texture>
@@ -33,7 +33,7 @@
 
 			<control type="group">
 				<description>Info</description>
-				<left>240</left>
+				<posx>240</posx>
 
 				<control type="label">
 					<description>Title</description>
@@ -46,7 +46,7 @@
 				</control>			
 
 				<control type="grouplist">
-					<top>23</top>
+					<posy>23</posy>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
@@ -72,7 +72,7 @@
 
 				<control type="textbox">
 					<description>Plot</description>
-					<top>53</top>
+					<posy>53</posy>
 					<width>960</width>
 					<height>102</height>
 					<font>MediaInfoDescFont</font>
@@ -90,8 +90,8 @@
 		<!--TIME AND DATE LABELS-->
 
 		<control type="group">
-			<left>40</left>
-			<top>146</top>
+			<posx>40</posx>
+			<posy>146</posy>
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="image">
@@ -104,7 +104,7 @@
 
 			<control type="label">
 				<description>Date Label</description>
-				<left>15</left>
+				<posx>15</posx>
 				<width>310</width>
 				<height>29</height>
 				<include>LiveTVColumnHeaderLabel</include>
@@ -112,7 +112,7 @@
 			</control>
 
 			<control type="group">
-				<left>240</left>
+				<posx>240</posx>
 
 				<control type="image">
 					<width>1030</width>
@@ -124,7 +124,7 @@
 
 				<control type="label">
 					<description>Time 1 Label</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>310</width>
 					<height>29</height>
 					<include>LiveTVColumnHeaderLabel</include>
@@ -133,7 +133,7 @@
 
 				<control type="label">
 					<description>Time 2 Label</description>
-					<left>360</left>
+					<posx>360</posx>
 					<width>310</width>
 					<height>29</height>
 					<include>LiveTVColumnHeaderLabel</include>
@@ -142,7 +142,7 @@
 
 				<control type="label">
 					<description>Time 3 Label</description>
-					<left>705</left>
+					<posx>705</posx>
 					<width>310</width>
 					<height>29</height>
 					<include>LiveTVColumnHeaderLabel</include>
@@ -156,43 +156,43 @@
 		<control type="group">
 			<include>ControlsOpenCloseAnim</include>
 			<control type="group" id="111">
-				<left>280</left>
-				<top>180</top>
+				<posx>280</posx>
+				<posy>180</posy>
 				<width>1030</width>
 				<height>40</height>
 			</control>
 
 			<control type="group" id="112">
-				<left>280</left>
-				<top>225</top>
+				<posx>280</posx>
+				<posy>225</posy>
 				<width>1030</width>
 				<height>40</height>
 			</control>
 
 			<control type="group" id="113">
-				<left>280</left>
-				<top>270</top>
+				<posx>280</posx>
+				<posy>270</posy>
 				<width>1030</width>
 				<height>40</height>
 			</control>
 
 			<control type="group" id="114">
-				<left>280</left>
-				<top>315</top>
+				<posx>280</posx>
+				<posy>315</posy>
 				<width>1030</width>
 				<height>40</height>
 			</control>
 
 			<control type="group" id="115">
-				<left>280</left>
-				<top>360</top>
+				<posx>280</posx>
+				<posy>360</posy>
 				<width>1030</width>
 				<height>40</height>
 			</control>
 
 			<control type="group" id="116">
-				<left>280</left>
-				<top>405</top>
+				<posx>280</posx>
+				<posy>405</posy>
 				<width>1030</width>
 				<height>40</height>
 			</control>
@@ -204,8 +204,8 @@
 			<include>ControlsOpenCloseAnim</include>
 			<control type="image" id="120">
 				<description>Time Bar</description>
-				<left>280</left>
-				<top>180</top>
+				<posx>280</posx>
+				<posy>180</posy>
 				<width>22</width>
 				<height>265</height>
 			</control>
@@ -216,8 +216,8 @@
 		<control type="group">
 			<include>ControlsOpenCloseAnim</include>
 			<control type="group">
-				<left>40</left>
-				<top>180</top>
+				<posx>40</posx>
+				<posy>180</posy>
 				<control type="image">
 					<width>235</width>
 					<height>40</height>
@@ -228,7 +228,7 @@
 
 				<control type="label">
 					<description>Channel 1 Name</description>
-					<left>220</left>
+					<posx>220</posx>
 					<width>150</width>
 					<height>40</height>
 					<include>LiveTVColumnChannelLabel</include>
@@ -237,7 +237,7 @@
 
 				<control type="label">
 					<description>Channel 1 Number</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>235</width>
 					<height>40</height>
 					<include>LiveTVColumnNumberLabel</include>
@@ -246,8 +246,8 @@
 			</control>
 
 			<control type="group">
-				<left>40</left>
-				<top>225</top>
+				<posx>40</posx>
+				<posy>225</posy>
 				<control type="image">
 					<width>235</width>
 					<height>40</height>
@@ -258,7 +258,7 @@
 
 				<control type="label">
 					<description>Channel 2 Name</description>
-					<left>220</left>
+					<posx>220</posx>
 					<width>150</width>
 					<height>40</height>
 					<include>LiveTVColumnChannelLabel</include>
@@ -267,7 +267,7 @@
 
 				<control type="label">
 					<description>Channel 2 Number</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>235</width>
 					<height>40</height>
 					<include>LiveTVColumnNumberLabel</include>
@@ -276,8 +276,8 @@
 			</control>
 
 			<control type="group">
-				<left>40</left>
-				<top>270</top>
+				<posx>40</posx>
+				<posy>270</posy>
 				<control type="image">
 					<width>235</width>
 					<height>40</height>
@@ -288,7 +288,7 @@
 
 				<control type="label">
 					<description>Channel 3 Name</description>
-					<left>220</left>
+					<posx>220</posx>
 					<width>150</width>
 					<height>40</height>
 					<include>LiveTVColumnChannelLabel</include>
@@ -297,7 +297,7 @@
 
 				<control type="label">
 					<description>Channel 3 Number</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>235</width>
 					<height>40</height>
 					<include>LiveTVColumnNumberLabel</include>
@@ -306,8 +306,8 @@
 			</control>
 
 			<control type="group">
-				<left>40</left>
-				<top>315</top>
+				<posx>40</posx>
+				<posy>315</posy>
 				<control type="image">
 					<width>235</width>
 					<height>40</height>
@@ -318,7 +318,7 @@
 
 				<control type="label">
 					<description>Channel 4 Name</description>
-					<left>220</left>
+					<posx>220</posx>
 					<width>150</width>
 					<height>40</height>
 					<include>LiveTVColumnChannelLabel</include>
@@ -327,7 +327,7 @@
 
 				<control type="label">
 					<description>Channel 4 Number</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>235</width>
 					<height>40</height>
 					<include>LiveTVColumnNumberLabel</include>
@@ -336,8 +336,8 @@
 			</control>
 
 			<control type="group">
-				<left>40</left>
-				<top>360</top>
+				<posx>40</posx>
+				<posy>360</posy>
 				<control type="image">
 					<width>235</width>
 					<height>40</height>
@@ -348,7 +348,7 @@
 
 				<control type="label">
 					<description>Channel 5 Name</description>
-					<left>220</left>
+					<posx>220</posx>
 					<width>150</width>
 					<height>40</height>
 					<include>LiveTVColumnChannelLabel</include>
@@ -357,7 +357,7 @@
 
 				<control type="label">
 					<description>Channel 5 Number</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>235</width>
 					<height>40</height>
 					<include>LiveTVColumnNumberLabel</include>
@@ -366,8 +366,8 @@
 			</control>
 
 			<control type="group">
-				<left>40</left>
-				<top>405</top>
+				<posx>40</posx>
+				<posy>405</posy>
 				<control type="image">
 					<width>235</width>
 					<height>40</height>
@@ -378,7 +378,7 @@
 
 				<control type="label">
 					<description>Channel 6 Name</description>
-					<left>220</left>
+					<posx>220</posx>
 					<width>150</width>
 					<height>40</height>
 					<include>LiveTVColumnChannelLabel</include>
@@ -387,7 +387,7 @@
 
 				<control type="label">
 					<description>Channel 6 Number</description>
-					<left>15</left>
+					<posx>15</posx>
 					<width>235</width>
 					<height>40</height>
 					<include>LiveTVColumnNumberLabel</include>

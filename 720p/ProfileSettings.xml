@@ -20,8 +20,8 @@
 			</control>
 			
 			<control type="group">			
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 				
 				<control type="image">
 					<description>Profile Background</description>
@@ -32,8 +32,8 @@
 						
 				<control type="image" id="2">
 					<description>Profile Cover</description>
-					<left>20</left>
-					<top>5</top>
+					<posx>20</posx>
+					<posy>5</posy>
 					<width>100</width>
 					<height>100</height>
 					<texture>unknown-user.png</texture>
@@ -42,8 +42,8 @@
 				
 				<control type="label" id="1000">
 					<description>Profile Name Value</description>
-					<left>140</left>
-					<top>25</top>
+					<posx>140</posx>
+					<posy>25</posy>
 					<width>460</width>
 					<font>ProfileNameFont</font>
 					<textcolor>DefaultColor</textcolor>
@@ -52,16 +52,17 @@
 				
 				<control type="label" id="1001">
 					<description>Profile Directory Value</description>
-					<left>140</left>
-					<top>55</top>
+					<posx>140</posx>
+					<posy>55</posy>
 					<width>460</width>
 					<scroll>yes</scroll>
+					<aligny>top</aligny>
 					<include>DialogHeadLabel</include>
 				</control>
 				
 				<control type="grouplist" id="5">
 					<description>Control Area</description>
-					<top>115</top>
+					<posy>115</posy>
 					<width>600</width>
 					<height>350</height>
 					<itemgap>5</itemgap>
@@ -97,8 +98,8 @@
 			
 			<control type="grouplist" id="9001">		
 				<description>Dialog Button Area</description>			
-				<left>165</left>
-				<top>412</top>
+				<posx>165</posx>
+				<posy>412</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<onup>5</onup>
@@ -109,7 +110,7 @@
 				</control>			
 				<control type="button" id="29">
 					<description>Cancel</description>
-					<left>170</left>
+					<posx>170</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[222]</label>
 				</control>				

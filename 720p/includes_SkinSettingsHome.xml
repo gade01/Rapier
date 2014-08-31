@@ -816,7 +816,7 @@
 
 				<control type="grouplist" id="938">
 					<description>Hide Categories Area</description>
-					<top>65</top>
+					<posy>65</posy>
 					<width>205</width>
 					<height>500</height>
 					<itemgap>15</itemgap>
@@ -880,8 +880,8 @@
 				
 				<control type="grouplist" id="941">
 					<description>Hide Categories 2 Area</description>
-					<left>220</left>
-					<top>65</top>
+					<posx>220</posx>
+					<posy>65</posy>
 					<width>205</width>
 					<height>500</height>
 					<itemgap>15</itemgap>
@@ -947,8 +947,8 @@
 
 				<control type="grouplist" id="940">
 					<description>Custom Category Icons Area</description>
-					<left>215</left>
-					<top>65</top>
+					<posx>215</posx>
+					<posy>65</posy>
 					<width>540</width>
 					<height>450</height>
 					<itemgap>0</itemgap>
@@ -1039,84 +1039,84 @@
 
 				<control type="image">
 					<description>Image Preview Background</description>
-					<top>65</top>
+					<posy>65</posy>
 					<width>205</width>
 					<height>195</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(MusicCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2301)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(PVRCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2302)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(VideosCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2303)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(MoviesCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2304)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(TVShowsCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2305)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(ProgramsCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2306)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(PicturesCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2307)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(WeatherCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2308)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(GeneralCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2309)</visible>
 				</control>
 
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(SystemCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2310)</visible>
 				</control>
 				
 				<control type="image">
-					<top>65</top>
+					<posy>65</posy>
 					<include>ExpandedSettingsImagePreview</include>
 					<texture>$INFO[Skin.String(PowerCategoryIconPath)]</texture>
 					<visible>ControlGroup(940).HasFocus(2311)</visible>
@@ -1153,7 +1153,7 @@
 
 				<control type="grouplist" id="939">
 					<description>Add More Categories Area</description>
-					<top>65</top>
+					<posy>65</posy>
 					<width>205</width>
 					<height>500</height>
 					<itemgap>15</itemgap>
@@ -1250,8 +1250,8 @@
 
 					<control type="grouplist" id="921">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<width>540</width>
 						<height>450</height>
 						<pagecontrol>912</pagecontrol>
@@ -1358,35 +1358,35 @@
 
 					<control type="image">
 						<description>Image Preview Background</description>
-						<top>325</top>
+						<posy>325</posy>
 						<width>205</width>
 						<height>195</height>
 						<texture border="5">controls/button-nofocus.png</texture>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn1IconPath]</texture>
 						<visible>ControlGroup(921).HasFocus(2333)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn1NoFocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn1FocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn1NoFocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
@@ -1394,7 +1394,7 @@
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn1FocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
@@ -1402,8 +1402,8 @@
 					</control>
 
 					<control type="multiimage">
-						<top>325</top>
-						<left>10</left>
+						<posy>325</posy>
+						<posx>10</posx>
 						<width>185</width>
 						<timeperimage>3000</timeperimage>
 						<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -1423,8 +1423,8 @@
 
 					<control type="grouplist" id="921">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<width>540</width>
 						<height>450</height>
 						<pagecontrol>912</pagecontrol>
@@ -1531,35 +1531,35 @@
 
 					<control type="image">
 						<description>Image Preview Background</description>
-						<top>325</top>
+						<posy>325</posy>
 						<width>205</width>
 						<height>195</height>
 						<texture border="5">controls/button-nofocus.png</texture>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn2IconPath]</texture>
 						<visible>ControlGroup(921).HasFocus(2333)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn2NoFocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn2FocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn2NoFocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
@@ -1567,7 +1567,7 @@
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn2FocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
@@ -1575,8 +1575,8 @@
 					</control>
 
 					<control type="multiimage">
-						<top>325</top>
-						<left>10</left>
+						<posy>325</posy>
+						<posx>10</posx>
 						<width>185</width>
 						<timeperimage>3000</timeperimage>
 						<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -1596,8 +1596,8 @@
 
 					<control type="grouplist" id="921">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<width>540</width>
 						<height>450</height>
 						<pagecontrol>912</pagecontrol>
@@ -1704,35 +1704,35 @@
 
 					<control type="image">
 						<description>Image Preview Background</description>
-						<top>325</top>
+						<posy>325</posy>
 						<width>205</width>
 						<height>195</height>
 						<texture border="5">controls/button-nofocus.png</texture>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn3IconPath]</texture>
 						<visible>ControlGroup(921).HasFocus(2333)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn3NoFocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn3FocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn3NoFocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
@@ -1740,7 +1740,7 @@
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn3FocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
@@ -1748,8 +1748,8 @@
 					</control>
 
 					<control type="multiimage">
-						<top>325</top>
-						<left>10</left>
+						<posy>325</posy>
+						<posx>10</posx>
 						<width>185</width>
 						<timeperimage>3000</timeperimage>
 						<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -1769,8 +1769,8 @@
 
 					<control type="grouplist" id="921">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<width>540</width>
 						<height>450</height>
 						<pagecontrol>912</pagecontrol>
@@ -1877,35 +1877,35 @@
 
 					<control type="image">
 						<description>Image Preview Background</description>
-						<top>325</top>
+						<posy>325</posy>
 						<width>205</width>
 						<height>195</height>
 						<texture border="5">controls/button-nofocus.png</texture>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn4IconPath]</texture>
 						<visible>ControlGroup(921).HasFocus(2333)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn4NoFocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn4FocusImagePath]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn4NoFocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2335)</visible>
@@ -1913,7 +1913,7 @@
 					</control>
 
 					<control type="image">
-						<top>325</top>
+						<posy>325</posy>
 						<include>ExpandedSettingsImagePreview</include>
 						<texture>$VAR[AddMoreCategoryBtn4FocusFallback]</texture>
 						<visible>ControlGroup(921).HasFocus(2336)</visible>
@@ -1921,8 +1921,8 @@
 					</control>
 
 					<control type="multiimage">
-						<top>325</top>
-						<left>10</left>
+						<posy>325</posy>
+						<posx>10</posx>
 						<width>185</width>
 						<timeperimage>3000</timeperimage>
 						<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -1960,7 +1960,7 @@
 
 				<control type="grouplist" id="931">
 					<description>Edit Buttons Area</description>
-					<top>65</top>
+					<posy>65</posy>
 					<width>205</width>
 					<height>500</height>
 					<itemgap>15</itemgap>
@@ -2035,24 +2035,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2083,8 +2083,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2115,8 +2115,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>
@@ -2173,24 +2173,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2221,8 +2221,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2253,8 +2253,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>
@@ -2311,24 +2311,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2359,8 +2359,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2391,8 +2391,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>
@@ -2449,24 +2449,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2497,8 +2497,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2529,8 +2529,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>
@@ -2587,24 +2587,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2635,8 +2635,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2667,8 +2667,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>
@@ -2725,24 +2725,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2773,8 +2773,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2805,8 +2805,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>
@@ -2863,24 +2863,24 @@
 
 					<control type="button">
 						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
+						<posx>215</posx>
+						<posy>65</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31095]</label>
 					</control>
 
 					<control type="button">
 						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
+						<posx>215</posx>
+						<posy>260</posy>
 						<include>ExpandedSettingsHeaderBtn</include>
 						<label>$LOCALIZE[31098]</label>
 					</control>
 
 					<control type="grouplist" id="921">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
+						<posx>215</posx>
+						<posy>130</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2911,8 +2911,8 @@
 
 					<control type="grouplist" id="922">
 						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
+						<posx>215</posx>
+						<posy>195</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>9</itemgap>
@@ -2943,8 +2943,8 @@
 
 					<control type="grouplist" id="923">
 						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
+						<posx>215</posx>
+						<posy>310</posy>
 						<width>540</width>
 						<height>500</height>
 						<itemgap>0</itemgap>

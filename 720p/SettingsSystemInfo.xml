@@ -17,8 +17,8 @@
 		
 			<control type="grouplist" id="850">
 				<description>Category Area</description>
-				<left>125</left>
-				<top>110</top>
+				<posx>125</posx>
+				<posy>110</posy>
 				<onup>850</onup>
 				<ondown>850</ondown>
 				<onleft>600</onleft>
@@ -29,45 +29,45 @@
 				</control>
 				<control type="button" id="94">
 					<Description>Storage</Description>
-					<top>37</top>
+					<posy>37</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[13277]</label>	
 				</control>
 				<control type="button" id="92">
 					<Description>HDD</Description>
-					<top>37</top>
+					<posy>37</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[13275]</label>
 					<visible>System.Platform.Xbox</visible>
 				</control>
 				<control type="button" id="93">
 					<Description>DVD</Description>
-					<top>37</top>
+					<posy>37</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[13276]</label>	
 					<visible>System.Platform.Xbox</visible>
 				</control>
 				<control type="button" id="96">
 					<Description>Network</Description>
-					<top>74</top>
+					<posy>74</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[13279]</label>	
 				</control>				
 				<control type="button" id="97">
 					<Description>Video</Description>
-					<top>111</top>
+					<posy>111</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[13280]</label>
 				</control>
 				<control type="button" id="98">
 					<Description>Hardware</Description>
-					<top>148</top>
+					<posy>148</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[13281]</label>
 				</control>
 				<control type="button" id="99">
 					<Description>PVR</Description>
-					<top>185</top>
+					<posy>185</posy>
 					<include>SettingsCatBtn</include>
 					<label>$LOCALIZE[19191]</label>
 					<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -76,8 +76,8 @@
 			
 			<control type="grouplist" id="900">		
 				<description>General Content Area</description>
-				<left>400</left>
-				<top>110</top>
+				<posx>400</posx>
+				<posy>110</posy>
 				<width>755</width>
 				<height>500</height>
 				<itemgap>0</itemgap>
@@ -128,7 +128,7 @@
 		
 		<control type="group">
 			<description>Bottom Bar Area</description>
-			<top>BottomPaneOffsetY</top>	
+			<posy>BottomPaneOffsetY</posy>	
 			<include>InfoPaneSystemInfoDetails</include>
 			<include>BottomPaneOpenCloseAnim</include>
 		</control>

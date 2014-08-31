@@ -11,8 +11,8 @@
 
 		<control type="grouplist" id="200">
 			<description>View Mode Menu</description>
-			<left>96</left>
-			<top>80</top>
+			<posx>96</posx>
+			<posy>80</posy>
 			<width>212</width>
 			<itemgap>0</itemgap>
 			<orientation>vertical</orientation>
@@ -126,10 +126,9 @@
 				<onclick condition="Container.Content(Movies)">Container.SetViewMode(95)</onclick>
 				<onclick condition="Container.Content(Episodes)">Container.SetViewMode(94)</onclick>
 				<onclick condition="Container.Content(Albums)">Container.SetViewMode(96)</onclick>
-				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(589)</onclick>
 				<onclick condition="Substring(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(592)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
-				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(TVShows)]]
+				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Episodes)]]
 				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)] | Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -139,7 +138,7 @@
 				<label>$LOCALIZE[31116]</label>
 				<onclick condition="Container.Content(Movies)">Container.SetViewMode(97)</onclick>
 				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(100)</onclick>
-				<onclick condition="Container.Content(Albums)">Container.SetViewMode(599)</onclick>
+				<onclick condition="Container.Content(Albums)">Container.SetViewMode(98)</onclick>
 				<onclick condition="Substring(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(593)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows)]] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
@@ -222,145 +221,145 @@
 		<control type="grouplist">
 			<description>View Mode Icons</description>
 			<hitrect x="0" y="0" w="0" h="0"/> 
-			<left>111</left>
-			<top>96</top>
+			<posx>96</posx>
+			<posy>90</posy>
 			<width>212</width>
-			<itemgap>12</itemgap>
+			<itemgap>0</itemgap>
 			<orientation>vertical</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
 			<include>MenuOpenCloseAnim</include>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-icon.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-wide-icon.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Window.IsActive(Videos) + Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-thumbnail.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]
 				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-list.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-wide-list.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
 				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-list-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] 
 				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Container.Content(Addons)</visible>
 			</control>			
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-list-info-2.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-list-info-2.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]] 
 				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-list-info-3.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
-				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
+				<aspectratio>keep</aspectratio>
+				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Episodes)]]
 				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)]</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-list-info-2.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-thumbs-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows)]] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
 				| Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-thumbs-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-thumbs-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-wrap-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>[Window.IsActive(Videos) + Container.Content(Movies)] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
 				| Container.Content(Addons) | Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-wrap-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-wrap-info.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-3d-wrap.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 			</control>
 			<control type="image">
-				<width>38</width>
-				<height>25</height>
+				<posx>18</posx>
+				<height>37</height>
 				<texture>gui/view-wall.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Container.Content(Movies) | Container.Content(Albums)</visible>
 			</control>
 		</control>

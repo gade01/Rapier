@@ -7,16 +7,12 @@
 	<onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<include>ControlsOpenCloseAnim</include>
 	
-	<controls>
-		<control type="group">
-			<include>BackgroundVideoFanart</include>
-			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
-			<include>FSMediaInfoBackgroundDim</include>
-		</control>
+	<controls>	
+		<include>FSMediaInfoBackgroundDim</include>
 		
 		<control type="group">		
-			<left>150</left>
-			<top>182</top>
+			<posx>150</posx>
+			<posy>182</posy>
 			
 			<control type="image">
 				<description>Movies / Music Videos / Episodes Default Cover Image</description>
@@ -44,7 +40,7 @@
 			
 			<control type="image">
 				<description>TV Shows Default Cover Image</description>
-				<top>-10</top>
+				<posy>-10</posy>
 				<width>980</width>
 				<height>181</height>
 				<texture>$INFO[ListItem.Icon]</texture>
@@ -90,7 +86,7 @@
 			
 			<control type="image">
 				<description>TV Shows Banner Cover Image</description>
-				<top>-10</top>
+				<posy>-10</posy>
 				<width>980</width>
 				<height>181</height>
 				<texture>$INFO[ListItem.Art(banner)]</texture>
@@ -105,8 +101,8 @@
 			<visible>Container.Content(Movies)</visible>
 
 			<control type="group">	
-				<left>150</left>
-				<top>99</top>
+				<posx>150</posx>
+				<posy>99</posy>
 
 				<control type="label">
 					<description>Title</description>
@@ -119,7 +115,7 @@
 				</control>
 				
 				<control type="image">
-					<top>34</top>
+					<posy>34</posy>
 					<width>980</width>
 					<height>1</height>
 					<texture>views/media-info-separator.png</texture>
@@ -127,7 +123,7 @@
 				
 				<control type="label">
 					<description>Genre</description>
-					<top>38</top>
+					<posy>38</posy>
 					<width>980</width>
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -137,8 +133,8 @@
 			</control>
 				
 			<control type="list" id="901">
-				<left>470</left>
-				<top>170</top>
+				<posx>470</posx>
+				<posy>170</posy>
 				<width>660</width>
 				<height>280</height>
 				<onup>505</onup>
@@ -148,7 +144,7 @@
 				<onright>961</onright>
 				<itemlayout width="660" height="35">
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -158,7 +154,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -170,7 +166,7 @@
 				</itemlayout>	
 				<focusedlayout width="660" height="35">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>660</width>
 						<height>35</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -180,7 +176,7 @@
 						<include>MediaInfoListScrollAnim</include>
 					</control>
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -190,7 +186,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -262,8 +258,8 @@
 		
 			<control type="grouplist">
 				<description>Media Flags Area</description>
-				<left>470</left>
-				<top>650</top>
+				<posx>470</posx>
+				<posy>650</posy>
 				<width>580</width>
 				<height>60</height>
 				<itemgap>5</itemgap>
@@ -284,8 +280,8 @@
 			<visible>Container.Content(MusicVideos)</visible>
 			
 			<control type="group">	
-				<left>150</left>
-				<top>99</top>
+				<posx>150</posx>
+				<posy>99</posy>
 
 				<control type="label">
 					<description>Title</description>
@@ -298,7 +294,7 @@
 				</control>
 				
 				<control type="image">
-					<top>34</top>
+					<posy>34</posy>
 					<width>980</width>
 					<height>1</height>
 					<texture>views/media-info-separator.png</texture>
@@ -306,7 +302,7 @@
 				
 				<control type="label">
 					<description>Genre</description>
-					<top>38</top>
+					<posy>38</posy>
 					<width>980</width>
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -316,8 +312,8 @@
 			</control>
 			
 			<control type="list" id="901">
-				<left>470</left>
-				<top>170</top>
+				<posx>470</posx>
+				<posy>170</posy>
 				<width>660</width>
 				<height>280</height>
 				<onup>505</onup>
@@ -327,7 +323,7 @@
 				<onright>961</onright>
 				<itemlayout width="660" height="35">
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -337,7 +333,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -349,7 +345,7 @@
 				</itemlayout>	
 				<focusedlayout width="660" height="35">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>660</width>
 						<height>35</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -359,7 +355,7 @@
 						<include>MediaInfoListScrollAnim</include>
 					</control>
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -369,7 +365,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -427,8 +423,8 @@
 		
 			<control type="grouplist">
 				<description>Media Flags Area</description>
-				<left>470</left>
-				<top>650</top>
+				<posx>470</posx>
+				<posy>650</posy>
 				<width>580</width>
 				<height>60</height>
 				<itemgap>5</itemgap>
@@ -447,8 +443,8 @@
 			<visible>Container.Content(Episodes)</visible>
 			
 			<control type="group">	
-				<left>150</left>
-				<top>99</top>
+				<posx>150</posx>
+				<posy>99</posy>
 
 				<control type="label">
 					<description>Title</description>
@@ -461,7 +457,7 @@
 				</control>
 				
 				<control type="image">
-					<top>34</top>
+					<posy>34</posy>
 					<width>980</width>
 					<height>1</height>
 					<texture>views/media-info-separator.png</texture>
@@ -469,7 +465,7 @@
 				
 				<control type="label">
 					<description>TV Show</description>
-					<top>38</top>
+					<posy>38</posy>
 					<width>980</width>
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -479,8 +475,8 @@
 			</control>
 			
 			<control type="list" id="901">
-				<left>470</left>
-				<top>170</top>
+				<posx>470</posx>
+				<posy>170</posy>
 				<width>660</width>
 				<height>280</height>
 				<onup>505</onup>
@@ -490,7 +486,7 @@
 				<onright>961</onright>
 				<itemlayout width="660" height="35">
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -500,7 +496,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -512,7 +508,7 @@
 				</itemlayout>	
 				<focusedlayout width="660" height="35">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>660</width>
 						<height>35</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -522,7 +518,7 @@
 						<include>MediaInfoListScrollAnim</include>
 					</control>
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -532,7 +528,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -604,8 +600,8 @@
 		
 			<control type="grouplist">
 				<description>Media Flags Area</description>
-				<left>470</left>
-				<top>650</top>
+				<posx>470</posx>
+				<posy>650</posy>
 				<width>580</width>
 				<height>60</height>
 				<itemgap>5</itemgap>
@@ -624,8 +620,8 @@
 			<visible>Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)</visible>
 			
 			<control type="group">	
-				<left>150</left>
-				<top>99</top>
+				<posx>150</posx>
+				<posy>99</posy>
 
 				<control type="label">
 					<description>Title</description>
@@ -638,7 +634,7 @@
 				</control>
 				
 				<control type="image">
-					<top>34</top>
+					<posy>34</posy>
 					<width>980</width>
 					<height>1</height>
 					<texture>views/media-info-separator.png</texture>
@@ -646,7 +642,7 @@
 				
 				<control type="label">
 					<description>Genre</description>
-					<top>38</top>
+					<posy>38</posy>
 					<width>980</width>
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -656,8 +652,8 @@
 			</control>
 			
 			<control type="panel" id="901">
-				<left>150</left>
-				<top>360</top>
+				<posx>150</posx>
+				<posy>360</posy>
 				<width>980</width>
 				<height>105</height>
 				<onup>505</onup>
@@ -667,7 +663,7 @@
 				<onright>961</onright>
 				<itemlayout width="490" height="35">
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>130</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -677,7 +673,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>155</left>
+						<posx>155</posx>
 						<width>330</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -689,7 +685,7 @@
 				</itemlayout>	
 				<focusedlayout width="490" height="35">	
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>490</width>
 						<height>35</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -699,7 +695,7 @@
 						<include>MediaInfoListScrollAnim</include>
 					</control>
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>130</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -709,7 +705,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>155</left>
+						<posx>155</posx>
 						<width>330</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -769,8 +765,8 @@
 			<visible>Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)</visible>
 			
 			<control type="group">	
-				<left>150</left>
-				<top>99</top>
+				<posx>150</posx>
+				<posy>99</posy>
 
 				<control type="label">
 					<description>Title</description>
@@ -783,7 +779,7 @@
 				</control>
 				
 				<control type="image">
-					<top>34</top>
+					<posy>34</posy>
 					<width>980</width>
 					<height>1</height>
 					<texture>views/media-info-separator.png</texture>
@@ -791,7 +787,7 @@
 				
 				<control type="label">
 					<description>Genre</description>
-					<top>38</top>
+					<posy>38</posy>
 					<width>980</width>
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -802,8 +798,8 @@
 			
 			<control type="list" id="901">
 				<hitrect x="0" y="0" w="0" h="0"/> 
-				<left>470</left>
-				<top>170</top>
+				<posx>470</posx>
+				<posy>170</posy>
 				<width>660</width>
 				<height>280</height>
 				<onup>505</onup>
@@ -813,7 +809,7 @@
 				<onright>961</onright>
 				<itemlayout width="660" height="35">
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -823,7 +819,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -835,7 +831,7 @@
 				</itemlayout>	
 				<focusedlayout width="660" height="35">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>660</width>
 						<height>35</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -845,7 +841,7 @@
 						<include>MediaInfoListScrollAnim</include>
 					</control>
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -855,7 +851,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -878,7 +874,6 @@
 						<label2>$INFO[ListItem.Studio]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=TVShow)</onclick>
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
-						<visible>IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 					</item>
 					<item id="3">
 						<description>Year</description>
@@ -887,40 +882,20 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<description>Next Aired Status</description>
-						<label>$LOCALIZE[126]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
-						<onclick>noop</onclick>
-					</item>
-					<item id="5">
 						<description>First Aired</description>
 						<label>$LOCALIZE[20416]</label>
 						<label2>$INFO[ListItem.Premiered]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=premiered&amp;type=TVShow)</onclick>
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 					</item>
-					<item id="6">
-						<description>Next Aired Latest Episode</description>
-						<label>$LOCALIZE[31966]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
-						<onclick>noop</onclick>
-						<visible>!IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
-					</item>
-					<item id="7">
-						<description>Next Aired Next Episode</description>
-						<label>$LOCALIZE[31967]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
-						<onclick>noop</onclick>
-						<visible>!IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
-					</item>
-					<item id="8">
+					<item id="5">
 						<description>Rating</description>
 						<label>$LOCALIZE[563]</label>
 						<label2>$INFO[ListItem.Rating]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=TVShow)</onclick>
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 					</item>
-					<item id="9">
+					<item id="6">
 						<description>File Path</description>
 						<label>$LOCALIZE[573]</label>
 						<label2>$INFO[ListItem.FileNameAndPath]</label2>
@@ -934,8 +909,8 @@
 
 		<control type="textbox">
 			<description>Plot</description>
-			<left>470</left>
-			<top>460</top>
+			<posx>470</posx>
+			<posy>460</posy>
 			<width>660</width>
 			<height>170</height>
 			<font>FullMediaInfoDescFont</font>
@@ -949,8 +924,8 @@
 		
 		<control type="textbox">
 			<description>Plot</description>
-			<left>150</left>
-			<top>470</top>
+			<posx>150</posx>
+			<posy>470</posy>
 			<width>980</width>
 			<height>150</height>
 			<font>FullMediaInfoDescFont</font>
@@ -965,8 +940,8 @@
 		<control type="group" id="965">
 			<control type="panel" id="50">
 				<description>Cast</description>
-				<left>470</left>
-				<top>460</top>
+				<posx>470</posx>
+				<posy>460</posy>
 				<width>660</width>
 				<height>175</height>
 				<viewtype label="">list</viewtype>
@@ -979,14 +954,14 @@
 				<onright>61</onright>
 				<itemlayout height="35" width="330">		
 					<control type="image">
-						<left>5</left>
-						<top>5</top>
+						<posx>5</posx>
+						<posy>5</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 					</control>
 					<control type="label">
-						<left>35</left>
+						<posx>35</posx>
 						<width>290</width>
 						<height>33</height>
 						<font>FullMediaInfoDescFont</font>
@@ -1006,14 +981,14 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>	
 					<control type="image">
-						<left>5</left>
-						<top>5</top>
+						<posx>5</posx>
+						<posy>5</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 					</control>
 					<control type="label">
-						<left>35</left>
+						<posx>35</posx>
 						<width>290</width>
 						<height>33</height>
 						<font>FullMediaInfoDescFont</font>
@@ -1029,8 +1004,8 @@
 
 			<control type="panel" id="50">
 				<description>Cast</description>
-				<left>151</left>
-				<top>470</top>
+				<posx>151</posx>
+				<posy>470</posy>
 				<width>980</width>
 				<height>140</height>
 				<viewtype label="">list</viewtype>
@@ -1043,14 +1018,14 @@
 				<visible>Container.Content(Episodes) | Container.Content(MusicVideos) | [Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)]</visible>
 				<itemlayout height="35" width="326">		
 					<control type="image">
-						<left>5</left>
-						<top>5</top>
+						<posx>5</posx>
+						<posy>5</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 					</control>
 					<control type="label">
-						<left>35</left>
+						<posx>35</posx>
 						<width>286</width>
 						<height>33</height>
 						<font>FullMediaInfoDescFont</font>
@@ -1070,14 +1045,14 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>	
 					<control type="image">
-						<left>5</left>
-						<top>5</top>
+						<posx>5</posx>
+						<posy>5</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 					</control>
 					<control type="label">
-						<left>35</left>
+						<posx>35</posx>
 						<width>286</width>
 						<height>33</height>
 						<font>FullMediaInfoDescFont</font>
@@ -1095,8 +1070,8 @@
 		<control type="group" id="961">
 			<control type="spincontrol" id="61">
 				<description>Next Page</description>
-				<left>1076</left>
-				<top>659</top>
+				<posx>1076</posx>
+				<posy>659</posy>
 				<width>28</width>
 				<height>28</height>
 				<spinwidth>30</spinwidth>
@@ -1108,8 +1083,8 @@
 			
 			<control type="spincontrol" id="62">
 				<description>Next Page</description>
-				<left>1076</left>
-				<top>659</top>
+				<posx>1076</posx>
+				<posy>659</posy>
 				<width>28</width>
 				<height>28</height>
 				<spinwidth>30</spinwidth>
@@ -1122,7 +1097,7 @@
 	
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim2</include>
 			<include>VideoInfoMenuBar</include>

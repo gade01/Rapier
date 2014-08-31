@@ -16,8 +16,8 @@ DEVELOPMENT:
 
  - Coming soon!
 
-
- SUPPORT: 
+ 
+SUPPORT: 
 
 http://forum.xbmc.org/forumdisplay.php?fid=120
 
@@ -32,13 +32,13 @@ node and choose "Install from zip file" and select the Rapier zip file.
 Manual installation can be done by moving the skin.rapier folder inside the zip file into your addons folder of your XBMC profile.
 Please make sure you have the following scripts installed when doing it manually: 
 
-script.favourites v5.0.2
+script.favourites v4.0.9
 script.artistslideshow v1.6.7
 script.artwork.downloader v13.0.0
 script.randomandlastitems v2.2.1
 script.tv.show.next.aired v6.0.10
 script.grab.fanart v0.13.0
-script.globalsearch v2.0.8
+script.globalsearch v1.1.1
 service.skin.widgets v0.0.29
 
 Troubleshoot: If there is a previous installation of Rapier, it is best to delete it first than to overwrite the files if installing manually.

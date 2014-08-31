@@ -10,7 +10,7 @@
 		</control>
 		
 		<control type="button">
-			<top>-45</top>
+			<posy>-45</posy>
 			<width>ScreenWidth</width>
 			<height>95</height>
 			<texturefocus>-</texturefocus>
@@ -206,7 +206,7 @@
 	</include>
 
 	<include name="MenuBarSeparator">	
-		<top>0</top>
+		<posy>0</posy>
 		<width>3</width>
 		<height>MenuBarHeight</height>
 		<texture>gui/menu-bar-separator.png</texture>		
@@ -215,7 +215,7 @@
 	<include name="MediaMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultMenuBar</include>
@@ -227,8 +227,8 @@
 		<control type="group" id="850">
 			<control type="grouplist" id="563">
 				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<top>0</top>
+				<posx>5</posx>
+				<posy>0</posy>
 				<width>150</width>
 				<height>MenuBarHeight</height>
 				<orientation>horizontal</orientation>
@@ -279,8 +279,8 @@
 	
 	<include name="MenuBarOptions">
 		<control type="grouplist" id="212">
-			<left>99</left>
-			<top>0</top>
+			<posx>99</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -338,10 +338,9 @@
 				<onclick condition="Control.IsVisible(95)">Skin.SetString(CurrentViewMode,95)</onclick>
 				<onclick condition="Control.IsVisible(96)">Skin.SetString(CurrentViewMode,96)</onclick>
 				<onclick condition="Control.IsVisible(97)">Skin.SetString(CurrentViewMode,97)</onclick>
-				<onclick condition="Control.IsVisible(599)">Skin.SetString(CurrentViewMode,599)</onclick>
+				<onclick condition="Control.IsVisible(98)">Skin.SetString(CurrentViewMode,98)</onclick>
 				<onclick condition="Control.IsVisible(100)">Skin.SetString(CurrentViewMode,100)</onclick>
 				<onclick condition="Control.IsVisible(588)">Skin.SetString(CurrentViewMode,588)</onclick>
-				<onclick condition="Control.IsVisible(589)">Skin.SetString(CurrentViewMode,589)</onclick>
 				<onclick condition="Control.IsVisible(590)">Skin.SetString(CurrentViewMode,590)</onclick>
 				<onclick condition="Control.IsVisible(591)">Skin.SetString(CurrentViewMode,591)</onclick>
 				<onclick condition="Control.IsVisible(592)">Skin.SetString(CurrentViewMode,592)</onclick>
@@ -357,12 +356,7 @@
 			<control type="image" id="438">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="3">
-				<description>Sort By</description>
-				<include>MenuBarBigBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[103][/UPPERCASE]</label>
-			</control>
-			<!--<control type="button" id="401">
+			<control type="button" id="401">
 				<description>Sort By</description>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$INFO[Control.GetLabel(3)][/UPPERCASE]</label>
@@ -376,7 +370,7 @@
 				<label>[UPPERCASE]$INFO[Control.GetLabel(3)][/UPPERCASE]</label>
 				<onclick>Container.NextSortMethod</onclick>
 				<visible>Substring(Container.FolderPath,plugin:)</visible>
-			</control>-->
+			</control>
 			<control type="image" id="352">
 				<include>MenuBarSeparator</include>
 			</control>
@@ -411,7 +405,7 @@
 				<label>[UPPERCASE]$LOCALIZE[14022][/UPPERCASE]</label>
 				<onclick>ActivateWindow(3004)</onclick>
 				<onclick>Control.SetFocus(500)</onclick>
-				<enable>Substring(Container.FolderPath,musicdb) | Substring(Container.FolderPath,videodb://musicvideos/)</enable>
+				<enable>Substring(Container.FolderPath,musicdb) | Substring(Container.FolderPath,videodb://3/)</enable>
 				<visible>Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
 			</control>
 			<control type="image" id="369">
@@ -459,8 +453,8 @@
 	
 	<include name="MenuBarExtraOptions">
 		<control type="grouplist" id="212">
-			<left>99</left>
-			<top>0</top>
+			<posx>99</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -474,6 +468,26 @@
 			<visible>ControlGroup(505).HasFocus | !Skin.HasSetting(HideMenuBar)</visible>
 			<control type="image" id="99">
 				<include>MenuBarSeparator</include>
+			</control>
+			<control type="radiobutton" id="17">
+				<description>Flatten</description>
+				<include>MenuBarRadioBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[20411][/UPPERCASE]</label>
+				<visible>Window.IsVisible(Videos)</visible>
+			</control>
+			<control type="image" id="102">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsVisible(Videos)</visible>
+			</control>
+			<control type="radiobutton" id="7">
+				<description>Stacking</description>
+				<include>MenuBarRadioBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[346][/UPPERCASE]</label>
+				<visible>Window.IsVisible(Videos,Files)</visible>
+			</control>
+			<control type="image" id="103">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsVisible(Videos,Files)</visible>
 			</control>
 			<control type="radiobutton" id="16">
 				<description>Party Mode</description>
@@ -524,7 +538,7 @@
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="98">
+			<control type="button" id="20">
 				<visible>Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<include>MenuBarBtn</include>
@@ -535,40 +549,6 @@
 			<control type="image" id="116">
 				<visible>Container.CanFilterAdvanced</visible>
 				<include>MenuBarSeparator</include>
-			</control>
-			<control type="togglebutton" id="20">
-				<description>Update Library</description>
-				<include>MenuBarBtn</include>
-				<altlabel>[UPPERCASE]$LOCALIZE[13353][/UPPERCASE]</altlabel>
-				<label>[UPPERCASE]$LOCALIZE[653][/UPPERCASE]</label>
-				<visible>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary)</visible>
-			</control>
-			<control type="image" id="117">
-				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary)</visible>
-			</control>
-			<control type="button" id="408">
-				<description>Go to playlist</description>
-				<include>MenuBarBtn</include>
-				<onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
-				<onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
-				<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
-				<visible>Player.HasAudio | [Player.HasVideo + !VideoPlayer.Content(livetv)]</visible>
-			</control>
-			<control type="image" id="118">
-				<include>MenuBarSeparator</include>
-				<visible>Player.HasAudio | [Player.HasVideo + !VideoPlayer.Content(livetv)]</visible>
-			</control>
-			<control type="button" id="409">
-				<description>Fullscreen</description>
-				<include>MenuBarBtn</include>
-				<onclick>fullscreen</onclick>
-				<label>[UPPERCASE]$LOCALIZE[31961][/UPPERCASE]</label>
-				<visible>Player.HasMedia</visible>
-			</control>
-			<control type="image" id="119">
-				<include>MenuBarSeparator</include>
-				<visible>Player.HasMedia</visible>
 			</control>
 			<control type="radiobutton" id="405">			
 				<description>Shuffle</description>
@@ -684,8 +664,8 @@
 	
 	<include name="SettingsMenuBar">
 		<control type="grouplist" id="850">
-			<left>2</left>
-			<top>0</top>
+			<posx>2</posx>
+			<posy>0</posy>
 			<width>1278</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -779,8 +759,8 @@
 	
 	<include name="MyWeatherMenuBar">
 		<control type="grouplist" id="850">
-			<left>2</left>
-			<top>0</top>
+			<posx>2</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -807,7 +787,7 @@
 			</control>
 			<control type="label" id="119">
 				<description>Select Location Label</description>
-				<left>-160</left>
+				<posx>-160</posx>
 				<width>160</width>
 				<height>MenuBarHeight</height>	
 				<font>MenuBarBtnFont</font>	
@@ -821,7 +801,7 @@
 			</control>
 			<control type="label" id="120">
 				<description>Select Location Label</description>
-				<left>-160</left>
+				<posx>-160</posx>
 				<width>160</width>
 				<height>MenuBarHeight</height>	
 				<font>MenuBarBtnFont</font>	
@@ -858,8 +838,8 @@
 
 	<include name="MyWeatherPlusMenuBar">
 		<control type="grouplist" id="850">
-			<left>2</left>
-			<top>0</top>
+			<posx>2</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -886,7 +866,7 @@
 			</control>
 			<control type="label" id="119">
 				<description>Select Location Label</description>
-				<left>-160</left>
+				<posx>-160</posx>
 				<width>160</width>
 				<height>MenuBarHeight</height>	
 				<font>MenuBarBtnFont</font>	
@@ -900,7 +880,7 @@
 			</control>
 			<control type="label" id="120">
 				<description>Select Location Label</description>
-				<left>-160</left>
+				<posx>-160</posx>
 				<width>160</width>
 				<height>MenuBarHeight</height>	
 				<font>MenuBarBtnFont</font>	
@@ -997,7 +977,7 @@
 	<include name="PVRMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultPVRMenuBar</include>
@@ -1009,8 +989,8 @@
 		<control type="group" id="850">
 			<control type="grouplist" id="563">
 				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<top>0</top>
+				<posx>5</posx>
+				<posy>0</posy>
 				<width>150</width>
 				<height>MenuBarHeight</height>
 				<orientation>horizontal</orientation>
@@ -1061,8 +1041,8 @@
 
 	<include name="PVRMenuBarOptions">
 		<control type="grouplist" id="212">
-			<left>99</left>
-			<top>0</top>
+			<posx>99</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1149,8 +1129,8 @@
 
 	<include name="PVRMenuBarExtraOptions">
 		<control type="grouplist" id="212">
-			<left>99</left>
-			<top>0</top>
+			<posx>99</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1224,7 +1204,7 @@
 	<include name="NextAiredMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultNextAiredMenuBar</include>
@@ -1236,8 +1216,8 @@
 		<control type="group" id="850">
 			<control type="grouplist" id="563">
 				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<top>0</top>
+				<posx>5</posx>
+				<posy>0</posy>
 				<width>150</width>
 				<height>MenuBarHeight</height>
 				<orientation>horizontal</orientation>
@@ -1279,8 +1259,8 @@
 
 	<include name="NextAiredMenuBarOptions">
 		<control type="grouplist" id="212">
-			<left>99</left>
-			<top>0</top>
+			<posx>99</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1333,8 +1313,8 @@
 
 	<include name="ProfileSettingsMenuBar">
 		<control type="grouplist" id="850">
-			<left>2</left>
-			<top>0</top>
+			<posx>2</posx>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1353,22 +1333,12 @@
 			<control type="image" id="116">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="radiobutton" id="5">
-				<description>Auto Login</description>
-				<include>MenuBarRadioBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31960][/UPPERCASE]</label>
-				<label2>$INFO[System.ProfileAutoLogin]</label2>
-				<enable>!System.HasLoginScreen</enable>
-			</control>	
-			<control type="image" id="117">
-				<include>MenuBarSeparator</include>
-			</control>
 		</control>
 	</include>
 	
 	<include name="VideoInfoMenuBar">
 		<control type="grouplist" id="987">
-			<top>0</top>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1461,7 +1431,7 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="213">
+			<control type="button" id="211">
 				<description>TV Tunes</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
@@ -1474,7 +1444,7 @@
 				<visible>!Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] 
 				+ IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
 			</control>
-			<control type="button" id="214">
+			<control type="button" id="213">
 				<description>Edit Database</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[21435] $LOCALIZE[15101][/UPPERCASE]</label>
@@ -1485,7 +1455,7 @@
 				<include>MenuBarSeparator</include>
 				<visible>System.HasAddon(script.libraryeditor)</visible>
 			</control>
-			<control type="button" id="218">
+			<control type="button" id="214">
 				<description>Video Extras</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$ADDON[script.videoextras 32001][/UPPERCASE]</label>
@@ -1503,7 +1473,7 @@
 
 	<include name="AlbumInfoMenuBar">	
 		<control type="grouplist" id="987">
-			<top>0</top>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1580,7 +1550,7 @@
 	
 	<include name="AddonInfoMenuBar">	
 		<control type="grouplist" id="987">
-			<top>0</top>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1649,7 +1619,7 @@
 	
 	<include name="ProgramsInfoMenuBar">	
 		<control type="grouplist" id="987">
-			<top>0</top>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>
@@ -1709,7 +1679,7 @@
 	
 	<include name="VideoExtrasMenuBar">
 		<control type="grouplist" id="987">
-			<top>0</top>
+			<posy>0</posy>
 			<width>ScreenWidth</width>
 			<height>MenuBarHeight</height>
 			<itemgap>0</itemgap>

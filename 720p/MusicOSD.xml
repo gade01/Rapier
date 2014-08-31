@@ -4,20 +4,20 @@
 	
 	<coordinates>
 		<system>1</system>
-		<left>0</left>
-		<top>0</top>
+		<posx>0</posx>
+		<posy>0</posy>
 	</coordinates>	
 	
 	<controls>		
 		<control type="group">
 			<visible>![Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog)]</visible>
-			<top>655</top>
+			<posy>655</posy>
 			<include>BottomPaneOpenCloseAnim</include>
 			<include>PlayerControlsPanel</include>
 			
 			<control type="label">
-				<left>30</left>
-				<top>-25</top>
+				<posx>30</posx>
+				<posy>-25</posy>
 				<font>FSInfoFont2</font>
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
@@ -26,8 +26,8 @@
 			
 			<control type="grouplist" id="201">
 				<description>Player Settings Controls</description>
-				<left>57</left>
-				<top>17</top>
+				<posx>57</posx>
+				<posy>17</posy>
 				<width>300</width>
 				<height>35</height>
 				<itemgap>10</itemgap>
@@ -110,8 +110,8 @@
 			
 			<control type="grouplist" id="203">
 				<description>Player Extra Controls</description>
-				<left>313</left>
-				<top>15</top>
+				<posx>313</posx>
+				<posy>15</posy>
 				<width>160</width>
 				<height>40</height>
 				<itemgap>10</itemgap>
@@ -134,7 +134,7 @@
 				</control>
 				<control type="image" id="111">
 					<description>Rec No Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-record-nofocus.png</texture>
@@ -142,7 +142,7 @@
 				</control>
 				<control type="image" id="112">
 					<description>Rec Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-record-focus.png</texture>
@@ -150,7 +150,7 @@
 				</control>
 				<control type="image" id="113">
 					<description>Rec 2 No Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-record-2.png</texture>
@@ -158,7 +158,7 @@
 				</control>
 				<control type="image" id="114">
 					<description>Rec 2 Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-record-focus.png</texture>
@@ -175,7 +175,7 @@
 				</control>
 				<control type="image" id="251">
 					<description>Repeat No Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-nofocus.png</texture>
@@ -184,7 +184,7 @@
 				</control>
 				<control type="image" id="252">
 					<description>Repeat Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-focus.png</texture>
@@ -193,7 +193,7 @@
 				</control>
 				<control type="image" id="253">
 					<description>Repeat One No Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-one-nofocus.png</texture>
@@ -202,7 +202,7 @@
 				</control>
 				<control type="image" id="254">
 					<description>Repeat One Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-one-focus.png</texture>
@@ -211,7 +211,7 @@
 				</control>
 				<control type="image" id="255">
 					<description>Repeat All No Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-all-nofocus.png</texture>
@@ -220,7 +220,7 @@
 				</control>
 				<control type="image" id="256">
 					<description>Repeat All Focus</description>
-					<left>-50</left>
+					<posx>-50</posx>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-all-focus.png</texture>
@@ -243,8 +243,8 @@
 							
 			<control type="grouplist" id="202">
 				<description>Player Controls</description>
-				<left>489</left>
-				<top>10</top>
+				<posx>489</posx>
+				<posy>10</posy>
 				<width>310</width>
 				<height>50</height>
 				<itemgap>10</itemgap>
@@ -256,7 +256,7 @@
 				<onright>201</onright>
 				<control type="button" id="106">
 					<description>Skip Prev</description>
-					<top>5</top>
+					<posy>5</posy>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>osd/osd-skip-prev-focus.png</texturefocus>
@@ -266,7 +266,7 @@
 				</control>
 				<control type="button" id="105">
 					<description>Rewind</description>
-					<top>5</top>
+					<posy>5</posy>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>osd/osd-rewind-focus.png</texturefocus>
@@ -276,7 +276,7 @@
 				</control>
 				<control type="button" id="104">
 					<description>Stop</description>
-					<top>2</top>
+					<posy>2</posy>
 					<width>46</width>
 					<height>46</height>
 					<texturefocus>osd/osd-stop-focus.png</texturefocus>
@@ -286,7 +286,7 @@
 				</control>
 				<control type="togglebutton" id="107">
 					<description>Play/Pause</description>
-					<top>2</top>
+					<posy>2</posy>
 					<width>46</width>
 					<height>46</height>
 					<texturefocus>osd/osd-pause-focus.png</texturefocus>
@@ -299,7 +299,7 @@
 				</control>
 				<control type="button" id="108">
 					<description>Forward</description>
-					<top>5</top>
+					<posy>5</posy>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>osd/osd-forward-focus.png</texturefocus>
@@ -309,7 +309,7 @@
 				</control>		
 				<control type="button" id="109">
 					<description>Skip Next</description>
-					<top>5</top>
+					<posy>5</posy>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>osd/osd-skip-next-focus.png</texturefocus>
@@ -320,12 +320,12 @@
 			</control>
 		
 			<control type="group">
-				<left>780</left>
+				<posx>780</posx>
 				
 				<control type="progress">
 					<description>Progressbar Cache</description>
-					<left>29</left>
-					<top>39</top>
+					<posx>29</posx>
+					<posy>39</posy>
 					<width>412</width>
 					<midtexture border="2">controls/scrollbar-slider-horz-nofocus.png</midtexture>
 					<info>Player.ProgressCache</info>
@@ -334,16 +334,16 @@
 				
 				<control type="progress">
 					<description>Progressbar</description>
-					<left>29</left>
-					<top>39</top>
+					<posx>29</posx>
+					<posy>39</posy>
 					<width>412</width>
 					<info>Player.Progress</info>
 				</control>
 				
 				<control type="slider">
 					<description>Seek Slider</description>
-					<left>29</left>
-					<top>39</top>
+					<posx>29</posx>
+					<posy>39</posy>
 					<width>412</width>
 					<height>12</height>
 					<action>seek</action>
@@ -353,27 +353,29 @@
 				</control>
 				
 				<control type="grouplist">
-					<left>29</left>
-					<top>6</top>
+					<posx>29</posx>
+					<posy>6</posy>
 					<height>40</height>
 					<width>260</width>
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>horizontal</orientation>
 					<control type="label">
 						<description>Elapsed/Duration Time</description>
-						<top>5</top>
+						<posy>18</posy>
 						<width min="0" max="250">auto</width>
 						<font>OSDFont</font>
 						<textcolor>ProgressColor</textcolor>
 						<label>$INFO[Player.Time] $INFO[Player.Duration,/ ]</label>
+						<aligny>center</aligny>
 						<visible>!Player.Seeking</visible>
 					</control>
 					<control type="label">
 						<description>Caching</description>
-						<top>5</top>
+						<posy>18</posy>
 						<font>OSDFont</font>
 						<textcolor>DisabledColor</textcolor>
 						<textoffsetx>5</textoffsetx>
+						<aligny>center</aligny>
 						<label>$INFO[Player.CacheLevel]%</label>
 						<visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
 					</control>
@@ -382,25 +384,28 @@
 
 				<control type="grouplist">
 					<description>Playlist</description>
-					<right>-59</right>
-					<top>6</top>
+					<posx>241</posx>
+					<posy>6</posy>
 					<height>40</height>
 					<width>200</width>
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>horizontal</orientation>
+					<align>right</align>
 					<control type="image">
-						<top>5</top>
+						<posx>20</posx>
+						<posy>5</posy>
 						<width>28</width>
 						<height>28</height>	
 						<texture>gui/notification-playlist.png</texture>
 						<bordersize>2</bordersize>
 					</control>
 					<control type="label">
-						<top>5</top>
+						<posy>18</posy>
 						<width min="0" max="172">auto</width>
 						<font>OSDFont</font>
 						<textcolor>ProgressColor2</textcolor>
 						<label>$INFO[MusicPlayer.PlaylistPosition] $INFO[MusicPlayer.PlaylistLength,/ ]</label>
+						<aligny>center</aligny>
 					</control>
 				</control>
 			</control>

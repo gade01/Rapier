@@ -3,22 +3,22 @@
 	<allowoverlay>no</allowoverlay>
 	<coordinates>
 		<system>1</system>
-		<left>0</left>
-		<top>0</top>
+		<posx>0</posx>
+		<posy>0</posy>
 	</coordinates>
 
 	<controls>
 		<control type="group" id="102">
 			<description>Video Info Panel</description>
-			<left>28</left>
-			<top>350</top>
+			<posx>28</posx>
+			<posy>350</posy>
 			<visible>Window.IsActive(FullScreenVideo)</visible>
 			<include>FSMediaInfoPanel</include>
 			<include>FSMediaInfoOpenCloseAnim</include>
 
 			<control type="group">			
-				<left>18</left>
-				<top>10</top>
+				<posx>18</posx>
+				<posy>10</posy>
 
 				<control type="grouplist">
 					<width>820</width>
@@ -39,7 +39,7 @@
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
-						<top>2</top>
+						<posy>2</posy>
 						<width>100</width>
 						<height>32</height>		
 						<texture>$INFO[Player.StarRating]</texture>
@@ -50,7 +50,7 @@
 
 				<control type="label">
 					<description>Genre</description>
-					<top>30</top>
+					<posy>30</posy>
 					<width>820</width>
 					<height>26</height>
 					<font>FSInfoFont</font>
@@ -62,21 +62,21 @@
 
 				<control type="grouplist">
 					<description>Time</description>
-					<left>868</left>
+					<posx>868</posx>
 					<width>320</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="image">
-						<top>6</top>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>	
 						<texture>pvr/status_timer_alt.png</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
-						<left>-6</left>
+						<posx>-6</posx>
 						<height>60</height>	
 						<width min="25" max="250">auto</width>
 						<font>FSInfoTitleFont</font>
@@ -89,7 +89,7 @@
 
 				<control type="grouplist">
 					<description>Media Info Labels</description>
-					<top>66</top>
+					<posy>66</posy>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -114,7 +114,7 @@
 
 				<control type="textbox">
 					<description>Plot</description>
-					<top>105</top>
+					<posy>105</posy>
 					<width>820</width>
 					<height>100</height>
 					<font>MediaInfoDescFont</font>
@@ -128,7 +128,7 @@
 
 				<control type="grouplist">
 					<description>Media Flags Area</description>
-					<top>214</top>
+					<posy>214</posy>
 					<width>890</width>
 					<height>35</height>
 					<itemgap>5</itemgap>
@@ -138,15 +138,14 @@
 					<include>MediaFlagFadeAnim</include>
 					<include>PlayerVideoMediaFlags</include>
 					<include>PlayerAudioMediaFlags</include>
-					<include>PlayerAspectMediaFlags</include>
 					<include>PlayerRatingMediaFlags</include>
 				</control>
 			</control>
 
 			<control type="image">
 				<description>Channel Logo</description>
-				<left>983</left>
-				<top>92</top>
+				<posx>983</posx>
+				<posy>92</posy>
 				<width>210</width>
 				<height>167</height>
 				<texture diffuse="covers/player-media-cover-diffuse.png" fallback="pvr/DefaultPVRLogo.png">$INFO[Control.GetLabel(506)]</texture>
@@ -156,8 +155,8 @@
 
 		<control type="image">
 			<description>Channel Bug</description>
-			<left>220r</left>
-			<top>120r</top>
+			<posx>220r</posx>
+			<posy>120r</posy>
 			<width>150</width>
 			<height>100</height>
 			<aspectratio>keep</aspectratio>

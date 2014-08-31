@@ -6,16 +6,16 @@
 	<controls>	
 		<control type="group">
 			<description>Video Info Panel</description>
-			<left>28</left>
-			<top>350</top>
+			<posx>28</posx>
+			<posy>350</posy>
 			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks)
 			| Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<include>FSMediaInfoPanel</include>
 			<include>FSMediaInfoOpenCloseAnim</include>
 
 			<control type="group">			
-				<left>18</left>
-				<top>10</top>
+				<posx>18</posx>
+				<posy>10</posy>
 				
 				<control type="grouplist">
 					<width>820</width>
@@ -36,7 +36,7 @@
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
-						<top>2</top>
+						<posy>2</posy>
 						<width>100</width>
 						<height>32</height>		
 						<texture>$INFO[Player.StarRating]</texture>
@@ -47,7 +47,7 @@
 
 				<control type="label">
 					<description>Genre</description>
-					<top>30</top>
+					<posy>30</posy>
 					<width>820</width>
 					<height>26</height>
 					<font>FSInfoFont</font>
@@ -59,21 +59,21 @@
 				
 				<control type="grouplist">
 					<description>Time</description>
-					<left>868</left>
+					<posx>868</posx>
 					<width>320</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="image">
-						<top>6</top>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>	
 						<texture>pvr/status_timer_alt.png</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
-						<left>-6</left>
+						<posx>-6</posx>
 						<height>60</height>	
 						<width min="25" max="250">auto</width>
 						<font>FSInfoTitleFont</font>
@@ -86,8 +86,8 @@
 		
 				<control type="grouplist">
 					<description>Chapter</description>
-					<left>788</left>
-					<top>30</top>
+					<posx>788</posx>
+					<posy>30</posy>
 					<width>400</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
@@ -115,8 +115,8 @@
 
 				<control type="grouplist">
 					<description>LiveTV NextTitle</description>
-					<left>588</left>
-					<top>30</top>
+					<posx>588</posx>
+					<posy>30</posy>
 					<width>600</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
@@ -144,7 +144,7 @@
 				
 				<control type="grouplist">
 					<description>Media Info Labels</description>
-					<top>66</top>
+					<posy>66</posy>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -187,7 +187,7 @@
 
 				<control type="textbox">
 					<description>Plot</description>
-					<top>105</top>
+					<posy>105</posy>
 					<width>820</width>
 					<height>100</height>
 					<font>MediaInfoDescFont</font>
@@ -201,7 +201,7 @@
 			
 				<control type="grouplist">
 					<description>Media Flags Area</description>
-					<top>214</top>
+					<posy>214</posy>
 					<width>890</width>
 					<height>35</height>
 					<itemgap>5</itemgap>
@@ -211,15 +211,14 @@
 					<include>MediaFlagFadeAnim</include>
 					<include>PlayerVideoMediaFlags</include>
 					<include>PlayerAudioMediaFlags</include>
-					<include>PlayerAspectMediaFlags</include>
 					<include>PlayerRatingMediaFlags</include>
 				</control>
 			</control>
 
 			<control type="image">
 				<description>Cover</description>
-				<left>857</left>
-				<top>90</top>
+				<posx>857</posx>
+				<posy>90</posy>
 				<width>343</width>
 				<height>169</height>
 				<texture diffuse="covers/player-media-cover-diffuse.png">$VAR[ClearImageOSD]</texture>

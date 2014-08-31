@@ -2,8 +2,8 @@
 <includes> 
 	<include name="Notifications">
 		<control type="grouplist">		
-			<left>490</left>
-			<top>StatusBartop</top>
+			<posx>490</posx>
+			<posy>StatusBarPosY</posy>
 			<height>43</height>
 			<width>780</width>
 			<itemgap>4</itemgap>
@@ -17,25 +17,26 @@
 				<bordersize>1</bordersize>
 				<aspectratio>keep</aspectratio>
 				<visible>Player.HasAudio + !Window.IsActive(Home)</visible>
-				<include condition="System.HasAddon(script.tvtunes) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(musicvideos)]">TVTunesDisableVizCond</include>
+				<include condition="System.HasAddon(script.tvtunes) + Window.IsActive(Videos)">TVTunesDisableVizCond</include>
 			</control>
 			<control type="label" id="5556">
 				<description>Audio Playing Line 1</description>
-				<top>3</top>
+				<posy>3</posy>
 				<width>210</width>
 				<height>16</height>
 				<font>NowPlayingFont</font>	
 				<textcolor>StatusBarColor</textcolor>
 				<label>$INFO[MusicPlayer.Title]</label>
+				<aligny>top</aligny>
 				<scroll>yes</scroll>
 				<scrollsuffix> - </scrollsuffix>
 				<visible>Player.HasAudio + !Window.IsActive(Home)</visible>
-				<include condition="System.HasAddon(script.tvtunes) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(musicvideos)]">TVTunesDisableVizCond</include>
+				<include condition="System.HasAddon(script.tvtunes) + Window.IsActive(Videos)">TVTunesDisableVizCond</include>
 			</control>			
 			<control type="fadelabel" id="5557">
 				<description>Audio Playing Line 2</description>
-				<left>-214</left>
-				<top>20</top>
+				<posx>-214</posx>
+				<posy>20</posy>
 				<width>210</width>
 				<height>16</height>
 				<font>NowPlayingFont2</font>	
@@ -44,12 +45,22 @@
 				<label>$INFO[MusicPlayer.Album] $INFO[MusicPlayer.Year,(,)]</label>
 				<label>$INFO[MusicPlayer.ChannelName]</label>
 				<label>$INFO[MusicPlayer.Time] / $INFO[Player.Duration]</label>
+				<aligny>top</aligny>
 				<scroll>yes</scroll>
 				<scrollout>false</scrollout>
 				<pauseatend>1500</pauseatend>
 				<resetonlabelchange>false</resetonlabelchange>
 				<visible>Player.HasAudio + !Window.IsActive(Home)</visible>
-				<include condition="System.HasAddon(script.tvtunes) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(musicvideos)]">TVTunesDisableVizCond</include>
+				<include condition="System.HasAddon(script.tvtunes) + Window.IsActive(Videos)">TVTunesDisableVizCond</include>
+			</control>
+			<control type="button">
+				<posx>-267</posx>
+				<width>267</width>
+				<height>43</height>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onclick>ActivateWindow(2006)</onclick>
+				<visible>Player.HasAudio + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="image" id="5558">
 				<width>43</width>
@@ -61,20 +72,21 @@
 			</control>
 			<control type="label" id="5559">
 				<description>Video Playing Line 1</description>
-				<top>2</top>
+				<posy>2</posy>
 				<width>210</width>
 				<height>16</height>
 				<font>NowPlayingFont</font>	
 				<textcolor>StatusBarColor</textcolor>
 				<label>$INFO[VideoPlayer.Title] $INFO[VideoPlayer.Year,(,)]</label>
+				<aligny>top</aligny>
 				<scroll>yes</scroll>
 				<scrollsuffix> - </scrollsuffix>
 				<visible>Player.HasVideo + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="fadelabel" id="5560">
 				<description>Video Playing Line 2</description>
-				<left>-214</left>
-				<top>20</top>
+				<posx>-214</posx>
+				<posy>20</posy>
 				<width>210</width>
 				<height>16</height>
 				<font>NowPlayingFont2</font>	
@@ -83,6 +95,7 @@
 				<label>$INFO[VideoPlayer.Genre]</label>
 				<label>$INFO[VideoPlayer.ChannelName]</label>
 				<label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
+				<aligny>top</aligny>
 				<scroll>yes</scroll>
 				<scrollout>false</scrollout>
 				<pauseatend>1500</pauseatend>
@@ -90,20 +103,20 @@
 				<visible>Player.HasVideo + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="button">
-				<left>-267</left>
+				<posx>-267</posx>
 				<width>267</width>
 				<height>43</height>
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<onclick>ActivateWindow(PlayerControls)</onclick>
-				<visible>Player.HasMedia + !Window.IsActive(Home)</visible>
+				<onclick>ActivateWindow(2005)</onclick>
+				<visible>Player.HasVideo + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="image">
 				<width>6</width>
 			</control>
 			<control type="button" id="5562">
 				<description>DVD</description>
-				<top>6</top>
+				<posy>6</posy>
 				<width>33</width>
 				<height>33</height>	
 				<texturenofocus>gui/notification-media-dvd.png</texturenofocus>
@@ -131,8 +144,8 @@
 			</control>
 			<control type="progress" id="5565">
 				<description>Volume Progress</description>
-				<left>-86</left>
-				<top>7</top>
+				<posx>-86</posx>
+				<posy>7</posy>
 				<width>73</width>
 				<height>29</height>
 				<info>Player.Volume</info>
@@ -178,7 +191,7 @@
 			<visible>Skin.HasSetting(SkinDateFormat)</visible>
 		</control>
 		<control type="image">
-			<top>3</top>
+			<posy>3</posy>
 			<width>3</width>
 			<height>39</height>
 			<texture border="0,12,0,13">gui/status-bar-separator.png</texture>		
@@ -190,8 +203,8 @@
 		<include condition="Skin.HasSetting(EnableAnimWeatherIcons) + Skin.HasSetting(ApplyAllAnimWeatherIcons)">WeatherAnimNotificationIcon</include>
 
 		<control type="label" id="5568">
+			<posy>21</posy>
 			<width min="25" max="250">auto</width>
-			<height>42</height>
 			<font>BreadCrumbFont</font>
 			<textcolor>BreadCrumbColor</textcolor>
 			<label> $INFO[Weather.Temperature] </label>
@@ -199,7 +212,7 @@
 			<visible>!IsEmpty(Weather.Conditions)</visible>
 		</control>
 		<control type="image">
-			<top>3</top>
+			<posy>3</posy>
 			<width>3</width>
 			<height>39</height>
 			<texture border="0,12,0,13">gui/status-bar-separator.png</texture>
@@ -210,7 +223,7 @@
 	<include name="BatteryNotification">
 		<control type="image">	
 			<animation effect="fade" end="65" condition="true">Conditional</animation>
-			<top>8</top>
+			<posy>8</posy>
 			<width>30</width>
 			<height>27</height>
 			<texture>gui/battery100.png</texture>
@@ -220,7 +233,7 @@
 		
 		<control type="image">	
 			<animation effect="fade" end="65" condition="true">Conditional</animation>
-			<top>8</top>
+			<posy>8</posy>
 			<width>30</width>
 			<height>27</height>
 			<texture>gui/battery66.png</texture>
@@ -230,7 +243,7 @@
 		
 		<control type="image">	
 			<animation effect="fade" end="65" condition="true">Conditional</animation>
-			<top>8</top>
+			<posy>8</posy>
 			<width>30</width>
 			<height>27</height>
 			<texture>gui/battery33.png</texture>
@@ -240,7 +253,7 @@
 		
 		<control type="image">	
 			<animation effect="fade" start="10" end="65" time="700" pulse="true" condition="true">Conditional</animation>
-			<top>8</top>
+			<posy>8</posy>
 			<width>30</width>
 			<height>27</height>
 			<texture>gui/battery0.png</texture>
@@ -249,7 +262,7 @@
 		</control>
 		
 		<control type="image">
-			<top>3</top>
+			<posy>3</posy>
 			<width>3</width>
 			<height>39</height>
 			<texture border="0,12,0,13">gui/status-bar-separator.png</texture>

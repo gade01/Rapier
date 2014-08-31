@@ -8,8 +8,8 @@
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="list" id="11">
-				<left>595</left>
-				<top>110</top>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>906</pagecontrol>
@@ -23,8 +23,8 @@
 					<include>LiveTVListInfoStyleItemLayout</include>
 					<control type="group">
 						<description>Progress</description>
-						<left>596</left>
-						<top>25</top>
+						<posx>596</posx>
+						<posy>25</posy>
 						<include>LiveTVProgressImage</include>
 					</control>	
 				</itemlayout>
@@ -32,8 +32,8 @@
 					<include>LiveTVListInfoStyleFocusedLayout</include>
 					<control type="group">
 						<description>Progress</description>
-						<left>596</left>
-						<top>25</top>
+						<posx>596</posx>
+						<posy>25</posy>
 						<include>LiveTVProgressImage</include>
 					</control>
 				</focusedlayout>
@@ -42,13 +42,13 @@
 			<include>ListInfo2ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -65,8 +65,8 @@
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="list" id="12">
-				<left>595</left>
-				<top>110</top>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>906</pagecontrol>
@@ -87,13 +87,13 @@
 			<include>ListInfo2ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -110,8 +110,8 @@
 			<include>ControlsOpenCloseAnim</include> 
 
 			<control type="list" id="13">
-				<left>595</left>
-				<top>110</top>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>906</pagecontrol>
@@ -125,8 +125,8 @@
 					<include>LiveTVListInfoStyleItemLayout</include>
 					<control type="group">
 						<description>Overlay</description>
-						<left>596</left>
-						<top>25</top>
+						<posx>596</posx>
+						<posy>25</posy>
 						<include>LiveTVOverlayImage</include>
 					</control>
 				</itemlayout>
@@ -134,8 +134,8 @@
 					<include>LiveTVListInfoStyleFocusedLayout</include>
 					<control type="group">
 						<description>Overlay</description>
-						<left>596</left>
-						<top>25</top>
+						<posx>596</posx>
+						<posy>25</posy>
 						<include>LiveTVOverlayImage</include>
 					</control>
 				</focusedlayout>
@@ -144,13 +144,13 @@
 			<include>ListInfo2ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -170,18 +170,19 @@
 
 			<control type="group">
 				<description>Media Info Area</description>
-				<left>38</left>
-				<top>430</top>
+				<posx>38</posx>
+				<posy>430</posy>
 
 				<control type="grouplist">
-					<left>10</left>
-					<top>0</top>
+					<posx>10</posx>
+					<posy>0</posy>
 					<orientation>horizontal</orientation>
 					<control type="label">
 						<width min="0" max="110">auto</width>
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$VAR[LiveTVListInfoLabel1]</label>
 					</control>
 					<control type="label">
@@ -189,19 +190,21 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$VAR[LiveTVListInfoLabel1Val]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
-					<left>10</left>
-					<top>22</top>
+					<posx>10</posx>
+					<posy>22</posy>
 					<orientation>horizontal</orientation>
 					<control type="label">
 						<width min="0" max="110">auto</width>
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$VAR[LiveTVListInfoLabel2]</label>
 					</control>
 					<control type="label">
@@ -209,13 +212,14 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$VAR[LiveTVListInfoLabel2Val]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
-					<left>366</left>
-					<top>0</top>
+					<posx>366</posx>
+					<posy>0</posy>
 					<width>170</width>
 					<orientation>horizontal</orientation>
 					<align>right</align>
@@ -224,6 +228,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[19126]:</label>
 					</control>
 					<control type="label">
@@ -231,13 +236,14 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.StartTime]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
-					<left>366</left>
-					<top>22</top>
+					<posx>366</posx>
+					<posy>22</posy>
 					<width>170</width>
 					<orientation>horizontal</orientation>
 					<align>right</align>
@@ -246,6 +252,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[19127]:</label>
 					</control>
 					<control type="label">
@@ -253,6 +260,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.EndTime]</label>
 					</control>
 				</control>
@@ -260,8 +268,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>48</left>
-				<top>492</top>
+				<posx>48</posx>
+				<posy>492</posy>
 				<width>526</width>
 				<height>122</height>
 				<font>MediaInfoDescFont</font>
@@ -279,7 +287,7 @@
 
 	<include name="LiveTVListInfoStyleItemLayout">
 		<control type="image">
-			<left>0</left>
+			<posx>0</posx>
 			<width>630</width>
 			<height>74</height>	
 			<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -288,8 +296,8 @@
 
 		<control type="image">
 			<description>Icon</description>
-			<left>0</left>
-			<top>0</top>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>73</width>
 			<height>73</height>
 			<bordersize>5</bordersize>
@@ -299,30 +307,32 @@
 
 		<control type="label">
 			<description>Label</description>
-			<left>80</left>
-			<top>12</top>
+			<posx>80</posx>
+			<posy>22</posy>
 			<width>411</width>
 			<font>ListFont</font>
 			<textcolor>ListColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<label>$VAR[LiveTVListInfoItemLabel]</label>
+			<aligny>center</aligny>
 		</control>
 
 		<control type="label">
 			<description>Label2</description>
-			<left>80</left>
-			<top>38</top>
+			<posx>80</posx>
+			<posy>47</posy>
 			<width>411</width>
 			<font>ListFont2</font>
 			<textcolor>ListColor2</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<aligny>center</aligny>				
 			<label>$VAR[LiveTVListInfoItemLabel2]</label>
 		</control>		
 	</include>
 
 	<include name="LiveTVListInfoStyleFocusedLayout">
 		<control type="image">
-			<left>0</left>
+			<posx>0</posx>
 			<width>630</width>
 			<height>74</height>	
 			<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -330,7 +340,7 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
+			<posx>0</posx>
 			<width>630</width>
 			<height>73</height>
 			<texture border="4">views/list-focus.png</texture>
@@ -343,7 +353,7 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
+			<posx>0</posx>
 			<width>630</width>
 			<height>73</height>
 			<texture border="4">views/list-alt-focus.png</texture>
@@ -356,8 +366,8 @@
 
 		<control type="image">
 			<description>Icon</description>
-			<left>0</left>
-			<top>0</top>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>73</width>
 			<height>73</height>
 			<bordersize>5</bordersize>
@@ -370,35 +380,37 @@
 			<include>ListViewFocusAnim</include>
 			<control type="label">
 				<description>Label</description>
-				<left>80</left>
-				<top>12</top>
+				<posx>80</posx>
+				<posy>22</posy>
 				<width>411</width>
 				<font>ListFont</font>
 				<textcolor>SelectedColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$VAR[LiveTVListInfoItemLabel]</label>
+				<aligny>center</aligny>
 				<scroll>yes</scroll>
 			</control>
 
 			<control type="label">
 				<description>Label2</description>
-				<left>80</left>
-				<top>38</top>
+				<posx>80</posx>
+				<posy>47</posy>
 				<width>411</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$VAR[LiveTVListInfoItemLabel2]</label>
+				<aligny>center</aligny>
 			</control>
 		</control>					
 	</include>
 	<!--//// END LIST INFO VIEWS ////////////////////////////////////////////////////////////////-->
 
 	<!--//// START COLUMN INFO VIEWS ////////////////////////////////////////////////////////////-->
-	<include name="EPGTimelineView">		
+	<include name="LiveTVEPGTimelineView">		
 		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
+			<posx>40</posx>
+			<posy>110</posy>
 			<defaultcontrol always="true">10</defaultcontrol>
 			<visible>Skin.String(ViewsPVR,3) + Control.IsVisible(10)</visible>
 			<include>ControlsOpenCloseAnim</include>
@@ -411,7 +423,7 @@
 				<include>LiveTVColumnFadeAnim</include>
 			</control>
 			<control type="image">
-				<left>220</left>
+				<posx>220</posx>
 				<width>1030</width>
 				<height>30</height>
 				<texture border="8" flipx="true">pvr/column-left.png</texture>
@@ -426,16 +438,14 @@
 				<scrolltime>150</scrolltime>
 				<timeblocks>40</timeblocks>
 				<rulerunit>6</rulerunit>
-				<progresstexture border="0,45,20,7">pvr/EpgProgressIndicator.png</progresstexture>
 				<onleft>31</onleft>
 				<onright>31</onright>
-				<onup>850</onup>
-				<onback>850</onback>
+				<onup>10</onup>
 				<ondown>10</ondown>
 				<rulerlayout height="34" width="42">
 					<control type="label">
 						<description>Date</description>
-						<left>15</left>
+						<posx>15</posx>
 						<width>310</width>
 						<height>30</height>
 						<include>LiveTVColumnHeaderLabel</include>
@@ -455,7 +465,7 @@
 
 					<control type="label">
 						<description>Channel Number</description>
-						<left>15</left>
+						<posx>15</posx>
 						<width>215</width>
 						<height>38</height>
 						<include>LiveTVColumnNumberLabel</include>
@@ -464,7 +474,7 @@
 
 					<control type="label">
 						<description>Channel Name</description>
-						<left>200</left>
+						<posx>200</posx>
 						<width>150</width>
 						<height>38</height>
 						<include>LiveTVColumnChannelLabel</include>
@@ -484,7 +494,7 @@
 
 					<control type="label">
 						<description>Channel Number</description>
-						<left>15</left>
+						<posx>15</posx>
 						<width>215</width>
 						<height>38</height>
 						<include>LiveTVColumnNumberLabel</include>
@@ -493,7 +503,7 @@
 
 					<control type="label">
 						<description>Channel Name</description>
-						<left>200</left>
+						<posx>200</posx>
 						<width>150</width>
 						<height>38</height>
 						<include>LiveTVColumnChannelLabel</include>
@@ -617,7 +627,7 @@
 					</control>
 
 					<control type="label" id="1">
-						<left>8</left>
+						<posx>8</posx>
 						<width>85</width>
 						<height>38</height>
 						<align>left</align>
@@ -627,7 +637,7 @@
 					</control>
 
 					<control type="label" id="1">
-						<left>40</left>
+						<posx>40</posx>
 						<width>20</width>
 						<height>38</height>
 						<align>left</align>
@@ -638,8 +648,8 @@
 
 					<control type="image">
 						<description>Timer</description>
-						<left>10</left>
-						<top>8</top>
+						<posx>10</posx>
+						<posy>8</posy>
 						<width>22</width>
 						<height>22</height>
 						<texture>pvr/status_timer.png</texture>
@@ -649,8 +659,8 @@
 
 					<control type="image">
 						<description>Record</description>
-						<left>10</left>
-						<top>8</top>
+						<posx>10</posx>
+						<posy>8</posy>
 						<width>22</width>
 						<height>22</height>
 						<texture>pvr/status_recording.png</texture>
@@ -669,7 +679,7 @@
 					</control>
 
 					<control type="label" id="1">
-						<left>8</left>
+						<posx>8</posx>
 						<width>85</width>
 						<height>38</height>
 						<align>left</align>
@@ -679,7 +689,7 @@
 					</control>
 
 					<control type="label" id="1">
-						<left>40</left>
+						<posx>40</posx>
 						<width>20</width>
 						<height>38</height>
 						<align>left</align>
@@ -690,8 +700,8 @@
 
 					<control type="image">
 						<description>Timer</description>
-						<left>10</left>
-						<top>8</top>
+						<posx>10</posx>
+						<posy>8</posy>
 						<width>22</width>
 						<height>22</height>
 						<texture>pvr/status_timer.png</texture>
@@ -701,8 +711,8 @@
 
 					<control type="image">
 						<description>Record</description>
-						<left>10</left>
-						<top>8</top>
+						<posx>10</posx>
+						<posy>8</posy>
 						<width>22</width>
 						<height>22</height>
 						<texture>pvr/status_recording.png</texture>
@@ -716,8 +726,8 @@
 
 	<include name="LiveTVGuideNowNextView">
 		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
+			<posx>40</posx>
+			<posy>110</posy>
 			<defaultcontrol always="true">16</defaultcontrol>
 			<visible>Skin.String(ViewsPVR,3) + Control.IsVisible(16)</visible>
 			<include>ControlsOpenCloseAnim</include>
@@ -725,7 +735,7 @@
 			<include>LiveTVColumnHeaderArea2</include>
 
 			<control type="list" id="16">
-				<top>34</top>
+				<posy>34</posy>
 				<width>1220</width>
 				<height>336</height>
 				<onup>16</onup>
@@ -751,8 +761,8 @@
 
 	<include name="LiveTVGuideChannelView">
 		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
+			<posx>40</posx>
+			<posy>110</posy>
 			<defaultcontrol always="true">15</defaultcontrol>
 			<visible>Skin.String(ViewsPVR,3) + Control.IsVisible(15)</visible>
 			<include>ControlsOpenCloseAnim</include>
@@ -760,43 +770,43 @@
 			<include>LiveTVColumnHeaderArea</include>
 
 			<control type="group">
-				<top>76</top>
+				<posy>76</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(1).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>118</top>
+				<posy>118</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(2).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>160</top>
+				<posy>160</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(3).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>202</top>
+				<posy>202</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(4).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>244</top>
+				<posy>244</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(5).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>286</top>
+				<posy>286</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(6).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>328</top>
+				<posy>328</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(15).ListItemPosition(7).ChannelName,)</visible>
 			</control>
 
 			<control type="list" id="15">
-				<top>34</top>
+				<posy>34</posy>
 				<width>1220</width>
 				<height>336</height>
 				<onup>15</onup>
@@ -822,8 +832,8 @@
 
 	<include name="LiveTVSearchView">
 		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
+			<posx>40</posx>
+			<posy>110</posy>
 			<defaultcontrol always="true">17</defaultcontrol>
 			<visible>Skin.String(ViewsPVR,4)</visible>
 			<include>ControlsOpenCloseAnim</include>
@@ -831,43 +841,43 @@
 			<include>LiveTVColumnHeaderArea</include>
 
 			<control type="group">
-				<top>76</top>
+				<posy>76</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(1).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>118</top>
+				<posy>118</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(2).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>160</top>
+				<posy>160</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(3).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>202</top>
+				<posy>202</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(4).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>244</top>
+				<posy>244</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(5).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>286</top>
+				<posy>286</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(6).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>328</top>
+				<posy>328</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(17).ListItemPosition(7).ChannelName,)</visible>
 			</control>
 
 			<control type="list" id="17">
-				<top>34</top>
+				<posy>34</posy>
 				<width>1220</width>
 				<height>336</height>
 				<onup>17</onup>
@@ -893,8 +903,8 @@
 
 	<include name="LiveTVTimersView">
 		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
+			<posx>40</posx>
+			<posy>110</posy>
 			<defaultcontrol always="true">14</defaultcontrol>
 			<visible>Skin.String(ViewsPVR,5)</visible>
 			<include>ControlsOpenCloseAnim</include>
@@ -902,43 +912,43 @@
 			<include>LiveTVColumnHeaderArea</include>
 
 			<control type="group">
-				<top>76</top>
+				<posy>76</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(1).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>118</top>
+				<posy>118</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(2).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>160</top>
+				<posy>160</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(3).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>202</top>
+				<posy>202</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(4).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>244</top>
+				<posy>244</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(5).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>286</top>
+				<posy>286</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(6).ChannelName,)</visible>
 			</control>
 			<control type="group">
-				<top>328</top>
+				<posy>328</posy>
 				<include>LiveTVColumnItemLayout</include>
 				<visible>StringCompare(Container(14).ListItemPosition(7).ChannelName,)</visible>
 			</control>
 
 			<control type="list" id="14">
-				<top>34</top>
+				<posy>34</posy>
 				<width>1220</width>
 				<height>336</height>
 				<onup>14</onup>
@@ -963,17 +973,17 @@
 	</include>
 
 	<include name="LiveTVColumnInfoArea">
-		<!-- EPGTimelineView, LiveTVGuideNowNextView, LiveTVGuideChannelView,
+		<!-- LiveTVEPGTimelineView, LiveTVGuideNowNextView, LiveTVGuideChannelView,
 			 LiveTVSearchView, LiveTVTimersView -->
 		<control type="group">
-			<left>40</left>
-			<top>510</top>
+			<posx>40</posx>
+			<posy>510</posy>
 			<visible>Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4) | Skin.String(ViewsPVR,5)</visible>
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="group">
 				<description>Cover Area</description>
-				<top>6</top>
+				<posy>6</posy>
 				<visible>Player.HasVideo</visible>
 				<control type="image">
 					<description>Cover Background</description>
@@ -985,8 +995,8 @@
 				</control>
 				<control type="videowindow">
 					<description>Video</description>
-					<left>4</left>
-					<top>4</top>
+					<posx>4</posx>
+					<posy>4</posy>
 					<width>207</width>
 					<height>112</height>
 					<aspectratio>stretch</aspectratio>
@@ -995,7 +1005,7 @@
 
 			<control type="image">
 				<description>Logo</description>
-				<left>15</left>
+				<posx>15</posx>
 				<width>185</width>
 				<height>185</height>
 				<texture background="true" fallback="pvr/DefaultPVRLogo.png">$INFO[ListItem.Icon]</texture>
@@ -1006,7 +1016,7 @@
 
 			<control type="image">
 				<description>Logo</description>
-				<left>15</left>
+				<posx>15</posx>
 				<width>185</width>
 				<height>185</height>
 				<texture background="true">pvr/DefaultPVRLogo.png</texture>
@@ -1017,7 +1027,7 @@
 
 			<control type="group">
 				<description>Info</description>
-				<left>220</left>
+				<posx>220</posx>
 				<visible>[Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4)] + !IsEmpty(ListItem.Title)</visible>
 				<control type="label">
 					<description>Title</description>
@@ -1030,7 +1040,7 @@
 				</control>
 
 				<control type="grouplist">
-					<top>23</top>
+					<posy>23</posy>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
@@ -1056,7 +1066,7 @@
 
 				<control type="textbox">
 					<description>Plot</description>
-					<top>53</top>
+					<posy>53</posy>
 					<width>980</width>
 					<height>77</height>
 					<font>MediaInfoDescFont</font>
@@ -1072,11 +1082,11 @@
 
 			<control type="group">
 				<description>No Info</description>
-				<left>220</left>
+				<posx>220</posx>
 				<visible>[Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4)] + IsEmpty(ListItem.Title)</visible>
 				<control type="label">
 					<description>Title</description>
-					<top>20</top>
+					<posy>20</posy>
 					<width>700</width>
 					<height>33</height>
 					<aligny>center</aligny>
@@ -1086,7 +1096,7 @@
 				</control>
 				<control type="textbox">
 					<description>Plot</description>
-					<top>53</top>
+					<posy>53</posy>
 					<width>980</width>
 					<height>70</height>
 					<font>MediaInfoDescFont</font>
@@ -1102,7 +1112,7 @@
 
 			<control type="group">
 				<description>Info</description>
-				<left>220</left>
+				<posx>220</posx>
 				<visible>Skin.String(ViewsPVR,5) + !StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
 				<control type="label">
 					<description>Label</description>
@@ -1115,7 +1125,7 @@
 				</control>
 
 				<control type="grouplist">
-					<top>23</top>
+					<posy>23</posy>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
@@ -1141,7 +1151,7 @@
 
 				<control type="textbox">
 					<description>Timer</description>
-					<top>53</top>
+					<posy>53</posy>
 					<width>980</width>
 					<height>70</height>
 					<font>MediaInfoDescFont</font>
@@ -1157,11 +1167,11 @@
 
 			<control type="group">
 				<description>No Info</description>
-				<left>220</left>
+				<posx>220</posx>
 				<visible>Skin.String(ViewsPVR,5) + StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
 				<control type="label">
 					<description>Label</description>
-					<top>20</top>
+					<posy>20</posy>
 					<width>700</width>
 					<height>33</height>
 					<aligny>center</aligny>
@@ -1171,7 +1181,7 @@
 				</control>
 				<control type="textbox">
 					<description>Timer</description>
-					<top>53</top>
+					<posy>53</posy>
 					<width>980</width>
 					<height>70</height>
 					<font>MediaInfoDescFont</font>
@@ -1199,7 +1209,7 @@
 				<include>LiveTVColumnFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>10</left>
+				<posx>10</posx>
 				<width>215</width>
 				<height>30</height>
 				<include>LiveTVColumnHeaderLabel</include>
@@ -1209,7 +1219,7 @@
 
 		<control type="group">
 			<description>Title Area</description>
-			<left>220</left>
+			<posx>220</posx>
 			<control type="image">
 				<width>620</width>
 				<height>30</height>
@@ -1218,7 +1228,7 @@
 				<include>LiveTVColumnFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>10</left>
+				<posx>10</posx>
 				<width>620</width>
 				<height>30</height>
 				<include>LiveTVColumnHeaderLabel</include>
@@ -1228,7 +1238,7 @@
 
 		<control type="group">
 			<description>Time Area</description>
-			<left>844</left>
+			<posx>844</posx>
 			<control type="image">
 				<width>176</width>
 				<height>30</height>
@@ -1247,7 +1257,7 @@
 
 		<control type="group">
 			<description>Date Area</description>
-			<left>1024</left>
+			<posx>1024</posx>
 			<control type="image">
 				<width>176</width>
 				<height>30</height>
@@ -1277,7 +1287,7 @@
 				<include>LiveTVColumnFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>10</left>
+				<posx>10</posx>
 				<width>215</width>
 				<height>30</height>
 				<include>LiveTVColumnHeaderLabel</include>
@@ -1287,7 +1297,7 @@
 
 		<control type="group">
 			<description>Title Area</description>
-			<left>220</left>
+			<posx>220</posx>
 			<control type="image">
 				<width>700</width>
 				<height>30</height>
@@ -1296,7 +1306,7 @@
 				<include>LiveTVColumnFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>10</left>
+				<posx>10</posx>
 				<width>700</width>
 				<height>30</height>
 				<include>LiveTVColumnHeaderLabel</include>
@@ -1306,7 +1316,7 @@
 
 		<control type="group">
 			<description>Time Area</description>
-			<left>924</left>
+			<posx>924</posx>
 			<control type="image">
 				<width>136</width>
 				<height>30</height>
@@ -1325,7 +1335,7 @@
 
 		<control type="group">
 			<description>Duration Area</description>
-			<left>1064</left>
+			<posx>1064</posx>
 			<control type="image">
 				<width>136</width>
 				<height>30</height>
@@ -1347,8 +1357,8 @@
 		<!-- LiveTVGuideChannelView, LiveTVSearchView -->
 		<control type="image">
 			<description>Timer</description>
-			<left>808</left>
-			<top>8</top>
+			<posx>808</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_timer.png</texture>
@@ -1358,8 +1368,8 @@
 
 		<control type="image">
 			<description>Record</description>
-			<left>808</left>
-			<top>8</top>
+			<posx>808</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_recording.png</texture>
@@ -1369,7 +1379,7 @@
 
 		<control type="label">
 			<description>Channel</description>
-			<left>200</left>
+			<posx>200</posx>
 			<width>150</width>
 			<height>38</height>
 			<include>LiveTVColumnChannelLabel</include>
@@ -1378,7 +1388,7 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>230</left>
+			<posx>230</posx>
 			<width>553</width>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
@@ -1387,7 +1397,7 @@
 
 		<control type="label">
 			<description>Time</description>
-			<left>934</left>
+			<posx>934</posx>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1397,7 +1407,7 @@
 
 		<control type="label">
 			<description>Date</description>
-			<left>1114</left>
+			<posx>1114</posx>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1410,8 +1420,8 @@
 		<!-- LiveTVGuideNowNextView -->
 		<control type="image">
 			<description>Timer</description>
-			<left>888</left>
-			<top>8</top>
+			<posx>888</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_timer.png</texture>
@@ -1421,8 +1431,8 @@
 
 		<control type="image">
 			<description>Record</description>
-			<left>888</left>
-			<top>8</top>
+			<posx>888</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_recording.png</texture>
@@ -1432,7 +1442,7 @@
 
 		<control type="label">
 			<description>Channel Number</description>
-			<left>15</left>
+			<posx>15</posx>
 			<width>215</width>
 			<height>38</height>
 			<include>LiveTVColumnNumberLabel</include>
@@ -1441,7 +1451,7 @@
 
 		<control type="label">
 			<description>Channel Name</description>
-			<left>200</left>
+			<posx>200</posx>
 			<width>150</width>
 			<height>38</height>
 			<include>LiveTVColumnChannelLabel</include>
@@ -1450,7 +1460,7 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>230</left>
+			<posx>230</posx>
 			<width>553</width>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
@@ -1459,7 +1469,7 @@
 
 		<control type="label">
 			<description>Time</description>
-			<left>994</left>
+			<posx>994</posx>
 			<width>126</width>
 			<height>38</height>
 			<align>center</align>
@@ -1469,7 +1479,7 @@
 
 		<control type="label">
 			<description>Duration</description>
-			<left>1134</left>
+			<posx>1134</posx>
 			<width>126</width>
 			<height>38</height>
 			<align>center</align>
@@ -1482,8 +1492,8 @@
 		<!-- LiveTVTimersView -->
 		<control type="image">
 			<description>Disabled</description>
-			<left>808</left>
-			<top>8</top>
+			<posx>808</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_none.png</texture>
@@ -1493,8 +1503,8 @@
 
 		<control type="image">
 			<description>Enabled</description>
-			<left>808</left>
-			<top>8</top>
+			<posx>808</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_enabled.png</texture>
@@ -1504,8 +1514,8 @@
 
 		<control type="image">
 			<description>Record</description>
-			<left>808</left>
-			<top>8</top>
+			<posx>808</posx>
+			<posy>8</posy>
 			<width>22</width>
 			<height>22</height>
 			<texture>pvr/status_recording.png</texture>
@@ -1515,7 +1525,7 @@
 
 		<control type="label">
 			<description>Channel</description>
-			<left>200</left>
+			<posx>200</posx>
 			<width>150</width>
 			<height>38</height>
 			<include>LiveTVColumnChannelLabel</include>
@@ -1524,7 +1534,7 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>230</left>
+			<posx>230</posx>
 			<width>553</width>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>				
@@ -1533,7 +1543,7 @@
 
 		<control type="label">
 			<description>Time</description>
-			<left>934</left>
+			<posx>934</posx>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1543,7 +1553,7 @@
 
 		<control type="label">
 			<description>Date</description>
-			<left>1114</left>
+			<posx>1114</posx>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1563,7 +1573,7 @@
 		</control>
 
 		<control type="image">
-			<left>220</left>
+			<posx>220</posx>
 			<width>620</width>
 			<height>38</height>
 			<texture border="8">pvr/column.png</texture>
@@ -1572,7 +1582,7 @@
 		</control>
 
 		<control type="image">
-			<left>844</left>
+			<posx>844</posx>
 			<width>176</width>
 			<height>38</height>
 			<texture border="8">pvr/column.png</texture>
@@ -1581,7 +1591,7 @@
 		</control>
 
 		<control type="image">
-			<left>1024</left>
+			<posx>1024</posx>
 			<width>176</width>
 			<height>38</height>
 			<texture border="8" flipx="true">pvr/column-left.png</texture>
@@ -1600,7 +1610,7 @@
 		</control>
 
 		<control type="image">
-			<left>220</left>
+			<posx>220</posx>
 			<width>700</width>
 			<height>38</height>
 			<texture border="8">pvr/column.png</texture>
@@ -1609,7 +1619,7 @@
 		</control>
 
 		<control type="image">
-			<left>924</left>
+			<posx>924</posx>
 			<width>136</width>
 			<height>38</height>
 			<texture border="8">pvr/column.png</texture>
@@ -1618,7 +1628,7 @@
 		</control>
 
 		<control type="image">
-			<left>1064</left>
+			<posx>1064</posx>
 			<width>136</width>
 			<height>38</height>
 			<texture border="8" flipx="true">pvr/column-left.png</texture>
@@ -1637,7 +1647,7 @@
 		</control>
 
 		<control type="image">
-			<left>220</left>
+			<posx>220</posx>
 			<width>980</width>
 			<height>38</height>
 			<texture border="8" flipx="true">pvr/column-left.png</texture>

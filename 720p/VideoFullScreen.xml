@@ -6,24 +6,17 @@
 		<control type="group">
 			<description>Codec Info</description>
 			<visible>Control.IsVisible(10)</visible>
+			<include>FSTopPanel</include>
 			<include>FSTopPanelOpenCloseAnim</include>
-			<control type="image" id="1">
-				<left>28</left>
-				<top>-10</top>
-				<width>1224</width>
-				<height>162</height>
-				<texture border="8">panels/panel.png</texture>
-			</control>
 			
 			<control type="grouplist">
-				<left>46</left>
-				<top>10</top>
+				<posx>46</posx>
+				<posy>10</posy>
 				<width>1132</width>
-				<itemgap>15</itemgap>
+				<itemgap>25</itemgap>
 				<control type="label" id="10">
 					<description>Row 1</description>
 					<width>1132</width>
-					<height>30</height>
 					<font>DialogHeadFont</font>
 					<textcolor>GreyColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
@@ -31,7 +24,6 @@
 				<control type="label" id="11">
 					<description>Row 2</description>
 					<width>1132</width>
-					<height>30</height>
 					<font>DialogHeadFont</font>
 					<textcolor>GreyColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
@@ -39,7 +31,6 @@
 				<control type="label" id="12">
 					<description>Row 3</description>
 					<width>1132</width>
-					<height>30</height>
 					<font>DialogHeadFont</font>
 					<textcolor>GreyColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
@@ -49,8 +40,8 @@
 
 		<control type="group" id="1">
 			<description>LiveTV Switch Panel</description>
-			<left>28</left>
-			<top>350</top>
+			<posx>28</posx>
+			<posy>350</posy>
 			<visible>VideoPlayer.Content(LiveTV) + [Player.ShowInfo + Window.IsActive(FullScreenVideo)]
 			+ ![Window.IsVisible(VideoOSD) | Window.IsVisible(FullscreenInfo)
 			| Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)
@@ -59,8 +50,8 @@
 			<include>FSMediaInfoOpenCloseAnim</include>
 
 			<control type="group" id="1">			
-				<left>18</left>
-				<top>10</top>
+				<posx>18</posx>
+				<posy>10</posy>
 	
 				<control type="grouplist" id="1">
 					<width>820</width>
@@ -81,7 +72,7 @@
 					</control>
 					<control type="image" id="1">
 						<description>Star Rating</description>
-						<top>2</top>
+						<posy>2</posy>
 						<width>100</width>
 						<height>32</height>		
 						<texture>$INFO[Player.StarRating]</texture>
@@ -92,7 +83,7 @@
 				
 				<control type="label" id="1">
 					<description>Genre</description>
-					<top>30</top>
+					<posy>30</posy>
 					<width>820</width>
 					<height>26</height>
 					<font>FSInfoFont</font>
@@ -104,21 +95,21 @@
 				
 				<control type="grouplist" id="1">
 					<description>Time</description>
-					<left>868</left>
+					<posx>868</posx>
 					<width>320</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="image" id="1">
-						<top>6</top>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>	
 						<texture>pvr/status_timer_alt.png</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label" id="1">
-						<left>-6</left>
+						<posx>-6</posx>
 						<height>60</height>	
 						<width min="25" max="250">auto</width>
 						<font>FSInfoTitleFont</font>
@@ -131,8 +122,8 @@
 				
 				<control type="grouplist" id="1">
 					<description>NextTitle</description>
-					<left>588</left>
-					<top>30</top>
+					<posx>588</posx>
+					<posy>30</posy>
 					<width>600</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
@@ -159,7 +150,7 @@
 	
 				<control type="grouplist" id="1">
 					<description>Media Info Labels</description>
-					<top>66</top>
+					<posy>66</posy>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label" id="1">
@@ -202,7 +193,7 @@
 
 				<control type="textbox" id="1">
 					<description>Plot</description>
-					<top>105</top>
+					<posy>105</posy>
 					<width>820</width>
 					<height>100</height>
 					<font>MediaInfoDescFont</font>
@@ -216,7 +207,7 @@
 			
 				<control type="grouplist" id="1">
 					<description>Media Flags Area</description>
-					<top>214</top>
+					<posy>214</posy>
 					<width>890</width>
 					<height>35</height>
 					<itemgap>5</itemgap>
@@ -226,15 +217,14 @@
 					<include>MediaFlagFadeAnim</include>
 					<include>PlayerVideoMediaFlags</include>
 					<include>PlayerAudioMediaFlags</include>
-					<include>PlayerAspectMediaFlags</include>
 					<include>PlayerRatingMediaFlags</include>
 				</control>
 			</control>
 			
 			<control type="image" id="1">
 				<description>Cover</description>
-				<left>983</left>
-				<top>92</top>
+				<posx>983</posx>
+				<posy>92</posy>
 				<width>210</width>
 				<height>167</height>
 				<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[VideoPlayer.Cover]</texture>

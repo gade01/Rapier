@@ -19,8 +19,8 @@
 		
 		<control type="label">
 			<description>Download Weather Info</description>
-			<left>390</left>
-			<top>360</top>
+			<posx>390</posx>
+			<posy>360</posy>
 			<width>500</width>
 			<height>200</height>
 			<font>DialogHeadFont</font>
@@ -33,8 +33,8 @@
 
 		<control type="textbox">
 			<description>No Weather Plugin</description>
-			<left>390</left>
-			<top>360</top>
+			<posx>390</posx>
+			<posy>360</posy>
 			<width>500</width>
 			<height>200</height>
 			<font>DialogHeadFont</font>
@@ -49,7 +49,7 @@
 		<include condition="StringCompare(Weather.Plugin,weather.weatherplus)">WeatherPlus</include>
 		
 		<control type="group" id="505">
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim2</include>	
 			<include condition="!StringCompare(Weather.Plugin,weather.weatherplus)">MyWeatherMenuBar</include>
@@ -67,7 +67,7 @@
 		
 		<control type="group">
 			<description>Bottom Bar Area</description>
-			<top>BottomPaneOffsetY</top>	
+			<posy>BottomPaneOffsetY</posy>	
 			<include>InfoPaneWeatherDetails</include>
 			<include>BottomPaneOpenCloseAnim</include>
 			<visible>!IsEmpty(Weather.Plugin)</visible>

@@ -33,13 +33,13 @@
 	<constant name="ScreenWidth">1280</constant>
 	<constant name="ScreenHeight">720</constant>
 	<constant name="DialogHeadingOffsetX">40</constant>
-	<constant name="DialogHeadingOffsetY">14</constant>
+	<constant name="DialogHeadingOffsetY">26</constant>
 	<constant name="DialogMarginOffsetX">35</constant>
 	<constant name="DialogMarginOffsetY">53</constant>
 	<constant name="Dialog4MarginOffsetY">35</constant>
 	<constant name="MenuBarHeight">37</constant>
 	<constant name="MenuBarOffsetY">45</constant>
-	<constant name="StatusBartop">0</constant>
+	<constant name="StatusBarPosY">0</constant>
 	<constant name="BottomPaneOffsetY">655</constant>
 	<constant name="BackgroundCrossfadeTime">600</constant>
 	<constant name="IconCrossfadeTime">400</constant>
@@ -85,24 +85,6 @@
 	<variable name="VideoExtrasLogo">
 		<value condition="Substring(ListItem.Path),BDMV">$INFO[ListItem.Path,../,logo.png]</value>
 		<value>$INFO[ListItem.Path,,logo.png]</value>
-	</variable>
-	
-	<variable name="VideoOSDCurrentControlLabel">
-		<value condition="ControlGroup(400).HasFocus">$LOCALIZE[36501]</value>
-		<value condition="ControlGroup(401).HasFocus">$LOCALIZE[24012]</value>
-		<value>$INFO[System.CurrentControl]</value>
-	</variable>
-	
-	<variable name="SettingsMenubarDescription">
-		<value condition="Control.HasFocus(101)">$LOCALIZE[31951]</value>
-		<value condition="Control.HasFocus(104)">$LOCALIZE[31952]</value>
-		<value condition="Control.HasFocus(105)">$LOCALIZE[31953]</value>
-		<value condition="Control.HasFocus(110)">$LOCALIZE[31954]</value>
-		<value condition="Control.HasFocus(103)">$LOCALIZE[31955]</value>
-		<value condition="Control.HasFocus(106)">$LOCALIZE[31956]</value>
-		<value condition="Control.HasFocus(107)">$LOCALIZE[31957]</value>
-		<value condition="Control.HasFocus(108)">$LOCALIZE[31958]</value>
-		<value condition="Control.HasFocus(109)">$LOCALIZE[31959]</value>
 	</variable>
 
 	<include name="ScreenSize">
@@ -171,8 +153,8 @@
 	
 	<include name="FSTopPanel">
 		<control type="image" id="1">
-			<left>28</left>
-			<top>-10</top>
+			<posx>28</posx>
+			<posy>-10</posy>
 			<width>1224</width>
 			<height>120</height>
 			<texture border="8">panels/panel.png</texture>
@@ -187,8 +169,8 @@
 		</control>
 		
 		<control type="image" id="1">
-			<left>4</left>
-			<top>4</top>
+			<posx>4</posx>
+			<posy>4</posy>
 			<width>1216</width>
 			<height>70</height>
 			<texture border="5">panels/panel-content-border2.png</texture>
@@ -198,8 +180,8 @@
 	
 	<include name="NotifyPanel">
 		<control type="image">
-			<left>0</left>
-			<top>-5</top>
+			<posx>0</posx>
+			<posy>-5</posy>
 			<width>360</width>
 			<height>50</height>
 			<texture border="20,0,20,8">panels/notify-panel.png</texture>
@@ -208,8 +190,8 @@
 	</include>
 	
 	<include name="NotifyPanelIcon">
-		<left>20</left>
-		<top>6</top>
+		<posx>20</posx>
+		<posy>6</posy>
 		<width>30</width>
 		<height>30</height>
 		<aspectratio>stretch</aspectratio>
@@ -217,24 +199,26 @@
 	</include>
 	
 	<include name="NotifyPanelLabel">
-		<left>60</left>
-		<top>2</top>
+		<posx>60</posx>
+		<posy>2</posy>
 		<width>275</width>
 		<height>16</height>
 		<font>NowPlayingFont</font>	
 		<textcolor>WhiteColor</textcolor>
+		<aligny>top</aligny>
 		<scrollout>false</scrollout>
 		<pauseatend>1500</pauseatend>
 		<scroll>no</scroll>
 	</include>
 	
 	<include name="NotifyPanelLabel2">
-		<left>60</left>
-		<top>20</top>
+		<posx>60</posx>
+		<posy>20</posy>
 		<width>275</width>
 		<height>16</height>
 		<font>NowPlayingFont2</font>	
 		<textcolor>GreyColor2</textcolor>
+		<aligny>top</aligny>
 		<scrollout>false</scrollout>
 		<pauseatend>1500</pauseatend>
 		<scroll>yes</scroll>
@@ -242,7 +226,7 @@
 	
 	<include name="PlayerControlsPanel">
 		<control type="image">
-			<left>28</left>
+			<posx>28</posx>
 			<width>1224</width>
 			<height>75</height>
 			<texture border="8">panels/panel.png</texture>
@@ -252,7 +236,7 @@
 	
 	<include name="FSSeekBar">
 		<control type="image">
-			<left>6</left>
+			<posx>6</posx>
 			<width>474</width>
 			<height>75</height>
 			<texture border="8">panels/panel.png</texture>
@@ -262,7 +246,7 @@
 	
 	<include name="LoginScreenPaneImage">	
 		<control type="image">
-			<left>28</left>
+			<posx>28</posx>
 			<width>1224</width>
 			<height>75</height>
 			<texture border="8">panels/panel.png</texture>
@@ -271,8 +255,8 @@
 
 	<include name="LoginScreenPaneDetails">
 		<control type="label">
-			<left>47</left>
-			<top>25</top>
+			<posx>47</posx>
+			<posy>25</posy>
 			<font>DefaultHeadFont</font>
 			<textcolor>GreyColor2</textcolor>
 			<aligny>center</aligny>
@@ -280,8 +264,8 @@
 		</control>
 		
 		<control type="grouplist" id="213">
-			<left>1121</left>
-			<top>10</top>
+			<posx>1121</posx>
+			<posy>10</posy>
 			<orientation>horizontal</orientation>
 			<onup>52</onup>
 			<onleft>213</onleft>
@@ -330,7 +314,7 @@
 	
 	<include name="SettingsCatBtn">
 		<width>210</width>
-		<height>50</height>
+		<height>60</height>
 		<font>SettingsCatFont</font>
 		<textcolor>SettingsCatColor</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
@@ -344,7 +328,7 @@
 	
 	<include name="SettingsInactiveCatBtn">
 		<width>210</width>
-		<height>50</height>
+		<height>60</height>
 		<font>SettingsCatFont</font>
 		<textcolor>SelectedColor</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
@@ -373,8 +357,8 @@
 	</include>
 	
 	<include name="SettingsBackBtn">
-		<left>-50</left>
-		<top>250</top>
+		<posx>-50</posx>
+		<posy>250</posy>
 		<width>28</width>
 		<height>41</height>
 		<texturefocus flipx="true">controls/nav-arrow-right-focus.png</texturefocus>
@@ -382,8 +366,8 @@
 	</include>
 	
 	<include name="SettingsInfoLabel">
-		<left>755</left>
-		<top>548</top>
+		<posx>755</posx>
+		<posy>548</posy>
 		<width>560</width>
 		<font>SettingsContentFont2</font>
 		<textcolor>MediaInfoTitleColor2</textcolor>
@@ -507,9 +491,10 @@
 		<textcolor>SettingsContentColor</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
 		<align>left</align>
-		<textoffsetx>10</textoffsetx>
+		<textoffsetx>50</textoffsetx>
 		<textwidth>114</textwidth>
-		<radioposx>126</radioposx>
+		<radioposx>1</radioposx>
+		<radioposy>-</radioposy>
 		<textureradiofocus>controls/radio-button-focus3.png</textureradiofocus>
 		<textureradionofocus>controls/radio-button-nofocus3.png</textureradionofocus>
 		<texturefocus border="5">controls/button-focus.png</texturefocus>
@@ -542,9 +527,10 @@
 		<textcolor>SettingsContentColor</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
 		<align>left</align>
-		<textoffsetx>10</textoffsetx>
+		<textoffsetx>70</textoffsetx>
 		<textwidth>125</textwidth>
-		<radioposx>144</radioposx>
+		<radioposx>10</radioposx>
+		<radioposy>-</radioposy>
 		<textureradiofocus>controls/radio-button-focus.png</textureradiofocus>
 		<textureradionofocus>controls/radio-button-nofocus.png</textureradionofocus>
 		<texturefocus border="5">controls/button-focus.png</texturefocus>
@@ -595,50 +581,55 @@
 		<!-- Forwarding -->
 		<control type="label">
 			<description>2X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>+2X</label>
 			<visible>Player.Forwarding2x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>4X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>+4X</label>
 			<visible>Player.Forwarding4x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>8X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>+8X</label>
 			<visible>Player.Forwarding8x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>16X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>+16X</label>
 			<visible>Player.Forwarding16x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>32X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>+32X</label>
 			<visible>Player.Forwarding32x + !Player.Seeking</visible>
 		</control>
@@ -646,50 +637,55 @@
 		<!-- Rewinding -->
 		<control type="label">
 			<description>2X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>-2X</label>
 			<visible>Player.Rewinding2x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>4X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>-4X</label>
 			<visible>Player.Rewinding4x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>8X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>-8X</label>
 			<visible>Player.Rewinding8x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>16X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>-16X</label>
 			<visible>Player.Rewinding16x + !Player.Seeking</visible>
 		</control>
 		
 		<control type="label">
 			<description>32X</description>
-			<top>5</top>
+			<posy>18</posy>
 			<font>OSDFont</font>
 			<textcolor>DefaultColor3</textcolor>
 			<textoffsetx>5</textoffsetx>
+			<aligny>center</aligny>
 			<label>-32X</label>
 			<visible>Player.Rewinding32x + !Player.Seeking</visible>
 		</control>
@@ -718,25 +714,27 @@
 		</animation>
 		
 		<control type="image">
-			<left>-25</left>
+			<posx>-25</posx>
 			<width>80</width>
 			<height>80</height>
 			<texture border="25">covers/item-focus-background.png</texture>
 		</control>
 		
 		<control type="label">
-			<left>15</left>
-			<top>25</top>
+			<posx>15</posx>
+			<posy>38</posy>
 			<font>SortLetterFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
+			<align>center</align>
+			<aligny>center</aligny>
 			<label>$INFO[ListItem.SortLetter]</label>
 		</control>
 	</include>
 	
 	<include name="RedirectBtn">
-		<left>-1</left>
-		<top>-1</top>
+		<posx>-1</posx>
+		<posy>-1</posy>
 		<width>1</width>
 		<height>1</height>
 		<texturefocus>-</texturefocus>
@@ -790,13 +788,6 @@
 		<value condition="VideoPlayer.Content(Episodes) + [Skin.HasSetting(ShowClearArtOSD) + !IsEmpty(Player.Art(tvshow.clearart))]">$INFO[Player.Art(tvshow.clearart)]</value>
 		<value condition="VideoPlayer.Content(Episodes) + [[Skin.HasSetting(ShowClearLogoOSD) + !IsEmpty(Player.Art(tvshow.clearlogo))] | [Skin.HasSetting(ShowClearArtOSD) + IsEmpty(Player.Art(tvshow.clearart)) + !IsEmpty(Player.Art(tvshow.clearlogo))]]">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value>$INFO[VideoPlayer.Cover]</value>
-	</variable>
-	
-	<variable name="ClearImageOSD1">
-		<value condition="VideoPlayer.Content(Movies) + [Skin.HasSetting(ShowClearArtOSD) + !IsEmpty(Player.Art(clearart))]">$INFO[Player.Art(clearart)]</value>
-		<value condition="VideoPlayer.Content(Movies) + [[Skin.HasSetting(ShowClearLogoOSD) + !IsEmpty(Player.Art(clearlogo))] | [Skin.HasSetting(ShowClearArtOSD) + IsEmpty(Player.Art(clearart)) + !IsEmpty(Player.Art(clearlogo))]]">$INFO[Player.Art(clearlogo)]</value>
-		<value condition="VideoPlayer.Content(Episodes) + [Skin.HasSetting(ShowClearArtOSD) + !IsEmpty(Player.Art(tvshow.clearart))]">$INFO[Player.Art(tvshow.clearart)]</value>
-		<value condition="VideoPlayer.Content(Episodes) + [[Skin.HasSetting(ShowClearLogoOSD) + !IsEmpty(Player.Art(tvshow.clearlogo))] | [Skin.HasSetting(ShowClearArtOSD) + IsEmpty(Player.Art(tvshow.clearart)) + !IsEmpty(Player.Art(tvshow.clearlogo))]]">$INFO[Player.Art(tvshow.clearlogo)]</value>
 	</variable>
 	
 	<variable name="MusicVizDescription">

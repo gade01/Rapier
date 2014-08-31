@@ -17,8 +17,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>232</left>
-				<top>39</top>
+				<posx>232</posx>
+				<posy>39</posy>
 				<width>300</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -30,8 +30,8 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
-				<top>40</top>
+				<posx>550</posx>
+				<posy>40</posy>
 				<width>70</width>
 				<height>16</height>		
 				<texture background="true">$INFO[Player.StarRating]</texture>
@@ -41,8 +41,8 @@
 
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -53,8 +53,8 @@
 
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture>DefaultVideo.png</texture>
@@ -65,8 +65,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[VideoPlayer.Cover]</texture>
@@ -75,13 +75,14 @@
 
 			<control type="label">
 				<description>No Information</description>
-				<left>232</left>
-				<top>120</top>
+				<posx>232</posx>
+				<posy>140</posy>
 				<width>400</width>
 				<font>DialogMediaInfoFont</font>
 				<textcolor>MediaInfoItemColor2</textcolor>
 				<label>$LOCALIZE[20159][CR]$LOCALIZE[416]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 			</control>
 		</control>
 
@@ -90,8 +91,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>232</left>
-				<top>39</top>
+				<posx>232</posx>
+				<posy>39</posy>
 				<width>300</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -103,8 +104,8 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
-				<top>40</top>
+				<posx>550</posx>
+				<posy>40</posy>
 				<width>70</width>
 				<height>16</height>		
 				<texture background="true">$INFO[Player.StarRating]</texture>
@@ -114,8 +115,8 @@
 
 			<control type="group">
 				<visible>!Skin.HasSetting(EnableMusicCdArt)</visible>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 
 				<control type="image">
 					<description>Default Cover Background</description>
@@ -142,14 +143,14 @@
 					<width>190</width>
 					<height>190</height>
 					<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 				</control>
 			</control>
 
 			<control type="group">
 				<visible>Skin.HasSetting(EnableMusicCdArt)</visible>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				
 				<control type="image">
 					<description>Default Cover Background</description>
@@ -162,34 +163,34 @@
 				
 				<control type="image">
 					<description>Default Cover</description>
-					<left>5</left>
-					<top>5</top>
-					<width>180</width>
-					<height>180</height>
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>170</width>
+					<height>170</height>
 					<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
 					<texture diffuse="icons/cdart/cdart-mask.png">icons/cdart/cdart.png</texture>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<include>CdArtImageRotateAnim</include>
 					<visible>IsEmpty(MusicPlayer.Cover)</visible>
 				</control>
 
 				<control type="image">
 					<description>Cover</description>
-					<left>5</left>
-					<top>5</top>
-					<width>180</width>
-					<height>180</height>
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>170</width>
+					<height>170</height>
 					<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
 					<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[MusicPlayer.Cover]</texture>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>stretch</aspectratio>
 					<include>CdArtImageRotateAnim</include>
 				</control>
 			</control>
 
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -220,8 +221,8 @@
 
 			<control type="panel" id="901">
 				<description>Media Info</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
@@ -233,8 +234,8 @@
 				<ondown>901</ondown>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -244,8 +245,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -262,8 +263,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -273,8 +274,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -323,8 +324,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>232</left>
-				<top>39</top>
+				<posx>232</posx>
+				<posy>39</posy>
 				<width>300</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -336,8 +337,8 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
-				<top>40</top>
+				<posx>550</posx>
+				<posy>40</posy>
 				<width>70</width>
 				<height>16</height>		
 				<texture background="true">$INFO[Player.StarRating]</texture>
@@ -347,8 +348,8 @@
 
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -359,8 +360,8 @@
 
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture>DefaultVideo.png</texture>
@@ -371,8 +372,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$VAR[ClearImageOSD]</texture>
@@ -382,8 +383,8 @@
 
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -414,8 +415,8 @@
 
 			<control type="panel" id="901">
 				<description>Media Info</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
@@ -427,8 +428,8 @@
 				<ondown>901</ondown>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -438,8 +439,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -456,8 +457,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -467,8 +468,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -517,8 +518,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>232</left>
-				<top>39</top>
+				<posx>232</posx>
+				<posy>39</posy>
 				<width>300</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -530,8 +531,8 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
-				<top>40</top>
+				<posx>550</posx>
+				<posy>40</posy>
 				<width>70</width>
 				<height>16</height>		
 				<texture background="true">$INFO[Player.StarRating]</texture>
@@ -541,8 +542,8 @@
 
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -553,8 +554,8 @@
 
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture>DefaultVideo.png</texture>
@@ -565,8 +566,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$VAR[ClearImageOSD]</texture>
@@ -576,8 +577,8 @@
 
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -608,8 +609,8 @@
 
 			<control type="panel" id="901">
 				<description>Media Info</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
@@ -621,8 +622,8 @@
 				<ondown>901</ondown>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -632,8 +633,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -650,8 +651,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -661,8 +662,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -711,8 +712,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>232</left>
-				<top>39</top>
+				<posx>232</posx>
+				<posy>39</posy>
 				<width>300</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -724,8 +725,8 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
-				<top>40</top>
+				<posx>550</posx>
+				<posy>40</posy>
 				<width>70</width>
 				<height>16</height>		
 				<texture background="true">$INFO[Player.StarRating]</texture>
@@ -735,8 +736,8 @@
 
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -747,8 +748,8 @@
 
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture>DefaultVideo.png</texture>
@@ -759,8 +760,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[VideoPlayer.Cover]</texture>
@@ -769,8 +770,8 @@
 
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -801,8 +802,8 @@
 
 			<control type="panel" id="901">
 				<description>Media Info</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
@@ -814,8 +815,8 @@
 				<ondown>901</ondown>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -825,8 +826,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -843,8 +844,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -854,8 +855,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -904,8 +905,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>232</left>
-				<top>39</top>
+				<posx>232</posx>
+				<posy>39</posy>
 				<width>300</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -917,8 +918,8 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
-				<top>40</top>
+				<posx>550</posx>
+				<posy>40</posy>
 				<width>70</width>
 				<height>16</height>		
 				<texture background="true">$INFO[Player.StarRating]</texture>
@@ -928,8 +929,8 @@
 
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -940,8 +941,8 @@
 
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture>DefaultVideo.png</texture>
@@ -952,8 +953,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>190</width>
 				<height>190</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[VideoPlayer.Cover]</texture>
@@ -962,8 +963,8 @@
 
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -994,8 +995,8 @@
 
 			<control type="panel" id="901">
 				<description>Media Info</description>
-				<left>232</left>
-				<top>65</top>
+				<posx>232</posx>
+				<posy>65</posy>
 				<width>388</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
@@ -1007,8 +1008,8 @@
 				<ondown>901</ondown>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -1018,8 +1019,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -1036,8 +1037,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -1047,8 +1048,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>283</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -1094,8 +1095,8 @@
 
 		<control type="image">
 			<description>Player Controls Background</description>
-			<left>DialogMarginOffsetX</left>
-			<top>232</top>
+			<posx>DialogMarginOffsetX</posx>
+			<posy>232</posy>
 			<width>585</width>
 			<height>50</height>
 			<texture border="5">panels/panel-content-border2.png</texture>
@@ -1103,24 +1104,25 @@
 		</control>
 
 		<control type="group">
-			<left>DialogMarginOffsetX</left>
-			<top>232</top>
+			<posx>DialogMarginOffsetX</posx>
+			<posy>232</posy>
 
 			<control type="label">
 				<description>Duration</description>
-				<left>5</left>
-				<top>3</top>
+				<posx>5</posx>
+				<posy>14</posy>
 				<width>185</width>
 				<font>OSDFont</font>
 				<textcolor>WhiteColor</textcolor>
 				<label>[COLOR=GreyColor]$INFO[VideoPlayer.Time][/COLOR] $INFO[Player.Duration,/ ]</label>
 				<align>center</align>
+				<aligny>center</aligny>
 			</control>
 
 			<control type="progress">
 				<description>Progressbar Cache</description>
-				<left>5</left>
-				<top>29</top>
+				<posx>5</posx>
+				<posy>29</posy>
 				<width>185</width>
 				<midtexture border="2">controls/scrollbar-slider-horz-nofocus.png</midtexture>
 				<info>Player.ProgressCache</info>
@@ -1129,16 +1131,16 @@
 
 			<control type="progress">
 				<description>Progressbar</description>
-				<left>5</left>
-				<top>29</top>
+				<posx>5</posx>
+				<posy>29</posy>
 				<width>185</width>
 				<info>Player.Progress</info>
 			</control>
 
 			<control type="slider">
 				<description>Seek Slider</description>
-				<left>5</left>
-				<top>29</top>
+				<posx>5</posx>
+				<posy>29</posy>
 				<width>185</width>
 				<height>12</height>
 				<action>seek</action>
@@ -1151,8 +1153,8 @@
 		<control type="grouplist" id="202">
 			<description>Player Controls</description>
 			<visible>Player.HasAudio | !VideoPlayer.Content(LiveTV)</visible>
-			<left>225</left>
-			<top>238</top>
+			<posx>225</posx>
+			<posy>238</posy>
 			<width>400</width>
 			<height>50</height>
 			<itemgap>10</itemgap>
@@ -1232,7 +1234,7 @@
 			</control>
 			<control type="image" id="111">
 				<description>Rec No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-nofocus.png</texture>
@@ -1240,7 +1242,7 @@
 			</control>
 			<control type="image" id="112">
 				<description>Rec Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-focus.png</texture>
@@ -1248,7 +1250,7 @@
 			</control>
 			<control type="image" id="113">
 				<description>Rec 2 No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-2.png</texture>
@@ -1256,7 +1258,7 @@
 			</control>
 			<control type="image" id="114">
 				<description>Rec 2 Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-focus.png</texture>
@@ -1273,7 +1275,7 @@
 			</control>
 			<control type="image" id="251">
 				<description>Repeat No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-repeat-nofocus.png</texture>
@@ -1282,7 +1284,7 @@
 			</control>
 			<control type="image" id="252">
 				<description>Repeat Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-repeat-focus.png</texture>
@@ -1291,7 +1293,7 @@
 			</control>
 			<control type="image" id="253">
 				<description>Repeat One No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-repeat-one-nofocus.png</texture>
@@ -1300,7 +1302,7 @@
 			</control>
 			<control type="image" id="254">
 				<description>Repeat One Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-repeat-one-focus.png</texture>
@@ -1309,7 +1311,7 @@
 			</control>
 			<control type="image" id="255">
 				<description>Repeat All No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-repeat-all-nofocus.png</texture>
@@ -1318,7 +1320,7 @@
 			</control>
 			<control type="image" id="256">
 				<description>Repeat All Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-repeat-all-focus.png</texture>
@@ -1342,8 +1344,8 @@
 		<control type="grouplist" id="202">
 			<description>Player Controls</description>
 			<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
-			<left>225</left>
-			<top>238</top>
+			<posx>225</posx>
+			<posy>238</posy>
 			<width>400</width>
 			<height>50</height>
 			<itemgap>10</itemgap>
@@ -1411,7 +1413,7 @@
 			</control>
 			<control type="image" id="111">
 				<description>Rec No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-nofocus.png</texture>
@@ -1419,7 +1421,7 @@
 			</control>
 			<control type="image" id="112">
 				<description>Rec Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-focus.png</texture>
@@ -1427,7 +1429,7 @@
 			</control>
 			<control type="image" id="113">
 				<description>Rec 2 No Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-2.png</texture>
@@ -1435,7 +1437,7 @@
 			</control>
 			<control type="image" id="114">
 				<description>Rec 2 Focus</description>
-				<left>-48</left>
+				<posx>-48</posx>
 				<width>38</width>
 				<height>38</height>
 				<texture>osd/osd-record-focus.png</texture>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window id="3001">
 	<onload condition="!IsEmpty(ListItem.TvShowTitle)">SetProperty("TvTunesSupported", "TvShows")</onload>
 	<onload condition="IsEmpty(ListItem.TvShowTitle)">SetProperty("TvTunesSupported", "Movies")</onload>
@@ -13,9 +13,9 @@
 			| Skin.String(CustomMoviesBGType,4)] + Skin.HasSetting(ApplyAllMoviesCustomBG)">BackgroundMovies</include>
 			<include condition="[[!IsEmpty(Skin.String(CustomTVShowsBGPath)) + [Skin.String(CustomTVShowsBGType,2) | Skin.String(CustomTVShowsBGType,3)]] 
 			| Skin.String(CustomTVShowsBGType,4)] + Skin.HasSetting(ApplyAllTVShowsCustomBG)">BackgroundTVShows</include>
-			<include>FanartImage</include>
-			<include>FanartDim</include>
+			<include>BackgroundVideoFanart</include>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
+			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
 			<include>BackgroundOpenCloseAnim</include>
 		</control>
 		
@@ -23,8 +23,8 @@
 			<include>MediaViewOpenCloseAnim</include>
 			
 			<control type="image">
-				<left>30</left>
-				<top>106</top>
+				<posx>30</posx>
+				<posy>106</posy>
 				<width>755</width>
 				<height>525</height>
 				<texture border="7">panels/content-panel.png</texture>
@@ -33,8 +33,8 @@
 			
 			<control type="group">
 				<description>Cover</description>
-				<left>840</left>
-				<top>150</top>
+				<posx>840</posx>
+				<posy>150</posy>
 					
 				<control type="image">
 					<description>Cover</description>
@@ -49,7 +49,7 @@
 				
 				<control type="image">
 					<description>Cover Reflection</description>
-					<top>395</top>
+					<posy>395</posy>
 					<width>400</width>
 					<height>400</height>
 					<texture background="true" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Icon]</texture>
@@ -61,11 +61,11 @@
 			</control>	
 			
 			<control type="list" id="51">
-				<left>40</left>
-				<top>110</top>
+				<posx>40</posx>
+				<posy>110</posy>
 				<width>720</width>
 				<height>518</height>
-				<onleft>987</onleft>					
+				<onposx>987</onposx>					
 				<onright>903</onright>
 				<onup>987</onup>
 				<ondown>51</ondown>
@@ -74,7 +74,7 @@
 				<scrolltime tween="sine" easing="inout">300</scrolltime>				
 				<itemlayout height="37">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>37</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -82,9 +82,9 @@
 					</control>
 					<control type="label">
 						<description>Label</description>
-						<left>35</left>
+						<posx>35</posx>
+						<posy>16</posy>
 						<width>580</width>
-						<height>37</height>
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
@@ -93,9 +93,9 @@
 					</control>					
 					<control type="label">
 						<description>Label2</description>
-						<left>675</left>
+						<posx>675</posx>
+						<posy>16</posy>
 						<width>150</width>
-						<height>37</height>
 						<font>ListFont2</font>
 						<textcolor>ListColor3</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
@@ -106,8 +106,8 @@
 					</control>					
 					<control type="image">
 						<description>Quality</description>
-						<left>5</left>
-						<top>6</top>
+						<posx>5</posx>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
@@ -117,8 +117,8 @@
 					</control>	
 					<control type="image">
 						<description>Quality</description>
-						<left>5</left>
-						<top>6</top>
+						<posx>5</posx>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
@@ -128,8 +128,8 @@
 					</control>
 					<control type="image">
 						<description>Watched Partial</description>
-						<left>690</left>
-						<top>6</top>
+						<posx>690</posx>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[WatchedPartial]</texture>
@@ -140,8 +140,8 @@
 					</control>	
 					<control type="image">
 						<description>Overlay</description>
-						<left>690</left>
-						<top>6</top>
+						<posx>690</posx>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">OverlayWatched.png</texture>
@@ -152,14 +152,14 @@
 				</itemlayout>
 				<focusedlayout height="37" condition="Skin.HasSetting(HideVideoExtrasPlot) |  Container(51).Position(0)">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>37</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>36</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -169,7 +169,7 @@
 						<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>36</height>	
 						<texture border="4">views/list-alt-focus.png</texture>
@@ -181,7 +181,7 @@
 						<include>ListViewFocusAnim</include>
 						<control type="label">
 							<description>Label</description>
-							<left>35</left>
+							<posx>35</posx>
 							<width>580</width>
 							<height>37</height>
 							<font>ListFont</font>
@@ -193,7 +193,7 @@
 						</control>						
 						<control type="label">
 							<description>Label2</description>
-							<left>675</left>
+							<posx>675</posx>
 							<width>150</width>
 							<height>37</height>
 							<font>ListFont2</font>
@@ -206,8 +206,8 @@
 						</control>						
 						<control type="image">
 							<description>Quality</description>
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
@@ -216,8 +216,8 @@
 						</control>	
 						<control type="image">
 							<description>Quality</description>
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
@@ -226,8 +226,8 @@
 						</control>
 						<control type="image">
 							<description>Watched Partial</description>
-							<left>690</left>
-							<top>6</top>
+							<posx>690</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[WatchedPartial]</texture>
@@ -238,8 +238,8 @@
 						</control>	
 						<control type="image">
 							<description>Overlay</description>
-							<left>690</left>
-							<top>6</top>
+							<posx>690</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">OverlayWatched.png</texture>
@@ -251,14 +251,14 @@
 				</focusedlayout>
 				<focusedlayout height="74" condition="!Skin.HasSetting(HideVideoExtrasPlot) + !Container(51).Position(0)">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>74</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>73</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -267,7 +267,7 @@
 						<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>720</width>
 						<height>73</height>	
 						<texture border="4">views/list-alt-focus.png</texture>
@@ -279,7 +279,7 @@
 						<include condition="!Skin.HasSetting(DisableListFocusAnim)">ListViewFocusAnim</include>
 						<control type="label">
 							<description>Label</description>
-							<left>35</left>
+							<posx>35</posx>
 							<width>580</width>
 							<height>37</height>
 							<font>ListFont</font>
@@ -291,7 +291,7 @@
 						</control>						
 						<control type="label">
 							<description>Label2</description>
-							<left>675</left>
+							<posx>675</posx>
 							<width>150</width>
 							<height>37</height>
 							<font>ListFont2</font>
@@ -304,8 +304,8 @@
 						</control>
 						<control type="label">
 							<description>Plot</description>
-							<left>35</left>
-							<top>38</top>
+							<posx>35</posx>
+							<posy>38</posy>
 							<width>640</width>
 							<font>ListFont2</font>
 							<textcolor>ListColor2</textcolor>
@@ -316,8 +316,8 @@
 						</control>
 						<control type="image">
 							<description>Quality</description>
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
@@ -326,8 +326,8 @@
 						</control>	
 						<control type="image">
 							<description>Quality</description>
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
@@ -336,8 +336,8 @@
 						</control>
 						<control type="image">
 							<description>Watched Partial</description>
-							<left>690</left>
-							<top>6</top>
+							<posx>690</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[WatchedPartial]</texture>
@@ -348,8 +348,8 @@
 						</control>	
 						<control type="image">
 							<description>Overlay</description>
-							<left>690</left>
-							<top>6</top>
+							<posx>690</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">OverlayWatched.png</texture>
@@ -363,19 +363,19 @@
 			
 			<control type="group">	
 				<control type="image">
-					<left>767</left>
-					<top>110</top>
+					<posx>767</posx>
+					<posy>110</posy>
 					<width>14</width>
 					<height>517</height>
 					<texture border="4">controls/scrollbar-background.png</texture>
 				</control>
 				
 				<control type="scrollbar" id="903">
-					<left>767</left>
-					<top>110</top>
+					<posx>767</posx>
+					<posy>110</posy>
 					<height>517</height>
 					<texturesliderbackground>-</texturesliderbackground>
-					<onleft>51</onleft>
+					<onposx>51</onposx>
 					<onright>51</onright>
 					<onup>987</onup>
 				</control>
@@ -383,13 +383,13 @@
 		</control>
 		
 		<control type="group">
-			<top>SortLetterOffsetY</top>
+			<posy>SortLetterOffsetY</posy>
 			<include>SortLetterNotification</include>
 		</control>
 		
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim2</include>
 			<include>VideoExtrasMenuBar</include>
@@ -405,15 +405,15 @@
 		
 		<control type="group">
 			<description>Bottom Bar Area</description>
-			<top>BottomPaneOffsetY</top>	
+			<posy>BottomPaneOffsetY</posy>	
 			<include>InfoPaneMediaDetails</include>
 			<control type="label">
 				<include>InfoPaneHeadLabel2</include>
 				<label>$INFO[Container.CurrentPage,$LOCALIZE[31946] ]$INFO[Container.NumPages,/,]</label>
 			</control>
 			<control type="image">
-				<left>582</left>
-				<top>-4</top>
+				<posx>582</posx>
+				<posy>-4</posy>
 				<width>116</width>
 				<height>45</height>
 				<texture>$VAR[VideoExtrasLogo]</texture>

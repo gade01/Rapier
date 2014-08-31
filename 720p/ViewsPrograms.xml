@@ -12,8 +12,8 @@
 
 			<control type="list" id="590">	
 				<viewtype label="31111">List Info</viewtype>
-				<left>595</left>
-				<top>110</top>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>920</pagecontrol>
@@ -34,13 +34,13 @@
 			<include>ProgramsListInfoViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -61,8 +61,8 @@
 
 			<control type="list" id="591">	
 				<viewtype label="31112">List Info 2</viewtype>
-				<left>595</left>
-				<top>110</top>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>921</pagecontrol>
@@ -83,13 +83,13 @@
 			<include>ProgramsListInfo2ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -110,8 +110,8 @@
 
 			<control type="list" id="592">	
 				<viewtype label="31115">List Info 3</viewtype>
-				<left>595</left>
-				<top>110</top>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>922</pagecontrol>
@@ -132,13 +132,13 @@
 			<include>ProgramsListInfo3ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -156,19 +156,20 @@
 			
 			<control type="group">
 				<description>Programs Info Area</description>
-				<left>38</left>
-				<top>430</top>
+				<posx>38</posx>
+				<posy>430</posy>
 
 				<control type="grouplist">
 					<description>Publisher</description>
-					<left>10</left>
-					<top>0</top>
+					<posx>10</posx>
+					<posy>0</posy>
 					<orientation>horizontal</orientation>
 					<control type="label">
 						<width min="0" max="110">auto</width>
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[32028]:</label>
 					</control>
 					<control type="label">
@@ -176,20 +177,22 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Studio]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Platform</description>
-					<left>10</left>
-					<top>22</top>
+					<posx>10</posx>
+					<posy>22</posy>
 					<orientation>horizontal</orientation>
 					<control type="label">
 						<width min="0" max="110">auto</width>
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[32027]:</label>
 					</control>
 					<control type="label">
@@ -197,14 +200,15 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Writer]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Year</description>
-					<left>406</left>
-					<top>0</top>
+					<posx>406</posx>
+					<posy>0</posy>
 					<width>130</width>
 					<orientation>horizontal</orientation>
 					<align>right</align>
@@ -213,6 +217,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[345]:</label>
 					</control>
 					<control type="label">
@@ -220,14 +225,15 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Premiered]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Rating</description>
-					<left>406</left>
-					<top>22</top>
+					<posx>406</posx>
+					<posy>22</posy>
 					<width>130</width>
 					<orientation>horizontal</orientation>
 					<align>right</align>
@@ -236,6 +242,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[563]:</label>
 					</control>
 					<control type="label">
@@ -243,6 +250,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Rating]</label>
 					</control>
 				</control>
@@ -250,8 +258,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>48</left>
-				<top>492</top>
+				<posx>48</posx>
+				<posy>492</posy>
 				<width>526</width>
 				<height>122</height>
 				<font>MediaInfoDescFont</font>
@@ -271,7 +279,7 @@
 	<include name="ProgramsListInfoItemLayout">
 		<itemlayout height="37">
 			<control type="image">
-				<left>0</left>
+				<posx>0</posx>
 				<width>630</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -279,8 +287,8 @@
 			</control>
 			<control type="image">
 				<description>Icon</description>
-				<left>5</left>
-				<top>6</top>
+				<posx>5</posx>
+				<posy>6</posy>
 				<width>24</width>
 				<height>24</height>
 				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
@@ -289,9 +297,9 @@
 			</control>		
 			<control type="label">
 				<description>Label</description>
-				<left>35</left>
+				<posx>35</posx>
+				<posy>16</posy>
 				<width>490</width>
-				<height>37</height>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
@@ -304,14 +312,14 @@
 	<include name="ProgramsListInfoFocusedLayout">
 		<focusedlayout height="37">	
 			<control type="image">
-				<left>0</left>
+				<posx>0</posx>
 				<width>630</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<left>0</left>
+				<posx>0</posx>
 				<width>630</width>
 				<height>36</height>	
 				<texture border="4">views/list-focus.png</texture>
@@ -323,7 +331,7 @@
 				<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
-				<left>0</left>
+				<posx>0</posx>
 				<width>630</width>
 				<height>36</height>	
 				<texture border="4">views/list-alt-focus.png</texture>
@@ -337,8 +345,8 @@
 				<include>ListViewFocusAnim</include>
 				<control type="image">
 					<description>Icon</description>
-					<left>5</left>
-					<top>6</top>
+					<posx>5</posx>
+					<posy>6</posy>
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
@@ -346,9 +354,9 @@
 				</control>
 				<control type="label">
 					<description>Label</description>
-					<left>35</left>
+					<posx>35</posx>
+					<posy>16</posy>
 					<width>490</width>
-					<height>37</height>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
@@ -400,22 +408,24 @@
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>60</left>
-				<top>12</top>
+				<posx>60</posx>
+				<posy>22</posy>
 				<width>465</width>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Label2</description>
-				<left>60</left>
-				<top>38</top>
+				<posx>60</posx>
+				<posy>47</posy>
 				<width>465</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>				
 				<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
 			</control>	
 		</itemlayout>
@@ -470,23 +480,25 @@
 				</control>				
 				<control type="label">
 					<description>Label</description>
-					<left>60</left>
-					<top>12</top>
+					<posx>60</posx>
+					<posy>22</posy>
 					<width>465</width>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
+					<aligny>center</aligny>
 					<scroll>yes</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
-					<left>60</left>
-					<top>38</top>
+					<posx>60</posx>
+					<posy>47</posy>
 					<width>465</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>		
+					<shadowcolor>ShadowColor</shadowcolor>
+					<aligny>center</aligny>				
 					<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
 				</control>	
 			</control>
@@ -533,22 +545,24 @@
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>80</left>
-				<top>12</top>
+				<posx>80</posx>
+				<posy>22</posy>
 				<width>445</width>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Label2</description>
-				<left>80</left>
-				<top>38</top>
+				<posx>80</posx>
+				<posy>47</posy>
 				<width>445</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>		
+				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>				
 				<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
 			</control>	
 		</itemlayout>
@@ -603,23 +617,25 @@
 				</control>				
 				<control type="label">
 					<description>Label</description>
-					<left>80</left>
-					<top>12</top>
+					<posx>80</posx>
+					<posy>22</posy>
 					<width>445</width>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
+					<aligny>center</aligny>
 					<scroll>yes</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
-					<left>80</left>
-					<top>38</top>
+					<posx>80</posx>
+					<posy>47</posy>
 					<width>445</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>	
+					<shadowcolor>ShadowColor</shadowcolor>
+					<aligny>center</aligny>				
 					<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
 				</control>	
 			</control>
@@ -666,22 +682,24 @@
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>104</left>
-				<top>12</top>
+				<posx>104</posx>
+				<posy>22</posy>
 				<width>411</width>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Label2</description>
-				<left>104</left>
-				<top>38</top>
+				<posx>104</posx>
+				<posy>47</posy>
 				<width>411</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>				
 				<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
 			</control>	
 		</itemlayout>
@@ -736,23 +754,25 @@
 				</control>				
 				<control type="label">
 					<description>Label</description>
-					<left>104</left>
-					<top>12</top>
+					<posx>104</posx>
+					<posy>22</posy>
 					<width>411</width>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
+					<aligny>center</aligny>
 					<scroll>yes</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
-					<left>104</left>
-					<top>38</top>
+					<posx>104</posx>
+					<posy>47</posy>
 					<width>411</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>	
+					<shadowcolor>ShadowColor</shadowcolor>
+					<aligny>center</aligny>				
 					<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
 				</control>	
 			</control>
@@ -770,8 +790,8 @@
 
 			<control type="panel" id="593">
 				<viewtype label="31116">Thumbs Info</viewtype>
-				<left>454</left>
-				<top>111</top>
+				<posx>454</posx>
+				<posy>111</posy>
 				<width>774</width>
 				<height>516</height>
 				<pagecontrol>923</pagecontrol>
@@ -890,13 +910,13 @@
 			<include>ProgramsThumbsInfoViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -929,8 +949,8 @@
 
 			<control type="panel" id="594">
 				<viewtype label="31119">Thumbs Info</viewtype>
-				<left>454</left>
-				<top>111</top>
+				<posx>454</posx>
+				<posy>111</posy>
 				<width>774</width>
 				<height>516</height>
 				<pagecontrol>924</pagecontrol>
@@ -1049,13 +1069,13 @@
 			<include>ProgramsThumbsInfo2ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1088,8 +1108,8 @@
 
 			<control type="panel" id="595">
 				<viewtype label="31120">Thumbs Info</viewtype>
-				<left>454</left>
-				<top>111</top>
+				<posx>454</posx>
+				<posy>111</posy>
 				<width>775</width>
 				<height>516</height>
 				<pagecontrol>925</pagecontrol>
@@ -1208,13 +1228,13 @@
 			<include>ProgramsThumbsInfo3ViewScrollbar</include>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1249,13 +1269,13 @@
 
 			<control type="group">
 				<description>Programs Info Area</description>
-				<left>38</left>
-				<top>354</top>
+				<posx>38</posx>
+				<posy>354</posy>
 
 				<control type="grouplist">
 					<description>Publisher</description>
-					<left>10</left>
-					<top>0</top>
+					<posx>10</posx>
+					<posy>0</posy>
 					<width>400</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -1263,6 +1283,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[32028]:</label>
 					</control>
 					<control type="label">
@@ -1270,14 +1291,15 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Studio]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Platform</description>
-					<left>10</left>
-					<top>22</top>
+					<posx>10</posx>
+					<posy>22</posy>
 					<width>400</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -1285,6 +1307,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[32027]:</label>
 					</control>
 					<control type="label">
@@ -1292,14 +1315,15 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Writer]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Year</description>
-					<left>268</left>
-					<top>0</top>
+					<posx>268</posx>
+					<posy>0</posy>
 					<width>130</width>
 					<orientation>horizontal</orientation>
 					<align>right</align>
@@ -1308,6 +1332,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[345]:</label>
 					</control>
 					<control type="label">
@@ -1315,14 +1340,15 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Premiered]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Rating</description>
-					<left>268</left>
-					<top>22</top>
+					<posx>268</posx>
+					<posy>22</posy>
 					<width>130</width>
 					<orientation>horizontal</orientation>
 					<align>right</align>
@@ -1331,6 +1357,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label>$LOCALIZE[563]:</label>
 					</control>
 					<control type="label">
@@ -1338,6 +1365,7 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
 						<label fallback="31001">$INFO[ListItem.Rating]</label>
 					</control>
 				</control>
@@ -1345,8 +1373,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>48</left>
-				<top>416</top>
+				<posx>48</posx>
+				<posy>416</posy>
 				<width>388</width>
 				<height>191</height>
 				<font>MediaInfoDescFont</font>
@@ -1377,13 +1405,13 @@
 			</control>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1406,13 +1434,13 @@
 			</control>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1434,13 +1462,13 @@
 			</control>
 
 			<control type="group">
-				<top>SortLetterOffsetY</top>
+				<posy>SortLetterOffsetY</posy>
 				<include>SortLetterNotification</include>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1454,7 +1482,7 @@
 	<include name="ProgramsWrapListInfoStyle1">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>378</top>
+			<posy>378</posy>
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -1462,8 +1490,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>382</top>
+			<posx>492</posx>
+			<posy>382</posy>
 			<width>755</width>
 			<height>345</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -1472,8 +1500,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>41</left>
-			<top>382</top>
+			<posx>41</posx>
+			<posy>382</posy>
 			<width>600</width>
 			<height>345</height>
 			<texture>views/cover-glow.png</texture>
@@ -1483,8 +1511,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>211</top>
+			<posx>0</posx>
+			<posy>211</posy>
 			<width>1280</width>
 			<height>171</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
@@ -1493,8 +1521,8 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>211</top>
+			<posx>485</posx>
+			<posy>211</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
@@ -1507,8 +1535,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>244</top>
+			<posx>0</posx>
+			<posy>244</posy>
 			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>
@@ -1516,8 +1544,8 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
@@ -1567,8 +1595,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>505</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
 				<height>125</height>
 				<font>MediaInfoDescFont</font>
@@ -1583,13 +1611,13 @@
 			</control>
 
 			<control type="group">
-				<left>239</left>
-				<top>520</top>
+				<posx>239</posx>
+				<posy>520</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<left>0</left>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>204</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -1602,8 +1630,8 @@
 
 		<control type="wraplist" id="596">
 			<viewtype label="31106">Wrap Info</viewtype>
-			<left>-38</left>
-			<top>244</top>
+			<posx>-38</posx>
+			<posy>244</posy>
 			<width>1350</width>
 			<height>330</height>
 			<focusposition>2</focusposition>
@@ -1652,8 +1680,8 @@
 				</control>	
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>211</top>
+					<posx>4</posx>
+					<posy>211</posy>
 					<width>147</width>
 					<height>214</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1702,8 +1730,8 @@
 					</control>
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>211</top>
+						<posx>4</posx>
+						<posy>211</posy>
 						<width>147</width>
 						<height>214</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1722,7 +1750,7 @@
 	<include name="ProgramsWrapListInfoStyle2">			
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>345</top>
+			<posy>345</posy>
 			<width>ScreenWidth</width>
 			<height>380</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -1730,8 +1758,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>349</top>
+			<posx>492</posx>
+			<posy>349</posy>
 			<width>755</width>
 			<height>415</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -1740,8 +1768,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>-52</left>
-			<top>334</top>
+			<posx>-52</posx>
+			<posy>334</posy>
 			<width>744</width>
 			<height>415</height>
 			<texture>views/cover-glow.png</texture>
@@ -1751,8 +1779,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>137</top>
+			<posx>0</posx>
+			<posy>137</posy>
 			<width>1280</width>
 			<height>212</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
@@ -1761,8 +1789,8 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>137</top>
+			<posx>485</posx>
+			<posy>137</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
@@ -1775,8 +1803,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>170</top>
+			<posx>0</posx>
+			<posy>170</posy>
 			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>				
@@ -1784,8 +1812,8 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
@@ -1835,8 +1863,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>505</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
 				<height>125</height>
 				<font>MediaInfoDescFont</font>
@@ -1851,13 +1879,13 @@
 			</control>
 
 			<control type="group">
-				<left>188</left>
-				<top>520</top>
+				<posx>188</posx>
+				<posy>520</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<left>0</left>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>268</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -1870,8 +1898,8 @@
 
 		<control type="wraplist" id="596">
 			<viewtype label="31106">Wrap Info</viewtype>
-			<left>-3</left>
-			<top>170</top>
+			<posx>-3</posx>
+			<posy>170</posy>
 			<width>1280</width>
 			<height>470</height>
 			<focusposition>1</focusposition>
@@ -1920,8 +1948,8 @@
 				</control>			
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>285</top>
+					<posx>4</posx>
+					<posy>285</posy>
 					<width>206</width>
 					<height>288</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1970,8 +1998,8 @@
 					</control>			
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>285</top>
+						<posx>4</posx>
+						<posy>285</posy>
 						<width>206</width>
 						<height>288</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1982,8 +2010,8 @@
 					</control>
 					<control type="image">
 						<description>Overlay</description>
-						<left>161</left>
-						<top>235</top>
+						<posx>161</posx>
+						<posy>235</posy>
 						<width>26</width>
 						<height>26</height>
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -2001,7 +2029,7 @@
 	<include name="ProgramsWrapListInfo2Style1">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>397</top>
+			<posy>397</posy>
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -2009,8 +2037,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>401</top>
+			<posx>492</posx>
+			<posy>401</posy>
 			<width>755</width>
 			<height>326</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -2019,8 +2047,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>41</left>
-			<top>401</top>
+			<posx>41</posx>
+			<posy>401</posy>
 			<width>600</width>
 			<height>326</height>
 			<texture>views/cover-glow.png</texture>
@@ -2030,8 +2058,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>270</top>
+			<posx>0</posx>
+			<posy>270</posy>
 			<width>1280</width>
 			<height>131</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
@@ -2040,8 +2068,8 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>270</top>
+			<posx>485</posx>
+			<posy>270</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
@@ -2054,8 +2082,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>303</top>
+			<posx>0</posx>
+			<posy>303</posy>
 			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>
@@ -2063,8 +2091,8 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
@@ -2114,8 +2142,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>505</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
 				<height>125</height>
 				<font>MediaInfoDescFont</font>
@@ -2130,13 +2158,13 @@
 			</control>
 
 			<control type="group">
-				<left>239</left>
-				<top>500</top>
+				<posx>239</posx>
+				<posy>500</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<left>0</left>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>204</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -2149,8 +2177,8 @@
 
 		<control type="wraplist" id="597">
 			<viewtype label="31117">Wrap Info</viewtype>
-			<left>-38</left>
-			<top>303</top>
+			<posx>-38</posx>
+			<posy>303</posy>
 			<width>1350</width>
 			<height>330</height>
 			<focusposition>2</focusposition>
@@ -2199,8 +2227,8 @@
 				</control>	
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>152</top>
+					<posx>4</posx>
+					<posy>152</posy>
 					<width>147</width>
 					<height>155</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2249,8 +2277,8 @@
 					</control>
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>152</top>
+						<posx>4</posx>
+						<posy>152</posy>
 						<width>147</width>
 						<height>155</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2269,7 +2297,7 @@
 	<include name="ProgramsWrapListInfo2Style2">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>372</top>
+			<posy>372</posy>
 			<width>ScreenWidth</width>
 			<height>353</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -2277,8 +2305,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>376</top>
+			<posx>492</posx>
+			<posy>376</posy>
 			<width>755</width>
 			<height>388</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -2287,8 +2315,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>-52</left>
-			<top>360</top>
+			<posx>-52</posx>
+			<posy>360</posy>
 			<width>744</width>
 			<height>388</height>
 			<texture>views/cover-glow.png</texture>
@@ -2298,8 +2326,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>209</top>
+			<posx>0</posx>
+			<posy>209</posy>
 			<width>1280</width>
 			<height>167</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
@@ -2308,8 +2336,8 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>209</top>
+			<posx>485</posx>
+			<posy>209</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
@@ -2322,8 +2350,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>242</top>
+			<posx>0</posx>
+			<posy>242</posy>
 			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>				
@@ -2331,8 +2359,8 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
@@ -2382,8 +2410,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>505</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
 				<height>125</height>
 				<font>MediaInfoDescFont</font>
@@ -2398,13 +2426,13 @@
 			</control>
 
 			<control type="group">
-				<left>188</left>
-				<top>500</top>
+				<posx>188</posx>
+				<posy>500</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<left>0</left>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>268</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -2417,8 +2445,8 @@
 
 		<control type="wraplist" id="597">
 			<viewtype label="31117">Wrap Info</viewtype>
-			<left>-3</left>
-			<top>242</top>
+			<posx>-3</posx>
+			<posy>242</posy>
 			<width>1280</width>
 			<height>470</height>
 			<focusposition>1</focusposition>
@@ -2467,8 +2495,8 @@
 				</control>			
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>211</top>
+					<posx>4</posx>
+					<posy>211</posy>
 					<width>206</width>
 					<height>214</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2517,8 +2545,8 @@
 					</control>			
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>211</top>
+						<posx>4</posx>
+						<posy>211</posy>
 						<width>206</width>
 						<height>214</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2538,7 +2566,7 @@
 	<include name="ProgramsWrapListInfo3Style1">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>397</top>
+			<posy>397</posy>
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -2546,8 +2574,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>401</top>
+			<posx>492</posx>
+			<posy>401</posy>
 			<width>755</width>
 			<height>326</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -2556,8 +2584,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>-111</left>
-			<top>401</top>
+			<posx>-111</posx>
+			<posy>401</posy>
 			<width>803</width>
 			<height>326</height>
 			<texture>views/cover-glow.png</texture>
@@ -2567,8 +2595,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>270</top>
+			<posx>0</posx>
+			<posy>270</posy>
 			<width>1280</width>
 			<height>131</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
@@ -2577,8 +2605,8 @@
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>270</top>
+			<posx>485</posx>
+			<posy>270</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
@@ -2591,8 +2619,8 @@
 		</control>
 
 		<control type="image">
-			<left>0</left>
-			<top>303</top>
+			<posx>0</posx>
+			<posy>303</posy>
 			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>
@@ -2600,8 +2628,8 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
@@ -2651,8 +2679,8 @@
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>505</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
 				<height>125</height>
 				<font>MediaInfoDescFont</font>
@@ -2667,13 +2695,13 @@
 			</control>
 
 			<control type="group">
-				<left>161</left>
-				<top>500</top>
+				<posx>161</posx>
+				<posy>500</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<left>0</left>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>282</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -2686,8 +2714,8 @@
 
 		<control type="wraplist" id="598">
 			<viewtype label="31118">Wrap Info</viewtype>
-			<left>-32</left>
-			<top>303</top>
+			<posx>-32</posx>
+			<posy>303</posy>
 			<width>1350</width>
 			<height>330</height>
 			<focusposition>1</focusposition>
@@ -2736,8 +2764,8 @@
 				</control>	
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>152</top>
+					<posx>4</posx>
+					<posy>152</posy>
 					<width>206</width>
 					<height>155</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2786,8 +2814,8 @@
 					</control>
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>152</top>
+						<posx>4</posx>
+						<posy>152</posy>
 						<width>206</width>
 						<height>155</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>

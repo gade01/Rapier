@@ -16,8 +16,8 @@
 			
 			<control type="label">
 				<description>Title</description>
-				<left>296</left>
-				<top>39</top>
+				<posx>296</posx>
+				<posy>39</posy>
 				<width>388</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
@@ -29,8 +29,8 @@
 			
 			<control type="image">
 				<description>Default Cover Background</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>254</width>
 				<height>254</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -41,8 +41,8 @@
 			
 			<control type="image">
 				<description>Default Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>254</width>
 				<height>254</height>
 				<texture>DefaultAudio.png</texture>
@@ -53,8 +53,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>DialogMarginOffsetX</left>
-				<top>Dialog4MarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>Dialog4MarginOffsetY</posy>
 				<width>254</width>
 				<height>254</height>
 				<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[ListItem.Thumb]</texture>
@@ -63,8 +63,8 @@
 			
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>296</left>
-				<top>65</top>
+				<posx>296</posx>
+				<posy>65</posy>
 				<width>508</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
@@ -102,8 +102,8 @@
 			</control>
 			
 			<control type="panel" id="901">
-				<left>296</left>
-				<top>65</top>
+				<posx>296</posx>
+				<posy>65</posy>
 				<width>508</width>
 				<height>224</height>
 				<viewtype label="">list</viewtype>
@@ -115,8 +115,8 @@
 				<ondown>901</ondown>
 				<itemlayout height="32" width="388">	
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -126,8 +126,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>403</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -144,8 +144,8 @@
 						<include>ListViewSelectFadeAnim</include>
 					</control>									
 					<control type="label">
-						<left>90</left>
-						<top>-1</top>
+						<posx>90</posx>
+						<posy>-1</posy>
 						<width>85</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -155,8 +155,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
-						<top>-1</top>
+						<posx>100</posx>
+						<posy>-1</posy>
 						<width>403</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
@@ -220,8 +220,8 @@
 			<control type="group" id="256">
 				<control type="button" id="14">
 					<description>Decrease Rating</description>
-					<left>44</left>
-					<top>306</top>
+					<posx>44</posx>
+					<posy>306</posy>
 					<width>28</width>
 					<height>28</height>
 					<texturefocus>controls/arrow-scroll-left-focus2.png</texturefocus>
@@ -234,8 +234,8 @@
 				
 				<control type="image">
 					<description>Star Rating</description>
-					<left>104</left>
-					<top>297</top>
+					<posx>104</posx>
+					<posy>297</posy>
 					<width>115</width>
 					<height>46</height>
 					<info>ListItem.Rating</info>
@@ -244,8 +244,8 @@
 				
 				<control type="button" id="15">
 					<description>Increase Rating</description>
-					<left>251</left>
-					<top>306</top>
+					<posx>251</posx>
+					<posy>306</posy>
 					<width>28</width>
 					<height>28</height>
 					<texturefocus flipx="true">controls/arrow-scroll-left-focus2.png</texturefocus>
@@ -257,8 +257,8 @@
 				</control>
 				
 				<control type="grouplist" id="505">
-					<left>359</left>
-					<top>297</top>
+					<posx>359</posx>
+					<posy>297</posy>
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
 					<onup>901</onup>

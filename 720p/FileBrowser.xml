@@ -5,7 +5,7 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="148" y="120">true</origin>
+		<origin x="305" y="120">true</origin>
 	</coordinates>
 	
 	<controls>	
@@ -14,53 +14,43 @@
 			<include>DialogOpenCloseAnim</include>
 
 			<control type="label" id="411">
-				<width>914</width>
 				<include>DialogTitle</include>
 			</control>
 			
 			<control type="group">			
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 				
 				<control type="label" id="412">
 					<description>Path</description>
-					<width>800</width>
+					<posy>8</posy>
+					<width>600</width>
 					<haspath>true</haspath>
 					<scroll>yes</scroll>
 					<include>DialogHeadLabel</include>
 					<include>DialogHeadLabelFade</include>
 				</control>
 				
-				<control type="image">
-					<description>Paths Background</description>
-					<left>0</left>
-					<top>20</top>
-					<width>582</width>
-					<height>325</height>
-					<texture border="5">controls/button-nofocus.png</texture>
-					<visible>Control.IsVisible(450) | Control.IsVisible(451)</visible>
-					<animation effect="zoom" start="55,100" center="20,145" time="400" tween="circle" easing="out">Visible</animation>
-				</control>
-				
-				<include>FileBrowserScrollbar</include>
-				
-				<control type="image">
-					<description>Icon Background</description>
-					<left>604</left>
-					<top>20</top>
-					<width>310</width>
-					<height>325</height>
-					<texture border="5">controls/button-nofocus.png</texture>
-					<visible>!IsEmpty(ListItem.Icon)</visible>
-					<animation effect="zoom" start="55,100" center="20,145" time="400" tween="circle" easing="out">Visible</animation>
-				</control>
+				<include>IconFileBrowserScrollbar</include>
+				<include>ListFileBrowserScrollbar</include>
 				
 				<control type="group" id="259">
 					<description>Icon View</description>
 					
+					<control type="image">
+						<description>Paths Background</description>
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>581</width>
+						<height>325</height>
+						<texture border="5">controls/button-nofocus.png</texture>
+						<visible>Control.IsVisible(451)</visible>
+						<animation effect="zoom" start="55,100" center="20,145" time="400" tween="circle" easing="out">Visible</animation>
+					</control>
+						
 					<control type="panel" id="451">
-						<left>5</left>
-						<top>25</top>
+						<posx>5</posx>
+						<posy>25</posy>
 						<width>572</width>
 						<height>315</height>
 						<pagecontrol>914</pagecontrol>	
@@ -71,16 +61,16 @@
 						<itemlayout height="157" width="143">	
 							<control type="image">
                                 <description>Background</description>
-                                <left>11</left>
-                                <top>10</top>
+                                <posx>11</posx>
+                                <posy>10</posy>
                                 <width>120</width>
                                 <height>120</height>
                                 <texture border="5">controls/button-nofocus.png</texture>
                             </control>
 							 <control type="image">
                                 <description>Cover</description>
-                                <left>11</left>
-                                <top>10</top>
+                                <posx>11</posx>
+                                <posy>10</posy>
                                 <width>120</width>
                                 <height>120</height>
 								<bordersize>7</bordersize>
@@ -89,8 +79,8 @@
                             </control>
                             <control type="image">
                                 <description>Default Cover</description>
-                                <left>11</left>
-                                <top>10</top>
+                                <posx>11</posx>
+                                <posy>10</posy>
                                 <width>120</width>
                                 <height>120</height>
 								<bordersize>7</bordersize>
@@ -98,8 +88,8 @@
                                 <visible>IsEmpty(ListItem.Thumb)</visible>
                             </control> 
 							<control type="label">
-								<left>71</left>
-								<top>137</top>
+								<posx>71</posx>
+								<posy>137</posy>
 								<width>133</width>
 								<font>ButtonFont2</font>
 								<textcolor>ButtonColor</textcolor>
@@ -111,8 +101,8 @@
                         <focusedlayout height="157" width="143">
 							<control type="image">
                                 <description>Background</description>
-                                <left>11</left>
-                                <top>10</top>
+                                <posx>11</posx>
+                                <posy>10</posy>
                                 <width>120</width>
                                 <height>120</height>
                                 <texture border="4">views/list-focus.png</texture>
@@ -120,8 +110,8 @@
                             </control>
                             <control type="image">
                                 <description>Cover</description>
-                                <left>11</left>
-                                <top>10</top>
+                                <posx>11</posx>
+                                <posy>10</posy>
                                 <width>120</width>
                                 <height>120</height>
 								<bordersize>7</bordersize>
@@ -130,8 +120,8 @@
                             </control>
                             <control type="image">
                                 <description>Default Cover</description>
-                                <left>11</left>
-                                <top>10</top>
+                                <posx>11</posx>
+                                <posy>10</posy>
                                 <width>120</width>
                                 <height>120</height>
 								<bordersize>7</bordersize>
@@ -139,8 +129,8 @@
                                 <visible>IsEmpty(ListItem.Thumb)</visible>
                             </control>
 							<control type="label">
-								<left>71</left>
-								<top>137</top>
+								<posx>71</posx>
+								<posy>137</posy>
 								<width>133</width>
 								<font>ButtonFont2</font>
 								<textcolor>ButtonFocusColor</textcolor>
@@ -154,29 +144,40 @@
 				
 				<control type="group" id="260">
 					<description>List View</description>
+					
+					<control type="image">
+						<description>Paths Background</description>
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>320</width>
+						<height>325</height>
+						<texture border="5">controls/button-nofocus.png</texture>
+						<visible>Control.IsVisible(450)</visible>
+						<animation effect="zoom" start="145,100" center="20,145" time="400" tween="circle" easing="out">Visible</animation>
+					</control>
 
 					<control type="list" id="450">
 						<description>Paths</description>
-						<left>5</left>
-						<top>25</top>
-						<width>572</width>
+						<posx>5</posx>
+						<posy>25</posy>
+						<width>310</width>
 						<height>315</height>
-						<pagecontrol>914</pagecontrol>
+						<pagecontrol>915</pagecontrol>
 						<onup>450</onup>
 						<ondown>450</ondown>
 						<onleft>9001</onleft>
 						<onright>150</onright>
 						<itemlayout height="35">
 							<control type="image">
-								<left>5</left>
-								<top>6</top>
+								<posx>5</posx>
+								<posy>6</posy>
 								<width>24</width>
 								<height>24</height>
 								<texture>$INFO[ListItem.ActualIcon].png</texture>
 							</control>
 							<control type="label">
-								<left>35</left>
-								<width>530</width>
+								<posx>35</posx>
+								<width>260</width>
 								<height>35</height>
 								<font>ButtonFont2</font>
 								<textcolor>ButtonColor</textcolor>
@@ -186,7 +187,7 @@
 						</itemlayout>
 						<focusedlayout height="35">
 							<control type="image">
-								<width>572</width>
+								<width>310</width>
 								<height>35</height>
 								<texture border="4">views/list-focus.png</texture>
 								<visible>Control.HasFocus(450)</visible>
@@ -194,7 +195,7 @@
 								<include>ListViewDialogScrollAnim</include>
 							</control>
 							<control type="image">
-								<width>572</width>
+								<width>310</width>
 								<height>35</height>
 								<texture border="4">views/list-alt-focus.png</texture>
 								<visible>!Control.HasFocus(450)</visible>
@@ -203,15 +204,15 @@
 							<control type="group">
 								<include>ListViewFocusAnim</include>
 								<control type="image">
-									<left>5</left>
-									<top>6</top>
+									<posx>5</posx>
+									<posy>6</posy>
 									<width>24</width>
 									<height>24</height>
 									<texture>$INFO[ListItem.ActualIcon].png</texture>
 								</control>
 								<control type="label">
-									<left>35</left>
-									<width>530</width>
+									<posx>35</posx>
+									<width>260</width>
 									<height>35</height>
 									<font>ButtonFont2</font>
 									<textcolor>ButtonFocusColor</textcolor>
@@ -220,44 +221,28 @@
 								</control>
 							</control>
 						</focusedlayout>
+					</control>	
+
+					<control type="image">
+						<description>Thumbnail</description>
+						<posx>356</posx>
+						<posy>35</posy>
+						<width>241</width>
+						<height>295</height>
+						<info>ListItem.Icon</info>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Control.IsVisible(450)</visible>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>ControlsOpenCloseAnim</include>
 					</control>
-				</control>
-				
-				<control type="image">
-					<description>Thumbnail</description>
-					<left>609</left>
-					<top>25</top>
-					<width>300</width>
-					<height>315</height>
-					<info>ListItem.Thumb</info>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>!IsEmpty(ListItem.Thumb)</visible>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<include>ControlsOpenCloseAnim</include>
-					<animation effect="fade" time="400">VisibleChange</animation>
-				</control>
-				
-				<control type="image">
-					<description>Thumbnail</description>
-					<left>609</left>
-					<top>25</top>
-					<width>300</width>
-					<height>315</height>
-					<info>ListItem.ActualIcon</info>
-					<bordersize>45</bordersize>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>IsEmpty(ListItem.Thumb)</visible>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<animation effect="fade" time="400">VisibleChange</animation>
-					<include>ControlsOpenCloseAnim</include>
 				</control>
 			</control>
 
 			<control type="grouplist" id="9001">			
 				<description>Dialog Button Area</description>
-				<left>80</left>
-				<top>407</top>
-				<width>824</width>
+				<posx>80</posx>
+				<posy>407</posy>
+				<width>510</width>
 				<itemgap>0</itemgap>
 				<align>center</align>
 				<orientation>horizontal</orientation>	

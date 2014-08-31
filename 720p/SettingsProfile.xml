@@ -17,8 +17,8 @@
 		
 			<control type="panel" id="2">
 				<viewtype label="31103">Icon</viewtype>
-				<left>31</left>
-				<top>105</top>
+				<posx>31</posx>
+				<posy>105</posy>
 				<width>1218</width>
 				<height>555</height>
 				<pagecontrol>901</pagecontrol>	
@@ -30,8 +30,8 @@
 				<itemlayout height="185" width="203">		
 					<control type="image">
 						<description>Cover</description>
-						<left>20</left>
-						<top>20</top>
+						<posx>20</posx>
+						<posy>20</posy>
 						<width>164</width>
 						<height>122</height>
 						<texture background="true" fallback="unknown-user.png">$INFO[ListItem.Icon]</texture>
@@ -40,8 +40,8 @@
 					</control>
 					<control type="label">
 						<description>Label</description>
-						<left>102</left>
-						<top>150</top>
+						<posx>102</posx>
+						<posy>150</posy>
 						<width>164</width>
 						<font>IconFont</font>
 						<textcolor>GreyColor2</textcolor>
@@ -53,8 +53,8 @@
 				<focusedlayout height="185" width="203">
 					<control type="image">
 						<description>Cover Focus</description>
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>203</width>
 						<height>185</height>
 						<texture border="4">views/list-focus.png</texture>
@@ -63,8 +63,8 @@
 					</control>	
 					<control type="image">
 						<description>Cover</description>
-						<left>20</left>
-						<top>20</top>
+						<posx>20</posx>
+						<posy>20</posy>
 						<width>164</width>
 						<height>122</height>
 						<texture background="true" fallback="unknown-user.png">$INFO[ListItem.Icon]</texture>
@@ -73,8 +73,8 @@
 					</control>	
 					<control type="label">
 						<description>Label</description>
-						<left>102</left>
-						<top>150</top>
+						<posx>102</posx>
+						<posy>150</posy>
 						<width>164</width>
 						<font>IconFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -90,7 +90,7 @@
 		
 		<control type="group">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim2</include>	
 			<include>ProfileSettingsMenuBar</include>
@@ -106,7 +106,7 @@
 
 		<control type="group">
 			<description>Bottom Bar Area</description>
-			<top>BottomPaneOffsetY</top>
+			<posy>BottomPaneOffsetY</posy>
 			<include>InfoPaneProfileDetails</include>
 			<include>BottomPaneOpenCloseAnim</include>
 		</control>

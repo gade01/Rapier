@@ -19,6 +19,30 @@
 				<include>SettingsHeaderBtn</include>
 				<label>$LOCALIZE[24001]</label>
 			</control>
+			<control type="radiobutton" id="5001">
+				<description>Show Subtitles Button</description>
+				<include>SettingsContentRadioBtn</include>
+				<label>$LOCALIZE[31500]</label>
+				<selected>!Skin.HasSetting(HideSubtitlesOSDBtn)</selected>
+				<onclick>Skin.ToggleSetting(HideSubtitlesOSDBtn)</onclick>
+			</control>
+			<control type="button" id="5002">
+				<description>Subtitles Path</description>
+				<textoffsetx>20</textoffsetx>
+				<include>SettingsContentBtn</include>
+				<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$INFO[Skin.String(SubtitlesScriptPath)][/COLOR]</label>
+				<onclick>Skin.SetAddon(SubtitlesScriptPath,xbmc.python.subtitles)</onclick>
+				<visible>!Skin.HasSetting(HideSubtitlesOSDBtn)</visible>
+			</control>
+			<control type="button" id="5003">
+				<description>Subtitles Settings</description>
+				<textoffsetx>20</textoffsetx>
+				<include>SettingsContentBtn</include>
+				<label>$LOCALIZE[287] $LOCALIZE[10004]</label>
+				<onclick>Addon.OpenSettings($INFO[Skin.String(SubtitlesScriptPath)])</onclick>
+				<enable>!IsEmpty(Skin.String(SubtitlesScriptPath))</enable>
+				<visible>!Skin.HasSetting(HideSubtitlesOSDBtn)</visible>
+			</control>
 			<control type="radiobutton" id="5004">
 				<description>Show Lyrics Button</description>
 				<include>SettingsContentRadioBtn</include>

@@ -18,8 +18,8 @@
 			
 			<control type="image">
 				<description>Divider</description>
-				<left>540</left>
-				<top>115</top>
+				<posx>540</posx>
+				<posy>115</posy>
 				<width>200</width>
 				<height>507</height>
 				<texture border="5">controls/button-nofocus.png</texture>				
@@ -27,8 +27,8 @@
 
 			<control type="label" id="101">
 				<description>Path Left</description>
-				<left>65</left>
-				<top>124</top>
+				<posx>65</posx>
+				<posy>124</posy>
 				<width>465</width>
 				<height>34</height>	
 				<font>MenuBarBtnFont</font>
@@ -39,8 +39,8 @@
 			
 			<control type="label" id="102">
 				<description>Path Right</description>
-				<left>755</left>
-				<top>124</top>
+				<posx>755</posx>
+				<posy>124</posy>
 				<width>465</width>
 				<height>34</height>	
 				<font>MenuBarBtnFont</font>
@@ -51,8 +51,8 @@
 
 			<control type="list" id="20">
 				<description>Left List</description>
-				<left>60</left>
-				<top>170</top>
+				<posx>60</posx>
+				<posy>170</posy>
 				<width>470</width>
 				<height>444</height>
 				<pagecontrol>150</pagecontrol>
@@ -68,16 +68,16 @@
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>5</left>
-						<top>6</top>
+						<posx>5</posx>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="label">
-						<left>35</left>
-						<top>16</top>
+						<posx>35</posx>
+						<posy>16</posy>
 						<width>430</width>
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
@@ -86,8 +86,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>465</left>
-						<top>16</top>
+						<posx>465</posx>
+						<posy>16</posy>
 						<width>280</width>
 						<font>ListFont2</font>
 						<textcolor>ListColor3</textcolor>
@@ -105,7 +105,7 @@
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>470</width>
 						<height>36</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -115,7 +115,7 @@
 						<include>ListViewFileManagerScrollAnim</include>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>470</width>
 						<height>36</height>	
 						<texture border="4">views/list-alt-focus.png</texture>
@@ -126,16 +126,16 @@
 					<control type="group">
 						<include>ListViewFocusAnim</include>
 						<control type="image">
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 							<aspectratio>stretch</aspectratio>
 						</control>	
 						<control type="label">
-							<left>35</left>
-							<top>16</top>
+							<posx>35</posx>
+							<posy>16</posy>
 							<width>430</width>
 							<font>ListFont</font>
 							<textcolor>SelectedColor</textcolor>
@@ -144,8 +144,8 @@
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
-							<left>465</left>
-							<top>16</top>
+							<posx>465</posx>
+							<posy>16</posy>
 							<width>280</width>
 							<font>ListFont2</font>
 							<textcolor>ListColor3</textcolor>
@@ -160,8 +160,8 @@
 				
 			<control type="list" id="21">
 				<description>Right List</description>
-				<left>750</left>
-				<top>170</top>
+				<posx>750</posx>
+				<posy>170</posy>
 				<width>470</width>
 				<height>444</height>	
 				<pagecontrol>151</pagecontrol>
@@ -177,16 +177,16 @@
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>5</left>
-						<top>6</top>
+						<posx>5</posx>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="label">
-						<left>35</left>
-						<top>16</top>
+						<posx>35</posx>
+						<posy>16</posy>
 						<width>430</width>
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
@@ -195,8 +195,8 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>465</left>
-						<top>16</top>
+						<posx>465</posx>
+						<posy>16</posy>
 						<width>280</width>
 						<font>ListFont2</font>
 						<textcolor>ListColor3</textcolor>
@@ -214,7 +214,7 @@
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>470</width>
 						<height>36</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -224,7 +224,7 @@
 						<include>ListViewFileManagerScrollAnim2</include>
 					</control>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>470</width>
 						<height>36</height>	
 						<texture border="4">views/list-alt-focus.png</texture>
@@ -235,16 +235,16 @@
 					<control type="group">
 						<include>ListViewFocusAnim</include>
 						<control type="image">
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 							<aspectratio>stretch</aspectratio>
 						</control>	
 						<control type="label">
-							<left>35</left>
-							<top>16</top>
+							<posx>35</posx>
+							<posy>16</posy>
 							<width>430</width>
 							<font>ListFont</font>
 							<textcolor>SelectedColor</textcolor>
@@ -253,8 +253,8 @@
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
-							<left>465</left>
-							<top>16</top>
+							<posx>465</posx>
+							<posy>16</posy>
 							<width>280</width>
 							<font>ListFont2</font>
 							<textcolor>ListColor3</textcolor>
@@ -271,13 +271,13 @@
 
 			<control type="group">
 				<description>Info Area</description>
-				<left>540</left>
-				<top>90</top>
+				<posx>540</posx>
+				<posy>90</posy>
 					
 				<control type="image">
 					<description>Left Preview</description>
-					<left>10</left>
-					<top>30</top>
+					<posx>10</posx>
+					<posy>30</posy>
 					<width>180</width>
 					<height>180</height>
 					<aspectratio>stretch</aspectratio>
@@ -289,8 +289,8 @@
 				
 				<control type="image">
 					<description>Right Preview</description>
-					<left>10</left>
-					<top>30</top>
+					<posx>10</posx>
+					<posy>30</posy>
 					<width>180</width>
 					<height>180</height>
 					<aspectratio>stretch</aspectratio>
@@ -301,8 +301,8 @@
 				</control>
 		
 				<control type="grouplist">
-					<left>10</left>
-					<top>220</top>
+					<posx>10</posx>
+					<posy>220</posy>
 					<width>180</width>
 					<height>300</height>
 					<itemgap>8</itemgap>
@@ -332,7 +332,7 @@
 		
 		<control type="group">
 			<description>Bottom Bar Area</description>
-			<top>BottomPaneOffsetY</top>	
+			<posy>BottomPaneOffsetY</posy>	
 			<include>InfoPaneFileManagerDetails</include>
 			<include>BottomPaneOpenCloseAnim</include>
 		</control>

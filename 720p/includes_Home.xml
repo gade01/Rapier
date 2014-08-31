@@ -2,8 +2,8 @@
 <includes>
 	<include name="XbmcLogo">
 		<control type="image">
-			<left>10</left>
-			<top>11</top>
+			<posx>10</posx>
+			<posy>11</posy>
 			<width>73</width>
 			<height>18</height>
 			<texture>xbmc-logo.png</texture>
@@ -13,8 +13,8 @@
 		</control>
 			
 		<control type="button" id="555">
-			<left>10</left>
-			<top>11</top>
+			<posx>10</posx>
+			<posy>11</posy>
 			<ondown condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">850</ondown>
 			<ondown condition="Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">110</ondown>
 			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</ondown>
@@ -47,6 +47,8 @@
 			<aspectratio>stretch</aspectratio>
 			<animation effect="fade" end="80" condition="true">Conditional</animation>			
 			<font>-</font>
+			<align>left</align>
+			<aligny>top</aligny>
 			<texturefocus border="0">xbmc-logo-blue.png</texturefocus>
 			<texturenofocus border="0">xbmc-logo.png</texturenofocus>
 			<pulseonselect>false</pulseonselect>
@@ -65,7 +67,7 @@
 		</control>
 
 		<control type="image">
-			<top>-5</top>
+			<posy>-5</posy>
 			<width>ScreenWidth</width>
 			<height>8</height>
 			<texture>gui/bottom-bar-top.png</texture>
@@ -75,7 +77,7 @@
 
 	<include name="HomeMenuPaneOverlay">
 		<control type="image">
-			<top>2</top>
+			<posy>2</posy>
 			<width>ScreenWidth</width>
 			<height>112</height>
 			<texture>gui/bottom-bar-overlay.png</texture>
@@ -91,8 +93,8 @@
 	<include name="HomeNavButtons">
 		<control type="button" id="101">
 			<description>Navigation Move Left</description>
-			<left>0</left>
-			<top>39</top>
+			<posx>0</posx>
+			<posy>39</posy>
 			<width>130</width>
 			<height>75</height>
 			<texturefocus flipx="true">controls/home-nav-arrow-right-focus.png</texturefocus>
@@ -102,8 +104,8 @@
 
 		<control type="button" id="102">
 			<description>Navigation Move Right</description>
-			<left>1150</left>
-			<top>39</top>
+			<posx>1150</posx>
+			<posy>39</posy>
 			<width>130</width>
 			<height>75</height>
 			<texturefocus>controls/home-nav-arrow-right-focus.png</texturefocus>
@@ -115,7 +117,7 @@
 	<include name="HomeSubMenuItemLayout">
 		<itemlayout width="180">
 			<control type="label">
-				<left>90</left>
+				<posx>90</posx>
 				<width>176</width>
 				<height>34</height>
 				<font>HomeSubMenuBtnFont</font>
@@ -127,7 +129,7 @@
 		</itemlayout>
 		<focusedlayout width="180">
 			<control type="label">
-				<left>90</left>
+				<posx>90</posx>
 				<width>176</width>
 				<height>34</height>
 				<font>HomeSubMenuBtnFont</font>
@@ -138,7 +140,7 @@
 				<visible>Control.HasFocus(110)</visible>
 			</control>
 			<control type="label">
-				<left>90</left>
+				<posx>90</posx>
 				<width>176</width>
 				<height>34</height>
 				<font>HomeSubMenuBtnFont</font>
@@ -406,8 +408,8 @@
 	</include>
 
 	<include name="HomeCategoryFocusImage">
-		<left>490</left>
-		<top>30</top>
+		<posx>490</posx>
+		<posy>30</posy>
 		<width>300</width>
 		<height>86</height>	
 		<aspectratio>keep</aspectratio>
@@ -709,8 +711,8 @@
 		<visible>![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
 			<control type="wraplist" id="850">
 				<description>Home Menu</description>
-				<left>130</left>
-				<top>28</top>
+				<posx>130</posx>
+				<posy>28</posy>
 				<width>1020</width>
 				<height>96</height>
 				<focusposition>1</focusposition>
@@ -752,8 +754,8 @@
 				<include>HomeMenuFocusAnim</include>
 				<itemlayout width="340">
 					<control type="image">
-						<left>20</left>
-						<top>0</top>
+						<posx>20</posx>
+						<posy>0</posy>
 						<width>300</width>
 						<height>54</height>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
@@ -896,8 +898,8 @@
 
 	<include name="HomeCategoryIcons">
 		<control type="group">		
-			<left>512</left>
-			<top>315</top>		
+			<posx>512</posx>
+			<posy>315</posy>		
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
 			
 			<control type="image">
@@ -1021,8 +1023,8 @@
 	<include name="HomeAddonShortcutsCommonLayout">
 		<ondown condition="!IntegerGreaterThan(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
 		<ondown condition="IntegerGreaterThan(Container(110).NumItems,0)">110</ondown>
-		<left>120</left>
-		<top>460</top>
+		<posx>120</posx>
+		<posy>460</posy>
 		<width>1280</width>
 		<height>140</height>
 		<pagecontrol>-</pagecontrol>
@@ -1504,12 +1506,12 @@
 	<include name="HomeSubMenus">
 		<control type="group" id="851">
 			<visible>![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-			<top>2</top>
+			<posy>2</posy>
 			<animation effect="fade" start="100" end="25" time="400" condition="!ControlGroup(851).HasFocus">Conditional</animation>
 
 			<control type="list" id="110">
 				<description>Music Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6890) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6890</onup>
@@ -1611,7 +1613,7 @@
 
 			<control type="list" id="110">
 				<description>Videos Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
@@ -1712,7 +1714,7 @@
 
 			<control type="list" id="110">
 				<description>Movies Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6888) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6888</onup>
@@ -1814,7 +1816,7 @@
 
 			<control type="list" id="110">
 				<description>TV Shows Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6889) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6889</onup>
@@ -1904,7 +1906,7 @@
 
 			<control type="list" id="110">
 				<description>PVR Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup>555</onup>
@@ -1992,7 +1994,7 @@
 
 			<control type="list" id="110">
 				<description>Programs Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
@@ -2057,7 +2059,7 @@
 
 			<control type="list" id="110">
 				<description>Pictures Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
@@ -2122,7 +2124,7 @@
 
 			<control type="list" id="110">
 				<description>Category 1 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6894)">6894</onup>
@@ -2181,7 +2183,7 @@
 
 			<control type="list" id="110">
 				<description>Category 2 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6896)">6896</onup>
@@ -2240,7 +2242,7 @@
 
 			<control type="list" id="110">
 				<description>Category 3 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6898)">6898</onup>
@@ -2299,7 +2301,7 @@
 
 			<control type="list" id="110">
 				<description>Category 4 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6900)">6900</onup>
@@ -2358,7 +2360,7 @@
 
 			<control type="list" id="110">
 				<description>Category 5 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6902)">6902</onup>
@@ -2417,7 +2419,7 @@
 
 			<control type="list" id="110">
 				<description>Category 6 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6904)">6904</onup>
@@ -2476,7 +2478,7 @@
 
 			<control type="list" id="110">
 				<description>Category 7 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6906)">6906</onup>
@@ -2535,7 +2537,7 @@
 
 			<control type="list" id="110">
 				<description>Category 8 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6908)">6908</onup>
@@ -2594,7 +2596,7 @@
 
 			<control type="list" id="110">
 				<description>Category 9 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6910)">6910</onup>
@@ -2653,7 +2655,7 @@
 
 			<control type="list" id="110">
 				<description>Category 10 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6912)">6912</onup>
@@ -2712,7 +2714,7 @@
 
 			<control type="list" id="110">
 				<description>Category 11 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6914)">6914</onup>
@@ -2771,7 +2773,7 @@
 
 			<control type="list" id="110">
 				<description>Category 12 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6916)">6916</onup>
@@ -2830,7 +2832,7 @@
 
 			<control type="list" id="110">
 				<description>Category 13 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6918)">6918</onup>
@@ -2889,7 +2891,7 @@
 
 			<control type="list" id="110">
 				<description>Category 14 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6920)">6920</onup>
@@ -2948,7 +2950,7 @@
 
 			<control type="list" id="110">
 				<description>Category 15 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6922)">6922</onup>
@@ -3007,7 +3009,7 @@
 
 			<control type="list" id="110">
 				<description>Category 16 Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6924)">6924</onup>
@@ -3069,12 +3071,12 @@
 	<include name="HomeSystemSubMenus">
 		<control type="group" id="852">
 			<visible>!Skin.HasSetting(HideHomeSubMenus) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-			<top>2</top>
+			<posy>2</posy>
 			<animation effect="fade" start="100" end="25" time="400" condition="!ControlGroup(852).HasFocus">Conditional</animation>
 
 			<control type="list" id="110">
 				<description>General Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
@@ -3151,7 +3153,7 @@
 
 			<control type="list" id="110">
 				<description>System Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup>555</onup>
@@ -3203,7 +3205,7 @@
 			
 			<control type="list" id="110">
 				<description>Power Menu Bar</description>
-				<left>10</left>
+				<posx>10</posx>
 				<width>1260</width>
 				<height>34</height>
 				<onup>555</onup>
@@ -3266,8 +3268,8 @@
 			<animation effect="fade" start="100" end="25" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>			
 			<control type="progress">
 				<description>Progressbar</description>
-				<left>0</left>
-				<top>6</top>
+				<posx>0</posx>
+				<posy>6</posy>
 				<width>1280</width>
 				<height>108</height>
 				<info>Player.Progress</info>
@@ -3283,8 +3285,8 @@
 			<animation effect="fade" start="100" end="85" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>
 			<control type="label">
 				<description>Elapsed/Duration Time</description>
-				<left>0</left>
-				<top>14</top>
+				<posx>0</posx>
+				<posy>14</posy>
 				<width>1280</width>
 				<font>MusicPlayingHomeFont</font>
 				<textcolor>white</textcolor>
@@ -3297,8 +3299,8 @@
 	
 	<include name="RSSFeed">
 		<control type="group">
-			<top>9</top>
-			<left>100</left>
+			<posy>9</posy>
+			<posx>100</posx>
 
 			<control type="rss">
 				<description>RSS Feed</description>
@@ -3592,8 +3594,8 @@
 	
 	<include name="RSSFeedNoDate">
 		<control type="group">
-			<top>9</top>
-			<left>100</left>
+			<posy>9</posy>
+			<posx>100</posx>
 
 			<control type="rss">
 				<description>RSS Feed</description>
@@ -3890,8 +3892,8 @@
 			<visible>Player.HasMedia</visible>
 
 			<control type="group">	
-				<left>5</left>
-				<top>105</top>
+				<posx>5</posx>
+				<posy>105</posy>
 				<visible>Player.HasVideo + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 				<include>HomeLeftPanelOpenCloseAnim</include>
 
@@ -3906,8 +3908,8 @@
 
 					<control type="image">
 						<description>Cover</description>
-						<left>15</left>
-						<top>15</top>
+						<posx>15</posx>
+						<posy>15</posy>
 						<width>98</width>
 						<height>134</height>
 						<texture diffuse="covers/home-panel-movie-cover-diffuse.png" background="true">$INFO[VideoPlayer.cover]</texture>
@@ -3916,8 +3918,8 @@
 
 					<control type="label">
 						<description>Title</description>
-						<left>125</left>
-						<top>9</top>
+						<posx>125</posx>
+						<posy>9</posy>
 						<width>350</width>
 						<font>PanelTitleFont</font>
 						<textcolor>MediaInfoTitleColor</textcolor>
@@ -3926,8 +3928,8 @@
 					</control>
 
 					<control type="grouplist">
-						<left>125</left>
-						<top>47</top>
+						<posx>125</posx>
+						<posy>47</posy>
 						<itemgap>10</itemgap>
 						<usecontrolcoords>true</usecontrolcoords>
 						<control type="label">
@@ -3942,7 +3944,7 @@
 						</control>
 						<control type="label">
 							<description>Elapsed/Duration Time</description>
-							<top>5</top>
+							<posy>5</posy>
 							<width>350</width>
 							<height>12</height>
 							<font>PanelInfoHeadFont</font>
@@ -3954,7 +3956,7 @@
 						</control>
 						<control type="label">
 							<description>Genre</description>
-							<top>9</top>
+							<posy>9</posy>
 							<width>350</width>
 							<height>12</height>
 							<font>PanelInfoFont</font>
@@ -3980,8 +3982,8 @@
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<control type="image">
 						<description>Cover</description>
-						<left>15</left>
-						<top>27</top>
+						<posx>15</posx>
+						<posy>27</posy>
 						<width>176</width>
 						<height>110</height>
 						<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true" fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
@@ -3990,8 +3992,8 @@
 					</control>
 					<control type="label">
 						<description>Title</description>
-						<left>203</left>
-						<top>9</top>
+						<posx>203</posx>
+						<posy>9</posy>
 						<width>272</width>
 						<font>PanelTitleFont</font>
 						<textcolor>MediaInfoTitleColor</textcolor>
@@ -3999,8 +4001,8 @@
 						<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
 					</control>
 					<control type="grouplist">
-						<left>203</left>
-						<top>47</top>
+						<posx>203</posx>
+						<posy>47</posy>
 						<itemgap>10</itemgap>
 						<usecontrolcoords>true</usecontrolcoords>
 						<control type="label">
@@ -4015,7 +4017,7 @@
 						</control>
 						<control type="label">
 							<description>Elapsed/Duration Time</description>
-							<top>5</top>
+							<posy>5</posy>
 							<width>272</width>
 							<height>12</height>
 							<font>PanelInfoHeadFont</font>
@@ -4027,7 +4029,7 @@
 						</control>
 						<control type="label">
 							<description>Show/Year</description>
-							<top>9</top>
+							<posy>9</posy>
 							<width>272</width>
 							<height>12</height>
 							<font>PanelInfoFont</font>
@@ -4044,8 +4046,8 @@
 
 					<control type="image">
 						<description>Cover</description>
-						<left>15</left>
-						<top>27</top>
+						<posx>15</posx>
+						<posy>27</posy>
 						<width>176</width>
 						<height>110</height>
 						<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true">$INFO[VideoPlayer.cover]</texture>
@@ -4055,8 +4057,8 @@
 
 					<control type="label">
 						<description>Title</description>
-						<left>203</left>
-						<top>9</top>
+						<posx>203</posx>
+						<posy>9</posy>
 						<width>272</width>
 						<font>PanelTitleFont</font>
 						<textcolor>MediaInfoTitleColor</textcolor>
@@ -4065,8 +4067,8 @@
 					</control>
 
 					<control type="grouplist">
-						<left>203</left>
-						<top>47</top>
+						<posx>203</posx>
+						<posy>47</posy>
 						<itemgap>10</itemgap>
 						<usecontrolcoords>true</usecontrolcoords>
 						<control type="label">
@@ -4081,7 +4083,7 @@
 						</control>
 						<control type="label">
 							<description>Elapsed/Duration Time</description>
-							<top>5</top>
+							<posy>5</posy>
 							<width>272</width>
 							<height>12</height>
 							<font>PanelInfoHeadFont</font>
@@ -4093,7 +4095,7 @@
 						</control>	
 						<control type="label">
 							<description>Show/Year</description>
-							<top>9</top>
+							<posy>9</posy>
 							<width>272</width>
 							<height>12</height>
 							<font>PanelInfoFont</font>
@@ -4117,8 +4119,8 @@
 			</control>
 
 			<control type="group">
-				<left>5</left>
-				<top>105</top>
+				<posx>5</posx>
+				<posy>105</posy>
 				<visible>Player.HasAudio + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 				<include>HomeLeftPanelOpenCloseAnim</include>
 
@@ -4133,8 +4135,8 @@
 
 					<control type="image">
 						<description>Cover Border</description>
-						<left>15</left>
-						<top>15</top>
+						<posx>15</posx>
+						<posy>15</posy>
 						<width>134</width>
 						<height>134</height>
 						<texture border="5">panels/panel-content-border.png</texture>
@@ -4142,8 +4144,8 @@
 
 					<control type="image">
 						<description>Cover</description>
-						<left>15</left>
-						<top>15</top>
+						<posx>15</posx>
+						<posy>15</posy>
 						<width>134</width>
 						<height>134</height>
 						<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[MusicPlayer.cover]</texture>
@@ -4156,8 +4158,8 @@
 
 					<control type="image">
 						<description>Cover Border</description>
-						<left>15</left>
-						<top>15</top>
+						<posx>15</posx>
+						<posy>15</posy>
 						<width>134</width>
 						<height>134</height>
 						<texture border="5">panels/panel-content-border.png</texture>
@@ -4165,8 +4167,8 @@
 
 					<control type="image">
 						<description>Default Cover</description>
-						<left>25</left>
-						<top>25</top>
+						<posx>25</posx>
+						<posy>25</posy>
 						<width>114</width>
 						<height>114</height>
 						<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
@@ -4178,8 +4180,8 @@
 
 					<control type="image">
 						<description>Cover</description>
-						<left>25</left>
-						<top>25</top>
+						<posx>25</posx>
+						<posy>25</posy>
 						<width>114</width>
 						<height>114</height>
 						<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
@@ -4191,8 +4193,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>161</left>
-					<top>9</top>
+					<posx>161</posx>
+					<posy>9</posy>
 					<width>314</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -4201,8 +4203,8 @@
 				</control>
 
 				<control type="grouplist">
-					<left>161</left>
-					<top>47</top>
+					<posx>161</posx>
+					<posy>47</posy>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
@@ -4217,7 +4219,7 @@
 					</control>
 					<control type="label">
 						<description>Elapsed/Duration Time</description>
-						<top>5</top>
+						<posy>5</posy>
 						<width>314</width>
 						<height>12</height>
 						<font>PanelInfoHeadFont</font>
@@ -4228,7 +4230,7 @@
 					</control>
 					<control type="fadelabel">
 						<description>Artist/Album/Year</description>
-						<top>9</top>
+						<posy>9</posy>
 						<width>314</width>
 						<height>12</height>
 						<font>PanelInfoFont</font>
@@ -4258,8 +4260,8 @@
 	
 	<include name="NextAiredWidget">
 		<control type="group">	
-			<left>5</left>
-			<top>280</top>
+			<posx>5</posx>
+			<posy>280</posy>
 			<visible>Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),0) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
 
@@ -4271,8 +4273,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>15</left>
-				<top>9</top>
+				<posx>15</posx>
+				<posy>9</posy>
 				<width>350</width>
 				<font>PanelTitleFont</font>
 				<textcolor>MediaInfoTitleColor</textcolor>
@@ -4283,8 +4285,8 @@
 			
 			<control type="label">
 				<description>Title</description>
-				<left>15</left>
-				<top>9</top>
+				<posx>15</posx>
+				<posy>9</posy>
 				<width>350</width>
 				<font>PanelTitleFont</font>
 				<textcolor>MediaInfoTitleColor</textcolor>
@@ -4294,41 +4296,41 @@
 			</control>
 			
 			<control type="group">
-				<left>15</left>
-				<top>40</top>
+				<posx>15</posx>
+				<posy>40</posy>
 				<control type="image">
 					<width>150</width>
 					<height>53</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 				<control type="image">
-					<left>155</left>
+					<posx>155</posx>
 					<width>150</width>
 					<height>53</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 				<control type="image">
-					<left>310</left>
+					<posx>310</posx>
 					<width>150</width>
 					<height>53</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 				<control type="image">
-					<top>58</top>
+					<posy>58</posy>
 					<width>150</width>
 					<height>53</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 				<control type="image">
-					<left>155</left>
-					<top>58</top>
+					<posx>155</posx>
+					<posy>58</posy>
 					<width>150</width>
 					<height>53</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 				<control type="image">
-					<left>310</left>
-					<top>58</top>
+					<posx>310</posx>
+					<posy>58</posy>
 					<width>150</width>
 					<height>53</height>
 					<texture border="5">controls/button-nofocus.png</texture>
@@ -4337,8 +4339,8 @@
 				
 			<control type="grouplist">
 				<description>Next Aired Panel Top</description>
-				<left>17</left>
-				<top>42</top>
+				<posx>17</posx>
+				<posy>42</posy>
 				<width>465</width>
 				<height>116</height>
 				<orientation>horizontal</orientation>
@@ -4407,8 +4409,8 @@
 			
 			<control type="grouplist">
 				<description>Next Aired Panel Bottom</description>
-				<left>17</left>
-				<top>100</top>
+				<posx>17</posx>
+				<posy>100</posy>
 				<width>465</width>
 				<height>116</height>
 				<orientation>horizontal</orientation>
@@ -4498,6 +4500,8 @@
 				<animation effect="fade" start="0" end="100" time="600">VisibleChange</animation>
 				<include condition="Skin.HasSetting(AnimateBackground)">CustomBackgroundAnim</include>
 			</control>
+
+			<include>HomeBackgroundDim</include>
 		</control>
 	</include>
 
@@ -4517,8 +4521,8 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
-				<left>495r</left>
-				<top>105</top>
+				<posx>495r</posx>
+				<posy>105</posy>
 
 				<control type="image">
 					<width>490</width>
@@ -4536,8 +4540,8 @@
 
 				<control type="multiimage">
 					<description>Cover</description>
-					<left>377</left>
-					<top>15</top>
+					<posx>377</posx>
+					<posy>15</posy>
 					<width>98</width>
 					<height>134</height>
 					<imagepath diffuse="covers/home-panel-movie-cover-diffuse.png" background="true">$INFO[Container(6888).ListItem.Thumb]</imagepath>
@@ -4548,8 +4552,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>15</left>
-					<top>9</top>
+					<posx>15</posx>
+					<posy>9</posy>
 					<width>368</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -4559,8 +4563,8 @@
 
 				<control type="list" id="6888">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>383</width>
 					<height>96</height>
 					<scrolltime>200</scrolltime>
@@ -4576,8 +4580,8 @@
 
 				<control type="list" id="6888">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>383</width>
 					<height>192</height>
 					<scrolltime>200</scrolltime>
@@ -4594,8 +4598,8 @@
 					<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedMovies)">Conditional</animation>
 
 					<control type="image">
-						<left>15</left>
-						<top>135</top>
+						<posx>15</posx>
+						<posy>135</posy>
 						<width>260</width>
 						<height>19</height>
 						<texture border="5">panels/panel-content-border2.png</texture>
@@ -4603,8 +4607,8 @@
 					</control>
 
 					<control type="togglebutton" id="4829">
-						<left>15</left>
-						<top>135</top>
+						<posx>15</posx>
+						<posy>135</posy>
 						<width>24</width>
 						<height>19</height>
 						<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
@@ -4625,13 +4629,14 @@
 					</control>
 
 					<control type="label">
-						<left>45</left>
-						<top>135</top>
+						<posx>45</posx>
+						<posy>144</posy>
 						<width>217</width>
 						<font>PanelStatsFont</font>
 						<textcolor>GreyColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(Movies.Watched),  -  , $LOCALIZE[16102]]</label>
+						<aligny>center</aligny>
 						<animation effect="fade" end="45" condition="true">Conditional</animation>
 					</control>
 				</control>
@@ -4644,8 +4649,8 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
-				<left>495r</left>
-				<top>105</top>
+				<posx>495r</posx>
+				<posy>105</posy>
 
 				<control type="image">
 					<width>490</width>
@@ -4663,8 +4668,8 @@
 
 				<control type="multiimage">
 					<description>Cover</description>
-					<left>299</left>
-					<top>27</top>
+					<posx>299</posx>
+					<posy>27</posy>
 					<width>176</width>
 					<height>110</height>
 					<imagepath diffuse="covers/home-panel-episode-cover-diffuse.png" background="true">$INFO[Container(6889).ListItem.Thumb]</imagepath>
@@ -4675,8 +4680,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>15</left>
-					<top>9</top>
+					<posx>15</posx>
+					<posy>9</posy>
 					<width>272</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -4686,8 +4691,8 @@
 
 				<control type="list" id="6889">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>287</width>
 					<height>96</height>
 					<scrolltime>200</scrolltime>
@@ -4703,8 +4708,8 @@
 
 				<control type="list" id="6889">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>287</width>
 					<height>192</height>
 					<scrolltime>200</scrolltime>
@@ -4721,8 +4726,8 @@
 					<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedTVShows)">Conditional</animation>
 
 					<control type="image">
-						<left>15</left>
-						<top>135</top>
+						<posx>15</posx>
+						<posy>135</posy>
 						<width>260</width>
 						<height>19</height>
 						<texture border="5">panels/panel-content-border2.png</texture>
@@ -4730,8 +4735,8 @@
 					</control>
 
 					<control type="togglebutton" id="4829">
-						<left>15</left>
-						<top>135</top>
+						<posx>15</posx>
+						<posy>135</posy>
 						<width>24</width>
 						<height>19</height>
 						<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
@@ -4752,13 +4757,14 @@
 					</control>
 
 					<control type="label">
-						<left>45</left>
-						<top>135</top>
+						<posx>45</posx>
+						<posy>144</posy>
 						<width>217</width>
 						<font>PanelStatsFont</font>
 						<textcolor>GreyColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[Window(Home).Property(TVShows.Count),, $LOCALIZE[20343]]$INFO[Window(Home).Property(TVShows.Watched),  -  , $LOCALIZE[16102]]</label>
+						<aligny>center</aligny>
 						<animation effect="fade" end="45" condition="true">Conditional</animation>
 					</control>
 				</control>
@@ -4771,8 +4777,8 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
-				<left>495r</left>
-				<top>105</top>
+				<posx>495r</posx>
+				<posy>105</posy>
 
 				<control type="image">
 					<width>490</width>
@@ -4790,8 +4796,8 @@
 
 				<control type="multiimage">
 					<description>Cover</description>
-					<left>341</left>
-					<top>15</top>
+					<posx>341</posx>
+					<posy>15</posy>
 					<width>134</width>
 					<height>134</height>
 					<imagepath diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[Container(6890).ListItem.Thumb]</imagepath>
@@ -4802,8 +4808,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>15</left>
-					<top>9</top>
+					<posx>15</posx>
+					<posy>9</posy>
 					<width>338</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -4813,8 +4819,8 @@
 
 				<control type="list" id="6890">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>329</width>
 					<height>96</height>
 					<scrolltime>200</scrolltime>
@@ -4830,8 +4836,8 @@
 
 				<control type="list" id="6890">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>329</width>
 					<height>192</height>
 					<scrolltime>200</scrolltime>
@@ -4848,8 +4854,8 @@
 					<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedMusic)">Conditional</animation>
 
 					<control type="image">
-						<left>15</left>
-						<top>135</top>
+						<posx>15</posx>
+						<posy>135</posy>
 						<width>260</width>
 						<height>19</height>
 						<texture border="5">panels/panel-content-border2.png</texture>
@@ -4857,8 +4863,8 @@
 					</control>
 
 					<control type="togglebutton" id="4829">
-						<left>15</left>
-						<top>135</top>
+						<posx>15</posx>
+						<posy>135</posy>
 						<width>24</width>
 						<height>19</height>
 						<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
@@ -4879,13 +4885,14 @@
 					</control>
 
 					<control type="label">
-						<left>45</left>
-						<top>135</top>
+						<posx>45</posx>
+						<posy>144</posy>
 						<width>217</width>
 						<font>PanelStatsFont</font>
 						<textcolor>GreyColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[132]]$INFO[Window(Home).Property(Music.SongsCount),  -  , $LOCALIZE[134]]</label>
+						<aligny>center</aligny>
 						<animation effect="fade" end="45" condition="true">Conditional</animation>
 					</control>
 				</control>
@@ -4896,7 +4903,7 @@
 	<include name="RecentlyAddedMoviesPanelLayout">
 		<itemlayout height="24">
 			<control type="label">
-				<left>15</left>
+				<posx>15</posx>
 				<width>345</width>
 				<height>24</height>
 				<font>PanelInfoFont</font>
@@ -4908,7 +4915,7 @@
 		</itemlayout>
 		<focusedlayout height="24">
 			<control type="image">
-				<left>10</left>
+				<posx>10</posx>
 				<width>355</width>
 				<height>24</height>
 				<texture border="4">views/list-focus.png</texture>
@@ -4925,7 +4932,7 @@
 				<include>ListViewSelectFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>15</left>
+				<posx>15</posx>
 				<width>345</width>
 				<height>24</height>
 				<font>PanelInfoFont</font>
@@ -5002,7 +5009,7 @@
 	<include name="RecentlyAddedTVShowsPanelLayout">
 		<itemlayout height="24">
 			<control type="label">
-				<left>15</left>
+				<posx>15</posx>
 				<width>267</width>
 				<height>24</height>
 				<font>PanelInfoFont</font>
@@ -5014,7 +5021,7 @@
 		</itemlayout>
 		<focusedlayout height="24">
 			<control type="image">
-				<left>10</left>
+				<posx>10</posx>
 				<width>277</width>
 				<height>24</height>
 				<texture border="4">views/list-focus.png</texture>
@@ -5031,7 +5038,7 @@
 				<include>ListViewSelectFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>15</left>
+				<posx>15</posx>
 				<width>267</width>
 				<height>24</height>
 				<font>PanelInfoFont</font>
@@ -5108,7 +5115,7 @@
 	<include name="RecentlyAddedMusicPanelLayout">
 		<itemlayout height="24">
 			<control type="label">
-				<left>15</left>
+				<posx>15</posx>
 				<width>309</width>
 				<height>24</height>
 				<font>PanelInfoFont</font>
@@ -5120,7 +5127,7 @@
 		</itemlayout>
 		<focusedlayout height="24">
 			<control type="image">
-				<left>10</left>
+				<posx>10</posx>
 				<width>319</width>
 				<height>24</height>
 				<texture border="4">views/list-focus.png</texture>
@@ -5137,7 +5144,7 @@
 				<include>ListViewSelectFadeAnim</include>
 			</control>
 			<control type="label">
-				<left>15</left>
+				<posx>15</posx>
 				<width>309</width>
 				<height>24</height>
 				<font>PanelInfoFont</font>
@@ -5228,8 +5235,8 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
-				<left>495r</left>
-				<top>280</top>
+				<posx>495r</posx>
+				<posy>280</posy>
 				<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedMovies)">Conditional</animation>
 
 				<control type="image">
@@ -5240,8 +5247,8 @@
 
 				<control type="multiimage">
 					<description>Cover</description>
-					<left>377</left>
-					<top>15</top>
+					<posx>377</posx>
+					<posy>15</posy>
 					<width>98</width>
 					<height>134</height>
 					<imagepath diffuse="covers/home-panel-movie-cover-diffuse.png" background="true">$INFO[Container(6891).ListItem.Thumb]</imagepath>
@@ -5251,8 +5258,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>15</left>
-					<top>9</top>
+					<posx>15</posx>
+					<posy>9</posy>
 					<width>368</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -5262,8 +5269,8 @@
 
 				<control type="list" id="6891">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>383</width>
 					<height>120</height>
 					<scrolltime>200</scrolltime>
@@ -5273,7 +5280,7 @@
 					<onright>850</onright>
 					<itemlayout height="24">
 						<control type="label">
-							<left>15</left>
+							<posx>15</posx>
 							<width>345</width>
 							<height>24</height>
 							<font>PanelInfoFont</font>
@@ -5285,7 +5292,7 @@
 					</itemlayout>
 					<focusedlayout height="24">
 						<control type="image">
-							<left>10</left>
+							<posx>10</posx>
 							<width>355</width>
 							<height>24</height>
 							<texture border="4">views/list-focus.png</texture>
@@ -5302,7 +5309,7 @@
 							<include>ListViewSelectFadeAnim</include>
 						</control>
 						<control type="label">
-							<left>15</left>
+							<posx>15</posx>
 							<width>345</width>
 							<height>24</height>
 							<font>PanelInfoFont</font>
@@ -5323,8 +5330,8 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
-				<left>495r</left>
-				<top>280</top>
+				<posx>495r</posx>
+				<posy>280</posy>
 				<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedTVShows)">Conditional</animation>
 
 				<control type="image">
@@ -5335,8 +5342,8 @@
 
 				<control type="multiimage">
 					<description>Cover</description>
-					<left>299</left>
-					<top>27</top>
+					<posx>299</posx>
+					<posy>27</posy>
 					<width>176</width>
 					<height>110</height>
 					<imagepath diffuse="covers/home-panel-episode-cover-diffuse.png" background="true">$INFO[Container(6892).ListItem.Thumb]</imagepath>
@@ -5346,8 +5353,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>15</left>
-					<top>9</top>
+					<posx>15</posx>
+					<posy>9</posy>
 					<width>368</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -5357,8 +5364,8 @@
 
 				<control type="list" id="6892">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>287</width>
 					<height>120</height>
 					<scrolltime>200</scrolltime>
@@ -5368,7 +5375,7 @@
 					<onright>850</onright>
 					<itemlayout height="24">
 						<control type="label">
-							<left>15</left>
+							<posx>15</posx>
 							<width>267</width>
 							<height>24</height>
 							<font>PanelInfoFont</font>
@@ -5380,7 +5387,7 @@
 					</itemlayout>
 					<focusedlayout height="24">
 						<control type="image">
-							<left>10</left>
+							<posx>10</posx>
 							<width>277</width>
 							<height>24</height>
 							<texture border="4">views/list-focus.png</texture>
@@ -5397,7 +5404,7 @@
 							<include>ListViewSelectFadeAnim</include>
 						</control>
 						<control type="label">
-							<left>15</left>
+							<posx>15</posx>
 							<width>267</width>
 							<height>24</height>
 							<font>PanelInfoFont</font>
@@ -5418,8 +5425,8 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
-				<left>495r</left>
-				<top>280</top>
+				<posx>495r</posx>
+				<posy>280</posy>
 				<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreRecentlyAddedMusic)">Conditional</animation>
 
 				<control type="image">
@@ -5430,8 +5437,8 @@
 
 				<control type="multiimage">
 					<description>Cover</description>
-					<left>341</left>
-					<top>15</top>
+					<posx>341</posx>
+					<posy>15</posy>
 					<width>134</width>
 					<height>134</height>
 					<imagepath diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[Container(6893).ListItem.Thumb]</imagepath>
@@ -5441,8 +5448,8 @@
 
 				<control type="label">
 					<description>Title</description>
-					<left>15</left>
-					<top>9</top>
+					<posx>15</posx>
+					<posy>9</posy>
 					<width>368</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -5452,8 +5459,8 @@
 
 				<control type="list" id="6893">
 					<viewtype label="">list</viewtype>
-					<left>0</left>
-					<top>33</top>
+					<posx>0</posx>
+					<posy>33</posy>
 					<width>329</width>
 					<height>120</height>
 					<scrolltime>200</scrolltime>
@@ -5463,7 +5470,7 @@
 					<onright>850</onright>
 					<itemlayout height="24">
 						<control type="label">
-							<left>15</left>
+							<posx>15</posx>
 							<width>309</width>
 							<height>24</height>
 							<font>PanelInfoFont</font>
@@ -5475,7 +5482,7 @@
 					</itemlayout>
 					<focusedlayout height="24">
 						<control type="image">
-							<left>10</left>
+							<posx>10</posx>
 							<width>319</width>
 							<height>24</height>
 							<texture border="4">views/list-focus.png</texture>
@@ -5492,7 +5499,7 @@
 							<include>ListViewSelectFadeAnim</include>
 						</control>
 						<control type="label">
-							<left>15</left>
+							<posx>15</posx>
 							<width>309</width>
 							<height>24</height>
 							<font>PanelInfoFont</font>
@@ -5510,8 +5517,8 @@
 
 	<include name="WeatherPanel">
 		<control type="group">
-			<left>5</left>
-			<top>280</top>
+			<posx>5</posx>
+			<posy>280</posy>
 			<visible>[!Skin.HasSetting(EnableWeatherCategory) + Container(850).HasFocus(15)] | [Skin.HasSetting(EnableWeatherCategory) + Container(850).HasFocus(51)]</visible>
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
@@ -5524,8 +5531,8 @@
 
 			<control type="image">
 				<description>Cover Border</description>
-				<left>15</left>
-				<top>22</top>
+				<posx>15</posx>
+				<posy>22</posy>
 				<width>130</width>
 				<height>96</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -5536,8 +5543,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>157</left>
-				<top>9</top>
+				<posx>157</posx>
+				<posy>9</posy>
 				<width>318</width>
 				<font>PanelTitleFont</font>
 				<textcolor>MediaInfoTitleColor</textcolor>
@@ -5546,8 +5553,8 @@
 			</control>
 
 			<control type="grouplist">
-				<left>157</left>
-				<top>42</top>
+				<posx>157</posx>
+				<posy>42</posy>
 				<itemgap>15</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
@@ -5561,7 +5568,7 @@
 				</control>
 				<control type="label">
 					<description>Conditions</description>
-					<top>7</top>
+					<posy>7</posy>
 					<width>318</width>
 					<height>12</height>
 					<font>PanelInfoFont</font>
@@ -5590,8 +5597,8 @@
 
 	<include name="RecordingInfoPanel">
 		<control type="group">
-			<left>5</left>
-			<top>280</top>
+			<posx>5</posx>
+			<posy>280</posy>
 			<visible>Container(850).HasFocus(50) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
@@ -5607,8 +5614,8 @@
 
 				<control type="image">
 					<description>Cover Border</description>
-					<left>15</left>
-					<top>22</top>
+					<posx>15</posx>
+					<posy>22</posy>
 					<width>130</width>
 					<height>96</height>
 					<texture border="5">panels/panel-content-border.png</texture>
@@ -5616,8 +5623,8 @@
 
 				<control type="image">
 					<description>Cover</description>
-					<left>15</left>
-					<top>22</top>
+					<posx>15</posx>
+					<posy>22</posy>
 					<width>130</width>
 					<height>96</height>
 					<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true" fallback="pvr/DefaultPVR.png">$INFO[PVR.NextRecordingChannelIcon]</texture>
@@ -5627,8 +5634,8 @@
 
 				<control type="label">
 					<description>Timer</description>
-					<left>157</left>
-					<top>9</top>
+					<posx>157</posx>
+					<posy>9</posy>
 					<width>318</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -5637,8 +5644,8 @@
 				</control>
 
 				<control type="grouplist">
-					<left>157</left>
-					<top>42</top>
+					<posx>157</posx>
+					<posy>42</posy>
 					<itemgap>15</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
@@ -5652,7 +5659,7 @@
 					</control>
 					<control type="label">
 						<description>Title</description>
-						<top>7</top>
+						<posy>7</posy>
 						<width>318</width>
 						<height>12</height>
 						<font>PanelInfoFont</font>
@@ -5679,8 +5686,8 @@
 
 				<control type="image">
 					<description>Cover Border</description>
-					<left>15</left>
-					<top>22</top>
+					<posx>15</posx>
+					<posy>22</posy>
 					<width>130</width>
 					<height>96</height>
 					<texture border="5">panels/panel-content-border.png</texture>
@@ -5688,8 +5695,8 @@
 
 				<control type="image">
 					<description>Cover</description>
-					<left>15</left>
-					<top>22</top>
+					<posx>15</posx>
+					<posy>22</posy>
 					<width>130</width>
 					<height>96</height>
 					<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true" fallback="pvr/DefaultPVR.png">$INFO[PVR.NowRecordingChannelIcon]</texture>
@@ -5699,8 +5706,8 @@
 
 				<control type="label">
 					<description>Recording</description>
-					<left>157</left>
-					<top>9</top>
+					<posx>157</posx>
+					<posy>9</posy>
 					<width>318</width>
 					<font>PanelTitleFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
@@ -5709,8 +5716,8 @@
 				</control>
 
 				<control type="grouplist">
-					<left>157</left>
-					<top>42</top>
+					<posx>157</posx>
+					<posy>42</posy>
 					<itemgap>15</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
@@ -5724,7 +5731,7 @@
 					</control>
 					<control type="label">
 						<description>Title</description>
-						<top>7</top>
+						<posy>7</posy>
 						<width>318</width>
 						<height>12</height>
 						<font>PanelInfoFont</font>
@@ -5750,8 +5757,8 @@
 
 	<include name="SystemInfoPanel">
 		<control type="group">
-			<left>495r</left>
-			<top>280</top>
+			<posx>495r</posx>
+			<posy>280</posy>
 			<visible>Container(850).HasFocus(16)</visible>
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
@@ -5764,8 +5771,8 @@
 
 			<control type="image">
 				<description>Cover Border</description>
-				<left>379</left>
-				<top>22</top>
+				<posx>379</posx>
+				<posy>22</posy>
 				<width>96</width>
 				<height>96</height>
 				<texture border="5">panels/panel-content-border.png</texture>
@@ -5773,8 +5780,8 @@
 
 			<control type="image">
 				<description>Cover</description>
-				<left>379</left>
-				<top>22</top>
+				<posx>379</posx>
+				<posy>22</posy>
 				<width>96</width>
 				<height>96</height>
 				<bordersize>5</bordersize>
@@ -5784,8 +5791,8 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>15</left>
-				<top>9</top>
+				<posx>15</posx>
+				<posy>9</posy>
 				<width>352</width>
 				<font>PanelTitleFont</font>
 				<textcolor>MediaInfoTitleColor</textcolor>
@@ -5794,8 +5801,8 @@
 			</control>
 
 			<control type="grouplist">
-				<left>15</left>
-				<top>42</top>
+				<posx>15</posx>
+				<posy>42</posy>
 				<itemgap>15</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
@@ -5809,7 +5816,7 @@
 				</control>
 				<control type="label">
 					<description>System Uptime</description>
-					<top>7</top>
+					<posy>7</posy>
 					<width>352</width>
 					<height>12</height>
 					<font>PanelInfoFont</font>

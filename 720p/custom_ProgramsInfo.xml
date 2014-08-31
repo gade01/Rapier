@@ -13,8 +13,8 @@
 
 		<control type="image">
 			<description>Cover Image</description>
-			<left>150</left>
-			<top>182</top>
+			<posx>150</posx>
+			<posy>182</posy>
 			<width>272</width>
 			<height>272</height>
 			<info>ListItem.Icon</info>
@@ -25,8 +25,8 @@
 
 		<control type="group">
 			<control type="group">	
-				<left>150</left>
-				<top>99</top>
+				<posx>150</posx>
+				<posy>99</posy>
 
 				<control type="label">
 					<description>Title</description>
@@ -39,7 +39,7 @@
 				</control>
 
 				<control type="image">
-					<top>34</top>
+					<posy>34</posy>
 					<width>980</width>
 					<height>1</height>
 					<texture>views/media-info-separator.png</texture>
@@ -47,7 +47,7 @@
 
 				<control type="label">
 					<description>Genre</description>
-					<top>38</top>
+					<posy>38</posy>
 					<width>980</width>
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
@@ -57,8 +57,8 @@
 			</control>
 
 			<control type="list" id="901">
-				<left>470</left>
-				<top>170</top>
+				<posx>470</posx>
+				<posy>170</posy>
 				<width>660</width>
 				<height>280</height>
 				<onup>505</onup>
@@ -67,7 +67,7 @@
 				<onright>961</onright>
 				<itemlayout width="660" height="35">
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -77,7 +77,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -89,7 +89,7 @@
 				</itemlayout>	
 				<focusedlayout width="660" height="35">
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<width>660</width>
 						<height>35</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -99,7 +99,7 @@
 						<include>MediaInfoListScrollAnim</include>
 					</control>
 					<control type="label">
-						<left>5</left>
+						<posx>5</posx>
 						<width>170</width>
 						<height>35</height>
 						<font>FullMediaInfoFont</font>
@@ -109,7 +109,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 					<control type="label">
-						<left>195</left>
+						<posx>195</posx>
 						<width>460</width>
 						<height>35</height>
 						<font>FullMediaInfoFont2</font>
@@ -175,8 +175,8 @@
 
 			<control type="grouplist">
 				<description>Media Flags Area</description>
-				<left>470</left>
-				<top>650</top>
+				<posx>470</posx>
+				<posy>650</posy>
 				<width>580</width>
 				<height>60</height>
 				<itemgap>5</itemgap>
@@ -192,8 +192,8 @@
 
 		<control type="textbox">
 			<description>Plot</description>
-			<left>150</left>
-			<top>470</top>
+			<posx>150</posx>
+			<posy>470</posy>
 			<width>980</width>
 			<height>150</height>
 			<font>FullMediaInfoDescFont</font>
@@ -207,8 +207,8 @@
 		<control type="group" id="961">
 			<control type="spincontrol" id="62">
 				<description>Next Page</description>
-				<left>1076</left>
-				<top>659</top>
+				<posx>1076</posx>
+				<posy>659</posy>
 				<width>28</width>
 				<height>28</height>
 				<spinwidth>30</spinwidth>
@@ -229,7 +229,7 @@
 
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
-			<top>MenuBarOffsetY</top>
+			<posy>MenuBarOffsetY</posy>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim2</include>
 			<include>ProgramsInfoMenuBar</include>

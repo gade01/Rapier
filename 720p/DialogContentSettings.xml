@@ -20,8 +20,8 @@
 			</control>
 
 			<control type="group">			
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>						
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>						
 
 				<control type="spincontrolex" id="3">
 					<description>Content Picker</description>
@@ -34,16 +34,16 @@
 				
 				<control type="label">
 					<description>Directory Contains</description>
-					<left>5</left>
+					<posx>5</posx>
+					<posy>17</posy>
 					<width>400</width>
-					<height>35</height>
 					<include>DialogContentLabel</include>
 					<label>$LOCALIZE[20344]</label>
 				</control>
 				
 				<control type="image">
 					<description>Scrapers Background</description>
-					<top>37</top>
+					<posy>37</posy>
 					<width>600</width>
 					<height>150</height>
 					<texture border="5">controls/button-nofocus.png</texture>
@@ -51,8 +51,8 @@
 			
 				<control type="list" id="4">
 					<description>Scrapers</description>
-					<left>5</left>
-					<top>42</top>
+					<posx>5</posx>
+					<posy>42</posy>
 					<width>300</width>
 					<height>140</height>
 					<onup>3</onup>
@@ -61,14 +61,14 @@
 					<ondown>5</ondown>
 					<itemlayout height="35">
 						<control type="image">
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<info>ListItem.Icon</info>
 						</control>
 						<control type="label">
-							<left>35</left>
+							<posx>35</posx>
 							<width>290</width>
 							<height>35</height>
 							<font>ButtonFont2</font>
@@ -85,14 +85,14 @@
 							<visible>Control.HasFocus(4)</visible>
 						</control>
 						<control type="image">
-							<left>5</left>
-							<top>6</top>
+							<posx>5</posx>
+							<posy>6</posy>
 							<width>24</width>
 							<height>24</height>
 							<info>ListItem.Icon</info>
 						</control>
 						<control type="label">
-							<left>35</left>
+							<posx>35</posx>
 							<width>290</width>
 							<height>35</height>
 							<font>ButtonFont2</font>
@@ -105,8 +105,8 @@
 			
 				<control type="image">
 					<description>Scraper Thumbnail</description>
-					<left>330</left>
-					<top>42</top>
+					<posx>330</posx>
+					<posy>42</posy>
 					<width>260</width>
 					<height>140</height>
 					<info>ListItem.Icon</info>
@@ -115,7 +115,7 @@
 				</control>			
 				
 				<control type="grouplist" id="5">
-					<top>189</top>
+					<posy>189</posy>
 					<width>600</width>
 					<height>195</height>
 					<itemgap>2</itemgap>
@@ -140,8 +140,8 @@
 			
 			<control type="grouplist" id="9001">	
 				<description>Dialog Button Area</description>			
-				<left>80</left>
-				<top>434</top>
+				<posx>80</posx>
+				<posy>434</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<onup>5</onup>
@@ -152,13 +152,13 @@
 				</control>			
 				<control type="button" id="29">
 					<description>Cancel</description>
-					<left>170</left>
+					<posx>170</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[222]</label>		
 				</control>			
 				<control type="button" id="6">
 					<description>Settings</description>
-					<left>340</left>
+					<posx>340</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[5]</label>
 				</control>		

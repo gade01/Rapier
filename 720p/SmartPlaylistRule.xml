@@ -20,11 +20,12 @@
 			</control>
 			
 			<control type="group">		
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 				
 				<control type="label">
 					<description>Match Items Where</description>
+					<posy>8</posy>
 					<width>600</width>
 					<include>DialogHeadLabel</include>
 					<label>$LOCALIZE[21422]</label>
@@ -34,7 +35,7 @@
 				<control type="group" id="289">
 					<control type="spincontrolex" id="15">
 						<description>Rule Field</description>
-						<top>20</top>
+						<posy>20</posy>
 						<width>297</width>
 						<onup>noop</onup>
 						<ondown>290</ondown>
@@ -44,8 +45,8 @@
 					
 					<control type="spincontrolex" id="16">
 						<description>Items Must Match</description>
-						<left>302</left>
-						<top>20</top>
+						<posx>302</posx>
+						<posy>20</posy>
 						<width>298</width>
 						<onup>noop</onup>
 						<ondown>290</ondown>
@@ -57,7 +58,7 @@
 				<control type="group" id="290">
 					<control type="button" id="17">
 						<description>Rule Value</description>
-						<top>60</top>
+						<posy>60</posy>
 						<width>475</width>	
 						<include>DialogContentLabel</include>
 						<onup>289</onup>
@@ -68,8 +69,8 @@
 
 					<control type="button" id="20">
 						<description>Server Browse</description>
-						<left>480</left>
-						<top>60</top>
+						<posx>480</posx>
+						<posy>60</posy>
 						<include>DialogBtn</include>
 						<label>$LOCALIZE[1024]</label>
 						<onup>289</onup>
@@ -82,8 +83,8 @@
 			
 			<control type="grouplist" id="9001">			
 				<description>Dialog Button Area</description>				
-				<left>165</left>
-				<top>157</top>
+				<posx>165</posx>
+				<posy>157</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>	
 				<onup>290</onup>
@@ -94,7 +95,7 @@
 				</control>			
 				<control type="button" id="19">
 					<description>Cancel</description>
-					<left>170</left>
+					<posx>170</posx>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[222]</label>
 				</control>

@@ -17,13 +17,13 @@
 
 		<control type="group">
 			<description>cdart now Playing</description>
-			<visible>!Skin.HasSetting(HideCdArtInMusicPlayingBG) + ![Player.ShowInfo | Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog)]</visible>
-			<left>29</left>
-			<top>503</top>
+			<visible>!Skin.HasSetting(HideCdArtInMusicPlayingBG) + ![Player.ShowInfo | Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog) | Window.IsActive(script-XBMC_Lyrics-main.xml)]</visible>
+			<posx>29</posx>
+			<posy>503</posy>
 
 			<control type="image">
 				<description>cdart</description>
-				<top>3</top>
+				<posy>3</posy>
 				<width>120</width>
 				<height>120</height>
 				<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
@@ -43,11 +43,11 @@
 
 			<control type="group">
 				<description>cdart Info Area</description>
-				<top>-21</top>
-				<left>170</left>
+				<posy>-21</posy>
+				<posx>170</posx>
 				
 				<control type="label">
-					<left>7</left>
+					<posx>7</posx>
 					<width>600</width>
 					<height>60</height>
 					<font>FSInfoTitleFont</font>
@@ -59,8 +59,8 @@
 				</control>
 
 				<control type="grouplist">
-					<left>24</left>
-					<top>43</top>
+					<posx>24</posx>
+					<posy>43</posy>
 					<width>600</width>
 					<orientation>horizontal</orientation>
 					<include>CdArtLabelOpenCloseAnim2</include>
@@ -85,8 +85,8 @@
 				</control>				
 
 				<control type="grouplist">
-					<left>26</left>
-					<top>68</top>
+					<posx>26</posx>
+					<posy>68</posy>
 					<width>600</width>
 					<orientation>horizontal</orientation>
 					<include>CdArtLabelOpenCloseAnim3</include>
@@ -111,8 +111,8 @@
 				</control>
 				
 				<control type="grouplist">
-					<left>21</left>
-					<top>93</top>
+					<posx>21</posx>
+					<posy>93</posy>
 					<width>600</width>
 					<orientation>horizontal</orientation>
 					<include>CdArtLabelOpenCloseAnim4</include>
@@ -138,8 +138,8 @@
 				</control>
 				
 				<control type="grouplist">
-					<left>0</left>
-					<top>119</top>
+					<posx>0</posx>
+					<posy>119</posy>
 					<width>600</width>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
@@ -156,7 +156,7 @@
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
-						<top>2</top>
+						<posy>2</posy>
 						<width>100</width>
 						<height>40</height>		
 						<texture>$INFO[Player.StarRating]</texture>
@@ -170,16 +170,16 @@
 
 		<control type="group">
 			<description>Song Info Panel</description>
-			<left>28</left>
-			<top>350</top>
+			<posx>28</posx>
+			<posy>350</posy>
 			<visible>Player.ShowInfo</visible>
 			<visible>![Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog)]</visible>
 			<include>FSMediaInfoPanel</include>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			
 			<control type="group">			
-				<left>18</left>
-				<top>10</top>
+				<posx>18</posx>
+				<posy>10</posy>
 				
 				<control type="grouplist">
 					<width>820</width>
@@ -200,7 +200,7 @@
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
-						<top>2</top>
+						<posy>2</posy>
 						<width>100</width>
 						<height>32</height>		
 						<texture>$INFO[Player.StarRating]</texture>
@@ -211,7 +211,7 @@
 		
 				<control type="label">
 					<description>Genre</description>
-					<top>30</top>
+					<posy>30</posy>
 					<width>820</width>
 					<height>26</height>
 					<font>FSInfoFont</font>
@@ -223,21 +223,21 @@
 				
 				<control type="grouplist">
 					<description>Time</description>
-					<left>868</left>
+					<posx>868</posx>
 					<width>320</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="image">
-						<top>6</top>
+						<posy>6</posy>
 						<width>24</width>
 						<height>24</height>	
 						<texture>pvr/status_timer_alt.png</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
-						<left>-6</left>
+						<posx>-6</posx>
 						<height>60</height>	
 						<width min="25" max="250">auto</width>
 						<font>FSInfoTitleFont</font>
@@ -250,8 +250,8 @@
 		
 				<control type="grouplist">
 					<description>Next Track</description>
-					<left>788</left>
-					<top>30</top>
+					<posx>788</posx>
+					<posy>30</posy>
 					<width>400</width>
 					<align>right</align>
 					<orientation>horizontal</orientation>
@@ -278,7 +278,7 @@
 				
 				<control type="grouplist">
 					<description>Media Info Labels</description>
-					<top>66</top>
+					<posy>66</posy>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -321,7 +321,7 @@
 
 				<control type="textbox">
 					<description>Description</description>
-					<top>105</top>
+					<posy>105</posy>
 					<width>820</width>
 					<height>100</height>
 					<font>MediaInfoDescFont</font>
@@ -335,7 +335,7 @@
 				
 				<control type="grouplist">
 					<description>Media Flags Area</description>
-					<top>214</top>
+					<posy>214</posy>
 					<width>890</width>
 					<height>35</height>
 					<itemgap>5</itemgap>
@@ -348,8 +348,8 @@
 				
 				<control type="label">
 					<description>Party Mode</description>
-					<left>740</left>
-					<top>281</top>
+					<posx>740</posx>
+					<posy>281</posy>
 					<width>150</width>
 					<height>41</height>
 					<font>FSInfoFont2</font>
@@ -363,8 +363,8 @@
 	
 			<control type="image">
 				<description>Cover</description>
-				<left>983</left>
-				<top>92</top>
+				<posx>983</posx>
+				<posy>92</posy>
 				<width>167</width>
 				<height>167</height>
 				<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
@@ -374,12 +374,12 @@
 
 			<control type="group">
 				<visible>Skin.HasSetting(EnableMusicCdArt)</visible>
-				<left>930</left>
-				<top>92</top>
+				<posx>930</posx>
+				<posy>92</posy>
 
 				<control type="image">
 					<description>cdart</description>
-					<top>3</top>
+					<posy>3</posy>
 					<width>160</width>
 					<height>160</height>
 					<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
@@ -406,10 +406,10 @@
 			<include>FSTopPanelOpenCloseAnim</include>
 		
 			<control type="grouplist">
-				<left>46</left>
-				<top>10</top>
+				<posx>46</posx>
+				<posy>10</posy>
 				<width>1132</width>
-				<itemgap>30</itemgap>
+				<itemgap>25</itemgap>
 				<control type="label">
 					<description>Row 1</description>
 					<width>1132</width>

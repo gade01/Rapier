@@ -8,8 +8,8 @@
 			
 	<controls>
 		<control type="group">
-			<left>0</left>
-			<top>0</top>
+			<posx>0</posx>
+			<posy>0</posy>
 			<visible>Window.IsActive(FullscreenVideo) + Player.Paused + Skin.HasSetting(ShowFullscreenVideoPaused)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			
@@ -20,7 +20,7 @@
 			</control>
 			
 			<control type="label">
-				<top>250</top>
+				<posy>250</posy>
 				<width>1280</width>
 				<font>PausedFont</font>
 				<label>[B]$LOCALIZE[112][/B]</label>
@@ -30,29 +30,17 @@
 			</control>
 		</control>
 		
-		<control type="image">
-			<description>Cover</description>
-			<left>25</left>
-			<bottom>0</bottom>
-			<width>290</width>
-			<height>162</height>
-			<texture>$VAR[ClearImageOSD1]</texture>
-			<aspectratio align="left" aligny="bottom">keep</aspectratio>
-			<include>MediaViewOpenCloseAnim</include>
-			<visible>Window.IsActive(FullscreenVideo) + Player.Paused + !Window.IsActive(FullscreenInfo)</visible>
-		</control>
-		
 		<control type="group" id="682">
-			<left>772</left>
-			<top>655</top>
+			<posx>772</posx>
+			<posy>655</posy>
 			<visible>Window.IsActive(FullscreenVideo) | Window.IsActive(Visualisation)</visible>
 			<include>FSSeekBar</include>
 			<include>BottomPaneOpenCloseAnim</include>
 			
 			<control type="progress">
 				<description>Progressbar Cache</description>
-				<left>37</left>
-				<top>39</top>
+				<posx>37</posx>
+				<posy>39</posy>
 				<width>412</width>
 				<midtexture border="2">controls/scrollbar-slider-horz-nofocus.png</midtexture>
 				<info>Player.ProgressCache</info>
@@ -61,34 +49,36 @@
 				
 			<control type="progress">
 				<description>Progressbar</description>
-				<left>37</left>
-				<top>39</top>
+				<posx>37</posx>
+				<posy>39</posy>
 				<width>412</width>
 				<info>Player.Progress</info>
 			</control>
 			
 			<control type="grouplist">
-				<left>37</left>
-				<top>6</top>
+				<posx>37</posx>
+				<posy>6</posy>
 				<height>40</height>
 				<width>260</width>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
 				<control type="label">
 					<description>Elapsed/Duration Time</description>
-					<top>5</top>
+					<posy>18</posy>
 					<width min="0" max="250">auto</width>
 					<font>OSDFont</font>
 					<textcolor>ProgressColor</textcolor>
 					<label>$INFO[VideoPlayer.Time] $INFO[Player.Duration,/ ]</label>
+					<aligny>center</aligny>
 					<visible>!Player.Seeking</visible>
 				</control>
 				<control type="label">
 					<description>Caching</description>
-					<top>5</top>
+					<posy>18</posy>
 					<font>OSDFont</font>
 					<textcolor>DisabledColor</textcolor>
 					<textoffsetx>5</textoffsetx>
+					<aligny>center</aligny>
 					<label>$INFO[Player.CacheLevel]%</label>
 					<visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
 				</control>
@@ -97,52 +87,57 @@
 
 			<control type="grouplist">
 				<description>Finish Time</description>
-				<left>241</left>
-				<top>6</top>
+				<posx>249</posx>
+				<posy>6</posy>
 				<height>40</height>
 				<width>200</width>
-				<align>right</align>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
+				<align>right</align>
 				<visible>Window.IsActive(FullScreenVideo)</visible>
 				<control type="image">
-					<top>5</top>
+					<posx>20</posx>
+					<posy>5</posy>
 					<width>28</width>
 					<height>28</height>	
 					<texture>gui/notification-done.png</texture>
 					<bordersize>2</bordersize>
 				</control>
 				<control type="label">
-					<top>5</top>
+					<posy>18</posy>
 					<width min="0" max="172">auto</width>
 					<font>OSDFont</font>
 					<textcolor>ProgressColor2</textcolor>
 					<label>$INFO[Player.FinishTime]</label>
+					<aligny>center</aligny>
 				</control>
 			</control>
 			
 			<control type="grouplist">
 				<description>Playlist</description>
-				<right>-59</right>
-				<top>6</top>
+				<posx>249</posx>
+				<posy>6</posy>
 				<height>40</height>
 				<width>200</width>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
+				<align>right</align>
 				<visible>Window.IsActive(Visualisation)</visible>
 				<control type="image">
-					<top>5</top>
+					<posx>20</posx>
+					<posy>5</posy>
 					<width>28</width>
 					<height>28</height>	
 					<texture>gui/notification-playlist.png</texture>
 					<bordersize>2</bordersize>
 				</control>
 				<control type="label">
-					<top>5</top>
+					<posy>18</posy>
 					<width min="0" max="172">auto</width>
 					<font>OSDFont</font>
 					<textcolor>ProgressColor2</textcolor>
 					<label>$INFO[MusicPlayer.PlaylistPosition] $INFO[MusicPlayer.PlaylistLength,/ ]</label>
+					<aligny>center</aligny>
 				</control>
 			</control>
 		</control>
