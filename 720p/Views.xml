@@ -419,49 +419,128 @@
 		</control>
 	</include>
 
-	<include name="DVDThumbsStyleOverlayImage">	
-		<control type="image">
-			<description>Overlay</description>
-			<left>96</left>
-			<top>133</top>
-			<width>24</width>
-			<height>24</height>
-			<texture background="true">$INFO[ListItem.Overlay]</texture>
-			<aspectratio>stretch</aspectratio>
-			<visible>!Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+	<include name="DVDThumbsStyleOverlayImage">
+		<control type="group">
+			<visible>Container.Content(Movies)</visible>
+			<control type="image">
+				<description>Overlay</description>
+				<left>96</left>
+				<top>133</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.Overlay]</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>!Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+			</control>
+			<control type="image">
+				<description>Watched Partial</description>
+				<left>96</left>
+				<top>133</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$VAR[WatchedPartialAlt]</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+			</control>
 		</control>
-		<control type="image">
-			<description>Watched Partial</description>
-			<left>96</left>
-			<top>133</top>
-			<width>24</width>
-			<height>24</height>
-			<texture background="true">$VAR[WatchedPartialAlt]</texture>
-			<aspectratio>stretch</aspectratio>
-			<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+		
+		<control type="group">
+			<visible>Container.Content(TVShows)</visible>
+			<control type="image">
+				<description>Overlay</description>
+				<left>96</left>
+				<top>138</top>
+				<width>26</width>
+				<height>26</height>
+				<texture background="true">$INFO[ListItem.Overlay]</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay)</visible>
+				<animation effect="fade" end="80" condition="true">Conditional</animation>
+			</control>			
+			<control type="image">
+				<description>Unwatched Overlay</description>
+				<left>96</left>
+				<top>138</top>
+				<width>26</width>
+				<height>26</height>
+				<texture background="true">OverlayClean.png</texture>
+				<aspectratio align="right">keep</aspectratio>
+				<animation effect="fade" end="85" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+			</control>			
+			<control type="label">
+				<description>Unwatched Episodes</description>
+				<top>142</top>
+				<left>109</left>
+				<width>21</width>
+				<font>ListFont3</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<animation effect="fade" end="85" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+			</control>			
+			<control type="label">
+				<description>Unwatched Episodes</description>
+				<top>142</top>
+				<left>109</left>
+				<width>21</width>
+				<font>ListFont4</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<animation effect="fade" end="85" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+			</control>
 		</control>
 	</include>
 	
-	<include name="DVDThumbsStyleOverlayImageBanner">	
+	<include name="DVDThumbsStyleOverlayImageBanner">
 		<control type="image">
 			<description>Overlay</description>
 			<left>355</left>
-			<top>45</top>
-			<width>24</width>
-			<height>24</height>
+			<top>43</top>
+			<width>26</width>
+			<height>26</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
-			<aspectratio>stretch</aspectratio>
-			<visible>!Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+			<aspectratio>keep</aspectratio>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay)</visible>
+			<animation effect="fade" end="80" condition="true">Conditional</animation>
 		</control>
 		<control type="image">
-			<description>Watched Partial</description>
+			<description>Unwatched Overlay</description>
 			<left>355</left>
-			<top>45</top>
-			<width>24</width>
-			<height>24</height>
-			<texture background="true">$VAR[WatchedPartialAlt]</texture>
-			<aspectratio>stretch</aspectratio>
-			<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+			<top>43</top>
+			<width>26</width>
+			<height>26</height>
+			<texture background="true">OverlayClean.png</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+		</control>
+		<control type="label">
+			<description>Unwatched Episodes</description>
+			<top>47</top>
+			<left>368</left>
+			<width>21</width>
+			<font>ListFont3</font>
+			<textcolor>white</textcolor>
+			<align>center</align>
+			<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+		</control>
+		<control type="label">
+			<description>Unwatched Episodes</description>
+			<top>47</top>
+			<left>368</left>
+			<width>21</width>
+			<font>ListFont4</font>
+			<textcolor>white</textcolor>
+			<align>center</align>
+			<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
 		</control>
 	</include>
 
@@ -545,8 +624,58 @@
 			<height>24</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay)</visible>
-		</control>	
+			<visible>Container.Content(Movies) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
+		</control>
+		
+		<control type="group">
+			<visible>Container.Content(TVShows)</visible>
+			<control type="image">
+				<description>Overlay</description>
+				<left>234</left>
+				<top>9</top>
+				<width>26</width>
+				<height>26</height>
+				<texture background="true">$INFO[ListItem.Overlay]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay)</visible>
+				<animation effect="fade" end="80" condition="true">Conditional</animation>
+			</control>					
+			<control type="image">
+				<description>Unwatched Overlay</description>
+				<left>234</left>
+				<top>9</top>
+				<width>26</width>
+				<height>26</height>
+				<texture background="true">OverlayClean.png</texture>
+				<aspectratio>keep</aspectratio>
+				<animation effect="fade" end="80" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+			</control>
+			<control type="label">
+				<description>Unwatched Episodes</description>
+				<top>13</top>
+				<left>247</left>
+				<width>21</width>
+				<font>ListFont3</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<animation effect="fade" end="85" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+			</control>
+			<control type="label">
+				<description>Unwatched Episodes</description>
+				<top>13</top>
+				<left>247</left>
+				<width>21</width>
+				<font>ListFont3</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<animation effect="fade" end="85" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+			</control>
+		</control>
 	</include>
 	
 	<include name="ClearArtThumbsStyleCoverImage">
@@ -600,14 +729,52 @@
 
 		<control type="image">
 			<description>Overlay</description>
-			<left>230</left>
-			<top>10</top>
-			<width>28</width>
-			<height>28</height>
+			<left>231</left>
+			<top>11</top>
+			<width>26</width>
+			<height>26</height>
 			<texture background="true">$INFO[ListItem.Overlay]</texture>
 			<aspectratio>stretch</aspectratio>
 			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay)</visible>
-		</control>	
+		</control>
+		
+		<control type="image">
+			<description>Unwatched Overlay</description>
+			<left>231</left>
+			<top>11</top>
+			<width>26</width>
+			<height>26</height>
+			<texture background="true">OverlayClean.png</texture>
+			<aspectratio>keep</aspectratio>
+			<animation effect="fade" end="80" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+		</control>
+		
+		<control type="label">
+			<description>Unwatched Episodes</description>
+			<top>15</top>
+			<left>244</left>
+			<width>21</width>
+			<font>ListFont3</font>
+			<textcolor>white</textcolor>
+			<align>center</align>
+			<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+		</control>
+		
+		<control type="label">
+			<description>Unwatched Episodes</description>
+			<top>15</top>
+			<left>244</left>
+			<width>21</width>
+			<font>ListFont3</font>
+			<textcolor>white</textcolor>
+			<align>center</align>
+			<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+		</control>
 	</include>
 
 	<include name="StraitThumbsStyleCoverImage">
