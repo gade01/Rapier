@@ -720,7 +720,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>	
@@ -731,7 +731,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
@@ -742,7 +742,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$VAR[WatchedPartial]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>ListItem.IsResumable</visible>
 					<include>ListViewPartialWatchedOverlayFadeAnim</include>
 					<include>ListViewWatchedOverlayFadeAnim</include>
@@ -933,7 +933,7 @@
 				<width>24</width>
 				<height>24</height>
 				<texture background="true">watched/seasons/$INFO[ListItem.Overlay]</texture>
-				<aspectratio>stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>Container.Content(Seasons)</visible>
 				<include>ListViewOverlayFadeAnim</include>
 			</control>
@@ -944,7 +944,7 @@
 				<width>24</width>
 				<height>24</height>
 				<texture background="true">$INFO[ListItem.Overlay]</texture>
-				<aspectratio>stretch</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<visible>!Container.Content(Seasons)</visible>
 				<include>ListViewOverlayFadeAnim</include>
 			</control>
@@ -1048,7 +1048,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>	
 					<control type="image">
@@ -1058,7 +1058,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 					<control type="image">
@@ -1068,7 +1068,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[WatchedPartial]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable</visible>
 						<include>ListViewPartialWatchedOverlayFadeAnim</include>
 						<include>ListViewWatchedOverlayFadeAnim</include>
@@ -1308,7 +1308,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>!Container.Content(Seasons)</visible>
 				</control>
 			</control>
@@ -1423,7 +1423,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
@@ -1434,7 +1434,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[WatchedPartial]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable</visible>
 						<include>ListViewPartialWatchedOverlayFadeAnim</include>
 						<include>ListViewWatchedOverlayFadeAnim</include>
@@ -1540,7 +1540,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
@@ -1760,7 +1760,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
@@ -1771,7 +1771,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
@@ -1782,7 +1782,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[WatchedPartial]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable</visible>
 						<include>ListViewPartialWatchedOverlayFadeAnim</include>
 						<include>ListViewWatchedOverlayFadeAnim</include>
@@ -2313,7 +2313,7 @@
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-							<aspectratio>stretch</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
@@ -2323,7 +2323,7 @@
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-							<aspectratio>stretch</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
@@ -2420,7 +2420,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 					<control type="image">
@@ -2430,7 +2430,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</control>
@@ -2632,7 +2632,7 @@
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-							<aspectratio>stretch</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
@@ -2642,7 +2642,7 @@
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-							<aspectratio>stretch</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
@@ -2652,7 +2652,7 @@
 							<width>24</width>
 							<height>24</height>
 							<texture background="true">$VAR[WatchedPartial]</texture>
-							<aspectratio>stretch</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<visible>ListItem.IsResumable</visible>
 							<include>ListViewPartialWatchedOverlayFadeAnim</include>
 							<include>ListViewWatchedOverlayFadeAnim</include>
@@ -3320,7 +3320,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>!Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 				<control type="image">
@@ -3454,7 +3454,7 @@
 						<width>24</width>
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 					</control>
 					<control type="image">
@@ -3525,7 +3525,7 @@
 					<width>20</width>
 					<height>20</height>
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 				</control>	
 			</itemlayout>
 			<itemlayout condition="!Container.Content(TVShows)" height="179" width="138">	
@@ -3567,7 +3567,7 @@
 					<width>20</width>
 					<height>20</height>
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>!Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 				<control type="image">
@@ -3577,7 +3577,7 @@
 					<width>20</width>
 					<height>20</height>
 					<texture background="true">$VAR[WatchedPartial]</texture>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>			
@@ -3620,7 +3620,7 @@
 						<width>20</width>
 						<height>20</height>
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 					</control>
 				</control>	
 			</focusedlayout>
@@ -3664,7 +3664,7 @@
 						<width>20</width>
 						<height>20</height>
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 					</control>
 					<control type="image">
@@ -3674,7 +3674,7 @@
 						<width>20</width>
 						<height>20</height>
 						<texture background="true">$VAR[WatchedPartial]</texture>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 					</control>
 				</control>	
