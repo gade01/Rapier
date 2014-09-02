@@ -1244,8 +1244,8 @@
 				<itemgap>0</itemgap>
 				<onup>555</onup>
 				<ondown>500</ondown>
-				<onleft>212</onleft>
-				<onright>212</onright>
+				<onleft>216</onleft>
+				<onright>216</onright>
 				<control type="button" id="345">
 					<description>Shutdown</description>
 					<include>MenuBarIconBtn</include>
@@ -1278,7 +1278,7 @@
 	</include>
 
 	<include name="NextAiredMenuBarOptions">
-		<control type="grouplist" id="212">
+		<control type="grouplist" id="216">
 			<left>99</left>
 			<top>0</top>
 			<width>ScreenWidth</width>
@@ -1315,18 +1315,34 @@
 			<control type="image" id="352">
 				<include>MenuBarSeparator</include>
 			</control>
+			<control type="button" id="402">
+				<description>Update info</description>
+				<include>MenuBarBigBtn</include>
+				<align>center</align>
+				<label>[UPPERCASE]$LOCALIZE[31969][/UPPERCASE]</label>
+				<onclick>RunScript(script.tv.show.next.aired,force=True)</onclick>
+			</control>			
+			<control type="image" id="353">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="403">
+				<description>Reset / Update info</description>
+				<include>MenuBarBigBtn</include>
+				<align>center</align>
+				<label>[UPPERCASE]$LOCALIZE[31970][/UPPERCASE]</label>
+				<onclick>RunScript(script.tv.show.next.aired,reset=True)</onclick>
+			</control>			
+			<control type="image" id="354">
+				<include>MenuBarSeparator</include>
+			</control>
 			<control type="button" id="8">
 				<description>Settings</description>
 				<include>MenuBarBigBtn</include>
 				<align>center</align>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onunfocus>ClearProperty(TVGuide.MondayList,Home)</onunfocus>
-				<onunfocus>ClearProperty(TVGuide.TuesdayList,Home)</onunfocus>
-				<onunfocus>ClearProperty(TVGuide.WednesdayList,Home)</onunfocus>
-				<onunfocus>ClearProperty(TVGuide.ThursdayList,Home)</onunfocus>
-				<onunfocus>ClearProperty(TVGuide.FridayList,Home)</onunfocus>
-				<onunfocus>ClearProperty(TVGuide.SaturdayList,Home)</onunfocus>
-				<onunfocus>ClearProperty(TVGuide.SundayList,Home)</onunfocus>
+			</control>
+			<control type="image" id="355">
+				<include>MenuBarSeparator</include>
 			</control>
 		</control>
 	</include>	

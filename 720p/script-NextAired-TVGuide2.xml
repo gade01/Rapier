@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="2003">
+<window>
 	<defaultcontrol always="true">500</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
-	
+	<allowoverlay>no</allowoverlay>
 	<controls>
 		<control type="group">
 			<include>BackgroundDefault</include>
 			<include condition="[[!IsEmpty(Skin.String(CustomTVShowsBGPath)) + [Skin.String(CustomTVShowsBGType,2) | Skin.String(CustomTVShowsBGType,3)]] 
 			| Skin.String(CustomTVShowsBGType,4)] + Skin.HasSetting(ApplyAllTVShowsCustomBG)">BackgroundTVShows</include>
 			<control type="group">
-				<visible>!IsEmpty(Window(Home).Property(TVGuide.BackgroundFanart)) + [Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206)]</visible>
+				<visible>!IsEmpty(Window(Home).Property(TVGuide.BackgroundFanart)) + [Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206) | Control.HasFocus(207) | Control.HasFocus(208) | Control.HasFocus(209) | Control.HasFocus(210) | Control.HasFocus(211) | Control.HasFocus(212) | Control.HasFocus(213) | Control.HasFocus(214) | Control.HasFocus(215)]</visible>
 				<animation effect="fade" time="600">VisibleChange</animation>
 				<control type="image">
 					<include>BackgroundSize</include>
@@ -37,15 +36,22 @@
 			<include>PanelFadeAnim</include>
 			<include>ControlsOpenCloseAnim</include>
 		</control>
-
-		<control type="group" id="500">
+		
+		<control type="grouplist" id="500">
 			<description>Guide Area</description>
 			<left>39</left>
 			<top>115</top>
+			<width>852</width>
+			<height>525</height>
+			<orientation>horizontal</orientation>
+			<itemgap>2</itemgap>
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="group">
-				<description>Monday Area</description>
+				<description>Yesterday Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.200.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -67,7 +73,7 @@
 				</control>
 
 				<control type="list" id="200">
-					<description>Monday list</description>
+					<description>Yesterday list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -75,7 +81,7 @@
 					<scrolltime>0</scrolltime>
 					<onup>850</onup>
 					<ondown>200</ondown>
-					<onleft>206</onleft>
+					<onleft>215</onleft>
 					<onright>201</onright>
 					<itemlayout height="116" width="120">
 						<include>NextAiredTimeLabel2</include>
@@ -100,8 +106,10 @@
 			</control>
 
 			<control type="group">
-				<description>Tuesday Area</description>
-				<left>122</left>
+				<description>Today Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.201.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -123,7 +131,7 @@
 				</control>
 
 				<control type="list" id="201">
-					<description>Tuesday list</description>
+					<description>Today list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -156,8 +164,10 @@
 			</control>
 
 			<control type="group">
-				<description>Wednesday Area</description>
-				<left>244</left>
+				<description>Today+1 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.202.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -179,7 +189,7 @@
 				</control>
 
 				<control type="list" id="202">
-					<description>Wednesday list</description>
+					<description>Today+1 list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -212,8 +222,10 @@
 			</control>
 
 			<control type="group">
-				<description>Thursday Area</description>
-				<left>366</left>
+				<description>Today+2 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.203.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -235,7 +247,7 @@
 				</control>
 
 				<control type="list" id="203">
-					<description>Thursday list</description>
+					<description>Today+2 list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -268,8 +280,10 @@
 			</control>
 
 			<control type="group">
-				<description>Friday Area</description>
-				<left>488</left>
+				<description>Today+3 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.204.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -291,7 +305,7 @@
 				</control>
 
 				<control type="list" id="204">
-					<description>Friday list</description>
+					<description>Today+3 list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -324,8 +338,10 @@
 			</control>
 
 			<control type="group">
-				<description>Saturday Area</description>
-				<left>610</left>
+				<description>Today+4 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.205.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -347,7 +363,7 @@
 				</control>
 
 				<control type="list" id="205">
-					<description>Saturday list</description>
+					<description>Today+4 list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -380,8 +396,10 @@
 			</control>
 
 			<control type="group">
-				<description>Sunday Area</description>
-				<left>732</left>
+				<description>Today+5 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.206.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
 				<include>NextAiredHeaderImage</include>
 				<control type="group">
@@ -403,7 +421,7 @@
 				</control>
 
 				<control type="list" id="206">
-					<description>Sunday list</description>
+					<description>Today+5 list</description>
 					<top>60</top>
 					<width>120</width>
 					<height>465</height>
@@ -412,7 +430,7 @@
 					<onup>850</onup>
 					<ondown>206</ondown>
 					<onleft>205</onleft>
-					<onright>200</onright>
+					<onright>207</onright>
 					<itemlayout height="116" width="120">
 						<include>NextAiredTimeLabel2</include>
 						<include>NextAiredItemLayout</include>
@@ -434,8 +452,520 @@
 					</focusedlayout>
 				</control>
 			</control>
-		</control>
+			
+			<control type="group">
+				<description>Today+6 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.207.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
 
+				<include>NextAiredHeaderImage</include>
+				<control type="group">
+					<visible>stringcompare(System.Date(ddd),Window(Home).Property(NextAired.207.Wday))</visible>
+					<include>NextAiredHeaderImage2</include>
+				</control>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.207.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.207.Date)]</label>
+				</control>
+
+				<control type="list" id="207">
+					<description>Today+6 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>207</ondown>
+					<onleft>206</onleft>
+					<onright>208</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(207)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(207)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(207)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+7 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.208.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.208.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.208.Date)]</label>
+				</control>
+
+				<control type="list" id="208">
+					<description>Today+7 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>208</ondown>
+					<onleft>207</onleft>
+					<onright>209</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(208)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(208)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(208)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+8 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.209.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.209.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.209.Date)]</label>
+				</control>
+
+				<control type="list" id="209">
+					<description>Today+8 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>209</ondown>
+					<onleft>208</onleft>
+					<onright>210</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(209)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(209)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(209)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+9 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.210.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.210.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.210.Date)]</label>
+				</control>
+
+				<control type="list" id="210">
+					<description>Today+9 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>210</ondown>
+					<onleft>209</onleft>
+					<onright>211</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(210)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(210)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(210)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+10 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.211.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.211.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.211.Date)]</label>
+				</control>
+
+				<control type="list" id="211">
+					<description>Today+10 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>211</ondown>
+					<onleft>210</onleft>
+					<onright>212</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(211)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(211)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(211)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+11 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.212.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.212.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.212.Date)]</label>
+				</control>
+
+				<control type="list" id="212">
+					<description>Today+11 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>212</ondown>
+					<onleft>211</onleft>
+					<onright>213</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(212)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(212)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(212)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+12 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.213.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.213.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.213.Date)]</label>
+				</control>
+
+				<control type="list" id="213">
+					<description>Today+12 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>213</ondown>
+					<onleft>212</onleft>
+					<onright>214</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(213)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(213)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(213)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+13 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.214.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.214.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.214.Date)]</label>
+				</control>
+
+				<control type="list" id="214">
+					<description>Today+13 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>214</ondown>
+					<onleft>213</onleft>
+					<onright>215</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(214)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(214)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(214)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<description>Today+14 Area</description>
+				<visible>!StringCompare(Window(Home).Property(NextAired.215.Wday),)</visible>
+				<width>120</width>
+				<height>525</height>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.215.Wday)]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.215.Date)]</label>
+				</control>
+
+				<control type="list" id="215">
+					<description>Today+14 list</description>
+					<top>60</top>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>850</onup>
+					<ondown>215</ondown>
+					<onleft>214</onleft>
+					<onright>200</onright>
+					<itemlayout height="116" width="120">
+						<include>NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="group">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(215)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel</include>
+							<visible>Control.HasFocus(215)</visible>
+						</control>
+						<control type="group">
+							<include>NextAiredTimeLabel2</include>
+							<visible>!Control.HasFocus(215)</visible>
+						</control>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>	
+		
+		<control type="group">
+			<include>ControlsOpenCloseAnim</include>
+			<control type="image">
+				<description>Left Arrow</description>
+				<posx>42</posx>
+				<posy>128</posy>
+				<width>16</width>
+				<height>28</height>
+				<texture flipx="true">controls/nav-arrow-right-nofocus.png</texture>
+				<visible>Container(500).HasPrevious</visible>
+			</control>
+			<control type="image">
+				<description>Right Arrow</description>
+				<posx>873</posx>
+				<posy>128</posy>
+				<width>16</width>
+				<height>28</height>
+				<texture>controls/nav-arrow-right-nofocus.png</texture>
+				<visible>Container(500).HasNext</visible>
+			</control>
+		</control>
+		
 		<control type="group">
 			<description>Info Area</description>
 			<left>901</left>
@@ -517,7 +1047,16 @@
 				| [Control.HasFocus(203) + !IsEmpty(Container(203).ListItem.Label)]
 				| [Control.HasFocus(204) + !IsEmpty(Container(204).ListItem.Label)]
 				| [Control.HasFocus(205) + !IsEmpty(Container(205).ListItem.Label)]
-				| [Control.HasFocus(206) + !IsEmpty(Container(206).ListItem.Label)]</visible>
+				| [Control.HasFocus(206) + !IsEmpty(Container(206).ListItem.Label)]
+				| [Control.HasFocus(207) + !IsEmpty(Container(207).ListItem.Label)]
+				| [Control.HasFocus(208) + !IsEmpty(Container(208).ListItem.Label)]
+				| [Control.HasFocus(209) + !IsEmpty(Container(209).ListItem.Label)]
+				| [Control.HasFocus(210) + !IsEmpty(Container(210).ListItem.Label)]
+				| [Control.HasFocus(211) + !IsEmpty(Container(211).ListItem.Label)]
+				| [Control.HasFocus(212) + !IsEmpty(Container(212).ListItem.Label)]
+				| [Control.HasFocus(213) + !IsEmpty(Container(213).ListItem.Label)]
+				| [Control.HasFocus(214) + !IsEmpty(Container(214).ListItem.Label)]
+				| [Control.HasFocus(215) + !IsEmpty(Container(215).ListItem.Label)]</visible>
 				<include>ControlsOpenCloseAnim</include>
 
 				<control type="label">
@@ -676,7 +1215,7 @@
 				</control>
 			</control>
 		</control>
-
+		
 		<include condition="!Skin.HasSetting(EnableKioskMode)">NextAiredMenuBar</include>
 
 		<control type="group">
