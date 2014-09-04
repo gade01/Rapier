@@ -1887,6 +1887,12 @@
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn5) + !IsEmpty(Skin.String(TVShowsSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
+						<description>TV Show Next Aired</description>
+						<label>$LOCALIZE[4]</label>
+						<onclick>RunScript(script.tv.show.next.aired)</onclick>
+						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn6) + System.HasAddon(script.tv.show.next.aired)</visible>
+					</item>
+					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn6Label)]</label>
 						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn6Param)]</onclick>
