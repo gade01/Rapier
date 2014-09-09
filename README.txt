@@ -8,7 +8,7 @@ Rapier tries to support all the latest features XBMC has to offer as long as it 
 
 CONTACT: 
 
-scarfa: movablemind@gmail.com
+scarfa: -
 gade: christian_gade@hotmail.com
 
 
@@ -21,7 +21,6 @@ DEVELOPMENT:
 
 http://forum.xbmc.org/forumdisplay.php?fid=120
 
-http://forum.xbmc.org/showthread.php?tid=151755
 
 ---------- INSTALL --------------------------------------------------------------------------
 

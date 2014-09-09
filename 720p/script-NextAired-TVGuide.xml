@@ -84,9 +84,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(200)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(200)</visible>
 						</control>
@@ -140,9 +137,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(201)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(201)</visible>
 						</control>
@@ -196,9 +190,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(202)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(202)</visible>
 						</control>
@@ -252,9 +243,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(203)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(203)</visible>
 						</control>
@@ -308,9 +296,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(204)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(204)</visible>
 						</control>
@@ -364,9 +349,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(205)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(205)</visible>
 						</control>
@@ -420,9 +402,6 @@
 					<focusedlayout height="116" width="120">
 						<control type="group">
 							<include>NextAiredItemImage</include>
-							<visible>Control.HasFocus(206)</visible>
-						</control>
-						<control type="group">
 							<include>NextAiredTimeLabel</include>
 							<visible>Control.HasFocus(206)</visible>
 						</control>
@@ -596,21 +575,22 @@
 				</control>
 
 				<control type="grouplist">
-					<description>Genre</description>
+					<description>Latest Episode</description>
 					<left>9</left>
 					<top>358</top>
 					<width>322</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
+						<width min="0" max="150">auto</width>
 						<include>NextAiredInfoLabel</include>
-						<label>$LOCALIZE[515]:</label>
+						<label>$LOCALIZE[31966]:</label>
 					</control>
 					<control type="label">
 						<include>NextAiredInfoLabelVal</include>
-						<label fallback="31001">$VAR[NextAiredGenre]</label>
+						<label fallback="31001">$VAR[NextAiredLatestEpisode]</label>
 					</control>
 				</control>
-
+				
 				<control type="grouplist">
 					<description>Status</description>
 					<left>9</left>
@@ -628,9 +608,25 @@
 				</control>
 
 				<control type="grouplist">
-					<description>Network</description>
+					<description>Genre</description>
 					<left>9</left>
 					<top>422</top>
+					<width>322</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[515]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredGenre]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Network</description>
+					<left>9</left>
+					<top>454</top>
 					<width>322</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -646,7 +642,7 @@
 				<control type="grouplist">
 					<description>Country</description>
 					<left>9</left>
-					<top>454</top>
+					<top>486</top>
 					<width>322</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -656,22 +652,6 @@
 					<control type="label">
 						<include>NextAiredInfoLabelVal</include>
 						<label fallback="31001">$VAR[NextAiredCountry]</label>
-					</control>
-				</control>
-
-				<control type="grouplist">
-					<description>Premiered</description>
-					<left>9</left>
-					<top>486</top>
-					<width>322</width>
-					<orientation>horizontal</orientation>
-					<control type="label">
-						<include>NextAiredInfoLabel</include>
-						<label>$LOCALIZE[345]:</label>
-					</control>
-					<control type="label">
-						<include>NextAiredInfoLabelVal</include>
-						<label fallback="31001">$VAR[NextAiredPremiered]</label>
 					</control>
 				</control>
 			</control>
@@ -685,6 +665,16 @@
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbNextAired</include>
 			<include>Notifications</include>	
+		</control>
+		
+		<control type="group">
+			<description>Bottom Bar Area</description>
+			<top>BottomPaneOffsetY</top>	
+			<control type="label">
+				<include>InfoPaneHeadLabel2</include>
+				<label>$VAR[NextAiredTotal]</label>
+			</control>
+			<include>BottomPaneOpenCloseAnim</include>
 		</control>
 	</controls>
 </window>

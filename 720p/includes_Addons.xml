@@ -159,7 +159,7 @@
 	</include>
 
 	<include name="NextAiredInfoImage">
-		<width>337</width>
+		<width>336</width>
 		<height>30</height>
 		<texture>white.png</texture>
 		<include>NextAiredInfoFadeAnim</include>
@@ -385,23 +385,58 @@
 		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Property(Country)]</value>
 	</variable>
 
-	<variable name="NextAiredPremiered">
-		<value condition="Control.HasFocus(215)">$INFO[Container(215).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(214)">$INFO[Container(214).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(213)">$INFO[Container(213).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(212)">$INFO[Container(212).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(211)">$INFO[Container(211).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(210)">$INFO[Container(210).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(209)">$INFO[Container(209).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(208)">$INFO[Container(208).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(207)">$INFO[Container(207).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(206)">$INFO[Container(206).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(205)">$INFO[Container(205).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(204)">$INFO[Container(204).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(203)">$INFO[Container(203).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(202)">$INFO[Container(202).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(201)">$INFO[Container(201).ListItem.Property(Premiered)]</value>
-		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Property(Premiered)]</value>
+	<variable name="NextAiredLatestEpisode">
+		<value condition="Control.HasFocus(215)">$INFO[Container(215).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(215).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(215).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(214)">$INFO[Container(214).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(214).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(214).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(213)">$INFO[Container(213).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(213).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(213).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(212)">$INFO[Container(212).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(212).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(212).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(211)">$INFO[Container(211).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(211).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(211).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(210)">$INFO[Container(210).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(210).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(210).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(209)">$INFO[Container(209).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(209).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(209).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(208)">$INFO[Container(208).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(208).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(208).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(207)">$INFO[Container(207).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(207).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(207).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(206)">$INFO[Container(206).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(206).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(206).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(205)">$INFO[Container(205).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(205).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(205).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(204)">$INFO[Container(204).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(204).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(204).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(203)">$INFO[Container(203).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(203).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(203).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(202)">$INFO[Container(202).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(202).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(202).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(201)">$INFO[Container(201).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(201).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(201).ListItem.Property(LatestDate), (,)]</value>
+		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Property(LatestSeasonNumber),S,]$INFO[Container(200).ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container(200).ListItem.Property(LatestDate), (,)]</value>
+	</variable>
+	
+	<variable name="NextAiredTotal">
+		<value condition="Control.HasFocus(215) + !StringCompare(Container(215).NumItems,1)">$INFO[Container(215).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.215.Wday), ,]$INFO[Window(home).Property(NextAired.215.Date), ,]</value>
+		<value condition="Control.HasFocus(215) + StringCompare(Container(215).NumItems,1)">$INFO[Container(215).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.215.Wday), ,]$INFO[Window(home).Property(NextAired.215.Date), ,]</value>
+		<value condition="Control.HasFocus(214) + !StringCompare(Container(214).NumItems,1)">$INFO[Container(214).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.214.Wday), ,]$INFO[Window(home).Property(NextAired.214.Date), ,]</value>
+		<value condition="Control.HasFocus(214) + StringCompare(Container(214).NumItems,1)">$INFO[Container(214).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.214.Wday), ,]$INFO[Window(home).Property(NextAired.214.Date), ,]</value>
+		<value condition="Control.HasFocus(213) + !StringCompare(Container(213).NumItems,1)">$INFO[Container(213).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.213.Wday), ,]$INFO[Window(home).Property(NextAired.213.Date), ,]</value>
+		<value condition="Control.HasFocus(213) + StringCompare(Container(213).NumItems,1)">$INFO[Container(213).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.213.Wday), ,]$INFO[Window(home).Property(NextAired.213.Date), ,]</value>
+		<value condition="Control.HasFocus(212) + !StringCompare(Container(212).NumItems,1)">$INFO[Container(212).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.212.Wday), ,]$INFO[Window(home).Property(NextAired.212.Date), ,]</value>
+		<value condition="Control.HasFocus(212) + StringCompare(Container(212).NumItems,1)">$INFO[Container(212).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.212.Wday), ,]$INFO[Window(home).Property(NextAired.212.Date), ,]</value>
+		<value condition="Control.HasFocus(211) + !StringCompare(Container(211).NumItems,1)">$INFO[Container(211).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.211.Wday), ,]$INFO[Window(home).Property(NextAired.211.Date), ,]</value>
+		<value condition="Control.HasFocus(211) + StringCompare(Container(211).NumItems,1)">$INFO[Container(211).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.211.Wday), ,]$INFO[Window(home).Property(NextAired.211.Date), ,]</value>
+		<value condition="Control.HasFocus(210) + !StringCompare(Container(210).NumItems,1)">$INFO[Container(210).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.210.Wday), ,]$INFO[Window(home).Property(NextAired.210.Date), ,]</value>
+		<value condition="Control.HasFocus(210) + StringCompare(Container(210).NumItems,1)">$INFO[Container(210).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.210.Wday), ,]$INFO[Window(home).Property(NextAired.210.Date), ,]</value>
+		<value condition="Control.HasFocus(209) + !StringCompare(Container(209).NumItems,1)">$INFO[Container(209).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.209.Wday), ,]$INFO[Window(home).Property(NextAired.209.Date), ,]</value>
+		<value condition="Control.HasFocus(209) + StringCompare(Container(209).NumItems,1)">$INFO[Container(209).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.209.Wday), ,]$INFO[Window(home).Property(NextAired.209.Date), ,]</value>
+		<value condition="Control.HasFocus(208) + !StringCompare(Container(208).NumItems,1)">$INFO[Container(208).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.208.Wday), ,]$INFO[Window(home).Property(NextAired.208.Date), ,]</value>
+		<value condition="Control.HasFocus(208) + StringCompare(Container(208).NumItems,1)">$INFO[Container(208).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.208.Wday), ,]$INFO[Window(home).Property(NextAired.208.Date), ,]</value>
+		<value condition="Control.HasFocus(207) + !StringCompare(Container(207).NumItems,1)">$INFO[Container(207).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.207.Wday), ,]$INFO[Window(home).Property(NextAired.207.Date), ,]</value>
+		<value condition="Control.HasFocus(207) + StringCompare(Container(207).NumItems,1)">$INFO[Container(207).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.207.Wday), ,]$INFO[Window(home).Property(NextAired.207.Date), ,]</value>
+		<value condition="Control.HasFocus(206) + !StringCompare(Container(206).NumItems,1)">$INFO[Container(206).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.206.Wday), ,]$INFO[Window(home).Property(NextAired.206.Date), ,]</value>
+		<value condition="Control.HasFocus(206) + StringCompare(Container(206).NumItems,1)">$INFO[Container(206).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.206.Wday), ,]$INFO[Window(home).Property(NextAired.206.Date), ,]</value>
+		<value condition="Control.HasFocus(205) + !StringCompare(Container(205).NumItems,1)">$INFO[Container(205).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.205.Wday), ,]$INFO[Window(home).Property(NextAired.205.Date), ,]</value>
+		<value condition="Control.HasFocus(205) + StringCompare(Container(205).NumItems,1)">$INFO[Container(205).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.205.Wday), ,]$INFO[Window(home).Property(NextAired.205.Date), ,]</value>
+		<value condition="Control.HasFocus(204) + !StringCompare(Container(204).NumItems,1)">$INFO[Container(204).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.204.Wday), ,]$INFO[Window(home).Property(NextAired.204.Date), ,]</value>
+		<value condition="Control.HasFocus(204) + StringCompare(Container(204).NumItems,1)">$INFO[Container(204).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.204.Wday), ,]$INFO[Window(home).Property(NextAired.204.Date), ,]</value>
+		<value condition="Control.HasFocus(203) + !StringCompare(Container(203).NumItems,1)">$INFO[Container(203).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.203.Wday), ,]$INFO[Window(home).Property(NextAired.203.Date), ,]</value>
+		<value condition="Control.HasFocus(203) + StringCompare(Container(203).NumItems,1)">$INFO[Container(203).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.203.Wday), ,]$INFO[Window(home).Property(NextAired.203.Date), ,]</value>
+		<value condition="Control.HasFocus(202) + !StringCompare(Container(202).NumItems,1)">$INFO[Container(202).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.202.Wday), ,]$INFO[Window(home).Property(NextAired.202.Date), ,]</value>
+		<value condition="Control.HasFocus(202) + StringCompare(Container(202).NumItems,1)">$INFO[Container(202).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.202.Wday), ,]$INFO[Window(home).Property(NextAired.202.Date), ,]</value>
+		<value condition="Control.HasFocus(201) + !StringCompare(Container(201).NumItems,1)">$INFO[Container(201).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.201.Wday), ,]$INFO[Window(home).Property(NextAired.201.Date), ,]</value>
+		<value condition="Control.HasFocus(201) + StringCompare(Container(201).NumItems,1)">$INFO[Container(201).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.201.Wday), ,]$INFO[Window(home).Property(NextAired.201.Date), ,]</value>
+		<value condition="Control.HasFocus(200) + !StringCompare(Container(200).NumItems,1)">$INFO[Container(200).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.200.Wday), ,]$INFO[Window(home).Property(NextAired.200.Date), ,]</value>
+		<value condition="Control.HasFocus(200) + StringCompare(Container(200).NumItems,1)">$INFO[Container(200).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.200.Wday), ,]$INFO[Window(home).Property(NextAired.200.Date), ,]</value>
 	</variable>
 	
 	<!-- WatchList -->
