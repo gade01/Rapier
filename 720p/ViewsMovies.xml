@@ -2102,7 +2102,7 @@
 						<top>133</top>
 						<width>24</width>
 						<height>24</height>
-						<texture background="true">$VAR[WatchedPartialAlt]</texture>
+						<texture background="true">$VAR[WatchedPartial]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
 					</control>
@@ -2236,7 +2236,7 @@
 						<aspectratio align="center">keep</aspectratio>
 						<bordersize>8</bordersize>
 						<animation effect="fade" end="50" condition="true">Conditional</animation>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
 					</control>
 					<control type="image">
 						<description>Overlay</description>
@@ -2248,6 +2248,17 @@
 						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<description>Watched Partial</description>
+						<left>236</left>
+						<top>9</top>
+						<width>24</width>
+						<height>24</height>
+						<texture background="true">$VAR[WatchedPartialAlt]</texture>
+						<aspectratio>keep</aspectratio>
+						<animation effect="fade" end="70" condition="true">Conditional</animation>
+						<visible>ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
 					</control>
 				</control>
 			</itemlayout>
