@@ -147,10 +147,32 @@
 						<top>6</top>
 						<width>192</width>
 						<height>150</height>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<bordersize>6</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					<control type="image">
+						<description>Default Cover</description>
+						<left>6</left> 
+						<top>6</top>
+						<width>192</width>
+						<height>150</height>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<bordersize>6</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					<control type="image">
+						<description>Default Cover</description>
+						<left>6</left> 
+						<top>6</top>
+						<width>192</width>
+						<height>150</height>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb) + ![Container.Content(Genres) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
 					</control>
 					<control type="image">
 						<description>Cover</description>
@@ -323,12 +345,36 @@
 						<top>0</top>
 						<width>204</width>
 						<height>162</height>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
+						<bordersize>12</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					<control type="image">
+						<description>Default Cover</description>
+						<left>0</left> 
+						<top>0</top>
+						<width>204</width>
+						<height>162</height>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
+						<bordersize>12</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					<control type="image">
+						<description>Default Cover</description>
+						<left>0</left> 
+						<top>0</top>
+						<width>204</width>
+						<height>162</height>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
-					</control>	
+						<visible>IsEmpty(ListItem.Thumb) + ![Container.Content(Genres) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+					</control>
 					<control type="image">
 						<description>Cover</description>
 						<left>0</left> 
@@ -478,19 +524,74 @@
 					</control>
 					
 					<control type="image">
-						<description>Cover</description>
+						<description>Cover Video Library</description>
+						<width>400</width>
+						<height>400</height>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
+						<bordersize>50</bordersize>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>NotificationsOpenCloseAnim</include>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					
+					<control type="image">
+						<description>Cover Music Library</description>
+						<width>400</width>
+						<height>400</height>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
+						<bordersize>50</bordersize>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>NotificationsOpenCloseAnim</include>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					
+					<control type="image">
+						<description>Cover Default</description>
 						<width>400</width>
 						<height>400</height>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>50</bordersize>
 						<aspectratio aligny="bottom">keep</aspectratio>
-						<fadetime>IconCrossfadeTime</fadetime>	
-						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>NotificationsOpenCloseAnim</include>
+						<visible>IsEmpty(ListItem.Thumb) + ![Container.Content(Genres) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
 					</control>
 					
 					<control type="image">
-						<description>Cover Reflection</description>
+						<description>Cover Reflection Video Library</description>
+						<top>395</top>
+						<width>400</width>
+						<height>400</height>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
+						<bordersize>50</bordersize>
+						<aspectratio aligny="top">keep</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>NotificationsOpenCloseAnim</include>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					
+					<control type="image">
+						<description>Cover Reflection Music Library</description>
+						<top>395</top>
+						<width>400</width>
+						<height>400</height>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
+						<bordersize>50</bordersize>
+						<aspectratio aligny="top">keep</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>NotificationsOpenCloseAnim</include>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					</control>
+					
+					<control type="image">
+						<description>Cover Reflection Default</description>
 						<top>395</top>
 						<width>400</width>
 						<height>400</height>
@@ -499,7 +600,8 @@
 						<bordersize>50</bordersize>
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<include>NotificationsOpenCloseAnim</include>
+						<visible>IsEmpty(ListItem.Thumb) + ![Container.Content(Genres) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
 					</control>
 				</control>
 
@@ -954,7 +1056,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<aligny>center</aligny>
 					<info>ListItem.Label</info>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -1124,7 +1226,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<aligny>center</aligny>
 					<info>ListItem.Label</info>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -1210,7 +1312,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<aligny>center</aligny>
 					<info>ListItem.Label</info>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2191,7 +2293,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2312,7 +2414,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2405,7 +2507,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2498,7 +2600,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 					<visible>IsEmpty(ListItem.Title)</visible>
 				</control>
 				<control type="label">
@@ -2522,7 +2624,7 @@
 						<textcolor>SelectedColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<scroll>yes</scroll>
+						<scroll>true</scroll>
 					</control>
 					<control type="label">
 						<description>Rating</description>
@@ -2631,7 +2733,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2692,7 +2794,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Album]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2765,7 +2867,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2838,7 +2940,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Artist]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2 (Born)</description>
@@ -2901,7 +3003,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2 (Addons)</description>
@@ -2963,7 +3065,7 @@
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -4392,7 +4494,7 @@
 					<textcolor>MediaInfoTitleColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
-					<scroll>yes</scroll>
+					<scroll>true</scroll>
 					<visible>IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableMoviesClearLogo)</visible>
 				</control>
 				

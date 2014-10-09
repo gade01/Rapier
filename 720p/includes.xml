@@ -82,8 +82,8 @@
 	</variable>
 	
 	<variable name="SeekbarLabels">
-		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[UPPERCASE][COLOR=DisabledColor]$LOCALIZE[112][/COLOR][/UPPERCASE]</value>
-		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$INFO[Player.CacheLevel,[COLOR=DisabledColor],%[/COLOR]]</value>
+		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
+		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$INFO[Player.CacheLevel,,%]</value>
 		<value condition="Player.Forwarding2x + !Player.Seeking">+2X</value>
 		<value condition="Player.Forwarding4x + !Player.Seeking">+4X</value>
 		<value condition="Player.Forwarding8x + !Player.Seeking">+8X</value>
@@ -229,7 +229,7 @@
 		<textcolor>GreyColor2</textcolor>
 		<scrollout>false</scrollout>
 		<pauseatend>1500</pauseatend>
-		<scroll>yes</scroll>
+		<scroll>true</scroll>
 	</include>
 	
 	<include name="PlayerControlsPanel">
@@ -311,13 +311,13 @@
 	<include name="ContextMenuBtn">
 		<width>280</width>
 		<textwidth>270</textwidth>
-		<scroll>yes</scroll>
+		<scroll>true</scroll>
 	</include>
 	
 	<include name="ShutdownContextMenuBtn">
 		<width>280</width>
 		<textwidth>230</textwidth>
-		<scroll>yes</scroll>
+		<scroll>true</scroll>
 	</include>
 	
 	<include name="SettingsCatBtn">

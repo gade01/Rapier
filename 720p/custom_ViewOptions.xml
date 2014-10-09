@@ -1083,6 +1083,16 @@
 				<label>$LOCALIZE[31021]</label>
 				<selected>Skin.HasSetting(HideMoviesWallInfoPanel)</selected>
 				<onclick>Skin.ToggleSetting(HideMoviesWallInfoPanel)</onclick>
+				<onclick condition="Skin.HasSetting(HideMoviesWallExtendedInfoPanel) + Skin.HasSetting(HideMoviesWallInfoPanel)">Skin.ToggleSetting(HideMoviesWallExtendedInfoPanel)</onclick>
+				<visible>Skin.String(CurrentViewMode,69)</visible>
+			</control>
+			<control type="radiobutton" id="3023">
+				<description>Wall Hide Extended Info Panel (Movies)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31971]</label>
+				<selected>!Skin.HasSetting(HideMoviesWallExtendedInfoPanel)</selected>
+				<onclick>Skin.ToggleSetting(HideMoviesWallExtendedInfoPanel)</onclick>
+				<onclick condition="!Skin.HasSetting(HideMoviesWallExtendedInfoPanel) + !Skin.HasSetting(HideMoviesWallInfoPanel)">Skin.ToggleSetting(HideMoviesWallInfoPanel)</onclick>
 				<visible>Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="3022">
