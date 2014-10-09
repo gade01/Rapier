@@ -505,16 +505,14 @@
 						<visible>!Player.Seeking</visible>
 					</control>
 					<control type="label">
-						<description>Caching</description>
-						<posy>18</posy>
+						<description>SeekbarLabels</description>
+						<posy>5</posy>
+						<width min="0" max="250">auto</width>
 						<font>OSDFont</font>
-						<textcolor>DisabledColor</textcolor>
+						<textcolor>SelectedColor2</textcolor>
 						<textoffsetx>5</textoffsetx>
-						<aligny>center</aligny>
-						<label>$INFO[Player.CacheLevel]%</label>
-						<visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
+						<label>$VAR[SeekbarLabels]</label>
 					</control>
-					<include>SeekSpeedLabels</include>
 				</control>
 							
 				<control type="grouplist">

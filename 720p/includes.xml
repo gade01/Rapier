@@ -86,6 +86,22 @@
 		<value condition="Substring(ListItem.Path),BDMV">$INFO[ListItem.Path,../,logo.png]</value>
 		<value>$INFO[ListItem.Path,,logo.png]</value>
 	</variable>
+	
+	<variable name="SeekbarLabels">
+		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
+		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$INFO[Player.CacheLevel,,%]</value>
+		<value condition="Player.Forwarding2x + !Player.Seeking">+2X</value>
+		<value condition="Player.Forwarding4x + !Player.Seeking">+4X</value>
+		<value condition="Player.Forwarding8x + !Player.Seeking">+8X</value>
+		<value condition="Player.Forwarding16x + !Player.Seeking">+16X</value>
+		<value condition="Player.Forwarding32x + !Player.Seeking">+32X</value>
+		<value condition="Player.Rewinding2x + !Player.Seeking">-2X</value>
+		<value condition="Player.Rewinding4x + !Player.Seeking">-4X</value>
+		<value condition="Player.Rewinding8x + !Player.Seeking">-8X</value>
+		<value condition="Player.Rewinding16 + !Player.Seeking">-16X</value>
+		<value condition="Player.Rewinding32x + !Player.Seeking">-32X</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
+	</variable>
 
 	<include name="ScreenSize">
 		<width>ScreenWidth</width>
@@ -575,120 +591,6 @@
 		<textcolor>MediaInfoItemColor2</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
 		<align>center</align>
-	</include>
-	
-	<include name="SeekSpeedLabels">		
-		<!-- Forwarding -->
-		<control type="label">
-			<description>2X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>+2X</label>
-			<visible>Player.Forwarding2x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>4X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>+4X</label>
-			<visible>Player.Forwarding4x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>8X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>+8X</label>
-			<visible>Player.Forwarding8x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>16X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>+16X</label>
-			<visible>Player.Forwarding16x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>32X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>+32X</label>
-			<visible>Player.Forwarding32x + !Player.Seeking</visible>
-		</control>
-	
-		<!-- Rewinding -->
-		<control type="label">
-			<description>2X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>-2X</label>
-			<visible>Player.Rewinding2x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>4X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>-4X</label>
-			<visible>Player.Rewinding4x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>8X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>-8X</label>
-			<visible>Player.Rewinding8x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>16X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>-16X</label>
-			<visible>Player.Rewinding16x + !Player.Seeking</visible>
-		</control>
-		
-		<control type="label">
-			<description>32X</description>
-			<posy>18</posy>
-			<font>OSDFont</font>
-			<textcolor>DefaultColor3</textcolor>
-			<textoffsetx>5</textoffsetx>
-			<aligny>center</aligny>
-			<label>-32X</label>
-			<visible>Player.Rewinding32x + !Player.Seeking</visible>
-		</control>
 	</include>
 
 	<include name="FSMediaInfoBackgroundDim">

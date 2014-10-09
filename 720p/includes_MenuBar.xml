@@ -219,7 +219,7 @@
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultMenuBar</include>
-			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | [!Skin.HasSetting(HideMenuBar) + !Window.IsActive(MovieInformation) + !Window.IsActive(AddonInformation) + !Window.IsActive(MusicInformation)]</visible>
+			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation)]</visible>
 		</control>
 	</include>
 	
@@ -836,7 +836,7 @@
 		</control>	
 	</include>
 
-	<include name="MyWeatherPlusMenuBar">
+	<include name="MyWeatherUndergroundMenuBar">
 		<control type="grouplist" id="850">
 			<posx>2</posx>
 			<posy>0</posy>
@@ -900,7 +900,7 @@
 				<width>138</width>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[33006][/UPPERCASE]</label>
-				<onclick>Skin.SetString(WeatherPlus,1)</onclick>
+				<onclick>Skin.SetString(WeatherUnderground,1)</onclick>
 			</control>
 			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
@@ -910,7 +910,7 @@
 				<width>138</width>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[33034][/UPPERCASE]</label>
-				<onclick>Skin.SetString(WeatherPlus,2)</onclick>
+				<onclick>Skin.SetString(WeatherUnderground,2)</onclick>
 			</control>
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
@@ -920,7 +920,7 @@
 				<width>138</width>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[33037][/UPPERCASE]</label>
-				<onclick>Skin.SetString(WeatherPlus,3)</onclick>
+				<onclick>Skin.SetString(WeatherUnderground,3)</onclick>
 			</control>
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
@@ -930,7 +930,7 @@
 				<width>138</width>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[33036][/UPPERCASE]</label>
-				<onclick>Skin.SetString(WeatherPlus,4)</onclick>
+				<onclick>Skin.SetString(WeatherUnderground,4)</onclick>
 			</control>
 			<control type="image" id="125">
 				<include>MenuBarSeparator</include>
@@ -940,7 +940,7 @@
 				<width>138</width>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]10 $LOCALIZE[12393][/UPPERCASE]</label>
-				<onclick>Skin.SetString(WeatherPlus,5)</onclick>
+				<onclick>Skin.SetString(WeatherUnderground,5)</onclick>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
@@ -950,7 +950,7 @@
 				<width>138</width>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[33035][/UPPERCASE]</label>
-				<onclick>Skin.SetString(WeatherPlus,6)</onclick>
+				<onclick>Skin.SetString(WeatherUnderground,6)</onclick>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>

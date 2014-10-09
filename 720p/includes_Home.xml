@@ -4353,7 +4353,7 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.1.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="100" end="0" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim</include>
 						<visible>substring(Window(Home).Property(NextAired.1.Today),true)</visible>
 					</control>
 					<control type="image">
@@ -4361,8 +4361,16 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.7.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="0" end="100" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim2</include>
 						<visible>substring(Window(Home).Property(NextAired.7.Today),true)</visible>
+					</control>
+					<control type="image">
+						<width>146</width>
+						<height>49</height>
+						<texture>$INFO[Window(Home).Property(NextAired.13.Art(clearlogo))]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<include>NextAiredFadeAnim3</include>
+						<visible>substring(Window(Home).Property(NextAired.13.Today),true)</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -4373,7 +4381,7 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.2.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="100" end="0" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim</include>			
 						<visible>substring(Window(Home).Property(NextAired.2.Today),true)</visible>
 					</control>
 					<control type="image">
@@ -4381,8 +4389,16 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.8.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="0" end="100" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim2</include>
 						<visible>substring(Window(Home).Property(NextAired.8.Today),true)</visible>
+					</control>
+					<control type="image">
+						<width>146</width>
+						<height>49</height>
+						<texture>$INFO[Window(Home).Property(NextAired.14.Art(clearlogo))]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<include>NextAiredFadeAnim3</include>
+						<visible>substring(Window(Home).Property(NextAired.14.Today),true)</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -4393,7 +4409,7 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.3.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="100" end="0" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim</include>
 						<visible>substring(Window(Home).Property(NextAired.3.Today),true)</visible>
 					</control>
 					<control type="image">
@@ -4401,8 +4417,16 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.9.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="0" end="100" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim2</include>
 						<visible>substring(Window(Home).Property(NextAired.9.Today),true)</visible>
+					</control>
+					<control type="image">
+						<width>146</width>
+						<height>49</height>
+						<texture>$INFO[Window(Home).Property(NextAired.15.Art(clearlogo))]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<include>NextAiredFadeAnim3</include>
+						<visible>substring(Window(Home).Property(NextAired.15.Today),true)</visible>
 					</control>
 				</control>
 			</control>
@@ -4423,7 +4447,7 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.4.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="100" end="0" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim</include>
 						<visible>substring(Window(Home).Property(NextAired.4.Today),true)</visible>
 					</control>
 					<control type="image">
@@ -4431,8 +4455,16 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.10.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="0" end="100" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
-						<visible>substring(Window(Home).Property(NextAired.7.Today),true)</visible>
+						<include>NextAiredFadeAnim2</include>
+						<visible>substring(Window(Home).Property(NextAired.10.Today),true)</visible>
+					</control>
+					<control type="image">
+						<width>146</width>
+						<height>49</height>
+						<texture>$INFO[Window(Home).Property(NextAired.16.Art(clearlogo))]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<include>NextAiredFadeAnim3</include>
+						<visible>substring(Window(Home).Property(NextAired.16.Today),true)</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -4443,7 +4475,7 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.5.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="100" end="0" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim</include>
 						<visible>substring(Window(Home).Property(NextAired.5.Today),true)</visible>
 					</control>
 					<control type="image">
@@ -4451,8 +4483,16 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.11.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="0" end="100" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim2</include>
 						<visible>substring(Window(Home).Property(NextAired.11.Today),true)</visible>
+					</control>
+					<control type="image">
+						<width>146</width>
+						<height>49</height>
+						<texture>$INFO[Window(Home).Property(NextAired.17.Art(clearlogo))]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<include>NextAiredFadeAnim3</include>
+						<visible>substring(Window(Home).Property(NextAired.17.Today),true)</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -4463,7 +4503,7 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.6.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="100" end="0" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim</include>
 						<visible>substring(Window(Home).Property(NextAired.6.Today),true)</visible>
 					</control>
 					<control type="image">
@@ -4471,8 +4511,16 @@
 						<height>49</height>
 						<texture>$INFO[Window(Home).Property(NextAired.12.Art(clearlogo))]</texture>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<animation effect="fade" start="0" end="100" time="400" condition="Container(850).HasFocus(4) + IntegerGreaterThan(Window(Home).Property(NextAired.TodayTotal),6)" delay="5000">Conditional</animation>
+						<include>NextAiredFadeAnim2</include>
 						<visible>substring(Window(Home).Property(NextAired.12.Today),true)</visible>
+					</control>
+					<control type="image">
+						<width>146</width>
+						<height>49</height>
+						<texture>$INFO[Window(Home).Property(NextAired.18.Art(clearlogo))]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<include>NextAiredFadeAnim3</include>
+						<visible>substring(Window(Home).Property(NextAired.18.Today),true)</visible>
 					</control>
 				</control>
 			</control>
