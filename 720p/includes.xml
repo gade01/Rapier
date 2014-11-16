@@ -592,7 +592,16 @@
 			 <include>MediaViewOpenCloseAnim</include>
 			 <animation effect="fade" end="60" condition="true">Conditional</animation>
 		</control>
-	</include> 
+	</include>
+	
+	<include name="FSMediaInfoBackgroundDim2">
+		<control type="image">
+			 <include>BackgroundSize</include>
+			 <texture>views/fanart-dim.png</texture>
+			 <include>MediaViewOpenCloseAnim</include>
+			 <animation effect="fade" end="80" condition="true">Conditional</animation>
+		</control>
+	</include>
 
 	<include name="SortLetterNotification">
 		<visible>Container.Scrolling</visible>
