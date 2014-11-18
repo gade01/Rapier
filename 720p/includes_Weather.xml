@@ -890,7 +890,7 @@
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="group">
-				<description>Tonight Area</description>
+				<description>Today Area</description>
 
 				<include>WeekDayBorder</include>
 
@@ -994,7 +994,7 @@
 			</control>
 
 			<control type="group">
-				<description>Tomorrow Area</description>
+				<description>Tonight Area</description>
 				<top>182</top>
 
 				<include>WeekDayBorder</include>
@@ -1099,7 +1099,7 @@
 			</control>
 
 			<control type="group">
-				<description>Tomorrow Night Area</description>
+				<description>Tomorrow Area</description>
 				<top>364</top>
 
 				<include>WeekDayBorder</include>
@@ -2041,7 +2041,7 @@
 						<align>center</align>
 						<font>DialogMediaInfoFont</font>
 						<include>WeatherConditionLabel</include>
-						<label>$LOCALIZE[393]   [COLOR=WeatherHighTemperatureColor]$INFO[ListItem.Property(High)][/COLOR]</label>
+						<label>$LOCALIZE[393]  [COLOR=WeatherHighTemperatureColor]$INFO[ListItem.Property(High)][/COLOR]</label>
 					</control>
 					<control type="label">
 						<description>Low</description>
@@ -2051,7 +2051,7 @@
 						<align>center</align>
 						<font>DialogMediaInfoFont</font>
 						<include>WeatherConditionLabel</include>
-						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[ListItem.Property(Low)][/COLOR]</label>
+						<label>$LOCALIZE[391]  [COLOR=DefaultColor2]$INFO[ListItem.Property(Low)][/COLOR]</label>
 					</control>
 					<control type="label">
 						<description>Condition</description>
@@ -2158,7 +2158,7 @@
 						<align>center</align>
 						<font>DialogMediaInfoFont</font>
 						<include>WeatherConditionLabel</include>
-						<label>$LOCALIZE[393]   [COLOR=WeatherHighTemperatureColor]$INFO[ListItem.Property(High)][/COLOR]</label>
+						<label>$LOCALIZE[393]  [COLOR=WeatherHighTemperatureColor]$INFO[ListItem.Property(High)][/COLOR]</label>
 					</control>
 					<control type="label">
 						<description>Low</description>
@@ -2168,7 +2168,7 @@
 						<align>center</align>
 						<font>DialogMediaInfoFont</font>
 						<include>WeatherConditionLabel</include>
-						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[ListItem.Property(Low)][/COLOR]</label>
+						<label>$LOCALIZE[391]  [COLOR=DefaultColor2]$INFO[ListItem.Property(Low)][/COLOR]</label>
 					</control>
 					<control type="label">
 						<description>Condition</description>
@@ -2449,7 +2449,7 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.16.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.16.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.16.WindSpeed)]$INFO[Window.Property(Daily.16.WindDirection),  &#x2022;  ,]</property>
-						<icon>$VAR[OpenWeatherMapDaily10Icon]</icon>
+						<icon>$VAR[OpenWeatherMapDaily16Icon]</icon>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -3338,6 +3338,36 @@
 	</variable>
 
 	<variable name="OpenWeatherMapDaily10Icon">
+		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
+		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
+	</variable>
+	
+	<variable name="OpenWeatherMapDaily11Icon">
+		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
+		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
+	</variable>
+	
+	<variable name="OpenWeatherMapDaily12Icon">
+		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
+		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
+	</variable>
+	
+	<variable name="OpenWeatherMapDaily13Icon">
+		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
+		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
+	</variable>
+	
+	<variable name="OpenWeatherMapDaily14Icon">
+		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
+		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
+	</variable>
+	
+	<variable name="OpenWeatherMapDaily15Icon">
+		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
+		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
+	</variable>
+	
+	<variable name="OpenWeatherMapDaily16Icon">
 		<value condition="!Skin.HasSetting(EnableAnimWeatherIcons)">$INFO[Window.Property(Daily.10.OutlookIcon)]</value>
 		<value condition="Skin.HasSetting(EnableAnimWeatherIcons)">icons/weather/$INFO[Window.Property(Daily.10.FanartCode)]</value>
 	</variable>

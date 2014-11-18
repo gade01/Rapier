@@ -237,10 +237,10 @@
 				<width>720</width>
 				<height>233</height>
 				<onup>505</onup>
-				<ondown condition="!Control.IsVisible(50)">961</ondown>
+				<ondown condition="!Control.IsVisible(50) + Control.IsVisible(61)">61</ondown>
 				<ondown condition="Control.IsVisible(50)">965</ondown>
 				<onleft>505</onleft>
-				<onright>961</onright>
+				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout width="720" height="29">
 					<control type="image">
 						<top>27</top>
@@ -471,10 +471,10 @@
 				<width>720</width>
 				<height>233</height>
 				<onup>505</onup>
-				<ondown condition="!Control.IsVisible(50)">961</ondown>
+				<ondown condition="!Control.IsVisible(50) + Control.IsVisible(61)">61</ondown>
 				<ondown condition="Control.IsVisible(50)">965</ondown>
 				<onleft>505</onleft>
-				<onright>961</onright>
+				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout width="720" height="29">
 					<control type="image">
 						<top>27</top>
@@ -711,10 +711,10 @@
 				<width>720</width>
 				<height>233</height>
 				<onup>505</onup>
-				<ondown condition="!Control.IsVisible(50)">961</ondown>
+				<ondown condition="!Control.IsVisible(50) + Control.IsVisible(61)">61</ondown>
 				<ondown condition="Control.IsVisible(50)">965</ondown>
 				<onleft>505</onleft>
-				<onright>961</onright>
+				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout width="720" height="29">
 					<control type="image">
 						<top>27</top>
@@ -951,10 +951,10 @@
 				<width>533</width>
 				<height>233</height>
 				<onup>505</onup>
-				<ondown>62</ondown>
+				<ondown>61</ondown>
 				<onleft>505</onleft>
 				<onright condition="Control.IsVisible(50)">965</onright>
-				<onright condition="!Control.IsVisible(50)">62</onright>
+				<onright condition="!Control.IsVisible(50)">61</onright>
 				<itemlayout width="533" height="29">
 					<control type="image">
 						<top>27</top>
@@ -1184,10 +1184,10 @@
 				<width>720</width>
 				<height>233</height>
 				<onup>505</onup>
-				<ondown condition="!Control.IsVisible(50)">961</ondown>
+				<ondown condition="!Control.IsVisible(50) + Control.IsVisible(61)">61</ondown>
 				<ondown condition="Control.IsVisible(50)">965</ondown>
 				<onleft>505</onleft>
-				<onright>961</onright>
+				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout width="720" height="29">
 					<control type="image">
 						<top>27</top>
@@ -1349,7 +1349,7 @@
 			<include>VideoInfoStudioMediaFlag</include>
 		</control>
 
-		<control type="textbox">
+		<control type="textbox" id="902">
 			<description>Plot</description>
 			<left>470</left>
 			<top>460</top>
@@ -1366,7 +1366,7 @@
 			<visible>!Control.IsVisible(50) + [Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]]</visible>
 		</control>
 		
-		<control type="textbox">
+		<control type="textbox" id="902">
 			<description>Plot</description>
 			<left>60</left>
 			<top>460</top>
@@ -1377,13 +1377,13 @@
 			<shadowcolor>ShadowColor</shadowcolor>
 			<align>justify</align>
 			<label>$INFO[ListItem.Plot]</label>
-			<pagecontrol>62</pagecontrol>
+			<pagecontrol>61</pagecontrol>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 			<visible>!Control.IsVisible(50) + [Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 		</control>
 		
-		<control type="textbox">
+		<control type="textbox" id="902">
 			<description>Plot</description>
 			<left>653</left>
 			<top>418</top>
@@ -1394,7 +1394,7 @@
 			<shadowcolor>ShadowColor</shadowcolor>
 			<align>justify</align>
 			<label>$INFO[ListItem.Plot]</label>
-			<pagecontrol>62</pagecontrol>
+			<pagecontrol>61</pagecontrol>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 			<visible>!Control.IsVisible(50) + [Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)]</visible>
@@ -1404,226 +1404,33 @@
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<control type="panel" id="50">
 				<description>Cast</description>
-				<left>470</left>
-				<top>460</top>
-				<width>710</width>
-				<height>175</height>
 				<viewtype label="">list</viewtype>
+				<scrolltime>200</scrolltime>
 				<pagecontrol>61</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]</visible>
-				<onup>901</onup>
+				<onleft>901</onleft>
 				<ondown>61</ondown>	
-				<onleft>901</onleft>
 				<onright>61</onright>
-				<itemlayout height="35" width="355">		
-					<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>24</width>
-						<height>24</height>
-						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
-					</control>
-					<control type="label">
-						<left>35</left>
-						<width>318</width>
-						<height>33</height>
-						<font>FullMediaInfoDescFont</font>
-						<textcolor>GreyColor2</textcolor>
-						<selectedcolor>SelectedColor</selectedcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>				
-				</itemlayout>				
-				<focusedlayout height="35" width="355">				
-					<control type="image">
-						<width>355</width>
-						<height>33</height>
-						<texture border="4">views/list-focus.png</texture>
-						<include>ListViewSelectFadeAnim</include>
-					</control>	
-					<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>24</width>
-						<height>24</height>
-						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
-					</control>
-					<control type="label">
-						<left>35</left>
-						<width>318</width>
-						<height>33</height>
-						<font>FullMediaInfoDescFont</font>
-						<textcolor>GreyColor2</textcolor>
-						<selectedcolor>SelectedColor</selectedcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>
-				</focusedlayout>
-			</control>
-
-			<control type="panel" id="50">
-				<description>Cast</description>
-				<left>61</left>
-				<top>470</top>
-				<width>1160</width>
-				<height>140</height>
-				<viewtype label="">list</viewtype>
-				<pagecontrol>62</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<onup>901</onup>
-				<ondown>62</ondown>	
-				<onleft>901</onleft>
-				<onright>62</onright>
-				<visible>Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
-				<itemlayout height="35" width="386">		
-					<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>24</width>
-						<height>24</height>
-						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
-					</control>
-					<control type="label">
-						<left>35</left>
-						<width>346</width>
-						<height>33</height>
-						<font>FullMediaInfoDescFont</font>
-						<textcolor>GreyColor2</textcolor>
-						<selectedcolor>SelectedColor</selectedcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>				
-				</itemlayout>				
-				<focusedlayout height="35" width="386">				
-					<control type="image">
-						<width>386</width>
-						<height>33</height>
-						<texture border="4">views/list-focus.png</texture>
-						<include>ListViewSelectFadeAnim</include>
-					</control>	
-					<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>24</width>
-						<height>24</height>
-						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
-					</control>
-					<control type="label">
-						<left>35</left>
-						<width>346</width>
-						<height>33</height>
-						<font>FullMediaInfoDescFont</font>
-						<textcolor>GreyColor2</textcolor>
-						<selectedcolor>SelectedColor</selectedcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>
-				</focusedlayout>
-			</control>
-			
-			<control type="panel" id="50">
-				<description>Cast</description>
-				<left>652</left>
-				<top>409</top>
-				<width>360</width>
-				<height>232</height>
-				<viewtype label="">list</viewtype>
-				<pagecontrol>62</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<onup>505</onup>
-				<ondown>62</ondown>	
-				<onleft>901</onleft>
-				<onright>62</onright>
-				<visible>Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)</visible>
-				<itemlayout height="29" width="360">		
-					<control type="image">
-						<left>5</left>
-						<top>3</top>
-						<width>24</width>
-						<height>24</height>
-						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
-					</control>
-					<control type="label">
-						<left>35</left>
-						<width>320</width>
-						<height>33</height>
-						<font>FullMediaInfoDescFont</font>
-						<textcolor>GreyColor2</textcolor>
-						<selectedcolor>SelectedColor</selectedcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>				
-				</itemlayout>				
-				<focusedlayout height="29" width="360">				
-					<control type="image">
-						<width>360</width>
-						<height>29</height>
-						<texture border="4">views/list-focus.png</texture>
-						<include>ListViewSelectFadeAnim</include>
-						<animation effect="slide" start="0,-29" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(50).OnNext">Focus</animation>
-						<animation effect="slide" start="0,29" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(50).OnPrevious">Focus</animation>
-					</control>	
-					<control type="image">
-						<left>5</left>
-						<top>3</top>
-						<width>24</width>
-						<height>24</height>
-						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
-					</control>
-					<control type="label">
-						<left>35</left>
-						<width>320</width>
-						<height>33</height>
-						<font>FullMediaInfoDescFont</font>
-						<textcolor>GreyColor2</textcolor>
-						<selectedcolor>SelectedColor</selectedcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<info>ListItem.Label</info>
-					</control>
-				</focusedlayout>
+				<include condition="Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]">DialogVideoInfoActors1</include>
+				<include condition="Container.Content(Episodes) | Container.Content(MusicVideos)">DialogVideoInfoActors2</include>
+				<include condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoActors3</include>
 			</control>
 		</control>
 		
-		<control type="group" id="961">
-			<control type="spincontrol" id="61">
-				<description>Next Page</description>
-				<left>1125</left>
-				<top>655</top>
-				<width>28</width>
-				<height>28</height>
-				<spinwidth>30</spinwidth>
-				<spinheight>30</spinheight>
-				<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]</visible>
-				<onup condition="!Control.IsVisible(50)">901</onup>
-				<onup condition="Control.IsVisible(50)">965</onup>
-			</control>	
-			
-			<control type="spincontrol" id="62">
-				<description>Next Page</description>
-				<left>1125</left>
-				<top>655</top>
-				<width>28</width>
-				<height>28</height>
-				<spinwidth>30</spinwidth>
-				<spinheight>30</spinheight>
-				<visible>Container.Content(Episodes) | Container.Content(MusicVideos) | [Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)]</visible>
-				<onup condition="!Control.IsVisible(50)">901</onup>
-				<onup condition="Control.IsVisible(50)">965</onup>
-			</control>
-		</control>		
+		<control type="spincontrol" id="61">
+			<description>Next Page</description>
+			<left>1125</left>
+			<top>655</top>
+			<width>28</width>
+			<height>28</height>
+			<spinwidth>30</spinwidth>
+			<spinheight>30</spinheight>
+			<onup condition="!Control.IsVisible(50)">901</onup>
+			<onup condition="Control.IsVisible(50)">965</onup>
+			<onleft condition="!Control.IsVisible(50)">901</onleft>
+			<onleft condition="Control.IsVisible(50)">965</onleft>
+			<include>NotificationsOpenCloseAnim</include>
+			<visible>[!StringCompare(Container(902).NumPages,1) + Control.IsVisible(902) + !IsEmpty(ListItem.Plot)] | [!StringCompare(Container(50).NumPages,1) + Control.IsVisible(50)]</visible>
+		</control>	
 	
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>

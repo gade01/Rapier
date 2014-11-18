@@ -128,9 +128,10 @@
 			<width>720</width>
 			<height>249</height>
 			<onup>505</onup>
-			<ondown>962</ondown>
+			<ondown condition="Control.IsVisible(50)">50</ondown>
+			<ondown condition="!Control.IsVisible(50) + Control.IsVisible(61)">61</ondown>
 			<onleft>505</onleft>
-			<onright>61</onright>
+			<onright condition="Control.IsVisible(61)">61</onright>
 			<itemlayout width="720" height="31">
 				<control type="image">
 					<top>29</top>
@@ -383,9 +384,9 @@
 				<scrolltime>200</scrolltime>
 				<include>ControlsOpenCloseAnim</include>
 				<onup>901</onup>
-				<ondown>50</ondown>	
+				<ondown condition="Control.IsVisible(61)">61</ondown>	
 				<onleft>987</onleft>
-				<onright>61</onright>
+				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout condition="Container.Content(Albums)" height="35" width="360">		
 					<control type="image">
 						<left>5</left>
@@ -502,31 +503,12 @@
 			<height>28</height>
 			<spinwidth>30</spinwidth>
 			<spinheight>30</spinheight>
-			<onup>963</onup>		
-		</control>
-		
-		<control type="button" id="962">
-			<include>RedirectBtn</include>
-			<visible>!Control.IsVisible(50)</visible>
-			<onfocus>Control.SetFocus(61)</onfocus>
-		</control>
-		
-		<control type="button" id="962">
-			<include>RedirectBtn</include>
-			<visible>Control.IsVisible(50)</visible>
-			<onfocus>Control.SetFocus(965)</onfocus>
-		</control>
-		
-		<control type="button" id="963">
-			<include>RedirectBtn</include>
-			<visible>!Control.IsVisible(50)</visible>
-			<onfocus>Control.SetFocus(901)</onfocus>
-		</control>
-
-		<control type="button" id="963">
-			<include>RedirectBtn</include>
-			<visible>Control.IsVisible(50)</visible>
-			<onfocus>Control.SetFocus(965)</onfocus>
+			<onup condition="Control.IsVisible(50)">50</onup>
+			<onup condition="!Control.IsVisible(50)">901</onup>
+			<onleft condition="Control.IsVisible(50)">50</onleft>
+			<onleft condition="!Control.IsVisible(50)">901</onleft>
+			<include>NotificationsOpenCloseAnim</include>
+			<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [!StringCompare(Container(50).NumPages,1) + Control.IsVisible(50)]</visible>
 		</control>
 		
 		<control type="group" id="505">

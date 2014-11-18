@@ -85,9 +85,9 @@
 			<width>720</width>
 			<height>249</height>
 			<onup>505</onup>
-			<ondown>61</ondown>
+			<ondown condition="Control.IsVisible(61)">61</ondown>
 			<onleft>505</onleft>
-			<onright>61</onright>
+			<onright condition="Control.IsVisible(61)">61</onright>
 			<itemlayout width="720" height="31">
 				<control type="image">
 					<top>29</top>
@@ -258,7 +258,9 @@
 			<height>28</height>
 			<spinwidth>30</spinwidth>
 			<spinheight>30</spinheight>
-			<onup>901</onup>		
+			<onup>901</onup>
+			<onleft>901</onleft>
+			<visible>IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)</visible>
 		</control>
 		
 		<control type="group" id="505">
