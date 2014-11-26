@@ -1622,6 +1622,29 @@
 				<aspectratio>stretch</aspectratio>
 				<visible>Player.HasVideo</visible>
 			</control>
+			
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<width>250</width>
+				<height>27</height>
+				<texture border="8">views/genre-background.png</texture>
+				<visible>Player.HasVideo</visible>
+			</control>
+			
+			<control type="lavel">
+				<left>18</left>
+				<top>12</top>
+				<width>234</width>
+				<font>MediaInfoFont3</font>
+				<color>WhiteColor</color>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>[UPPERCASE]$INFO[Player.Title][/UPPERCASE]</label>
+				<scroll>true</scroll>
+				<include>BackgroundVisibleAnim</include>
+				<animation effect="fade" end="75" condition="true">Conditional</animation>
+				<visible>Player.HasVideo</visible>
+			</control>
 		</control>
 	</include>
 

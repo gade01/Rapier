@@ -5649,14 +5649,15 @@
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
 
-			<control type="image">
-				<width>490</width>
-				<height>140</height>
-				<texture border="8">panels/panel.png</texture>
-			</control>	
-
 			<control type="group">
-				<visible>PVR.HasNonRecordingTimer</visible>
+				<visible>PVR.HasNonRecordingTimer + ![PVR.IsRecording + [Player.HasMedia + !Skin.HasSetting(HideNowPlayingHomePanel)]]</visible>
+				<animation effect="slide" end="0,-175" condition="PVR.IsRecording">Conditional</animation>
+				
+				<control type="image">
+					<width>490</width>
+					<height>140</height>
+					<texture border="8">panels/panel.png</texture>
+				</control>
 
 				<control type="image">
 					<description>Cover Border</description>
@@ -5729,6 +5730,11 @@
 
 			<control type="group">
 				<visible>PVR.IsRecording</visible>
+					<control type="image">
+					<width>490</width>
+					<height>140</height>
+					<texture border="8">panels/panel.png</texture>
+				</control>
 
 				<control type="image">
 					<description>Cover Border</description>
