@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="PVRBreadCrumbLabel">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$LOCALIZE[19019]</value>
+		<value condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">$LOCALIZE[22020]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$LOCALIZE[19017]</value>
+		<value condition="Window.IsActive(TVSearch) | Window.IsActive(RadioSearch)">$LOCALIZE[137]</value>
+		<value condition="Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)">$LOCALIZE[19040]</value>
+	</variable>
+	
 	<include name="BreadCrumbHomeIcon">	
 		<top>12</top>
 		<width>20</width>
@@ -819,17 +827,33 @@
 				<include>BreadCrumbSlideLvl1Anim</include>
 			</control>
 			<control type="label" id="5501">
-				<description>PVR</description>
+				<description>TV</description>
 				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$LOCALIZE[31909][/UPPERCASE]</label>
+				<label>[UPPERCASE]$LOCALIZE[19020][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl2Anim</include>
+				<visible>IsEmpty(Window.Property(IsRadio))</visible>
+			</control>
+			<control type="label" id="5501">
+				<description>Radio</description>
+				<include>BreadCrumbLabel</include>
+				<label>[UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</label>
+				<include>BreadCrumbSlideLvl2Anim</include>
+				<visible>!IsEmpty(Window.Property(IsRadio))</visible>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+			<control type="label">
+				<include>BreadCrumbLabel</include>
+				<include>BreadCrumbSlideLvl3Anim</include>
+				<label>[UPPERCASE]$VAR[PVRBreadCrumbLabel][/UPPERCASE]</label>
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="29">
-				<visible>!IsEmpty(Control.GetLabel(29))</visible>
 				<include>BreadCrumbLabel</include>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
@@ -839,7 +863,6 @@
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="label" id="30">
-				<visible>!IsEmpty(Control.GetLabel(30))</visible>
 				<include>BreadCrumbLabel</include>
 				<include>BreadCrumbSlideLvl4Anim</include>
 			</control>

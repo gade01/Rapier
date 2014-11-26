@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="XbmcLogo">
+	<include name="KodiLogo">
 		<control type="image">
-			<left>10</left>
-			<top>11</top>
-			<width>73</width>
-			<height>18</height>
-			<texture>xbmc-logo.png</texture>
+			<left>9</left>
+			<top>9</top>
+			<width>78</width>
+			<height>24</height>
+			<texture>kodi-logo.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation effect="fade" end="80" condition="true">Conditional</animation>
 			<visible>!System.HasAddon(script.globalsearch)</visible>
 		</control>
 			
 		<control type="button" id="555">
-			<left>10</left>
-			<top>11</top>
+			<left>9</left>
+			<top>9</top>
 			<ondown condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">850</ondown>
 			<ondown condition="Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">110</ondown>
 			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</ondown>
@@ -42,12 +42,12 @@
 			<onright condition="Control.IsVisible(6922)">6922</onright>
 			<onright condition="Control.IsVisible(6924)">6924</onright>
 			<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onright>
-			<width>73</width>
-			<height>18</height>
+			<width>78</width>
+			<height>24</height>
 			<animation effect="fade" end="80" condition="true">Conditional</animation>			
 			<font>-</font>
-			<texturefocus border="0">xbmc-logo-blue.png</texturefocus>
-			<texturenofocus border="0">xbmc-logo.png</texturenofocus>
+			<texturefocus border="0">kodi-logo-blue.png</texturefocus>
+			<texturenofocus border="0">kodi-logo.png</texturenofocus>
 			<pulseonselect>false</pulseonselect>
 			<onclick>RunScript(script.globalsearch)</onclick>
 			<visible>System.HasAddon(script.globalsearch)</visible>
@@ -114,7 +114,7 @@
 	<include name="HomeSubMenuItemLayout">
 		<itemlayout width="180">
 			<control type="label">
-				<left>90</left>
+				<left>2</left>
 				<width>176</width>
 				<height>34</height>
 				<font>HomeSubMenuBtnFont</font>
@@ -126,7 +126,7 @@
 		</itemlayout>
 		<focusedlayout width="180">
 			<control type="label">
-				<left>90</left>
+				<left>2</left>
 				<width>176</width>
 				<height>34</height>
 				<font>HomeSubMenuBtnFont</font>
@@ -137,7 +137,7 @@
 				<visible>Control.HasFocus(110)</visible>
 			</control>
 			<control type="label">
-				<left>90</left>
+				<left>2</left>
 				<width>176</width>
 				<height>34</height>
 				<font>HomeSubMenuBtnFont</font>
@@ -231,11 +231,11 @@
 	</include>
 
 	<include name="RedirectPVRCategoryChannels">
-		<onclick>ActivateWindowAndFocus(MyPVR, 850,0, 32,0)</onclick>
+		<onclick>ActivateWindow(TVChannels)</onclick>
 	</include>
 
 	<include name="RedirectPVRCategoryEPG">
-		<onclick>ActivateWindowAndFocus(MyPVR, 850,0, 31,0)</onclick>
+		<onclick>ActivateWindow(TVGuide)</onclick>
 	</include>
 
 	<include name="HomePVRCategory">
@@ -1923,7 +1923,7 @@
 					<item id="1">
 						<description>TV Channels</description>
 						<label>$LOCALIZE[19019]</label>
-						<onclick>ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+						<onclick>ActivateWindow(TVChannels)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn1)</visible>
 					</item>
 					<item id="1">
@@ -1934,8 +1934,8 @@
 					</item>
 					<item id="2">
 						<description>Guide</description>
-						<label>$LOCALIZE[19069]</label>
-						<onclick>ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
+						<label>$LOCALIZE[22020]</label>
+						<onclick>ActivateWindow(TVGuide)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn2)</visible>
 					</item>
 					<item id="2">
@@ -1947,7 +1947,7 @@
 					<item id="3">
 						<description>Recordings</description>
 						<label>$LOCALIZE[19163]</label>
-						<onclick>ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+						<onclick>ActivateWindow(TVRecordings)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn3)</visible>
 					</item>
 					<item id="3">
@@ -1959,7 +1959,7 @@
 					<item id="4">
 						<description>Timer</description>
 						<label>$LOCALIZE[19040]</label>
-						<onclick>ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+						<onclick>ActivateWindow(TVTimer)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn4)</visible>
 					</item>
 					<item id="4">
@@ -1969,16 +1969,22 @@
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn4) + !IsEmpty(Skin.String(PVRSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
-						<description>Radio Channels</description>
-						<label>$LOCALIZE[19024]</label>
-						<onclick>ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</onclick>
-						<visible>false</visible>
+						<description>Search</description>
+						<label>$LOCALIZE[137]</label>
+						<onclick>ActivateWindow(TVSearch)</onclick>
+						<visible>!Skin.HasSetting(EditPVRSubMenuBtn5)</visible>
 					</item>
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn5Label)]</label>
 						<onclick>$INFO[Skin.String(PVRSubMenuBtn5Param)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn5) + !IsEmpty(Skin.String(PVRSubMenuBtn5Label))</visible>
+					</item>
+					<item id="6">
+						<description>Radio Channels</description>
+						<label>$LOCALIZE[19024]</label>
+						<onclick>ActivateWindow(RadioChannels)</onclick>
+						<visible>!Skin.HasSetting(EditPVRSubMenuBtn6)</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
@@ -3220,44 +3226,44 @@
 				<include>HomeSubMenuItemLayout</include>
 				<content>
 					<item id="1">
-						<description>Quit XBMC</description>
-						<label>$LOCALIZE[13009] XBMC</label>
-						<onclick>XBMC.Quit()</onclick>
+						<description>Quit Kodi</description>
+						<label>$LOCALIZE[13009] Kodi</label>
+						<onclick>Quit()</onclick>
 					</item>
 					<item id="2">
-						<description>Restart XBMC</description>
-						<label>$LOCALIZE[13313] XBMC</label>
-						<onclick>XBMC.RestartApp()</onclick>		
+						<description>Restart Kodi</description>
+						<label>$LOCALIZE[13313] Kodi</label>
+						<onclick>RestartApp()</onclick>		
 					</item>
 					<item id="3">
 						<description>Shutdown</description>
 						<label>$LOCALIZE[13016]</label>
-						<onclick>XBMC.Powerdown()</onclick>
+						<onclick>Powerdown()</onclick>
 						<visible>System.CanPowerDown</visible>
 					</item>
 					<item id="4">
 						<description>Custom Shutdown Timer / Cancel Alarm</description>
 						<label>$VAR[ShutDownButton]</label>
-						<onclick condition="System.HasAlarm(ShutdownTimer)">XBMC.CancelAlarm(ShutdownTimer)</onclick>
+						<onclick condition="System.HasAlarm(ShutdownTimer)">CancelAlarm(ShutdownTimer)</onclick>
 						<onclick condition="!System.HasAlarm(ShutdownTimer)">AlarmClock(ShutdownTimer,Shutdown())</onclick>
 						<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
 					</item>
 					<item id="5">
 						<description>Suspend</description>
 						<label>$LOCALIZE[13011]</label>
-						<onclick>XBMC.Suspend()</onclick>
+						<onclick>Suspend()</onclick>
 						<visible>System.CanSuspend</visible>	
 					</item>
 					<item id="6">
 						<description>Hibernate</description>
 						<label>$LOCALIZE[13010]</label>
-						<onclick>XBMC.Hibernate()</onclick>
+						<onclick>Hibernate()</onclick>
 						<visible>System.CanHibernate</visible>		
 					</item>
 					<item id="7">
 						<description>Reboot</description>
 						<label>$LOCALIZE[13013]</label>
-						<onclick>XBMC.Reset()</onclick>
+						<onclick>Reset()</onclick>
 						<visible>System.CanReboot</visible>	
 					</item>
 				</content>						
@@ -5649,14 +5655,15 @@
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
 
-			<control type="image">
-				<width>490</width>
-				<height>140</height>
-				<texture border="8">panels/panel.png</texture>
-			</control>	
-
 			<control type="group">
-				<visible>PVR.HasNonRecordingTimer</visible>
+				<visible>PVR.HasNonRecordingTimer + ![PVR.IsRecording + [Player.HasMedia + !Skin.HasSetting(HideNowPlayingHomePanel)]]</visible>
+				<animation effect="slide" end="0,-175" condition="PVR.IsRecording">Conditional</animation>
+				
+				<control type="image">
+					<width>490</width>
+					<height>140</height>
+					<texture border="8">panels/panel.png</texture>
+				</control>
 
 				<control type="image">
 					<description>Cover Border</description>
@@ -5729,6 +5736,12 @@
 
 			<control type="group">
 				<visible>PVR.IsRecording</visible>
+				
+				<control type="image">
+					<width>490</width>
+					<height>140</height>
+					<texture border="8">panels/panel.png</texture>
+				</control>
 
 				<control type="image">
 					<description>Cover Border</description>

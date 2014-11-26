@@ -89,7 +89,7 @@
 		Skin.String(Custom8PanelType,8) | Skin.String(Custom9PanelType,8) | Skin.String(Custom10PanelType,8) |
 		Skin.String(Custom11PanelType,8) | Skin.String(Custom12PanelType,8) | Skin.String(Custom13PanelType,8) |
 		Skin.String(Custom14PanelType,8) | Skin.String(Custom15PanelType,8) | Skin.String(Custom16PanelType,8)]]]">
-		XBMC.RunScript(service.skin.widgets)</onload>
+		RunScript(service.skin.widgets)</onload>
 
 		<include condition="System.HasAddon(script.randomandlastitems) + !IsEmpty(Skin.String(Custom1PanelPlaylist)) +
 		[Skin.String(Custom1PanelType,4) | Skin.String(Custom1PanelType,5) | Skin.String(Custom1PanelType,9)]">Custom1PanelScript</include>
@@ -161,242 +161,242 @@
 
 	<include name="Custom1PanelScript">
 		<onload condition="Skin.String(Custom1PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom1PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom1PanelRecent)</onload>
 		<onload condition="Skin.String(Custom1PanelType,4) + IsEmpty(Window(Home).Property(Custom1PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom1PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom1PanelRandom)</onload>
 		<onload condition="Skin.String(Custom1PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom1PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom1PanelRecent)</onload>
 		<onload condition="Skin.String(Custom1PanelType,5) + IsEmpty(Window(Home).Property(Custom1PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom1PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom1PanelRandom)</onload>
 		<onload condition="Skin.String(Custom1PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom1PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom1PanelRecent)</onload>
 		<onload condition="Skin.String(Custom1PanelType,9) + IsEmpty(Window(Home).Property(Custom1PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom1PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom1PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom1PanelRandom)</onload>
 	</include>
 
 	<include name="Custom2PanelScript">
 		<onload condition="Skin.String(Custom2PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom2PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom2PanelRecent)</onload>
 		<onload condition="Skin.String(Custom2PanelType,4) + IsEmpty(Window(Home).Property(Custom2PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom2PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom2PanelRandom)</onload>
 		<onload condition="Skin.String(Custom2PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom2PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom2PanelRecent)</onload>
 		<onload condition="Skin.String(Custom2PanelType,5) + IsEmpty(Window(Home).Property(Custom2PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom2PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom2PanelRandom)</onload>
 		<onload condition="Skin.String(Custom2PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom2PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom2PanelRecent)</onload>
 		<onload condition="Skin.String(Custom2PanelType,9) + IsEmpty(Window(Home).Property(Custom2PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom2PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom2PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom2PanelRandom)</onload>
 	</include>
 
 	<include name="Custom3PanelScript">
 		<onload condition="Skin.String(Custom3PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom3PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom3PanelRecent)</onload>
 		<onload condition="Skin.String(Custom3PanelType,4) + IsEmpty(Window(Home).Property(Custom3PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom3PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom3PanelRandom)</onload>
 		<onload condition="Skin.String(Custom3PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom3PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom3PanelRecent)</onload>
 		<onload condition="Skin.String(Custom3PanelType,5) + IsEmpty(Window(Home).Property(Custom3PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom3PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom3PanelRandom)</onload>
 		<onload condition="Skin.String(Custom3PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom3PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom3PanelRecent)</onload>
 		<onload condition="Skin.String(Custom3PanelType,9) + IsEmpty(Window(Home).Property(Custom3PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom3PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom3PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom3PanelRandom)</onload>
 	</include>
 
 	<include name="Custom4PanelScript">
 		<onload condition="Skin.String(Custom4PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom4PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom4PanelRecent)</onload>
 		<onload condition="Skin.String(Custom4PanelType,4) + IsEmpty(Window(Home).Property(Custom4PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom4PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom4PanelRandom)</onload>
 		<onload condition="Skin.String(Custom4PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom4PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom4PanelRecent)</onload>
 		<onload condition="Skin.String(Custom4PanelType,5) + IsEmpty(Window(Home).Property(Custom4PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom4PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom4PanelRandom)</onload>
 		<onload condition="Skin.String(Custom4PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom4PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom4PanelRecent)</onload>
 		<onload condition="Skin.String(Custom4PanelType,9) + IsEmpty(Window(Home).Property(Custom4PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom4PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom4PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom4PanelRandom)</onload>
 	</include>
 
 	<include name="Custom5PanelScript">
 		<onload condition="Skin.String(Custom5PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom5PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom5PanelRecent)</onload>
 		<onload condition="Skin.String(Custom5PanelType,4) + IsEmpty(Window(Home).Property(Custom5PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom5PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom5PanelRandom)</onload>
 		<onload condition="Skin.String(Custom5PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom5PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom5PanelRecent)</onload>
 		<onload condition="Skin.String(Custom5PanelType,5) + IsEmpty(Window(Home).Property(Custom5PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom5PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom5PanelRandom)</onload>
 		<onload condition="Skin.String(Custom5PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom5PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom5PanelRecent)</onload>
 		<onload condition="Skin.String(Custom5PanelType,9) + IsEmpty(Window(Home).Property(Custom5PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom5PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom5PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom5PanelRandom)</onload>
 	</include>
 
 	<include name="Custom6PanelScript">
 		<onload condition="Skin.String(Custom6PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom6PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom6PanelRecent)</onload>
 		<onload condition="Skin.String(Custom6PanelType,4) + IsEmpty(Window(Home).Property(Custom6PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom6PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom6PanelRandom)</onload>
 		<onload condition="Skin.String(Custom6PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom6PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom6PanelRecent)</onload>
 		<onload condition="Skin.String(Custom6PanelType,5) + IsEmpty(Window(Home).Property(Custom6PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom6PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom6PanelRandom)</onload>
 		<onload condition="Skin.String(Custom6PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom6PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom6PanelRecent)</onload>
 		<onload condition="Skin.String(Custom6PanelType,9) + IsEmpty(Window(Home).Property(Custom6PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom6PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom6PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom6PanelRandom)</onload>
 	</include>
 
 	<include name="Custom7PanelScript">
 		<onload condition="Skin.String(Custom7PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom7PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom7PanelRecent)</onload>
 		<onload condition="Skin.String(Custom7PanelType,4) + IsEmpty(Window(Home).Property(Custom7PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom7PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom7PanelRandom)</onload>
 		<onload condition="Skin.String(Custom7PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom7PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom7PanelRecent)</onload>
 		<onload condition="Skin.String(Custom7PanelType,5) + IsEmpty(Window(Home).Property(Custom7PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom7PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom7PanelRandom)</onload>
 		<onload condition="Skin.String(Custom7PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom7PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom7PanelRecent)</onload>
 		<onload condition="Skin.String(Custom7PanelType,9) + IsEmpty(Window(Home).Property(Custom7PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom7PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom7PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom7PanelRandom)</onload>
 	</include>
 
 	<include name="Custom8PanelScript">
 		<onload condition="Skin.String(Custom8PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom8PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom8PanelRecent)</onload>
 		<onload condition="Skin.String(Custom8PanelType,4) + IsEmpty(Window(Home).Property(Custom8PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom8PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom8PanelRandom)</onload>
 		<onload condition="Skin.String(Custom8PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom8PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom8PanelRecent)</onload>
 		<onload condition="Skin.String(Custom8PanelType,5) + IsEmpty(Window(Home).Property(Custom8PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom8PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom8PanelRandom)</onload>
 		<onload condition="Skin.String(Custom8PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom8PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom8PanelRecent)</onload>
 		<onload condition="Skin.String(Custom8PanelType,9) + IsEmpty(Window(Home).Property(Custom8PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom8PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom8PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom8PanelRandom)</onload>
 	</include>
 
 	<include name="Custom9PanelScript">
 		<onload condition="Skin.String(Custom9PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom9PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom9PanelRecent)</onload>
 		<onload condition="Skin.String(Custom9PanelType,4) + IsEmpty(Window(Home).Property(Custom9PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom9PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom9PanelRandom)</onload>
 		<onload condition="Skin.String(Custom9PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom9PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom9PanelRecent)</onload>
 		<onload condition="Skin.String(Custom9PanelType,5) + IsEmpty(Window(Home).Property(Custom9PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom9PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom9PanelRandom)</onload>
 		<onload condition="Skin.String(Custom9PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom9PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom9PanelRecent)</onload>
 		<onload condition="Skin.String(Custom9PanelType,9) + IsEmpty(Window(Home).Property(Custom9PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom9PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom9PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom9PanelRandom)</onload>
 	</include>
 
 	<include name="Custom10PanelScript">
 		<onload condition="Skin.String(Custom10PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom10PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom10PanelRecent)</onload>
 		<onload condition="Skin.String(Custom10PanelType,4) + IsEmpty(Window(Home).Property(Custom10PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom10PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom10PanelRandom)</onload>
 		<onload condition="Skin.String(Custom10PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom10PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom10PanelRecent)</onload>
 		<onload condition="Skin.String(Custom10PanelType,5) + IsEmpty(Window(Home).Property(Custom10PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom10PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom10PanelRandom)</onload>
 		<onload condition="Skin.String(Custom10PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom10PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom10PanelRecent)</onload>
 		<onload condition="Skin.String(Custom10PanelType,9) + IsEmpty(Window(Home).Property(Custom10PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom10PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom10PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom10PanelRandom)</onload>
 	</include>
 
 	<include name="Custom11PanelScript">
 		<onload condition="Skin.String(Custom11PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom11PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom11PanelRecent)</onload>
 		<onload condition="Skin.String(Custom11PanelType,4) + IsEmpty(Window(Home).Property(Custom11PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom11PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom11PanelRandom)</onload>
 		<onload condition="Skin.String(Custom11PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom11PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom11PanelRecent)</onload>
 		<onload condition="Skin.String(Custom11PanelType,5) + IsEmpty(Window(Home).Property(Custom11PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom11PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom11PanelRandom)</onload>
 		<onload condition="Skin.String(Custom11PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom11PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom11PanelRecent)</onload>
 		<onload condition="Skin.String(Custom11PanelType,9) + IsEmpty(Window(Home).Property(Custom11PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom11PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom11PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom11PanelRandom)</onload>
 	</include>
 
 	<include name="Custom12PanelScript">
 		<onload condition="Skin.String(Custom12PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom12PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom12PanelRecent)</onload>
 		<onload condition="Skin.String(Custom12PanelType,4) + IsEmpty(Window(Home).Property(Custom12PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom12PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom12PanelRandom)</onload>
 		<onload condition="Skin.String(Custom12PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom12PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom12PanelRecent)</onload>
 		<onload condition="Skin.String(Custom12PanelType,5) + IsEmpty(Window(Home).Property(Custom12PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom12PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom12PanelRandom)</onload>
 		<onload condition="Skin.String(Custom12PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom12PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom12PanelRecent)</onload>
 		<onload condition="Skin.String(Custom12PanelType,9) + IsEmpty(Window(Home).Property(Custom12PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom12PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom12PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom12PanelRandom)</onload>
 	</include>
 
 	<include name="Custom13PanelScript">
 		<onload condition="Skin.String(Custom13PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom13PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom13PanelRecent)</onload>
 		<onload condition="Skin.String(Custom13PanelType,4) + IsEmpty(Window(Home).Property(Custom13PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom13PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom13PanelRandom)</onload>
 		<onload condition="Skin.String(Custom13PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom13PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom13PanelRecent)</onload>
 		<onload condition="Skin.String(Custom13PanelType,5) + IsEmpty(Window(Home).Property(Custom13PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom13PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom13PanelRandom)</onload>
 		<onload condition="Skin.String(Custom13PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom13PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom13PanelRecent)</onload>
 		<onload condition="Skin.String(Custom13PanelType,9) + IsEmpty(Window(Home).Property(Custom13PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom13PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom13PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom13PanelRandom)</onload>
 	</include>
 
 	<include name="Custom14PanelScript">
 		<onload condition="Skin.String(Custom14PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom14PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom14PanelRecent)</onload>
 		<onload condition="Skin.String(Custom14PanelType,4) + IsEmpty(Window(Home).Property(Custom14PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom14PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom14PanelRandom)</onload>
 		<onload condition="Skin.String(Custom14PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom14PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom14PanelRecent)</onload>
 		<onload condition="Skin.String(Custom14PanelType,5) + IsEmpty(Window(Home).Property(Custom14PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom14PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom14PanelRandom)</onload>
 		<onload condition="Skin.String(Custom14PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom14PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom14PanelRecent)</onload>
 		<onload condition="Skin.String(Custom14PanelType,9) + IsEmpty(Window(Home).Property(Custom14PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom14PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom14PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom14PanelRandom)</onload>
 	</include>
 
 	<include name="Custom15PanelScript">
 		<onload condition="Skin.String(Custom15PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom15PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom15PanelRecent)</onload>
 		<onload condition="Skin.String(Custom15PanelType,4) + IsEmpty(Window(Home).Property(Custom15PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom15PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom15PanelRandom)</onload>
 		<onload condition="Skin.String(Custom15PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom15PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom15PanelRecent)</onload>
 		<onload condition="Skin.String(Custom15PanelType,5) + IsEmpty(Window(Home).Property(Custom15PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom15PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom15PanelRandom)</onload>
 		<onload condition="Skin.String(Custom15PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom15PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom15PanelRecent)</onload>
 		<onload condition="Skin.String(Custom15PanelType,9) + IsEmpty(Window(Home).Property(Custom15PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom15PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom15PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom15PanelRandom)</onload>
 	</include>
 
 	<include name="Custom16PanelScript">
 		<onload condition="Skin.String(Custom16PanelType,4)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom16PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Movie,property=Custom16PanelRecent)</onload>
 		<onload condition="Skin.String(Custom16PanelType,4) + IsEmpty(Window(Home).Property(Custom16PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom16PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Movie,property=Custom16PanelRandom)</onload>
 		<onload condition="Skin.String(Custom16PanelType,5)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom16PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Last,limit=10,unwatched=False,resume=False,type=Episode,property=Custom16PanelRecent)</onload>
 		<onload condition="Skin.String(Custom16PanelType,5) + IsEmpty(Window(Home).Property(Custom16PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom16PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Random,limit=10,unwatched=False,resume=False,type=Episode,property=Custom16PanelRandom)</onload>
 		<onload condition="Skin.String(Custom16PanelType,9)">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom16PanelRecent)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Last,limit=10,type=Music,property=Custom16PanelRecent)</onload>
 		<onload condition="Skin.String(Custom16PanelType,9) + IsEmpty(Window(Home).Property(Custom16PanelRandom.1.Title))">
-		XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom16PanelRandom)</onload>
+		RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(Custom16PanelPlaylist)],,method=Random,limit=10,type=Music,property=Custom16PanelRandom)</onload>
 	</include>
 
 	<include name="Custom1Panel">

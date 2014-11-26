@@ -5,40 +5,43 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="468" y="180">true</origin>
+		<origin x="468" y="148">true</origin>
 	</coordinates>	
 
 	<controls>
 		<control type="group">
 			<include>DialogOpenCloseAnim</include>
 			
-			<control type="image" id="997">
-				<description>Context Menu Top</description>
-				<top>-32</top>
+			<control type="grouplist">
 				<width>344</width>
-				<height>32</height>
-				<texture border="40,30,40,0">gui/context-menu-top.png</texture>
+				<itemgap>0</itemgap>
+				<control type="image" id="997">
+					<description>Context Menu Top</description>
+					<width>344</width>
+					<height>32</height>
+					<texture border="40,30,40,0">gui/context-menu-top.png</texture>
+				</control>
+				
+				<control type="image" id="999">
+					<description>Context Menu Middle</description>
+					<width>344</width>
+					<height max="720">auto</height>
+					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
+				</control>
+				
+				<control type="image" id="998">
+					<description>Context Menu Bottom</description>
+					<width>344</width>
+					<height>32</height>
+					<texture border="40,0,40,30">gui/context-menu-bottom.png</texture>
+				</control>
 			</control>
-			
-			<control type="image" id="999">
-				<description>Context Menu Middle</description>
-				<width>344</width>
-				<height max="720">auto</height>
-				<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
-			</control>
-			
-			<control type="image" id="998">
-				<description>Context Menu Bottom</description>
-				<width>344</width>
-				<height>32</height>
-				<texture border="40,0,40,30">gui/context-menu-bottom.png</texture>
-			</control>			
 			
 			<control type="grouplist" id="996">
+				<top>32</top>
 				<left>32</left>
 				<width>280</width>
 				<height max="720">auto</height>
-				<include>DialogOpenCloseAnim</include>
 				<itemgap>2</itemgap>
 				<control type="button" id="995">
 					<description>Button Trailer</description>
@@ -52,7 +55,7 @@
 			
 			<control type="button">
 				<left>284</left>
-				<top>-24</top>
+				<top>8</top>
 				<include>DialogCloseBtn</include>
 			</control>
 			

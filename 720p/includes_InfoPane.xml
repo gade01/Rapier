@@ -166,7 +166,7 @@
 				<label>[B]$INFO[Container.NumItems,, $LOCALIZE[31202]][/B]</label>
 			</control>
 			
-			<include condition="Window.IsActive(Videos)">VideoDetails</include>
+			<include condition="Window.IsActive(Videos) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">VideoDetails</include>
 			<include condition="Window.IsActive(MusicLibrary)">MusicDetails</include>
 		</control>
 	</include>
@@ -218,6 +218,12 @@
 				<include>InfoPaneHeadLabel2</include>
 				<label>$INFO[Window(Home).Property(MusicVideos.Count),, $LOCALIZE[20389]]$INFO[Window(Home).Property(MusicVideos.Watched),  -  , $LOCALIZE[16102]]</label>
 			</control>
+		</control>
+		
+		<control type="label">
+			<include>InfoPaneHeadLabel2</include>
+			<label>$INFO[PVR.backenddiskspace]</label>
+			<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 		</control>
 	</include>
 	

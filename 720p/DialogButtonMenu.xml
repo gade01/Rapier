@@ -127,11 +127,11 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>			
 				<control type="button" id="1">
-					<description>Quit XBMC</description>
+					<description>Quit Kodi</description>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[13009] XBMC</label>
+					<label>$LOCALIZE[13009] Kodi</label>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.Quit()</onclick>
+					<onclick>Quit()</onclick>
 					<visible>System.ShowExitButton</visible>
 				</control>				
 				<control type="button" id="2">
@@ -139,7 +139,7 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[13016]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.Powerdown()</onclick>
+					<onclick>Powerdown()</onclick>
 					<visible>System.CanPowerDown</visible>
 				</control>
 				<control type="button" id="3">
@@ -147,7 +147,7 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[13011]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.Suspend()</onclick>
+					<onclick>Suspend()</onclick>
 					<visible>System.CanSuspend</visible>
 				</control>	
 				<control type="button" id="4">
@@ -155,7 +155,7 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[13010]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.Hibernate()</onclick>
+					<onclick>Hibernate()</onclick>
 					<visible>System.CanHibernate</visible>
 				</control>
 				<control type="button" id="5">
@@ -163,15 +163,15 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[13013]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.Reset()</onclick>
+					<onclick>Reset()</onclick>
 					<visible>System.CanReboot</visible>
 				</control>				
 				<control type="button" id="6">
-					<description>Restart XBMC</description>
+					<description>Restart Kodi</description>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[13313] XBMC</label>
+					<label>$LOCALIZE[13313] Kodi</label>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.RestartApp()</onclick>
+					<onclick>RestartApp()</onclick>
 				</control>		
 				<control type="button" id="7">
 					<description>Log Off</description>
@@ -187,14 +187,14 @@
 					<usealttexture>System.IsMaster</usealttexture>
 					<label>$LOCALIZE[20045]</label>
 					<altlabel>$LOCALIZE[20046]</altlabel>
-					<onclick>XBMC.MasterMode</onclick>
+					<onclick>MasterMode</onclick>
 					<visible>System.HasLocks</visible>
 				</control>				
 				<control type="button" id="9">
 					<description>Inhibit idle shutdown</description>
 					<include>ContextMenuBtn</include>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.InhibitIdleShutdown(true)</onclick>
+					<onclick>InhibitIdleShutdown(true)</onclick>
 					<label>13017</label>
 					<visible>System.HasShutdown +!System.IsInhibit</visible>
 				</control>
@@ -202,7 +202,7 @@
 					<description>Allow idle shutdown</description>
 					<include>ContextMenuBtn</include>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>XBMC.InhibitIdleShutdown(false)</onclick>
+					<onclick>InhibitIdleShutdown(false)</onclick>
 					<label>13018</label>
 					<visible>System.HasShutdown + System.IsInhibit</visible>
 				</control>		
@@ -217,7 +217,7 @@
 							<description>30min Shutdown Timer</description>
 							<include>ShutdownContextMenuBtn</include>
 							<label>$LOCALIZE[20147]</label>
-							<onclick>AlarmClock(ShutdownTimer,XBMC.Shutdown(),30)</onclick>	
+							<onclick>AlarmClock(ShutdownTimer,Shutdown(),30)</onclick>	
 							<visible allowhiddenfocus="true">Control.HasFocus(14)</visible>
 							<onup condition="System.HasShutdown">10</onup>
 							<onup condition="!System.HasShutdown + System.HasLocks">8</onup>
@@ -231,7 +231,7 @@
 							<description>60min Shutdown Timer</description>
 							<include>ShutdownContextMenuBtn</include>
 							<label>$LOCALIZE[20148]</label>
-							<onclick>AlarmClock(ShutdownTimer,XBMC.Shutdown(),60)</onclick>
+							<onclick>AlarmClock(ShutdownTimer,Shutdown(),60)</onclick>
 							<visible allowhiddenfocus="true">Control.HasFocus(15)</visible>
 							<onup condition="System.HasShutdown">10</onup>
 							<onup condition="!System.HasShutdown + System.HasLocks">8</onup>
@@ -245,7 +245,7 @@
 							<description>120min Shutdown Timer</description>
 							<include>ShutdownContextMenuBtn</include>
 							<label>$LOCALIZE[20149]</label>
-							<onclick>AlarmClock(ShutdownTimer,XBMC.Shutdown(),120)</onclick>
+							<onclick>AlarmClock(ShutdownTimer,Shutdown(),120)</onclick>
 							<visible allowhiddenfocus="true">Control.HasFocus(16)</visible>
 							<onup condition="System.HasShutdown">10</onup>
 							<onup condition="!System.HasShutdown + System.HasLocks">8</onup>
@@ -259,7 +259,7 @@
 							<description>Custom Shutdown Timer</description>
 							<include>ShutdownContextMenuBtn</include>
 							<label>$LOCALIZE[20150]</label>
-							<onclick>AlarmClock(ShutdownTimer,XBMC.Shutdown())</onclick>
+							<onclick>AlarmClock(ShutdownTimer,Shutdown())</onclick>
 							<visible allowhiddenfocus="true">![Control.HasFocus(14) | Control.HasFocus(15) | Control.HasFocus(16)]</visible>
 							<onup condition="System.HasShutdown">10</onup>
 							<onup condition="!System.HasShutdown + System.HasLocks">8</onup>
@@ -290,7 +290,7 @@
 						<description>Cancel Shutdown Timer</description>
 						<include>ShutdownContextMenuBtn</include>
 						<label>$LOCALIZE[20151]</label>
-						<onclick>XBMC.CancelAlarm(ShutdownTimer)</onclick>
+						<onclick>CancelAlarm(ShutdownTimer)</onclick>
 						<onup condition="System.HasShutdown">10</onup>
 						<onup condition="!System.HasShutdown + System.HasLocks">8</onup>
 						<onup condition="!System.HasShutdown + !System.HasLocks + [System.HasLoginScreen + System.Loggedon]">7</onup>
@@ -311,14 +311,14 @@
 					<description>Play Disc</description>
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[341]</label>
-					<onclick>XBMC.PlayDVD()</onclick>
+					<onclick>PlayDVD()</onclick>
 					<visible>System.HasMediaDVD</visible>
 				</control>
 				<control type="button" id="19">
 					<description>Eject/Load Disc</description>
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[13391]</label>
-					<onclick>XBMC.EjectTray()</onclick>
+					<onclick>EjectTray()</onclick>
 					<visible>System.HasMediaDVD</visible>
 				</control>
 				<control type="button" id="20">

@@ -650,7 +650,7 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Pictures)</visible>
 			</control>
-			<control type="radiobutton" id="5">
+			<control type="button" id="5">
 				<description>Enable auto-updates</description>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24063][/UPPERCASE]</label>
@@ -1082,71 +1082,69 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="32">
-				<description>TV Channels</description>
-				<include condition="Skin.HasSetting(HideLiveRadio)">MenuBarBigBtn</include>
-				<include condition="!Skin.HasSetting(HideLiveRadio)">MenuBarMidBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[19023][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(ViewsPVR,1)</onfocus>
-			</control>
-			<control type="image" id="351">
-				<include>MenuBarSeparator</include>
-				<visible>!Skin.HasSetting(HideLiveRadio)</visible>
-			</control>
-			<control type="button" id="33">
-				<description>Radio Channels</description>
-				<include>MenuBarMidBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[19024][/UPPERCASE]</label>
-				<visible>!Skin.HasSetting(HideLiveRadio)</visible>
-				<onfocus>Skin.SetString(ViewsPVR,2)</onfocus>
+				<description>Channels</description>
+				<include>MenuBarBigBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[19019][/UPPERCASE]</label>
+				<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
 			</control>
 			<control type="image" id="438">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="31">
 				<description>TV Guide</description>
-				<include condition="Skin.HasSetting(HideLiveRadio)">MenuBarBigBtn</include>
-				<include condition="!Skin.HasSetting(HideLiveRadio)">MenuBarMidBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[19222]: $LOCALIZE[19030][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(ViewsPVR,3)</onfocus>
+				<include>MenuBarBigBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[22020][/UPPERCASE]</label>
+				<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
 			</control>
 			<control type="image" id="352">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="36">
 				<description>Search</description>
-				<include condition="Skin.HasSetting(HideLiveRadio)">MenuBarBigBtn</include>
-				<include condition="!Skin.HasSetting(HideLiveRadio)">MenuBarMidBtn</include>
+				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[137][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(ViewsPVR,4)</onfocus>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
 			</control>
 			<control type="image" id="355">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="35">
 				<description>Timers</description>
-				<include condition="Skin.HasSetting(HideLiveRadio)">MenuBarBigBtn</include>
-				<include condition="!Skin.HasSetting(HideLiveRadio)">MenuBarMidBtn</include>
+				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19040][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(ViewsPVR,5)</onfocus>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
 			</control>
 			<control type="image" id="353">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="34">
 				<description>Recordings</description>
-				<include condition="Skin.HasSetting(HideLiveRadio)">MenuBarBigBtn</include>
-				<include condition="!Skin.HasSetting(HideLiveRadio)">MenuBarMidBtn</include>
+				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19163][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(ViewsPVR,6)</onfocus>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
 			</control>
 			<control type="image" id="356">
 				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="2">
+				<description>View As button</description>
+				<include>MenuBarBtn</include>
+				<label>-</label>
+				<visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>
 			</control>
 			<control type="button" id="37">
 				<description>Settings</description>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
 				<onclick>ActivateWindow(PVRSettings)</onclick>
+				<visible>![Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)]</visible>
 			</control>
 		</control>
 	</include>
@@ -1169,57 +1167,62 @@
 			<control type="image" id="99">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="radiobutton" id="475">
-				<description>Hide Radio (PVR)</description>
-				<include>MenuBarRadioBtn</include>
-				<label>$LOCALIZE[31901]</label>
-				<selected>Skin.HasSetting(HideLiveRadio)</selected>
-				<onclick>Skin.ToggleSetting(HideLiveRadio)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
+			<control type="button" id="475">
+				<description>View Options</description>
+				<include>MenuBarArrowBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[14018][/UPPERCASE]</label>
+				<onclick>ActivateWindow(3018)</onclick>
+				<onclick>Control.SetFocus(500)</onclick>
 			</control>
 			<control type="image" id="101">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="radiobutton" id="476">
-				<description>Hide Plot (PVR)</description>
-				<include>MenuBarRadioBtn</include>
-				<label>$LOCALIZE[31044]</label>
-				<selected>Skin.HasSetting(HideLiveTVPlot)</selected>
-				<onclick>Skin.ToggleSetting(HideLiveTVPlot)</onclick>
+			<control type="button" id="28">
+				<description>Channel Groups</description>
+				<include>MenuBarBigBtn</include>
+				<label>-</label>
 			</control>
 			<control type="image" id="102">
 				<include>MenuBarSeparator</include>
-			</control>	
-			<control type="radiobutton" id="477">
-				<description>Do Not Auto Scroll Plot (PVR)</description>
+			</control>
+			<control type="radiobutton" id="5">
+				<description>Group recording items by folder structure</description>
+				<width>200</width>
 				<include>MenuBarRadioBtn</include>
-				<label>$LOCALIZE[31401]</label>
-				<selected>!Skin.HasSetting(DoNotAutoScrollLiveTVPlot)</selected>
-				<onclick>Skin.ToggleSetting(DoNotAutoScrollLiveTVPlot)</onclick>
-				<enable>!Skin.HasSetting(HideLiveTVPlot)</enable>
+				<label>19270</label>
+				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 			</control>
 			<control type="image" id="103">
 				<include>MenuBarSeparator</include>
+				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 			</control>
-			<control type="radiobutton" id="478">
-				<description>List Hide Scrollbar (PVR)</description>
-				<include>MenuBarRadioBtn</include>
-				<label>$LOCALIZE[31025]</label>
-				<selected>Skin.HasSetting(HideListInfoView2Scrollbar)</selected>
-				<onclick>Skin.ToggleSetting(HideListInfoView2Scrollbar)</onclick>
-			</control>
-			<control type="image" id="104">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="radiobutton" id="479">
-				<description>Columns Hide Scrollbar (PVR)</description>
-				<include>MenuBarRadioBtn</include>
-				<label>$LOCALIZE[31025] 2</label>
-				<selected>!Skin.HasSetting(ShowColumnsViewScrollbar)</selected>
-				<onclick>Skin.ToggleSetting(ShowColumnsViewScrollbar)</onclick>
+			<control type="button" id="3">
+				<description>Sort by button</description>
+				<include>MenuBarBigBtn</include>
+				<label>103</label>
 			</control>
 			<control type="image" id="105">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="togglebutton" id="4">
+				<description>Sort asc</description>
+				<include>MenuBarBigBtn</include>
+				<label>$LOCALIZE[21429]: $LOCALIZE[21430]</label>
+				<altlabel>$LOCALIZE[21429]: $LOCALIZE[21431]</altlabel>
+				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
+				<alttexturenofocus>-</alttexturenofocus>
+			</control>
+			<control type="image" id="106">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="37">
+				<description>Settings</description>
+				<include>MenuBarBigBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
+				<onclick>ActivateWindow(PVRSettings)</onclick>
+				<visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>
+			</control>
+			<control type="image" id="107">
 				<include>MenuBarSeparator</include>
 			</control>
 		</control>		
@@ -1409,7 +1412,7 @@
 				<label>[UPPERCASE]$LOCALIZE[31220][/UPPERCASE]</label>
 				<onclick>Playlist.Clear</onclick>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
-				<onclick>XBMC.RunScript(script.cinema.experience)</onclick>
+				<onclick>RunScript(script.cinema.experience)</onclick>
 				<visible>System.HasAddon(script.cinema.experience) + Container.Content(Movies)</visible>
 			</control>
 			<control type="image" id="122">
@@ -1454,9 +1457,9 @@
 				<description>Get Artwork</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31302][/UPPERCASE]</label>
-				<onclick condition="Container.Content(Movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="Container.Content(TVShows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="Container.Content(musicvideos)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
+				<onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+				<onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+				<onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(musicvideos)</visible>
 				<enable>!Skin.HasSetting(EnableKioskMode) + System.HasAddon(script.artwork.downloader)</enable>
 			</control>
@@ -1485,7 +1488,7 @@
 				<description>TV Tunes</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
-				<onclick>XBMC.RunScript(script.tvtunes,mode=solo)</onclick>
+				<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
 				<visible>!Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] 
 				+ IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
 			</control>
@@ -1509,7 +1512,7 @@
 				<description>Video Extras</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$ADDON[script.videoextras 32001][/UPPERCASE]</label>
-				<onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+				<onclick>RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
 				<visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)]
 				+ IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
 			</control>
@@ -1640,12 +1643,20 @@
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
 			</control>
+			<control type="button" id="12">
+				<description>Launch Add-on</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[518][/UPPERCASE]</label>	
+			</control>
+			<control type="image" id="120">
+				<include>MenuBarSeparator</include>
+			</control>
 			<control type="button" id="8">
 				<description>Update Add-on</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24069][/UPPERCASE]</label>
 			</control>
-			<control type="image" id="120">
+			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="11">
@@ -1653,7 +1664,7 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24048][/UPPERCASE]</label>
 			</control>
-			<control type="image" id="121">
+			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="10">
@@ -1661,7 +1672,7 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24036][/UPPERCASE]</label>
 			</control>
-			<control type="image" id="122">
+			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
 			</control>
 		</control>		
@@ -1767,7 +1778,7 @@
 				<description>TV Tunes</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
-				<onclick>XBMC.RunScript(script.tvtunes,mode=solo)</onclick>
+				<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
 				<visible>!Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes) + IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
 			</control>
 			<control type="image" id="124">

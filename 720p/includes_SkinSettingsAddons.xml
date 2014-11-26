@@ -67,7 +67,7 @@
 				<description>Run Artwork Downloader (Addon Settings)</description>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31512]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader)</onclick>
+				<onclick>RunScript(script.artwork.downloader)</onclick>
 				<enable>System.HasAddon(script.artwork.downloader)</enable>
 			</control>
 			<control type="radiobutton" id="5010">
@@ -83,7 +83,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[593]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mediatype=movie, poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart, thumb, banner)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mediatype=movie, poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart, thumb, banner)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5012">
@@ -91,7 +91,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31503]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, poster)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, poster)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5013">
@@ -99,7 +99,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[20445]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, fanart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, fanart)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5014">
@@ -107,7 +107,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31015]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, extrafanart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, extrafanart)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5015">
@@ -115,7 +115,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31014]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, extrathumbs)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, extrathumbs)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5016">
@@ -123,7 +123,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31107] 16:9</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, thumb)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, thumb)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5017">
@@ -131,7 +131,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31108]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, banner)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, banner)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5018">
@@ -139,7 +139,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31507]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, clearart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, clearart)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5019">
@@ -147,7 +147,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31508]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, clearlogo)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, clearlogo)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5020">
@@ -155,7 +155,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31914]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, discart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=movie, discart)</onclick>
 				<visible>Skin.HasSetting(ShowMoviesArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="radiobutton" id="5021">
@@ -171,7 +171,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[593]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mediatype=tvshow, poster, seasonposter, fanart, extrafanart, extrathumbs, clearlogo, clearart, tvthumb, seasonthumb, banner, seasonbanner, characterart</onclick>
+				<onclick>RunScript(script.artwork.downloader, mediatype=tvshow, poster, seasonposter, fanart, extrafanart, extrathumbs, clearlogo, clearart, tvthumb, seasonthumb, banner, seasonbanner, characterart</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5023">
@@ -179,7 +179,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31503]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, poster)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, poster)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5024">
@@ -187,7 +187,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[20373] $LOCALIZE[31503]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, seasonposter)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, seasonposter)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5025">
@@ -195,7 +195,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31108]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, banner)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, banner)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5026">
@@ -203,7 +203,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[20373] $LOCALIZE[31108]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, seasonbanner)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, seasonbanner)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5027">
@@ -211,7 +211,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[20445]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, fanart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, fanart)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5028">
@@ -219,7 +219,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31015]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, extrafanart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, extrafanart)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5029">
@@ -227,7 +227,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31507]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, clearart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, clearart)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5030">
@@ -235,7 +235,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31508]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, clearlogo)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, clearlogo)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5031">
@@ -243,7 +243,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31510]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, characterart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, characterart)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5032">
@@ -251,7 +251,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31509] 16:9</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, tvthumb)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, tvthumb)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5033">
@@ -259,7 +259,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[20373] $LOCALIZE[31107] 16:9</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, seasonthumb)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, seasonthumb)</onclick>
 				<visible>Skin.HasSetting(ShowTVShowsArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="radiobutton" id="5034">
@@ -275,7 +275,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[593]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mediatype=musicvideos, poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart</onclick>
+				<onclick>RunScript(script.artwork.downloader, mediatype=musicvideos, poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5036">
@@ -283,7 +283,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31503]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, poster)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, poster)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5037">
@@ -291,7 +291,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[20445]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, fanart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, fanart)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5038">
@@ -299,7 +299,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31015]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, extrafanart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, extrafanart)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5039">
@@ -307,7 +307,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31014]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, extrathumbs)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, extrathumbs)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5040">
@@ -315,7 +315,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31507]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, clearart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, clearart)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5041">
@@ -323,7 +323,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31508]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, clearlogo)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, clearlogo)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5042">
@@ -331,7 +331,7 @@
 				<textoffsetx>20</textoffsetx>
 				<include>SettingsContentBtn</include>
 				<label>$LOCALIZE[31914]</label>
-				<onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, discart)</onclick>
+				<onclick>RunScript(script.artwork.downloader, mode=custom, mediatype=musicvideos, discart)</onclick>
 				<visible>Skin.HasSetting(ShowMusicVideosArtworkDownloaderSettings) + System.HasAddon(script.artwork.downloader)</visible>
 			</control>
 			<control type="button" id="5044">

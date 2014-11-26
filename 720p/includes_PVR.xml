@@ -1,168 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!--//// START LIST INFO VIEWS //////////////////////////////////////////////////////////////-->
-	<include name="LiveTVChannelView">	
-		<control type="group" id="500">	
-			<defaultcontrol always="true">11</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,1)</visible>
-			<include>ControlsOpenCloseAnim</include>
+	<variable name="LiveTVListInfoCoverImage">
+		<value condition="Window.IsActive(TVChannels)">pvr\pvr-background.jpg</value>
+		<value condition="Window.IsActive(RadioChannels)">pvr\pvr-radio-background.jpg</value>
+		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + IsEmpty(ListItem.Thumb)">pvr\pvr-background.jpg</value>
+		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+	</variable>
 
-			<control type="list" id="11">
-				<left>595</left>
-				<top>110</top>
-				<width>630</width>
-				<height>518</height>
-				<pagecontrol>906</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<scrolltime tween="sine" easing="inout">300</scrolltime>
-				<onup>11</onup>
-				<ondown>11</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<itemlayout height="74">
-					<include>LiveTVListInfoStyleItemLayout</include>
-					<control type="group">
-						<description>Progress</description>
-						<left>596</left>
-						<top>25</top>
-						<include>LiveTVProgressImage</include>
-					</control>	
-				</itemlayout>
-				<focusedlayout height="74">	
-					<include>LiveTVListInfoStyleFocusedLayout</include>
-					<control type="group">
-						<description>Progress</description>
-						<left>596</left>
-						<top>25</top>
-						<include>LiveTVProgressImage</include>
-					</control>
-				</focusedlayout>
+	<variable name="LiveTVListInfoLabel1">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$LOCALIZE[19030]:</value>
+		<value condition="Window.IsActive(TVRecordings)|  Window.IsActive(RadioRecordings)">$LOCALIZE[369]:</value>
+	</variable>
+
+	<variable name="LiveTVListInfoLabel1Val">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.Label]</value>
+	</variable>
+
+	<variable name="LiveTVListInfoLabel2">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$LOCALIZE[19031]:</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$LOCALIZE[515]:</value>
+	</variable>
+
+	<variable name="LiveTVListInfoLabel2Val">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.NextTitle]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.Genre]</value>
+	</variable>
+
+	<variable name="LiveTVListInfoItemLabel">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.Label]</value>
+	</variable>
+
+	<variable name="LiveTVListInfoItemLabel2">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.ChannelNumber]$INFO[ListItem.ChannelName,  -  ]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,  -  ]</value>
+	</variable>
+	
+	<variable name="LiveTVListInfoItemImage">
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.Icon]</value>
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.Thumb]</value>
+	</variable>
+	
+	<include name="LiveTVListInfoPanelCover">
+		<control type="group">
+			<left>40</left>
+			<top>116</top>
+
+			<control type="image">
+				<width>542</width>
+				<height>304</height>
+				<texture background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$VAR[LiveTVListInfoCoverImage]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>!Player.HasVideo</visible>
 			</control>
 
-			<include>ListInfo2ViewScrollbar</include>
-
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
-			</control>
-			
-			<control type="group">
-				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
-				<!--<include>InfoPaneImage</include>-->
-				<include>InfoPaneMediaDetails</include>
-				<include>BottomPaneOpenCloseAnim</include>
+			<control type="image">
+				<description>Cover Background</description>
+				<width>542</width>
+				<height>304</height>
+				<texture border="4">panels/panel3.png</texture>
+				<visible>Player.HasVideo</visible>
 			</control>
 
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
-	</include>
-
-	<include name="LiveRadioChannelView">	
-		<control type="group" id="500">	
-			<defaultcontrol always="true">12</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,2)</visible>
-			<include>ControlsOpenCloseAnim</include>
-
-			<control type="list" id="12">
-				<left>595</left>
-				<top>110</top>
-				<width>630</width>
-				<height>518</height>
-				<pagecontrol>906</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<scrolltime tween="sine" easing="inout">300</scrolltime>
-				<onup>12</onup>
-				<ondown>12</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<itemlayout height="74">
-					<include>LiveTVListInfoStyleItemLayout</include>
-				</itemlayout>
-				<focusedlayout height="74">	
-					<include>LiveTVListInfoStyleFocusedLayout</include>
-				</focusedlayout>
-			</control>
-
-			<include>ListInfo2ViewScrollbar</include>
-
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
+			<control type="videowindow">
+				<description>Video</description>
+				<left>4</left>
+				<top>4</top>
+				<width>534</width>
+				<height>296</height>
+				<aspectratio>stretch</aspectratio>
+				<visible>Player.HasVideo</visible>
 			</control>
 			
-			<control type="group">
-				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
-				<!--<include>InfoPaneImage</include>-->
-				<include>InfoPaneMediaDetails</include>
-				<include>BottomPaneOpenCloseAnim</include>
+			<control type="image">
+				<description>Genre Background</description>
+				<left>10</left>
+				<top>10</top>
+				<width>250</width>
+				<height>27</height>
+				<texture border="8">views/genre-background.png</texture>
+				<visible>Player.HasVideo</visible>
 			</control>
-
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+						
+			<control type="label">
+				<description>Genre</description>
+				<left>18</left>
+				<top>12</top>
+				<width>234</width>
+				<font>MediaInfoFont3</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>[UPPERCASE]$INFO[Player.Title][/UPPERCASE]</label>
+				<scroll>true</scroll>
+				<include>BackgroundVisibleAnim</include>
+				<animation effect="fade" end="75" condition="true">Conditional</animation>
+				<visible>Player.HasVideo</visible>
+			</control>
+		</control>
 	</include>
 
-	<include name="LiveTVRecordingsView">	
-		<control type="group" id="500">	
-			<defaultcontrol always="true">13</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,6)</visible>
-			<include>ControlsOpenCloseAnim</include> 
-
-			<control type="list" id="13">
-				<left>595</left>
-				<top>110</top>
-				<width>630</width>
-				<height>518</height>
-				<pagecontrol>906</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<scrolltime tween="sine" easing="inout">300</scrolltime>
-				<onup>13</onup>
-				<ondown>13</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<itemlayout height="74">
-					<include>LiveTVListInfoStyleItemLayout</include>
-					<control type="group">
-						<description>Overlay</description>
-						<left>596</left>
-						<top>25</top>
-						<include>LiveTVOverlayImage</include>
-					</control>
-				</itemlayout>
-				<focusedlayout height="74">	
-					<include>LiveTVListInfoStyleFocusedLayout</include>
-					<control type="group">
-						<description>Overlay</description>
-						<left>596</left>
-						<top>25</top>
-						<include>LiveTVOverlayImage</include>
-					</control>
-				</focusedlayout>
-			</control>
-
-			<include>ListInfo2ViewScrollbar</include>
-
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
-			</control>
-			
-			<control type="group">
-				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
-				<!--<include>InfoPaneImage</include>-->
-				<include>InfoPaneMediaDetails</include>
-				<include>BottomPaneOpenCloseAnim</include>
-			</control>
-
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+	<include name="LiveTVProgressImage">
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-10pct.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!ListItem.IsRecording + !IntegerGreaterThan(ListItem.Progress,20)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-30pct.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,20) + !IntegerGreaterThan(ListItem.Progress,40)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-50pct.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,40) + !IntegerGreaterThan(ListItem.Progress,60)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-70pct.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,60) + !IntegerGreaterThan(ListItem.Progress,80)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-90pct.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,80)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-10pct-alt.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsRecording + !IntegerGreaterThan(ListItem.Progress,20)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-30pct-alt.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,20) + !IntegerGreaterThan(ListItem.Progress,40)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-50pct-alt.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,40) + !IntegerGreaterThan(ListItem.Progress,60)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-70pct-alt.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,60) + !IntegerGreaterThan(ListItem.Progress,80)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">watched/watched-90pct-alt.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>ListItem.IsRecording + IntegerGreaterThan(ListItem.Progress,80)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
 	</include>
 
+	<include name="LiveTVOverlayImage">
+		<control type="image">
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">OverlayWatched.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+	</include>
+
+	<include name="LiveTVColumnHeaderLabel">
+		<aligny>center</aligny>
+		<align>left</align>
+		<font>WideListFont</font>
+		<textcolor>DefaultColor3</textcolor>
+		<selectedcolor>SelectedColor</selectedcolor>
+	</include>
+
+	<include name="LiveTVColumnChannelLabel">
+		<aligny>center</aligny>
+		<font>ListFont</font>
+		<textcolor>DefaultColor2</textcolor>
+		<selectedcolor>SelectedColor</selectedcolor>
+	</include>
+
+	<include name="LiveTVColumnNumberLabel">
+		<aligny>center</aligny>
+		<font>ListFont2</font>
+		<textcolor>DefaultColor2</textcolor>
+		<selectedcolor>SelectedColor</selectedcolor>
+	</include>
+
+	<include name="LiveTVColumnItemLabel">
+		<aligny>center</aligny>
+		<font>ListFont</font>
+		<textcolor>WhiteColor</textcolor>
+		<selectedcolor>SelectedColor</selectedcolor>
+	</include>
+	
 	<include name="LiveTVListInfoArea">
 		<control type="group">
-			<visible>Skin.String(ViewsPVR,1) | Skin.String(ViewsPVR,2) | Skin.String(ViewsPVR,6)</visible>
 			<include>ControlsOpenCloseAnim</include>
 			<include>ViewContentPanel</include>
 			<include>ListInfo2MediaInfoPanelCommon</include>
@@ -335,9 +396,7 @@
 			<height>73</height>
 			<texture border="4">views/list-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Skin.String(ViewsPVR,1) + Control.HasFocus(11)]
-				| [Skin.String(ViewsPVR,2) + Control.HasFocus(12)]
-				| [Skin.String(ViewsPVR,6) + Control.HasFocus(13)]</visible>
+			<visible>[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + Control.HasFocus(50)</visible>
 			<include>ListViewSelectFadeAnim</include>
 			<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 		</control>
@@ -348,9 +407,7 @@
 			<height>73</height>
 			<texture border="4">views/list-alt-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Skin.String(ViewsPVR,1) + !Control.HasFocus(11)]
-				| [Skin.String(ViewsPVR,2) + !Control.HasFocus(12)]
-				| [Skin.String(ViewsPVR,6) + !Control.HasFocus(13)]</visible>
+			<visible>[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !Control.HasFocus(50)</visible>
 			<include>ListViewSelectFadeAnim2</include>
 		</control>
 
@@ -392,575 +449,6 @@
 			</control>
 		</control>					
 	</include>
-	<!--//// END LIST INFO VIEWS ////////////////////////////////////////////////////////////////-->
-
-	<!--//// START COLUMN INFO VIEWS ////////////////////////////////////////////////////////////-->
-	<include name="EPGTimelineView">		
-		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
-			<defaultcontrol always="true">10</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,3) + Control.IsVisible(10)</visible>
-			<include>ControlsOpenCloseAnim</include>
-
-			<control type="image">
-				<width>215</width>
-				<height>30</height>
-				<texture border="8">pvr/column-left.png</texture>
-				<colordiffuse>LiveTVColumnColor</colordiffuse>
-				<include>LiveTVColumnFadeAnim</include>
-			</control>
-			<control type="image">
-				<left>220</left>
-				<width>1030</width>
-				<height>30</height>
-				<texture border="8" flipx="true">pvr/column-left.png</texture>
-				<colordiffuse>LiveTVColumnColor</colordiffuse>
-				<include>LiveTVColumnFadeAnim</include>
-			</control>
-
-			<control type="epggrid" id="10">
-				<width>1240</width>
-				<height>370</height>
-				<pagecontrol>10</pagecontrol>
-				<scrolltime>150</scrolltime>
-				<timeblocks>40</timeblocks>
-				<rulerunit>6</rulerunit>
-				<progresstexture border="0,45,20,7">pvr/EpgProgressIndicator.png</progresstexture>
-				<onleft>31</onleft>
-				<onright>31</onright>
-				<onup>850</onup>
-				<onback>850</onback>
-				<ondown>10</ondown>
-				<rulerlayout height="34" width="42">
-					<control type="label">
-						<description>Date</description>
-						<left>15</left>
-						<width>310</width>
-						<height>30</height>
-						<include>LiveTVColumnHeaderLabel</include>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</rulerlayout>
-
-				<channellayout height="42" width="220">
-					<animation effect="fade" start="110" time="200">UnFocus</animation>
-					<control type="image">
-						<width>215</width>
-						<height>38</height>
-						<texture border="8">pvr/column-left.png</texture>
-						<colordiffuse>LiveTVColumnColor</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-					</control>
-
-					<control type="label">
-						<description>Channel Number</description>
-						<left>15</left>
-						<width>215</width>
-						<height>38</height>
-						<include>LiveTVColumnNumberLabel</include>
-						<label>$INFO[ListItem.ChannelNumber]</label>		
-					</control>
-
-					<control type="label">
-						<description>Channel Name</description>
-						<left>200</left>
-						<width>150</width>
-						<height>38</height>
-						<include>LiveTVColumnChannelLabel</include>
-						<label>$INFO[ListItem.ChannelName]</label>
-					</control>
-				</channellayout>
-
-				<focusedchannellayout height="42" width="220">
-					<animation effect="fade" start="110" time="200">OnFocus</animation>
-					<control type="image">
-						<width>215</width>
-						<height>38</height>
-						<texture border="8">pvr/column-left.png</texture>
-						<colordiffuse>LiveTVColumnColor3</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-					</control>
-
-					<control type="label">
-						<description>Channel Number</description>
-						<left>15</left>
-						<width>215</width>
-						<height>38</height>
-						<include>LiveTVColumnNumberLabel</include>
-						<label>$INFO[ListItem.ChannelNumber]</label>		
-					</control>
-
-					<control type="label">
-						<description>Channel Name</description>
-						<left>200</left>
-						<width>150</width>
-						<height>38</height>
-						<include>LiveTVColumnChannelLabel</include>
-						<label>$INFO[ListItem.ChannelName]</label>
-					</control>
-				</focusedchannellayout>
-
-				<itemlayout height="42" width="102">
-					<control type="image" id="2">
-						<description>movie / drama</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff8b5015</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),16)</visible>
-					</control>
-					<control type="image" id="3">
-						<description>news</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff446444</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),32)</visible>
-					</control>
-					<control type="image" id="4">
-						<description>show / gameshow</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff8d8c17</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),48)</visible>
-					</control>
-					<control type="image" id="5">
-						<description>sports</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff930d1d</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),64)</visible>
-					</control>
-					<control type="image" id="6">
-						<description>children</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff13897a</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),80)</visible>
-					</control>
-					<control type="image" id="7">
-						<description>music / ballet / dance</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff2d9234</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),96)</visible>
-					</control>
-					<control type="image" id="8">
-						<description>arts / culture</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff022788</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),112)</visible>
-					</control>
-					<control type="image" id="9">
-						<description>social / political / economics</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff641864</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),128)</visible>
-					</control>
-					<control type="image" id="10">
-						<description>education / science / factual</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff797a7c</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),144)</visible>
-					</control>
-					<control type="image" id="11">
-						<description>leisure / hobbies</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff5a5a7e</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),160)</visible>
-					</control>
-					<control type="image" id="12">
-						<description>special event</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>ff1a6973</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>StringCompare(ListItem.Property(GenreType),176)</visible>
-					</control>
-					<control type="image" id="13">
-						<description>other / unknown</description>
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>LiveTVColumnColor2</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-						<visible>!StringCompare(ListItem.Property(GenreType),16) + !StringCompare(ListItem.Property(GenreType),32)
-						+ !StringCompare(ListItem.Property(GenreType),48) + !StringCompare(ListItem.Property(GenreType),64)
-						+ !StringCompare(ListItem.Property(GenreType),80) + !StringCompare(ListItem.Property(GenreType),96)
-						+ !StringCompare(ListItem.Property(GenreType),112) + !StringCompare(ListItem.Property(GenreType),128)
-						+ !StringCompare(ListItem.Property(GenreType),144) + !StringCompare(ListItem.Property(GenreType),160)
-						+ !StringCompare(ListItem.Property(GenreType),176)</visible>
-					</control>
-
-					<control type="label" id="1">
-						<left>8</left>
-						<width>85</width>
-						<height>38</height>
-						<align>left</align>
-						<include>LiveTVColumnItemLabel</include>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>![ListItem.HasTimer | ListItem.IsRecording]</visible>
-					</control>
-
-					<control type="label" id="1">
-						<left>40</left>
-						<width>20</width>
-						<height>38</height>
-						<align>left</align>
-						<include>LiveTVColumnItemLabel</include>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
-					</control>
-
-					<control type="image">
-						<description>Timer</description>
-						<left>10</left>
-						<top>8</top>
-						<width>22</width>
-						<height>22</height>
-						<texture>pvr/status_timer.png</texture>
-						<colordiffuse>WhiteColor</colordiffuse>
-						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-					</control>
-
-					<control type="image">
-						<description>Record</description>
-						<left>10</left>
-						<top>8</top>
-						<width>22</width>
-						<height>22</height>
-						<texture>pvr/status_recording.png</texture>
-						<colordiffuse>WhiteColor</colordiffuse>
-						<visible>ListItem.IsRecording</visible>
-					</control>
-				</itemlayout>
-
-				<focusedlayout height="42" width="102">
-					<control type="image" id="2">
-						<width>98</width>
-						<height>38</height>
-						<texture border="8">pvr/column.png</texture>
-						<colordiffuse>LiveTVColumnColor3</colordiffuse>
-						<include>LiveTVColumnFadeAnim</include>
-					</control>
-
-					<control type="label" id="1">
-						<left>8</left>
-						<width>85</width>
-						<height>38</height>
-						<align>left</align>
-						<include>LiveTVColumnItemLabel</include>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>![ListItem.HasTimer | ListItem.IsRecording]</visible>
-					</control>
-
-					<control type="label" id="1">
-						<left>40</left>
-						<width>20</width>
-						<height>38</height>
-						<align>left</align>
-						<include>LiveTVColumnItemLabel</include>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
-					</control>
-
-					<control type="image">
-						<description>Timer</description>
-						<left>10</left>
-						<top>8</top>
-						<width>22</width>
-						<height>22</height>
-						<texture>pvr/status_timer.png</texture>
-						<colordiffuse>WhiteColor</colordiffuse>
-						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-					</control>
-
-					<control type="image">
-						<description>Record</description>
-						<left>10</left>
-						<top>8</top>
-						<width>22</width>
-						<height>22</height>
-						<texture>pvr/status_recording.png</texture>
-						<colordiffuse>WhiteColor</colordiffuse>
-						<visible>ListItem.IsRecording</visible>
-					</control>
-				</focusedlayout>
-			</control>
-		</control>
-	</include>
-
-	<include name="LiveTVGuideNowNextView">
-		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
-			<defaultcontrol always="true">16</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,3) + Control.IsVisible(16)</visible>
-			<include>ControlsOpenCloseAnim</include>
-
-			<include>LiveTVColumnHeaderArea2</include>
-
-			<control type="list" id="16">
-				<top>34</top>
-				<width>1220</width>
-				<height>336</height>
-				<onup>16</onup>
-				<ondown>16</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<pagecontrol>904</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<itemlayout height="42">
-					<include>LiveTVColumnItemLayout2</include>
-					<include>LiveTVColumnLayoutArea2</include>
-				</itemlayout>
-				<focusedlayout height="42">
-					<include>LiveTVColumnFocusedLayout</include>
-					<include>LiveTVColumnLayoutArea2</include>
-				</focusedlayout>
-			</control>
-
-			<include>ColumnsViewScrollbar</include>
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
-	</include>
-
-	<include name="LiveTVGuideChannelView">
-		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
-			<defaultcontrol always="true">15</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,3) + Control.IsVisible(15)</visible>
-			<include>ControlsOpenCloseAnim</include>
-
-			<include>LiveTVColumnHeaderArea</include>
-
-			<control type="group">
-				<top>76</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(1).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>118</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(2).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>160</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(3).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>202</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(4).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>244</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(5).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>286</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(6).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>328</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(15).ListItemPosition(7).ChannelName,)</visible>
-			</control>
-
-			<control type="list" id="15">
-				<top>34</top>
-				<width>1220</width>
-				<height>336</height>
-				<onup>15</onup>
-				<ondown>15</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<pagecontrol>904</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<itemlayout height="42">
-					<include>LiveTVColumnItemLayout</include>
-					<include>LiveTVColumnLayoutArea</include>
-				</itemlayout>
-				<focusedlayout height="42">
-					<include>LiveTVColumnFocusedLayout</include>
-					<include>LiveTVColumnLayoutArea</include>
-				</focusedlayout>
-			</control>
-
-			<include>ColumnsViewScrollbar</include>
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
-	</include>
-
-	<include name="LiveTVSearchView">
-		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
-			<defaultcontrol always="true">17</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,4)</visible>
-			<include>ControlsOpenCloseAnim</include>
-
-			<include>LiveTVColumnHeaderArea</include>
-
-			<control type="group">
-				<top>76</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(1).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>118</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(2).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>160</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(3).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>202</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(4).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>244</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(5).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>286</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(6).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>328</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(17).ListItemPosition(7).ChannelName,)</visible>
-			</control>
-
-			<control type="list" id="17">
-				<top>34</top>
-				<width>1220</width>
-				<height>336</height>
-				<onup>17</onup>
-				<ondown>17</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<pagecontrol>904</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<itemlayout height="42">
-					<include>LiveTVColumnItemLayout</include>
-					<include>LiveTVColumnLayoutArea</include>
-				</itemlayout>
-				<focusedlayout height="42">
-					<include>LiveTVColumnFocusedLayout</include>
-					<include>LiveTVColumnLayoutArea</include>
-				</focusedlayout>
-			</control>
-
-			<include>ColumnsViewScrollbar</include>
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
-	</include>
-
-	<include name="LiveTVTimersView">
-		<control type="group" id="500">
-			<left>40</left>
-			<top>110</top>
-			<defaultcontrol always="true">14</defaultcontrol>
-			<visible>Skin.String(ViewsPVR,5)</visible>
-			<include>ControlsOpenCloseAnim</include>
-
-			<include>LiveTVColumnHeaderArea</include>
-
-			<control type="group">
-				<top>76</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(1).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>118</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(2).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>160</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(3).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>202</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(4).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>244</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(5).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>286</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(6).ChannelName,)</visible>
-			</control>
-			<control type="group">
-				<top>328</top>
-				<include>LiveTVColumnItemLayout</include>
-				<visible>StringCompare(Container(14).ListItemPosition(7).ChannelName,)</visible>
-			</control>
-
-			<control type="list" id="14">
-				<top>34</top>
-				<width>1220</width>
-				<height>336</height>
-				<onup>14</onup>
-				<ondown>14</ondown>
-				<onleft>850</onleft>
-				<onright>150</onright>
-				<pagecontrol>904</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<itemlayout height="42">
-					<include>LiveTVColumnItemLayout</include>
-					<include>LiveTVColumnLayoutArea3</include>
-				</itemlayout>
-				<focusedlayout height="42">
-					<include>LiveTVColumnFocusedLayout</include>
-					<include>LiveTVColumnLayoutArea3</include>
-				</focusedlayout>
-			</control>
-
-			<include>ColumnsViewScrollbar</include>
-			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
-	</include>
 
 	<include name="LiveTVColumnInfoArea">
 		<!-- EPGTimelineView, LiveTVGuideNowNextView, LiveTVGuideChannelView,
@@ -968,7 +456,6 @@
 		<control type="group">
 			<left>40</left>
 			<top>510</top>
-			<visible>Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4) | Skin.String(ViewsPVR,5)</visible>
 			<include>ControlsOpenCloseAnim</include>
 
 			<control type="group">
@@ -1001,7 +488,8 @@
 				<texture background="true" fallback="pvr/DefaultPVRLogo.png">$INFO[ListItem.Icon]</texture>
 				<aspectratio aligny="top">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>[Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4) | [Skin.String(ViewsPVR,5) + !StringCompare(ListItem.Label,$LOCALIZE[19026])]] + !Player.HasVideo</visible>
+				<visible>[Window.IsActive(TVGuide) | Window.IsActive(TVSearch) | Window.IsActive(RadioGuide) | Window.IsActive(RadioSearch) | 
+				[[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + !StringCompare(ListItem.Label,$LOCALIZE[19026])]] + !Player.HasVideo</visible>
 			</control>
 
 			<control type="image">
@@ -1012,13 +500,13 @@
 				<texture background="true">pvr/DefaultPVRLogo.png</texture>
 				<aspectratio aligny="top">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>[Skin.String(ViewsPVR,5) + StringCompare(ListItem.Label,$LOCALIZE[19026])] + !Player.HasVideo</visible>
+				<visible>[[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + StringCompare(ListItem.Label,$LOCALIZE[19026])] + !Player.HasVideo</visible>
 			</control>
 
 			<control type="group">
 				<description>Info</description>
 				<left>220</left>
-				<visible>[Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4)] + !IsEmpty(ListItem.Title)</visible>
+				<visible>[Window.IsActive(TVGuide) | Window.IsActive(TVSearch) | Window.IsActive(RadioGuide) | Window.IsActive(RadioSearch)] + !IsEmpty(ListItem.Title)</visible>
 				<control type="label">
 					<description>Title</description>
 					<width>700</width>
@@ -1073,7 +561,7 @@
 			<control type="group">
 				<description>No Info</description>
 				<left>220</left>
-				<visible>[Skin.String(ViewsPVR,3) | Skin.String(ViewsPVR,4)] + IsEmpty(ListItem.Title)</visible>
+				<visible>[Window.IsActive(TVGuide) | Window.IsActive(TVSearch) | Window.IsActive(RadioGuide) | Window.IsActive(RadioSearch)] + IsEmpty(ListItem.Title)</visible>
 				<control type="label">
 					<description>Title</description>
 					<top>20</top>
@@ -1103,7 +591,7 @@
 			<control type="group">
 				<description>Info</description>
 				<left>220</left>
-				<visible>Skin.String(ViewsPVR,5) + !StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
+				<visible>[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + !StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
 				<control type="label">
 					<description>Label</description>
 					<width>700</width>
@@ -1158,7 +646,7 @@
 			<control type="group">
 				<description>No Info</description>
 				<left>220</left>
-				<visible>Skin.String(ViewsPVR,5) + StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
+				<visible>[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
 				<control type="label">
 					<description>Label</description>
 					<top>20</top>
@@ -1366,11 +854,20 @@
 			<colordiffuse>WhiteColor</colordiffuse>
 			<visible>ListItem.IsRecording</visible>
 		</control>
+		
+		<control type="label">
+			<description>Channel Number</description>
+			<left>15</left>
+			<width>215</width>
+			<height>38</height>
+			<include>LiveTVColumnNumberLabel</include>
+			<label>$INFO[ListItem.ChannelNumber]</label>
+		</control>
 
 		<control type="label">
-			<description>Channel</description>
-			<left>200</left>
-			<width>150</width>
+			<description>Channel Name</description>
+			<left>50</left>
+			<width>158</width>
 			<height>38</height>
 			<include>LiveTVColumnChannelLabel</include>
 			<label>$INFO[ListItem.ChannelName]</label>
@@ -1383,11 +880,22 @@
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Title]</label>
+			<visible>!IsEmpty(ListItem.Title)</visible>
+		</control>
+		
+		<control type="label">
+			<description>Title</description>
+			<left>230</left>
+			<width>553</width>
+			<height>38</height>
+			<include>LiveTVColumnItemLabel</include>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>IsEmpty(ListItem.Title)</visible>
 		</control>
 
 		<control type="label">
 			<description>Time</description>
-			<left>934</left>
+			<left>840</left>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1397,7 +905,7 @@
 
 		<control type="label">
 			<description>Date</description>
-			<left>1114</left>
+			<left>1029</left>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1441,8 +949,8 @@
 
 		<control type="label">
 			<description>Channel Name</description>
-			<left>200</left>
-			<width>150</width>
+			<left>50</left>
+			<width>158</width>
 			<height>38</height>
 			<include>LiveTVColumnChannelLabel</include>
 			<label>$INFO[ListItem.ChannelName]</label>
@@ -1455,11 +963,22 @@
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Title]</label>
+			<visible>!IsEmpty(ListItem.Title)</visible>
+		</control>
+		
+		<control type="label">
+			<description>Title</description>
+			<left>230</left>
+			<width>553</width>
+			<height>38</height>
+			<include>LiveTVColumnItemLabel</include>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>IsEmpty(ListItem.Title)</visible>
 		</control>
 
 		<control type="label">
 			<description>Time</description>
-			<left>994</left>
+			<left>929</left>
 			<width>126</width>
 			<height>38</height>
 			<align>center</align>
@@ -1469,7 +988,7 @@
 
 		<control type="label">
 			<description>Duration</description>
-			<left>1134</left>
+			<left>1069</left>
 			<width>126</width>
 			<height>38</height>
 			<align>center</align>
@@ -1512,11 +1031,20 @@
 			<colordiffuse>WhiteColor</colordiffuse>
 			<visible>StringCompare(ListItem.Comment,$LOCALIZE[19162])</visible>
 		</control>
+		
+		<control type="label">
+			<description>Channel Number</description>
+			<left>15</left>
+			<width>215</width>
+			<height>38</height>
+			<include>LiveTVColumnNumberLabel</include>
+			<label>$INFO[ListItem.ChannelNumber]</label>
+		</control>
 
 		<control type="label">
-			<description>Channel</description>
-			<left>200</left>
-			<width>150</width>
+			<description>Channel Name</description>
+			<left>50</left>
+			<width>158</width>
 			<height>38</height>
 			<include>LiveTVColumnChannelLabel</include>
 			<label>$INFO[ListItem.ChannelName]</label>
@@ -1533,7 +1061,7 @@
 
 		<control type="label">
 			<description>Time</description>
-			<left>934</left>
+			<left>849</left>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1543,7 +1071,7 @@
 
 		<control type="label">
 			<description>Date</description>
-			<left>1114</left>
+			<left>1029</left>
 			<width>166</width>
 			<height>38</height>
 			<align>center</align>
@@ -1645,5 +1173,4 @@
 			<include>LiveTVColumnFadeAnim</include>
 		</control>
 	</include>
-	<!--//// END COLUMN INFO VIEWS //////////////////////////////////////////////////////////////-->
 </includes>
