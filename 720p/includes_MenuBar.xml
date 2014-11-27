@@ -652,11 +652,13 @@
 			</control>
 			<control type="button" id="5">
 				<description>Enable auto-updates</description>
+				<textoffsetx>10</textoffsetx>
+				<textwidth>165</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24063][/UPPERCASE]</label>
 				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
-			<control type="image" id="113">
+			<control type="image" id="120">
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
@@ -666,7 +668,7 @@
 				<label>[UPPERCASE]$LOCALIZE[25000][/UPPERCASE]</label>
 				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
-			<control type="image" id="114">
+			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
@@ -676,7 +678,17 @@
 				<label>[UPPERCASE]$LOCALIZE[25001][/UPPERCASE]</label>
 				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
-			<control type="image" id="115">
+			<control type="image" id="122">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsVisible(AddonBrowser)</visible>
+			</control>
+			<control type="radiobutton" id="8">
+				<description>Show / Hide broken add-ons</description>
+				<include>MenuBarRadioBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[24999][/UPPERCASE]</label>
+				<visible>Window.IsVisible(AddonBrowser)</visible>
+			</control>
+			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>

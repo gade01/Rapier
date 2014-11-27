@@ -19,7 +19,7 @@ DEVELOPMENT:
 
  SUPPORT: 
 
-http://forum.kodi.org/forumdisplay.php?fid=120
+http://forum.kodi.tv/forumdisplay.php?fid=120
 
 
 ---------- INSTALL --------------------------------------------------------------------------
