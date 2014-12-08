@@ -894,4 +894,25 @@
 			</item>
 		</content>
 	</include>
+	
+	<variable name="MovieGenre">
+		<value condition="SubString(ListItem.Path,videodb://movies/sets,left) + !IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
+		<value condition="SubString(ListItem.Path,videodb://movies/sets,left) + IsEmpty(Window(home).Property(Set.Movies.Genre))">$LOCALIZE[20457]</value>
+		<value>$INFO[ListItem.Genre]</value>
+	</variable>
+	
+	<variable name="MovieYear">
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.Years))">$INFO[Window(home).Property(Set.Movies.Years)]</value>
+		<value>$INFO[ListItem.Year]</value>
+	</variable>
+	
+	<variable name="MovieDuration">
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.Runtime))">$INFO[Window(home).Property(Set.Movies.Runtime)]</value>
+		<value>$INFO[ListItem.Duration]</value>
+	</variable>
+	
+	<variable name="MoviePlot">
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+		<value>$INFO[ListItem.Plot]</value>
+	</variable>
 </includes>
