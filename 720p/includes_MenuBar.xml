@@ -1808,4 +1808,45 @@
 			</control>
 		</control>		
 	</include>
+	
+	<include name="GlobalSearchInfoDialogMenuBar">
+		<control type="grouplist" id="190">
+			<top>0</top>
+			<width>ScreenWidth</width>
+			<height>MenuBarHeight</height>
+			<itemgap>0</itemgap>
+			<align>center</align>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<onup>555</onup>
+			<onleft>190</onleft>
+			<onright>190</onright>
+			<ondown condition="Control.IsVisible(195)">195</ondown>
+			<include>MenuBarBtnOpenCloseAnim</include>
+			<control type="image" id="186">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="191">
+				<description>Close</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31937][/UPPERCASE]</label>
+			</control>
+			<control type="image" id="187">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="192">
+				<include>MenuBarSettingsBtn</include>
+			</control>
+			<control type="image" id="188">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="193">
+				<include>MenuBarSettingsBtn</include>
+			</control>			
+			<control type="image" id="189">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(193)</visible>
+			</control>
+		</control>		
+	</include>
 </includes>
