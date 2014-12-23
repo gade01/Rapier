@@ -206,7 +206,7 @@
 		</control>
 		
 		<control type="group">
-			<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)] | Container.Content(Seasons)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)] | Container.Content(Seasons)</visible>
 			<control type="image">
 				<description>Genre Background</description>
 				<left>221</left>
@@ -394,7 +394,7 @@
 			<bordersize>10</bordersize>
 			<texture background="true">$VAR[PosterThumb]</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
 		</control>
 	</include>
 	

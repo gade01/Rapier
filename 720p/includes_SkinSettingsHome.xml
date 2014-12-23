@@ -451,6 +451,13 @@
 					<include>SettingsHeaderBtn</include>
 					<label>$LOCALIZE[31921]</label>
 				</control>
+				<control type="radiobutton" id="2071">
+					<description>Enable Add-on Shortcut Titles</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31922]</label>
+					<selected>Skin.HasSetting(EnableAddonShortcutTitles)</selected>
+					<onclick>Skin.ToggleSetting(EnableAddonShortcutTitles)</onclick>
+				</control>
 				<control type="radiobutton" id="2114">
 					<description>Expand Video add-on shortcuts</description>
 					<include>SettingsContentRadioBtn</include>

@@ -134,7 +134,7 @@
 	<include name="BackgroundMovies">		
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + IsEmpty(Window(Videos).Property(TvTunesIsAlive))]]">IsMediaPlayingCondition</include>
-			<visible>Container.Content(Movies) | Window.IsActive(script-videoextras-main.xml)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(script-videoextras-main.xml)</visible>
 
 			<control type="multiimage">
 				<description>Custom Background</description>
@@ -288,7 +288,7 @@
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [Player.HasAudio + Window.IsActive(MovieInformation)] | [System.HasAddon(script.tvtunes) + IsEmpty(Window(Videos).Property(TvTunesIsAlive))]]">IsMediaPlayingCondition</include>
 
 			<control type="group">
-				<visible>Container.Content(Movies)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<visible>Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml)
 				| [Control.IsVisible(50) + Skin.HasSetting(ShowMoviesIconFanart)]
 				| [Control.IsVisible(54) + Skin.HasSetting(ShowMoviesThumbnailFanart)]

@@ -649,7 +649,7 @@
 				<ondown>58</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>
-				<visible>Container.Content(Movies)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<left>0</left>
@@ -1149,7 +1149,7 @@
 				<ondown>66</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>		
-				<visible>Container.Content(Movies)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<include condition="Skin.String(MoviesListInfo2Style,1) | Skin.String(MoviesListInfo2Style,3)">MoviesListInfo2ItemLayout</include>
 				<include condition="Skin.String(MoviesListInfo2Style,) | Skin.String(MoviesListInfo2Style,2)">MoviesListInfo2TallStyleItemLayout</include>
 				<include condition="Skin.String(MoviesListInfo2Style,1)">MoviesListInfo2FocusedLayout</include>
@@ -1952,7 +1952,7 @@
 				<ondown>95</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>
-				<visible>Container.Content(Movies)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<left>0</left>
@@ -2371,8 +2371,8 @@
 				</control>
 			</control>
 			
-			<include condition="Skin.String(ThumbsInfoMoviesStyle,1) | Skin.String(ThumbsInfoMoviesStyle,)">MoviesThumbsInfoDefaultStyle</include>
-			<include condition="Skin.String(ThumbsInfoMoviesStyle,2)">MoviesThumbsInfoLogoStyle</include>
+			<include condition="Skin.String(ThumbsInfoMoviesStyle,1) | Skin.String(ThumbsInfoMoviesStyle,) | Substring(Container.FolderPath,videodb://movies/sets/)">MoviesThumbsInfoDefaultStyle</include>
+			<include condition="Skin.String(ThumbsInfoMoviesStyle,2) + !Substring(Container.FolderPath,videodb://movies/sets/)">MoviesThumbsInfoLogoStyle</include>
 			
 			<include>ThumbsInfoViewScrollbar</include>
 			
@@ -2434,7 +2434,7 @@
 			<onright>150</onright>
 			<onup>97</onup>
 			<ondown>97</ondown>
-			<visible>Container.Content(Movies)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			<itemlayout width="129" height="171">
 				<control type="group">
 					<top>-2</top>
@@ -3046,7 +3046,7 @@
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
 			<ondown>150</ondown>
-			<visible>Container.Content(Movies)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			<itemlayout width="150">
 				<control type="image">
 					<description>Cover Case</description>
@@ -3450,7 +3450,7 @@
 			<scrolltime tween="sine" easing="inout">500</scrolltime>
 			<onup>850</onup>
 			<ondown>150</ondown>
-			<visible>Container.Content(Movies)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			<itemlayout width="214">
 				<control type="image">
 					<description>Cover Case</description>
