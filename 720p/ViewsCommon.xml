@@ -2200,7 +2200,7 @@
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<aspectratio>scale</aspectratio>
+				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
 				<description>Dim</description>
@@ -3039,7 +3039,7 @@
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<aspectratio>scale</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>
 			<control type="image">
@@ -4187,7 +4187,7 @@
 				<scrolltime>250</scrolltime>		
 				<itemlayout width="136">
 					<control type="group">
-						<visible>[Container.Content(Movies) + Skin.String(3DWrapMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(3DWrapTVShowsStyle,2)]</visible>
+						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(3DWrapMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(3DWrapTVShowsStyle,2)]</visible>
 						<control type="image">
 							<description>Cover</description>
 							<left>-8</left>
@@ -4253,7 +4253,7 @@
 							<height>26</height>
 							<info>ListItem.Overlay</info>
 							<aspectratio>keep</aspectratio>
-							<visible>[Container.Content(Movies) + !Skin.HasSetting(HideMovies3DWrapOverlay)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)]</visible>
+							<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMovies3DWrapOverlay)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)]</visible>
 						</control>
 						<control type="image">
 							<description>Watched Partial</description>
@@ -4264,7 +4264,7 @@
 							<texture background="true">$VAR[WatchedPartial]</texture>
 							<aspectratio>keep</aspectratio>
 							<animation effect="fade" end="90" condition="true">Conditional</animation>
-							<visible>Container.Content(Movies) + ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMovies3DWrapOverlay)</visible>
+							<visible>[Container.Content(Movies) | Container.Content(Sets)] + ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMovies3DWrapOverlay)</visible>
 						</control>
 						<control type="group">
 							<visible>!Skin.HasSetting(HideTVShows3DWrapOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + Container.Content(TVShows)</visible>
@@ -4308,7 +4308,7 @@
 				</itemlayout>	
 				<focusedlayout width="180">
 					<control type="group">
-						<visible>[Container.Content(Movies) + Skin.String(3DWrapMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(3DWrapTVShowsStyle,2)]</visible>
+						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(3DWrapMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(3DWrapTVShowsStyle,2)]</visible>
 						<control type="image">
 							<description>Cover</description>
 							<left>14</left>
@@ -4372,7 +4372,7 @@
 							<height>26</height>
 							<info>ListItem.Overlay</info>
 							<aspectratio>keep</aspectratio>
-							<visible>[Container.Content(Movies) + !Skin.HasSetting(HideMovies3DWrapOverlay)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)]</visible>
+							<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMovies3DWrapOverlay)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)]</visible>
 							<include>3DViewFocusAnim</include>
 						</control>
 						<control type="image">
@@ -4384,7 +4384,7 @@
 							<texture background="true">$VAR[WatchedPartial]</texture>
 							<aspectratio>keep</aspectratio>
 							<include>3DViewFocusAnim</include>
-							<visible>Container.Content(Movies) + ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMovies3DWrapOverlay)</visible>
+							<visible>[Container.Content(Movies) | Container.Content(Sets)] + ListItem.IsResumable + !StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMovies3DWrapOverlay)</visible>
 						</control>
 						<control type="group">
 							<visible>!StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(HideTVShows3DWrapOverlay) + Container.Content(TVShows)</visible>
@@ -4514,7 +4514,7 @@
 				<control type="group">
 					<visible>![SubString(ListItem.Path,videodb://movies/sets,left) + !System.HasAddon(script.skin.info.service)]</visible>
 					<control type="group">
-						<visible>Container.Content(Movies)</visible>
+						<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 						<control type="grouplist">
 							<description>Director</description>
 							<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
@@ -4772,7 +4772,7 @@
 					<align>justify</align>
 					<label fallback="31203">$VAR[MoviePlot]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">![[Container.Content(Movies) + Skin.HasSetting(DoNotAutoScrollMovies3DWrapPlot)] | [Container.Content(TVShows) + Skin.HasSetting(DoNotAutoScrollTVShows3DWrapPlot)]]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">![[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DoNotAutoScrollMovies3DWrapPlot)] | [Container.Content(TVShows) + Skin.HasSetting(DoNotAutoScrollTVShows3DWrapPlot)]]</autoscroll>
 					<visible>![Container.Content(TVShows) + System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)]</visible>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<include>ControlsOpenCloseAnim</include>
@@ -4797,7 +4797,7 @@
 			</control>
 			
 			<control type="group">
-				<visible>[Container.Content(Movies) + [Skin.String(3DWrapMoviesStyle,) | Skin.String(3DWrapMoviesStyle,1)]] | [Container.Content(TVShows) + [Skin.String(3DWrapTVShowsStyle,) | Skin.String(3DWrapTVShowsStyle,1)]]</visible>
+				<visible>[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(3DWrapMoviesStyle,) | Skin.String(3DWrapMoviesStyle,1)]] | [Container.Content(TVShows) + [Skin.String(3DWrapTVShowsStyle,) | Skin.String(3DWrapTVShowsStyle,1)]]</visible>
 				<control type="group" id="5051">
 					<top>367</top>
 					<camera x="640" y="540" />
@@ -7410,7 +7410,7 @@
 							<height>35</height>
 							<info>ListItem.Overlay</info>
 							<aspectratio>keep</aspectratio>
-							<visible>!IsEmpty(ListItem.Overlay) + [[Container.Content(Movies) + !Skin.HasSetting(HideMovies3DWrapOverlay)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)]]</visible>
+							<visible>!IsEmpty(ListItem.Overlay) + [[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMovies3DWrapOverlay)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)]]</visible>
 						</control>
 						<control type="group">
 							<visible>!StringCompare(ListItem.Property(UnWatchedEpisodes),0) + Container.Content(TVShows)</visible>
