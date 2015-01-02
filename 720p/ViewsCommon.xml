@@ -1509,7 +1509,7 @@
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
@@ -1590,7 +1590,7 @@
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
 			</control>
@@ -1714,7 +1714,7 @@
 				<width>97</width>
 				<height>65</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
@@ -1851,7 +1851,7 @@
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="60" condition="true">Conditional</animation>
@@ -1919,8 +1919,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
@@ -2000,8 +2000,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
@@ -2081,8 +2081,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
@@ -2151,8 +2151,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
@@ -2203,6 +2203,30 @@
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
+				<description>Cover</description>
+				<left>0</left>
+				<top>0</top>
+				<width>73</width>
+				<height>73</height>
+				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
+				<bordersize>5</bordersize>
+				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+			</control>
+			<control type="image">
+				<description>Cover</description>
+				<left>0</left>
+				<top>0</top>
+				<width>73</width>
+				<height>73</height>
+				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
+				<bordersize>5</bordersize>
+				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+			</control>
+			<control type="image">
 				<description>Dim</description>
 				<left>0</left>
 				<top>0</top>
@@ -2221,9 +2245,9 @@
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
+				<visible>IsEmpty(ListItem.Thumb) + ![Container.Content(Genres) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
 			</control>								
 			<control type="label">
@@ -2277,7 +2301,7 @@
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2398,7 +2422,7 @@
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2480,7 +2504,7 @@
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>
@@ -2584,7 +2608,7 @@
 				<width>97</width>
 				<height>65</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2717,7 +2741,7 @@
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2777,8 +2801,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2850,8 +2874,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2923,8 +2947,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -2986,8 +3010,8 @@
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
-				<bordersize>10</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<bordersize>5</bordersize>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
@@ -3043,15 +3067,41 @@
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>
 			<control type="image">
+				<description>Cover</description>
+				<left>0</left>
+				<top>0</top>
+				<width>73</width>
+				<height>73</height>
+				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
+				<bordersize>5</bordersize>
+				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
+				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+			</control>
+			<control type="image">
+				<description>Cover</description>
+				<left>0</left>
+				<top>0</top>
+				<width>73</width>
+				<height>73</height>
+				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
+				<bordersize>5</bordersize>
+				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
+				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+			</control>
+			<control type="image">
 				<description>Default Cover</description>
 				<left>0</left>
 				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>IsEmpty(ListItem.Thumb)</visible>
+				<visible>IsEmpty(ListItem.Thumb) + ![Container.Content(Genres) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>	
 			<control type="group">
