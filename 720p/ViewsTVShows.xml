@@ -308,7 +308,20 @@
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Title)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>	
+			</control>
+			<control type="label">
+				<description>Label</description>
+				<left>5</left>
+				<top>-1</top>
+				<width>400</width>
+				<height>30</height>
+				<font>WideListFont</font>
+				<textcolor>ListColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+				<visible>IsEmpty(ListItem.Title)</visible>
+			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
 				<control type="image">
@@ -458,7 +471,20 @@
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Title)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>	
+			</control>
+			<control type="label">
+				<description>Label</description>
+				<left>5</left>
+				<top>-1</top>
+				<width>400</width>
+				<height>30</height>
+				<font>WideListFont</font>
+				<textcolor>ListColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+				<visible>IsEmpty(ListItem.Title)</visible>
+			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
 				<control type="image">
@@ -593,7 +619,21 @@
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Title)</visible>
 				<include condition="!Skin.HasSetting(DisableListFocusAnim)">WideListViewCoverFocusAnim</include>
-			</control>	
+			</control>
+			<control type="label">
+				<description>Label</description>
+				<left>5</left>
+				<top>-1</top>
+				<width>400</width>
+				<height>30</height>
+				<font>WideListFont</font>
+				<textcolor>SelectedColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<visible>IsEmpty(ListItem.Title)</visible>
+			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
 				<control type="image">
@@ -753,7 +793,21 @@
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Title)</visible>
 				<include condition="!Skin.HasSetting(DisableListFocusAnim)">WideListViewCoverFocusAnim</include>
-			</control>	
+			</control>
+			<control type="label">
+				<description>Label</description>
+				<left>5</left>
+				<top>-1</top>
+				<width>400</width>
+				<height>30</height>
+				<font>WideListFont</font>
+				<textcolor>SelectedColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<visible>!IsEmpty(ListItem.Title)</visible>
+			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
 				<control type="image">
@@ -877,7 +931,20 @@
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>	
+			</control>
+			<control type="label">
+				<description>Label</description>
+				<left>105</left>
+				<top>-1</top>
+				<width>385</width>
+				<height>30</height>
+				<font>WideListFont</font>
+				<textcolor>ListColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+				<visible>IsEmpty(ListItem.Title)</visible>
+			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
 				<control type="image">
@@ -1063,7 +1130,21 @@
 				<aspectratio>keep</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<include condition="!Skin.HasSetting(DisableListFocusAnim)">WideListViewCoverFocusAnim</include>
-			</control>	
+			</control>
+			<control type="label">
+				<description>Label</description>
+				<left>105</left>
+				<top>-1</top>
+				<width>385</width>
+				<height>30</height>
+				<font>WideListFont</font>
+				<textcolor>SelectedColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<visible>IsEmpty(ListItem.Title)</visible>
+			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
 				<control type="image">
@@ -1656,7 +1737,7 @@
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<aligny>center</aligny>				
-						<info>ListItem.Title</info>
+						<label>$VAR[ListTallStyleLabel]</label>
 					</control>
 					<control type="label">
 						<description>Label2</description>
@@ -1788,7 +1869,7 @@
 							<textcolor>SelectedColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<aligny>center</aligny>
-							<info>ListItem.Title</info>
+							<label>$VAR[ListTallStyleLabel]</label>
 							<scroll>true</scroll>
 						</control>
 						<control type="label">
@@ -2919,7 +3000,7 @@
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Title]</label>
+				<label>$VAR[ListTallStyleLabel]</label>
 			</control>
 			<control type="label">
 				<description>Label2</description>
@@ -3052,7 +3133,7 @@
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Title]</label>
+					<label>$VAR[ListTallStyleLabel]</label>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
@@ -4901,4 +4982,469 @@
 			</focusedlayout>
 		</control>
 	</include>
+	
+	<!--//// START WALL VIEW //////////////////////////////////////////////////////////////////////////-->
+	<include name="TVShowsWallView">
+		<control type="group" id="500">	
+		    <defaultcontrol always="true">586</defaultcontrol>
+			<visible>Control.IsVisible(586)</visible>
+			<include>MediaViewOpenCloseAnim</include>
+			
+			<control type="panel" id="586">
+				<viewtype label="31113">Wall</viewtype>
+				<left>-10</left>
+				<top>35</top>
+				<width>1300</width>
+				<height>695</height>
+				<pagecontrol>909</pagecontrol>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="sine" easing="inout">403</scrolltime>
+				<onup>850</onup>
+				<ondown>150</ondown>
+				<visible>Container.Content(TVShows)</visible>
+				<itemlayout width="160" height="225">
+					<control type="image">
+						<description>Default Cover</description>
+						<left>10</left>
+						<top>10</top>
+						<width>160</width>
+						<height>225</height>
+						<bordersize>18</bordersize>
+						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<animation effect="fade" end="60" condition="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<description>Cover</description>
+						<left>10</left>
+						<top>10</top>
+						<width>160</width>
+						<height>225</height>
+						<texture background="true">$VAR[PosterThumb]</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Dim</description>
+						<left>10</left>
+						<top>10</top>
+						<width>160</width>
+						<height>225</height>
+						<texture background="true">dim.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<visible>!Skin.HasSetting(DoNotDimTVShowsWallCover)</visible>
+						<include>CoverDimAnim</include>
+					</control>
+					<control type="image">
+						<description>Overlay</description>
+						<left>133</left>
+						<top>200</top>
+						<width>26</width>
+						<height>26</height>
+						<texture background="true">$INFO[ListItem.Overlay]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!Skin.HasSetting(HideTVShowsWallOverlay)</visible>
+					</control>					
+					<control type="image">
+						<description>Unwatched Overlay</description>
+						<left>133</left>
+						<top>200</top>
+						<width>26</width>
+						<height>26</height>
+						<texture background="true">OverlayClean.png</texture>
+						<aspectratio>keep</aspectratio>
+						<animation effect="fade" end="80" condition="true">Conditional</animation>
+						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+					</control>
+					<control type="label">
+						<description>Unwatched Episodes</description>
+						<top>204</top>
+						<left>133</left>
+						<width>26</width>
+						<font>ListFont3</font>
+						<textcolor>white</textcolor>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+						<animation effect="fade" end="85" condition="true">Conditional</animation>
+						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					</control>
+					<control type="label">
+						<description>Unwatched Episodes</description>
+						<top>204</top>
+						<left>133</left>
+						<width>26</width>
+						<font>ListFont4</font>
+						<textcolor>white</textcolor>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+						<animation effect="fade" end="85" condition="true">Conditional</animation>
+						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					</control>
+				</itemlayout>					
+				<focusedlayout width="160" height="225" condition="Container.Column(0) + Container.Row(0)">
+					<control type="group">
+						<description>Top Left Corner Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewTopLeftCornerFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="!Container.Column(0) + !Container.Column(7) + Container.Row(0)">
+					<control type="group">
+						<description>Top Edge Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewTopEdgeFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="Container.Column(7) + Container.Row(0)">
+					<control type="group">
+						<description>Top Right Corner Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewTopRightCornerFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="Container.Column(0) + Container.Row(1)">
+					<control type="group">
+						<description>Left Edge Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewLeftEdgeFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="!Container.Row(0) + !Container.Row(2) + !Container.Column(0) + !Container.Column(7)">
+					<control type="group">
+						<description>Mid Row Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewMidRowFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="Container.Column(7) + Container.Row(1)">
+					<control type="group">
+						<description>Right Edge Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewRightEdgeFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="Container.Column(0) + Container.Row(2)">
+					<control type="group">
+						<description>Bottom Left Corner Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewBottomLeftCornerFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="!Container.Column(0) + !Container.Column(7) + Container.Row(2)">
+					<control type="group">
+						<description>Bottom Edge Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewBottomEdgeFocusAnim</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="160" height="225" condition="Container.Column(7) + Container.Row(2)">
+					<control type="group">
+						<description>Bottom Right Corner Cover</description>
+						<include>DVDWallCoverImage</include>
+						<include>DVDWallOverlayImage</include>
+						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewBottomRightCornerFocusAnim</include>
+					</control>
+				</focusedlayout>
+			</control>
+			
+			<control type="group">
+				<visible>Control.HasFocus(586) + System.IdleTime(1) + Skin.HasSetting(HideTVShowsWallExtendedInfoPanel) + !IsEmpty(ListItem.Title)</visible>
+				<left>-3</left>
+				<top>43</top>
+				
+				<animation effect="slide" end="159,0" condition="Container(586).Row(0) + Container(586).Column(5)">Conditional</animation>
+				<animation effect="slide" end="319,0" condition="Container(586).Row(0) + [Container(586).Column(0) | Container(586).Column(6)]">Conditional</animation>
+				<animation effect="slide" end="479,0" condition="Container(586).Row(0) + [Container(586).Column(1) | Container(586).Column(7)]">Conditional</animation>
+				<animation effect="slide" end="639,0" condition="Container(586).Row(0) + Container(586).Column(2)">Conditional</animation>
+				<animation effect="slide" end="799,0" condition="Container(586).Row(0) + Container(586).Column(3)">Conditional</animation>
+				<animation effect="slide" end="159,177" condition="Container(586).Row(1) + Container(586).Column(5)">Conditional</animation>
+				<animation effect="slide" end="319,177" condition="Container(586).Row(1) + [Container(586).Column(0) | Container(586).Column(6)]">Conditional</animation>
+				<animation effect="slide" end="479,177" condition="Container(586).Row(1) + [Container(586).Column(1) | Container(586).Column(7)]">Conditional</animation>
+				<animation effect="slide" end="639,177" condition="Container(586).Row(1) + Container(586).Column(2)">Conditional</animation>
+				<animation effect="slide" end="799,177" condition="Container(586).Row(1) + Container(586).Column(3)">Conditional</animation>
+				<animation effect="slide" end="0,177" condition="Container(586).Row(1) + Container(586).Column(4)">Conditional</animation>
+				<animation effect="slide" end="159,347" condition="Container(586).Row(2) + Container(586).Column(5)">Conditional</animation>
+				<animation effect="slide" end="319,347" condition="Container(586).Row(2) + [Container(586).Column(0) | Container(586).Column(6)]">Conditional</animation>
+				<animation effect="slide" end="479,347" condition="Container(586).Row(2) + [Container(586).Column(1) | Container(586).Column(7)]">Conditional</animation>
+				<animation effect="slide" end="639,347" condition="Container(586).Row(2) + Container(586).Column(2)">Conditional</animation>
+				<animation effect="slide" end="799,347" condition="Container(586).Row(2) + Container(586).Column(3)">Conditional</animation>
+				<animation effect="slide" end="0,347" condition="Container(586).Row(2) + Container(586).Column(4)">Conditional</animation>
+				
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="300"/>
+					<effect type="zoom" end="100" start="50" time="400" tween="back" easing="out" center="243,166"/>
+				</animation>
+				
+				<control type="image">
+					<width>487</width>
+					<height>333</height>
+					<texture border="8">panels/panel.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				
+				<control type="image">
+					<description>Content Background</description>
+					<left>8</left>
+					<top>8</top>
+					<width>471</width>
+					<height>317</height>
+					<texture border="4">panels/panel-content-border2.png</texture>
+					<include>ListInfoViewContentBackgroundFadeAnim</include>
+				</control>
+				
+				<control type="image">
+					<left>13</left>
+					<top>72</top>
+					<width>461</width>
+					<height>25</height>
+					<texture border="4">panels/panel3.png</texture>
+					<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
+				</control>
+				
+				<control type="image">
+					<left>13</left>
+					<top>101</top>
+					<width>461</width>
+					<height>149</height>
+					<texture border="4">panels/panel3.png</texture>
+					<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
+				</control>
+				
+				<control type="image">
+					<left>13</left>
+					<top>255</top>
+					<width>461</width>
+					<height>25</height>
+					<texture border="4">panels/panel3.png</texture>
+					<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
+				</control>
+				
+				<control type="image">
+					<left>13</left>
+					<top>11</top>
+					<width>461</width>
+					<height>58</height>
+					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>!IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableTVShowsLogo)</visible>
+				</control>
+				
+				<control type="label">
+					<description>Title</description>
+					<top>10</top>
+					<left>13</left>
+					<width>461</width>
+					<height>58</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>KaraokeFont</font>
+					<textcolor>MediaInfoTitleColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+					<scroll>true</scroll>
+					<visible>IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableTVShowsLogo)</visible>
+				</control>
+				
+				<control type="label">
+					<description>Genre</description>
+					<left>18</left>
+					<top>72</top>
+					<width>451</width>
+					<height>25</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>MediaInfoFont2</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<scroll>true</scroll>
+				</control>
+				
+				<control type="textbox">
+					<description>Plot</description>
+					<left>18</left>
+					<top>106</top>
+					<width>451</width>
+					<height>139</height>
+					<font>SettingsContentFont2</font>
+					<textcolor>MediaInfoColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<align>justify</align>
+					<label fallback="31203">$INFO[ListItem.Plot]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
+					<include>ControlsOpenCloseAnim</include>
+				</control>
+				
+				<control type="label">
+					<description>Media Info</description>
+					<left>14</left>
+					<top>255</top>
+					<width>459</width>
+					<height>25</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<include>ListInfoViewCatLabel</include>
+					<label>$LOCALIZE[20360]:$INFO[ListItem.Property(TotalSeasons),[COLOR=MediaInfoItemColor2] ,  &#x2022;  [/COLOR]]$LOCALIZE[33054]:$INFO[ListItem.Episode,[COLOR=MediaInfoItemColor2] ,  &#x2022;  [/COLOR]]$LOCALIZE[345]:$INFO[ListItem.Year,[COLOR=MediaInfoItemColor2] ,  &#x2022;  [/COLOR]]$LOCALIZE[563]:$INFO[ListItem.Rating,[COLOR=MediaInfoItemColor2] ,[/COLOR]]</label>
+				</control>
+				
+				<control type="grouplist">
+					<description>Media Flags Area</description>
+					<visible>!Skin.HasSetting(DisableMediaFlags)</visible>
+					<left>13</left>
+					<top>285</top>
+					<width>461</width>
+					<height>35</height>
+					<itemgap>5</itemgap>
+					<align>center</align>
+					<usecontrolcoords>true</usecontrolcoords>
+					<orientation>horizontal</orientation>
+					<include>MediaFlagFadeAnim</include>
+					<control type="group">
+						<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredStatusMediaFlag)</visible>
+						<width>104</width>
+						<control type="image">
+							<width>104</width>
+							<height>35</height>
+							<texture border="6">flagging/$VAR[MediaFlagTheme]/flag-big-bg.png</texture>
+							<animation effect="fade" time="200">VisibleChange</animation>
+							<visible>!IsEmpty(Window(Home).Property(NextAired.Status))</visible>
+						</control>								
+						<control type="label">
+							<description>Next Aired Status</description>
+							<left>2</left>
+							<width>100</width>
+							<height>35</height>
+							<font>NextAiredTimeFont</font>
+							<textcolor>SelectedColor</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+							<visible>!StringCompare(Window(Home).Property(NextAired.StatusID),1)</visible>
+						</control>						
+						<control type="label">
+							<description>Next Aired Status Cancelled/Ended</description>
+							<left>2</left>
+							<width>100</width>
+							<height>35</height>
+							<font>NextAiredTimeFont</font>
+							<textcolor>SelectedColor</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$LOCALIZE[31965]</label>
+							<visible>StringCompare(Window(Home).Property(NextAired.StatusID),1)</visible>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!IsEmpty(ListItem.Studio)</visible>	
+						<width>58</width>						
+						<control type="image">
+							<width>58</width>
+							<height>35</height>
+							<texture border="6">flagging/$VAR[MediaFlagTheme]/flag-bg.png</texture>
+						</control>								
+						<control type="image">
+							<description>Studio Flag</description>
+							<width>58</width>
+							<height>35</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>studios/$INFO[ListItem.Studio].png</texture>
+						</control>
+					</control>
+				</control>
+			</control>			
+			
+			<include>WallViewScrollbar</include>
+			
+			<control type="group">
+				<top>SortLetterOffsetY</top>
+				<include>SortLetterNotification</include>
+			</control>
+			
+			<control type="group" id="659">
+				<description>Bottom Bar Area</description>
+				<top>BottomPaneOffsetY</top>
+				<visible>Control.HasFocus(586) + System.IdleTime(2) + !Skin.HasSetting(HideTVShowsWallInfoPanel)</visible>
+				<animation effect="slide" start="0,65" time="300">Visible</animation>
+				<include>InfoPaneImage</include>
+				<include>InfoPaneMediaDetails</include>
+				<include>BottomPaneOpenCloseAnim</include>
+				
+				<control type="label">
+					<include>InfoPaneItemTitle</include>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<visible>IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableTVShowsLogo)</visible>
+				</control>
+				
+				<control type="group">
+					<animation effect="slide" end="0,-6" condition="true">Conditional</animation>
+					<include condition="!Skin.HasSetting(DisableTVShowsLogo)">InfoPaneClearLogo</include>
+				</control>
+				
+				<control type="group">
+					<visible>!Skin.HasSetting(ShowTVShowsWallRating)</visible>
+					<animation effect="slide" end="0,12" time="100" condition="!IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableTVShowsLogo)">Conditional</animation>
+						
+					<control type="label">
+						<include>InfoPaneItemTitle2</include>
+						<label>$INFO[ListItem.Genre]</label>
+						<visible>Window.IsActive(Videos)</visible>
+					</control>
+					
+					<control type="label">
+						<include>InfoPaneItemTitle2</include>
+						<label>$INFO[ListItem.Label2]</label>
+						<visible>Window.IsActive(Videos,Files) + !Container.Content(TVShows)</visible>
+					</control>
+				</control>
+				
+				<control type="group">
+					<visible>Skin.HasSetting(ShowTVShowsWallRating)</visible>
+					<animation effect="slide" end="0,12" time="100" condition="!IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableTVShowsLogo)">Conditional</animation>
+					
+					<control type="label">
+						<include>InfoPaneItemTitle2</include>
+						<label>$INFO[ListItem.Rating]</label>
+						<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+					</control>
+					
+					<control type="image">
+						<left>590</left>
+						<top>24</top>
+						<width>100</width>
+						<height>16</height>
+						<texture background="true">$INFO[ListItem.StarRating]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + Skin.HasSetting(UseHalfStarsTVShows)</visible>
+						<include>MediaFlagFadeAnim</include>
+					</control>
+					
+					<control type="image">
+						<left>590</left>
+						<top>24</top>
+						<width>100</width>
+						<height>16</height>
+						<texture background="true">$VAR[HalfStarRating]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !Skin.HasSetting(UseHalfStarsTVShows)</visible>
+						<include>MediaFlagFadeAnim</include>
+					</control>
+				</control>
+			</control>	
+			
+			<include>ViewsDialogPopUpScreenDim</include>
+		</control>
+	</include>
+	<!--//// END WALL VIEW ////////////////////////////////////////////////////////////////////////////-->
 </includes>
