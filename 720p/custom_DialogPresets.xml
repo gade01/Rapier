@@ -335,6 +335,14 @@
 							<onclick>Dialog.Close(3006)</onclick>
 							<visible>Container(450).HasFocus(1)</visible>
 						</item>
+						<item id="89">
+							<description>Select Music Add-on</description>
+							<label>$LOCALIZE[31929]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.addon.audio)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
+						</item>
 
 						<item id="18">
 							<description>TV Channels</description>
@@ -427,6 +435,14 @@
 							<label>$LOCALIZE[24001]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Videos,Addons,Return))</onclick>
 							<onclick>Dialog.Close(3006)</onclick>
+							<visible>Container(450).HasFocus(3)</visible>
+						</item>
+						<item id="90">
+							<description>Select Video Add-on</description>
+							<label>$LOCALIZE[31929]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.addon.video)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
 							<visible>Container(450).HasFocus(3)</visible>
 						</item>
 
@@ -622,6 +638,14 @@
 							<onclick>Dialog.Close(3006)</onclick>
 							<visible>Container(450).HasFocus(7)</visible>
 						</item>
+						<item id="91">
+							<description>Select Program Add-on</description>
+							<label>$LOCALIZE[31929]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.python.pluginsource)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
+							<visible>Container(450).HasFocus(7)</visible>
+						</item>
 
 						<item id="58">
 							<description>Pictures</description>
@@ -642,6 +666,14 @@
 							<label>$LOCALIZE[24001]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Pictures,Addons,Return))</onclick>
 							<onclick>Dialog.Close(3006)</onclick>
+							<visible>Container(450).HasFocus(8)</visible>
+						</item>
+						<item id="92">
+							<description>Select Picture Add-on</description>
+							<label>$LOCALIZE[31929]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.addon.image)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
 							<visible>Container(450).HasFocus(8)</visible>
 						</item>
 
