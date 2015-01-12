@@ -267,7 +267,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom1-text-nofocus.png">$INFO[Skin.String(Custom1NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom1BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom1BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom1ParamType)">$INFO[Skin.String(Custom1BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom1ParamType)">$INFO[Skin.String(CustomCategoryFavourite.1.Path)]</onclick>
 		</item>
 	</include>
 
@@ -276,7 +277,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom2-text-nofocus.png">$INFO[Skin.String(Custom2NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom2BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom2BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom2ParamType)">$INFO[Skin.String(Custom2BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom2ParamType)">$INFO[Skin.String(CustomCategoryFavourite.2.Path)]</onclick>
 		</item>
 	</include>
 
@@ -285,7 +287,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom3-text-nofocus.png">$INFO[Skin.String(Custom3NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom3BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom3BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom3ParamType)">$INFO[Skin.String(Custom3BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom3ParamType)">$INFO[Skin.String(CustomCategoryFavourite.3.Path)]</onclick>
 		</item>
 	</include>
 
@@ -294,7 +297,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom4-text-nofocus.png">$INFO[Skin.String(Custom4NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom4BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom4BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom4ParamType)">$INFO[Skin.String(Custom4BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom4ParamType)">$INFO[Skin.String(CustomCategoryFavourite.4.Path)]</onclick>
 		</item>
 	</include>
 
@@ -303,7 +307,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom5-text-nofocus.png">$INFO[Skin.String(Custom5NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom5BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom5BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom5ParamType)">$INFO[Skin.String(Custom5BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom5ParamType)">$INFO[Skin.String(CustomCategoryFavourite.5.Path)]</onclick>
 		</item>
 	</include>
 
@@ -312,7 +317,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom6-text-nofocus.png">$INFO[Skin.String(Custom6NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom6BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom6BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom6ParamType)">$INFO[Skin.String(Custom6BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom6ParamType)">$INFO[Skin.String(CustomCategoryFavourite.6.Path)]</onclick>
 		</item>
 	</include>
 
@@ -321,7 +327,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom7-text-nofocus.png">$INFO[Skin.String(Custom7NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom7BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom7BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom7ParamType)">$INFO[Skin.String(Custom7BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom7ParamType)">$INFO[Skin.String(CustomCategoryFavourite.7.Path)]</onclick>
 		</item>
 	</include>
 
@@ -330,7 +337,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom8-text-nofocus.png">$INFO[Skin.String(Custom8NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom8BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom8BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom8ParamType)">$INFO[Skin.String(Custom8BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom8ParamType)">$INFO[Skin.String(CustomCategoryFavourite.8.Path)]</onclick>
 		</item>
 	</include>
 
@@ -339,7 +347,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom9-text-nofocus.png">$INFO[Skin.String(Custom9NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom9BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom9BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom9ParamType)">$INFO[Skin.String(Custom9BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom9ParamType)">$INFO[Skin.String(CustomCategoryFavourite.9.Path)]</onclick>
 		</item>
 	</include>
 
@@ -348,7 +357,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom10-text-nofocus.png">$INFO[Skin.String(Custom10NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom10BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom10BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom10ParamType)">$INFO[Skin.String(Custom10BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom10ParamType)">$INFO[Skin.String(CustomCategoryFavourite.10.Path)]</onclick>
 		</item>
 	</include>
 
@@ -357,7 +367,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom11-text-nofocus.png">$INFO[Skin.String(Custom11NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom11BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom11BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom11ParamType)">$INFO[Skin.String(Custom11BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom11ParamType)">$INFO[Skin.String(CustomCategoryFavourite.11.Path)]</onclick>
 		</item>
 	</include>
 
@@ -366,7 +377,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom12-text-nofocus.png">$INFO[Skin.String(Custom12NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom12BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom12BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom12ParamType)">$INFO[Skin.String(Custom12BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom12ParamType)">$INFO[Skin.String(CustomCategoryFavourite.12.Path)]</onclick>
 		</item>
 	</include>
 
@@ -375,7 +387,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom13-text-nofocus.png">$INFO[Skin.String(Custom13NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom13BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom13BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom13ParamType)">$INFO[Skin.String(Custom13BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom13ParamType)">$INFO[Skin.String(CustomCategoryFavourite.13.Path)]</onclick>
 		</item>
 	</include>
 
@@ -384,7 +397,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom14-text-nofocus.png">$INFO[Skin.String(Custom14NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom14BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom14BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom14ParamType)">$INFO[Skin.String(Custom14BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom14ParamType)">$INFO[Skin.String(CustomCategoryFavourite.14.Path)]</onclick>
 		</item>
 	</include>
 
@@ -393,7 +407,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom15-text-nofocus.png">$INFO[Skin.String(Custom15NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom15BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom15BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom15ParamType)">$INFO[Skin.String(Custom15BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom15ParamType)">$INFO[Skin.String(CustomCategoryFavourite.15.Path)]</onclick>
 		</item>
 	</include>
 
@@ -402,7 +417,8 @@
 			<label>-</label>
 			<icon fallback="homecategories/custom16-text-nofocus.png">$INFO[Skin.String(Custom16NoFocusImagePath)]</icon>
 			<thumb>$INFO[Skin.String(Custom16BackgroundImagePath)]</thumb>
-			<onclick>$INFO[Skin.String(Custom16BtnParam)]</onclick>
+			<onclick condition="Skin.HasSetting(Custom16ParamType)">$INFO[Skin.String(Custom16BtnParam)]</onclick>
+			<onclick condition="!Skin.HasSetting(Custom16ParamType)">$INFO[Skin.String(CustomCategoryFavourite.16.Path)]</onclick>
 		</item>
 	</include>
 
@@ -721,33 +737,27 @@
 				<itemgap>0</itemgap>
 				<preloaditems>2</preloaditems>
 				<onup condition="Control.IsVisible(110)">110</onup>
-				<onup condition="!Control.IsVisible(110) + [Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">556</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(3) + Control.IsVisible(6888)]">6888</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(4) + Control.IsVisible(6889)]">6889</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(1) + Control.IsVisible(6890)]">6890</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(7) + Control.IsVisible(6894)]">6894</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(8) + Control.IsVisible(6896)]">6896</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(9) + Control.IsVisible(6898)]">6898</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(10) + Control.IsVisible(6900)]">6900</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(11) + Control.IsVisible(6902)]">6902</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(12) + Control.IsVisible(6904)]">6904</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(13) + Control.IsVisible(6906)]">6906</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(14) + Control.IsVisible(6908)]">6908</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(17) + Control.IsVisible(6910)]">6910</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(18) + Control.IsVisible(6912)]">6912</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(19) + Control.IsVisible(6914)]">6914</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(20) + Control.IsVisible(6916)]">6916</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(21) + Control.IsVisible(6918)]">6918</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(22) + Control.IsVisible(6920)]">6920</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(23) + Control.IsVisible(6922)]">6922</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + [Container(850).HasFocus(24) + Control.IsVisible(6924)]">6924</onup>
-				<onup condition="!Control.IsVisible(110) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + 
-				![[Container(850).HasFocus(3) + Control.IsVisible(6888)] | [Container(850).HasFocus(4) + Control.IsVisible(6889)] | [Container(850).HasFocus(1) + Control.IsVisible(6890)] | [Container(850).HasFocus(7) + Control.IsVisible(6894)] |
-				[Container(850).HasFocus(8) + Control.IsVisible(6896)] | [Container(850).HasFocus(9) + Control.IsVisible(6898)] | [Container(850).HasFocus(10) + Control.IsVisible(6900)] |
-				[Container(850).HasFocus(11) + Control.IsVisible(6902)] | [Container(850).HasFocus(12) + Control.IsVisible(6904)] | [Container(850).HasFocus(13) + Control.IsVisible(6906)] |
-				[Container(850).HasFocus(14) + Control.IsVisible(6908)] | [Container(850).HasFocus(17) + Control.IsVisible(6910)] | [Container(850).HasFocus(18) + Control.IsVisible(6912)] |
-				[Container(850).HasFocus(19) + Control.IsVisible(6914)] | [Container(850).HasFocus(20) + Control.IsVisible(6916)] | [Container(850).HasFocus(21) + Control.IsVisible(6918)] |
-				[Container(850).HasFocus(22) + Control.IsVisible(6920)] | [Container(850).HasFocus(23) + Control.IsVisible(6922)] | [Container(850).HasFocus(24) + Control.IsVisible(6924)]]">555</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Container(850).HasFocus(3) + Control.IsVisible(6888)">6888</onup>
+				<onup condition="Container(850).HasFocus(4) + Control.IsVisible(6889)">6889</onup>
+				<onup condition="Container(850).HasFocus(1) + Control.IsVisible(6890)">6890</onup>
+				<onup condition="Container(850).HasFocus(7) + Control.IsVisible(6894)">6894</onup>
+				<onup condition="Container(850).HasFocus(8) + Control.IsVisible(6896)">6896</onup>
+				<onup condition="Container(850).HasFocus(9) + Control.IsVisible(6898)">6898</onup>
+				<onup condition="Container(850).HasFocus(10) + Control.IsVisible(6900)">6900</onup>
+				<onup condition="Container(850).HasFocus(11) + Control.IsVisible(6902)">6902</onup>
+				<onup condition="Container(850).HasFocus(12) + Control.IsVisible(6904)">6904</onup>
+				<onup condition="Container(850).HasFocus(13) + Control.IsVisible(6906)">6906</onup>
+				<onup condition="Container(850).HasFocus(14) + Control.IsVisible(6908)">6908</onup>
+				<onup condition="Container(850).HasFocus(17) + Control.IsVisible(6910)">6910</onup>
+				<onup condition="Container(850).HasFocus(18) + Control.IsVisible(6912)">6912</onup>
+				<onup condition="Container(850).HasFocus(19) + Control.IsVisible(6914)">6914</onup>
+				<onup condition="Container(850).HasFocus(20) + Control.IsVisible(6916)">6916</onup>
+				<onup condition="Container(850).HasFocus(21) + Control.IsVisible(6918)">6918</onup>
+				<onup condition="Container(850).HasFocus(22) + Control.IsVisible(6920)">6920</onup>
+				<onup condition="Container(850).HasFocus(23) + Control.IsVisible(6922)">6922</onup>
+				<onup condition="Container(850).HasFocus(24) + Control.IsVisible(6924)">6924</onup>
+				<onup>555</onup>
 				<ondown>noop</ondown>
 				<include>HomeMenuOpenCloseAnim</include>	
 				<include>HomeMenuFocusAnim</include>
@@ -1810,7 +1820,8 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn1Type,Favourite) | Skin.String(MusicSubMenuBtn1Type,)]">$INFO[Skin.String(MusicSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn1Type,Favourite) | Skin.String(MusicSubMenuBtn1Type,)">$INFO[Skin.String(MusicSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn1) + !IsEmpty(Skin.String(MusicSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
@@ -1822,7 +1833,8 @@
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn2Type,Favourite) | Skin.String(MusicSubMenuBtn2Type,)]">$INFO[Skin.String(MusicSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn2Type,Favourite) | Skin.String(MusicSubMenuBtn2Type,)">$INFO[Skin.String(MusicSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn2) + !IsEmpty(Skin.String(MusicSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
@@ -1834,7 +1846,8 @@
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn3Type,Favourite) | Skin.String(MusicSubMenuBtn3Type,)]">$INFO[Skin.String(MusicSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn3Type,Favourite) | Skin.String(MusicSubMenuBtn3Type,)">$INFO[Skin.String(MusicSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn3) + !IsEmpty(Skin.String(MusicSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
@@ -1846,7 +1859,8 @@
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn4Type,Favourite) | Skin.String(MusicSubMenuBtn4Type,)]">$INFO[Skin.String(MusicSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn4Type,Favourite) | Skin.String(MusicSubMenuBtn4Type,)">$INFO[Skin.String(MusicSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn4) + !IsEmpty(Skin.String(MusicSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
@@ -1858,7 +1872,8 @@
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn5Type,Favourite) | Skin.String(MusicSubMenuBtn5Type,)]">$INFO[Skin.String(MusicSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn5Type,Favourite) | Skin.String(MusicSubMenuBtn5Type,)">$INFO[Skin.String(MusicSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn5) + !IsEmpty(Skin.String(MusicSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
@@ -1870,7 +1885,8 @@
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn6Type,Favourite) | Skin.String(MusicSubMenuBtn6Type,)]">$INFO[Skin.String(MusicSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn6Type,Favourite) | Skin.String(MusicSubMenuBtn6Type,)">$INFO[Skin.String(MusicSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn6) + !IsEmpty(Skin.String(MusicSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
@@ -1882,7 +1898,8 @@
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MusicSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(MusicSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(MusicSubMenuBtn7Type,Favourite) | Skin.String(MusicSubMenuBtn7Type,)]">$INFO[Skin.String(MusicSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(MusicSubMenuBtn7Type,Favourite) | Skin.String(MusicSubMenuBtn7Type,)">$INFO[Skin.String(MusicSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn7) + !IsEmpty(Skin.String(MusicSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -1911,7 +1928,8 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn1Type,Favourite) | Skin.String(VideosSubMenuBtn1Type,)]">$INFO[Skin.String(VideosSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn1Type,Favourite) | Skin.String(VideosSubMenuBtn1Type,)">$INFO[Skin.String(VideosSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn1) + !IsEmpty(Skin.String(VideosSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
@@ -1923,7 +1941,8 @@
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn2Type,Favourite) | Skin.String(VideosSubMenuBtn2Type,)]">$INFO[Skin.String(VideosSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn2Type,Favourite) | Skin.String(VideosSubMenuBtn2Type,)">$INFO[Skin.String(VideosSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn2) + !IsEmpty(Skin.String(VideosSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
@@ -1935,7 +1954,8 @@
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn3Type,Favourite) | Skin.String(VideosSubMenuBtn3Type,)]">$INFO[Skin.String(VideosSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn3Type,Favourite) | Skin.String(VideosSubMenuBtn3Type,)">$INFO[Skin.String(VideosSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn3) + !IsEmpty(Skin.String(VideosSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
@@ -1947,7 +1967,8 @@
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn4Type,Favourite) | Skin.String(VideosSubMenuBtn4Type,)]">$INFO[Skin.String(VideosSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn4Type,Favourite) | Skin.String(VideosSubMenuBtn4Type,)">$INFO[Skin.String(VideosSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn4) + !IsEmpty(Skin.String(VideosSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
@@ -1959,7 +1980,8 @@
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn5Type,Favourite) | Skin.String(VideosSubMenuBtn5Type,)]">$INFO[Skin.String(VideosSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn5Type,Favourite) | Skin.String(VideosSubMenuBtn5Type,)">$INFO[Skin.String(VideosSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn5) + !IsEmpty(Skin.String(VideosSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
@@ -1971,7 +1993,8 @@
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn6Type,Favourite) | Skin.String(VideosSubMenuBtn6Type,)]">$INFO[Skin.String(VideosSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn6Type,Favourite) | Skin.String(VideosSubMenuBtn6Type,)">$INFO[Skin.String(VideosSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn6) + !IsEmpty(Skin.String(VideosSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
@@ -1983,7 +2006,8 @@
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(VideosSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(VideosSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(VideosSubMenuBtn7Type,Favourite) | Skin.String(VideosSubMenuBtn7Type,)]">$INFO[Skin.String(VideosSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(VideosSubMenuBtn7Type,Favourite) | Skin.String(VideosSubMenuBtn7Type,)">$INFO[Skin.String(VideosSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn7) + !IsEmpty(Skin.String(VideosSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2013,7 +2037,8 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn1Type,Favourite) | Skin.String(MoviesSubMenuBtn1Type,)]">$INFO[Skin.String(MoviesSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn1Type,Favourite) | Skin.String(MoviesSubMenuBtn1Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn1) + !IsEmpty(Skin.String(MoviesSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
@@ -2025,7 +2050,8 @@
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn2Type,Favourite) | Skin.String(MoviesSubMenuBtn2Type,)]">$INFO[Skin.String(MoviesSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn2Type,Favourite) | Skin.String(MoviesSubMenuBtn2Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn2) + !IsEmpty(Skin.String(MoviesSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
@@ -2037,7 +2063,8 @@
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn3Type,Favourite) | Skin.String(MoviesSubMenuBtn3Type,)]">$INFO[Skin.String(MoviesSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn3Type,Favourite) | Skin.String(MoviesSubMenuBtn3Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn3) + !IsEmpty(Skin.String(MoviesSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
@@ -2049,7 +2076,8 @@
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn4Type,Favourite) | Skin.String(MoviesSubMenuBtn4Type,)]">$INFO[Skin.String(MoviesSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn4Type,Favourite) | Skin.String(MoviesSubMenuBtn4Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn4) + !IsEmpty(Skin.String(MoviesSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
@@ -2061,7 +2089,8 @@
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn5Type,Favourite) | Skin.String(MoviesSubMenuBtn5Type,)]">$INFO[Skin.String(MoviesSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn5Type,Favourite) | Skin.String(MoviesSubMenuBtn5Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn5) + !IsEmpty(Skin.String(MoviesSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
@@ -2073,7 +2102,8 @@
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn6Type,Favourite) | Skin.String(MoviesSubMenuBtn6Type,)]">$INFO[Skin.String(MoviesSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn6Type,Favourite) | Skin.String(MoviesSubMenuBtn6Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn6) + !IsEmpty(Skin.String(MoviesSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
@@ -2085,7 +2115,8 @@
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(MoviesSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(MoviesSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(MoviesSubMenuBtn7Type,Favourite) | Skin.String(MoviesSubMenuBtn7Type,)]">$INFO[Skin.String(MoviesSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(MoviesSubMenuBtn7Type,Favourite) | Skin.String(MoviesSubMenuBtn7Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn7) + !IsEmpty(Skin.String(MoviesSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2115,7 +2146,8 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn1Type,Favourite) | Skin.String(TVShowsSubMenuBtn1Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn1Type,Favourite) | Skin.String(TVShowsSubMenuBtn1Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn1) + !IsEmpty(Skin.String(TVShowsSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
@@ -2127,7 +2159,8 @@
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn2Type,Favourite) | Skin.String(TVShowsSubMenuBtn2Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn2Type,Favourite) | Skin.String(TVShowsSubMenuBtn2Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn2) + !IsEmpty(Skin.String(TVShowsSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
@@ -2139,7 +2172,8 @@
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn3Type,Favourite) | Skin.String(TVShowsSubMenuBtn3Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn3Type,Favourite) | Skin.String(TVShowsSubMenuBtn3Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn3) + !IsEmpty(Skin.String(TVShowsSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
@@ -2151,7 +2185,8 @@
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn4Type,Favourite) | Skin.String(TVShowsSubMenuBtn4Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn4Type,Favourite) | Skin.String(TVShowsSubMenuBtn4Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn4) + !IsEmpty(Skin.String(TVShowsSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
@@ -2163,7 +2198,8 @@
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn5Type,Favourite) | Skin.String(TVShowsSubMenuBtn5Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn5Type,Favourite) | Skin.String(TVShowsSubMenuBtn5Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn5) + !IsEmpty(Skin.String(TVShowsSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
@@ -2175,13 +2211,15 @@
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn6Type,Favourite) | Skin.String(TVShowsSubMenuBtn6Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn6Type,Favourite) | Skin.String(TVShowsSubMenuBtn6Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn6) + !IsEmpty(Skin.String(TVShowsSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(TVShowsSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(TVShowsSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(TVShowsSubMenuBtn7Type,Favourite) | Skin.String(TVShowsSubMenuBtn7Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(TVShowsSubMenuBtn7Type,Favourite) | Skin.String(TVShowsSubMenuBtn7Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn7) + !IsEmpty(Skin.String(TVShowsSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2209,7 +2247,8 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn1Type,Favourite) | Skin.String(PVRSubMenuBtn1Type,)]">$INFO[Skin.String(PVRSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn1Type,Favourite) | Skin.String(PVRSubMenuBtn1Type,)">$INFO[Skin.String(PVRSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn1) + !IsEmpty(Skin.String(PVRSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
@@ -2221,7 +2260,8 @@
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn2Type,Favourite) | Skin.String(PVRSubMenuBtn2Type,)]">$INFO[Skin.String(PVRSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn2Type,Favourite) | Skin.String(PVRSubMenuBtn2Type,)">$INFO[Skin.String(PVRSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn2) + !IsEmpty(Skin.String(PVRSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
@@ -2233,7 +2273,8 @@
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn3Type,Favourite) | Skin.String(PVRSubMenuBtn3Type,)]">$INFO[Skin.String(PVRSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn3Type,Favourite) | Skin.String(PVRSubMenuBtn3Type,)">$INFO[Skin.String(PVRSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn3) + !IsEmpty(Skin.String(PVRSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
@@ -2245,7 +2286,8 @@
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn4Type,Favourite) | Skin.String(PVRSubMenuBtn4Type,)]">$INFO[Skin.String(PVRSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn4Type,Favourite) | Skin.String(PVRSubMenuBtn4Type,)">$INFO[Skin.String(PVRSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn4) + !IsEmpty(Skin.String(PVRSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
@@ -2257,7 +2299,8 @@
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn5Type,Favourite) | Skin.String(PVRSubMenuBtn5Type,)]">$INFO[Skin.String(PVRSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn5Type,Favourite) | Skin.String(PVRSubMenuBtn5Type,)">$INFO[Skin.String(PVRSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn5) + !IsEmpty(Skin.String(PVRSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
@@ -2269,13 +2312,15 @@
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn6Type,Favourite) | Skin.String(PVRSubMenuBtn6Type,)]">$INFO[Skin.String(PVRSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn6Type,Favourite) | Skin.String(PVRSubMenuBtn6Type,)">$INFO[Skin.String(PVRSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn6) + !IsEmpty(Skin.String(PVRSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PVRSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(PVRSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(PVRSubMenuBtn7Type,Favourite) | Skin.String(PVRSubMenuBtn7Type,)]">$INFO[Skin.String(PVRSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(PVRSubMenuBtn7Type,Favourite) | Skin.String(PVRSubMenuBtn7Type,)">$INFO[Skin.String(PVRSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn7) + !IsEmpty(Skin.String(PVRSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2304,43 +2349,50 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn1Type,Favourite) | Skin.String(ProgramsSubMenuBtn1Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn1Type,Favourite) | Skin.String(ProgramsSubMenuBtn1Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn1) + !IsEmpty(Skin.String(ProgramsSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn2Type,Favourite) | Skin.String(ProgramsSubMenuBtn2Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn2Type,Favourite) | Skin.String(ProgramsSubMenuBtn2Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn2) + !IsEmpty(Skin.String(ProgramsSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn3Type,Favourite) | Skin.String(ProgramsSubMenuBtn3Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn3Type,Favourite) | Skin.String(ProgramsSubMenuBtn3Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn3) + !IsEmpty(Skin.String(ProgramsSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn4Type,Favourite) | Skin.String(ProgramsSubMenuBtn4Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn4Type,Favourite) | Skin.String(ProgramsSubMenuBtn4Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn4) + !IsEmpty(Skin.String(ProgramsSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn5Type,Favourite) | Skin.String(ProgramsSubMenuBtn5Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn5Type,Favourite) | Skin.String(ProgramsSubMenuBtn5Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn5) + !IsEmpty(Skin.String(ProgramsSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn6Type,Favourite) | Skin.String(ProgramsSubMenuBtn6Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn6Type,Favourite) | Skin.String(ProgramsSubMenuBtn6Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn6) + !IsEmpty(Skin.String(ProgramsSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(ProgramsSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(ProgramsSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(ProgramsSubMenuBtn7Type,Favourite) | Skin.String(ProgramsSubMenuBtn7Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(ProgramsSubMenuBtn7Type,Favourite) | Skin.String(ProgramsSubMenuBtn7Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditProgramsSubMenuBtn7) + !IsEmpty(Skin.String(ProgramsSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2369,43 +2421,50 @@
 					<item id="1">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn1Type,Favourite) | Skin.String(PicturesSubMenuBtn1Type,)]">$INFO[Skin.String(PicturesSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn1Type,Favourite) | Skin.String(PicturesSubMenuBtn1Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn1) + !IsEmpty(Skin.String(PicturesSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn2Type,Favourite) | Skin.String(PicturesSubMenuBtn2Type,)]">$INFO[Skin.String(PicturesSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn2Type,Favourite) | Skin.String(PicturesSubMenuBtn2Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn2) + !IsEmpty(Skin.String(PicturesSubMenuBtn2Label))</visible>
 					</item>
 					<item id="3">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn3Type,Favourite) | Skin.String(PicturesSubMenuBtn3Type,)]">$INFO[Skin.String(PicturesSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn3Type,Favourite) | Skin.String(PicturesSubMenuBtn3Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn3) + !IsEmpty(Skin.String(PicturesSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn4Type,Favourite) | Skin.String(PicturesSubMenuBtn4Type,)]">$INFO[Skin.String(PicturesSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn4Type,Favourite) | Skin.String(PicturesSubMenuBtn4Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn4) + !IsEmpty(Skin.String(PicturesSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn5Type,Favourite) | Skin.String(PicturesSubMenuBtn5Type,)]">$INFO[Skin.String(PicturesSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn5Type,Favourite) | Skin.String(PicturesSubMenuBtn5Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn5) + !IsEmpty(Skin.String(PicturesSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn6Type,Favourite) | Skin.String(PicturesSubMenuBtn6Type,)]">$INFO[Skin.String(PicturesSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn6Type,Favourite) | Skin.String(PicturesSubMenuBtn6Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn6) + !IsEmpty(Skin.String(PicturesSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(PicturesSubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(PicturesSubMenuBtn7Type,Favourite) | Skin.String(PicturesSubMenuBtn7Type,)]">$INFO[Skin.String(PicturesSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(PicturesSubMenuBtn7Type,Favourite) | Skin.String(PicturesSubMenuBtn7Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn7) + !IsEmpty(Skin.String(PicturesSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2428,43 +2487,50 @@
 					<item id="1">
 						<description>Category 1 Button 1</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn1Type,Favourite) | Skin.String(Custom1SubMenuBtn1Type,)]">$INFO[Skin.String(Custom1SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn1Type,Favourite) | Skin.String(Custom1SubMenuBtn1Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn1) + !IsEmpty(Skin.String(Custom1SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 1 Button 2</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn2Type,Favourite) | Skin.String(Custom1SubMenuBtn2Type,)]">$INFO[Skin.String(Custom1SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn2Type,Favourite) | Skin.String(Custom1SubMenuBtn2Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn2) + !IsEmpty(Skin.String(Custom1SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 1 Button 3</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn3Type,Favourite) | Skin.String(Custom1SubMenuBtn3Type,)]">$INFO[Skin.String(Custom1SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn3Type,Favourite) | Skin.String(Custom1SubMenuBtn3Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn3) + !IsEmpty(Skin.String(Custom1SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 1 Button 4</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn4Type,Favourite) | Skin.String(Custom1SubMenuBtn4Type,)]">$INFO[Skin.String(Custom1SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn4Type,Favourite) | Skin.String(Custom1SubMenuBtn4Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn4) + !IsEmpty(Skin.String(Custom1SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 1 Button 5</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn5Type,Favourite) | Skin.String(Custom1SubMenuBtn5Type,)]">$INFO[Skin.String(Custom1SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn5Type,Favourite) | Skin.String(Custom1SubMenuBtn5Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn5) + !IsEmpty(Skin.String(Custom1SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 1 Button 6</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn6Type,Favourite) | Skin.String(Custom1SubMenuBtn6Type,)]">$INFO[Skin.String(Custom1SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn6Type,Favourite) | Skin.String(Custom1SubMenuBtn6Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn6) + !IsEmpty(Skin.String(Custom1SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 1 Button 7</description>
 						<label>$INFO[Skin.String(Custom1SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom1SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom1SubMenuBtn7Type,Favourite) | Skin.String(Custom1SubMenuBtn7Type,)]">$INFO[Skin.String(Custom1SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom1SubMenuBtn7Type,Favourite) | Skin.String(Custom1SubMenuBtn7Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom1SubMenuBtn7) + !IsEmpty(Skin.String(Custom1SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2487,43 +2553,50 @@
 					<item id="1">
 						<description>Category 2 Button 1</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn1Type,Favourite) | Skin.String(Custom2SubMenuBtn1Type,)]">$INFO[Skin.String(Custom2SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn1Type,Favourite) | Skin.String(Custom2SubMenuBtn1Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn1) + !IsEmpty(Skin.String(Custom2SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 2 Button 2</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn2Type,Favourite) | Skin.String(Custom2SubMenuBtn2Type,)]">$INFO[Skin.String(Custom2SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn2Type,Favourite) | Skin.String(Custom2SubMenuBtn2Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn2) + !IsEmpty(Skin.String(Custom2SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 2 Button 3</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn3Type,Favourite) | Skin.String(Custom2SubMenuBtn3Type,)]">$INFO[Skin.String(Custom2SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn3Type,Favourite) | Skin.String(Custom2SubMenuBtn3Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn3) + !IsEmpty(Skin.String(Custom2SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 2 Button 4</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn4Type,Favourite) | Skin.String(Custom2SubMenuBtn4Type,)]">$INFO[Skin.String(Custom2SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn4Type,Favourite) | Skin.String(Custom2SubMenuBtn4Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn4) + !IsEmpty(Skin.String(Custom2SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 2 Button 5</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn5Type,Favourite) | Skin.String(Custom2SubMenuBtn5Type,)]">$INFO[Skin.String(Custom2SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn5Type,Favourite) | Skin.String(Custom2SubMenuBtn5Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn5) + !IsEmpty(Skin.String(Custom2SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 2 Button 6</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn6Type,Favourite) | Skin.String(Custom2SubMenuBtn6Type,)]">$INFO[Skin.String(Custom2SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn6Type,Favourite) | Skin.String(Custom2SubMenuBtn6Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn6) + !IsEmpty(Skin.String(Custom2SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 2 Button 7</description>
 						<label>$INFO[Skin.String(Custom2SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom2SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom2SubMenuBtn7Type,Favourite) | Skin.String(Custom2SubMenuBtn7Type,)]">$INFO[Skin.String(Custom2SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom2SubMenuBtn7Type,Favourite) | Skin.String(Custom2SubMenuBtn7Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom2SubMenuBtn7) + !IsEmpty(Skin.String(Custom2SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2546,43 +2619,50 @@
 					<item id="1">
 						<description>Category 3 Button 1</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn1Type,Favourite) | Skin.String(Custom3SubMenuBtn1Type,)]">$INFO[Skin.String(Custom3SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn1Type,Favourite) | Skin.String(Custom3SubMenuBtn1Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn1) + !IsEmpty(Skin.String(Custom3SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 3 Button 2</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn2Type,Favourite) | Skin.String(Custom3SubMenuBtn2Type,)]">$INFO[Skin.String(Custom3SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn2Type,Favourite) | Skin.String(Custom3SubMenuBtn2Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn2) + !IsEmpty(Skin.String(Custom3SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 3 Button 3</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn3Type,Favourite) | Skin.String(Custom3SubMenuBtn3Type,)]">$INFO[Skin.String(Custom3SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn3Type,Favourite) | Skin.String(Custom3SubMenuBtn3Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn3) + !IsEmpty(Skin.String(Custom3SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 3 Button 4</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn4Type,Favourite) | Skin.String(Custom3SubMenuBtn4Type,)]">$INFO[Skin.String(Custom3SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn4Type,Favourite) | Skin.String(Custom3SubMenuBtn4Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn4) + !IsEmpty(Skin.String(Custom3SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 3 Button 5</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn5Type,Favourite) | Skin.String(Custom3SubMenuBtn5Type,)]">$INFO[Skin.String(Custom3SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn5Type,Favourite) | Skin.String(Custom3SubMenuBtn5Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn5) + !IsEmpty(Skin.String(Custom3SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 3 Button 6</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn6Type,Favourite) | Skin.String(Custom3SubMenuBtn6Type,)]">$INFO[Skin.String(Custom3SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn6Type,Favourite) | Skin.String(Custom3SubMenuBtn6Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn6) + !IsEmpty(Skin.String(Custom3SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 3 Button 7</description>
 						<label>$INFO[Skin.String(Custom3SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom3SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom3SubMenuBtn7Type,Favourite) | Skin.String(Custom3SubMenuBtn7Type,)]">$INFO[Skin.String(Custom3SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom3SubMenuBtn7Type,Favourite) | Skin.String(Custom3SubMenuBtn7Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom3SubMenuBtn7) + !IsEmpty(Skin.String(Custom3SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2605,43 +2685,50 @@
 					<item id="1">
 						<description>Category 4 Button 1</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn1Type,Favourite) | Skin.String(Custom4SubMenuBtn1Type,)]">$INFO[Skin.String(Custom4SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn1Type,Favourite) | Skin.String(Custom4SubMenuBtn1Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn1) + !IsEmpty(Skin.String(Custom4SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 4 Button 2</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn2Type,Favourite) | Skin.String(Custom4SubMenuBtn2Type,)]">$INFO[Skin.String(Custom4SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn2Type,Favourite) | Skin.String(Custom4SubMenuBtn2Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn2) + !IsEmpty(Skin.String(Custom4SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 4 Button 3</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn3Type,Favourite) | Skin.String(Custom4SubMenuBtn3Type,)]">$INFO[Skin.String(Custom4SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn3Type,Favourite) | Skin.String(Custom4SubMenuBtn3Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn3) + !IsEmpty(Skin.String(Custom4SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 4 Button 4</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn4Type,Favourite) | Skin.String(Custom4SubMenuBtn4Type,)]">$INFO[Skin.String(Custom4SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn4Type,Favourite) | Skin.String(Custom4SubMenuBtn4Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn4) + !IsEmpty(Skin.String(Custom4SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 4 Button 5</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn5Type,Favourite) | Skin.String(Custom4SubMenuBtn5Type,)]">$INFO[Skin.String(Custom4SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn5Type,Favourite) | Skin.String(Custom4SubMenuBtn5Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn5) + !IsEmpty(Skin.String(Custom4SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 4 Button 6</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn6Type,Favourite) | Skin.String(Custom4SubMenuBtn6Type,)]">$INFO[Skin.String(Custom4SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn6Type,Favourite) | Skin.String(Custom4SubMenuBtn6Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn6) + !IsEmpty(Skin.String(Custom4SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 4 Button 7</description>
 						<label>$INFO[Skin.String(Custom4SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom4SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom4SubMenuBtn7Type,Favourite) | Skin.String(Custom4SubMenuBtn7Type,)]">$INFO[Skin.String(Custom4SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom4SubMenuBtn7Type,Favourite) | Skin.String(Custom4SubMenuBtn7Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom4SubMenuBtn7) + !IsEmpty(Skin.String(Custom4SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2664,43 +2751,50 @@
 					<item id="1">
 						<description>Category 5 Button 1</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn1Type,Favourite) | Skin.String(Custom5SubMenuBtn1Type,)]">$INFO[Skin.String(Custom5SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn1Type,Favourite) | Skin.String(Custom5SubMenuBtn1Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn1) + !IsEmpty(Skin.String(Custom5SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 5 Button 2</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn2Type,Favourite) | Skin.String(Custom5SubMenuBtn2Type,)]">$INFO[Skin.String(Custom5SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn2Type,Favourite) | Skin.String(Custom5SubMenuBtn2Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn2) + !IsEmpty(Skin.String(Custom5SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 5 Button 3</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn3Type,Favourite) | Skin.String(Custom5SubMenuBtn3Type,)]">$INFO[Skin.String(Custom5SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn3Type,Favourite) | Skin.String(Custom5SubMenuBtn3Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn3) + !IsEmpty(Skin.String(Custom5SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 5 Button 4</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn4Type,Favourite) | Skin.String(Custom5SubMenuBtn4Type,)]">$INFO[Skin.String(Custom5SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn4Type,Favourite) | Skin.String(Custom5SubMenuBtn4Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn4) + !IsEmpty(Skin.String(Custom5SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 5 Button 5</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn5Type,Favourite) | Skin.String(Custom5SubMenuBtn5Type,)]">$INFO[Skin.String(Custom5SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn5Type,Favourite) | Skin.String(Custom5SubMenuBtn5Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn5) + !IsEmpty(Skin.String(Custom5SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 5 Button 6</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn6Type,Favourite) | Skin.String(Custom5SubMenuBtn6Type,)]">$INFO[Skin.String(Custom5SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn6Type,Favourite) | Skin.String(Custom5SubMenuBtn6Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn6) + !IsEmpty(Skin.String(Custom5SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 5 Button 7</description>
 						<label>$INFO[Skin.String(Custom5SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom5SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom5SubMenuBtn7Type,Favourite) | Skin.String(Custom5SubMenuBtn7Type,)]">$INFO[Skin.String(Custom5SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom5SubMenuBtn7Type,Favourite) | Skin.String(Custom5SubMenuBtn7Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom5SubMenuBtn7) + !IsEmpty(Skin.String(Custom5SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2723,43 +2817,50 @@
 					<item id="1">
 						<description>Category 6 Button 1</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn1Type,Favourite) | Skin.String(Custom6SubMenuBtn1Type,)]">$INFO[Skin.String(Custom6SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn1Type,Favourite) | Skin.String(Custom6SubMenuBtn1Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn1) + !IsEmpty(Skin.String(Custom6SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 6 Button 2</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn2Type,Favourite) | Skin.String(Custom6SubMenuBtn2Type,)]">$INFO[Skin.String(Custom6SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn2Type,Favourite) | Skin.String(Custom6SubMenuBtn2Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn2) + !IsEmpty(Skin.String(Custom6SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 6 Button 3</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn3Type,Favourite) | Skin.String(Custom6SubMenuBtn3Type,)]">$INFO[Skin.String(Custom6SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn3Type,Favourite) | Skin.String(Custom6SubMenuBtn3Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn3) + !IsEmpty(Skin.String(Custom6SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 6 Button 4</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn4Type,Favourite) | Skin.String(Custom6SubMenuBtn4Type,)]">$INFO[Skin.String(Custom6SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn4Type,Favourite) | Skin.String(Custom6SubMenuBtn4Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn4) + !IsEmpty(Skin.String(Custom6SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 6 Button 5</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn5Type,Favourite) | Skin.String(Custom6SubMenuBtn5Type,)]">$INFO[Skin.String(Custom6SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn5Type,Favourite) | Skin.String(Custom6SubMenuBtn5Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn5) + !IsEmpty(Skin.String(Custom6SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 6 Button 6</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn6Type,Favourite) | Skin.String(Custom6SubMenuBtn6Type,)]">$INFO[Skin.String(Custom6SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn6Type,Favourite) | Skin.String(Custom6SubMenuBtn6Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn6) + !IsEmpty(Skin.String(Custom6SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 6 Button 7</description>
 						<label>$INFO[Skin.String(Custom6SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom6SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom6SubMenuBtn7Type,Favourite) | Skin.String(Custom6SubMenuBtn7Type,)]">$INFO[Skin.String(Custom6SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom6SubMenuBtn7Type,Favourite) | Skin.String(Custom6SubMenuBtn7Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom6SubMenuBtn7) + !IsEmpty(Skin.String(Custom6SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2782,43 +2883,50 @@
 					<item id="1">
 						<description>Category 7 Button 1</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn1Type,Favourite) | Skin.String(Custom7SubMenuBtn1Type,)]">$INFO[Skin.String(Custom7SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn1Type,Favourite) | Skin.String(Custom7SubMenuBtn1Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn1) + !IsEmpty(Skin.String(Custom7SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 7 Button 2</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn2Type,Favourite) | Skin.String(Custom7SubMenuBtn2Type,)]">$INFO[Skin.String(Custom7SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn2Type,Favourite) | Skin.String(Custom7SubMenuBtn2Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn2) + !IsEmpty(Skin.String(Custom7SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 7 Button 3</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn3Type,Favourite) | Skin.String(Custom7SubMenuBtn3Type,)]">$INFO[Skin.String(Custom7SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn3Type,Favourite) | Skin.String(Custom7SubMenuBtn3Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn3) + !IsEmpty(Skin.String(Custom7SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 7 Button 4</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn4Type,Favourite) | Skin.String(Custom7SubMenuBtn4Type,)]">$INFO[Skin.String(Custom7SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn4Type,Favourite) | Skin.String(Custom7SubMenuBtn4Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn4) + !IsEmpty(Skin.String(Custom7SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 7 Button 5</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn5Type,Favourite) | Skin.String(Custom7SubMenuBtn5Type,)]">$INFO[Skin.String(Custom7SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn5Type,Favourite) | Skin.String(Custom7SubMenuBtn5Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn5) + !IsEmpty(Skin.String(Custom7SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 7 Button 6</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn6Type,Favourite) | Skin.String(Custom7SubMenuBtn6Type,)]">$INFO[Skin.String(Custom7SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn6Type,Favourite) | Skin.String(Custom7SubMenuBtn6Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn6) + !IsEmpty(Skin.String(Custom7SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 7 Button 7</description>
 						<label>$INFO[Skin.String(Custom7SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom7SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom7SubMenuBtn7Type,Favourite) | Skin.String(Custom7SubMenuBtn7Type,)]">$INFO[Skin.String(Custom7SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom7SubMenuBtn7Type,Favourite) | Skin.String(Custom7SubMenuBtn7Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom7SubMenuBtn7) + !IsEmpty(Skin.String(Custom7SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2841,43 +2949,50 @@
 					<item id="1">
 						<description>Category 8 Button 1</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn1Type,Favourite) | Skin.String(Custom8SubMenuBtn1Type,)]">$INFO[Skin.String(Custom8SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn1Type,Favourite) | Skin.String(Custom8SubMenuBtn1Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn1) + !IsEmpty(Skin.String(Custom8SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 8 Button 2</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn2Type,Favourite) | Skin.String(Custom8SubMenuBtn2Type,)]">$INFO[Skin.String(Custom8SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn2Type,Favourite) | Skin.String(Custom8SubMenuBtn2Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn2) + !IsEmpty(Skin.String(Custom8SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 8 Button 3</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn3Type,Favourite) | Skin.String(Custom8SubMenuBtn3Type,)]">$INFO[Skin.String(Custom8SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn3Type,Favourite) | Skin.String(Custom8SubMenuBtn3Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn3) + !IsEmpty(Skin.String(Custom8SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 8 Button 4</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn4Type,Favourite) | Skin.String(Custom8SubMenuBtn4Type,)]">$INFO[Skin.String(Custom8SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn4Type,Favourite) | Skin.String(Custom8SubMenuBtn4Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn4) + !IsEmpty(Skin.String(Custom8SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 8 Button 5</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn5Type,Favourite) | Skin.String(Custom8SubMenuBtn5Type,)]">$INFO[Skin.String(Custom8SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn5Type,Favourite) | Skin.String(Custom8SubMenuBtn5Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn5) + !IsEmpty(Skin.String(Custom8SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 8 Button 6</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn6Type,Favourite) | Skin.String(Custom8SubMenuBtn6Type,)]">$INFO[Skin.String(Custom8SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn6Type,Favourite) | Skin.String(Custom8SubMenuBtn6Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn6) + !IsEmpty(Skin.String(Custom8SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 8 Button 7</description>
 						<label>$INFO[Skin.String(Custom8SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom8SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom8SubMenuBtn7Type,Favourite) | Skin.String(Custom8SubMenuBtn7Type,)]">$INFO[Skin.String(Custom8SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom8SubMenuBtn7Type,Favourite) | Skin.String(Custom8SubMenuBtn7Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom8SubMenuBtn7) + !IsEmpty(Skin.String(Custom8SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2900,43 +3015,50 @@
 					<item id="1">
 						<description>Category 9 Button 1</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn1Type,Favourite) | Skin.String(Custom9SubMenuBtn1Type,)]">$INFO[Skin.String(Custom9SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn1Type,Favourite) | Skin.String(Custom9SubMenuBtn1Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn1) + !IsEmpty(Skin.String(Custom9SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 9 Button 2</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn2Type,Favourite) | Skin.String(Custom9SubMenuBtn2Type,)]">$INFO[Skin.String(Custom9SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn2Type,Favourite) | Skin.String(Custom9SubMenuBtn2Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn2) + !IsEmpty(Skin.String(Custom9SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 9 Button 3</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn3Type,Favourite) | Skin.String(Custom9SubMenuBtn3Type,)]">$INFO[Skin.String(Custom9SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn3Type,Favourite) | Skin.String(Custom9SubMenuBtn3Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn3) + !IsEmpty(Skin.String(Custom9SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 9 Button 4</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn4Type,Favourite) | Skin.String(Custom9SubMenuBtn4Type,)]">$INFO[Skin.String(Custom9SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn4Type,Favourite) | Skin.String(Custom9SubMenuBtn4Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn4) + !IsEmpty(Skin.String(Custom9SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 9 Button 5</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn5Type,Favourite) | Skin.String(Custom9SubMenuBtn5Type,)]">$INFO[Skin.String(Custom9SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn5Type,Favourite) | Skin.String(Custom9SubMenuBtn5Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn5) + !IsEmpty(Skin.String(Custom9SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 9 Button 6</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn6Type,Favourite) | Skin.String(Custom9SubMenuBtn6Type,)]">$INFO[Skin.String(Custom9SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn6Type,Favourite) | Skin.String(Custom9SubMenuBtn6Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn6) + !IsEmpty(Skin.String(Custom9SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 9 Button 7</description>
 						<label>$INFO[Skin.String(Custom9SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom9SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom9SubMenuBtn7Type,Favourite) | Skin.String(Custom9SubMenuBtn7Type,)]">$INFO[Skin.String(Custom9SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom9SubMenuBtn7Type,Favourite) | Skin.String(Custom9SubMenuBtn7Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom9SubMenuBtn7) + !IsEmpty(Skin.String(Custom9SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -2959,43 +3081,50 @@
 					<item id="1">
 						<description>Category 10 Button 1</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn1Type,Favourite) | Skin.String(Custom10SubMenuBtn1Type,)]">$INFO[Skin.String(Custom10SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn1Type,Favourite) | Skin.String(Custom10SubMenuBtn1Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn1) + !IsEmpty(Skin.String(Custom10SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 10 Button 2</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn2Type,Favourite) | Skin.String(Custom10SubMenuBtn2Type,)]">$INFO[Skin.String(Custom10SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn2Type,Favourite) | Skin.String(Custom10SubMenuBtn2Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn2) + !IsEmpty(Skin.String(Custom10SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 10 Button 3</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn3Type,Favourite) | Skin.String(Custom10SubMenuBtn3Type,)]">$INFO[Skin.String(Custom10SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn3Type,Favourite) | Skin.String(Custom10SubMenuBtn3Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn3) + !IsEmpty(Skin.String(Custom10SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 10 Button 4</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn4Type,Favourite) | Skin.String(Custom10SubMenuBtn4Type,)]">$INFO[Skin.String(Custom10SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn4Type,Favourite) | Skin.String(Custom10SubMenuBtn4Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn4) + !IsEmpty(Skin.String(Custom10SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 10 Button 5</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn5Type,Favourite) | Skin.String(Custom10SubMenuBtn5Type,)]">$INFO[Skin.String(Custom10SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn5Type,Favourite) | Skin.String(Custom10SubMenuBtn5Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn5) + !IsEmpty(Skin.String(Custom10SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 10 Button 6</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn6Type,Favourite) | Skin.String(Custom10SubMenuBtn6Type,)]">$INFO[Skin.String(Custom10SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn6Type,Favourite) | Skin.String(Custom10SubMenuBtn6Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn6) + !IsEmpty(Skin.String(Custom10SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 10 Button 7</description>
 						<label>$INFO[Skin.String(Custom10SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom10SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom10SubMenuBtn7Type,Favourite) | Skin.String(Custom10SubMenuBtn7Type,)]">$INFO[Skin.String(Custom10SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom10SubMenuBtn7Type,Favourite) | Skin.String(Custom10SubMenuBtn7Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom10SubMenuBtn7) + !IsEmpty(Skin.String(Custom10SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -3018,43 +3147,50 @@
 					<item id="1">
 						<description>Category 11 Button 1</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn1Type,Favourite) | Skin.String(Custom11SubMenuBtn1Type,)]">$INFO[Skin.String(Custom11SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn1Type,Favourite) | Skin.String(Custom11SubMenuBtn1Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn1) + !IsEmpty(Skin.String(Custom11SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 11 Button 2</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn2Type,Favourite) | Skin.String(Custom11SubMenuBtn2Type,)]">$INFO[Skin.String(Custom11SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn2Type,Favourite) | Skin.String(Custom11SubMenuBtn2Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn2) + !IsEmpty(Skin.String(Custom11SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 11 Button 3</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn3Type,Favourite) | Skin.String(Custom11SubMenuBtn3Type,)]">$INFO[Skin.String(Custom11SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn3Type,Favourite) | Skin.String(Custom11SubMenuBtn3Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn3) + !IsEmpty(Skin.String(Custom11SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 11 Button 4</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn4Type,Favourite) | Skin.String(Custom11SubMenuBtn4Type,)]">$INFO[Skin.String(Custom11SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn4Type,Favourite) | Skin.String(Custom11SubMenuBtn4Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn4) + !IsEmpty(Skin.String(Custom11SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 11 Button 5</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn5Type,Favourite) | Skin.String(Custom11SubMenuBtn5Type,)]">$INFO[Skin.String(Custom11SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn5Type,Favourite) | Skin.String(Custom11SubMenuBtn5Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn5) + !IsEmpty(Skin.String(Custom11SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 11 Button 6</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn6Type,Favourite) | Skin.String(Custom11SubMenuBtn6Type,)]">$INFO[Skin.String(Custom11SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn6Type,Favourite) | Skin.String(Custom11SubMenuBtn6Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn6) + !IsEmpty(Skin.String(Custom11SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 11 Button 7</description>
 						<label>$INFO[Skin.String(Custom11SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom11SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom11SubMenuBtn7Type,Favourite) | Skin.String(Custom11SubMenuBtn7Type,)]">$INFO[Skin.String(Custom11SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom11SubMenuBtn7Type,Favourite) | Skin.String(Custom11SubMenuBtn7Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom11SubMenuBtn7) + !IsEmpty(Skin.String(Custom11SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -3077,43 +3213,50 @@
 					<item id="1">
 						<description>Category 12 Button 1</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn1Type,Favourite) | Skin.String(Custom12SubMenuBtn1Type,)]">$INFO[Skin.String(Custom12SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn1Type,Favourite) | Skin.String(Custom12SubMenuBtn1Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn1) + !IsEmpty(Skin.String(Custom12SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 12 Button 2</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn2Type,Favourite) | Skin.String(Custom12SubMenuBtn2Type,)]">$INFO[Skin.String(Custom12SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn2Type,Favourite) | Skin.String(Custom12SubMenuBtn2Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn2) + !IsEmpty(Skin.String(Custom12SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 12 Button 3</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn3Type,Favourite) | Skin.String(Custom12SubMenuBtn3Type,)]">$INFO[Skin.String(Custom12SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn3Type,Favourite) | Skin.String(Custom12SubMenuBtn3Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn3) + !IsEmpty(Skin.String(Custom12SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 12 Button 4</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn4Type,Favourite) | Skin.String(Custom12SubMenuBtn4Type,)]">$INFO[Skin.String(Custom12SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn4Type,Favourite) | Skin.String(Custom12SubMenuBtn4Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn4) + !IsEmpty(Skin.String(Custom12SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 12 Button 5</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn5Type,Favourite) | Skin.String(Custom12SubMenuBtn5Type,)]">$INFO[Skin.String(Custom12SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn5Type,Favourite) | Skin.String(Custom12SubMenuBtn5Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn5) + !IsEmpty(Skin.String(Custom12SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 12 Button 6</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn6Type,Favourite) | Skin.String(Custom12SubMenuBtn6Type,)]">$INFO[Skin.String(Custom12SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn6Type,Favourite) | Skin.String(Custom12SubMenuBtn6Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn6) + !IsEmpty(Skin.String(Custom12SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 12 Button 7</description>
 						<label>$INFO[Skin.String(Custom12SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom12SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom12SubMenuBtn7Type,Favourite) | Skin.String(Custom12SubMenuBtn7Type,)]">$INFO[Skin.String(Custom12SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom12SubMenuBtn7Type,Favourite) | Skin.String(Custom12SubMenuBtn7Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom12SubMenuBtn7) + !IsEmpty(Skin.String(Custom12SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -3136,43 +3279,50 @@
 					<item id="1">
 						<description>Category 13 Button 1</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn1Type,Favourite) | Skin.String(Custom13SubMenuBtn1Type,)]">$INFO[Skin.String(Custom13SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn1Type,Favourite) | Skin.String(Custom13SubMenuBtn1Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn1) + !IsEmpty(Skin.String(Custom13SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 13 Button 2</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn2Type,Favourite) | Skin.String(Custom13SubMenuBtn2Type,)]">$INFO[Skin.String(Custom13SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn2Type,Favourite) | Skin.String(Custom13SubMenuBtn2Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn2) + !IsEmpty(Skin.String(Custom13SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 13 Button 3</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn3Type,Favourite) | Skin.String(Custom13SubMenuBtn3Type,)]">$INFO[Skin.String(Custom13SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn3Type,Favourite) | Skin.String(Custom13SubMenuBtn3Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn3) + !IsEmpty(Skin.String(Custom13SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 13 Button 4</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn4Type,Favourite) | Skin.String(Custom13SubMenuBtn4Type,)]">$INFO[Skin.String(Custom13SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn4Type,Favourite) | Skin.String(Custom13SubMenuBtn4Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn4) + !IsEmpty(Skin.String(Custom13SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 13 Button 5</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn5Type,Favourite) | Skin.String(Custom13SubMenuBtn5Type,)]">$INFO[Skin.String(Custom13SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn5Type,Favourite) | Skin.String(Custom13SubMenuBtn5Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn5) + !IsEmpty(Skin.String(Custom13SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 13 Button 6</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn6Type,Favourite) | Skin.String(Custom13SubMenuBtn6Type,)]">$INFO[Skin.String(Custom13SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn6Type,Favourite) | Skin.String(Custom13SubMenuBtn6Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn6) + !IsEmpty(Skin.String(Custom13SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 13 Button 7</description>
 						<label>$INFO[Skin.String(Custom13SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom13SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom13SubMenuBtn7Type,Favourite) | Skin.String(Custom13SubMenuBtn7Type,)]">$INFO[Skin.String(Custom13SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom13SubMenuBtn7Type,Favourite) | Skin.String(Custom13SubMenuBtn7Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom13SubMenuBtn7) + !IsEmpty(Skin.String(Custom13SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -3195,43 +3345,50 @@
 					<item id="1">
 						<description>Category 14 Button 1</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn1Type,Favourite) | Skin.String(Custom14SubMenuBtn1Type,)]">$INFO[Skin.String(Custom14SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn1Type,Favourite) | Skin.String(Custom14SubMenuBtn1Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn1) + !IsEmpty(Skin.String(Custom14SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 14 Button 2</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn2Type,Favourite) | Skin.String(Custom14SubMenuBtn2Type,)]">$INFO[Skin.String(Custom14SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn2Type,Favourite) | Skin.String(Custom14SubMenuBtn2Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn2) + !IsEmpty(Skin.String(Custom14SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 14 Button 3</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn3Type,Favourite) | Skin.String(Custom14SubMenuBtn3Type,)]">$INFO[Skin.String(Custom14SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn3Type,Favourite) | Skin.String(Custom14SubMenuBtn3Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn3) + !IsEmpty(Skin.String(Custom14SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 14 Button 4</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn4Type,Favourite) | Skin.String(Custom14SubMenuBtn4Type,)]">$INFO[Skin.String(Custom14SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn4Type,Favourite) | Skin.String(Custom14SubMenuBtn4Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn4) + !IsEmpty(Skin.String(Custom14SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 14 Button 5</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn5Type,Favourite) | Skin.String(Custom14SubMenuBtn5Type,)]">$INFO[Skin.String(Custom14SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn5Type,Favourite) | Skin.String(Custom14SubMenuBtn5Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn5) + !IsEmpty(Skin.String(Custom14SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 14 Button 6</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn6Type,Favourite) | Skin.String(Custom14SubMenuBtn6Type,)]">$INFO[Skin.String(Custom14SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn6Type,Favourite) | Skin.String(Custom14SubMenuBtn6Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn6) + !IsEmpty(Skin.String(Custom14SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 14 Button 7</description>
 						<label>$INFO[Skin.String(Custom14SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom14SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom14SubMenuBtn7Type,Favourite) | Skin.String(Custom14SubMenuBtn7Type,)]">$INFO[Skin.String(Custom14SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom14SubMenuBtn7Type,Favourite) | Skin.String(Custom14SubMenuBtn7Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom14SubMenuBtn7) + !IsEmpty(Skin.String(Custom14SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -3254,43 +3411,50 @@
 					<item id="1">
 						<description>Category 15 Button 1</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn1Type,Favourite) | Skin.String(Custom15SubMenuBtn1Type,)]">$INFO[Skin.String(Custom15SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn1Type,Favourite) | Skin.String(Custom15SubMenuBtn1Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn1) + !IsEmpty(Skin.String(Custom15SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 15 Button 2</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn2Type,Favourite) | Skin.String(Custom15SubMenuBtn2Type,)]">$INFO[Skin.String(Custom15SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn2Type,Favourite) | Skin.String(Custom15SubMenuBtn2Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn2) + !IsEmpty(Skin.String(Custom15SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 15 Button 3</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn3Type,Favourite) | Skin.String(Custom15SubMenuBtn3Type,)]">$INFO[Skin.String(Custom15SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn3Type,Favourite) | Skin.String(Custom15SubMenuBtn3Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn3) + !IsEmpty(Skin.String(Custom15SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 15 Button 4</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn4Type,Favourite) | Skin.String(Custom15SubMenuBtn4Type,)]">$INFO[Skin.String(Custom15SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn4Type,Favourite) | Skin.String(Custom15SubMenuBtn4Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn4) + !IsEmpty(Skin.String(Custom15SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 15 Button 5</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn5Type,Favourite) | Skin.String(Custom15SubMenuBtn5Type,)]">$INFO[Skin.String(Custom15SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn5Type,Favourite) | Skin.String(Custom15SubMenuBtn5Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn5) + !IsEmpty(Skin.String(Custom15SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 15 Button 6</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn6Type,Favourite) | Skin.String(Custom15SubMenuBtn6Type,)]">$INFO[Skin.String(Custom15SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn6Type,Favourite) | Skin.String(Custom15SubMenuBtn6Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn6) + !IsEmpty(Skin.String(Custom15SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 15 Button 7</description>
 						<label>$INFO[Skin.String(Custom15SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom15SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom15SubMenuBtn7Type,Favourite) | Skin.String(Custom15SubMenuBtn7Type,)]">$INFO[Skin.String(Custom15SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom15SubMenuBtn7Type,Favourite) | Skin.String(Custom15SubMenuBtn7Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom15SubMenuBtn7) + !IsEmpty(Skin.String(Custom15SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
@@ -3313,43 +3477,50 @@
 					<item id="1">
 						<description>Category 16 Button 1</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn1Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn1Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn1Type,Favourite) | Skin.String(Custom16SubMenuBtn1Type,)]">$INFO[Skin.String(Custom16SubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn1Type,Favourite) | Skin.String(Custom16SubMenuBtn1Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.1.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn1) + !IsEmpty(Skin.String(Custom16SubMenuBtn1Label))</visible>
 					</item>
-					<item id="1">
+					<item id="2">
 						<description>Category 16 Button 2</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn2Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn2Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn2Type,Favourite) | Skin.String(Custom16SubMenuBtn2Type,)]">$INFO[Skin.String(Custom16SubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn2Type,Favourite) | Skin.String(Custom16SubMenuBtn2Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn2) + !IsEmpty(Skin.String(Custom16SubMenuBtn2Label))</visible>
 					</item>
-					<item id="1">
+					<item id="3">
 						<description>Category 16 Button 3</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn3Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn3Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn3Type,Favourite) | Skin.String(Custom16SubMenuBtn3Type,)]">$INFO[Skin.String(Custom16SubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn3Type,Favourite) | Skin.String(Custom16SubMenuBtn3Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.3.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn3) + !IsEmpty(Skin.String(Custom16SubMenuBtn3Label))</visible>
 					</item>
-					<item id="1">
+					<item id="4">
 						<description>Category 16 Button 4</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn4Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn4Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn4Type,Favourite) | Skin.String(Custom16SubMenuBtn4Type,)]">$INFO[Skin.String(Custom16SubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn4Type,Favourite) | Skin.String(Custom16SubMenuBtn4Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.4.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn4) + !IsEmpty(Skin.String(Custom16SubMenuBtn4Label))</visible>
 					</item>
-					<item id="1">
+					<item id="5">
 						<description>Category 16 Button 5</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn5Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn5Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn5Type,Favourite) | Skin.String(Custom16SubMenuBtn5Type,)]">$INFO[Skin.String(Custom16SubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn5Type,Favourite) | Skin.String(Custom16SubMenuBtn5Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn5) + !IsEmpty(Skin.String(Custom16SubMenuBtn5Label))</visible>
 					</item>
-					<item id="1">
+					<item id="6">
 						<description>Category 16 Button 6</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn6Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn6Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn6Type,Favourite) | Skin.String(Custom16SubMenuBtn6Type,)]">$INFO[Skin.String(Custom16SubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn6Type,Favourite) | Skin.String(Custom16SubMenuBtn6Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn6) + !IsEmpty(Skin.String(Custom16SubMenuBtn6Label))</visible>
 					</item>
-					<item id="1">
+					<item id="7">
 						<description>Category 16 Button 7</description>
 						<label>$INFO[Skin.String(Custom16SubMenuBtn7Label)]</label>
-						<onclick>$INFO[Skin.String(Custom16SubMenuBtn7Param)]</onclick>
+						<onclick condition="![Skin.String(Custom16SubMenuBtn7Type,Favourite) | Skin.String(Custom16SubMenuBtn7Type,)]">$INFO[Skin.String(Custom16SubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(Custom16SubMenuBtn7Type,Favourite) | Skin.String(Custom16SubMenuBtn7Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditCustom16SubMenuBtn7) + !IsEmpty(Skin.String(Custom16SubMenuBtn7Label))</visible>
 					</item>
 				</content>						
