@@ -350,6 +350,16 @@
 							<onclick>Skin.SetPath(DialogPresetsPath)</onclick>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(MusicLibrary,$INFO[Skin.String(DialogPresetsPath)],Return))</onclick>
 							<visible>Container(450).HasFocus(1)</visible>
+						</item>						
+						<item id="97">
+							<description>Select Music Playlist</description>
+							<label>$LOCALIZE[31979]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetString(DialogPresetsParam,DialogPresetsPlaylistMusic)</onclick>
+							<onclick>Skin.SetFile(DialogPresetsItem,.xsp|.m3u,special://profile/playlists/music/)</onclick>
+							<onclick>ActivateWindow(3005)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],$INFO[Skin.String(DialogPresetsItemPath)])</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
 						</item>
 
 						<item id="18">
@@ -459,6 +469,16 @@
 							<onclick>Dialog.Close(3006)</onclick>
 							<onclick>Skin.SetPath(DialogPresetsPath)</onclick>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Videos,$INFO[Skin.String(DialogPresetsPath)],Return))</onclick>
+							<visible>Container(450).HasFocus(3)</visible>
+						</item>
+						<item id="98">
+							<description>Select Video Playlist</description>
+							<label>$LOCALIZE[31979]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetString(DialogPresetsParam,DialogPresetsPlaylistVideos)</onclick>
+							<onclick>Skin.SetFile(DialogPresetsItem,.xsp,special://profile/playlists/video/)</onclick>
+							<onclick>ActivateWindow(3005)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],$INFO[Skin.String(DialogPresetsItemPath)])</onclick>
 							<visible>Container(450).HasFocus(3)</visible>
 						</item>
 

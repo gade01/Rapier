@@ -220,14 +220,14 @@
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$INFO[Container.FolderName][/B][/UPPERCASE]</label>
 				<visible>!Container.Content(Episodes) | !Container.Content(Seasons) | [Container.Content(Episodes) + Substring(Container.FolderPath,plugin:)] | [Container.Content(Seasons) + Substring(Container.FolderPath,plugin:)]</visible>
-				<visible>[!Container.Content(Genres) + [Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://musicvideos/1/)]]
-				| [!Container.Content(Years) + [Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://musicvideos/3/)]]
+				<visible>[!Container.Content(Genres) + [Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://musicvideos/genres/)]]
+				| [!Container.Content(Years) + [Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://musicvideos/years/)]]
 				| [!Container.Content(Actors) + [Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://tvshows/actors/)]]
-				| [!Container.Content(Directors) + [Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://musicvideos/6/)]]
-				| [!Container.Content(Studios) + [Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/7/)]]
+				| [!Container.Content(Directors) + [Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://musicvideos/directors/)]]
+				| [!Container.Content(Studios) + [Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)]]
 				| [!Container.Content(Countries) + Substring(Container.FolderPath,videodb://movies/countries/)]
-				| [!Container.Content(Artists) + Substring(Container.FolderPath,videodb://musicvideos/4/)]
-				| [!Container.Content(Albums) + Substring(Container.FolderPath,videodb://musicvideos/5/)]
+				| [!Container.Content(Artists) + Substring(Container.FolderPath,videodb://musicvideos/artists/)]
+				| [!Container.Content(Albums) + Substring(Container.FolderPath,videodb://musicvideos/albums/)]
 				| [Container.Content(Files) + ![IsEmpty(Container.FolderPath) | StringCompare(Container.FolderPath,sources://video/)
 				| StringCompare(Container.FolderPath,special://videoplaylists/) | Substring(Container.FolderPath,plugin:)]]
 				| Substring(Container.FolderPath,.xsp,Right) | Substring(Container.FolderPath,plugin:)</visible>
