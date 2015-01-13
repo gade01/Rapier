@@ -346,16 +346,26 @@
 							<description>Select Music Add-on</description>
 							<label>$LOCALIZE[31929]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.addon.audio)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsItem,xbmc.addon.audio)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsItem)]))</onclick>
 							<visible>Container(450).HasFocus(1)</visible>
 						</item>
 						<item id="97">
 							<description>Select Music Path</description>
 							<label>$LOCALIZE[31978]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetPath(DialogPresetsPath)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(MusicLibrary,$INFO[Skin.String(DialogPresetsPath)],Return))</onclick>
+							<onclick>Skin.SetPath(DialogPresetsItem)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(MusicLibrary,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
+						</item>
+						<item id="101">
+							<description>Select Music Playlist</description>
+							<label>$LOCALIZE[31979]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetString(DialogPresetsParam,DialogPresetsPlaylistMusic)</onclick>
+							<onclick>Skin.SetFile(DialogPresetsItem,.xsp|.m3u,special://profile/playlists/music/)</onclick>
+							<onclick>ActivateWindow(3005)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],$INFO[Skin.String(DialogPresetsItemPath)])</onclick>
 							<visible>Container(450).HasFocus(1)</visible>
 						</item>
 
@@ -484,16 +494,26 @@
 							<description>Select Video Add-on</description>
 							<label>$LOCALIZE[31929]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.addon.video)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsItem,xbmc.addon.video)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsItem)]))</onclick>
 							<visible>Container(450).HasFocus(4)</visible>
 						</item>						
 						<item id="98">
 							<description>Select Video Path</description>
 							<label>$LOCALIZE[31978]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetPath(DialogPresetsPath)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Videos,$INFO[Skin.String(DialogPresetsPath)],Return))</onclick>
+							<onclick>Skin.SetPath(DialogPresetsItem)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Videos,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
+							<visible>Container(450).HasFocus(4)</visible>
+						</item>
+						<item id="102">
+							<description>Select Video Playlist</description>
+							<label>$LOCALIZE[31979]</label>
+							<onclick>Dialog.Close(3006)</onclick>
+							<onclick>Skin.SetString(DialogPresetsParam,DialogPresetsPlaylistVideos)</onclick>
+							<onclick>Skin.SetFile(DialogPresetsItem,.xsp,special://profile/playlists/video/)</onclick>
+							<onclick>ActivateWindow(3005)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],$INFO[Skin.String(DialogPresetsItemPath)])</onclick>
 							<visible>Container(450).HasFocus(4)</visible>
 						</item>
 
@@ -693,16 +713,16 @@
 							<description>Select Program Add-on</description>
 							<label>$LOCALIZE[31929]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.python.pluginsource)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsItem,xbmc.python.pluginsource)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsItem)]))</onclick>
 							<visible>Container(450).HasFocus(8)</visible>
 						</item>
 						<item id="99">
 							<description>Select Programs Path</description>
 							<label>$LOCALIZE[31978]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetPath(DialogPresetsPath)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Programs,$INFO[Skin.String(DialogPresetsPath)],Return))</onclick>
+							<onclick>Skin.SetPath(DialogPresetsItem)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Programs,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
 							<visible>Container(450).HasFocus(8)</visible>
 						</item>
 
@@ -731,16 +751,16 @@
 							<description>Select Picture Add-on</description>
 							<label>$LOCALIZE[31929]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetAddon(DialogPresetsAddon,xbmc.addon.image)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsAddon)]))</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsItem,xbmc.addon.image)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsItem)]))</onclick>
 							<visible>Container(450).HasFocus(9)</visible>
 						</item>
 						<item id="100">
 							<description>Select Pictures Path</description>
 							<label>$LOCALIZE[31978]</label>
 							<onclick>Dialog.Close(3006)</onclick>
-							<onclick>Skin.SetPath(DialogPresetsPath)</onclick>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Pictures,$INFO[Skin.String(DialogPresetsPath)],Return))</onclick>
+							<onclick>Skin.SetPath(DialogPresetsItem)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Pictures,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
 							<visible>Container(450).HasFocus(9)</visible>
 						</item>
 
