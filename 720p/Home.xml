@@ -23,6 +23,7 @@
 		<include condition="!Skin.HasSetting(HideRecentlyAddedHomePanel) + System.HasAddon(service.skin.widgets) + !Skin.HasSetting(HideWatchListHomePanel)">WatchListPanel</include>
 		<include>CustomPanels</include>
 		<include condition="!Skin.HasSetting(HideNowPlayingHomePanel)">NowPlayingPanel</include>
+		<include condition="!Skin.HasSetting(HidePVRChannelsWidget)">PVRChannelsPanel</include>
 		<include condition="!Skin.HasSetting(HideWeatherHomePanel) + !Skin.HasSetting(DisableWeather) + !IsEmpty(Weather.Plugin)">WeatherPanel</include>
 		<include condition="!Skin.HasSetting(HideSystemInfoHomePanel)">SystemInfoPanel</include>
 		<include condition="!Skin.HasSetting(HideRecordingInfoHomePanel)">RecordingInfoPanel</include>
