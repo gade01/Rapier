@@ -1539,4 +1539,9 @@
 		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
 		<value>$INFO[ListItem.Plot]</value>
 	</variable>
+	
+	<variable name="FanartGrabberRefreshIntervalVar">
+		<value condition="IsEmpty(Skin.String(FanartGrabberRefreshIntervalValue))">$NUMBER[8]</value>
+		<value>$INFO[Skin.String(FanartGrabberRefreshIntervalValue)]</value>
+	</variable>
 </includes>
