@@ -5,7 +5,7 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="305" y="110">true</origin>
+		<origin x="305" y="90">true</origin>
 	</coordinates>
 
 	<controls>
@@ -23,7 +23,9 @@
 			<control type="grouplist" id="9000">
 				<description>Dialog Button Area</description>
 				<left>DialogMarginOffsetX</left>
-				<top>447</top>
+				<top>487</top>
+				<width>600</width>
+				<align>center</align>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup>60</onup>
@@ -152,12 +154,18 @@
 							<label2>$INFO[ListItem.Genre]</label2>
 							<onclick>noop</onclick>
 						</item>
+						<item id="7">
+							<description>Premiered</description>
+							<label>$LOCALIZE[31936]</label>
+							<label2>$INFO[ListItem.Premiered]</label2>
+							<onclick>noop</onclick>
+						</item>
 					</content>
 				</control>
 
 				<control type="group">
 					<description>Plot</description>
-					<top>240</top>
+					<top>280</top>
 					<control type="image">
 						<width>600</width>
 						<height>145</height>
@@ -165,9 +173,9 @@
 					</control>
 					<control type="textbox">
 						<left>9</left>
-						<top>10</top>
+						<top>12</top>
 						<width>580</width>
-						<height>120</height>
+						<height>118</height>
 						<font>MediaInfoDescFont</font>
 						<textcolor>MediaInfoColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>

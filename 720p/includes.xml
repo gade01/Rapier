@@ -86,6 +86,7 @@
 	<variable name="SeekbarLabels">
 		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$INFO[Player.CacheLevel,,%]</value>
+		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">$INFO[Player.SeekStepSize]</value>
 		<value condition="Player.Forwarding2x + !Player.Seeking">+2X</value>
 		<value condition="Player.Forwarding4x + !Player.Seeking">+4X</value>
 		<value condition="Player.Forwarding8x + !Player.Seeking">+8X</value>
@@ -604,7 +605,7 @@
 	
 	<include name="FileManagerInfoLabel2">
 		<width>180</width>
-		<height>34</height>
+		<height>32</height>
 		<font>FileManagerInfoFont</font>
 		<textcolor>MediaInfoItemColor2</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
@@ -713,7 +714,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-				<info>ListItem.Label</info>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 			</control>				
 		</itemlayout>				
 		<focusedlayout height="35" width="355">				
@@ -741,7 +742,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-				<info>ListItem.Label</info>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 			</control>
 		</focusedlayout>
 	</include>
@@ -771,7 +772,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-				<info>ListItem.Label</info>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 			</control>				
 		</itemlayout>				
 		<focusedlayout height="35" width="386">				
@@ -799,7 +800,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-				<info>ListItem.Label</info>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 			</control>
 		</focusedlayout>
 	</include>
@@ -829,7 +830,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-				<info>ListItem.Label</info>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 			</control>				
 		</itemlayout>				
 		<focusedlayout height="29" width="360">				
@@ -859,7 +860,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-				<info>ListItem.Label</info>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
 			</control>
 		</focusedlayout>
 	</include>

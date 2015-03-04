@@ -100,7 +100,8 @@
 						<onup>34</onup>
 						<ondown>20</ondown>
 						<onleft>30</onleft>
-						<onright>7000</onright>
+						<onright condition="Control.IsVisible(31)">31</onright>
+						<onright condition="!Control.IsVisible(31)">8000</onright>
 						<pagecontrol>60</pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="40" width="392">
@@ -124,14 +125,14 @@
 							<control type="group">
 								<left>61</left>
 								<control type="label">
-									<width>210</width>
+									<width>275</width>
 									<height>40</height>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Property(Name)]</label>
 									<visible>ListItem.Property(ActiveChannel)</visible>
 								</control>
 								<control type="label">
-									<width>210</width>
+									<width>275</width>
 									<height>40</height>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Property(Name)]</label>
@@ -192,7 +193,7 @@
 								<left>61</left>
 								<visible>ListItem.Property(ActiveChannel)</visible>
 								<control type="label">
-									<width>210</width>
+									<width>275</width>
 									<height>40</height>
 									<aligny>center</aligny>
 									<textcolor>SelectedColor</textcolor>
@@ -200,7 +201,7 @@
 									<visible>Control.HasFocus(20)</visible>
 								</control>
 								<control type="label">
-									<width>210</width>
+									<width>275</width>
 									<height>40</height>
 									<aligny>center</aligny>
 									<textcolor>SelectedColor</textcolor>
@@ -208,7 +209,7 @@
 									<visible>!Control.HasFocus(20)</visible>
 								</control>
 								<control type="label">
-									<width>210</width>
+									<width>275</width>
 									<height>40</height>
 									<aligny>center</aligny>
 									<textcolor>SelectedColor</textcolor>
@@ -219,15 +220,18 @@
 						</focusedlayout>
 					</control>
 
-					<control type="grouplist" id="7000">
-						<description>Browse Controls Area</description>
-						<left>272</left>
+					<control type="button" id="31">
+						<description>Add Channel Button</description>
+						<left>344</left>
+						<width>40</width>
+						<height>40</height>							
 						<onup>20</onup>
 						<onleft>20</onleft>
 						<onright>8000</onright>
 						<ondown>20</ondown>
-						<orientation>horizontal</orientation>
-						<itemgap>0</itemgap>
+						<label>-</label>
+						<texturenofocus border="0">pvr/button_Inline-add.png</texturenofocus>
+						<texturefocus border="0">pvr/button_Inline-add-focus.png</texturefocus>
 						<animation effect="slide" end="0,40" time="150" condition="Container(20).Row(1)">Conditional</animation>
 						<animation effect="slide" end="0,80" time="150" condition="Container(20).Row(2)">Conditional</animation>
 						<animation effect="slide" end="0,120" time="150" condition="Container(20).Row(3)">Conditional</animation>
@@ -236,33 +240,7 @@
 						<animation effect="slide" end="0,240" time="150" condition="Container(20).Row(6)">Conditional</animation>
 						<animation effect="slide" end="0,280" time="150" condition="Container(20).Row(7)">Conditional</animation>
 						<animation effect="slide" end="0,320" time="150" condition="Container(20).Row(8)">Conditional</animation>
-						<visible>[Container(20).ListItem.Property(ActiveChannel) | Container(20).ListItem.Property(Changed)] + !Container(20).Scrolling</visible>				
-						<control type="button" id="31">
-							<description>Browse Button</description>
-							<width>40</width>
-							<height>40</height>
-							<label>-</label>
-							<texturenofocus border="0">pvr/button_Inline-edit.png</texturenofocus>
-							<texturefocus border="0">pvr/button_Inline-edit-focus.png</texturefocus>
-						</control>
-
-						<control type="button" id="32">
-							<description>Remove Path Button</description>
-							<width>40</width>
-							<height>40</height>
-							<label>-</label>
-							<texturenofocus border="0">pvr/button_Inline-remove.png</texturenofocus>
-							<texturefocus border="0">pvr/button_Inline-remove-focus.png</texturefocus>
-						</control>
-
-						<control type="button" id="33">
-							<description>Add Path Button</description>
-							<width>40</width>
-							<height>40</height>
-							<label>-</label>
-							<texturenofocus border="0">pvr/button_Inline-add.png</texturenofocus>
-							<texturefocus border="0">pvr/button_Inline-add-focus.png</texturefocus>
-						</control>
+						<visible>!Container(20).Scrolling</visible>
 					</control>
 				</control>
 
