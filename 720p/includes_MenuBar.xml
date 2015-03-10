@@ -270,7 +270,8 @@
 			</control>
 			
 			<control type="group">   			
-				<include>MenuBarExtraOptions</include>
+				<include condition="!Window.IsActive(AddonBrowser)">MenuBarExtraOptions</include>
+				<include condition="Window.IsActive(AddonBrowser)">MenuBarExtraOptionsAddonBrowser</include>
 				<include>MenuBarOptionsSwitchAnim</include>
 				<visible>Skin.HasSetting(ShowMediaExtraOptions)</visible>
 			</control>		
@@ -448,6 +449,33 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(Pictures) | Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
 			</control>
+			<control type="button" id="411">
+				<description>Go to playlist</description>
+				<width>180</width>
+				<textwidth>154</textwidth>
+				<include>MenuBarBtn</include>
+				<onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
+				<onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
+				<visible>Window.IsActive(AddonBrowser) + [Player.HasAudio | [Player.HasVideo + !VideoPlayer.Content(livetv)]]</visible>
+			</control>
+			<control type="image" id="371">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsActive(AddonBrowser) + [Player.HasAudio | [Player.HasVideo + !VideoPlayer.Content(livetv)]]</visible>
+			</control>
+			<control type="button" id="412">
+				<description>Fullscreen</description>
+				<width>180</width>
+				<textwidth>154</textwidth>
+				<include>MenuBarBtn</include>
+				<onclick>fullscreen</onclick>
+				<label>[UPPERCASE]$LOCALIZE[31961][/UPPERCASE]</label>
+				<visible>Window.IsActive(AddonBrowser) + Player.HasMedia</visible>
+			</control>
+			<control type="image" id="372">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsActive(AddonBrowser) + Player.HasMedia</visible>
+			</control>
 		</control>
 		
 		<control type="button" id="2">
@@ -574,7 +602,7 @@
 				<include>MenuBarSeparator</include>
 				<visible>Player.HasMedia</visible>
 			</control>
-			<control type="radiobutton" id="405">			
+			<control type="radiobutton" id="410">			
 				<description>Shuffle</description>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[191][/UPPERCASE]</label>
@@ -653,37 +681,78 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Pictures)</visible>
 			</control>
+		</control>		
+	</include>
+	
+	<include name="MenuBarExtraOptionsAddonBrowser">
+		<control type="grouplist" id="212">
+			<left>99</left>
+			<top>0</top>
+			<width>ScreenWidth</width>
+			<height>MenuBarHeight</height>
+			<itemgap>0</itemgap>
+			<onup>555</onup>
+			<ondown>500</ondown>
+			<onleft>347</onleft>
+			<onright>345</onright>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<include>MenuBarBtnOpenCloseAnim</include>
+			<visible>ControlGroup(505).HasFocus | !Skin.HasSetting(HideMenuBar)</visible>
+			<control type="image" id="99">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="19">
+				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+				<description>Filter</description>
+				<include>MenuBarBigBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
+			</control>
+			<control type="image" id="101">
+				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="98">
+				<visible>Container.CanFilterAdvanced</visible>
+				<description>Filter</description>
+				<include>MenuBarBigBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
+				<selected>Container.Filtered</selected>
+				<onclick>Filter</onclick>
+			</control>
+			<control type="image" id="116">
+				<visible>Container.CanFilterAdvanced</visible>
+				<include>MenuBarSeparator</include>
+			</control>
 			<control type="radiobutton" id="5">
 				<description>Enable auto-updates</description>
-				<textoffsetx>10</textoffsetx>
-				<textwidth>165</textwidth>
+				<width>200</width>
+				<textwidth>125</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24063][/UPPERCASE]</label>
-				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
-			<control type="image" id="113">
+			<control type="image" id="120">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
 			<control type="radiobutton" id="6">
 				<description>No notifications</description>
+				<width>200</width>
+				<textwidth>125</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[25000][/UPPERCASE]</label>
-				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
-			<control type="image" id="114">
+			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
 			<control type="radiobutton" id="7">
 				<description>Hide foreign</description>
+				<width>200</width>
+				<textwidth>125</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[25001][/UPPERCASE]</label>
-				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
-			<control type="image" id="115">
+			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(AddonBrowser)</visible>
 			</control>
 		</control>		
 	</include>
