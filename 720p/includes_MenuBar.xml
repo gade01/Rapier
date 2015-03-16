@@ -1754,7 +1754,6 @@
 			<ondown>901</ondown>
 			<onleft>987</onleft>
 			<onright>987</onright>
-			<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			<include>MenuBarBtnOpenCloseAnim</include>
 			<control type="image" id="115">
 				<include>MenuBarSeparator</include>
@@ -1763,6 +1762,7 @@
 				<description>Enable Add-on</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24022][/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>	
 			<control type="image" id="116">
 				<include>MenuBarSeparator</include>
@@ -1771,6 +1771,7 @@
 				<description>Disable Add-on</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24021][/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
@@ -1778,7 +1779,8 @@
 			<control type="button" id="9">
 				<description>Add-on Settings</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[24020][/UPPERCASE]</label>	
+				<label>[UPPERCASE]$LOCALIZE[24020][/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
@@ -1795,6 +1797,7 @@
 				<description>Update Add-on</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24069][/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
@@ -1803,6 +1806,7 @@
 				<description>Rollback</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24048][/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
