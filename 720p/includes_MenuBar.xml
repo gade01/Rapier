@@ -1120,7 +1120,6 @@
 					<alttexturenofocus>gui/menu-bar-options-nofocus2.png</alttexturenofocus>
 					<usealttexture>Skin.HasSetting(PVRMenuBarExtraOptions)</usealttexture>
 					<onclick>Skin.ToggleSetting(PVRMenuBarExtraOptions)</onclick>
-					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				</control>
 			</control>
 
@@ -1252,6 +1251,7 @@
 				<onclick>Skin.ToggleSetting(HideLiveRadio)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="101">
 				<include>MenuBarSeparator</include>
@@ -1262,6 +1262,7 @@
 				<label>$LOCALIZE[31044]</label>
 				<selected>Skin.HasSetting(HideLiveTVPlot)</selected>
 				<onclick>Skin.ToggleSetting(HideLiveTVPlot)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="102">
 				<include>MenuBarSeparator</include>
@@ -1272,7 +1273,7 @@
 				<label>$LOCALIZE[31401]</label>
 				<selected>!Skin.HasSetting(DoNotAutoScrollLiveTVPlot)</selected>
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollLiveTVPlot)</onclick>
-				<enable>!Skin.HasSetting(HideLiveTVPlot)</enable>
+				<enable>!Skin.HasSetting(HideLiveTVPlot) + !Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="103">
 				<include>MenuBarSeparator</include>
@@ -1283,6 +1284,7 @@
 				<label>$LOCALIZE[31025]</label>
 				<selected>Skin.HasSetting(HideListInfoView2Scrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideListInfoView2Scrollbar)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="104">
 				<include>MenuBarSeparator</include>
@@ -1293,6 +1295,7 @@
 				<label>$LOCALIZE[31025] 2</label>
 				<selected>!Skin.HasSetting(ShowColumnsViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(ShowColumnsViewScrollbar)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="105">
 				<include>MenuBarSeparator</include>
@@ -1303,6 +1306,7 @@
 				<label>$LOCALIZE[31938]</label>
 				<selected>Skin.HasSetting(HidePVRGenres)</selected>
 				<onclick>Skin.ToggleSetting(HidePVRGenres)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="106">
 				<include>MenuBarSeparator</include>
