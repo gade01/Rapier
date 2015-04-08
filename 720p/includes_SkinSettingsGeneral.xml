@@ -60,7 +60,7 @@
 					<label>$LOCALIZE[31916]</label>
 					<selected>Skin.HasSetting(HideMenuBar)</selected>
 					<onclick>Skin.ToggleSetting(HideMenuBar)</onclick>
-					<onclick condition="!Skin.HasSetting(HideMenuBar) + Skin.HasSetting(HideTopBar)">Skin.Reset(HideTopBar)</onclick>
+					<onclick condition="Skin.HasSetting(HideTopBar)">Skin.Reset(HideTopBar)</onclick>
 				</control>
 				<control type="radiobutton" id="1013">
 					<description>Hide Top Media Menu Bar</description>
