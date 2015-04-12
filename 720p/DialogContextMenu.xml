@@ -15,7 +15,7 @@
 			<control type="grouplist">
 				<width>344</width>
 				<itemgap>0</itemgap>
-				<control type="image" id="997">
+				<control type="image">
 					<description>Context Menu Top</description>
 					<width>344</width>
 					<height>32</height>
@@ -25,11 +25,11 @@
 				<control type="image" id="999">
 					<description>Context Menu Middle</description>
 					<width>344</width>
-					<height max="720">auto</height>
+					<height>720</height>
 					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
 				</control>
 				
-				<control type="image" id="998">
+				<control type="image">
 					<description>Context Menu Bottom</description>
 					<width>344</width>
 					<height>32</height>
@@ -51,19 +51,18 @@
 					<include>ContextMenuBtn</include>
 					<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 				</control>
-			</control>			
-			
-			<control type="button">
-				<left>284</left>
-				<top>8</top>
-				<include>DialogCloseBtn</include>
 			</control>
 			
 			<control type="button" id="1000">
 				<description>Button Template</description>
 				<left>32</left>
 				<include>ContextMenuBtn</include>
-				<include>DialogOpenCloseAnim</include>
+			</control>
+			
+			<control type="button">
+				<left>284</left>
+				<top>8</top>
+				<include>DialogCloseBtn</include>
 			</control>
 		</control>		
 	</controls>	

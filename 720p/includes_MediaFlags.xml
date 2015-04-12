@@ -65,6 +65,15 @@
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
 			<visible>SubString(ListItem.FilenameAndPath,PDTV) | substring(ListItem.FilenameAndPath,sdtv)</visible>
 		</control>
+		<control type="image" id="741">
+			<description>Movie Set</description>
+			<width>70</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/video/set.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+		</control>
 		<control type="image" id="608">
 			<description>Telesync</description>
 			<width>41</width>
@@ -549,7 +558,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/no-rating.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>IsEmpty(ListItem.MPAA)</visible>  
+			<visible>IsEmpty(ListItem.MPAA) + !SubString(ListItem.Path,videodb://movies/sets,left)</visible>  
 		</control>
 	</include>
 	
