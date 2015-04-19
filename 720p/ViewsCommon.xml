@@ -767,6 +767,19 @@
 			</control>
 			<control type="group">
 				<visible>!IsEmpty(ListItem.Title)</visible>
+				<control type="label">
+					<description>Rating</description>
+					<left>610</left>
+					<width>100</width>
+					<height>37</height>
+					<font>ListFont2</font>
+					<textcolor>ListColor3</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>	
+					<label>$INFO[ListItem.Rating]</label>
+					<visible>Container.Content(Movies) + Skin.HasSetting(DoNotUseStarRatingMovies) + !StringCompare(Container.SortMethod,$LOCALIZE[552])</visible>
+				</control>
 				<control type="image">
 					<description>Star Rating</description>
 					<left>610</left>
@@ -913,6 +926,19 @@
 				<aligny>center</aligny>				
 				<info>ListItem.Label2</info>		
 				<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+			</control>
+			<control type="label">
+				<description>Rating</description>
+				<left>610</left>
+				<width>100</width>
+				<height>37</height>
+				<font>ListFont2</font>
+				<textcolor>ListColor3</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>	
+				<label>$INFO[ListItem.Rating]</label>
+				<visible>Skin.HasSetting(DoNotUseStarRatingTVShows) + !StringCompare(Container.SortMethod,$LOCALIZE[552])</visible>
 			</control>
 			<control type="image">
 				<description>Star Rating</description>
@@ -1072,6 +1098,19 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(ListItem.Title)</visible>
+					<control type="label">
+						<description>Rating</description>
+						<left>610</left>
+						<width>100</width>
+						<height>37</height>
+						<font>ListFont2</font>
+						<textcolor>ListColor3</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>	
+						<label>$INFO[ListItem.Rating]</label>
+						<visible>Container.Content(Movies) + Skin.HasSetting(DoNotUseStarRatingMovies) + !StringCompare(Container.SortMethod,$LOCALIZE[552])</visible>
+					</control>
 					<control type="image">
 						<description>Star Rating</description>
 						<left>610</left>
@@ -1236,6 +1275,19 @@
 					<aligny>center</aligny>				
 					<info>ListItem.Label2</info>
 					<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+				</control>
+				<control type="label">
+					<description>Rating</description>
+					<left>610</left>
+					<width>100</width>
+					<height>37</height>
+					<font>ListFont2</font>
+					<textcolor>ListColor3</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>	
+					<label>$INFO[ListItem.Rating]</label>
+					<visible>Skin.HasSetting(DoNotUseStarRatingTVShows) + !StringCompare(Container.SortMethod,$LOCALIZE[552])</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>

@@ -166,6 +166,12 @@
 				<label>[B]$INFO[Container.NumItems,, $LOCALIZE[31202]][/B]</label>
 			</control>
 			
+			<control type="label">
+				<include>InfoPaneHeadLabel2</include>
+				<label>$INFO[Window(AddonBrowser).Property(Updated),$LOCALIZE[31996]: ,]</label>
+				<visible>Window.IsActive(AddonBrowser)</visible>
+			</control>
+			
 			<include condition="Window.IsActive(Videos) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">VideoDetails</include>
 			<include condition="Window.IsActive(MusicLibrary)">MusicDetails</include>
 		</control>
