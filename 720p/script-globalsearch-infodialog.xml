@@ -1325,7 +1325,7 @@
 				<include>GlobalSearchVideoCodecMediaFlags</include>
 				<include>GlobalSearchAudioMediaFlags</include>
 				<include>GlobalSearchAspectMediaFlags</include>
-				<include>GlobalSearchRatingMediaFlags</include>
+				<include condition="!Skin.HasSetting(HideRatingMediaFlag)">GlobalSearchRatingMediaFlags</include>
 				<visible>Control.IsVisible(110)</visible>
 			</control>
 			
