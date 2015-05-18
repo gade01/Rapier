@@ -215,6 +215,24 @@
 					<onclick>Skin.ToggleSetting(HideRatingMediaFlag)</onclick>
 					<enable>!Skin.HasSetting(DisableMediaFlags)</enable>
 				</control>
+				<control type="radiobutton" id="3016">
+					<description>Hide Subtitle Media Flag</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31425]</label>
+					<selected>!Skin.HasSetting(HideSubtitleMediaFlag)</selected>
+					<onclick>Skin.ToggleSetting(HideSubtitleMediaFlag)</onclick>
+					<enable>!Skin.HasSetting(DisableMediaFlags)</enable>
+					<visible>System.HasAddon(script.skin.info.service)</visible>
+				</control>
+				<control type="radiobutton" id="3022">
+					<description>Hide Audio Language Media Flag</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31423]</label>
+					<selected>!Skin.HasSetting(HideAudioLanguageMediaFlag)</selected>
+					<onclick>Skin.ToggleSetting(HideAudioLanguageMediaFlag)</onclick>
+					<enable>!Skin.HasSetting(DisableMediaFlags)</enable>
+					<visible>System.HasAddon(script.skin.info.service)</visible>
+				</control>
 			</control>
 		</control>
 	</include>
