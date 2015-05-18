@@ -28,8 +28,10 @@
 	</variable>
 
 	<variable name="LiveTVListInfoItemLabel">
-		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.Title]</value>
-		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.Label]</value>
+		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)] + !StringCompare(ListItem.Season,0)">$INFO[ListItem.Title]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
+		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)] + StringCompare(ListItem.Season,0)">$INFO[ListItem.Title]</value>
+		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !StringCompare(ListItem.Season,0)">$INFO[ListItem.Label]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
+		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + StringCompare(ListItem.Season,0)">$INFO[ListItem.Label]</value>
 	</variable>
 
 	<variable name="LiveTVListInfoItemLabel2">
