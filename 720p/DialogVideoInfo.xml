@@ -302,10 +302,10 @@
 					</control>
 				</control>
 				
-				<control type="group">
+				<control type="group" id="903">
 					<top>225</top>
 					<left>469</left>
-					<visible>Control.HasFocus(15)</visible>
+					<visible>Control.HasFocus(15) | [Player.HasVideo + Skin.HasSetting(PlayTrailerWindowed) + SubString(Player.FilenameAndPath,youtube)]</visible>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<control type="image">
 						<description>Border</description>
@@ -345,7 +345,7 @@
 					<onleft>505</onleft>
 					<onright condition="Control.IsVisible(61)">61</onright>
 					<include>FSMediaInfoOpenCloseAnim</include>
-					<visible>!Control.HasFocus(15)</visible>
+					<visible>!Control.IsVisible(903)</visible>
 					<itemlayout width="720" height="29">
 						<control type="image">
 							<top>27</top>
@@ -1479,7 +1479,7 @@
 				<pagecontrol>61</pagecontrol>
 				<include>FSMediaInfoOpenCloseAnim</include>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
-				<visible>!Control.IsVisible(50) + [[Container.Content(Movies) + !Control.HasFocus(15)] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]]</visible>
+				<visible>!Control.IsVisible(50) + [[Container.Content(Movies) + !Control.IsVisible(903)] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]]</visible>
 			</control>
 			
 			<control type="textbox" id="902">
@@ -1530,7 +1530,7 @@
 					<ondown condition="!System.HasAddon(script.extendedinfo)">61</ondown>	
 					<onright>61</onright>
 					<include>FSMediaInfoOpenCloseAnim</include>
-					<visible>!Control.HasFocus(15)</visible>
+					<visible>!Control.IsVisible(903)</visible>
 					<include condition="[Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]] + !System.HasAddon(script.extendedinfo)">DialogVideoInfoActors1</include>
 					<include condition="[Container.Content(Episodes) | Container.Content(MusicVideos)] + !System.HasAddon(script.extendedinfo)">DialogVideoInfoActors2</include>
 					<include condition="[Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)] + !System.HasAddon(script.extendedinfo)">DialogVideoInfoActors3</include>
