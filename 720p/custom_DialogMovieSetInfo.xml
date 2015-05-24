@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="3008">
-	<defaultcontrol always="true">987</defaultcontrol>
+	<defaultcontrol always="true">116</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<zorder>0</zorder>
 	<onload condition="!Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
@@ -39,7 +39,7 @@
 				<description>Movies / TV Show Poster Cover Image</description>
 				<width>336</width>
 				<height>500</height>
-				<texture>$VAR[PosterThumb]</texture>
+				<texture background="true">$VAR[PosterThumb]</texture>
 				<bordertexture border="4">covers/cover-case2.png</bordertexture>
 				<bordersize>4</bordersize>
 				<aspectratio>stretch</aspectratio>
@@ -95,17 +95,6 @@
 				<texture>views/videoinfo-separator.png</texture>
 			</control>
 			
-			<control type="label">
-				<description>Genre</description>
-				<top>87</top>
-				<width>710</width>
-				<align>center</align>
-				<font>FullMediaInfoTitleFont2</font>
-				<textcolor>MediaInfoTitleColor2</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label fallback="31000">[UPPERCASE]$INFO[Window(home).Property(Set.Movies.Genre)][/UPPERCASE]</label>
-			</control>
-			
 			<control type="image">
 				<top>118</top>
 				<width>710</width>
@@ -115,358 +104,583 @@
 			</control>
 		</control>
 		
-		<control type="list" id="901">
-			<left>465</left>
-			<top>219</top>
-			<width>720</width>
-			<height>233</height>
+		<control type="group">
+			<visible>IsEmpty(Skin.String(DialogMovieSetInfo))</visible>
 			<include>FSMediaInfoOpenCloseAnim</include>
-			<itemlayout width="720" height="29">
-				<control type="image">
-					<top>27</top>
-					<left>5</left>
-					<width>710</width>
-					<height>2</height>
-					<animation effect="fade" end="30" condition="true">Conditional</animation>
-					<texture>views/videoinfo-separator.png</texture>
-				</control>
-				<control type="image">
-					<left>170</left>
-					<width>1</width>
-					<height>32</height>
-					<animation effect="fade" end="25" condition="true">Conditional</animation>
-					<texture border="1,0,0,10" flipy="true">views/videoinfo-separator.png</texture>
-				</control>
-				<control type="label">
-					<left>5</left>
-					<width>165</width>
-					<height>29</height>
-					<font>FullMediaInfoFont</font>
-					<aligny>center</aligny>
-					<textcolor>MediaInfoItemColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-				</control>
-				<control type="label">
-					<left>179</left>
-					<width>533</width>
-					<height>29</height>
-					<font>FullMediaInfoFont2</font>
-					<aligny>center</aligny>
-					<textcolor>MediaInfoItemColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label fallback="31000">$INFO[ListItem.Label2]</label>
-				</control>
-			</itemlayout>	
-			<focusedlayout width="720" height="29">
-				<control type="image">
-					<top>27</top>
-					<left>5</left>
-					<width>710</width>
-					<height>2</height>
-					<animation effect="fade" end="30" condition="true">Conditional</animation>
-					<texture>views/videoinfo-separator.png</texture>
-				</control>
-				<control type="image">
-					<left>170</left>
-					<width>1</width>
-					<height>32</height>
-					<animation effect="fade" end="25" condition="true">Conditional</animation>
-					<texture border="1,0,0,10" flipy="true">views/videoinfo-separator.png</texture>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<width>720</width>
-					<height>29</height>	
-					<texture border="4">views/list-focus.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<visible>Control.HasFocus(901)</visible>
-					<include>ListViewSelectFadeAnim</include>
-					<include>MediaInfoListScrollAnim</include>
-				</control>
-				<control type="label">
-					<left>5</left>
-					<width>165</width>
-					<height>29</height>
-					<font>FullMediaInfoFont</font>
-					<aligny>center</aligny>
-					<textcolor>MediaInfoItemColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-				</control>
-				<control type="label">
-					<left>179</left>
-					<width>533</width>
-					<height>29</height>
-					<font>FullMediaInfoFont2</font>
-					<aligny>center</aligny>
-					<textcolor>MediaInfoItemColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label fallback="31000">$INFO[ListItem.Label2]</label>
-				</control>
-			</focusedlayout>
-			<content>
-				<item id="1">
-					<description>Movies</description>
-					<label>$LOCALIZE[342]</label>
-					<label2>$INFO[Window(home).Property(Set.Movies.Count)]</label2>
-					<onclick>noop</onclick>
-				</item>
-				<item id="2">
-					<description>Director</description>
-					<label>$LOCALIZE[20339]</label>
-					<label2>$INFO[Window(home).Property(Set.Movies.Director)]</label2>
-					<onclick>noop</onclick>
-				</item>
-				<item id="3">
-					<description>Writer</description>
-					<label>$LOCALIZE[20417]</label>
-					<label2>$INFO[Window(home).Property(Set.Movies.Writer)]</label2>
-					<onclick>noop</onclick>
-				</item>
-				<item id="4">
-					<description>Year</description>
-					<label>$LOCALIZE[345]</label>
-					<label2>$INFO[Window(home).Property(Set.Movies.Years)]</label2>
-					<onclick>noop</onclick>
-				</item>
-				<item id="5">
-					<description>Runtime</description>
-					<label>$LOCALIZE[2050]</label>
-					<label2>$INFO[Window(home).Property(Set.Movies.Runtime)]</label2>
-					<onclick>noop</onclick>
-				</item>
-				<item id="6">
-					<description>Rating</description>
-					<label>$LOCALIZE[563]</label>
-					<label2>$INFO[ListItem.Rating]</label2>
-					<onclick>noop</onclick>
-				</item>
-			</content>
+			
+			<control type="label">
+				<description>Genre</description>
+				<left>470</left>
+				<top>186</top>
+				<width>710</width>
+				<align>center</align>
+				<font>FullMediaInfoTitleFont2</font>
+				<textcolor>MediaInfoTitleColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label fallback="31000">[UPPERCASE]$INFO[Window(home).Property(Set.Movies.Genre)][/UPPERCASE]</label>
+			</control>
+		
+			<control type="list" id="901">
+				<left>465</left>
+				<top>219</top>
+				<width>720</width>
+				<height>233</height>
+				<itemlayout width="720" height="29">
+					<control type="image">
+						<top>27</top>
+						<left>5</left>
+						<width>710</width>
+						<height>2</height>
+						<animation effect="fade" end="30" condition="true">Conditional</animation>
+						<texture>views/videoinfo-separator.png</texture>
+					</control>
+					<control type="image">
+						<left>170</left>
+						<width>1</width>
+						<height>32</height>
+						<animation effect="fade" end="25" condition="true">Conditional</animation>
+						<texture border="1,0,0,10" flipy="true">views/videoinfo-separator.png</texture>
+					</control>
+					<control type="label">
+						<left>5</left>
+						<width>165</width>
+						<height>29</height>
+						<font>FullMediaInfoFont</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>
+					<control type="label">
+						<left>179</left>
+						<width>533</width>
+						<height>29</height>
+						<font>FullMediaInfoFont2</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label fallback="31000">$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>	
+				<focusedlayout width="720" height="29">
+					<control type="image">
+						<top>27</top>
+						<left>5</left>
+						<width>710</width>
+						<height>2</height>
+						<animation effect="fade" end="30" condition="true">Conditional</animation>
+						<texture>views/videoinfo-separator.png</texture>
+					</control>
+					<control type="image">
+						<left>170</left>
+						<width>1</width>
+						<height>32</height>
+						<animation effect="fade" end="25" condition="true">Conditional</animation>
+						<texture border="1,0,0,10" flipy="true">views/videoinfo-separator.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<width>720</width>
+						<height>29</height>	
+						<texture border="4">views/list-focus.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<visible>Control.HasFocus(901)</visible>
+						<include>ListViewSelectFadeAnim</include>
+						<include>MediaInfoListScrollAnim</include>
+					</control>
+					<control type="label">
+						<left>5</left>
+						<width>165</width>
+						<height>29</height>
+						<font>FullMediaInfoFont</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					</control>
+					<control type="label">
+						<left>179</left>
+						<width>533</width>
+						<height>29</height>
+						<font>FullMediaInfoFont2</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label fallback="31000">$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Movies</description>
+						<label>$LOCALIZE[342]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Count)]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="2">
+						<description>Director</description>
+						<label>$LOCALIZE[20339]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Director)]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<description>Writer</description>
+						<label>$LOCALIZE[20417]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Writer)]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<description>Year</description>
+						<label>$LOCALIZE[345]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Years)]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<description>Runtime</description>
+						<label>$LOCALIZE[2050]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Runtime)]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="6">
+						<description>Rating</description>
+						<label>$LOCALIZE[563]</label>
+						<label2>$INFO[ListItem.Rating]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="7">
+						<description>Studio</description>
+						<label>$LOCALIZE[572]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Studio)]</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="8">
+						<description>Country</description>
+						<label>$LOCALIZE[574]</label>
+						<label2>$INFO[Window(home).Property(Set.Movies.Country)]</label2>
+						<onclick>noop</onclick>
+					</item>
+				</content>
+			</control>
+			
+			<control type="textbox" id="903">
+				<description>Plot</description>
+				<left>470</left>
+				<top>462</top>
+				<width>710</width>
+				<height>168</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>justify</align>
+				<label>$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</label>
+				<pagecontrol>61</pagecontrol>
+				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
+			</control>
 		</control>
 		
-		<control type="panel" id="902">
-			<left>470</left>
-			<top>400</top>
-			<width>714</width>
-			<height>174</height>
-			<onup>505</onup>
-			<ondown condition="Control.IsVisible(61)">61</ondown>
-			<onleft>505</onleft>
-			<onright condition="Control.IsVisible(61)">61</onright>
-			<orientation>horizontal</orientation>
-			<include>FSMediaInfoOpenCloseAnim</include>
+		<control type="group">
 			<visible>Skin.String(DialogMovieSetInfo,1)</visible>
-			<itemlayout height="174" width="119">		
+			<include>FSMediaInfoOpenCloseAnim</include>
+			
+			<control type="label">
+				<description>Movies in Set</description>
+				<left>470</left>
+				<top>186</top>
+				<width>710</width>
+				<align>center</align>
+				<font>FullMediaInfoTitleFont2</font>
+				<textcolor>MediaInfoTitleColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label fallback="31000">[UPPERCASE]$INFO[Window(home).Property(Set.Movies.Count),, $LOCALIZE[342]][/UPPERCASE]</label>
+			</control>
+			
+			<control type="image">
+				<left>470</left>
+				<top>248</top>
+				<width>472</width>
+				<height>2</height>
+				<animation effect="fade" end="30" condition="true">Conditional</animation>
+				<texture>views/videoinfo-separator.png</texture>
+			</control>
+			
+			<control type="list" id="902">
+				<left>465</left>
+				<top>250</top>
+				<width>482</width>
+				<height>300</height>
+				<onup>987</onup>
+				<ondown condition="Control.IsVisible(61)">61</ondown>
+				<onleft>987</onleft>
+				<onright condition="Control.IsVisible(61)">61</onright>
+				<pagecontrol>61</pagecontrol>
+				<itemlayout width="482" height="30">
+					<control type="image">
+						<top>28</top>
+						<left>5</left>
+						<width>472</width>
+						<height>2</height>
+						<animation effect="fade" end="30" condition="true">Conditional</animation>
+						<texture>views/videoinfo-separator.png</texture>
+					</control>
+					<control type="label">
+						<left>5</left>
+						<width>423</width>
+						<height>30</height>
+						<font>FullMediaInfoFont</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Property(Title)][/UPPERCASE]</label>
+					</control>
+					<control type="label">
+						<left>433</left>
+						<width>100</width>
+						<height>30</height>
+						<font>FullMediaInfoFont2</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[ListItem.Property(Year)]</label>
+					</control>
+				</itemlayout>	
+				<focusedlayout width="482" height="30">
+					<control type="image">
+						<top>28</top>
+						<left>5</left>
+						<width>472</width>
+						<height>2</height>
+						<animation effect="fade" end="30" condition="true">Conditional</animation>
+						<texture>views/videoinfo-separator.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<width>482</width>
+						<height>30</height>	
+						<texture border="4">views/list-focus.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<visible>Control.HasFocus(902)</visible>
+						<include>ListViewSelectFadeAnim</include>
+						<animation effect="slide" start="0,-30" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(902).OnNext">Focus</animation>
+						<animation effect="slide" start="0,30" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(902).OnPrevious">Focus</animation>
+					</control>
+					<control type="label">
+						<left>5</left>
+						<width>423</width>
+						<height>30</height>
+						<font>FullMediaInfoFont</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>[UPPERCASE]$INFO[ListItem.Property(Title)][/UPPERCASE]</label>
+					</control>
+					<control type="label">
+						<left>433</left>
+						<width>100</width>
+						<height>30</height>
+						<font>FullMediaInfoFont2</font>
+						<aligny>center</aligny>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[ListItem.Property(Year)]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.1.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.1.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.1.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.1.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.1.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.1.Art(poster)))</visible>
+					</item>
+					<item id="2">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.2.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.2.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.2.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.2.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.2.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.2.Art(poster)))</visible>
+					</item>
+					<item id="3">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.3.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.3.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.3.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.3.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.3.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.3.Art(poster)))</visible>
+					</item>
+					<item id="4">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.4.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.4.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.4.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.4.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.4.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.4.Art(poster)))</visible>
+					</item>
+					<item id="5">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.5.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.5.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.5.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.5.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.5.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.5.Art(poster)))</visible>
+					</item>
+					<item id="6">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.6.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.6.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.6.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.6.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.6.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.6.Art(poster)))</visible>
+					</item>
+					<item id="7">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.7.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.7.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.7.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.7.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.7.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.7.Art(poster)))</visible>
+					</item>
+					<item id="8">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.8.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.8.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.8.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.8.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.8.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.8.Art(poster)))</visible>
+					</item>
+					<item id="9">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.9.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.9.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.9.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.9.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.9.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.9.Art(poster)))</visible>
+					</item>
+					<item id="10">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.10.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.10.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.10.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.10.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.10.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.10.Art(poster)))</visible>
+					</item>
+					<item id="11">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.11.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.11.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.11.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.11.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.11.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.11.Art(poster)))</visible>
+					</item>
+					<item id="12">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.12.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.12.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.12.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.12.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.12.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.12.Art(poster)))</visible>
+					</item>
+					<item id="13">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.13.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.13.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.13.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.13.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.13.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.13.Art(poster)))</visible>
+					</item>
+					<item id="14">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.14.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.14.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.14.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.14.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.14.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.14.Art(poster)))</visible>
+					</item>
+					<item id="15">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.15.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.15.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.15.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.15.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.15.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.15.Art(poster)))</visible>
+					</item>
+					<item id="16">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.16.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.16.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.16.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.16.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.16.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.16.Art(poster)))</visible>
+					</item>
+					<item id="17">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.17.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.17.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.17.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.17.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.17.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.17.Art(poster)))</visible>
+					</item>
+					<item id="18">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.18.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.18.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.18.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.18.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.18.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.18.Art(poster)))</visible>
+					</item>
+					<item id="19">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.19.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.19.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.19.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.19.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.19.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.19.Art(poster)))</visible>
+					</item>
+					<item id="20">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.20.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.20.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.20.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.20.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.20.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.20.Art(poster)))</visible>
+					</item>
+					<item id="21">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.21.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.21.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.21.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.21.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.21.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.21.Art(poster)))</visible>
+					</item>
+					<item id="22">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.22.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.22.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.22.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.22.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.22.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.22.Art(poster)))</visible>
+					</item>
+					<item id="23">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.23.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.23.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.23.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.23.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.23.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.23.Art(poster)))</visible>
+					</item>
+					<item id="24">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.24.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.24.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.24.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.24.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.24.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.24.Art(poster)))</visible>
+					</item>
+					<item id="25">
+						<property name="Plot">$INFO[Window(home).Property(Set.Movie.25.Plot)]</property>
+						<property name="PlotOutline">$INFO[Window(home).Property(Set.Movie.25.PlotOutline)]</property>
+						<property name="Year">$INFO[Window(home).Property(Set.Movie.25.Year)]</property>
+						<property name="Title">$INFO[Window(home).Property(Set.Movie.25.Title)]</property>
+						<thumb>$INFO[Window(home).Property(Set.Movie.25.Art(poster))]</thumb>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.25.Art(poster)))</visible>
+					</item>
+				</content>
+			</control>
+			
+			<control type="textbox">
+				<description>Description</description>
+				<left>470</left>
+				<top>563</top>
+				<width>710</width>
+				<height>66</height>
+				<font>SettingsContentFont2</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>justify</align>
+				<label>$INFO[Container(902).ListItem.Property(PlotOutline)]</label>
+				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
+				<visible>!IsEmpty(Container(902).ListItem.Property(PlotOutline))</visible>
+			</control>
+			
+			<control type="textbox">
+				<description>Description</description>
+				<left>470</left>
+				<top>563</top>
+				<width>710</width>
+				<height>66</height>
+				<font>SettingsContentFont2</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>justify</align>
+				<label>$INFO[Container(902).ListItem.Property(Plot)]</label>
+				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
+				<visible>IsEmpty(Container(902).ListItem.Property(PlotOutline))</visible>
+			</control>
+			
+			<control type="group">
+				<left>975</left>
+				<top>248</top>
 				<control type="image">
-					<width>115</width>
-					<height>170</height>
+					<description>Default Cover Image Background</description>
+					<width>206</width>
+					<height>303</height>
+					<texture border="4">covers/cover-case2.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<animation effect="fade" end="70" condition="true">Conditional</animation>
+					<include>FSMediaInfoOpenCloseAnim</include>
+					<visible>IsEmpty(Container(902).ListItem.Thumb)</visible>
+				</control>
+				
+				<control type="image">
+					<description>Default Cover Image</description>
+					<width>206</width>
+					<height>303</height>
+					<texture>DefaultVideo.png</texture>
+					<bordersize>20</bordersize>
+					<aspectratio>keep</aspectratio>
+					<animation effect="fade" end="85" condition="true">Conditional</animation>
+					<include>FSMediaInfoOpenCloseAnim</include>
+					<visible>IsEmpty(Container(902).ListItem.Thumb)</visible>
+				</control>
+				
+				<control type="image">
+					<description>Thumb</description>
+					<width>206</width>
+					<height>303</height>
+					<texture>$INFO[Container(902).ListItem.Thumb]</texture>
 					<bordertexture border="4">covers/cover-case2.png</bordertexture>
 					<bordersize>4</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$INFO[ListItem.Thumb]</texture>
+					<aspectratio>scale</aspectratio>
+					<include>FSMediaInfoOpenCloseAnim</include>
+					<fadetime>400</fadetime>
+					<visible>!IsEmpty(Container(902).ListItem.Thumb)</visible>
 				</control>
-				<control type="image">
-					<width>115</width>
-					<height>170</height>
-					<texture border="4">covers/cover-case2.png</texture>
-					<visible>IsEmpty(ListItem.Thumb)</visible>
-				</control>
-				<control type="image">
-					<width>115</width>
-					<height>170</height>
-					<texture background="true">DefaultVideo.png</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<visible>IsEmpty(ListItem.Thumb)</visible>
-				</control>
-			</itemlayout>				
-			<focusedlayout height="174" width="119">
-				<control type="group">
-					<include>ListViewCoverFocusAnim</include>
-					<control type="image">
-						<width>115</width>
-						<height>170</height>
-						<texture border="4">covers/cover-case-noshadow-focus.png</texture>
-						<include>ListViewOverlayFadeAnim</include>
-					</control>
-					<control type="image">
-						<width>115</width>
-						<height>170</height>
-						<texture border="4">black.png</texture>
-						<bordersize>3</bordersize>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
-					</control>
-					<control type="image">
-						<width>115</width>
-						<height>170</height>
-						<texture background="true">DefaultMovie.png</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<visible>IsEmpty(ListItem.Thumb)</visible>
-					</control>
-					<control type="image">
-						<top>2</top>
-						<left>2</left>
-						<width>111</width>
-						<height>166</height>
-						<bordertexture border="4">black.png</bordertexture>
-						<bordersize>2</bordersize>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true">$INFO[ListItem.Thumb]</texture>
-					</control>
-				</control>
-			</focusedlayout>
-			<content>
-				<item id="1">
-					<label>$INFO[Window(home).Property(Set.Movie.1.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.1.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.1.Art(poster)))</visible>
-				</item>
-				<item id="2">
-					<label>$INFO[Window(home).Property(Set.Movie.2.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.2.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.2.Art(poster)))</visible>
-				</item>
-				<item id="3">
-					<label>$INFO[Window(home).Property(Set.Movie.3.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.3.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.3.Art(poster)))</visible>
-				</item>
-				<item id="4">
-					<label>$INFO[Window(home).Property(Set.Movie.4.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.4.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.4.Art(poster)))</visible>
-				</item>
-				<item id="5">
-					<label>$INFO[Window(home).Property(Set.Movie.5.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.5.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.5.Art(poster)))</visible>
-				</item>
-				<item id="6">
-					<label>$INFO[Window(home).Property(Set.Movie.6.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.6.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.6.Art(poster)))</visible>
-				</item>
-				<item id="7">
-					<label>$INFO[Window(home).Property(Set.Movie.7.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.7.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.7.Art(poster)))</visible>
-				</item>
-				<item id="8">
-					<label>$INFO[Window(home).Property(Set.Movie.8.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.8.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.8.Art(poster)))</visible>
-				</item>
-				<item id="9">
-					<label>$INFO[Window(home).Property(Set.Movie.9.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.9.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.9.Art(poster)))</visible>
-				</item>
-				<item id="10">
-					<label>$INFO[Window(home).Property(Set.Movie.10.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.10.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.10.Art(poster)))</visible>
-				</item>
-				<item id="11">
-					<label>$INFO[Window(home).Property(Set.Movie.11.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.11.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.11.Art(poster)))</visible>
-				</item>
-				<item id="12">
-					<label>$INFO[Window(home).Property(Set.Movie.12.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.12.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.12.Art(poster)))</visible>
-				</item>
-				<item id="13">
-					<label>$INFO[Window(home).Property(Set.Movie.13.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.13.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.13.Art(poster)))</visible>
-				</item>
-				<item id="14">
-					<label>$INFO[Window(home).Property(Set.Movie.14.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.14.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.14.Art(poster)))</visible>
-				</item>
-				<item id="15">
-					<label>$INFO[Window(home).Property(Set.Movie.15.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.15.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.15.Art(poster)))</visible>
-				</item>
-				<item id="16">
-					<label>$INFO[Window(home).Property(Set.Movie.16.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.16.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.16.Art(poster)))</visible>
-				</item>
-				<item id="17">
-					<label>$INFO[Window(home).Property(Set.Movie.17.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.17.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.17.Art(poster)))</visible>
-				</item>
-				<item id="18">
-					<label>$INFO[Window(home).Property(Set.Movie.18.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.18.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.18.Art(poster)))</visible>
-				</item>
-				<item id="19">
-					<label>$INFO[Window(home).Property(Set.Movie.19.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.19.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.19.Art(poster)))</visible>
-				</item>
-				<item id="20">
-					<label>$INFO[Window(home).Property(Set.Movie.20.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.20.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.20.Art(poster)))</visible>
-				</item>
-				<item id="21">
-					<label>$INFO[Window(home).Property(Set.Movie.21.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.21.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.21.Art(poster)))</visible>
-				</item>
-				<item id="22">
-					<label>$INFO[Window(home).Property(Set.Movie.22.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.22.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.22.Art(poster)))</visible>
-				</item>
-				<item id="23">
-					<label>$INFO[Window(home).Property(Set.Movie.23.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.23.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.23.Art(poster)))</visible>
-				</item>
-				<item id="24">
-					<label>$INFO[Window(home).Property(Set.Movie.24.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.24.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.24.Art(poster)))</visible>
-				</item>
-				<item id="25">
-					<label>$INFO[Window(home).Property(Set.Movie.25.Plot)]</label>
-					<thumb>$INFO[Window(home).Property(Set.Movie.25.Art(poster))]</thumb>
-					<onclick>noop</onclick>
-					<visible>!IsEmpty(Window(home).Property(Set.Movie.25.Art(poster)))</visible>
-				</item>
-			</content>
+			</control>
 		</control>
 		
 		<control type="image">
@@ -476,39 +690,6 @@
 			<height>2</height>
 			<animation effect="fade" end="30" condition="true">Conditional</animation>
 			<texture>views/videoinfo-separator.png</texture>
-		</control>
-						
-		<control type="textbox" id="903">
-			<description>Plot</description>
-			<left>470</left>
-			<top>404</top>
-			<width>710</width>
-			<height>226</height>
-			<font>FullMediaInfoDescFont</font>
-			<textcolor>MediaInfoColor</textcolor>
-			<shadowcolor>ShadowColor</shadowcolor>
-			<align>justify</align>
-			<label>$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</label>
-			<pagecontrol>61</pagecontrol>
-			<include>FSMediaInfoOpenCloseAnim</include>
-			<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
-			<visible>IsEmpty(Skin.String(DialogMovieSetInfo))</visible>
-		</control>
-		
-		<control type="textbox">
-			<description>Plot</description>
-			<left>470</left>
-			<top>573</top>
-			<width>710</width>
-			<height>63</height>
-			<font>SettingsContentFont2</font>
-			<textcolor>MediaInfoColor</textcolor>
-			<shadowcolor>ShadowColor</shadowcolor>
-			<align>justify</align>
-			<label>$INFO[Container(902).ListItem.Label]</label>
-			<include>FSMediaInfoOpenCloseAnim</include>
-			<autoscroll time="3000" delay="6000" repeat="10000">true</autoscroll>
-			<visible>Skin.String(DialogMovieSetInfo,1)</visible>
 		</control>
 		
 		<control type="spincontrol" id="61">
