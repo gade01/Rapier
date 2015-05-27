@@ -70,6 +70,13 @@
 					<include>ContextMenuBtn</include>
 					<visible>System.HasAddon(script.skin.info.service) + !IsEmpty(ListItem.DBID) + [SubString(ListItem.Path,videodb://movies/sets) | Container.Content(Sets)]</visible>
 				</control>
+				<control type="button" id="2067">
+					<description>Season Info</description>
+					<label>$LOCALIZE[31045]</label>
+					<onclick>RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season])</onclick>
+					<include>ContextMenuBtn</include>
+					<visible>System.HasAddon(script.extendedinfo) + Container.Content(Seasons) + !IsEmpty(ListItem.Season)</visible>
+				</control>
 				<control type="button" id="2065">
 					<description>Cinema Experience</description>
 					<label>$INFO[System.AddonTitle(script.cinema.experience)]</label>
@@ -84,13 +91,6 @@
 					<include>ContextMenuBtn</include>
 					<visible>System.HasAddon(script.libraryeditor) + !IsEmpty(ListItem.DBID) + !SubString(ListItem.Path,videodb://movies/sets) + !Skin.HasSetting(EnableKioskMode)</visible>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
-				</control>
-				<control type="button" id="2067">
-					<description>Season Info</description>
-					<label>$LOCALIZE[31045]</label>
-					<onclick>RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season])</onclick>
-					<include>ContextMenuBtn</include>
-					<visible>System.HasAddon(script.extendedinfo) + !System.HasAddon(context.extendedinfo.dialog) + Container.Content(Seasons) + !IsEmpty(ListItem.Season)</visible>
 				</control>
 			</control>
 			
