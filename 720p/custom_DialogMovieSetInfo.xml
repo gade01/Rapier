@@ -102,6 +102,19 @@
 				<animation effect="fade" end="30" condition="true">Conditional</animation>
 				<texture>views/videoinfo-separator.png</texture>
 			</control>
+			
+			<control type="image">
+				<description>Studio Logo</description>
+				<top>546</top>
+				<width>710</width>
+				<height>65</height>
+				<aspectratio>keep</aspectratio>
+				<align>center</align>
+				<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+				<texture>$INFO[Window(home).Property(Set.Movies.Studio),studios/,.png]</texture>
+				<include>MediaFlagFadeAnim</include>
+				<visible>!IsEmpty(Window(home).Property(Set.Movies.Studio))</visible>
+			</control>
 		</control>
 		
 		<control type="group">
