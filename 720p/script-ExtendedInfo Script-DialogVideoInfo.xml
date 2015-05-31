@@ -200,6 +200,19 @@
 				<animation effect="fade" end="30" condition="true">Conditional</animation>
 				<texture>views/videoinfo-separator.png</texture>
 			</control>
+			
+			<control type="image">
+				<description>Network</description>
+				<top>546</top>
+				<width>710</width>
+				<height>65</height>
+				<aspectratio>keep</aspectratio>
+				<align>center</align>
+				<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+				<texture>$INFO[Container(1450).ListItem.Label,studios/,.png]</texture>
+				<include>MediaFlagFadeAnim</include>
+				<visible>StringCompare(Window.Property(type),tvshow)</visible>
+			</control>
 		</control>
 		
 		<control type="group">
@@ -387,6 +400,7 @@
 						<label>$ADDON[script.extendedinfo 32109]</label>
 						<label2>$INFO[Window.Property(movie.Budget),$]</label2>
 						<onclick>noop</onclick>
+						<visible>![StringCompare(Window.Property(type),tvshow) + IsEmpty(Window.Property(movie.Budget))]</visible>
 					</item>
 					<item id="9">
 						<description>Revenue</description>
@@ -395,7 +409,14 @@
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
 					</item>
-					<!--<item id="10">
+					<item id="10">
+						<description>Network</description>
+						<label>$LOCALIZE[705]</label>
+						<label2>$INFO[Container(1450).ListItem.Label]</label2>
+						<onclick>noop</onclick>
+						<visible>StringCompare(Window.Property(type),tvshow) + IsEmpty(Window.Property(movie.Budget))</visible>
+					</item>
+					<!--<item id="11">
 						<description>File Path</description>
 						<label>$LOCALIZE[21801]</label>
 						<label2>$INFO[Window.Property(movie.FileNameAndPath)]</label2>

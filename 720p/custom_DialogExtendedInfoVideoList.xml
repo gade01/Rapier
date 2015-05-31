@@ -120,27 +120,66 @@
 				<width>196</width>
 				<include>DropDownMenuTopBorder</include>
 			</control>
-			<control type="button" id="1">
-				<description>Thumbnail</description>
+			<control type="radiobutton" id="1">
+				<description>Thumbnail Hide Label</description>
 				<width>196</width>
-				<textoffsetx>57</textoffsetx>
-				<textwidth>130</textwidth>
-				<include>DropDownMenuViewModeBtn</include>
-				<label>$LOCALIZE[31107]</label>
+				<radioposx>156</radioposx>
+				<textwidth>127</textwidth>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31042]</label>
+				<selected>Skin.HasSetting(HideExtendedInfoThumbsLabel)</selected>
+				<onclick>Skin.ToggleSetting(HideExtendedInfoThumbsLabel)</onclick>	
+			</control>
+			<control type="radiobutton" id="2">
+				<description>Thumbnail Hide Scrollbar</description>
+				<width>196</width>
+				<radioposx>156</radioposx>
+				<textwidth>127</textwidth>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31025]</label>
+				<selected>Skin.HasSetting(ShowExtendedInfoThumbnailViewScrollbar)</selected>
+				<onclick>Skin.ToggleSetting(ShowExtendedInfoThumbnailViewScrollbar)</onclick>
+			</control>
+			<control type="radiobutton" id="3">
+				<description>Show Fanart</description>
+				<width>196</width>
+				<radioposx>156</radioposx>
+				<textwidth>127</textwidth>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31043]</label>
+				<selected>Skin.HasSetting(ShowExtendedInfoThumbnailFanart)</selected>
+				<onclick>Skin.ToggleSetting(ShowExtendedInfoThumbnailFanart)</onclick>	
+			</control>
+			<control type="button" id="4">
+				<description>View Styles Header</description>
+				<width>196</width>
+				<textwidth>160</textwidth>
+				<include>DropDownMenuHeader</include>
+				<label>$LOCALIZE[31206]</label>
+			</control>
+			<control type="radiobutton" id="5">
+				<description>Thumbnail Normal</description>
+				<width>196</width>
+				<radioposx>156</radioposx>
+				<textwidth>127</textwidth>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31418]</label>
+				<selected>Skin.String(ExtendedInfoViewStyle,1) | Skin.String(ExtendedInfoViewStyle,)</selected>
 				<onclick>Skin.SetString(ExtendedInfoViewStyle,1)</onclick>
 				<onclick>Dialog.Close(3009)</onclick>
 			</control>
-			<control type="button" id="2">
+			<control type="radiobutton" id="6">
 				<description>Thumbnail Small</description>
 				<width>196</width>
-				<textoffsetx>57</textoffsetx>
-				<textwidth>130</textwidth>
-				<include>DropDownMenuViewModeBtn</include>
-				<label>$LOCALIZE[31109]</label>
+				<radioposx>156</radioposx>
+				<textwidth>127</textwidth>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31412]</label>
+				<selected>Skin.String(ExtendedInfoViewStyle,2)</selected>
 				<onclick>Skin.SetString(ExtendedInfoViewStyle,2)</onclick>
 				<onclick>Dialog.Close(3009)</onclick>
 			</control>
-			<!--<control type="button" id="3">
+			<!--<control type="button" id="7">
 				<description>List</description>
 				<width>196</width>
 				<textoffsetx>57</textoffsetx>
@@ -154,37 +193,6 @@
 				<width>196</width>
 				<include>DropDownMenuBottomBorder</include>
 			</control>
-		</control>
-
-		<control type="grouplist">
-			<description>View Mode Icons</description>
-			<hitrect x="0" y="0" w="0" h="0"/> 
-			<left>10</left>
-			<top>96</top>
-			<width>196</width>
-			<itemgap>12</itemgap>
-			<orientation>vertical</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<include>MenuOpenCloseAnim</include>
-			<visible>Skin.String(ExtendedInfoDialog,4)</visible>
-			<control type="image">
-				<width>38</width>
-				<height>25</height>
-				<texture>gui/view-thumbnail.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
-			</control>
-			<control type="image">
-				<width>38</width>
-				<height>25</height>
-				<texture>gui/view-icon.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
-			</control>
-			<!--<control type="image">
-				<width>38</width>
-				<height>25</height>
-				<texture>gui/view-list.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
-			</control>-->
 		</control>
 	</controls>	
 </window>
