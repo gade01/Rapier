@@ -44,9 +44,27 @@
 				<ondown>3013</ondown>
 				<onright>3013</onright>
 				<onleft>3013</onleft>
-				<texturenofocus colordiffuse="88ffffff">gui/play.png</texturenofocus>
-				<texturefocus colordiffuse="991D76EC">gui/play.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
 				<pulseonselect>false</pulseonselect>
+			</control>
+			
+			<control type="image">
+				<left>249</left>
+				<top>163</top>
+				<width>150</width>
+				<height>150</height>
+				<texture colordiffuse="88ffffff">$VAR[NextUpInfoPlayButton]</texture>
+				<visible>!Control.HasFocus(3012)</visible>
+			</control>
+			
+			<control type="image">
+				<left>249</left>
+				<top>163</top>
+				<width>150</width>
+				<height>150</height>
+				<texture colordiffuse="991D76EC">$VAR[NextUpInfoPlayButton]</texture>
+				<visible>Control.HasFocus(3012)</visible>
 			</control>
 			
 			<control type="image">
