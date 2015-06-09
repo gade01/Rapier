@@ -1355,7 +1355,7 @@
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
-			<width>79</width>
+			<width>80</width>
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/wma.png</texture>
@@ -2119,7 +2119,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/no-rating.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),NR) | [IsEmpty(Window.Property(movie.mpaa)) + !StringCompare(Window.Property(type),tvshow)]</visible>  
+			<visible>StringCompare(Window.Property(movie.mpaa),NR) | [IsEmpty(Window.Property(movie.mpaa)) + !StringCompare(Window.Property(type),tvshow) + !StringCompare(Window.Property(type),season)]</visible>  
 		</control>
 	</include>
 	
@@ -2149,5 +2149,10 @@
 	<variable name="ExtendedInfoContainer250Label2">
         <value condition="IsEmpty(Window.Property(movie.set.label))">$INFO[Container(250).NumItems,, $LOCALIZE[33054]]</value>
         <value condition="!IsEmpty(Window.Property(movie.set.label))">$INFO[Window.Property(movie.set.label)]$INFO[Container(250).NumItems, (, $LOCALIZE[342])]</value>
+    </variable>
+	
+	<variable name="NextUpInfoPlayButton">
+        <value condition="!IntegerGreaterThan(Player.TimeRemaining(ss),30)">$INFO[Player.TimeRemaining(ss),gui/play/,.png]</value>
+        <value>gui/play/30.png</value>
     </variable>
 </includes>

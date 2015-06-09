@@ -365,9 +365,9 @@
 					<item id="3">
 						<description>Runtime</description>
 						<label>$LOCALIZE[2050]</label>
-						<label2>$INFO[Window.Property(movie.Duration)]</label2>
+						<label2>$INFO[Window.Property(movie.duration)]</label2>
 						<onclick>noop</onclick>
-						<visible>!StringCompare(Window.Property(movie.Duration),0)</visible>
+						<visible>!StringCompare(Window.Property(movie.duration),0)</visible>
 					</item>
 					<item id="4">
 						<description>Rating</description>
@@ -387,7 +387,7 @@
 						<label2>$INFO[Window.Property(movie.Studio)]</label2>
 						<onclick>noop</onclick>
 						<!--<visible>IsEmpty(Window.Property(movie.FileNameAndPath))</visible>-->
-						<visible>StringCompare(Window.Property(movie.Duration),0)</visible>
+						<visible>StringCompare(Window.Property(movie.duration),0)</visible>
 					</item>
 					<item id="7">
 						<description>Release Date</description>
@@ -2335,7 +2335,7 @@
 					<label>$INFO[Window.Property(FavButton_Label)]</label>
 					<selected>!IsEmpty(Window.Property(movie.favorite))</selected>
 					<visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
-					<visible>!StringCompare(Window.Property(type),season)</visible>
+					<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				<control type="radiobutton" id="6005">
 					<description>Add to List</description>
@@ -2347,7 +2347,7 @@
 					<onclick>Control.SetFocus(126)</onclick>
 					<label>$ADDON[script.extendedinfo 32107]</label>
 					<visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
-					<visible>!StringCompare(Window.Property(type),season)</visible>
+					<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				<control type="button" id="6002">
 					<description>Show Lists</description>
