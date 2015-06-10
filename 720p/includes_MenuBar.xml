@@ -2182,11 +2182,11 @@
 				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<onclick>Skin.SetString(ExtendedInfoDialog,1)</onclick>
 				<onclick>Control.SetFocus(200)</onclick>
-				<visible>!StringCompare(Window.Property(type),season)</visible>
+				<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),tvshow) + !StringCompare(Window.Property(type),episode)</visible>
 			</control>
 			<control type="image" id="125">
 				<include>MenuBarSeparator</include>
-				<visible>!StringCompare(Window.Property(type),season)</visible>
+				<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),tvshow) + !StringCompare(Window.Property(type),episode)</visible>
 			</control>			
 			<control type="button" id="126">
 				<description>TheMovieDB</description>
