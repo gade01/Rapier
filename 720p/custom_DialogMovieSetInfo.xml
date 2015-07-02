@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">116</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<zorder>0</zorder>
-	<onload condition="!Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
+	<onload>SetProperty("TvTunesSupported", "Movies")</onload>
 	<onunload condition="Skin.String(DialogMovieSetInfo,1)">Skin.Reset(DialogMovieSetInfo)</onunload>
 	<include>ControlsOpenCloseAnim</include>
 	

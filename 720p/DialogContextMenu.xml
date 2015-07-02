@@ -47,7 +47,8 @@
 					<description>Button Trailer</description>
 					<label>$LOCALIZE[20410]</label>
 					<onclick condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onclick>
-					<onclick condition="IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$ESCINFO[ListItem.Label,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=, Trailer],return)</onclick>
+					<onclick condition="IsEmpty(ListItem.Trailer) + !Container.Content(Episodes)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onclick>
+					<onclick condition="IsEmpty(ListItem.Trailer) + Container.Content(Episodes)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</onclick>
 					<include>ContextMenuBtn</include>
 					<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 				</control>

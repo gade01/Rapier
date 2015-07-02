@@ -3,7 +3,9 @@
     <defaultcontrol always="true">987</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<zorder>0</zorder>
-	<onload condition="!Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
+	<onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
+	<onload condition="StringCompare(Window.Property(type),movie)">SetProperty("TvTunesSupported", "Movies")</onload>
+	<onload condition="StringCompare(Window.Property(type),tvshow) | StringCompare(Window.Property(type),season) | StringCompare(Window.Property(type),episode)">SetProperty("TvTunesSupported", "TvShows")</onload>
 	<onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window.Property(movie.DBID))">RunScript(script.videoextras,check,"$INFO[Window.Property(movie.FilenameAndPath)]")</onload>
 	<onload>Skin.Reset(ExtendedVideoInfo)</onload>
 	<onunload>Skin.Reset(ExtendedInfoDialog)</onunload>
@@ -38,7 +40,7 @@
 				<height>500</height>
 				<texture border="4">covers/cover-case2.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>IsEmpty(Window.Property(movie.poster))</visible>
+				<visible>[!StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.Poster))] | [StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.thumb))]</visible>
 				<animation effect="fade" end="70" condition="true">Conditional</animation>
 			</control>
 			
@@ -49,7 +51,7 @@
 				<texture>DefaultVideo.png</texture>
 				<bordersize>60</bordersize>
 				<aspectratio>keep</aspectratio>
-				<visible>IsEmpty(Window.Property(movie.poster))</visible>
+				<visible>[!StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.Poster))] | [StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.thumb))]</visible>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
 			</control>
 			
@@ -62,7 +64,20 @@
 				<bordersize>4</bordersize>
 				<aspectratio>stretch</aspectratio>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>!IsEmpty(Window.Property(movie.poster))</visible>
+				<visible>!IsEmpty(Window.Property(movie.Poster)) + !StringCompare(Window.Property(type),episode)</visible>
+			</control>
+			
+			<control type="image">
+				<description>Poster Image</description>
+				<top>-55</top>
+				<width>336</width>
+				<height>336</height>
+				<texture>$INFO[Window.Property(movie.thumb)]</texture>
+				<bordertexture border="4">covers/cover-case2.png</bordertexture>
+				<bordersize>4</bordersize>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<include>FSMediaInfoOpenCloseAnim</include>
+				<visible>!IsEmpty(Window.Property(movie.thumb)) + StringCompare(Window.Property(type),episode)</visible>
 			</control>
 			
 			<!--<control type="image">
@@ -354,34 +369,49 @@
 						<label>$LOCALIZE[20339]</label>
 						<label2>$INFO[Window.Property(movie.Director)]</label2>
 						<onclick>noop</onclick>
+						<visible>!StringCompare(Window.Property(type),tvshow)</visible>
 					</item>
 					<item id="2">
 						<description>Writer</description>
 						<label>$LOCALIZE[20417]</label>
 						<label2>$INFO[Window.Property(movie.Writer)]</label2>
 						<onclick>noop</onclick>
-						<visible>IsEmpty(Window.Property(movie.Revenue))</visible>
+						<visible>IsEmpty(Window.Property(movie.Revenue)) + !StringCompare(Window.Property(type),tvshow)</visible>
 					</item>
 					<item id="3">
+						<description>Seasons</description>
+						<label>$LOCALIZE[33054]</label>
+						<label2>$INFO[Window.Property(movie.TotalSeasons)]</label2>
+						<onclick>noop</onclick>
+						<visible>StringCompare(Window.Property(type),tvshow)</visible>
+					</item>
+					<item id="4">
+						<description>Episodes</description>
+						<label>$LOCALIZE[20360]</label>
+						<label2>$INFO[Window.Property(movie.TotalEpisodes)]</label2>
+						<onclick>noop</onclick>
+						<visible>StringCompare(Window.Property(type),tvshow)</visible>
+					</item>
+					<item id="5">
 						<description>Runtime</description>
 						<label>$LOCALIZE[2050]</label>
 						<label2>$INFO[Window.Property(movie.duration)]</label2>
 						<onclick>noop</onclick>
 						<visible>!StringCompare(Window.Property(movie.duration),0)</visible>
 					</item>
-					<item id="4">
+					<item id="6">
 						<description>Rating</description>
 						<label>$LOCALIZE[563]</label>
 						<label2>$INFO[Window.Property(movie.Rating)]$INFO[Window.Property(movie.Votes), (, $LOCALIZE[205])]$INFO[Window.Property(movie.Top250),  &#x2022;  $LOCALIZE[31974] #,]</label2>
 						<onclick>noop</onclick>
 					</item>
-					<item id="5">
+					<item id="7">
 						<description>MPAA Rating</description>
 						<label>$LOCALIZE[20074]</label>
 						<label2>$INFO[Window.Property(movie.mpaa)]</label2>
 						<onclick>noop</onclick>
 					</item>
-					<item id="6">
+					<item id="8">
 						<description>Studio</description>
 						<label>$LOCALIZE[572]</label>
 						<label2>$INFO[Window.Property(movie.Studio)]</label2>
@@ -389,27 +419,27 @@
 						<!--<visible>IsEmpty(Window.Property(movie.FileNameAndPath))</visible>-->
 						<visible>StringCompare(Window.Property(movie.duration),0)</visible>
 					</item>
-					<item id="7">
+					<item id="9">
 						<description>Release Date</description>
 						<label fallback="Release Date">$INFO[Window.Property(movie.Status)]</label>
-						<label2>$INFO[Window.Property(movie.ReleaseDate)]</label2>
+						<label2>$INFO[Window.Property(movie.release_date)]</label2>
 						<onclick>noop</onclick>
 					</item>
-					<item id="8">
+					<item id="10">
 						<description>Budget</description>
 						<label>$ADDON[script.extendedinfo 32109]</label>
 						<label2>$INFO[Window.Property(movie.Budget),$]</label2>
 						<onclick>noop</onclick>
 						<visible>![StringCompare(Window.Property(type),tvshow) + IsEmpty(Window.Property(movie.Budget))]</visible>
 					</item>
-					<item id="9">
+					<item id="11">
 						<description>Revenue</description>
 						<label>$ADDON[script.extendedinfo 32108]</label>
 						<label2>$INFO[Window.Property(movie.Revenue),$]</label2>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
 					</item>
-					<item id="10">
+					<item id="12">
 						<description>Network</description>
 						<label>$LOCALIZE[705]</label>
 						<label2>$INFO[Container(1450).ListItem.Label]</label2>
@@ -466,7 +496,7 @@
 			<textcolor>MediaInfoColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<align>justify</align>
-			<label fallback="31203">$INFO[Window.Property(movie.Plot)]</label>
+			<label fallback="31203">$VAR[ExtendedInfoDescription]</label>
 			<pagecontrol>61</pagecontrol>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -2008,7 +2038,7 @@
 						<align>center</align>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
-						<label>$INFO[ListItem.Property(release_date)][CR]$INFO[ListItem.Property(certification)]</label>
+						<label>$INFO[ListItem.Property(release_date)][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
 					</control>
 				</itemlayout>				
 				<focusedlayout height="109" width="102">
@@ -2042,7 +2072,7 @@
 							<align>center</align>
 							<font>FullMediaInfoTaglineFont</font>
 							<textcolor>SelectedColor2</textcolor>
-							<label>$INFO[ListItem.Property(release_date)][CR]$INFO[ListItem.Property(certification)]</label>
+							<label>$INFO[ListItem.Property(release_date)][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
 						</control>
 					</control>
 				</focusedlayout>
@@ -2098,7 +2128,21 @@
 						<bordertexture border="4">covers/cover-case2.png</bordertexture>
 						<bordersize>4</bordersize>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
-						<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<width>352</width>
+						<height>201</height>
+						<texture border="4">covers/cover-case2.png</texture>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<width>340</width>
+						<height>180</height>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<texture>DefaultMovies.png</texture>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -2116,7 +2160,7 @@
 						<font>SubMenuArrowFont</font>
 						<textcolor>WhiteColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Episode]$INFO[ListItem.Label,: ,]</label>
+						<label>$INFO[ListItem.Episode]$INFO[ListItem.Label,. ,]</label>
 						<visible>!IsEmpty(ListItem.Label)</visible>
 					</control>
 				</itemlayout>	
@@ -2140,7 +2184,15 @@
 							<height>201</height>
 							<bordersize>4</bordersize>
 							<aspectratio align="center" aligny="center">scale</aspectratio>
-							<texture background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+						</control>
+						<control type="image">
+							<width>340</width>
+							<height>180</height>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<texture>DefaultMovies.png</texture>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
 						</control>
 						<control type="image">
 							<left>10</left>
@@ -2207,7 +2259,7 @@
 			<onleft condition="Skin.String(ExtendedVideoInfo,14)">650</onleft>
 			<onleft condition="Skin.String(ExtendedVideoInfo,15)">2000</onleft>
 			<include>NotificationsOpenCloseAnim</include>
-			<visible>[[!StringCompare(Container(800).NumPages,1) + IsEmpty(Skin.String(ExtendedVideoInfo)) + !IsEmpty(Window.Property(movie.Plot))] | [!StringCompare(Container(750).NumPages,1) + Skin.String(ExtendedVideoInfo,2)] | [!StringCompare(Container(1000).NumPages,1) + Skin.String(ExtendedVideoInfo,1)] | [!StringCompare(Container(150).NumPages,1) + Skin.String(ExtendedVideoInfo,3)] | [!StringCompare(Container(1250).NumPages,1) + Skin.String(ExtendedVideoInfo,5)] | [!StringCompare(Container(1350).NumPages,1) + Skin.String(ExtendedVideoInfo,6)] | [!StringCompare(Container(1150).NumPages,1) + Skin.String(ExtendedVideoInfo,7)] | [!StringCompare(Container(350).NumPages,1) + Skin.String(ExtendedVideoInfo,8)] | [!StringCompare(Container(450).NumPages,1) + Skin.String(ExtendedVideoInfo,4)] | [!StringCompare(Container(550).NumPages,1) + Skin.String(ExtendedVideoInfo,9)] | [!StringCompare(Container(1450).NumPages,1) + Skin.String(ExtendedVideoInfo,10)] | [!StringCompare(Container(850).NumPages,1) + Skin.String(ExtendedVideoInfo,11)] | [!StringCompare(Container(950).NumPages,1) + Skin.String(ExtendedVideoInfo,12)] | [!StringCompare(Container(250).NumPages,1) + Skin.String(ExtendedVideoInfo,13)] | [!StringCompare(Container(650).NumPages,1) + Skin.String(ExtendedVideoInfo,14)] | [!StringCompare(Container(2000).NumPages,1) + Skin.String(ExtendedVideoInfo,15)]] + !Control.HasFocus(134)</visible>
+			<visible>[[IntegerGreaterThan(Container(800).NumPages,1) + IsEmpty(Skin.String(ExtendedVideoInfo))] | [IntegerGreaterThan(Container(750).NumPages,1) + Skin.String(ExtendedVideoInfo,2)] | [IntegerGreaterThan(Container(1000).NumPages,1) + Skin.String(ExtendedVideoInfo,1)] | [IntegerGreaterThan(Container(150).NumPages,1) + Skin.String(ExtendedVideoInfo,3)] | [IntegerGreaterThan(Container(1250).NumPages,1) + Skin.String(ExtendedVideoInfo,5)] | [IntegerGreaterThan(Container(1350).NumPages,1) + Skin.String(ExtendedVideoInfo,6)] | [IntegerGreaterThan(Container(1150).NumPages,1) + Skin.String(ExtendedVideoInfo,7)] | [IntegerGreaterThan(Container(350).NumPages,1) + Skin.String(ExtendedVideoInfo,8)] | [IntegerGreaterThan(Container(450).NumPages,1) + Skin.String(ExtendedVideoInfo,4)] | [IntegerGreaterThan(Container(550).NumPages,1) + Skin.String(ExtendedVideoInfo,9)] | [IntegerGreaterThan(Container(1450).NumPages,1) + Skin.String(ExtendedVideoInfo,10)] | [IntegerGreaterThan(Container(850).NumPages,1) + Skin.String(ExtendedVideoInfo,11)] | [IntegerGreaterThan(Container(950).NumPages,1) + Skin.String(ExtendedVideoInfo,12)] | [IntegerGreaterThan(Container(250).NumPages,1) + Skin.String(ExtendedVideoInfo,13)] | [IntegerGreaterThan(Container(650).NumPages,1) + Skin.String(ExtendedVideoInfo,14)] | [IntegerGreaterThan(Container(2000).NumPages,1) + Skin.String(ExtendedVideoInfo,15)]] + !Control.HasFocus(134)</visible>
 		</control>
 		
 		<control type="image">
@@ -2219,7 +2271,7 @@
 		
 		<control type="group">
 			<visible>Skin.String(ExtendedInfoDialog,1)</visible>
-			<animation effect="slide" end="80,0" condition="Control.IsVisible(8)" >Conditional</animation>
+			<animation effect="slide" end="80,0" condition="Control.IsVisible(8) | Control.IsVisible(120)" >Conditional</animation>
 			<animation effect="slide" end="80,0" condition="Control.IsVisible(9)" >Conditional</animation>
 			<animation effect="slide" end="-80,0" condition="Control.IsVisible(100)" >Conditional</animation>
 			<animation effect="slide" end="80,0" condition="!Control.IsVisible(126)" >Conditional</animation>
@@ -2285,7 +2337,7 @@
 		
 		<control type="group">
 			<visible>Skin.String(ExtendedInfoDialog,2)</visible>
-			<animation effect="slide" end="80,0" condition="Control.IsVisible(8)" >Conditional</animation>
+			<animation effect="slide" end="80,0" condition="Control.IsVisible(8) | Control.IsVisible(120)" >Conditional</animation>
 			<animation effect="slide" end="80,0" condition="Control.IsVisible(9)" >Conditional</animation>
 			<animation effect="slide" end="-80,0" condition="Control.IsVisible(100)" >Conditional</animation>
 			<animation effect="slide" end="-80,0" condition="!Control.IsVisible(124)" >Conditional</animation>
@@ -2358,7 +2410,7 @@
 					<onclick>Control.SetFocus(126)</onclick>
 					<label>$ADDON[script.extendedinfo 32130]</label>
 					<visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
-					<visible>!StringCompare(Window.Property(type),season)</visible>
+					<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				<control type="button" id="177">
 					<description>Recommended</description>
@@ -2388,7 +2440,7 @@
 		
 		<control type="group">
 			<visible>Skin.String(ExtendedInfoDialog,3)</visible>
-			<animation effect="slide" end="80,0" condition="Control.IsVisible(8)" >Conditional</animation>
+			<animation effect="slide" end="80,0" condition="Control.IsVisible(8) | Control.IsVisible(120)" >Conditional</animation>
 			<animation effect="slide" end="80,0" condition="Control.IsVisible(9)" >Conditional</animation>
 			<animation effect="slide" end="-80,0" condition="Control.IsVisible(100)" >Conditional</animation>
 			<animation effect="slide" end="80,0" condition="!Control.IsVisible(124)" >Conditional</animation>
