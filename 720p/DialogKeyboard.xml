@@ -7,8 +7,7 @@
 	<coordinates>
 		<system>1</system>
 		<origin x="256" y="140">true</origin>
-	</coordinates>
-	
+	</coordinates>	
 	<include>DialogOpenCloseAnim</include>
 
 	<controls>
@@ -17,6 +16,7 @@
 			
 			<control type="group">
 				<top>370</top>
+				<visible>System.HasAddon(script.extendedinfo) + !Skin.HasSetting(EnableKeyboardAutocompletions)</visible>
 				<animation type="Conditional" reversible="false" condition="IntegerGreaterThan(Container(9091).NumItems,0)">
 					<effect type="fade" end="100" time="225" />
 					<effect type="slide" start="0,-15" time="300" tween="cubic" easing="out" />
@@ -85,7 +85,7 @@
 			
 			<control type="group">
 				<include>KeyboardDialogBox</include>
-				<animation effect="slide" end="0,-61" time="150" condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)" easing="out">Conditional</animation>
+				<animation effect="slide" end="0,-61" time="150" condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)" easing="out">Conditional</animation>
 				
 				<control type="label" id="311">
 					<width>690</width>
@@ -122,8 +122,8 @@
 							<width>200</width>
 							<height>35</height>
 							<label>20177</label>
-							<onup condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + !IntegerGreaterThan(Container(9091).NumItems,0)]">904</onup>	
-							<onup condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)">9091</onup>
+							<onup condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + [!IntegerGreaterThan(Container(9091).NumItems,0) | Skin.HasSetting(EnableKeyboardAutocompletions)]]">904</onup>	
+							<onup condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)">9091</onup>
 							<ondown>902</ondown>
 							<onright>305</onright>
 							<onleft>306</onleft>
@@ -139,8 +139,8 @@
 							<font>DialogTitleFont</font>
 							<include>KeyboardBigBtn</include>
 							<label>&lt;</label>
-							<onup condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + !IntegerGreaterThan(Container(9091).NumItems,0)]">904</onup>	
-							<onup condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)">9091</onup>
+							<onup condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + [!IntegerGreaterThan(Container(9091).NumItems,0) | Skin.HasSetting(EnableKeyboardAutocompletions)]]">904</onup>	
+							<onup condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)">9091</onup>
 							<ondown>902</ondown>
 							<onleft>309</onleft>
 							<onright>306</onright>
@@ -155,8 +155,8 @@
 							<font>DialogTitleFont</font>
 							<include>KeyboardBigBtn</include>
 							<label>&gt;</label>
-							<onup condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + !IntegerGreaterThan(Container(9091).NumItems,0)]">904</onup>	
-							<onup condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)">9091</onup>
+							<onup condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + [!IntegerGreaterThan(Container(9091).NumItems,0) | Skin.HasSetting(EnableKeyboardAutocompletions)]]">904</onup>	
+							<onup condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)">9091</onup>
 							<ondown>902</ondown>
 							<onleft>305</onleft>
 							<onright>309</onright>
@@ -528,8 +528,8 @@
 								<include>KeyboardBigBtn</include>					    
 								<label>IP</label>
 								<onup>903</onup>
-								<ondown condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + !IntegerGreaterThan(Container(9091).NumItems,0)]">309</ondown>	
-								<ondown condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
+								<ondown condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + [!IntegerGreaterThan(Container(9091).NumItems,0) | Skin.HasSetting(EnableKeyboardAutocompletions)]]">309</ondown>	
+								<ondown condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)">9091</ondown>
 							</control>						
 							<control type="button" id="32">
 								<description>Space Key</description>
@@ -538,16 +538,16 @@
 								<include>KeyboardBigBtn</include>
 								<label>20182</label>			    
 								<onup>903</onup>
-								<ondown condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + !IntegerGreaterThan(Container(9091).NumItems,0)]">309</ondown>	
-								<ondown condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
+								<ondown condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + [!IntegerGreaterThan(Container(9091).NumItems,0) | Skin.HasSetting(EnableKeyboardAutocompletions)]]">309</ondown>	
+								<ondown condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)">9091</ondown>
 							</control>						
 							<control type="button" id="8">
 								<description>Backspace Key</description>
 								<include>KeyboardBigBtn</include>					    
 								<label>20181</label>
 								<onup>903</onup>
-								<ondown condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + !IntegerGreaterThan(Container(9091).NumItems,0)]">305</ondown>	
-								<ondown condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0)">9091</ondown>
+								<ondown condition="!System.HasAddon(script.extendedinfo) | [System.HasAddon(script.extendedinfo) + [!IntegerGreaterThan(Container(9091).NumItems,0) | Skin.HasSetting(EnableKeyboardAutocompletions)]]">305</ondown>	
+								<ondown condition="System.HasAddon(script.extendedinfo) + IntegerGreaterThan(Container(9091).NumItems,0) + !Skin.HasSetting(EnableKeyboardAutocompletions)">9091</ondown>
 							</control>					
 						</control>				
 					</control>
