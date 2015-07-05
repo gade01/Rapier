@@ -1682,19 +1682,30 @@
 					<include>MenuBarSeparator</include>
 				</control>
 			</control>
-			<control type="button" id="214">
-				<description>Edit Database</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[21435] $LOCALIZE[15101][/UPPERCASE]</label>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + [[Control.IsVisible(210) + !Control.IsVisible(213)] | [!Control.IsVisible(210) + Control.IsVisible(213)]] + !Skin.String(ExtendedInfoDialogPos,2) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + Control.IsVisible(213) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,2)</onfocus>
-				<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+			<control type="group" id="129">
 				<visible>System.HasAddon(script.libraryeditor)</visible>
-			</control>
-			<control type="image" id="125">
-				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.libraryeditor)</visible>
+				<width>159</width>
+				<control type="button" id="214">
+					<description>Edit Database</description>
+					<include>MenuBarSettingsBtn</include>
+					<label>[UPPERCASE]$LOCALIZE[21435] $LOCALIZE[15101][/UPPERCASE]</label>
+					<onfocus condition="System.HasAddon(script.extendedinfo) + [[Control.IsVisible(210) + !Control.IsVisible(213)] | [!Control.IsVisible(210) + Control.IsVisible(213)]] + !Skin.String(ExtendedInfoDialogPos,2) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
+					<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + Control.IsVisible(213) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,2)</onfocus>
+					<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
+					<onleft condition="Control.IsVisible(213)">213</onleft>
+					<onleft condition="!Control.IsVisible(213) + Control.IsVisible(211)">211</onleft>
+					<onleft condition="!Control.IsVisible(213) + Control.IsVisible(15)">15</onleft>
+					<onleft condition="!Control.IsVisible(213) + Control.IsVisible(11)">11</onleft>
+					<onright condition="Control.IsVisible(218)">218</onright>
+					<onright condition="!Control.IsVisible(218) + Control.IsVisible(210)">210</onright>
+					<onright condition="!Control.IsVisible(218) + !Control.IsVisible(210)">8</onright>
+					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+					<visible>System.HasAddon(script.libraryeditor)</visible>
+				</control>
+				<control type="image" id="125">
+					<left>156</left>
+					<include>MenuBarSeparator</include>
+				</control>
 			</control>
 			<control type="button" id="218">
 				<description>Video Extras</description>
