@@ -1611,18 +1611,29 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="213">
-				<description>TV Tunes</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + !Skin.String(ExtendedInfoDialogPos,2) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
-				<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
-			</control>
-			<control type="image" id="124">
-				<include>MenuBarSeparator</include>
+			<control type="group" id="128">
 				<visible>Control.IsVisible(213)</visible>
+				<width>159</width>
+				<control type="button" id="213">
+					<description>TV Tunes</description>
+					<include>MenuBarSettingsBtn</include>
+					<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
+					<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + !Skin.String(ExtendedInfoDialogPos,2) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
+					<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
+					<onleft condition="Control.IsVisible(211)">211</onleft>
+					<onleft condition="Control.IsVisible(15)">15</onleft>
+					<onleft condition="Control.IsVisible(11)">11</onleft>
+					<onright condition="Control.IsVisible(214)">214</onright>
+					<onright condition="!Control.IsVisible(214) + Control.IsVisible(218)">218</onright>
+					<onright condition="!Control.IsVisible(214) + !Control.IsVisible(218) + Control.IsVisible(210)">210</onright>
+					<onright condition="!Control.IsVisible(214) + !Control.IsVisible(218) + !Control.IsVisible(210)">8</onright>
+					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+					<visible>System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
+				</control>
+				<control type="image" id="124">
+					<left>156</left>
+					<include>MenuBarSeparator</include>
+				</control>
 			</control>
 			<control type="button" id="214">
 				<description>Edit Database</description>
