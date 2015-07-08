@@ -76,7 +76,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/set.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+			<visible>SubString(ListItem.Path,videodb://movies/sets,left) + ![Skin.String(CurrentViewMode,69) + Skin.HasSetting(HideMoviesWallExtendedInfoPanel)]</visible>
 		</control>
 		<control type="image" id="608">
 			<description>Telesync</description>
