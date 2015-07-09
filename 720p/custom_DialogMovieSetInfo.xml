@@ -263,6 +263,11 @@
 				<top>219</top>
 				<width>720</width>
 				<height>233</height>
+				<onup>987</onup>
+				<onleft>987</onleft>
+				<onright condition="Control.IsVisible(61)">61</onright>
+				<onright condition="!Control.IsVisible(61)">987</onright>
+				<ondown condition="Control.IsVisible(61)">61</ondown>
 				<itemlayout width="720" height="29">
 					<control type="image">
 						<top>27</top>
@@ -352,19 +357,22 @@
 						<description>Movies</description>
 						<label>$LOCALIZE[342]</label>
 						<label2>$INFO[Window(home).Property(Set.Movies.Count)]</label2>
-						<onclick>noop</onclick>
+						<onclick>Skin.SetString(DialogMovieSetInfo,1)</onclick>
+						<onclick>Control.SetFocus(902)</onclick>
 					</item>
 					<item id="2">
 						<description>Director</description>
 						<label>$LOCALIZE[20339]</label>
 						<label2>$INFO[Window(home).Property(Set.Movies.Director)]</label2>
-						<onclick>noop</onclick>
+						<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(Set.Movies.Director)])</onclick>
+						<onclick condition="!System.HasAddon(script.extendedinfo)">noop</onclick>
 					</item>
 					<item id="3">
 						<description>Writer</description>
 						<label>$LOCALIZE[20417]</label>
 						<label2>$INFO[Window(home).Property(Set.Movies.Writer)]</label2>
-						<onclick>noop</onclick>
+						<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(Set.Movies.Writer)])</onclick>
+						<onclick condition="!System.HasAddon(script.extendedinfo)">noop</onclick>
 					</item>
 					<item id="4">
 						<description>Year</description>
@@ -863,9 +871,9 @@
 			<height>28</height>
 			<spinwidth>30</spinwidth>
 			<spinheight>30</spinheight>
-			<onup condition="IsEmpty(Skin.String(DialogMovieSetInfo))">987</onup>
+			<onup condition="IsEmpty(Skin.String(DialogMovieSetInfo))">901</onup>
 			<onup condition="Skin.String(DialogMovieSetInfo,1)">902</onup>
-			<onleft condition="IsEmpty(Skin.String(DialogMovieSetInfo))">987</onleft>
+			<onleft condition="IsEmpty(Skin.String(DialogMovieSetInfo))">901</onleft>
 			<onleft condition="Skin.String(DialogMovieSetInfo,1)">902</onleft>
 			<include>NotificationsOpenCloseAnim</include>
 			<visible>[!StringCompare(Container(903).NumPages,1) + !IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + IsEmpty(Skin.String(DialogMovieSetInfo))] | [!StringCompare(Container(902).NumPages,1) + !IsEmpty(Container(902).ListItem.Label) + Skin.String(DialogMovieSetInfo,1)]</visible>
