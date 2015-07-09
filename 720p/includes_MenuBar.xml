@@ -2192,44 +2192,30 @@
 				<description>Play</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[208][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
 			<control type="button" id="120">
 				<description>Open</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[21385][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
 			<control type="image" id="116">
@@ -2240,22 +2226,15 @@
 				<description>Resume</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[13404] $INFO[Window.Property(movie.PercentPlayed),(,%)][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<visible>!IsEmpty(Window.Property(movie.DBID)) + IntegerGreaterThan(Window.Property(movie.PercentPlayed),0) + !Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
 			<control type="image" id="117">
@@ -2267,22 +2246,15 @@
 				<width>156</width>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19033][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<onclick>Skin.SetString(ExtendedInfoDialog,3)</onclick>
 				<onclick>Control.SetFocus(202)</onclick>
 			</control>
@@ -2294,22 +2266,15 @@
 				<width>156</width>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31008][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<onclick>Skin.SetString(ExtendedInfoDialog,1)</onclick>
 				<onclick>Control.SetFocus(200)</onclick>
 				<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),tvshow) + !StringCompare(Window.Property(type),episode)</visible>
@@ -2323,22 +2288,15 @@
 				<width>156</width>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31009][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<onclick>Skin.SetString(ExtendedInfoDialog,2)</onclick>
 				<onclick>Control.SetFocus(201)</onclick>
 				<visible>[!IsEmpty(Window.Property(tmdb_logged_in)) + !StringCompare(Window.Property(type),season)] | [IntegerGreaterThan(Container(150).NumItems,0) | IntegerGreaterThan(Container(450).NumItems,0)]</visible>
@@ -2360,22 +2318,15 @@
 				<description>Video Extras</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$ADDON[script.extendedinfo 32132][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<onclick>RunScript(script.videoextras,display,"$INFO[Window.Property(movie.FilenameAndPath)]")</onclick>
 				<visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
 				<visible>!IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
@@ -2389,22 +2340,15 @@
 				<description>Manage</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$ADDON[script.extendedinfo 32133][/UPPERCASE]</label>
-				<ondown condition="Skin.String(ExtendedVideoInfo,1)">1000</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,2)">750</ondown>
+				<ondown condition="Control.IsVisible(901)">901</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,6)">1350</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,7)">1150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,8)">350</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,9)">550</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,10)">1450</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
-				<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
-				<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="133">
