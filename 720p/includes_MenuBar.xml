@@ -2425,8 +2425,8 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31937][/UPPERCASE]</label>
 				<onclick>Dialog.Close(3008)</onclick>
+				<ondown condition="IsEmpty(Skin.String(DialogMovieSetInfo))">901</ondown>
 				<ondown condition="Skin.String(DialogMovieSetInfo,1)">902</ondown>
-				<ondown condition="IsEmpty(Skin.String(DialogMovieSetInfo)) + Control.IsVisible(61)">61</ondown>
 			</control>
 			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
@@ -2436,7 +2436,7 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[207][/UPPERCASE]</label>
 				<onfocus>Skin.Reset(DialogMovieSetInfo)</onfocus>
-				<ondown condition="Control.IsVisible(61)">61</ondown>
+				<ondown>901</ondown>
 			</control>
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
