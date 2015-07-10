@@ -2418,7 +2418,7 @@
 						<include>DropDownMenuRadioBtn</include>
 						<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 						<onclick>Control.SetFocus(126)</onclick>
-						<label>$INFO[Window.Property(FavButton_Label)]</label>
+						<label>$INFO[Window.Property(movie.FavButton_Label)]</label>
 						<selected>!IsEmpty(Window.Property(movie.favorite))</selected>
 						<visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
 						<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
