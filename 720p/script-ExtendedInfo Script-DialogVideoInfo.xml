@@ -295,6 +295,7 @@
 					<ondown condition="Skin.String(ExtendedVideoInfo,11)">850</ondown>
 					<ondown condition="Skin.String(ExtendedVideoInfo,12)">950</ondown>
 					<ondown condition="Skin.String(ExtendedVideoInfo,14)">650</ondown>
+					<ondown condition="Skin.String(ExtendedVideoInfo,16)">1050</ondown>
 					<ondown condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</ondown>
 					<onleft>987</onleft>
 					<onright condition="Skin.String(ExtendedVideoInfo,1)">1000</onright>
@@ -304,6 +305,7 @@
 					<onright condition="Skin.String(ExtendedVideoInfo,11)">850</onright>
 					<onright condition="Skin.String(ExtendedVideoInfo,12)">950</onright>
 					<onright condition="Skin.String(ExtendedVideoInfo,14)">650</onright>
+					<onright condition="Skin.String(ExtendedVideoInfo,16)">1050</onright>
 					<onright condition="IsEmpty(Skin.String(ExtendedVideoInfo)) + Control.IsVisible(61)">61</onright>
 					<visible>!Control.HasFocus(134)</visible>
 					<itemlayout width="720" height="29">
@@ -2251,6 +2253,68 @@
 				</control>
 			</control>
 			
+			<control type="group">
+				<visible>Skin.String(ExtendedVideoInfo,16) + !Control.HasFocus(134)</visible>
+				<left>470</left>
+				<top>428</top>
+				<include>BackgroundVisibleAnim</include>
+				
+				<control type="panel" id="1050">
+					<width>710</width>
+					<height>207</height>
+					<onright condition="Control.IsVisible(61)">61</onright>
+					<onleft>987</onleft>
+					<onup>901</onup>
+					<ondown condition="Control.IsVisible(61)">61</ondown>
+					<pagecontrol>61</pagecontrol>
+					<focusposition>0</focusposition>
+					<itemlayout width="357" height="206">
+						<control type="label">
+							<width>710</width>
+							<align>center</align>
+							<font>FullMediaInfoDescFont</font>
+							<textcolor>MediaInfoColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>[B]$INFO[ListItem.Property(Author)][/B]</label>
+						</control>
+						<control type="textbox">
+							<top>24</top>
+							<width>710</width>
+							<height>182</height>
+							<font>font13</font>
+							<textcolor>MediaInfoColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<align>justify</align>
+							<label fallback="31203">$INFO[ListItem.Property(Content)]</label>
+							<include>FSMediaInfoOpenCloseAnim</include>
+							<autoscroll time="2000" delay="8000" repeat="10000">true</autoscroll>
+						</control>					
+					</itemlayout>	
+					<focusedlayout width="357" height="206">
+						<control type="label">
+							<width>710</width>
+							<align>center</align>
+							<font>FullMediaInfoDescFont</font>
+							<textcolor>SelectedColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>[B]$INFO[ListItem.Property(Author)][/B]</label>
+						</control>
+						<control type="textbox">
+							<top>24</top>
+							<width>710</width>
+							<height>182</height>
+							<font>font13</font>
+							<textcolor>MediaInfoColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<align>justify</align>
+							<label fallback="31203">$INFO[ListItem.Property(Content)]</label>
+							<include>FSMediaInfoOpenCloseAnim</include>
+							<autoscroll time="2000" delay="8000" repeat="10000">true</autoscroll>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			
 			<control type="spincontrol" id="61">
 				<description>Next Page</description>
 				<left>1125</left>
@@ -2275,6 +2339,7 @@
 				<onup condition="Skin.String(ExtendedVideoInfo,13)">250</onup>
 				<onup condition="Skin.String(ExtendedVideoInfo,14)">650</onup>
 				<onup condition="Skin.String(ExtendedVideoInfo,15)">2000</onup>
+				<onup condition="Skin.String(ExtendedVideoInfo,16)">1050</onup>
 				<onleft condition="IsEmpty(Skin.String(ExtendedVideoInfo))">901</onleft>
 				<onleft condition="Skin.String(ExtendedVideoInfo,1)">1000</onleft>
 				<onleft condition="Skin.String(ExtendedVideoInfo,2)">750</onleft>
@@ -2291,8 +2356,9 @@
 				<onleft condition="Skin.String(ExtendedVideoInfo,13)">250</onleft>
 				<onleft condition="Skin.String(ExtendedVideoInfo,14)">650</onleft>
 				<onleft condition="Skin.String(ExtendedVideoInfo,15)">2000</onleft>
+				<onleft condition="Skin.String(ExtendedVideoInfo,16)">1050</onleft>
 				<include>NotificationsOpenCloseAnim</include>
-				<visible>[[IntegerGreaterThan(Container(800).NumPages,1) + IsEmpty(Skin.String(ExtendedVideoInfo))] | [IntegerGreaterThan(Container(750).NumPages,1) + Skin.String(ExtendedVideoInfo,2)] | [IntegerGreaterThan(Container(1000).NumPages,1) + Skin.String(ExtendedVideoInfo,1)] | [IntegerGreaterThan(Container(150).NumPages,1) + Skin.String(ExtendedVideoInfo,3)] | [IntegerGreaterThan(Container(1250).NumPages,1) + Skin.String(ExtendedVideoInfo,5)] | [IntegerGreaterThan(Container(1350).NumPages,1) + Skin.String(ExtendedVideoInfo,6)] | [IntegerGreaterThan(Container(1150).NumPages,1) + Skin.String(ExtendedVideoInfo,7)] | [IntegerGreaterThan(Container(350).NumPages,1) + Skin.String(ExtendedVideoInfo,8)] | [IntegerGreaterThan(Container(450).NumPages,1) + Skin.String(ExtendedVideoInfo,4)] | [IntegerGreaterThan(Container(550).NumPages,1) + Skin.String(ExtendedVideoInfo,9)] | [IntegerGreaterThan(Container(1450).NumPages,1) + Skin.String(ExtendedVideoInfo,10)] | [IntegerGreaterThan(Container(850).NumPages,1) + Skin.String(ExtendedVideoInfo,11)] | [IntegerGreaterThan(Container(950).NumPages,1) + Skin.String(ExtendedVideoInfo,12)] | [IntegerGreaterThan(Container(250).NumPages,1) + Skin.String(ExtendedVideoInfo,13)] | [IntegerGreaterThan(Container(650).NumPages,1) + Skin.String(ExtendedVideoInfo,14)] | [IntegerGreaterThan(Container(2000).NumPages,1) + Skin.String(ExtendedVideoInfo,15)]] + !Control.HasFocus(134)</visible>
+				<visible>[[IntegerGreaterThan(Container(800).NumPages,1) + IsEmpty(Skin.String(ExtendedVideoInfo))] | [IntegerGreaterThan(Container(750).NumPages,1) + Skin.String(ExtendedVideoInfo,2)] | [IntegerGreaterThan(Container(1000).NumPages,1) + Skin.String(ExtendedVideoInfo,1)] | [IntegerGreaterThan(Container(150).NumPages,1) + Skin.String(ExtendedVideoInfo,3)] | [IntegerGreaterThan(Container(1250).NumPages,1) + Skin.String(ExtendedVideoInfo,5)] | [IntegerGreaterThan(Container(1350).NumPages,1) + Skin.String(ExtendedVideoInfo,6)] | [IntegerGreaterThan(Container(1150).NumPages,1) + Skin.String(ExtendedVideoInfo,7)] | [IntegerGreaterThan(Container(350).NumPages,1) + Skin.String(ExtendedVideoInfo,8)] | [IntegerGreaterThan(Container(450).NumPages,1) + Skin.String(ExtendedVideoInfo,4)] | [IntegerGreaterThan(Container(550).NumPages,1) + Skin.String(ExtendedVideoInfo,9)] | [IntegerGreaterThan(Container(1450).NumPages,1) + Skin.String(ExtendedVideoInfo,10)] | [IntegerGreaterThan(Container(850).NumPages,1) + Skin.String(ExtendedVideoInfo,11)] | [IntegerGreaterThan(Container(950).NumPages,1) + Skin.String(ExtendedVideoInfo,12)] | [IntegerGreaterThan(Container(250).NumPages,1) + Skin.String(ExtendedVideoInfo,13)] | [IntegerGreaterThan(Container(650).NumPages,1) + Skin.String(ExtendedVideoInfo,14)] | [IntegerGreaterThan(Container(2000).NumPages,1) + Skin.String(ExtendedVideoInfo,15)] | [IntegerGreaterThan(Container(1050).NumPages,1) + Skin.String(ExtendedVideoInfo,16)]] + !Control.HasFocus(134)</visible>
 			</control>
 			
 			<control type="image">
@@ -2340,7 +2406,7 @@
 					<onright>Control.SetFocus(124)</onright>
 					<onback>Skin.Reset(ExtendedInfoDialog)</onback>
 					<onback>Control.SetFocus(124)</onback>
-					<control type="image" id="174">
+					<control type="image" id="175">
 						<width>173</width>
 						<include>DropDownMenuTopBorder</include>
 					</control>
@@ -2361,7 +2427,7 @@
 						<label>$ADDON[script.extendedinfo 32131]</label>
 						<visible>IsEmpty(Window.Property(tmdb_logged_in))</visible>
 					</control>	
-					<control type="image" id="175">
+					<control type="image" id="176">
 						<width>173</width>
 						<include>DropDownMenuBottomBorder</include>
 					</control>
@@ -2406,7 +2472,7 @@
 					<onright>Control.SetFocus(126)</onright>
 					<onback>Skin.Reset(ExtendedInfoDialog)</onback>
 					<onback>Control.SetFocus(126)</onback>
-					<control type="image" id="176">
+					<control type="image" id="177">
 						<width>173</width>
 						<include>DropDownMenuTopBorder</include>
 					</control>
@@ -2445,7 +2511,7 @@
 						<visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
 						<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
 					</control>
-					<control type="button" id="177">
+					<control type="button" id="178">
 						<description>Recommended</description>
 						<width>173</width>
 						<include>DropDownMenuBtn</include>
@@ -2454,7 +2520,7 @@
 						<onclick>Control.SetFocus(150)</onclick>
 						<label>$LOCALIZE[31010]</label>
 					</control>
-					<control type="button" id="178">
+					<control type="button" id="179">
 						<description>Related Lists</description>
 						<width>173</width>
 						<include>DropDownMenuBtn</include>
@@ -2464,7 +2530,7 @@
 						<label>$LOCALIZE[31011]</label>
 						<visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
 					</control>
-					<control type="image" id="179">
+					<control type="image" id="180">
 						<width>173</width>
 						<include>DropDownMenuBottomBorder</include>
 					</control>
@@ -2615,6 +2681,16 @@
 						<visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
 					</control>
 					<control type="button" id="167">
+						<description>Reviews</description>
+						<width>173</width>
+						<include>DropDownMenuBtn</include>
+						<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
+						<onclick>Skin.SetString(ExtendedVideoInfo,16)</onclick>
+						<onclick>Control.SetFocus(1050)</onclick>
+						<label>$ADDON[script.extendedinfo 32167]</label>
+						<visible>IntegerGreaterThan(Container(1050).NumItems,0)</visible>
+					</control>
+					<control type="button" id="168">
 						<description>View Styles Header Artwork</description>
 						<width>173</width>
 						<textwidth>137</textwidth>
@@ -2622,7 +2698,7 @@
 						<label>$ADDON[script.extendedinfo 32119]</label>
 						<visible>IntegerGreaterThan(Container(1250).NumItems,0) | IntegerGreaterThan(Container(1350).NumItems,0)</visible>
 					</control>
-					<control type="button" id="168">
+					<control type="button" id="169">
 						<description>Poster</description>
 						<width>173</width>
 						<include>DropDownMenuBtn</include>
@@ -2632,7 +2708,7 @@
 						<label>$LOCALIZE[31503]</label>
 						<visible>IntegerGreaterThan(Container(1250).NumItems,0)</visible>
 					</control>
-					<control type="button" id="169">
+					<control type="button" id="170">
 						<description>Fanart</description>
 						<width>173</width>
 						<include>DropDownMenuBtn</include>
@@ -2642,7 +2718,7 @@
 						<label>$LOCALIZE[20445]</label>
 						<visible>IntegerGreaterThan(Container(1350).NumItems,0)</visible>
 					</control>
-					<control type="button" id="170">
+					<control type="button" id="171">
 						<description>View Styles Header Videos</description>
 						<width>173</width>
 						<textwidth>137</textwidth>		
@@ -2650,7 +2726,7 @@
 						<label>$LOCALIZE[3]</label>
 						<visible>IntegerGreaterThan(Container(1150).NumItems,0) | IntegerGreaterThan(Container(350).NumItems,0)</visible>
 					</control>
-					<control type="button" id="171">
+					<control type="button" id="172">
 						<description>Official Videos</description>
 						<width>173</width>
 						<include>DropDownMenuBtn</include>
@@ -2660,7 +2736,7 @@
 						<label>$ADDON[script.extendedinfo 32117]</label>
 						<visible>IntegerGreaterThan(Container(1150).NumItems,0)</visible>
 					</control>
-					<control type="button" id="172">
+					<control type="button" id="173">
 						<description>Youtube Videos</description>
 						<width>173</width>
 						<include>DropDownMenuBtn</include>
@@ -2670,7 +2746,7 @@
 						<label>$ADDON[script.extendedinfo 32118]</label>
 						<visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
 					</control>	
-					<control type="image" id="173">
+					<control type="image" id="174">
 						<width>173</width>
 						<include>DropDownMenuBottomBorder</include>
 					</control>
@@ -2690,61 +2766,6 @@
 				<include>TopBarImage</include>
 				<include>BreadCrumbExtendedInfoDialogVideoInfo</include>
 				<include>Notifications</include>
-			</control>
-			
-			<control type="group">
-				<visible>IntegerGreaterThan(Container(1050).NumItems,0)</visible>
-				<left>1500</left>
-				<top>1500</top>
-				<height>430</height>
-				<control type="label">
-					<posx>25</posx>
-					<posy>6</posy>
-					<width>500</width>
-					<height>25</height>
-					<aligny>center</aligny>
-					<font>font14</font>
-					<label>$ADDON[script.extendedinfo 32167]$INFO[Container(1050).NumItems, (,)]</label>
-				</control>
-				<control type="panel" id="1050">
-					<posx>-45</posx>
-					<posy>30</posy>
-					<width>1940</width>
-					<height>400</height>
-					<onleft>1050</onleft>
-					<onright>1050</onright>
-					<onup>850</onup>
-					<ondown>950</ondown>
-					<pagecontrol>60</pagecontrol>
-					<scrolltime>300</scrolltime>
-					<focusposition>0</focusposition>
-					<orientation>horizontal</orientation>
-					<preloaditems>2</preloaditems>
-					<itemlayout height="400" width="630">
-						<control type="textbox">
-							<posx>40</posx>
-							<posy>40</posy>
-							<textcolor>FFFAFAFA</textcolor>
-							<width>550</width>
-							<height>320</height>
-							<align>center</align>
-							<font>font12</font>
-							<label>$INFO[ListItem.Property(Author),[B],[/B][CR]]$INFO[ListItem.Property(Content)]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout height="400" width="630">
-						<control type="textbox">
-							<posx>40</posx>
-							<posy>40</posy>
-							<textcolor>FFFAFAFA</textcolor>
-							<width>550</width>
-							<height>320</height>
-							<align>center</align>
-							<font>font12</font>
-							<label>$INFO[ListItem.Property(Author),[B],[/B][CR]]$INFO[ListItem.Property(Content)]</label>
-						</control>
-					</focusedlayout>
-				</control>
 			</control>
 		</control>
 		
