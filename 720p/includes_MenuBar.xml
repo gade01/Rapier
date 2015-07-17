@@ -2034,7 +2034,12 @@
 			<onup>555</onup>
 			<onleft>190</onleft>
 			<onright>190</onright>
-			<ondown condition="Control.IsVisible(195)">195</ondown>
+			<ondown condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(110)">110</ondown>
+			<ondown condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(140)">140</ondown>
+			<ondown condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(150)">150</ondown>
+			<ondown condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(170)">170</ondown>
+			<ondown condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(180)">180</ondown>
+			<ondown condition="[!System.HasAddon(script.extendedinfo) | Control.IsVisible(120) | Control.IsVisible(130) | Control.IsVisible(160) | Control.IsVisible(200)] + Control.IsVisible(195)">195</ondown>
 			<include>MenuBarBtnOpenCloseAnim</include>
 			<control type="image" id="102">
 				<include>MenuBarSeparator</include>
@@ -2059,6 +2064,20 @@
 			<control type="image" id="105">
 				<include>MenuBarSeparator</include>
 				<visible>Control.IsVisible(193)</visible>
+			</control>
+			<control type="button" id="106">
+				<include>MenuBarSettingsBtn</include>
+				<label>$LOCALIZE[31038]</label>
+				<onclick condition="Control.IsVisible(110)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
+				<onclick condition="Control.IsVisible(120)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
+				<onclick condition="Control.IsVisible(130) | Control.IsVisible(140)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(100).ListItem.Property(TvShowTitle)])</onclick>
+				<onclick condition="Control.IsVisible(150) | Control.IsVisible(170) | Control.IsVisible(180)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(100).ListItem.Property(Artist)])</onclick>
+				<onclick condition="Control.IsVisible(160)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
+				<visible>System.HasAddon(script.extendedinfo) + !Control.IsVisible(200)</visible>
+			</control>			
+			<control type="image" id="107">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(106)</visible>
 			</control>
 		</control>		
 	</include>
