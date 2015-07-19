@@ -399,13 +399,6 @@
 					</control>
 				</focusedlayout>
 			</control>
-
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
-				<animation effect="slide" end="0,-135" condition="Container.Row(0) + !Control.HasFocus(150)">Conditional</animation>
-				<animation effect="slide" end="0,135" condition="Container.Row(2) + !Control.HasFocus(150)">Conditional</animation>
-			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
@@ -699,11 +692,6 @@
 			</control>
 
 			<include>ListViewScrollbar</include>
-			
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
-			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
@@ -3187,14 +3175,6 @@
 
 			<include condition="Skin.String(CommonDVDThumbsStyle,1) | Skin.String(CommonDVDThumbsStyle,)">CommonDVDThumbsStyle1</include>
 			<include condition="Skin.String(CommonDVDThumbsStyle,2)">CommonDVDThumbsStyle2</include>
-					
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
-				<animation effect="slide" end="0,-135" condition="Container.Row(0) + !Control.HasFocus(150)">Conditional</animation>
-				<animation effect="slide" end="0,135" condition="Container.Row(1) + !Skin.String(CommonDVDThumbsStyle,2) + !Control.HasFocus(150)">Conditional</animation>
-				<animation effect="slide" end="0,135" condition="Container.Row(2) + !Control.HasFocus(150)">Conditional</animation>
-			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
@@ -3774,14 +3754,6 @@
 			
 			<include condition="Skin.String(CommonAlbumThumbsStyle,1) | Skin.String(CommonAlbumThumbsStyle,)">CommonAlbumThumbsStyle1</include>
 			<include condition="Skin.String(CommonAlbumThumbsStyle,2)">CommonAlbumThumbsStyle2</include>
-	
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
-				<animation effect="slide" end="0,-135" condition="Container.Row(0) + !Control.HasFocus(150)">Conditional</animation>
-				<animation effect="slide" end="0,135" condition="Container.Row(1) + !Skin.String(CommonAlbumThumbsStyle,2) + !Control.HasFocus(150)">Conditional</animation>
-				<animation effect="slide" end="0,135" condition="Container.Row(2) + !Control.HasFocus(150)">Conditional</animation>
-			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
@@ -7532,11 +7504,6 @@
 					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
 					<ondown condition="Container.Content(Episodes) + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</ondown>
 				</control>
-			</control>
-			
-			<control type="group">
-				<top>SortLetterOffsetY</top>
-				<include>SortLetterNotification</include>
 			</control>
 
 			<include>ViewsDialogPopUpScreenDim</include>
