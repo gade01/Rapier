@@ -3210,7 +3210,7 @@
 						<include>InfoPaneItemTitle</include>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 						<visible>[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)]
-						| [[Container.Content(Movies) | SubString(ListItem.Path,videodb://movies/sets/,left)] + Skin.HasSetting(DisableMoviesClearLogo)]</visible>
+						| [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]</visible>
 					</control>
 					
 					<control type="group">
@@ -3221,7 +3221,7 @@
 					
 					<control type="group">
 						<visible>!Skin.HasSetting(ShowDVDThumbsRating)</visible>
-						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | SubString(ListItem.Path,videodb://movies/sets/,left)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
@@ -3232,7 +3232,7 @@
 					
 					<control type="group">
 						<visible>Skin.HasSetting(ShowDVDThumbsRating)</visible>
-						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | SubString(ListItem.Path,videodb://movies/sets/,left)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
