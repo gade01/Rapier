@@ -3210,7 +3210,7 @@
 						<include>InfoPaneItemTitle</include>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
 						<visible>[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)]
-						| [[Container.Content(Movies) | SubString(ListItem.Path,videodb://movies/sets/,left)] + Skin.HasSetting(DisableMoviesClearLogo)]</visible>
+						| [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]</visible>
 					</control>
 					
 					<control type="group">
@@ -3221,7 +3221,7 @@
 					
 					<control type="group">
 						<visible>!Skin.HasSetting(ShowDVDThumbsRating)</visible>
-						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | SubString(ListItem.Path,videodb://movies/sets/,left)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
@@ -3232,7 +3232,7 @@
 					
 					<control type="group">
 						<visible>Skin.HasSetting(ShowDVDThumbsRating)</visible>
-						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | SubString(ListItem.Path,videodb://movies/sets/,left)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
@@ -4554,16 +4554,16 @@
 					<textcolor>MediaInfoItemColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$LOCALIZE[20457]</label>
-					<visible>SubString(ListItem.Path,videodb://movies/sets,left) + !System.HasAddon(script.skin.info.service)</visible>
+					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.info.service)</visible>
 				</control>
 				
 				<control type="group">
-					<visible>![SubString(ListItem.Path,videodb://movies/sets,left) + !System.HasAddon(script.skin.info.service)]</visible>
+					<visible>![ListItem.IsCollection + !System.HasAddon(script.skin.info.service)]</visible>
 					<control type="group">
 						<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 						<control type="grouplist">
 							<description>Director</description>
-							<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+							<visible>!ListItem.IsCollection</visible>
 							<top>184</top>
 							<width>400</width>
 							<orientation>horizontal</orientation>
@@ -4585,7 +4585,7 @@
 						
 						<control type="grouplist">
 							<description>Movies</description>
-							<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+							<visible>ListItem.IsCollection</visible>
 							<top>184</top>
 							<width>400</width>
 							<orientation>horizontal</orientation>
@@ -4647,7 +4647,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$INFO[ListItem.Year]</label>
-							<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+							<visible>!ListItem.IsCollection</visible>
 						</control>
 						<control type="label">
 							<width min="0" max="400">auto</width>
@@ -4655,7 +4655,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$INFO[Window(Home).Property(Set.Movies.Years)]</label>
-							<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+							<visible>ListItem.IsCollection</visible>
 						</control>
 					</control>
 					
@@ -4679,7 +4679,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$INFO[ListItem.RatingAndVotes]</label>
-							<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+							<visible>!ListItem.IsCollection</visible>
 						</control>
 						<control type="label">
 							<width min="0" max="179">auto</width>
@@ -4687,7 +4687,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$INFO[ListItem.Rating]</label>
-							<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+							<visible>ListItem.IsCollection</visible>
 						</control>
 					</control>
 				</control>
