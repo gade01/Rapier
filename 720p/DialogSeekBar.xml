@@ -8,7 +8,7 @@
 		<control type="group">
 			<left>0</left>
 			<top>0</top>
-			<visible>Player.Paused + Skin.HasSetting(ShowFullscreenVideoPaused)</visible>
+			<visible>Window.IsActive(FullScreenVideo) + Player.Paused + Skin.HasSetting(ShowFullscreenVideoPaused)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			
 			<control type="image">
