@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="115">
 	<defaultcontrol>-</defaultcontrol>
+	<zorder>0</zorder>
 	<visible>Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused | Player.Caching | Window.IsActive(FullscreenInfo)</visible>
 			
 	<controls>
@@ -24,6 +25,7 @@
 				<textcolor>white</textcolor>
 				<align>center</align>
 				<animation effect="fade" condition="true" end="50">Conditional</animation>
+				<visible>!Window.IsActive(subtitlesearch)</visible>
 			</control>
 		</control>
 		
