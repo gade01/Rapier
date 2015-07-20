@@ -2,7 +2,6 @@
 <window>
     <defaultcontrol always="true">987</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<zorder>0</zorder>
 	<onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
 	<onload condition="StringCompare(Window.Property(type),movie)">SetProperty("TvTunesSupported", "Movies")</onload>
 	<onload condition="StringCompare(Window.Property(type),tvshow) | StringCompare(Window.Property(type),season) | StringCompare(Window.Property(type),episode)">SetProperty("TvTunesSupported", "TvShows")</onload>
