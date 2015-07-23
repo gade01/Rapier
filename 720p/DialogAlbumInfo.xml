@@ -2,6 +2,8 @@
 <window id="2001">
 	<defaultcontrol always="true">987</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<!--<onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
+	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>-->
 	<onunload condition="!IsEmpty(Skin.String(AlbumInfoMenubar))">Skin.Reset(AlbumInfoMenubar)</onunload>
 	<include>ControlsOpenCloseAnim</include>
 	
@@ -134,7 +136,8 @@
 				<ondown condition="Control.IsVisible(50)">50</ondown>
 				<ondown condition="Control.IsVisible(966)">966</ondown>
 				<ondown condition="Control.IsVisible(967)">967</ondown>
-				<ondown condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967)] + Control.IsVisible(61)">61</ondown>
+				<ondown condition="Control.IsVisible(968)">968</ondown>
+				<ondown condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968)] + Control.IsVisible(61)">61</ondown>
 				<onleft>505</onleft>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout width="720" height="31">
@@ -726,8 +729,125 @@
 				<content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
 			</control>
 			
+			<control type="panel" id="968">
+				<description>Discography</description>
+				<viewtype label="">list</viewtype>
+				<left>100</left>
+				<top>459</top>
+				<width>1086</width>
+				<height>173</height>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>61</pagecontrol>
+				<orientation>horizontal</orientation>
+				<onleft>987</onleft>
+				<ondown condition="Control.IsVisible(61)">61</ondown>
+				<onup>901</onup>
+				<onright condition="Control.IsVisible(61)">61</onright>
+				<include>FSMediaInfoOpenCloseAnim</include>
+				<visible>Skin.String(AlbumInfoMenubar,Discography)</visible>
+				<itemlayout height="173" width="181">		
+					<control type="image">
+						<width>173</width>
+						<height>173</height>
+						<bordertexture border="4">covers/cover-case2.png</bordertexture>
+						<bordersize>4</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<width>173</width>
+						<height>173</height>
+						<texture border="4">covers/cover-case2.png</texture>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<top>2</top>
+						<width>173</width>
+						<height>142</height>
+						<texture background="true">DefaultAudio.png</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>137</top>
+						<width>153</width>
+						<height>27</height>
+						<texture border="8">views/genre-background.png</texture>
+						<visible>!IsEmpty(ListItem.Label)</visible>
+					</control>
+					<control type="label">
+						<left>15</left>
+						<top>141</top>
+						<width>143</width>
+						<align>center</align>
+						<font>SubMenuArrowFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
+						<visible>!IsEmpty(ListItem.Label)</visible>
+					</control>
+				</itemlayout>				
+				<focusedlayout height="173" width="181">
+					<control type="group">
+						<include>ListViewCoverFocusAnim</include>
+						<control type="image">
+							<width>173</width>
+							<height>173</height>
+							<texture border="4">covers/cover-case-noshadow-focus.png</texture>
+							<include>ListViewOverlayFadeAnim</include>
+						</control>
+						<control type="image">
+							<width>173</width>
+							<height>173</height>
+							<texture border="4">black.png</texture>
+							<bordersize>3</bordersize>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+						</control>
+						<control type="image">
+							<top>2</top>
+							<width>173</width>
+							<height>142</height>
+							<texture background="true">DefaultAudio.png</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+						</control>
+						<control type="image">
+							<top>2</top>
+							<left>2</left>
+							<width>169</width>
+							<height>169</height>
+							<bordertexture border="4">black.png</bordertexture>
+							<bordersize>2</bordersize>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>137</top>
+							<width>153</width>
+							<height>27</height>
+							<texture border="8">views/genre-background.png</texture>
+							<visible>!IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>141</top>
+							<width>143</width>
+							<align>center</align>
+							<font>SubMenuArrowFont</font>
+							<textcolor>SelectedColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
+							<visible>!IsEmpty(ListItem.Label)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]&amp;&amp;limit=20</content>
+			</control>
+			
 			<control type="textbox">
-				<description>No popular tracks / similar artists Label</description>
+				<description>No popular tracks / similar artists / discography Label</description>
 				<left>100</left>
 				<top>462</top>
 				<width>1080</width>
@@ -737,7 +857,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<label>$VAR[DialogAlbumInfoEmptyExtendedInfo]</label>
-				<visible>[Skin.String(AlbumInfoMenubar,MostLovedTracks) + IsEmpty(Container(966).ListItem.Label)] | [Skin.String(AlbumInfoMenubar,SimilarArtists) + IsEmpty(Container(967).ListItem.Label)]</visible>
+				<visible>[Skin.String(AlbumInfoMenubar,MostLovedTracks) + IsEmpty(Container(966).ListItem.Label)] | [Skin.String(AlbumInfoMenubar,SimilarArtists) + IsEmpty(Container(967).ListItem.Label)] | [Skin.String(AlbumInfoMenubar,Discography) + IsEmpty(Container(968).ListItem.Label)]</visible>
 				<include>FSMediaInfoOpenCloseAnim</include>
 			</control>
 			
@@ -761,13 +881,15 @@
 				<onup condition="Control.IsVisible(50)">50</onup>
 				<onup condition="Control.IsVisible(966)">966</onup>
 				<onup condition="Control.IsVisible(967)">967</onup>
-				<onup condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967)]">901</onup>
+				<onup condition="Control.IsVisible(968)">968</onup>
+				<onup condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968)]">901</onup>
 				<onleft condition="Control.IsVisible(50)">50</onleft>
 				<onleft condition="Control.IsVisible(966)">966</onleft>
 				<onleft condition="Control.IsVisible(967)">967</onleft>
-				<onleft condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967)]">901</onleft>
+				<onleft condition="Control.IsVisible(968)">968</onleft>
+				<onleft condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968)]">901</onleft>
 				<include>NotificationsOpenCloseAnim</include>
-				<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [IntegerGreaterThan(Container(50).NumPages,1) + Control.IsVisible(50)] | [IntegerGreaterThan(Container(966).NumPages,1) + Skin.String(AlbumInfoMenubar,MostLovedTracks)] | [IntegerGreaterThan(Container(967).NumPages,1) + Skin.String(AlbumInfoMenubar,SimilarArtists)]</visible>
+				<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [IntegerGreaterThan(Container(50).NumPages,1) + Control.IsVisible(50)] | [IntegerGreaterThan(Container(966).NumPages,1) + Skin.String(AlbumInfoMenubar,MostLovedTracks)] | [IntegerGreaterThan(Container(967).NumPages,1) + Skin.String(AlbumInfoMenubar,SimilarArtists)] | [IntegerGreaterThan(Container(968).NumPages,1) + Skin.String(AlbumInfoMenubar,Discography)]</visible>
 			</control>
 			
 			<control type="image">
