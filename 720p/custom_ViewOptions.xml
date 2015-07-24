@@ -1388,6 +1388,16 @@
 				<include>ReloadSkinNotification</include>
 				<visible>[Container.Content(Movies) | Container.Content(Sets)] + !Skin.String(CurrentViewMode,588)</visible>
 			</control>
+			<control type="radiobutton" id="2087">
+				<description>Studio Logo</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31055]</label>
+				<selected>!Skin.HasSetting(DisableStudioLogo)</selected>
+				<onclick>Skin.ToggleSetting(DisableStudioLogo)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<visible>Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/studios/)</visible>
+			</control>
 			<control type="radiobutton" id="1014">
 				<description>Music Hide Clear Logo</description>
 				<include>DropDownMenuRadioBtn</include>
