@@ -1191,13 +1191,6 @@
 						<label>$VAR[AddMoreCategoryBtn1Label]</label>
 						<include>AddMoreCategoryBtn1Selected</include>
 						<onclick>$VAR[AddMoreCategoryBtn1Click]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click2]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click3]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click4]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click5]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click6]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn1Click8]</onclick>
 						<onfocus>Skin.SetString(SelectedExpandedBtn,1)</onfocus>
 					</control>
 					<control type="radiobutton" id="2302">
@@ -1206,13 +1199,6 @@
 						<label>$VAR[AddMoreCategoryBtn2Label]</label>
 						<include>AddMoreCategoryBtn2Selected</include>
 						<onclick>$VAR[AddMoreCategoryBtn2Click]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click2]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click3]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click4]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click5]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click6]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn2Click8]</onclick>
 						<onfocus>Skin.SetString(SelectedExpandedBtn,2)</onfocus>
 					</control>
 					<control type="radiobutton" id="2303">
@@ -1221,13 +1207,6 @@
 						<label>$VAR[AddMoreCategoryBtn3Label]</label>
 						<include>AddMoreCategoryBtn3Selected</include>
 						<onclick>$VAR[AddMoreCategoryBtn3Click]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click2]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click3]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click4]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click5]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click6]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn3Click8]</onclick>
 						<onfocus>Skin.SetString(SelectedExpandedBtn,3)</onfocus>
 					</control>
 					<control type="radiobutton" id="2304">
@@ -1236,13 +1215,6 @@
 						<label>$VAR[AddMoreCategoryBtn4Label]</label>
 						<include>AddMoreCategoryBtn4Selected</include>
 						<onclick>$VAR[AddMoreCategoryBtn4Click]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click2]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click3]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click4]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click5]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click6]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
-						<onclick>$VAR[AddMoreCategoryBtn4Click8]</onclick>
 						<onfocus>Skin.SetString(SelectedExpandedBtn,4)</onfocus>
 					</control>
 				</control>
@@ -3088,57 +3060,11 @@
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.ToggleSetting(EnableCustomCategory13)</value>
 	</variable>
 
-	<variable name="AddMoreCategoryBtn1Click2">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.HasSetting(Custom1ParamType)">Skin.Reset(Custom1BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + !Skin.HasSetting(Custom1ParamType)">Skin.Reset(CustomCategoryFavourite.1.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.HasSetting(Custom5ParamType)">Skin.Reset(Custom5BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + !Skin.HasSetting(Custom5ParamType)">Skin.Reset(CustomCategoryFavourite.5.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.HasSetting(Custom9ParamType)">Skin.Reset(Custom9BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + !Skin.HasSetting(Custom9ParamType)">Skin.Reset(CustomCategoryFavourite.9.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.HasSetting(Custom13ParamType)">Skin.Reset(Custom13BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + !Skin.HasSetting(Custom13ParamType)">Skin.Reset(CustomCategoryFavourite.13.Path)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn1Click3">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom1IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom5IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom9IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom13IconPath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn1Click4">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom1NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom5NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom9NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom13NoFocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn1Click5">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom1FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom5FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom9FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom13FocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn1Click6">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom1BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom5BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom9BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom13BackgroundImagePath)</value>
-	</variable>
-
 	<variable name="AddMoreCategoryBtn1Click7">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.Reset(Custom1PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.Reset(Custom5PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.Reset(Custom9PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.Reset(Custom13PanelPlaylist)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn1Click8">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom1PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom5PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom9PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom13PanelType,1)</value>
 	</variable>
 
 	<include name="AddMoreCategoryBtn1ParamAltType">
@@ -3412,57 +3338,11 @@
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.ToggleSetting(EnableCustomCategory14)</value>
 	</variable>
 
-	<variable name="AddMoreCategoryBtn2Click2">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.HasSetting(Custom2ParamType)">Skin.Reset(Custom2BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + !Skin.HasSetting(Custom2ParamType)">Skin.Reset(CustomCategoryFavourite.2.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.HasSetting(Custom6ParamType)">Skin.Reset(Custom6BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + !Skin.HasSetting(Custom6ParamType)">Skin.Reset(CustomCategoryFavourite.6.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.HasSetting(Custom10ParamType)">Skin.Reset(Custom10BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + !Skin.HasSetting(Custom10ParamType)">Skin.Reset(CustomCategoryFavourite.10.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.HasSetting(Custom14ParamType)">Skin.Reset(Custom14BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + !Skin.HasSetting(Custom14ParamType)">Skin.Reset(CustomCategoryFavourite.14.Path)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn2Click3">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom2IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom6IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom10IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom14IconPath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn2Click4">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom2NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom6NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom10NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom14NoFocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn2Click5">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom2FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom6FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom10FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom14FocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn2Click6">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom2BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom6BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom10BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom14BackgroundImagePath)</value>
-	</variable>
-
 	<variable name="AddMoreCategoryBtn2Click7">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.Reset(Custom2PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.Reset(Custom6PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.Reset(Custom10PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.Reset(Custom14PanelPlaylist)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn2Click8">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom2PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom6PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom10PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom14PanelType,1)</value>
 	</variable>
 
 	<include name="AddMoreCategoryBtn2ParamAltType">
@@ -3736,57 +3616,11 @@
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.ToggleSetting(EnableCustomCategory15)</value>
 	</variable>
 
-	<variable name="AddMoreCategoryBtn3Click2">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.HasSetting(Custom3ParamType)">Skin.Reset(Custom3BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + !Skin.HasSetting(Custom3ParamType)">Skin.Reset(CustomCategoryFavourite.3.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.HasSetting(Custom7ParamType)">Skin.Reset(Custom7BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + !Skin.HasSetting(Custom7ParamType)">Skin.Reset(CustomCategoryFavourite.7.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.HasSetting(Custom11ParamType)">Skin.Reset(Custom11BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + !Skin.HasSetting(Custom11ParamType)">Skin.Reset(CustomCategoryFavourite.11.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.HasSetting(Custom15ParamType)">Skin.Reset(Custom15BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + !Skin.HasSetting(Custom15ParamType)">Skin.Reset(CustomCategoryFavourite.15.Path)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn3Click3">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom3IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom7IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom11IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom15IconPath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn3Click4">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom3NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom7NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom11NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom15NoFocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn3Click5">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom3FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom7FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom11FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom15FocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn3Click6">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom3BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom7BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom11BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom15BackgroundImagePath)</value>
-	</variable>
-
 	<variable name="AddMoreCategoryBtn3Click7">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.Reset(Custom3PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.Reset(Custom7PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.Reset(Custom11PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.Reset(Custom15PanelPlaylist)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn3Click8">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom3PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom7PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom11PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,1)</value>
 	</variable>
 
 	<include name="AddMoreCategoryBtn3ParamAltType">
@@ -4060,57 +3894,11 @@
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.ToggleSetting(EnableCustomCategory16)</value>
 	</variable>
 
-	<variable name="AddMoreCategoryBtn4Click2">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.HasSetting(Custom4ParamType)">Skin.Reset(Custom4BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + !Skin.HasSetting(Custom4ParamType)">Skin.Reset(CustomCategoryFavourite.4.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.HasSetting(Custom8ParamType)">Skin.Reset(Custom8BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + !Skin.HasSetting(Custom8ParamType)">Skin.Reset(CustomCategoryFavourite.8.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.HasSetting(Custom12ParamType)">Skin.Reset(Custom12BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + !Skin.HasSetting(Custom12ParamType)">Skin.Reset(CustomCategoryFavourite.12.Path)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.HasSetting(Custom16ParamType)">Skin.Reset(Custom16BtnParam)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + !Skin.HasSetting(Custom16ParamType)">Skin.Reset(CustomCategoryFavourite.16.Path)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn4Click3">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom4IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom8IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom12IconPath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom16IconPath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn4Click4">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom4NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom8NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom12NoFocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom16NoFocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn4Click5">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom4FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom8FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom12FocusImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom16FocusImagePath)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn4Click6">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(Custom4BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(Custom8BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(Custom12BackgroundImagePath)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(Custom16BackgroundImagePath)</value>
-	</variable>
-
 	<variable name="AddMoreCategoryBtn4Click7">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.Reset(Custom4PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.Reset(Custom8PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.Reset(Custom12PanelPlaylist)</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.Reset(Custom16PanelPlaylist)</value>
-	</variable>
-
-	<variable name="AddMoreCategoryBtn4Click8">
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom4PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom8PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom12PanelType,1)</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,1)</value>
 	</variable>
 
 	<include name="AddMoreCategoryBtn4ParamAltType">

@@ -137,7 +137,8 @@
 				<ondown condition="Control.IsVisible(966)">966</ondown>
 				<ondown condition="Control.IsVisible(967)">967</ondown>
 				<ondown condition="Control.IsVisible(968)">968</ondown>
-				<ondown condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968)] + Control.IsVisible(61)">61</ondown>
+				<ondown condition="Control.IsVisible(969)">969</ondown>
+				<ondown condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968) | Control.IsVisible(969)] + Control.IsVisible(61)">61</ondown>
 				<onleft>505</onleft>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<itemlayout width="720" height="31">
@@ -846,6 +847,123 @@
 				<content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]&amp;&amp;limit=20</content>
 			</control>
 			
+			<control type="panel" id="969">
+				<description>Music Videos</description>
+				<viewtype label="">list</viewtype>
+				<left>100</left>
+				<top>459</top>
+				<width>1084</width>
+				<height>173</height>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>61</pagecontrol>
+				<orientation>horizontal</orientation>
+				<onleft>987</onleft>
+				<ondown condition="Control.IsVisible(61)">61</ondown>
+				<onup>901</onup>
+				<onright condition="Control.IsVisible(61)">61</onright>
+				<include>FSMediaInfoOpenCloseAnim</include>
+				<visible>Skin.String(AlbumInfoMenubar,MusicVideos)</visible>
+				<itemlayout height="173" width="271">		
+					<control type="image">
+						<width>268</width>
+						<height>173</height>
+						<bordertexture border="4">covers/cover-case2.png</bordertexture>
+						<bordersize>4</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<width>268</width>
+						<height>173</height>
+						<texture border="4">covers/cover-case2.png</texture>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<top>2</top>
+						<width>268</width>
+						<height>142</height>
+						<texture background="true">DefaultAudio.png</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>137</top>
+						<width>248</width>
+						<height>27</height>
+						<texture border="8">views/genre-background.png</texture>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="label">
+						<left>15</left>
+						<top>141</top>
+						<width>238</width>
+						<align>center</align>
+						<font>SubMenuArrowFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[ListItem.Title]</label>
+						<visible>!IsEmpty(ListItem.Title)</visible>
+					</control>
+				</itemlayout>				
+				<focusedlayout height="173" width="271">
+					<control type="group">
+						<include>ListViewCoverFocusAnim</include>
+						<control type="image">
+							<width>268</width>
+							<height>173</height>
+							<texture border="4">covers/cover-case-noshadow-focus.png</texture>
+							<include>ListViewOverlayFadeAnim</include>
+						</control>
+						<control type="image">
+							<width>268</width>
+							<height>173</height>
+							<texture border="4">black.png</texture>
+							<bordersize>3</bordersize>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+						</control>
+						<control type="image">
+							<top>2</top>
+							<width>268</width>
+							<height>142</height>
+							<texture background="true">DefaultAudio.png</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+						</control>
+						<control type="image">
+							<top>2</top>
+							<left>2</left>
+							<width>264</width>
+							<height>169</height>
+							<bordertexture border="4">black.png</bordertexture>
+							<bordersize>2</bordersize>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>137</top>
+							<width>248</width>
+							<height>27</height>
+							<texture border="8">views/genre-background.png</texture>
+							<visible>!IsEmpty(ListItem.Title)</visible>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>141</top>
+							<width>238</width>
+							<align>center</align>
+							<font>SubMenuArrowFont</font>
+							<textcolor>SelectedColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.Title]</label>
+							<visible>!IsEmpty(ListItem.Title)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$ESCINFO[ListItem.Artist] music video&amp;&amp;limit=20</content>
+			</control>
+			
 			<control type="textbox">
 				<description>No popular tracks / similar artists / discography Label</description>
 				<left>100</left>
@@ -882,14 +1000,16 @@
 				<onup condition="Control.IsVisible(966)">966</onup>
 				<onup condition="Control.IsVisible(967)">967</onup>
 				<onup condition="Control.IsVisible(968)">968</onup>
-				<onup condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968)]">901</onup>
+				<onup condition="Control.IsVisible(969)">969</onup>
+				<onup condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968) | Control.IsVisible(969)]">901</onup>
 				<onleft condition="Control.IsVisible(50)">50</onleft>
 				<onleft condition="Control.IsVisible(966)">966</onleft>
 				<onleft condition="Control.IsVisible(967)">967</onleft>
 				<onleft condition="Control.IsVisible(968)">968</onleft>
-				<onleft condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968)]">901</onleft>
+				<onleft condition="Control.IsVisible(969)">969</onleft>
+				<onleft condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968) | Control.IsVisible(969)]">901</onleft>
 				<include>NotificationsOpenCloseAnim</include>
-				<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [IntegerGreaterThan(Container(50).NumPages,1) + Control.IsVisible(50)] | [IntegerGreaterThan(Container(966).NumPages,1) + Skin.String(AlbumInfoMenubar,MostLovedTracks)] | [IntegerGreaterThan(Container(967).NumPages,1) + Skin.String(AlbumInfoMenubar,SimilarArtists)] | [IntegerGreaterThan(Container(968).NumPages,1) + Skin.String(AlbumInfoMenubar,Discography)]</visible>
+				<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [IntegerGreaterThan(Container(50).NumPages,1) + Control.IsVisible(50)] | [IntegerGreaterThan(Container(966).NumPages,1) + Skin.String(AlbumInfoMenubar,MostLovedTracks)] | [IntegerGreaterThan(Container(967).NumPages,1) + Skin.String(AlbumInfoMenubar,SimilarArtists)] | [IntegerGreaterThan(Container(968).NumPages,1) + Skin.String(AlbumInfoMenubar,Discography)] | [IntegerGreaterThan(Container(969).NumPages,1) + Skin.String(AlbumInfoMenubar,MusicVideos)]</visible>
 			</control>
 			
 			<control type="image">
