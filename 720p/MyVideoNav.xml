@@ -5,7 +5,6 @@
 	<views>50,52,54,53,75,58,66,95,97,56,76,61,65,100,74,73,68,94,69,63,90,91,93,586,587,588,589</views>
 	<onload>Skin.Reset(ShowMediaExtraOptions)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onload condition="System.HasAddon(script.duration) + Skin.HasSetting(UseAlternativeDuration)">RunScript(script.duration,backend=True)</onload> 
 	
 	<controls>
 		<control type="group">
