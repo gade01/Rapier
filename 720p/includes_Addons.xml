@@ -1541,12 +1541,6 @@
 		<value>$INFO[ListItem.Year]</value>
 	</variable>
 	
-	<variable name="MovieDuration">
-		<value condition="!IsEmpty(Window(home).Property(Set.Movies.Runtime))">$INFO[Window(home).Property(Set.Movies.Runtime)]</value>
-		<value condition="System.HasAddon(script.duration) + Skin.HasSetting(UseAlternativeDuration) + IntegerGreaterThan(ListItem.Duration,59)">$INFO[Window.Property(Duration)]</value>
-		<value>$INFO[ListItem.Duration]</value>
-	</variable>
-	
 	<variable name="MoviePlot">
 		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot))">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
 		<value>$INFO[ListItem.Plot]</value>
