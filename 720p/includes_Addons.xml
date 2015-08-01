@@ -1450,7 +1450,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-general.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated G)</visible>  
+			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated G) | substring(Container(100).ListItem.Property(Mpaa),US:G) | substring(Container(100).ListItem.Property(Mpaa),USA:G)</visible>  
 		</control>
 		<control type="image" id="635">
 			<description>Rated PG</description>
@@ -1459,7 +1459,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-pg.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated PG) + !substring(Container(100).ListItem.Property(Mpaa),Rated PG-13)</visible>  
+			<visible>[substring(Container(100).ListItem.Property(Mpaa),Rated PG) + !substring(Container(100).ListItem.Property(Mpaa),Rated PG-13)] | [substring(Container(100).ListItem.Property(Mpaa),US:PG) + !substring(Container(100).ListItem.Property(Mpaa),US:PG-13)] | [substring(Container(100).ListItem.Property(Mpaa),USA:PG) + !substring(Container(100).ListItem.Property(Mpaa),USA:PG-13)]</visible>  
 		</control>
 		<control type="image" id="636">
 			<description>Rated PG-13</description>
@@ -1468,7 +1468,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-pg13.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated PG-13)</visible>  
+			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated PG-13) | substring(Container(100).ListItem.Property(Mpaa),US:PG-13) | substring(Container(100).ListItem.Property(Mpaa),USA:PG-13)</visible>  
 		</control>
 		<control type="image" id="637">
 			<description>Rated R</description>
@@ -1477,7 +1477,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-restricted.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated R)</visible>  
+			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated R) | substring(Container(100).ListItem.Property(Mpaa),US:R) | substring(Container(100).ListItem.Property(Mpaa),USA:R)</visible>  
 		</control>
 		<control type="image" id="638">
 			<description>Rated NC-17</description>
@@ -1486,7 +1486,70 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-nc17.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated NC-17)</visible>  
+			<visible>substring(Container(100).ListItem.Property(Mpaa),Rated NC-17) | substring(Container(100).ListItem.Property(Mpaa),US:NC-17) | substring(Container(100).ListItem.Property(Mpaa),USA:NC-17)</visible>  
+		</control>
+		<control type="image" id="702">
+			<description>Rated UK U</description>
+			<width>27</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-u.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:U)</visible>  
+		</control>
+		<control type="image" id="703">
+			<description>Rated UK PG</description>
+			<width>36</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-pg.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:PG)</visible>  
+		</control>
+		<control type="image" id="704">
+			<description>Rated UK 12</description>
+			<width>32</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-12.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:12) + !substring(Container(100).ListItem.Property(Mpaa),UK:12a)</visible>  
+		</control>
+		<control type="image" id="705">
+			<description>Rated UK 12A</description>
+			<width>43</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-12a.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:12a)</visible>  
+		</control>
+		<control type="image" id="706">
+			<description>Rated UK 15</description>
+			<width>32</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-15.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:15)</visible>  
+		</control>
+		<control type="image" id="707">
+			<description>Rated UK 18</description>
+			<width>32</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-18.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:18)</visible>  
+		</control>
+		<control type="image" id="708">
+			<description>Rated UK R18</description>
+			<width>43</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-r18.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>substring(Container(100).ListItem.Property(Mpaa),UK:R18)</visible>  
 		</control>
 		<control type="image" id="738">
 			<description>Unrated</description>
@@ -1524,7 +1587,7 @@
 				<width>58</width>
 				<height>35</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>resource://resource.images.studios.white/$INFO[Container(100).ListItem.Property(Studio)].png</texture>
+				<texture>studios/$INFO[Container(100).ListItem.Property(Studio)].png</texture>
 				<animation effect="fade" end="70" condition="true">Conditional</animation>
 			</control>
 		</control>
@@ -1595,7 +1658,7 @@
 				<width>60</width>
 				<height>37</height>
 				<aspectratio align="center">keep</aspectratio>
-				<texture>resource://resource.images.studios.white/$INFO[Window.Property(movie.Studio)].png</texture>
+				<texture>studios/$INFO[Window.Property(movie.Studio)].png</texture>
 				<animation effect="fade" end="50" condition="true">Conditional</animation>
 			</control>
 		</control>
