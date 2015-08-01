@@ -121,7 +121,7 @@
 				<top>-10</top>
 				<width>116</width>
 				<height>59</height>
-				<texture>$INFO[ListItem.Label,studios/,.png]</texture>
+				<texture>$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
 				<aspectratio>keep</aspectratio>
 				<fadetime>400</fadetime>
 				<animation effect="fade" end="90" condition="true">Conditional</animation>
@@ -200,7 +200,7 @@
 			
 			<control type="label">
 				<include>InfoPaneHeadLabel2</include>
-				<label>$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(Movies.UnWatched),  -  , $LOCALIZE[16101]]</label>
+				<label>$VAR[MovieInfoPaneLabel2]</label>
 			</control>
 		</control>
 		
@@ -225,10 +225,10 @@
 		<control type="group">
 			<visible>Container.Content(Episodes)</visible>
 			<include condition="!Skin.HasSetting(DisableMediaFlags)">InfoPaneMediaFlag</include>
-				
+			
 			<control type="label">
 				<include>InfoPaneHeadLabel2</include>
-				<label>$INFO[Container.Totaltime,, $LOCALIZE[31003]]</label>
+				<label>$INFO[Container.NumItems,, $LOCALIZE[20360]]$INFO[Container.TotalUnwatched,  -  , $LOCALIZE[16101]]</label>
 			</control>
 		</control>
 		

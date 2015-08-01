@@ -170,6 +170,12 @@
 		<value>$LOCALIZE[21385]</value>
 	</variable>
 	
+	<variable name="MovieInfoPaneLabel2">
+		<value condition="Substring(Container.FolderPath,videodb://movies/titles/)">$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(Movies.UnWatched),  -  , $LOCALIZE[16101]]</value>
+		<value condition="Container.Content(Sets)">$INFO[Container.NumItems,, $LOCALIZE[20434]]$INFO[Container.TotalUnwatched,  -  , $LOCALIZE[16101]]</value>
+		<value>$INFO[Container.NumItems,, $LOCALIZE[20342]]$INFO[Container.TotalUnwatched,  -  , $LOCALIZE[16101]]</value>
+	</variable>
+	
 	<variable name="SkinSettingsLabel">
 		<value condition="!System.HasAddon(script.toolbox)">$LOCALIZE[32025]</value>
 		<value condition="System.HasAddon(script.toolbox)">$LOCALIZE[20077]</value>
