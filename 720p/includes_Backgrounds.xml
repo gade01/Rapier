@@ -303,7 +303,7 @@
 				| [Control.IsVisible(588) + !Skin.HasSetting(HideMovies3DWrapFanart)]
 				| Control.IsVisible(59)</visible>
 				<include>BackgroundVisibleAnim</include>
-				<include condition="!Skin.HasSetting(EnableMoviesExtraFanart)">FanartImage</include>
+				<include>FanartImage</include>
 				<include condition="Skin.HasSetting(EnableMoviesExtraFanart)">ExtraFanartImage</include>
 				<include>FanartDim</include>
 			</control>
@@ -338,7 +338,7 @@
 				<control type="group">
 					<visible>Container.Content(TVShows) | Window.IsActive(script-videoextras-main.xml)</visible>
 					<include>BackgroundVisibleAnim</include>
-					<include condition="!Skin.HasSetting(EnableTVShowsExtraFanart)">FanartImage</include>
+					<include>FanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage2</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage3</include>
@@ -347,8 +347,8 @@
 				<control type="group">
 					<visible>Container.Content(Episodes) | Container.Content(Seasons) | Window.IsActive(script-videoextras-main.xml)</visible>
 					<include>BackgroundVisibleAnim</include>
-					<include condition="!Skin.HasSetting(EnableTVShowsExtraFanart)">FanartImage</include>
-					<include condition="!Skin.HasSetting(EnableTVShowsExtraFanart)">ParentFanartImage</include>
+					<include>FanartImage</include>
+					<include>ParentFanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage2</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage3</include>
@@ -440,6 +440,7 @@
 			<aspectratio>scale</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include condition="Skin.HasSetting(AnimateFanart)">FanartBackgroundAnim</include>
+			<visible>!IsEmpty(ListItem.Art(fanart))</visible>
 		</control>	
 	</include>
 
@@ -450,6 +451,7 @@
 			<aspectratio>scale</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include condition="Skin.HasSetting(AnimateFanart)">FanartBackgroundAnim</include>
+			<visible>!IsEmpty(Fanart.Image)</visible>
 		</control>
 	</include>
 
