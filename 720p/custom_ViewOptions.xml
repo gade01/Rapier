@@ -161,7 +161,7 @@
 				<label>$LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowMusicThumbnailFanart)</selected>
 				<onclick>Skin.ToggleSetting(ShowMusicThumbnailFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,63) + Container.Content(Albums)</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Albums) | Container.Content(Songs)]</visible>
 			</control>
 			<control type="radiobutton" id="2081">
 				<description>Thumbnail Show Fanart (Movies)</description>
@@ -445,7 +445,7 @@
 				<label>$LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideTVShowsListInfoFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideTVShowsListInfoFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,61) + [Container.Content(TVShows)]</visible>
+				<visible>Skin.String(CurrentViewMode,61) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			</control>
 			<control type="radiobutton" id="2078">
 				<description>List Info Hide Fanart (Episodes)</description>
@@ -1155,7 +1155,8 @@
 				<onclick>Skin.ToggleSetting(EnableMoviesExtraFanart)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<enable>![Skin.String(CurrentViewMode,52) + Skin.HasSetting(HideMoviesListFanart)]
+				<enable>![Skin.String(CurrentViewMode,50) + !Skin.HasSetting(ShowMoviesIconFanart)]
+				+ ![Skin.String(CurrentViewMode,52) + Skin.HasSetting(HideMoviesListFanart)]
 				+ ![Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowMoviesThumbnailFanart)]
 				+ ![Skin.String(CurrentViewMode,75) + Skin.HasSetting(HideMoviesWideListFanart)]
 				+ ![Skin.String(CurrentViewMode,58) + Skin.HasSetting(HideMoviesListInfoFanart)]
@@ -1163,7 +1164,7 @@
 				+ ![Skin.String(CurrentViewMode,95) + Skin.HasSetting(HideMoviesListInfo3Fanart)]
 				+ ![Skin.String(CurrentViewMode,97) + Skin.HasSetting(HideMoviesThumbsInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,53) + Skin.HasSetting(HideMoviesWrapListInfoFanart)]</enable>
-				<visible>Container.Content(Movies) + ![Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,69)]</visible>
+				<visible>Container.Content(Movies) + !Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="3038">
 				<description>Extra Fanart (TVShows) (Seasons) (Episodes)</description>
@@ -1173,7 +1174,9 @@
 				<onclick>Skin.ToggleSetting(EnableTVShowsExtraFanart)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<enable>![Skin.String(CurrentViewMode,56) + Skin.HasSetting(HideTVShowsWideIconFanart)]
+				<enable>![Skin.String(CurrentViewMode,50) + !Skin.HasSetting(ShowTVShowsIconFanart)]
+				+ ![Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowTVShowsThumbnailFanart)]
+				+ ![Skin.String(CurrentViewMode,56) + Skin.HasSetting(HideTVShowsWideIconFanart)]
 				+ ![Skin.String(CurrentViewMode,52) + Skin.HasSetting(HideTVShowsListFanart)]
 				+ ![Skin.String(CurrentViewMode,76) + Skin.HasSetting(HideTVShowsWideListFanart)]
 				+ ![Skin.String(CurrentViewMode,74) + Skin.HasSetting(HideEpisodesWideListFanart)]
@@ -1185,7 +1188,7 @@
 				+ ![Skin.String(CurrentViewMode,100) + Skin.HasSetting(HideTVShowsThumbsInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,589) + Skin.HasSetting(HideTVShowsListInfo3Fanart)]</enable>
 				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] 
-				+ ![Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,69)]</visible>
+				+ ![Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,586)]</visible>
 			</control>
 			<control type="radiobutton" id="1022">
 				<description>Animate Fanart</description>
@@ -1195,7 +1198,35 @@
 				<onclick>Skin.ToggleSetting(AnimateFanart)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>![Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,70)]</visible>
+				<enable>![Skin.String(CurrentViewMode,54) + [[!Skin.HasSetting(ShowMoviesThumbnailFanart) + [Container.Content(Movies) | Container.Content(Sets)]] | [!Skin.HasSetting(ShowTVShowsThumbnailFanart) + [Container.Content(TVShows) | Container.Content(Seasons)]]]]
+				+ ![Skin.String(CurrentViewMode,56) + Skin.HasSetting(HideTVShowsWideIconFanart)]
+				+ ![Skin.String(CurrentViewMode,52) + [[Skin.HasSetting(HideMoviesListFanart) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.HasSetting(HideTVShowsListFanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(HideMusicListFanart) + [Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)]] | [Skin.HasSetting(HideAddonsListFanart) + Container.Content(Addons)]]]
+				+ ![Skin.String(CurrentViewMode,76) + Skin.HasSetting(HideTVShowsWideListFanart)]
+				+ ![Skin.String(CurrentViewMode,74) + Skin.HasSetting(HideEpisodesWideListFanart)]
+				+ ![Skin.String(CurrentViewMode,77) + Skin.HasSetting(HideMusicWideListFanart)]
+				+ ![Skin.String(CurrentViewMode,61) + Skin.HasSetting(HideTVShowsListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,62) + Skin.HasSetting(HideMusicListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,63) + [[!Skin.HasSetting(ShowMusicThumbnailFanart) + !Container.Content(Addons)] | [!Skin.HasSetting(ShowAddonsThumbnailFanart) + Container.Content(Addons)]]]
+				+ ![Skin.String(CurrentViewMode,64) + Skin.HasSetting(HideMusicWrapListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,73) + Skin.HasSetting(HideEpisodesListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,65) + Skin.HasSetting(HideTVShowsListInfo2Fanart)]
+				+ ![Skin.String(CurrentViewMode,67) + Skin.HasSetting(HideMusicListInfo2Fanart)]
+				+ ![Skin.String(CurrentViewMode,68) + Skin.HasSetting(HideEpisodesListInfo2Fanart)]
+				+ ![Skin.String(CurrentViewMode,94) + Skin.HasSetting(HideEpisodesListInfo3Fanart)]
+				+ ![Skin.String(CurrentViewMode,96) + Skin.HasSetting(HideMusicListInfo3Fanart)]
+				+ ![Skin.String(CurrentViewMode,100) + Skin.HasSetting(HideTVShowsThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,589) + Skin.HasSetting(HideTVShowsListInfo3Fanart)]
+				+ ![Skin.String(CurrentViewMode,75) + Skin.HasSetting(HideMoviesWideListFanart)]
+				+ ![Skin.String(CurrentViewMode,90) + Skin.HasSetting(HideAddonsWideListFanart)]
+				+ ![Skin.String(CurrentViewMode,91) + Skin.HasSetting(HideAddonsListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,93) + Skin.HasSetting(HideAddonsWrapListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,58) + Skin.HasSetting(HideMoviesListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,66) + Skin.HasSetting(HideMoviesListInfo2Fanart)]
+				+ ![Skin.String(CurrentViewMode,95) + Skin.HasSetting(HideMoviesListInfo3Fanart)]
+				+ ![Skin.String(CurrentViewMode,97) + Skin.HasSetting(HideMoviesThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,599) + Skin.HasSetting(HideMusicThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,53) + Skin.HasSetting(HideMoviesWrapListInfoFanart)]</enable>
+				<visible>![Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,70) | Skin.String(CurrentViewMode,586) | Container.Content(Genres) | Container.Content(Years) | Window.IsActive(Pictures)]</visible>
 			</control>
 			<control type="radiobutton" id="3043">
 				<description>Clear Logo (TVShows)</description>
@@ -1243,7 +1274,7 @@
 				<label>$LOCALIZE[31938]</label>
 				<selected>Skin.HasSetting(HideEpisodesGenres)</selected>
 				<onclick>Skin.ToggleSetting(HideEpisodesGenres)</onclick>
-				<visible>Container.Content(Episodes)</visible>
+				<visible>Container.Content(Episodes) + [Skin.String(CurrentViewMode,68) | Skin.String(CurrentViewMode,94)]</visible>
 			</control>
 			<control type="radiobutton" id="3091">
 				<description>Show Landscape.jpg</description>
@@ -1271,8 +1302,8 @@
 				<label>$LOCALIZE[31050]</label>
 				<selected>!Skin.HasSetting(DoNotUseStarRatingMusic)</selected>
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingMusic)</onclick>
-				<visible>[Skin.String(CurrentViewMode,52) + Window.IsActive(MusicLibrary)] | Skin.String(CurrentViewMode,62) | Skin.String(CurrentViewMode,64) 
-				| Skin.String(CurrentViewMode,67) | Skin.String(CurrentViewMode,77) + [Container.Content(Albums) | Container.Content(Songs)]</visible>
+				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,62) | Skin.String(CurrentViewMode,64) 
+				| Skin.String(CurrentViewMode,67) | Skin.String(CurrentViewMode,77)] + [Container.Content(Albums) | Container.Content(Singles) | Container.Content(Songs)]</visible>
 			</control>
 			<control type="radiobutton" id="2073">
 				<description>Do Not Use Star Rating (Movies)</description>
