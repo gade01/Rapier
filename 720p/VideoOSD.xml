@@ -634,6 +634,7 @@
 					<control type="radiobutton" id="120">
 						<description>Toggle Stereo Mode</description>
 						<width>270</width>
+						<hitrect x="-10" y="-3" w="290" h="39"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[305]</label>
 						<onclick>ToggleStereoMode</onclick>
@@ -642,6 +643,7 @@
 					<control type="button" id="121">
 						<description>Change Mode</description>
 						<width>270</width>
+						<hitrect x="-10" y="-1" w="290" h="37"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[31947]</label>
 						<onclick>StereoMode</onclick>
@@ -649,10 +651,11 @@
 					<control type="radiobutton" id="122">
 						<description>Watch in 2D</description>
 						<width>270</width>
+						<hitrect x="-10" y="-1" w="290" h="39"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[31948]</label>
 						<onclick>StereoModeToMono</onclick>
-						<selected>StringCompare(System.StereoscopicMode,7)</selected>
+						<selected>StringCompare(System.StereoscopicMode,8)</selected>
 					</control>
 				</control>
 			</control>
@@ -680,6 +683,7 @@
 					<control type="togglebutton" id="123">
 						<description>Subtitle Search</description>
 						<width>270</width>
+						<hitrect x="-10" y="-3" w="290" h="39"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[33003]</label>
 						<onclick>Close</onclick>
@@ -689,6 +693,7 @@
 					<control type="button" id="124">
 						<description>Subtitle Delay</description>
 						<width>270</width>
+						<hitrect x="-10" y="-1" w="290" h="37"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[22006]</label>
 						<onclick>SubtitleDelay</onclick>
@@ -697,14 +702,16 @@
 					<control type="button" id="125">
 						<description>Next Subtitle</description>
 						<width>270</width>
+						<hitrect x="-10" y="-1" w="290" h="37"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[209]</label>
-						<onclick>NextSubtitle</onclick>
+						<onclick>CycleSubtitle</onclick>
 						<visible>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</visible>
 					</control>
 					<control type="radiobutton" id="126">
 						<description>Enable Subtitles</description>
 						<width>270</width>
+						<hitrect x="-10" y="-1" w="290" h="39"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[449]</label>
 						<onclick>ShowSubtitles</onclick>
