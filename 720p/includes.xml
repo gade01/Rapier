@@ -333,6 +333,17 @@
 			<height>70</height>
 			<texture border="5">panels/panel-content-border2.png</texture>
 			<animation effect="fade" end="5" condition="true">Conditional</animation>
+			<visible>![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)]</visible>
+		</control>
+		
+		<control type="image" id="1">
+			<left>193</left>
+			<top>4</top>
+			<width>1027</width>
+			<height>70</height>
+			<texture border="5">panels/panel-content-border2.png</texture>
+			<animation effect="fade" end="5" condition="true">Conditional</animation>
+			<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
 		</control>
 	</include>
 	
@@ -352,7 +363,7 @@
 			<animation effect="fade" end="5" condition="true">Conditional</animation>
 		</control>
 		
-		<control type="image">
+		<control type="image" id="1">
 			<left>4</left>
 			<top>275</top>
 			<width>1216</width>
@@ -1463,38 +1474,49 @@
 	</include>
 	
 	<variable name="FSInfoTitle">
+		<value condition="VideoPlayer.Content(LiveTV) + !IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !IntegerGreaterThan(VideoPlayer.Season,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
 		<value>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
 	</variable>
 	
 	<variable name="FSInfoLabel1">
 		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Genre]</value>
-		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E,)]</value> 
+		<value condition="VideoPlayer.Content(Episodes) + !IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S0,]$INFO[VideoPlayer.Episode,E0,)]</value> 
+		<value condition="VideoPlayer.Content(Episodes) + !IntegerGreaterThan(VideoPlayer.Season,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S0,]$INFO[VideoPlayer.Episode,E,)]</value> 
+		<value condition="VideoPlayer.Content(Episodes) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E0,)]</value> 
+		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E,)]</value>
 		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,  -  ]</value>
 	</variable>
 	
 	<variable name="FSInfoLabel2">
-		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | [VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Director)]">$LOCALIZE[20339]:</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Director)">$LOCALIZE[20339]:</value>
 		<value condition="VideoPlayer.Content(LiveTV) + IsEmpty(VideoPlayer.Director)">$LOCALIZE[19127]:</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$LOCALIZE[557]:</value>
 	</variable>
 	
 	<variable name="FSInfoLabel2Val">
-		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | [VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Director)]">$INFO[VideoPlayer.Director]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Director)">$INFO[VideoPlayer.Director]</value>
 		<value condition="VideoPlayer.Content(LiveTV) + IsEmpty(VideoPlayer.Director)">$INFO[VideoPlayer.EndTime]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Artist]</value>
 	</variable>
 	
 	<variable name="FSInfoLabel3">
-		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | [VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Writer)]">$LOCALIZE[20417]:</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Writer)">$LOCALIZE[20417]:</value>
 		<value condition="VideoPlayer.Content(LiveTV) + IsEmpty(VideoPlayer.Writer)">$LOCALIZE[19141]:</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$LOCALIZE[558]:</value>
 	</variable>
 	
 	<variable name="FSInfoLabel3Val">
-		<value condition="VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | [VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Writer)]">$INFO[VideoPlayer.Writer]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Writer)">$INFO[VideoPlayer.Writer]</value>
 		<value condition="VideoPlayer.Content(LiveTV) + IsEmpty(VideoPlayer.Writer)">$INFO[VideoPlayer.ChannelGroup]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
+	</variable>
+	
+	<variable name="PosterImageOSD">
+		<value condition="VideoPlayer.Content(Movies)">$INFO[Player.Art(poster)]</value>
+		<value condition="VideoPlayer.Content(Episodes)">$INFO[Player.Art(tvshow.poster)]</value>
 	</variable>
 	
 	<variable name="ClearImageOSD">
@@ -1502,6 +1524,7 @@
 		<value condition="VideoPlayer.Content(Movies) + [[Skin.HasSetting(ShowClearLogoOSD) + !IsEmpty(Player.Art(clearlogo))] | [Skin.HasSetting(ShowClearArtOSD) + IsEmpty(Player.Art(clearart)) + !IsEmpty(Player.Art(clearlogo))]]">$INFO[Player.Art(clearlogo)]</value>
 		<value condition="VideoPlayer.Content(Episodes) + [Skin.HasSetting(ShowClearArtOSD) + !IsEmpty(Player.Art(tvshow.clearart))]">$INFO[Player.Art(tvshow.clearart)]</value>
 		<value condition="VideoPlayer.Content(Episodes) + [[Skin.HasSetting(ShowClearLogoOSD) + !IsEmpty(Player.Art(tvshow.clearlogo))] | [Skin.HasSetting(ShowClearArtOSD) + IsEmpty(Player.Art(tvshow.clearart)) + !IsEmpty(Player.Art(tvshow.clearlogo))]]">$INFO[Player.Art(tvshow.clearlogo)]</value>
+		<value condition="VideoPlayer.Content(Movies)">$INFO[Player.Art(fanart)]</value>
 		<value>$INFO[VideoPlayer.Cover]</value>
 	</variable>
 	
