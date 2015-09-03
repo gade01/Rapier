@@ -1085,6 +1085,24 @@
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollMusicVideosExtendedListPlot)</onclick>
 				<visible>Skin.String(CurrentViewMode,585) + [Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
 			</control>
+			<control type="radiobutton" id="4123">
+				<description>Fanart Hide Media Info (Movies)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31061]</label>
+				<selected>Skin.HasSetting(HideMoviesFanartMediaInfo)</selected>
+				<onclick>Skin.ToggleSetting(HideMoviesFanartMediaInfo)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<visible>Skin.String(CurrentViewMode,583) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+			</control>
+			<control type="radiobutton" id="4124">
+				<description>Fanart Hide Media Info (TVShows)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31061]</label>
+				<selected>Skin.HasSetting(HideTVShowsFanartMediaInfo)</selected>
+				<onclick>Skin.ToggleSetting(HideTVShowsFanartMediaInfo)</onclick>
+				<visible>Skin.String(CurrentViewMode,583) + Container.Content(TVShows)</visible>
+			</control>
 			<control type="radiobutton" id="4118">
 				<description>Extended List Hide Fanart (Music Videos)</description>
 				<include>DropDownMenuRadioBtn</include>
@@ -1108,6 +1126,22 @@
 				<selected>Skin.HasSetting(HideMusicExtendedListFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideMusicExtendedListFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,585) + [Substring(Container.FolderPath,musicdb://genres/) | Substring(Container.FolderPath,musicdb://years/)]</visible>
+			</control>
+			<control type="radiobutton" id="4121">
+				<description>Fanart Hide Fanart (Movies)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31043]</label>
+				<selected>Skin.HasSetting(HideMoviesFanartFanart)</selected>
+				<onclick>Skin.ToggleSetting(HideMoviesFanartFanart)</onclick>
+				<visible>Skin.String(CurrentViewMode,583) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+			</control>
+			<control type="radiobutton" id="4122">
+				<description>Fanart Hide Fanart (TVShows)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31043]</label>
+				<selected>Skin.HasSetting(HideTVShowsFanartFanart)</selected>
+				<onclick>Skin.ToggleSetting(HideTVShowsFanartFanart)</onclick>
+				<visible>Skin.String(CurrentViewMode,583) + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="1033">
 				<description>Wall Do Not Dim Cover (Music)</description>
@@ -1227,6 +1261,7 @@
 				+ ![Skin.String(CurrentViewMode,66) + Skin.HasSetting(HideMoviesListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,95) + Skin.HasSetting(HideMoviesListInfo3Fanart)]
 				+ ![Skin.String(CurrentViewMode,97) + Skin.HasSetting(HideMoviesThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,583) + Skin.HasSetting(HideMoviesFanartFanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideMoviesExtendedListFanart)]
 				+ ![Skin.String(CurrentViewMode,53) + Skin.HasSetting(HideMoviesWrapListInfoFanart)]</enable>
 				<visible>[Container.Content(Movies) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://movies/)]] + !Skin.String(CurrentViewMode,69)</visible>
@@ -1251,6 +1286,7 @@
 				+ ![Skin.String(CurrentViewMode,68) + Skin.HasSetting(HideEpisodesListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,94) + Skin.HasSetting(HideEpisodesListInfo3Fanart)]
 				+ ![Skin.String(CurrentViewMode,100) + Skin.HasSetting(HideTVShowsThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,583) + Skin.HasSetting(HideTVShowsFanartFanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideTVShowsExtendedListFanart)]
 				+ ![Skin.String(CurrentViewMode,589) + Skin.HasSetting(HideTVShowsListInfo3Fanart)]</enable>
 				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://tvshows/)]] 
@@ -1292,6 +1328,7 @@
 				+ ![Skin.String(CurrentViewMode,97) + Skin.HasSetting(HideMoviesThumbsInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,599) + Skin.HasSetting(HideMusicThumbsInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,53) + Skin.HasSetting(HideMoviesWrapListInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,583) + [[Skin.HasSetting(HideMoviesFanartFanart) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.HasSetting(HideTVShowsFanartFanart) + Container.Content(TVShows)]]]
 				+ ![Skin.String(CurrentViewMode,585) + [[Skin.HasSetting(HideMoviesExtendedListFanart) + Substring(Container.FolderPath,videodb://movies/)] | [Skin.HasSetting(HideTVShowsExtendedListFanart) + Substring(Container.FolderPath,videodb://tvshows/)] | [Skin.HasSetting(HideMusicVideosExtendedListFanart) + Substring(Container.FolderPath,videodb://musicvideos/)] | [Skin.HasSetting(HideMusicExtendedListFanart) + Substring(Container.FolderPath,musicdb://)]]]</enable>
 				<visible>![Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,70) | Skin.String(CurrentViewMode,586) | [[Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Studios) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Countries)] + !Skin.String(CurrentViewMode,585)] | Window.IsActive(Pictures)]</visible>
 			</control>
@@ -1303,7 +1340,7 @@
 				<onclick>Skin.ToggleSetting(DisableTVShowsLogo)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(Seasons) | [Skin.String(CurrentViewMode,585) + [Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)]]] + !Skin.String(CurrentViewMode,588)</visible>
+				<visible>[Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(Seasons) | [Skin.String(CurrentViewMode,585) + [Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)]]] + ![Skin.String(CurrentViewMode,583) | Skin.String(CurrentViewMode,588)]</visible>
 			</control>
 			<control type="radiobutton" id="4112">
 				<description>3D Wrap Show Landscape (TVShows)</description>
@@ -1333,7 +1370,7 @@
 				<onclick>Skin.ToggleSetting(EnableNextAiredInfo)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + System.HasAddon(script.tv.show.next.aired) + [Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,94) | Skin.String(CurrentViewMode,100)]</visible>
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + System.HasAddon(script.tv.show.next.aired) + [Skin.String(CurrentViewMode,583) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,94) | Skin.String(CurrentViewMode,100)]</visible>
 			</control>
 			<control type="radiobutton" id="3046">
 				<description>Hide Genre (Episodes)</description>
@@ -1484,7 +1521,7 @@
 				<onclick>Skin.ToggleSetting(DisableMoviesClearLogo)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(Movies) | Container.Content(Sets) | [[Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://movies/countries/)] + Skin.String(CurrentViewMode,585)]] + !Skin.String(CurrentViewMode,588)</visible>
+				<visible>[Container.Content(Movies) | Container.Content(Sets) | [[Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://movies/countries/)] + Skin.String(CurrentViewMode,585)]] + ![Skin.String(CurrentViewMode,583) | Skin.String(CurrentViewMode,588)]</visible>
 			</control>
 			<control type="radiobutton" id="2087">
 				<description>Studio Logo</description>

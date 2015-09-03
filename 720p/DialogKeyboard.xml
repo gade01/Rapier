@@ -41,7 +41,7 @@
 					<ondown>901</ondown>
 					<onback>noop</onback>
 					<orientation>vertical</orientation>
-					<visible>System.HasAddon(script.extendedinfo) + !Skin.HasSetting(EnableKeyboardAutocompletions)</visible>
+					<visible>System.HasAddon(script.extendedinfo) + !Skin.HasSetting(EnableKeyboardAutocompletions) + !System.HasHiddenInput</visible>
 					<itemlayout height="37" width="233">
 						<control type="image">
 							<width>231</width>
