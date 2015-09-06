@@ -1516,14 +1516,15 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="210">
-				<description>Home Theatre</description>
+				<description>Cinema Experience / CinemaVision</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31220][/UPPERCASE]</label>
+				<label>[UPPERCASE]$VAR[CinemaLabelVar][/UPPERCASE]</label>
 				<onfocus condition="System.HasAddon(script.extendedinfo) + !IsEmpty(Skin.String(ExtendedInfoDialogPos))">Skin.Reset(ExtendedInfoDialogPos)</onfocus>
-				<onclick>Playlist.Clear</onclick>
+				<onclick condition="!System.HasAddon(script.cinemavision)">Playlist.Clear</onclick>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
-				<onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
-				<visible>System.HasAddon(script.cinema.experience) + Container.Content(Movies)</visible>
+				<onclick condition="!System.HasAddon(script.cinemavision)">RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
+				<onclick condition="System.HasAddon(script.cinemavision)">RunScript(script.cinemavision,experience)</onclick>
+				<visible>[System.HasAddon(script.cinema.experience) + Container.Content(Movies)] | [System.HasAddon(script.cinemavision) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]</visible>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>

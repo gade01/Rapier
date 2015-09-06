@@ -2241,4 +2241,9 @@
         <value condition="!IntegerGreaterThan(Player.TimeRemaining(ss),30)">$INFO[Player.TimeRemaining(ss),gui/play/,.png]</value>
         <value>gui/play/30.png</value>
     </variable>
+	
+	<variable name="CinemaLabelVar">
+        <value condition="!System.HasAddon(script.cinemavision)">$INFO[System.AddonTitle(script.cinema.experience)]</value>
+        <value>$INFO[System.AddonTitle(script.cinemavision)]</value>
+    </variable>
 </includes>
