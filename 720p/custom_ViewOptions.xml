@@ -1352,16 +1352,6 @@
 				<include>ReloadSkinNotification</include>
 				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,588)</visible>
 			</control>
-			<control type="radiobutton" id="3044">
-				<description>Enable Next Aired Status MediaFlag (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31935]</label>
-				<selected>!Skin.HasSetting(EnableNextAiredStatusMediaFlag)</selected>
-				<onclick>Skin.ToggleSetting(EnableNextAiredStatusMediaFlag)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + System.HasAddon(script.tv.show.next.aired)</visible>
-			</control>
 			<control type="radiobutton" id="3045">
 				<description>Enable Next Aired Info (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
