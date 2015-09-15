@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="103">
+<window>
 	<defaultcontrol always="true">300</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
@@ -12,6 +11,7 @@
 	<controls>
 		<control type="group">
 			<animation effect="fade" start="100" end="20" time="250" condition="Window.IsActive(NumericInput)">Conditional</animation>
+			<animation effect="slide" end="0,36" time="150" condition="Control.IsVisible(313)" easing="out">Conditional</animation>
 			
 			<control type="group">
 				<top>370</top>
@@ -28,7 +28,7 @@
 					<width>768</width>
 					<height>180</height>
 					<texture border="50">panels/dialog-background4.png</texture>
-				</control>		
+				</control>
 			
 				<control type="panel" id="5000">
 					<left>DialogMarginOffsetX</left>
@@ -83,8 +83,59 @@
 			</control>
 			
 			<control type="group">
-				<include>KeyboardDialogBox</include>
 				<animation effect="slide" end="0,-61" time="150" condition="!IsEmpty(Container(5000).ListItem.Label)" easing="out">Conditional</animation>
+				<control type="group">
+					<top>-121</top>
+					<visible>Control.IsVisible(313)</visible>
+					
+					<control type="image">
+						<width>768</width>
+						<height>131</height>
+						<texture border="50">panels/dialog-background4.png</texture>
+					</control>
+					
+					<control type="group">		
+						<left>DialogMarginOffsetX</left>
+						<top>DialogMarginOffsetX</top>
+									
+						<control type="image">
+							<description>Input Background</description>
+							<width>698</width>	
+							<height>35</height>
+							<texture border="5">controls/button-nofocus.png</texture>
+						</control>
+						
+						<control type="image">
+							<description>Input Background</description>
+							<width>698</width>	
+							<height>35</height>
+							<texture border="5">controls/button-nofocus.png</texture>
+						</control>
+						
+						<control type="label" id="313">
+							<description>HZCODE label</description>
+							<left>3</left>
+							<width>696</width>	
+							<height>35</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>DialogContentLabel</include>
+						</control>
+						
+						<control type="label" id="314">
+							<description>HZLIST label</description>
+							<top>40</top>
+							<left>2</left>
+							<width>696</width>
+							<height>35</height>
+							<align>center</align>
+							<aligny>top</aligny>
+							<include>DialogContentLabel</include>
+						</control>
+					</control>
+				</control>
+				
+				<include>KeyboardDialogBox</include>
 				
 				<control type="label" id="311">
 					<width>690</width>
