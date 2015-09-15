@@ -7593,11 +7593,15 @@
 	
 	<!--//// START EXTENDED LIST VIEW ///////////////////////////////////////////////////////////////////-->
 	<include name="ExtendedListContentVideo">
-		<content target="video">$VAR[ExtendedListContentVideoVar]</content>
+		<content target="video" sortorder="ascending" sortby="label">$VAR[ExtendedListContentVideoVar]</content>
+	</include>
+	
+	<include name="ExtendedListContentMusicVideo">
+		<content target="video" sortorder="ascending" sortby="artist">$VAR[ExtendedListContentMusicVideoVar]</content>
 	</include>
 	
 	<include name="ExtendedListContentMusic">
-		<content target="music">$VAR[ExtendedListContentMusicVar]</content>
+		<content target="music" sortorder="ascending" sortby="artist">$VAR[ExtendedListContentMusicVar]</content>
 	</include>
 	
 	<variable name="ExtendedListContentVideoVar">
@@ -7612,6 +7616,9 @@
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/years/)">videodb://tvshows/years/$INFO[ListItem.Label]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/actors/)">videodb://tvshows/actors/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/studios/)">videodb://tvshows/studios/$INFO[ListItem.DBID]/</value>
+	</variable>
+	
+	<variable name="ExtendedListContentMusicVideoVar">
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/genres/)">videodb://musicvideos/genres/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/years/)">videodb://musicvideos/years/$INFO[ListItem.Label]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/directors/)">videodb://musicvideos/directors/$INFO[ListItem.DBID]/</value>
@@ -9092,7 +9099,8 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<include condition="Window.IsActive(Videos)">ExtendedListContentVideo</include>
+				<include condition="SubString(Container.FolderPath,videodb://movies/) | SubString(Container.FolderPath,videodb://tvshows/)">ExtendedListContentVideo</include>
+				<include condition="SubString(Container.FolderPath,videodb://musicvideos/)">ExtendedListContentMusicVideo</include>
 				<include condition="Window.IsActive(MusicLibrary)">ExtendedListContentMusic</include>
 			</control>
 			
