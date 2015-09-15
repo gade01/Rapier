@@ -229,12 +229,12 @@
 	
 	<include name="RedirectMusicCategoryFiles">
 		<label>$LOCALIZE[1214]</label>
-		<onclick>ActivateWindow(MusicFiles)</onclick>
+		<onclick>ActivateWindow(Music,Files,Return)</onclick>
 	</include>
 	
 	<include name="RedirectMusicCategoryLibrary">
 		<label>$LOCALIZE[14022]</label>
-		<onclick>ActivateWindow(MusicLibrary)</onclick>
+		<onclick>ActivateWindow(Music)</onclick>
 	</include>
 	
 	<include name="RedirectVideosCategoryFiles">
@@ -1848,7 +1848,7 @@
 					<item id="2">
 						<description>Albums</description>
 						<label>$LOCALIZE[132]</label>
-						<onclick>ActivateWindow(MusicLibrary,Albums,Return)</onclick>	
+						<onclick>ActivateWindow(Music,Albums,Return)</onclick>	
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn2)</visible>
 					</item>
 					<item id="2">
@@ -1861,7 +1861,7 @@
 					<item id="3">
 						<description>Songs</description>
 						<label>$LOCALIZE[134]</label>
-						<onclick>ActivateWindow(MusicLibrary,Songs,Return)</onclick>
+						<onclick>ActivateWindow(Music,Songs,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn3)</visible>
 					</item>
 					<item id="3">
@@ -1874,7 +1874,7 @@
 					<item id="4">
 						<description>Recently Added Albums</description>
 						<label>$LOCALIZE[31303]</label>
-						<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,Return)</onclick>
+						<onclick>ActivateWindow(Music,RecentlyAddedAlbums,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn4)</visible>
 					</item>
 					<item id="4">
@@ -1887,7 +1887,7 @@
 					<item id="5">
 						<description>Playlists</description>
 						<label>$LOCALIZE[136]</label>
-						<onclick>ActivateWindow(MusicLibrary,Playlists,Return)</onclick>
+						<onclick>ActivateWindow(Music,Playlists,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn5)</visible>
 					</item>
 					<item id="5">
@@ -1913,7 +1913,7 @@
 					<item id="7">
 						<description>Music Add-ons</description>
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(MusicLibrary,Addons,Return)</onclick>
+						<onclick>ActivateWindow(Music,Addons,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn7)</visible>
 					</item>
 					<item id="7">

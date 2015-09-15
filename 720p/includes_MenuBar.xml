@@ -421,11 +421,11 @@
 				<onclick>ActivateWindow(3004)</onclick>
 				<onclick>Control.SetFocus(500)</onclick>
 				<enable>Substring(Container.FolderPath,musicdb) | Substring(Container.FolderPath,videodb://musicvideos/)</enable>
-				<visible>Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
+				<visible>Window.IsVisible(MusicLibrary)</visible>
 			</control>
 			<control type="image" id="369">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
+				<visible>Window.IsVisible(MusicLibrary)</visible>
 			</control>
 			<control type="button" id="405">			
 				<description>Video Settings</description>
@@ -443,7 +443,7 @@
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
 				<onclick>ActivateWindow(MusicSettings)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
+				<visible>Window.IsVisible(MusicLibrary)</visible>
 			</control>
 			<control type="button" id="407">			
 				<description>Picture Settings</description>
@@ -456,7 +456,7 @@
 			</control>
 			<control type="image" id="370">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(Pictures) | Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicFiles)</visible>
+				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(Pictures) | Window.IsVisible(MusicLibrary)</visible>
 			</control>
 			<control type="button" id="411">
 				<description>Go to playlist</description>
@@ -538,7 +538,7 @@
 				<include>MenuBarBtn</include>
 				<label>$LOCALIZE[137]</label>
 				<enable>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary)</enable>
-				<visible>[Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicFiles)] + Skin.HasSetting(UseGlobalsearch)</visible>
+				<visible>[Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files)] + Skin.HasSetting(UseGlobalsearch)</visible>
 			</control>
 			<control type="button" id="367">			
 				<description>Global Search</description>
@@ -546,11 +546,11 @@
 				<label>$LOCALIZE[31058] $LOCALIZE[137]</label>
 				<onclick>RunScript(script.globalsearch)</onclick>
 				<enable>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary)</enable>
-				<visible>[Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicFiles)] + !Skin.HasSetting(UseGlobalsearch)</visible>
+				<visible>[Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files)] + !Skin.HasSetting(UseGlobalsearch)</visible>
 			</control>
 			<control type="image" id="368">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicFiles)</visible>
+				<visible>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files)</visible>
 			</control>
 			<control type="button" id="19">
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
@@ -1392,7 +1392,122 @@
 			</control>
 		</control>		
 	</include>
+	
+	<include name="EventLogMenuBar">
+		<control type="group" id="505">
+			<description>Menu Bar Area</description>
+			<top>MenuBarOffsetY</top>
+			<include>MenuBarImage</include>
+			<include>MenuBarOpenCloseAnim</include>
+			<include>DefaultEventLogMenuBar</include>
+			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | !Skin.HasSetting(HideMenuBar)</visible>
+		</control>
+	</include>
 
+	<include name="DefaultEventLogMenuBar">
+		<control type="group" id="850">
+			<control type="grouplist" id="563">
+				<description>Menu Bar Icon Buttons</description>
+				<left>5</left>
+				<top>0</top>
+				<width>150</width>
+				<height>MenuBarHeight</height>
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+				<onup>555</onup>
+				<ondown>570</ondown>
+				<onleft>212</onleft>
+				<onright>212</onright>
+				<control type="button" id="345">
+					<description>Shutdown</description>
+					<include>MenuBarIconBtn</include>
+					<texturefocus>gui/menu-bar-power-focus.png</texturefocus>
+					<texturenofocus>gui/menu-bar-power-nofocus.png</texturenofocus>
+					<onclick>ActivateWindow(ShutdownMenu)</onclick>
+				</control>
+				<control type="button" id="346">
+					<description>Favourites</description>
+					<include>MenuBarIconBtn</include>
+					<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
+					<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
+					<onclick>ActivateWindow(Favourites)</onclick>
+				</control>
+				<control type="togglebutton" id="347">
+					<description>Extra Options</description>
+					<include>MenuBarIconBtn</include>
+					<texturefocus>gui/menu-bar-options-focus.png</texturefocus>
+					<texturenofocus>gui/menu-bar-options-nofocus.png</texturenofocus>
+					<alttexturefocus>gui/menu-bar-options-focus2.png</alttexturefocus>
+					<alttexturenofocus>gui/menu-bar-options-nofocus2.png</alttexturenofocus>
+					<usealttexture>Skin.HasSetting(EventLogMenuBarExtraOptions)</usealttexture>
+					<onclick>noop</onclick>
+					<enable>false</enable>
+				</control>
+			</control>
+
+			<control type="grouplist" id="212">
+				<left>99</left>
+				<top>0</top>
+				<width>ScreenWidth</width>
+				<height>MenuBarHeight</height>
+				<itemgap>0</itemgap>
+				<onup>555</onup>
+				<ondown>570</ondown>
+				<onleft>347</onleft>
+				<onright>345</onright>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<include>MenuBarBtnOpenCloseAnim</include>
+				<visible>ControlGroup(505).HasFocus | !Skin.HasSetting(HideMenuBar)</visible>
+				<control type="image" id="350">
+					<include>MenuBarSeparator</include>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Sort asc</description>
+					<width>230</width>
+					<textwidth>204</textwidth>
+					<include>MenuBarBigBtn</include>
+					<label>[UPPERCASE]$LOCALIZE[31110][/UPPERCASE]</label>
+					<altlabel>[UPPERCASE]$LOCALIZE[31109][/UPPERCASE]</altlabel>
+					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+				</control>
+				<control type="image" id="351">
+					<include>MenuBarSeparator</include>
+				</control>
+				<control type="button" id="21">
+					<description>Level button</description>
+					<width>230</width>
+					<textwidth>204</textwidth>
+					<include>MenuBarBigBtn</include>
+					<label>[UPPERCASE]-[/UPPERCASE]</label>
+				</control>
+				<control type="image" id="352">
+					<include>MenuBarSeparator</include>
+				</control>
+				<control type="radiobutton" id="22">
+					<description>Only show current level</description>
+					<width>230</width>
+					<textwidth>155</textwidth>
+					<include>MenuBarRadioBtn</include>
+					<label>[UPPERCASE]-[/UPPERCASE]</label>
+				</control>
+				<control type="image" id="353">
+					<include>MenuBarSeparator</include>
+				</control>
+				<control type="button" id="20">
+					<description>Clear button</description>
+					<width>230</width>
+					<textwidth>204</textwidth>
+					<include>MenuBarBigBtn</include>
+					<label>[UPPERCASE]$LOCALIZE[192][/UPPERCASE]</label>
+				</control>
+				<control type="image" id="354">
+					<include>MenuBarSeparator</include>
+				</control>
+			</control>
+		</control>
+	</include>
+	
 	<include name="NextAiredMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
