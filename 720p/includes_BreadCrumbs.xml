@@ -347,68 +347,6 @@
 			</control>
 		</control>
 	</include>
-
-	<include name="BreadCrumbMusicFiles">
-		<control type="grouplist">
-			<left>10</left>
-			<top>StatusBartop</top>
-			<height>43</height>
-			<width>740</width>
-			<itemgap>8</itemgap>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<visible>![Window.IsActive(MusicInformation) | Window.IsActive(MovieInformation)]</visible>
-			<control type="button" id="555">
-				<include>BreadCrumbHomeIcon</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<control type="label" id="5501">
-				<description>Music</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[2][/B][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>		
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="label" id="5502">
-				<description>Files</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[1214][/B][/UPPERCASE]</label>
-				<visible>![Container.Content(Addons) | Substring(Container.FolderPath,plugin:)]</visible>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="label" id="5503">
-				<description>Add-ons</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[24001][/B][/UPPERCASE]</label>
-				<visible>Container.Content(Addons) | Substring(Container.FolderPath,plugin:)</visible>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<visible>Control.IsVisible(5502) | Control.IsVisible(5503)</visible>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="label" id="5504">
-				<description>Folder</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$INFO[Container.FolderName][/B][/UPPERCASE]</label>
-				<visible>![IsEmpty(Container.FolderPath) | Container.Content(Addons)]</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<visible>Control.IsVisible(5504)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-		</control>
-	</include>
 			
 	<include name="BreadCrumbMusicLibrary">
 		<control type="grouplist">
@@ -1157,6 +1095,36 @@
 				<description>File Manager</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[7][/B][/UPPERCASE]</label>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+		</control>
+	</include>
+	
+	<include name="BreadCrumbEventLog">
+		<control type="grouplist">
+			<left>10</left>
+			<top>StatusBartop</top>
+			<height>43</height>
+			<width>740</width>
+			<itemgap>8</itemgap>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="button" id="555">
+				<include>BreadCrumbHomeIcon</include>
+				<include>BreadCrumbSlideLvl1Anim</include>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl1Anim</include>
+			</control>
+			<control type="label">
+				<description>Event Log</description>
+				<include>BreadCrumbLabel</include>
+				<label>[UPPERCASE][B]$LOCALIZE[14111][/B][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="image">
