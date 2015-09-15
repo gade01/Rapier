@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">855</defaultcontrol>
+	<menucontrol>850</menucontrol>
 	<onload condition="System.HasAddon(script.cdartmanager) + !Skin.HasSetting(EnableMusicLibraryClearLogos) + IsEmpty(Skin.String(MusicLibraryClearLogosPath))">ActivateWindow(3007)</onload>
 	<allowoverlay>yes</allowoverlay>
 	<onunload>Skin.Reset(ExpandedSettings)</onunload>

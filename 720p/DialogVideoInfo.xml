@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2003">
 	<defaultcontrol always="true">987</defaultcontrol>
+	<menucontrol>987</menucontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onunload condition="!IsEmpty(Skin.String(VideoInfoMenubar))">Skin.Reset(VideoInfoMenubar)</onunload>

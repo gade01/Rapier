@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2001">
 	<defaultcontrol always="true">987</defaultcontrol>
+	<menucontrol>987</menucontrol>
 	<allowoverlay>no</allowoverlay>
 	<!--<onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
 	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>-->
@@ -872,7 +873,7 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]&amp;&amp;limit=20</content>
+				<content sortorder="ascending" sortby="year">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]&amp;&amp;limit=20</content>
 			</control>
 			
 			<control type="panel" id="969">

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">987</defaultcontrol>
+	<menucontrol>987</menucontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
 	<onload condition="StringCompare(Window.Property(type),movie)">SetProperty("TvTunesSupported", "Movies")</onload>
