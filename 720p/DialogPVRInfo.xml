@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="602">
-	<defaultcontrol always="true">10</defaultcontrol>
+<window id="601">
+	<defaultcontrol always="true">7</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
-		<origin x="305" y="110">true</origin>
+		<origin x="305" y="90">true</origin>
 	</coordinates>
 
 	<controls>
 		<control type="group">
-			<include>PVRRecordingInfoDialogBox</include>
+			<include>PVRGuideInfoDialogBox</include>
 			<include>DialogOpenCloseAnim</include>	
 
 			<control type="label">
 				<description>Title</description>
 				<width>590</width>
-				<label>$LOCALIZE[19053]</label>
+				<label>$INFO[ListItem.Title]</label>
 				<include>DialogTitle</include>
 			</control>
 
 			<control type="grouplist" id="9000">
 				<description>Dialog Button Area</description>
-				<left>250</left>
-				<top>447</top>
+				<left>DialogMarginOffsetX</left>
+				<top>487</top>
+				<width>600</width>
+				<align>center</align>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup>60</onup>
 				<ondown>60</ondown>
 				<orientation>horizontal</orientation>
 				<itemgap>0</itemgap>
-				<control type="button" id="10">
+				<control type="button" id="4">
+					<description>Find Similar</description>
+					<include>DialogMenuBarSmallBtn</include>
+					<label>19003</label>
+					<visible>Window.IsActive(PVRGuideInfo)</visible>
+				</control>
+				<control type="button" id="5">
+					<description>Switch to Channel</description>
+					<include>DialogMenuBarSmallBtn</include>
+					<label>$LOCALIZE[19165]</label>
+					<visible>Window.IsActive(PVRGuideInfo)</visible>
+				</control>
+				<control type="button" id="8">
+					<description>Play recording</description>
+					<include>DialogMenuBarSmallBtn</include>
+					<label>19687</label>
+					<visible>Window.IsActive(PVRRecordingInfo)</visible>
+				</control>
+				<control type="button" id="6">
+					<description>Record</description>
+					<include>DialogMenuBarSmallBtn</include>
+					<label>-</label>
+					<visible>Window.IsActive(PVRGuideInfo)</visible>
+				</control>
+				<control type="button" id="7">
 					<description>OK</description>
-					<include>DialogMenuBarBtn</include>
+					<include>DialogMenuBarSmallBtn</include>
 					<label>$LOCALIZE[186]</label>
 				</control>	
 			</control>
@@ -41,8 +67,8 @@
 				<left>DialogMarginOffsetX</left>
 				<top>DialogMarginOffsetY</top>
 
-				<control type="panel">
-					<description>Recording Info</description>
+				<control type="panel" id="49">
+					<description>Programme Info</description>
 					<width>600</width>
 					<height>280</height>
 					<viewtype label="">list</viewtype>
@@ -104,45 +130,58 @@
 						<item id="1">
 							<description>Title</description>
 							<label>$LOCALIZE[369]</label>
-							<label2>$INFO[ListItem.Title]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</label2>
+							<label2>$INFO[ListItem.EpisodeName]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</label2>
 							<onclick>noop</onclick>
-							<visible>!StringCompare(ListItem.Season,0)</visible>
+							<visible>!IsEmpty(ListItem.Season) + !IsEmpty(ListItem.EpisodeName)</visible>
 						</item>
 						<item id="2">
 							<description>Title</description>
 							<label>$LOCALIZE[369]</label>
-							<label2>$INFO[ListItem.Title]</label2>
+							<label2>$INFO[ListItem.EpisodeName]</label2>
 							<onclick>noop</onclick>
-							<visible>StringCompare(ListItem.Season,0)</visible>
+							<visible>IsEmpty(ListItem.Season) + !IsEmpty(ListItem.EpisodeName)</visible>
 						</item>
 						<item id="3">
+							<description>Title</description>
+							<label>$LOCALIZE[369]</label>
+							<label2>$INFO[ListItem.Title]</label2>
+							<onclick>noop</onclick>
+							<visible>IsEmpty(ListItem.Season) + IsEmpty(ListItem.EpisodeName)</visible>
+						</item>
+						<item id="4">
 							<description>Start Date</description>
 							<label>$LOCALIZE[552]</label>
 							<label2>$INFO[ListItem.StartDate]</label2>
 							<onclick>noop</onclick>
 						</item>
-						<item id="4">
-							<description>Start Time</description>
+						<item id="5">
+							<description>Time</description>
 							<label>$LOCALIZE[555]</label>
-							<label2>$INFO[ListItem.StartTime]</label2>
+							<label2>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label2>
 							<onclick>noop</onclick>
 						</item>
-						<item id="5">
+						<item id="6">
 							<description>Channel Name</description>
 							<label>$LOCALIZE[19148]</label>
 							<label2>$INFO[ListItem.ChannelName]</label2>
 							<onclick>noop</onclick>
 						</item>
-						<item id="6">
+						<item id="7">
 							<description>Duration</description>
 							<label>$LOCALIZE[180]</label>
 							<label2>$INFO[ListItem.Duration]</label2>
 							<onclick>noop</onclick>
 						</item>
-						<item id="7">
+						<item id="8">
 							<description>Genre</description>
 							<label>$LOCALIZE[515]</label>
 							<label2>$INFO[ListItem.Genre]</label2>
+							<onclick>noop</onclick>
+						</item>
+						<item id="9">
+							<description>Premiered</description>
+							<label>$LOCALIZE[31936]</label>
+							<label2>$INFO[ListItem.Premiered]</label2>
 							<onclick>noop</onclick>
 						</item>
 					</content>
@@ -150,13 +189,13 @@
 
 				<control type="group">
 					<description>Plot</description>
-					<top>240</top>
+					<top>280</top>
 					<control type="image">
 						<width>600</width>
 						<height>145</height>
 						<texture background="true" border="7">controls/button-nofocus.png</texture>
 					</control>
-					<control type="textbox">
+					<control type="textbox" id="400">
 						<left>9</left>
 						<top>12</top>
 						<width>580</width>
