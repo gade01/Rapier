@@ -2370,7 +2370,7 @@
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
 				<ondown condition="Control.IsVisible(901)">901</ondown>
-				<visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
+				<visible>!IsEmpty(Window.Property(DBID)) + !Stringcompare(Window.Property(Type),tvshow) + !Stringcompare(Window.Property(Type),season)</visible>
 			</control>
 			<control type="button" id="120">
 				<description>Open</description>
@@ -2385,16 +2385,16 @@
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
 				<ondown condition="Control.IsVisible(901)">901</ondown>
-				<visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
+				<visible>!IsEmpty(Window.Property(DBID)) + [Stringcompare(Window.Property(Type),tvshow) | Stringcompare(Window.Property(Type),season)]</visible>
 			</control>
 			<control type="image" id="116">
 				<include>MenuBarSeparator</include>
-				<visible>!IsEmpty(Window.Property(movie.DBID))</visible>
+				<visible>!IsEmpty(Window.Property(DBID))</visible>
 			</control>
 			<control type="button" id="9">
 				<description>Resume</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[13404] $INFO[Window.Property(movie.PercentPlayed),(,%)][/UPPERCASE]</label>
+				<label>[UPPERCASE]$LOCALIZE[13404] $INFO[Window.Property(PercentPlayed),(,%)][/UPPERCASE]</label>
 				<ondown condition="Skin.String(ExtendedVideoInfo,3)">150</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,4)">450</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,5)">1250</ondown>
@@ -2404,11 +2404,11 @@
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
 				<ondown condition="Control.IsVisible(901)">901</ondown>
-				<visible>!IsEmpty(Window.Property(movie.DBID)) + IntegerGreaterThan(Window.Property(movie.PercentPlayed),0) + !Stringcompare(Window.Property(Type),tvshow)</visible>
+				<visible>!IsEmpty(Window.Property(DBID)) + IntegerGreaterThan(Window.Property(PercentPlayed),0) + !Stringcompare(Window.Property(Type),tvshow) + !Stringcompare(Window.Property(Type),season)</visible>
 			</control>
 			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
-				<visible>!IsEmpty(Window.Property(movie.DBID)) + IntegerGreaterThan(Window.Property(movie.PercentPlayed),0) + !Stringcompare(Window.Property(Type),tvshow)</visible>
+				<visible>!IsEmpty(Window.Property(DBID)) + IntegerGreaterThan(Window.Property(PercentPlayed),0) + !Stringcompare(Window.Property(Type),tvshow) + !Stringcompare(Window.Property(Type),season)</visible>
 			</control>
 			<control type="button" id="128">
 				<description>Information</description>
@@ -2478,7 +2478,7 @@
 				<description>Trailer</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
-				<onclick>RunScript(script.extendedinfo,info=playtrailer,id=$INFO[Window.Property(movie.ID)])</onclick>
+				<onclick>RunScript(script.extendedinfo,info=playtrailer,id=$INFO[Window.Property(ID)])</onclick>
 			</control>
 			<control type="image" id="135">
 				<include>MenuBarSeparator</include>
@@ -2496,14 +2496,14 @@
 				<ondown condition="Skin.String(ExtendedVideoInfo,13)">250</ondown>
 				<ondown condition="Skin.String(ExtendedVideoInfo,15)">2000</ondown>
 				<ondown condition="Control.IsVisible(901)">901</ondown>
-				<onclick>RunScript(script.videoextras,display,"$INFO[Window.Property(movie.FilenameAndPath)]")</onclick>
+				<onclick>RunScript(script.videoextras,display,"$INFO[Window.Property(FilenameAndPath)]")</onclick>
 				<visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
-				<visible>!IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
+				<visible>!IsEmpty(Window.Property(FilenameAndPath))</visible>
 			</control>
 			<control type="image" id="132">
 				<include>MenuBarSeparator</include>
 				<visible>System.HasAddon(script.videoextras) + IsEmpty(Window(movieinformation).Property(HideVideoExtrasButton))</visible>
-				<visible>!IsEmpty(Window.Property(movie.FilenameAndPath))</visible>
+				<visible>!IsEmpty(Window.Property(FilenameAndPath))</visible>
 			</control>
 			<control type="button" id="445">
 				<description>Manage</description>

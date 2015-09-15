@@ -19,7 +19,7 @@
 				<texture border="4">covers/cover-case2.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<animation effect="fade" end="70" condition="true">Conditional</animation>
-				<visible>IsEmpty(Window.Property(actor.thumb))</visible>
+				<visible>IsEmpty(Window.Property(thumb))</visible>
 			</control>
 			
 			<control type="image">
@@ -30,19 +30,19 @@
 				<bordersize>60</bordersize>
 				<aspectratio>keep</aspectratio>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
-				<visible>IsEmpty(Window.Property(actor.thumb))</visible>
+				<visible>IsEmpty(Window.Property(thumb))</visible>
 			</control>
 			
 			<control type="image">
 				<description>Actor Image</description>
 				<width>336</width>
 				<height>500</height>
-				<texture>$INFO[Window.Property(actor.thumb)]</texture>
+				<texture>$INFO[Window.Property(thumb)]</texture>
 				<bordertexture border="4">covers/cover-case2.png</bordertexture>
 				<bordersize>4</bordersize>
 				<aspectratio>stretch</aspectratio>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>!IsEmpty(Window.Property(actor.thumb))</visible>
+				<visible>!IsEmpty(Window.Property(thumb))</visible>
 			</control>
 		</control>
 		
@@ -58,9 +58,9 @@
 				<font>FullMediaInfoTitleFont3</font>
 				<textcolor>MediaInfoTitleColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>[UPPERCASE]$INFO[Window.Property(actor.title)][/UPPERCASE]</label>
+				<label>[UPPERCASE]$INFO[Window.Property(title)][/UPPERCASE]</label>
 				<scroll>true</scroll>
-				<animation effect="slide" end="0,22" condition="IsEmpty(Window.Property(actor.AlsoKnownAs))">Conditional</animation>
+				<animation effect="slide" end="0,22" condition="IsEmpty(Window.Property(AlsoKnownAs))">Conditional</animation>
 			</control>
 			
 			<control type="label">
@@ -71,10 +71,10 @@
 				<textcolor>MediaInfoTitleColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>center</align>
-				<label>$INFO[Window.Property(actor.AlsoKnownAs)]</label>
+				<label>$INFO[Window.Property(AlsoKnownAs)]</label>
 				<include>FSMediaInfoOpenCloseAnim</include>
 				<scroll>true</scroll>
-				<visible>!IsEmpty(Window.Property(actor.AlsoKnownAs))</visible>
+				<visible>!IsEmpty(Window.Property(AlsoKnownAs))</visible>
 			</control>
 			
 			<control type="image">
@@ -177,58 +177,58 @@
 						<item id="1">
 							<description>Movies</description>
 							<label>$ADDON[script.extendedinfo 32011]</label>
-							<label2>$INFO[Window.Property(actor.TotalMovies)]</label2>
+							<label2>$INFO[Window.Property(TotalMovies)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.TotalMovies))</visible>
+							<visible>!IsEmpty(Window.Property(TotalMovies))</visible>
 						</item>
 						<item id="2">
 							<description>Movies</description>
 							<label>$ADDON[script.extendedinfo 32011]</label>
 							<label2>$INFO[Container(150).NumItems]</label2>
 							<onclick>noop</onclick>
-							<visible>IsEmpty(Window.Property(actor.TotalMovies)) + !StringCompare(Container(150),NumItems,0)</visible>
+							<visible>IsEmpty(Window.Property(TotalMovies)) + !StringCompare(Container(150),NumItems,0)</visible>
 						</item>
 						<item id="3">
 							<description>In Database</description>
 							<label>$ADDON[script.extendedinfo 32021]</label>
-							<label2>$INFO[Window.Property(actor.DBMovies)]</label2>
+							<label2>$INFO[Window.Property(DBMovies)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.DBMovies))</visible>
+							<visible>!IsEmpty(Window.Property(DBMovies))</visible>
 						</item>
 						<item id="4">
 							<description>Birthday</description>
 							<label>$ADDON[script.extendedinfo 32012]</label>
-							<label2>$INFO[Window.Property(actor.Birthday)]</label2>
+							<label2>$INFO[Window.Property(Birthday)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.Birthday))</visible>
+							<visible>!IsEmpty(Window.Property(Birthday))</visible>
 						</item>
 						<item id="5">
 							<description>Age</description>
 							<label>$ADDON[script.extendedinfo 32020]</label>
-							<label2>$INFO[Window.Property(actor.Age),, $LOCALIZE[652]]</label2>
+							<label2>$INFO[Window.Property(Age),, $LOCALIZE[652]]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.Age))</visible>
+							<visible>!IsEmpty(Window.Property(Age))</visible>
 						</item>
 						<item id="6">
 							<description>Place of Birth</description>
 							<label>$ADDON[script.extendedinfo 32014]</label>
-							<label2>$INFO[Window.Property(actor.PlaceOfBirth)]</label2>
+							<label2>$INFO[Window.Property(PlaceOfBirth)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.PlaceOfBirth))</visible>
+							<visible>!IsEmpty(Window.Property(PlaceOfBirth))</visible>
 						</item>
 						<item id="7">
 							<description>Homepage</description>
 							<label>$ADDON[script.extendedinfo 32017]</label>
-							<label2>$INFO[Window.Property(actor.Homepage)]</label2>
+							<label2>$INFO[Window.Property(Homepage)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.Homepage))</visible>
+							<visible>!IsEmpty(Window.Property(Homepage))</visible>
 						</item>
 						<item id="8">
 							<description>Death Day</description>
 							<label>$ADDON[script.extendedinfo 32013]</label>
-							<label2>$INFO[Window.Property(actor.Deathday)]</label2>
+							<label2>$INFO[Window.Property(Deathday)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(actor.Deathday))</visible>
+							<visible>!IsEmpty(Window.Property(Deathday))</visible>
 						</item>
 					</content>
 				</control>
@@ -242,7 +242,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -258,7 +258,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -274,7 +274,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -290,7 +290,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -306,7 +306,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -322,7 +322,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -338,7 +338,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31203">$INFO[Window.Property(actor.Biography)]</label>
+					<label fallback="31203">$INFO[Window.Property(Biography)]</label>
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -358,7 +358,7 @@
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label fallback="31000">[UPPERCASE]$INFO[Container(150).NumItems,, $ADDON[script.extendedinfo 32011]]$INFO[Window.Property(actor.DBMovies), (, $ADDON[script.extendedinfo 32021])][/UPPERCASE]</label>
+					<label fallback="31000">[UPPERCASE]$INFO[Container(150).NumItems,, $ADDON[script.extendedinfo 32011]]$INFO[Window.Property(DBMovies), (, $ADDON[script.extendedinfo 32021])][/UPPERCASE]</label>
 				</control>
 				
 				<control type="image">
@@ -1338,7 +1338,7 @@
 			<onleft condition="Skin.String(ExtendedInfo,7)">750</onleft>
 			<onleft condition="Skin.String(ExtendedInfo,8)">350</onleft>
 			<include>NotificationsOpenCloseAnim</include>
-			<visible>[!StringCompare(Container(800).NumPages,1) + Skin.String(ExtendedInfo,1) + !IsEmpty(Window.Property(actor.Biography))] | [!StringCompare(Container(150).NumPages,1) + Skin.String(ExtendedInfo,2)] | [!StringCompare(Container(250).NumPages,1) + Skin.String(ExtendedInfo,3)] | [!StringCompare(Container(550).NumPages,1) + Skin.String(ExtendedInfo,4)] | [!StringCompare(Container(650).NumPages,1) + Skin.String(ExtendedInfo,5)] | [!StringCompare(Container(450).NumPages,1) + Skin.String(ExtendedInfo,6)] | [!StringCompare(Container(750).NumPages,1) + Skin.String(ExtendedInfo,7)] | [!StringCompare(Container(350).NumPages,1) + Skin.String(ExtendedInfo,8)]</visible>
+			<visible>[!StringCompare(Container(800).NumPages,1) + Skin.String(ExtendedInfo,1) + !IsEmpty(Window.Property(Biography))] | [!StringCompare(Container(150).NumPages,1) + Skin.String(ExtendedInfo,2)] | [!StringCompare(Container(250).NumPages,1) + Skin.String(ExtendedInfo,3)] | [!StringCompare(Container(550).NumPages,1) + Skin.String(ExtendedInfo,4)] | [!StringCompare(Container(650).NumPages,1) + Skin.String(ExtendedInfo,5)] | [!StringCompare(Container(450).NumPages,1) + Skin.String(ExtendedInfo,6)] | [!StringCompare(Container(750).NumPages,1) + Skin.String(ExtendedInfo,7)] | [!StringCompare(Container(350).NumPages,1) + Skin.String(ExtendedInfo,8)]</visible>
 		</control>
 		
 		<control type="group" id="505">

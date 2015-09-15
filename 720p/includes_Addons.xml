@@ -1629,17 +1629,17 @@
 	</variable>
 	
 	<variable name="ExtendedInfoWatchedPartial">
-		<value condition="!IntegerGreaterThan(Window.Property(movie.PercentPlayed),20)">watched/watched-10pct.png</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.PercentPlayed),20) + !IntegerGreaterThan(Window.Property(movie.PercentPlayed),40)">watched/watched-30pct.png</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.PercentPlayed),40) + !IntegerGreaterThan(Window.Property(movie.PercentPlayed),60)">watched/watched-50pct.png</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.PercentPlayed),60) + !IntegerGreaterThan(Window.Property(movie.PercentPlayed),80)">watched/watched-70pct.png</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.PercentPlayed),80)">watched/watched-90pct.png</value>
+		<value condition="!IntegerGreaterThan(Window.Property(PercentPlayed),20)">watched/watched-10pct.png</value>
+		<value condition="IntegerGreaterThan(Window.Property(PercentPlayed),20) + !IntegerGreaterThan(Window.Property(PercentPlayed),40)">watched/watched-30pct.png</value>
+		<value condition="IntegerGreaterThan(Window.Property(PercentPlayed),40) + !IntegerGreaterThan(Window.Property(PercentPlayed),60)">watched/watched-50pct.png</value>
+		<value condition="IntegerGreaterThan(Window.Property(PercentPlayed),60) + !IntegerGreaterThan(Window.Property(PercentPlayed),80)">watched/watched-70pct.png</value>
+		<value condition="IntegerGreaterThan(Window.Property(PercentPlayed),80)">watched/watched-90pct.png</value>
 	</variable>
 	
 	<!--
 	<include name="ExtendedInfoVideoInfoStudioMediaFlag">		
 		<control type="group">
-			<visible>!IsEmpty(Window.Property(movie.Studio))</visible>
+			<visible>!IsEmpty(Window.Property(Studio))</visible>
 			
 			<control type="image" id="690">
 				<left>246</left>
@@ -1658,7 +1658,7 @@
 				<width>60</width>
 				<height>37</height>
 				<aspectratio align="center">keep</aspectratio>
-				<texture>resource://resource.images.studios.white/$INFO[Window.Property(movie.Studio)].png</texture>
+				<texture>resource://resource.images.studios.white/$INFO[Window.Property(Studio)].png</texture>
 				<animation effect="fade" end="50" condition="true">Conditional</animation>
 			</control>
 		</control>
@@ -1672,7 +1672,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/bluray.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),bluray) | substring(Window.Property(movie.FilenameAndPath),blu-ray) | substring(Window.Property(movie.FilenameAndPath),brrip) | substring(Window.Property(movie.FilenameAndPath),bd25) | substring(Window.Property(movie.FilenameAndPath),bd50)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),bluray) | substring(Window.Property(FilenameAndPath),blu-ray) | substring(Window.Property(FilenameAndPath),brrip) | substring(Window.Property(FilenameAndPath),bd25) | substring(Window.Property(FilenameAndPath),bd50)</visible>
 		</control>
 		<control type="image" id="694">
 			<description>Web-DL</description>
@@ -1680,7 +1680,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/web-dl.png</texture>
-			<visible>[substring(Window.Property(movie.FilenameAndPath),web-dl) | substring(Window.Property(movie.FilenameAndPath),web-download)] + ![substring(Window.Property(movie.VideoCodec),vp8) | substring(Window.Property(movie.VideoCodec),vp9)]</visible>
+			<visible>[substring(Window.Property(FilenameAndPath),web-dl) | substring(Window.Property(FilenameAndPath),web-download)] + ![substring(Window.Property(VideoCodec),vp8) | substring(Window.Property(VideoCodec),vp9)]</visible>
 		</control>
 		<control type="image" id="601">
 			<description>3D</description>
@@ -1688,7 +1688,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/3d.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),.3d.) | substring(Window.Property(movie.FilenameAndPath),hsbs) | substring(Window.Property(movie.FilenameAndPath),sbs) | substring(Window.Property(movie.FilenameAndPath),half-sbs)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),.3d.) | substring(Window.Property(FilenameAndPath),hsbs) | substring(Window.Property(FilenameAndPath),sbs) | substring(Window.Property(FilenameAndPath),half-sbs)</visible>
 		</control>
 		<control type="image" id="602">
 			<description>HDDVD</description>
@@ -1696,7 +1696,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/hddvd.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),hddvd) | substring(Window.Property(movie.FilenameAndPath),hd-dvd)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),hddvd) | substring(Window.Property(FilenameAndPath),hd-dvd)</visible>
 		</control>
 		<control type="image" id="718">
 			<description>DVD</description>
@@ -1704,7 +1704,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/dvd.png</texture>
-			<visible>[substring(Window.Property(movie.FilenameAndPath),.iso,Right) | substring(Window.Property(movie.FilenameAndPath),.img,Right) | substring(Window.Property(movie.FilenameAndPath),dvd) | substring(Window.Property(movie.FilenameAndPath),.ifo,Right) | substring(Window.Property(movie.FilenameAndPath),.vob,Right) | substring(Window.Property(movie.FilenameAndPath),dvdrip) | substring(Window.Property(movie.FilenameAndPath),dvdr5) | substring(Window.Property(movie.FilenameAndPath),.r5) | substring(Window.Property(movie.FilenameAndPath),dvdscreener) | substring(Window.Property(movie.FilenameAndPath),dvdscr) | substring(Window.Property(movie.FilenameAndPath),screener)] + ![substring(Window.Property(movie.FilenameAndPath),hddvd) | substring(Window.Property(movie.FilenameAndPath),hd-dvd)]</visible>
+			<visible>[substring(Window.Property(FilenameAndPath),.iso,Right) | substring(Window.Property(FilenameAndPath),.img,Right) | substring(Window.Property(FilenameAndPath),dvd) | substring(Window.Property(FilenameAndPath),.ifo,Right) | substring(Window.Property(FilenameAndPath),.vob,Right) | substring(Window.Property(FilenameAndPath),dvdrip) | substring(Window.Property(FilenameAndPath),dvdr5) | substring(Window.Property(FilenameAndPath),.r5) | substring(Window.Property(FilenameAndPath),dvdscreener) | substring(Window.Property(FilenameAndPath),dvdscr) | substring(Window.Property(FilenameAndPath),screener)] + ![substring(Window.Property(FilenameAndPath),hddvd) | substring(Window.Property(FilenameAndPath),hd-dvd)]</visible>
 		</control>
 		<control type="image" id="603">
 			<description>HDTV</description>
@@ -1712,7 +1712,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/hdtv.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),hdtv) | substring(Window.Property(movie.FilenameAndPath),hdrip)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),hdtv) | substring(Window.Property(FilenameAndPath),hdrip)</visible>
 		</control>
 		<control type="image" id="604">
 			<description>SDTV</description>
@@ -1720,7 +1720,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/sdtv.png</texture>
-			<visible>SubString(Window.Property(movie.FilenameAndPath),PDTV) | substring(Window.Property(movie.FilenameAndPath),sdtv)</visible>
+			<visible>SubString(Window.Property(FilenameAndPath),PDTV) | substring(Window.Property(FilenameAndPath),sdtv)</visible>
 		</control>
 		<control type="image" id="608">
 			<description>Telesync</description>
@@ -1728,7 +1728,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/film.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),.telesync) | substring(Window.Property(movie.FilenameAndPath),.ts.)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),.telesync) | substring(Window.Property(FilenameAndPath),.ts.)</visible>
 		</control>
 		<control type="image" id="609">
 			<description>Cam</description>
@@ -1736,7 +1736,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/film.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),.cam)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),.cam)</visible>
 		</control>
 		<control type="image" id="678">
 			<description>VHS</description>
@@ -1744,7 +1744,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/vhs.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),vhs)</visible>
+			<visible>substring(Window.Property(FilenameAndPath),vhs)</visible>
 		</control>
 	</include>
 	
@@ -1756,7 +1756,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/xvid.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),xvid)</visible>
+			<visible>substring(Window.Property(VideoCodec),xvid)</visible>
 		</control>
 		<control type="image" id="611">
 			<description>Divx Codec</description>
@@ -1765,7 +1765,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/divx.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),divx) | substring(Window.Property(movie.VideoCodec),div2) | substring(Window.Property(movie.VideoCodec),div3) | substring(Window.Property(movie.VideoCodec),div4) | substring(Window.Property(movie.VideoCodec),divx 4) | substring(Window.Property(movie.VideoCodec),div5) | substring(Window.Property(movie.VideoCodec),dx50)</visible>
+			<visible>substring(Window.Property(VideoCodec),divx) | substring(Window.Property(VideoCodec),div2) | substring(Window.Property(VideoCodec),div3) | substring(Window.Property(VideoCodec),div4) | substring(Window.Property(VideoCodec),divx 4) | substring(Window.Property(VideoCodec),div5) | substring(Window.Property(VideoCodec),dx50)</visible>
 		</control>
 		<control type="image" id="612">
 			<description>H264 Codec</description>
@@ -1774,7 +1774,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/h264.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),h264) | substring(Window.Property(movie.VideoCodec),x264) | substring(Window.Property(movie.VideoCodec),hdmv)</visible>
+			<visible>substring(Window.Property(VideoCodec),h264) | substring(Window.Property(VideoCodec),x264) | substring(Window.Property(VideoCodec),hdmv)</visible>
 		</control>
 		<control type="image" id="698">
 			<description>H265 Codec</description>
@@ -1783,7 +1783,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/hevc.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),hevc)</visible>
+			<visible>substring(Window.Property(VideoCodec),hevc)</visible>
 		</control>
 		<control type="image" id="613">
 			<description>AVC1 Codec</description>
@@ -1792,7 +1792,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/avc1.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),avc1)</visible>
+			<visible>substring(Window.Property(VideoCodec),avc1)</visible>
 		</control>
 		<control type="image" id="614">
 			<description>WVC1 Codec</description>
@@ -1801,7 +1801,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/wvc1.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),wvc1) | substring(Window.Property(movie.VideoCodec),vc-1)</visible>
+			<visible>substring(Window.Property(VideoCodec),wvc1) | substring(Window.Property(VideoCodec),vc-1)</visible>
 		</control>
 		<control type="image" id="680">
 			<description>WMV Codec</description>
@@ -1810,7 +1810,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/wmv.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),wmv) | substring(Window.Property(movie.VideoCodec),wmv2) | substring(Window.Property(movie.VideoCodec),wmv3)</visible>
+			<visible>substring(Window.Property(VideoCodec),wmv) | substring(Window.Property(VideoCodec),wmv2) | substring(Window.Property(VideoCodec),wmv3)</visible>
 		</control>
 		<control type="image" id="615">
 			<description>MPEG-1 Codec</description>
@@ -1819,7 +1819,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/mpeg1video.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),mpeg1video)</visible>
+			<visible>substring(Window.Property(VideoCodec),mpeg1video)</visible>
 		</control>
 		<control type="image" id="616">
 			<description>MPEG-2 Codec</description>
@@ -1828,7 +1828,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/mpeg2video.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),mpeg2video) | substring(Window.Property(movie.VideoCodec),mpeg video) | substring(Window.Property(movie.VideoCodec),mpeg2)</visible>
+			<visible>substring(Window.Property(VideoCodec),mpeg2video) | substring(Window.Property(VideoCodec),mpeg video) | substring(Window.Property(VideoCodec),mpeg2)</visible>
 		</control>
 		<control type="image" id="617">
 			<description>MPEG-4 Codec</description>
@@ -1837,7 +1837,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/mpeg4video.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),mpeg-4 visual) | substring(Window.Property(movie.VideoCodec),mpg4) | substring(Window.Property(movie.VideoCodec),mp4v)</visible>
+			<visible>substring(Window.Property(VideoCodec),mpeg-4 visual) | substring(Window.Property(VideoCodec),mpg4) | substring(Window.Property(VideoCodec),mp4v)</visible>
 		</control>
 		<control type="image" id="618">
 			<description>Sorenson Video Codec</description>
@@ -1846,7 +1846,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/svq3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),svq1) | substring(Window.Property(movie.VideoCodec),svq3)</visible>
+			<visible>substring(Window.Property(VideoCodec),svq1) | substring(Window.Property(VideoCodec),svq3)</visible>
 		</control>		
 		<control type="image" id="695">
 			<description>VP8 and VP9 Video Codec</description>
@@ -1855,7 +1855,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/vp8.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),vp8) | substring(Window.Property(movie.VideoCodec),vp9)</visible>
+			<visible>substring(Window.Property(VideoCodec),vp8) | substring(Window.Property(VideoCodec),vp9)</visible>
 		</control>
 		<control type="image" id="619">
 			<description>Flash Video Codec</description>
@@ -1864,7 +1864,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/video/flv.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.VideoCodec),flv)</visible>
+			<visible>substring(Window.Property(VideoCodec),flv)</visible>
 		</control>
 		<control type="image" id="620">
 			<description>Video Resolution</description>
@@ -1873,8 +1873,8 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<texture>flagging/$VAR[MediaFlagTheme]/video/$INFO[Window.Property(movie.VideoResolution)].png</texture>
-			<visible>!IsEmpty(Window.Property(movie.VideoCodec)) + !Skin.HasSetting(HideVideoResMediaFlag)</visible>
+			<texture>flagging/$VAR[MediaFlagTheme]/video/$INFO[Window.Property(VideoResolution)].png</texture>
+			<visible>!IsEmpty(Window.Property(VideoCodec)) + !Skin.HasSetting(HideVideoResMediaFlag)</visible>
 		</control>
 		<control type="image" id="621">
 			<description>Right Border</description>
@@ -1884,7 +1884,7 @@
 			<aspectratio>stretch</aspectratio>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
 			<texture>flagging/$VAR[MediaFlagTheme]/flag-right-border.png</texture>
-			<visible>!IsEmpty(Window.Property(movie.VideoCodec)) + Skin.HasSetting(HideVideoResMediaFlag)</visible>
+			<visible>!IsEmpty(Window.Property(VideoCodec)) + Skin.HasSetting(HideVideoResMediaFlag)</visible>
 		</control>
 	</include>
 	
@@ -1896,7 +1896,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/mp3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),mp3)</visible>
+			<visible>substring(Window.Property(AudioCodec),mp3)</visible>
 		</control>
 		<control type="image" id="623">
 			<description>MP2 Codec</description>
@@ -1905,7 +1905,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/mp2.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),mp2)</visible>
+			<visible>substring(Window.Property(AudioCodec),mp2)</visible>
 		</control>
 		<control type="image" id="624">
 			<description>MP1 Codec</description>
@@ -1914,7 +1914,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/mp1.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),mp1)</visible>
+			<visible>substring(Window.Property(AudioCodec),mp1)</visible>
 		</control>
 		<control type="image" id="700">
 			<description>Opus Codec</description>
@@ -1923,7 +1923,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/opus.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),opus)</visible>
+			<visible>substring(Window.Property(AudioCodec),opus)</visible>
 		</control>
 		<control type="image" id="625">
 			<description>DTS Codec</description>
@@ -1932,7 +1932,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dts.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),dca)</visible>
+			<visible>substring(Window.Property(AudioCodec),dca)</visible>
 		</control>
 		<control type="image" id="682">
 			<description>PCM Codec</description>
@@ -1941,7 +1941,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/pcm.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),pcm_s16be) | substring(Window.Property(movie.AudioCodec),pcm_s16le) | substring(Window.Property(movie.AudioCodec),pcm_u8)</visible>
+			<visible>substring(Window.Property(AudioCodec),pcm_s16be) | substring(Window.Property(AudioCodec),pcm_s16le) | substring(Window.Property(AudioCodec),pcm_u8)</visible>
 		</control>
 		<control type="image" id="626">
 			<description>AAC Codec</description>
@@ -1950,7 +1950,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/aac.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),aac)</visible>
+			<visible>substring(Window.Property(AudioCodec),aac)</visible>
 		</control>
 		<control type="image" id="627">
 			<description>Dolby Digital/AC3 Codec</description>
@@ -1959,7 +1959,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),ac3) | substring(Window.Property(movie.AudioCodec),ac-3)</visible>
+			<visible>substring(Window.Property(AudioCodec),ac3) | substring(Window.Property(AudioCodec),ac-3)</visible>
 		</control>
 		<control type="image" id="688">
 			<description>EAC3 Codec</description>
@@ -1968,7 +1968,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),eac3)</visible>
+			<visible>substring(Window.Property(AudioCodec),eac3)</visible>
 		</control>
 		<control type="image" id="628">
 			<description>TrueHD Codec</description>
@@ -1977,7 +1977,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),truehd)</visible>
+			<visible>substring(Window.Property(AudioCodec),truehd)</visible>
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
@@ -1986,7 +1986,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/wma.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),wmav2) | substring(Window.Property(movie.AudioCodec),wma)</visible>
+			<visible>substring(Window.Property(AudioCodec),wmav2) | substring(Window.Property(AudioCodec),wma)</visible>
 		</control>
 		<control type="image" id="686">
 			<description>WMA Pro Codec</description>
@@ -1995,7 +1995,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/wmapro.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),wmapro)</visible>
+			<visible>substring(Window.Property(AudioCodec),wmapro)</visible>
 		</control>
 		<control type="image" id="630">
 			<description>FLAC Codec</description>
@@ -2004,7 +2004,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/flac.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),flac)</visible>
+			<visible>substring(Window.Property(AudioCodec),flac)</visible>
 		</control>
 		<control type="image" id="631">
 			<description>Vorbis Codec</description>
@@ -2013,7 +2013,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/vorbis.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),vorbis)</visible>
+			<visible>substring(Window.Property(AudioCodec),vorbis)</visible>
 		</control>
 		<control type="image" id="684">
 			<description>OGG Codec</description>
@@ -2022,7 +2022,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/ogg.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),ogg)</visible>
+			<visible>substring(Window.Property(AudioCodec),ogg)</visible>
 		</control>
 		<control type="image" id="632">
 			<description>DTS-HD Master Audio Codec</description>
@@ -2031,7 +2031,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dtshd_ma.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),dtshd_ma)</visible>
+			<visible>substring(Window.Property(AudioCodec),dtshd_ma)</visible>
 		</control>
 		<control type="image" id="633">
 			<description>DTS-HD High Resolution Audio</description>
@@ -2040,7 +2040,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dtshd_hra.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(movie.AudioCodec),dtshd_hra)</visible>
+			<visible>substring(Window.Property(AudioCodec),dtshd_hra)</visible>
 		</control>
 		<control type="image" id="634">
 			<description>Audio Channels</description>
@@ -2048,9 +2048,9 @@
 			<width>43</width>
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>flagging/$VAR[MediaFlagTheme]/audio/$INFO[Window.Property(movie.AudioChannels)].png</texture>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/$INFO[Window.Property(AudioChannels)].png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>!IsEmpty(Window.Property(movie.AudioCodec))</visible>
+			<visible>!IsEmpty(Window.Property(AudioCodec))</visible>
 		</control>
 	</include>
 	
@@ -2060,9 +2060,9 @@
 			<width>50</width>
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>flagging/$VAR[MediaFlagTheme]/aspectratio/$INFO[Window.Property(movie.VideoAspect)].png</texture>
+			<texture>flagging/$VAR[MediaFlagTheme]/aspectratio/$INFO[Window.Property(VideoAspect)].png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>!IsEmpty(Window.Property(movie.VideoAspect)) + !Skin.HasSetting(HideAspectRatioMediaFlag)</visible>
+			<visible>!IsEmpty(Window.Property(VideoAspect)) + !Skin.HasSetting(HideAspectRatioMediaFlag)</visible>
 		</control>
 	</include>
 	
@@ -2074,7 +2074,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-general.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),G)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),G)</visible>  
 		</control>
 		<control type="image" id="635">
 			<description>Rated PG</description>
@@ -2082,7 +2082,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-pg.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),PG)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),PG)</visible>  
 		</control>
 		<control type="image" id="636">
 			<description>Rated PG-13</description>
@@ -2090,7 +2090,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-pg13.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),PG-13)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),PG-13)</visible>  
 		</control>
 		<control type="image" id="637">
 			<description>Rated R</description>
@@ -2098,7 +2098,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-restricted.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),R)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),R)</visible>  
 		</control>
 		<control type="image" id="638">
 			<description>Rated NC-17</description>
@@ -2106,7 +2106,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-nc17.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),NC-17)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),NC-17)</visible>  
 		</control>
 		<control type="image" id="702">
 			<description>Rated UK U</description>
@@ -2114,7 +2114,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-u.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),U)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),U)</visible>  
 		</control>
 		<control type="image" id="703">
 			<description>Rated UK PG</description>
@@ -2122,7 +2122,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-pg.png</texture>
-			<visible>substring(Window.Property(movie.mpaa),UK:PG)</visible>  
+			<visible>substring(Window.Property(mpaa),UK:PG)</visible>  
 		</control>
 		<control type="image" id="704">
 			<description>Rated UK 12</description>
@@ -2130,7 +2130,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-12.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),12)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),12)</visible>  
 		</control>
 		<control type="image" id="705">
 			<description>Rated UK 12A</description>
@@ -2138,7 +2138,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-12a.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),12a)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),12a)</visible>  
 		</control>
 		<control type="image" id="706">
 			<description>Rated UK 15</description>
@@ -2146,7 +2146,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-15.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),15)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),15)</visible>  
 		</control>
 		<control type="image" id="707">
 			<description>Rated UK 18</description>
@@ -2154,7 +2154,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-18.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),18)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),18)</visible>  
 		</control>
 		<control type="image" id="708">
 			<description>Rated UK R18</description>
@@ -2162,7 +2162,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/mpaa-uk-r18.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),R18)</visible>  
+			<visible>StringCompare(Window.Property(mpaa),R18)</visible>  
 		</control>
 		<control type="image" id="738">
 			<description>Unrated</description>
@@ -2170,7 +2170,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/unrated.png</texture>
-			<visible>substring(Window.Property(movie.FilenameAndPath),.unrated)</visible>  
+			<visible>substring(Window.Property(FilenameAndPath),.unrated)</visible>  
 		</control>
 		<control type="image" id="739">
 			<description>No Rating</description>
@@ -2178,7 +2178,7 @@
 			<height>35</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/no-rating.png</texture>
-			<visible>StringCompare(Window.Property(movie.mpaa),NR) | [IsEmpty(Window.Property(movie.mpaa)) + !StringCompare(Window.Property(type),tvshow) + !StringCompare(Window.Property(type),season)]</visible>  
+			<visible>StringCompare(Window.Property(mpaa),NR) | [IsEmpty(Window.Property(mpaa)) + !StringCompare(Window.Property(type),tvshow) + !StringCompare(Window.Property(type),season)]</visible>  
 		</control>
 	</include>
 	
@@ -2197,24 +2197,24 @@
     </variable>
 	
 	<variable name="ExtendedInfoContainer901Label">
-        <value condition="StringCompare(Window.Property(type),season)">$INFO[Window.Property(movie.TVShowTitle)]</value>
-        <value condition="StringCompare(Window.Property(type),episode)">$INFO[Window.Property(movie.season),$LOCALIZE[20373] ,]$INFO[Window.Property(movie.episode), $LOCALIZE[20359] ,]</value>
-        <value>$INFO[Window.Property(movie.Genre)]</value>
+        <value condition="StringCompare(Window.Property(type),season)">$INFO[Window.Property(TVShowTitle)]</value>
+        <value condition="StringCompare(Window.Property(type),episode)">$INFO[Window.Property(season),$LOCALIZE[20373] ,]$INFO[Window.Property(episode), $LOCALIZE[20359] ,]</value>
+        <value>$INFO[Window.Property(Genre)]</value>
     </variable>
 	
 	<variable name="ExtendedInfoDescription">
-        <value condition="StringCompare(Window.Property(type),episode)">$INFO[Window.Property(movie.Description)]</value>
-        <value>$INFO[Window.Property(movie.Plot)]</value>
+        <value condition="StringCompare(Window.Property(type),episode)">$INFO[Window.Property(Description)]</value>
+        <value>$INFO[Window.Property(Plot)]</value>
     </variable>
 	
 	<variable name="ExtendedInfoContainer250Label">
-        <value condition="IsEmpty(Window.Property(movie.set.label))">$LOCALIZE[33054]</value>
-        <value condition="!IsEmpty(Window.Property(movie.set.label))">$LOCALIZE[20457]</value>
+        <value condition="IsEmpty(Window.Property(set.label))">$LOCALIZE[33054]</value>
+        <value condition="!IsEmpty(Window.Property(set.label))">$LOCALIZE[20457]</value>
     </variable>
 	
 	<variable name="ExtendedInfoContainer250Label2">
-        <value condition="IsEmpty(Window.Property(movie.set.label))">$INFO[Container(250).NumItems,, $LOCALIZE[33054]]</value>
-        <value condition="!IsEmpty(Window.Property(movie.set.label))">$INFO[Window.Property(movie.set.label)]$INFO[Container(250).NumItems, (, $LOCALIZE[342])]</value>
+        <value condition="IsEmpty(Window.Property(set.label))">$INFO[Container(250).NumItems,, $LOCALIZE[33054]]</value>
+        <value condition="!IsEmpty(Window.Property(set.label))">$INFO[Window.Property(set.label)]$INFO[Container(250).NumItems, (, $LOCALIZE[342])]</value>
     </variable>
 	
 	<variable name="DialogAlbumInfoEmptyExtendedInfo">

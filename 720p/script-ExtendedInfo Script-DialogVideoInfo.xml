@@ -6,18 +6,18 @@
 	<onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
 	<onload condition="StringCompare(Window.Property(type),movie)">SetProperty("TvTunesSupported", "Movies")</onload>
 	<onload condition="StringCompare(Window.Property(type),tvshow) | StringCompare(Window.Property(type),season) | StringCompare(Window.Property(type),episode)">SetProperty("TvTunesSupported", "TvShows")</onload>
-	<onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window.Property(movie.DBID))">RunScript(script.videoextras,check,"$INFO[Window.Property(movie.FilenameAndPath)]")</onload>
+	<onload condition="System.HasAddon(script.videoextras) + !IsEmpty(Window.Property(DBID))">RunScript(script.videoextras,check,"$INFO[Window.Property(FilenameAndPath)]")</onload>
 	<onload>Skin.Reset(ExtendedVideoInfo)</onload>
 	<onunload>Skin.Reset(ExtendedInfoDialog)</onunload>
 	<include>ControlsOpenCloseAnim</include>
     
     <controls>
 		<control type="group">
-			<visible>!IsEmpty(Window.Property(movie.Fanart))</visible>
+			<visible>!IsEmpty(Window.Property(Fanart))</visible>
 			<include>BackgroundVisibleAnim</include>
 			<control type="image">
 				<include>BackgroundSize</include>
-				<texture background="true">$INFO[Window.Property(movie.fanart)]</texture>
+				<texture background="true">$INFO[Window.Property(fanart)]</texture>
 				<aspectratio>scale</aspectratio>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include condition="Skin.HasSetting(AnimateFanart)">FanartBackgroundAnim</include>
@@ -28,7 +28,7 @@
 			</control>
 		</control>
 		
-		<include condition="![[Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(musicinformation)] + !IsEmpty(Window.Property(movie.Fanart))]">FSMediaInfoBackgroundDim2</include>
+		<include condition="![[Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(musicinformation)] + !IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
 		
 		<control type="group">
 			<visible>!Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
@@ -44,7 +44,7 @@
 					<height>500</height>
 					<texture border="4">covers/cover-case2.png</texture>
 					<aspectratio>stretch</aspectratio>
-					<visible>[!StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.Poster))] | [StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.thumb))]</visible>
+					<visible>[!StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(Poster))] | [StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(thumb))]</visible>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
 				
@@ -55,7 +55,7 @@
 					<texture>DefaultVideo.png</texture>
 					<bordersize>60</bordersize>
 					<aspectratio>keep</aspectratio>
-					<visible>[!StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.Poster))] | [StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(movie.thumb))]</visible>
+					<visible>[!StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(Poster))] | [StringCompare(Window.Property(type),episode) + IsEmpty(Window.Property(thumb))]</visible>
 					<animation effect="fade" end="85" condition="true">Conditional</animation>
 				</control>
 				
@@ -63,12 +63,12 @@
 					<description>Poster Image</description>
 					<width>336</width>
 					<height>500</height>
-					<texture>$INFO[Window.Property(movie.Poster)]</texture>
+					<texture>$INFO[Window.Property(Poster)]</texture>
 					<bordertexture border="4">covers/cover-case2.png</bordertexture>
 					<bordersize>4</bordersize>
 					<aspectratio>stretch</aspectratio>
 					<include>FSMediaInfoOpenCloseAnim</include>
-					<visible>!IsEmpty(Window.Property(movie.Poster)) + !StringCompare(Window.Property(type),episode)</visible>
+					<visible>!IsEmpty(Window.Property(Poster)) + !StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				
 				<control type="image">
@@ -76,12 +76,12 @@
 					<top>-55</top>
 					<width>336</width>
 					<height>336</height>
-					<texture>$INFO[Window.Property(movie.thumb)]</texture>
+					<texture>$INFO[Window.Property(thumb)]</texture>
 					<bordertexture border="4">covers/cover-case2.png</bordertexture>
 					<bordersize>4</bordersize>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<include>FSMediaInfoOpenCloseAnim</include>
-					<visible>!IsEmpty(Window.Property(movie.thumb)) + StringCompare(Window.Property(type),episode)</visible>
+					<visible>!IsEmpty(Window.Property(thumb)) + StringCompare(Window.Property(type),episode)</visible>
 				</control>
 				
 				<!--<control type="image">
@@ -93,7 +93,7 @@
 					<texture>OverlayWatched.png</texture>
 					<aspectratio>keep</aspectratio>
 					<include>FSMediaInfoOpenCloseAnim</include>
-					<visible>!IsEmpty(Window.Property(movie.DBID)) + IntegerGreaterThan(Window.Property(movie.PercentPlayed),98)</visible>
+					<visible>!IsEmpty(Window.Property(DBID)) + IntegerGreaterThan(Window.Property(PercentPlayed),98)</visible>
 				</control>
 				<control type="label">
 					<description>Unwatched Episodes Label</description>
@@ -108,7 +108,7 @@
 					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<animation effect="slide" end="647,-365" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
-					<visible>!IsEmpty(Window.Property(movie.DBID)) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(TVShows)</visible>
+					<visible>!IsEmpty(Window.Property(DBID)) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(TVShows)</visible>
 				</control>
 				<control type="label">
 					<description>Unwatched Episodes Label</description>
@@ -123,7 +123,7 @@
 					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<animation effect="slide" end="647,-365" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
-					<visible>!IsEmpty(Window.Property(movie.DBID)) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(TVShows)</visible>
+					<visible>!IsEmpty(Window.Property(DBID)) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(TVShows)</visible>
 				</control>
 				<control type="image">
 					<description>Unwatched Overlay</description>
@@ -136,7 +136,7 @@
 					<aspectratio>keep</aspectratio>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<animation effect="slide" end="647,-365" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
-					<visible>!IsEmpty(Window.Property(movie.DBID)) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes)) + Container.Content(TVShows)</visible>
+					<visible>!IsEmpty(Window.Property(DBID)) + !StringCompare(ListItem.Property(UnWatchedEpisodes),0) + !IsEmpty(ListItem.Property(UnWatchedEpisodes)) + Container.Content(TVShows)</visible>
 				</control>-->
 				<control type="image">
 					<description>Watched Partial</description>
@@ -148,7 +148,7 @@
 					<aspectratio>keep</aspectratio>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<animation effect="slide" end="40,-191" condition="Container.Content(Episodes) | Container.Content(musicvideos)">Conditional</animation>
-					<visible>!IsEmpty(Window.Property(movie.DBID)) + IntegerGreaterThan(Window.Property(movie.PercentPlayed),0) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(musicvideos)]</visible>
+					<visible>!IsEmpty(Window.Property(DBID)) + IntegerGreaterThan(Window.Property(PercentPlayed),0) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(musicvideos)]</visible>
 				</control>
 			</control>
 			
@@ -161,9 +161,9 @@
 					<width>710</width>
 					<height>85</height>
 					<align>center</align>
-					<texture background="true">$INFO[Window.Property(movie.Logo)]</texture>
+					<texture background="true">$INFO[Window.Property(Logo)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!IsEmpty(Window.Property(movie.Logo)) + IsEmpty(Window.Property(movie.TagLine))</visible>
+					<visible>!IsEmpty(Window.Property(Logo)) + IsEmpty(Window.Property(TagLine))</visible>
 				</control>
 				
 				<control type="image">
@@ -171,9 +171,9 @@
 					<width>710</width>
 					<height>63</height>
 					<align>center</align>
-					<texture background="true">$INFO[Window.Property(movie.Logo)]</texture>
+					<texture background="true">$INFO[Window.Property(Logo)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!IsEmpty(Window.Property(movie.Logo)) + !IsEmpty(Window.Property(movie.TagLine))</visible>
+					<visible>!IsEmpty(Window.Property(Logo)) + !IsEmpty(Window.Property(TagLine))</visible>
 				</control>
 
 				<control type="label">
@@ -184,10 +184,10 @@
 					<font>FullMediaInfoTitleFont3</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[Window.Property(movie.Title)][/UPPERCASE]</label>
+					<label>[UPPERCASE]$INFO[Window.Property(Title)][/UPPERCASE]</label>
 					<scroll>true</scroll>
-					<animation effect="slide" end="0,22" condition="IsEmpty(Window.Property(movie.TagLine))">Conditional</animation>
-					<visible>IsEmpty(Window.Property(movie.Logo))</visible>
+					<animation effect="slide" end="0,22" condition="IsEmpty(Window.Property(TagLine))">Conditional</animation>
+					<visible>IsEmpty(Window.Property(Logo))</visible>
 				</control>
 				
 				<control type="label">
@@ -198,10 +198,10 @@
 					<textcolor>MediaInfoTitleColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>center</align>
-					<label>$INFO[Window.Property(movie.TagLine)]</label>
+					<label>$INFO[Window.Property(TagLine)]</label>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<scroll>true</scroll>
-					<visible>!IsEmpty(Window.Property(movie.TagLine))</visible>
+					<visible>!IsEmpty(Window.Property(TagLine))</visible>
 				</control>
 				
 				<control type="image">
@@ -397,21 +397,21 @@
 						<item id="1">
 							<description>Director</description>
 							<label>$LOCALIZE[20339]</label>
-							<label2>$INFO[Window.Property(movie.Director)]</label2>
-							<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window.Property(movie.Director)])</onclick>
+							<label2>$INFO[Window.Property(Director)]</label2>
+							<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window.Property(Director)])</onclick>
 							<visible>!StringCompare(Window.Property(type),tvshow)</visible>
 						</item>
 						<item id="2">
 							<description>Writer</description>
 							<label>$LOCALIZE[20417]</label>
-							<label2>$INFO[Window.Property(movie.Writer)]</label2>
-							<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window.Property(movie.Writer)])</onclick>
-							<visible>IsEmpty(Window.Property(movie.Revenue)) + !StringCompare(Window.Property(type),tvshow)</visible>
+							<label2>$INFO[Window.Property(Writer)]</label2>
+							<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window.Property(Writer)])</onclick>
+							<visible>IsEmpty(Window.Property(Revenue)) + !StringCompare(Window.Property(type),tvshow)</visible>
 						</item>
 						<item id="3">
 							<description>Seasons</description>
 							<label>$LOCALIZE[33054]</label>
-							<label2>$INFO[Window.Property(movie.TotalSeasons)]</label2>
+							<label2>$INFO[Window.Property(TotalSeasons)]</label2>
 							<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 							<onclick>Skin.SetString(ExtendedVideoInfo,13)</onclick>
 							<onclick>Control.SetFocus(250)</onclick>
@@ -420,7 +420,7 @@
 						<item id="4">
 							<description>Episodes</description>
 							<label>$LOCALIZE[20360]</label>
-							<label2>$INFO[Window.Property(movie.TotalEpisodes)]</label2>
+							<label2>$INFO[Window.Property(TotalEpisodes)]</label2>
 							<onclick>noop</onclick>
 							<visible>StringCompare(Window.Property(type),tvshow)</visible>
 						</item>
@@ -429,64 +429,72 @@
 							<label>$LOCALIZE[2050]</label>
 							<label2>$VAR[MovieDuration]</label2>
 							<onclick>noop</onclick>
-							<visible>!StringCompare(Window.Property(movie.duration),0)</visible>
+							<visible>!StringCompare(Window.Property(duration),0)</visible>
 						</item>
 						<item id="6">
 							<description>Rating</description>
 							<label>$LOCALIZE[563]</label>
-							<label2>$INFO[Window.Property(movie.Rating)]$INFO[Window.Property(movie.Votes), (, $LOCALIZE[205])]$INFO[Window.Property(movie.Top250),  &#x2022;  $LOCALIZE[31974] #,]</label2>
+							<label2>$INFO[Window.Property(Rating)]$INFO[Window.Property(Votes), (, $LOCALIZE[205])]$INFO[Window.Property(Top250),  &#x2022;  $LOCALIZE[31974] #,]</label2>
 							<onclick>noop</onclick>
 						</item>
 						<item id="7">
 							<description>MPAA Rating</description>
 							<label>$LOCALIZE[20074]</label>
-							<label2>$INFO[Window.Property(movie.mpaa)]</label2>
+							<label2>$INFO[Window.Property(mpaa)]</label2>
 							<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 							<onclick>Skin.SetString(ExtendedVideoInfo,14)</onclick>
 						</item>
 						<item id="8">
 							<description>Studio</description>
 							<label>$LOCALIZE[572]</label>
-							<label2>$INFO[Window.Property(movie.Studio)]</label2>
+							<label2>$INFO[Window.Property(Studio)]</label2>
 							<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 							<onclick>Skin.SetString(ExtendedVideoInfo,9)</onclick>
-							<!--<visible>IsEmpty(Window.Property(movie.FileNameAndPath))</visible>-->
-							<visible>StringCompare(Window.Property(movie.duration),0)</visible>
+							<!--<visible>IsEmpty(Window.Property(FileNameAndPath))</visible>-->
+							<visible>StringCompare(Window.Property(duration),0)</visible>
 						</item>
 						<item id="9">
-							<description>Release Date</description>
-							<label fallback="Release Date">$INFO[Window.Property(movie.Status)]</label>
-							<label2>$INFO[Window.Property(movie.release_date)]</label2>
-							<onclick>noop</onclick>
+							<description>Episodes</description>
+							<label>$LOCALIZE[20360]</label>
+							<label2>$INFO[Container(2000).NumItems]</label2>
+							<onclick>Skin.SetString(ExtendedVideoInfo,15)</onclick>
+							<onclick>Control.SetFocus(2000)</onclick>
+							<visible>StringCompare(Window.Property(type),season)</visible>
 						</item>
 						<item id="10">
-							<description>Budget</description>
-							<label>$ADDON[script.extendedinfo 32109]</label>
-							<label2>$INFO[Window.Property(movie.Budget),$]</label2>
+							<description>Release Date</description>
+							<label fallback="Release Date">$INFO[Window.Property(Status)]</label>
+							<label2>$INFO[Window.Property(release_date)]</label2>
 							<onclick>noop</onclick>
-							<visible>![StringCompare(Window.Property(type),tvshow) + IsEmpty(Window.Property(movie.Budget))]</visible>
 						</item>
 						<item id="11">
-							<description>Revenue</description>
-							<label>$ADDON[script.extendedinfo 32108]</label>
-							<label2>$INFO[Window.Property(movie.Revenue),$]</label2>
+							<description>Budget</description>
+							<label>$ADDON[script.extendedinfo 32109]</label>
+							<label2>$INFO[Window.Property(Budget),$]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
+							<visible>![StringCompare(Window.Property(type),tvshow) | StringCompare(Window.Property(type),season)] + !IsEmpty(Window.Property(Budget))</visible>
 						</item>
 						<item id="12">
+							<description>Revenue</description>
+							<label>$ADDON[script.extendedinfo 32108]</label>
+							<label2>$INFO[Window.Property(Revenue),$]</label2>
+							<onclick>noop</onclick>
+							<visible>!IsEmpty(Window.Property(Revenue))</visible>
+						</item>
+						<item id="13">
 							<description>Network</description>
 							<label>$LOCALIZE[705]</label>
 							<label2>$INFO[Container(1450).ListItem.Label]</label2>
 							<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 							<onclick>Skin.SetString(ExtendedVideoInfo,10)</onclick>
-							<visible>StringCompare(Window.Property(type),tvshow) + IsEmpty(Window.Property(movie.Budget))</visible>
+							<visible>StringCompare(Window.Property(type),tvshow) + IsEmpty(Window.Property(Budget))</visible>
 						</item>
-						<!--<item id="11">
+						<!--<item id="14">
 							<description>File Path</description>
 							<label>$LOCALIZE[21801]</label>
-							<label2>$INFO[Window.Property(movie.FileNameAndPath)]</label2>
+							<label2>$INFO[Window.Property(FileNameAndPath)]</label2>
 							<onclick>noop</onclick>
-							<visible>!IsEmpty(Window.Property(movie.FileNameAndPath))</visible>
+							<visible>!IsEmpty(Window.Property(FileNameAndPath))</visible>
 						</item>-->
 					</content>
 				</control>
@@ -2416,7 +2424,7 @@
 						<include>DropDownMenuBtn</include>
 						<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 						<onclick>Control.SetFocus(124)</onclick>
-						<label>$ADDON[script.extendedinfo 32129]$INFO[Window.Property(movie.rated), (,)]</label>
+						<label>$ADDON[script.extendedinfo 32129]$INFO[Window.Property(rated), (,)]</label>
 					</control>
 					<control type="button" id="6006">
 						<description>Already Rated</description>
@@ -2484,8 +2492,8 @@
 						<include>DropDownMenuRadioBtn</include>
 						<onclick>Skin.Reset(ExtendedInfoDialog)</onclick>
 						<onclick>Control.SetFocus(126)</onclick>
-						<label>$INFO[Window.Property(movie.FavButton_Label)]</label>
-						<selected>!IsEmpty(Window.Property(movie.favorite))</selected>
+						<label>$INFO[Window.Property(FavButton_Label)]</label>
+						<selected>!IsEmpty(Window.Property(favorite))</selected>
 						<visible>!IsEmpty(Window.Property(tmdb_logged_in))</visible>
 						<visible>!StringCompare(Window.Property(type),season) + !StringCompare(Window.Property(type),episode)</visible>
 					</control>
@@ -2772,7 +2780,7 @@
 		<!--
 		<control type="group">
 			<height>120</height>
-			<visible>!IsEmpty(Window.Property(movie.omdb.Awards)) | !IsEmpty(Window.Property(movie.omdb.tomatoConsensus))</visible>
+			<visible>!IsEmpty(Window.Property(omdb.Awards)) | !IsEmpty(Window.Property(omdb.tomatoConsensus))</visible>
 			<control type="label" id="800">
 				<posx>130</posx>
 				<posy>0</posy>
@@ -2781,7 +2789,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<wrapmultiline>true</wrapmultiline>
-				<label>$INFO[Window.Property(movie.omdb.Awards),,[CR]]$INFO[Window.Property(movie.omdb.tomatoConsensus),,[CR]]</label>
+				<label>$INFO[Window.Property(omdb.Awards),,[CR]]$INFO[Window.Property(omdb.tomatoConsensus),,[CR]]</label>
 				<font>font12</font>
 				<autoscroll delay="10000" time="AutoScrollTime" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
