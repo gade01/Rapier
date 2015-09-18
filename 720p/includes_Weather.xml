@@ -66,10 +66,10 @@
 				<align>center</align>
 			</control>
 
-			<include condition="!StringCompare(Weather.Plugin,weather.openweathermap.extended) + !IsEmpty(Weather.Plugin) + !Skin.HasSetting(EnableAnimWeatherIcons)">WeatherCurrentIcon</include>
-			<include condition="!StringCompare(Weather.Plugin,weather.openweathermap.extended) + !IsEmpty(Weather.Plugin) + Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimCurrentIcon</include>
-			<include condition="StringCompare(Weather.Plugin,weather.openweathermap.extended) + !Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapCurrentIcon</include>
-			<include condition="StringCompare(Weather.Plugin,weather.openweathermap.extended) + Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimCurrentIcon</include>
+			<include condition="!StringCompare(Weather.Plugin,weather.openweathermap.extended) + !IsEmpty(Weather.Plugin) + IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherCurrentIcon</include>
+			<include condition="!StringCompare(Weather.Plugin,weather.openweathermap.extended) + !IsEmpty(Weather.Plugin) + !IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimCurrentIcon</include>
+			<include condition="StringCompare(Weather.Plugin,weather.openweathermap.extended) + IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapCurrentIcon</include>
+			<include condition="StringCompare(Weather.Plugin,weather.openweathermap.extended) + !IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimCurrentIcon</include>
 
 			<control type="label">
 				<description>Current Temp</description>
@@ -295,8 +295,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day0.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay0Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay0Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay0Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay0Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -337,8 +337,8 @@
 							<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day1.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 						</control>
 
-						<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay1Icon</include>
-						<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay1Icon</include>
+						<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay1Icon</include>
+						<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay1Icon</include>
 
 						<control type="label">
 							<description>Condition</description>
@@ -372,8 +372,8 @@
 							<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day4.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 						</control>
 
-						<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay4Icon</include>
-						<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay4Icon</include>
+						<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay4Icon</include>
+						<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay4Icon</include>
 
 						<control type="label">
 							<description>Condition</description>
@@ -415,8 +415,8 @@
 							<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day2.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 						</control>
 
-						<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay2Icon</include>
-						<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay2Icon</include>
+						<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay2Icon</include>
+						<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay2Icon</include>
 
 						<control type="label">
 							<description>Condition</description>
@@ -450,8 +450,8 @@
 							<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day5.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 						</control>
 
-						<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay5Icon</include>
-						<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay5Icon</include>
+						<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay5Icon</include>
+						<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay5Icon</include>
 
 						<control type="label">
 							<description>Condition</description>
@@ -493,8 +493,8 @@
 							<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day3.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 						</control>
 
-						<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay3Icon</include>
-						<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay3Icon</include>
+						<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay3Icon</include>
+						<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay3Icon</include>
 
 						<control type="label">
 							<description>Condition</description>
@@ -528,8 +528,8 @@
 							<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Day6.LowTemp)]$INFO[System.TemperatureUnits][/COLOR]</label>
 						</control>
 
-						<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">WeatherDay6Icon</include>
-						<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">WeatherAnimDay6Icon</include>
+						<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherDay6Icon</include>
+						<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">WeatherAnimDay6Icon</include>
 
 						<control type="label">
 							<description>Condition</description>
@@ -595,8 +595,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.1.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay1Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay1Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay1Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay1Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -690,8 +690,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.2.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay2Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay2Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay2Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay2Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -723,8 +723,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.5.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay5Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay5Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay5Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay5Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -763,8 +763,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.3.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay3Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay3Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay3Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay3Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -796,8 +796,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.6.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay6Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay6Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay6Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay6Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -836,8 +836,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.4.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay4Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay4Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay4Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay4Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -869,8 +869,8 @@
 						<label>$LOCALIZE[391]   [COLOR=DefaultColor2]$INFO[Window.Property(Daily.7.LowTemperature)][/COLOR]</label>
 					</control>
 
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapDay7Icon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimDay7Icon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapDay7Icon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimDay7Icon</include>
 
 					<control type="label">
 						<description>Condition</description>
@@ -923,8 +923,8 @@
 					<label>$INFO[Window.Property(36Hour.1.Outlook)]</label>
 				</control>
 
-				<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMap36Hour1Icon</include>
-				<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnim36Hour1Icon</include>
+				<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMap36Hour1Icon</include>
+				<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnim36Hour1Icon</include>
 				
 				<control type="grouplist">
 					<top>55</top>
@@ -1028,8 +1028,8 @@
 					<label>$INFO[Window.Property(36Hour.2.Outlook)]</label>
 				</control>
 
-				<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMap36Hour2Icon</include>
-				<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnim36Hour2Icon</include>
+				<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMap36Hour2Icon</include>
+				<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnim36Hour2Icon</include>
 				
 				<control type="grouplist">
 					<top>55</top>
@@ -1133,8 +1133,8 @@
 					<label>$INFO[Window.Property(36Hour.3.Outlook)]</label>
 				</control>
 
-				<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMap36Hour3Icon</include>
-				<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnim36Hour3Icon</include>
+				<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMap36Hour3Icon</include>
+				<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnim36Hour3Icon</include>
 				
 				<control type="grouplist">
 					<top>55</top>
@@ -1222,8 +1222,8 @@
 					<label>$INFO[Window.Property(Weekend.1.LongDay)] $INFO[Window.Property(Weekend.1.LongDate)]</label>
 				</control>
 
-				<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapWeekend1Icon</include>
-				<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimWeekend1Icon</include>
+				<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapWeekend1Icon</include>
+				<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimWeekend1Icon</include>
 
 				<control type="grouplist">
 					<top>155</top>
@@ -1331,8 +1331,8 @@
 					<label>$INFO[Window.Property(Weekend.2.LongDay)] $INFO[Window.Property(Weekend.2.LongDate)]</label>
 				</control>
 
-				<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapWeekend2Icon</include>
-				<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimWeekend2Icon</include>
+				<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapWeekend2Icon</include>
+				<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimWeekend2Icon</include>
 
 				<control type="grouplist">
 					<top>155</top>
@@ -1485,8 +1485,8 @@
 						<label>$INFO[ListItem.Property(Outlook)]</label>
 						<scroll>true</scroll>
 					</control>
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapHourlyIcon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimHourlyIcon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapHourlyIcon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimHourlyIcon</include>
 					<control type="label">
 						<description>Humidity Label</description>
 						<left>135</left>
@@ -1601,8 +1601,8 @@
 						<label>$INFO[ListItem.Property(Outlook)]</label>
 						<scroll>true</scroll>
 					</control>
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapHourlyIcon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimHourlyIcon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapHourlyIcon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimHourlyIcon</include>
 					<control type="label">
 						<description>Humidity Label</description>
 						<left>135</left>
@@ -1675,8 +1675,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.1.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.1.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.1.WindSpeed)]$INFO[Window.Property(Hourly.1.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.1.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.1.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.1.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.1.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1690,8 +1690,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.2.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.2.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.2.WindSpeed)]$INFO[Window.Property(Hourly.2.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.2.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.2.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.2.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.2.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1705,8 +1705,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.3.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.3.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.3.WindSpeed)]$INFO[Window.Property(Hourly.3.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.3.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.3.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.3.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.3.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1720,8 +1720,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.4.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.4.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.4.WindSpeed)]$INFO[Window.Property(Hourly.4.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.4.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.4.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.4.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.4.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1735,8 +1735,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.5.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.5.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.5.WindSpeed)]$INFO[Window.Property(Hourly.5.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.5.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.5.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.5.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.5.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1750,8 +1750,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.6.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.6.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.6.WindSpeed)]$INFO[Window.Property(Hourly.6.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.6.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.6.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.6.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.6.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1765,8 +1765,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.7.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.7.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.7.WindSpeed)]$INFO[Window.Property(Hourly.7.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.7.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.7.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.7.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.7.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1780,8 +1780,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.8.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.8.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.8.WindSpeed)]$INFO[Window.Property(Hourly.8.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.8.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.8.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.8.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.8.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1795,8 +1795,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.9.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.9.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.9.WindSpeed)]$INFO[Window.Property(Hourly.9.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.9.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.9.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.9.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.9.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1810,8 +1810,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.10.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.10.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.10.WindSpeed)]$INFO[Window.Property(Hourly.10.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.10.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.10.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.10.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.10.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1825,8 +1825,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.11.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.11.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.11.WindSpeed)]$INFO[Window.Property(Hourly.11.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.11.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.11.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.11.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.11.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1840,8 +1840,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.12.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.12.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.12.WindSpeed)]$INFO[Window.Property(Hourly.12.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.12.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.12.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.12.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.12.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1855,8 +1855,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.13.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.13.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.13.WindSpeed)]$INFO[Window.Property(Hourly.13.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.13.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.13.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.13.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.13.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1870,8 +1870,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.14.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.14.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.14.WindSpeed)]$INFO[Window.Property(Hourly.14.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.14.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.14.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.14.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.14.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1885,8 +1885,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.15.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.15.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.15.WindSpeed)]$INFO[Window.Property(Hourly.15.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.15.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.15.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.15.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.15.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1900,8 +1900,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.16.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.16.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.16.WindSpeed)]$INFO[Window.Property(Hourly.16.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.16.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.16.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.16.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.16.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1915,8 +1915,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.17.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.17.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.17.WindSpeed)]$INFO[Window.Property(Hourly.17.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.17.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.17.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.17.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.17.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1930,8 +1930,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.18.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.18.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.18.WindSpeed)]$INFO[Window.Property(Hourly.18.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.18.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.18.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.18.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.18.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1945,8 +1945,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.19.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.19.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.19.WindSpeed)]$INFO[Window.Property(Hourly.19.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.19.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.19.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.19.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.19.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1960,8 +1960,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.20.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.20.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.20.WindSpeed)]$INFO[Window.Property(Hourly.20.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.20.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.20.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.20.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.20.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1975,8 +1975,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.21.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.21.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.21.WindSpeed)]$INFO[Window.Property(Hourly.21.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.21.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.21.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.21.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.21.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -1990,8 +1990,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.22.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.22.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.22.WindSpeed)]$INFO[Window.Property(Hourly.22.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.22.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.22.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.22.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.22.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -2005,8 +2005,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.23.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.23.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.23.WindSpeed)]$INFO[Window.Property(Hourly.23.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.23.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.23.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.23.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.23.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -2020,8 +2020,8 @@
 						<property name="HighTemperature">$INFO[Window.Property(Hourly.24.HighTemperature)]</property>
 						<property name="LowTemperature">$INFO[Window.Property(Hourly.24.LowTemperature)]</property>
 						<property name="Wind">$INFO[Window.Property(Hourly.24.WindSpeed)]$INFO[Window.Property(Hourly.24.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Hourly.24.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Hourly.24.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Hourly.24.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Hourly.24.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -2085,8 +2085,8 @@
 						<label>$INFO[ListItem.Property(Outlook)]</label>
 						<scroll>true</scroll>
 					</control>
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapHourlyIcon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimHourlyIcon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapHourlyIcon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimHourlyIcon</include>
 					<control type="label">
 						<description>Humidity Label</description>
 						<left>135</left>
@@ -2201,8 +2201,8 @@
 						<label>$INFO[ListItem.Property(Outlook)]</label>
 						<scroll>true</scroll>
 					</control>
-					<include condition="!Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapHourlyIcon</include>
-					<include condition="Skin.HasSetting(EnableAnimWeatherIcons)">OpenWeatherMapAnimHourlyIcon</include>
+					<include condition="IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapHourlyIcon</include>
+					<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi))">OpenWeatherMapAnimHourlyIcon</include>
 					<control type="label">
 						<description>Humidity Label</description>
 						<left>135</left>
@@ -2274,8 +2274,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.1.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.1.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.1.WindSpeed)]$INFO[Window.Property(Daily.1.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.1.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.1.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.1.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.1.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2288,8 +2288,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.2.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.2.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.2.WindSpeed)]$INFO[Window.Property(Daily.2.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.2.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.2.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.2.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.2.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2302,8 +2302,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.3.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.3.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.3.WindSpeed)]$INFO[Window.Property(Daily.3.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.3.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.3.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.3.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.3.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2316,8 +2316,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.4.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.4.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.4.WindSpeed)]$INFO[Window.Property(Daily.4.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.4.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.4.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.4.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.4.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2330,8 +2330,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.5.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.5.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.5.WindSpeed)]$INFO[Window.Property(Daily.5.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.5.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.5.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.5.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.5.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2344,8 +2344,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.6.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.6.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.6.WindSpeed)]$INFO[Window.Property(Daily.6.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.6.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.6.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.6.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.6.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2358,8 +2358,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.7.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.7.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.7.WindSpeed)]$INFO[Window.Property(Daily.7.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.7.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.7.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.7.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.7.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2372,8 +2372,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.8.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.8.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.8.WindSpeed)]$INFO[Window.Property(Daily.8.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.8.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.8.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.8.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.8.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2386,8 +2386,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.9.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.9.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.9.WindSpeed)]$INFO[Window.Property(Daily.9.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.9.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.9.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.9.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.9.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2400,8 +2400,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.10.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.10.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.10.WindSpeed)]$INFO[Window.Property(Daily.10.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.10.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.10.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.10.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.10.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2414,8 +2414,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.11.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.11.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.11.WindSpeed)]$INFO[Window.Property(Daily.11.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.11.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.11.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.11.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.11.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2428,8 +2428,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.12.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.12.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.12.WindSpeed)]$INFO[Window.Property(Daily.12.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.12.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.12.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.12.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.12.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2442,8 +2442,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.13.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.13.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.13.WindSpeed)]$INFO[Window.Property(Daily.13.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.13.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.13.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.13.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.13.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2456,8 +2456,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.14.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.14.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.14.WindSpeed)]$INFO[Window.Property(Daily.14.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.14.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.14.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.14.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.14.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2470,8 +2470,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.15.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.15.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.15.WindSpeed)]$INFO[Window.Property(Daily.15.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.15.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.15.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.15.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.15.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2484,8 +2484,8 @@
 						<property name="Precipitation">$INFO[Window.Property(Daily.16.Precipitation)]</property>
 						<property name="Cloudiness">$INFO[Window.Property(Daily.16.Cloudiness)]</property>
 						<property name="Wind">$INFO[Window.Property(Daily.16.WindSpeed)]$INFO[Window.Property(Daily.16.WindDirection),  &#x2022;  ,]</property>
-						<property name="Icon">$INFO[Window.Property(Daily.16.OutlookIcon)]</property>
-						<property name="AnimIcon">$INFO[Window.Property(Daily.16.FanartCode)]</property>
+						<property name="Icon">$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.16.FanartCode),,.png]</property>
+						<property name="AnimIcon">resource://resource.images.weathericons.animated/$INFO[Window.Property(Daily.16.FanartCode)]</property>
 						<onclick>noop</onclick>
 						<visible>!IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
@@ -2754,7 +2754,7 @@
 			<width>130</width>
 			<height>111</height>
 			<bordersize>12</bordersize>
-			<texture background="true">$INFO[Weather.Conditions]</texture>
+			<texture background="true">$VAR[WeatherIconsAddonVar]$INFO[Weather.fanartcode,,.png]</texture>
 			<aspectratio>keep</aspectratio>
 		</control>
 	</include>
@@ -2777,10 +2777,10 @@
 			<top>1</top>
 			<width>43</width>
 			<height>43</height>	
-			<texture>$INFO[Weather.Conditions]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Weather.fanartcode,,.png]</texture>
 			<bordersize>6</bordersize>
 			<aspectratio>keep</aspectratio>
-			<visible>!IsEmpty(Weather.Conditions)</visible>
+			<visible>!IsEmpty(Weather.fanartcode)</visible>
 		</control>
 	</include>
 
@@ -2804,7 +2804,7 @@
 			<width>212</width>
 			<height>200</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>$INFO[Window.Property(Current.ConditionIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Current.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2841,7 +2841,7 @@
 	<include name="WeatherDay0Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day0.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day0.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2855,7 +2855,7 @@
 	<include name="WeatherDay1Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day1.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day1.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2869,7 +2869,7 @@
 	<include name="WeatherDay2Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day2.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day2.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2883,7 +2883,7 @@
 	<include name="WeatherDay3Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day3.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day3.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2897,7 +2897,7 @@
 	<include name="WeatherDay4Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day4.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day4.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2911,7 +2911,7 @@
 	<include name="WeatherDay5Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day5.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day5.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2925,7 +2925,7 @@
 	<include name="WeatherDay6Icon">
 		<control type="image">
 			<include>WeatherDayIcon</include>
-			<texture>$INFO[Window.Property(Day6.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Day6.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2943,7 +2943,7 @@
 			<width>212</width>
 			<height>200</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>$INFO[Window.Property(Current.ConditionIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Current.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2981,7 +2981,7 @@
 	<include name="OpenWeatherMapDay1Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.1.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.1.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -2995,7 +2995,7 @@
 	<include name="OpenWeatherMapDay2Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.2.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.2.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3009,7 +3009,7 @@
 	<include name="OpenWeatherMapDay3Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.3.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.3.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3023,7 +3023,7 @@
 	<include name="OpenWeatherMapDay4Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.4.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.4.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3037,7 +3037,7 @@
 	<include name="OpenWeatherMapDay5Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.5.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.5.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3051,7 +3051,7 @@
 	<include name="OpenWeatherMapDay6Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.6.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.6.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3065,7 +3065,7 @@
 	<include name="OpenWeatherMapDay7Icon">
 		<control type="image">
 			<include>OpenWeatherMapDayIcon</include>
-			<texture>$INFO[Window.Property(Daily.7.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Daily.7.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3096,7 +3096,7 @@
 	<include name="OpenWeatherMap36Hour1Icon">
 		<control type="image">
 			<include>OpenWeatherMap36HourIcon</include>
-			<texture>$INFO[Window.Property(36Hour.1.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(36Hour.1.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3110,7 +3110,7 @@
 	<include name="OpenWeatherMap36Hour2Icon">
 		<control type="image">
 			<include>OpenWeatherMap36HourIcon</include>
-			<texture>$INFO[Window.Property(36Hour.2.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(36Hour.2.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3124,7 +3124,7 @@
 	<include name="OpenWeatherMap36Hour3Icon">
 		<control type="image">
 			<include>OpenWeatherMap36HourIcon</include>
-			<texture>$INFO[Window.Property(36Hour.3.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(36Hour.3.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3157,7 +3157,7 @@
 	<include name="OpenWeatherMapWeekend1Icon">
 		<control type="image">
 			<include>OpenWeatherMapWeekendIcon</include>
-			<texture>$INFO[Window.Property(Weekend.1.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Weekend.1.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3171,7 +3171,7 @@
 	<include name="OpenWeatherMapWeekend2Icon">
 		<control type="image">
 			<include>OpenWeatherMapWeekendIcon</include>
-			<texture>$INFO[Window.Property(Weekend.2.OutlookIcon)]</texture>
+			<texture>$VAR[WeatherIconsAddonVar]$INFO[Window.Property(Weekend.2.FanartCode),,.png]</texture>
 		</control>
 	</include>
 
@@ -3200,7 +3200,7 @@
 			<top>45</top>
 			<width>80</width>
 			<height>80</height>
-			<imagepath background="true">resource://resource.images.weathericons.animated/$INFO[ListItem.Property(AnimIcon)]</imagepath>
+			<imagepath background="true">$INFO[ListItem.Property(AnimIcon)]</imagepath>
 			<timeperimage>100</timeperimage>
 			<randomize>false</randomize>
 			<fadetime>0</fadetime>

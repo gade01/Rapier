@@ -2248,4 +2248,35 @@
         <value condition="!System.HasAddon(script.cinemavision)">$INFO[System.AddonTitle(script.cinema.experience)]</value>
         <value>$INFO[System.AddonTitle(script.cinemavision)]</value>
     </variable>
+	
+	<variable name="WeatherIconsAddonNameVar">
+        <value condition="!IsEmpty(Skin.String(WeatherIconsAddon.name))">$INFO[Skin.String(WeatherIconsAddon.name)]</value>
+        <value>$LOCALIZE[571]</value>
+    </variable>
+	
+	<variable name="MovieGenreIconsAddonNameVar">
+        <value condition="!IsEmpty(Skin.String(MovieGenreIconsAddon.name))">$INFO[Skin.String(MovieGenreIconsAddon.name)]</value>
+        <value>$LOCALIZE[31062]</value>
+    </variable>
+	
+	<variable name="MusicGenreIconsAddonNameVar">
+        <value condition="!IsEmpty(Skin.String(MusicGenreIconsAddon.name))">$INFO[Skin.String(MusicGenreIconsAddon.name)]</value>
+        <value>$LOCALIZE[31062]</value>
+    </variable>
+	
+	<variable name="WeatherIconsAddonVar">
+        <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(WeatherIconsAddon.path))">$INFO[Skin.String(WeatherIconsAddon.path)]</value>
+        <value>resource://resource.images.weathericons.default/</value>
+    </variable>
+	
+	<variable name="MovieGenreIconsAddonVar">
+		<value condition="System.HasAddon(script.image.resource.select) + SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.transparent)">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.png]</value>
+        <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(MovieGenreIconsAddon.path))">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
+        <value>$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</value>
+    </variable>
+	
+	<variable name="MusicGenreIconsAddonVar">
+        <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(MusicGenreIconsAddon.path))">$INFO[Skin.String(MusicGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
+        <value>$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</value>
+    </variable>
 </includes>

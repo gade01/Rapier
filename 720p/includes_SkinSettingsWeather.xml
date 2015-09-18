@@ -42,27 +42,25 @@
 					<onclick>ReloadSkin()</onclick>
 					<include>ReloadSkinNotification</include>
 				</control>
-				<control type="radiobutton" id="1008">
-					<description>Enable Animated Weather Icons</description>	
-					<include>SettingsContentRadioBtn</include>
-					<label>$LOCALIZE[31030]</label>
-					<selected>Skin.HasSetting(EnableAnimWeatherIcons)</selected>
-					<onclick>Skin.ToggleSetting(EnableAnimWeatherIcons)</onclick>
-					<onclick>ReloadSkin()</onclick>
-					<include>ReloadSkinNotification</include>
+				<control type="button" id="1008">
+					<description>Select Weather Icon Pack</description>	
+					<include>SettingsContentBtn</include>
+					<label>$LOCALIZE[31065]: [COLOR DefaultColor2]$VAR[WeatherIconsAddonNameVar][/COLOR]</label>
+					<onclick>RunScript(script.image.resource.select,property=WeatherIconsAddon&amp;type=resource.images.weathericons)</onclick>
 					<enable>!IsEmpty(Weather.Plugin)</enable>
-				</control>				
+					<visible>System.HasAddon(script.image.resource.select)</visible>
+				</control>
 				<control type="togglebutton" id="1009">
-					<description>Weather Apply To All Windows</description>
+					<description>Animated Weather Icons Apply To All Windows</description>
 					<include>SettingsContentToggleBtn</include>
 					<label>$LOCALIZE[31031]</label>
 					<altlabel>$LOCALIZE[31032]</altlabel>
 					<usealttexture>!Skin.HasSetting(ApplyAllAnimWeatherIcons)</usealttexture>
 					<onclick>Skin.ToggleSetting(ApplyAllAnimWeatherIcons)</onclick>
-					<enable>Skin.HasSetting(EnableAnimWeatherIcons)
-					+ !Skin.HasSetting(DisableWeather) + !IsEmpty(Weather.Plugin)</enable>
 					<onclick>ReloadSkin()</onclick>
 					<include>ReloadSkinNotification</include>
+					<enable>!Skin.HasSetting(DisableWeather) + !IsEmpty(Weather.Plugin)</enable>
+					<visible>!IsEmpty(Skin.String(WeatherIconsAddon.multi))</visible>
 				</control>
 			</control>
 		</control>

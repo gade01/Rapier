@@ -7593,8 +7593,8 @@
 				<texture border="5">panels/panel-content-border.png</texture>
 			</control>
 			
-			<include condition="![Skin.HasSetting(EnableAnimWeatherIcons) + Skin.HasSetting(ApplyAllAnimWeatherIcons)]">WeatherHomeIcon</include>
-			<include condition="Skin.HasSetting(EnableAnimWeatherIcons) + Skin.HasSetting(ApplyAllAnimWeatherIcons)">WeatherAnimHomeIcon</include>
+			<include condition="![!IsEmpty(Skin.String(WeatherIconsAddon.multi)) + Skin.HasSetting(ApplyAllAnimWeatherIcons)]">WeatherHomeIcon</include>
+			<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi)) + Skin.HasSetting(ApplyAllAnimWeatherIcons)">WeatherAnimHomeIcon</include>
 
 			<control type="label">
 				<description>Title</description>

@@ -147,7 +147,7 @@
 						<top>6</top>
 						<width>192</width>
 						<height>150</height>
-						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
@@ -158,7 +158,7 @@
 						<top>6</top>
 						<width>192</width>
 						<height>150</height>
-						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
@@ -357,7 +357,7 @@
 						<top>0</top>
 						<width>204</width>
 						<height>162</height>
-						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
@@ -369,7 +369,7 @@
 						<top>0</top>
 						<width>204</width>
 						<height>162</height>
-						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
@@ -545,7 +545,7 @@
 						<description>Cover Video Library</description>
 						<width>400</width>
 						<height>400</height>
-						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>50</bordersize>
 						<aspectratio aligny="bottom">keep</aspectratio>
@@ -558,7 +558,7 @@
 						<description>Cover Music Library</description>
 						<width>400</width>
 						<height>400</height>
-						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>50</bordersize>
 						<aspectratio aligny="bottom">keep</aspectratio>
@@ -585,7 +585,7 @@
 						<top>395</top>
 						<width>400</width>
 						<height>400</height>
-						<texture background="true" fallback="special://skin/extras/moviegenres/default.png" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png" flipy="true" diffuse="views/reflection.png">$VAR[MovieGenreIconsAddonVar]</texture>
 						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>50</bordersize>
 						<aspectratio aligny="top">keep</aspectratio>
@@ -599,7 +599,7 @@
 						<top>395</top>
 						<width>400</width>
 						<height>400</height>
-						<texture background="true" fallback="special://skin/extras/musicgenres/default.png" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png" flipy="true" diffuse="views/reflection.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>50</bordersize>
 						<aspectratio aligny="top">keep</aspectratio>
@@ -2245,7 +2245,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
 			</control>
@@ -2257,7 +2257,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
 			</control>
@@ -3119,7 +3119,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
@@ -3132,7 +3132,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
@@ -4862,7 +4862,7 @@
 					<align>justify</align>
 					<label fallback="31203">$VAR[MoviePlot]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">![[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DoNotAutoScrollMovies3DWrapPlot)] | [Container.Content(TVShows) + Skin.HasSetting(DoNotAutoScrollTVShows3DWrapPlot)]]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 					<visible>![Container.Content(TVShows) + System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)]</visible>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<include>ControlsOpenCloseAnim</include>
@@ -4879,7 +4879,7 @@
 					<align>justify</align>
 					<label fallback="31203">$INFO[ListItem.Plot]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">![Container.Content(TVShows) + Skin.HasSetting(DoNotAutoScrollTVShows3DWrapPlot)]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 					<visible>Container.Content(TVShows) + System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)</visible>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<include>ControlsOpenCloseAnim</include>
@@ -8037,7 +8037,7 @@
 					<left>420</left>
 					<width>259</width>
 					<height>259</height>
-					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png" fallback="special://skin/extras/moviegenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</texture>
+					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 					<aspectratio scalediffuse="false" align="center">keep</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
@@ -8049,7 +8049,7 @@
 					<left>420</left>
 					<width>218</width>
 					<height>218</height>
-					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</texture>
+					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
@@ -8596,7 +8596,7 @@
 					<align>justify</align>
 					<label fallback="31203">$INFO[Container(584).ListItem.Plot]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">[Substring(Container.FolderPath,videodb://movies/) + !Skin.HasSetting(DoNotAutoScrollMoviesExtendedListPlot)] | [Substring(Container.FolderPath,videodb://tvshows/) + !Skin.HasSetting(DoNotAutoScrollTVShowsExtendedListPlot)]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<visible>![Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://) | Container.Content(Sets)]</visible>
 					<include>ControlsOpenCloseAnim</include>
@@ -8614,7 +8614,7 @@
 					<align>justify</align>
 					<label fallback="31203">$VAR[ExtendedListDescriptionVar]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">[Substring(Container.FolderPath,videodb://musicvideos/) + !Skin.HasSetting(DoNotAutoScrollMusicVideosExtendedListPlot)] | [Substring(Container.FolderPath,musicdb://) + !Skin.HasSetting(DoNotAutoScrollMusicExtendedListPlot)]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<visible>Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)</visible>
 					<include>ControlsOpenCloseAnim</include>
@@ -8632,7 +8632,7 @@
 					<align>justify</align>
 					<label fallback="31203">$INFO[Container(584).ListItem.Plot]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">[Substring(Container.FolderPath,videodb://movies/) + !Skin.HasSetting(DoNotAutoScrollMoviesExtendedListPlot)] | [Substring(Container.FolderPath,videodb://tvshows/) + !Skin.HasSetting(DoNotAutoScrollTVShowsExtendedListPlot)]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<visible>Container.Content(Sets) + [!System.HasAddon(script.skin.info.service) | [System.HasAddon(script.skin.info.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]</visible>
 					<include>ControlsOpenCloseAnim</include>
@@ -8650,7 +8650,7 @@
 					<align>justify</align>
 					<label fallback="31203">$INFO[Window(home).Property(Set.Movies.Plot)]</label>
 					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">[Substring(Container.FolderPath,videodb://movies/) + !Skin.HasSetting(DoNotAutoScrollMoviesExtendedListPlot)] | [Substring(Container.FolderPath,videodb://tvshows/) + !Skin.HasSetting(DoNotAutoScrollTVShowsExtendedListPlot)]</autoscroll>
+					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 					<visible>!Container.OnNext + !Container.OnPrevious</visible>
 					<visible>Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(151)] + System.HasAddon(script.skin.info.service)</visible>
 					<include>ControlsOpenCloseAnim</include>
