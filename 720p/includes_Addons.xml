@@ -2270,7 +2270,7 @@
     </variable>
 	
 	<variable name="MovieGenreIconsAddonVar">
-		<value condition="System.HasAddon(script.image.resource.select) + SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.transparent)">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.png]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + [SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.transparent) | SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.xzener-flat) | SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.xzener-reflection)]">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.png]</value>
         <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(MovieGenreIconsAddon.path))">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
         <value>$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</value>
     </variable>

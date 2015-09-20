@@ -32,6 +32,7 @@
 				<include>BackgroundSize</include>
 				<include condition="Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3)">WeatherCustomBGPath</include>
 				<include condition="Skin.String(CustomWeatherBGType,4)">WeatherConditionBGPath</include>
+				<include condition="Skin.String(CustomWeatherBGType,5)">WeatherConditionAddonBGPath</include>
 				<aspectratio>scale</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -637,6 +638,10 @@
 
 	<include name="WeatherConditionBGPath">
 		<imagepath background="true">$INFO[Skin.String(CustomWeatherBGPath)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+	</include>
+	
+	<include name="WeatherConditionAddonBGPath">
+		<imagepath background="true">$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 	</include>
 
 	<include name="TVTunesDisableVizCond">

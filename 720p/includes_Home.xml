@@ -214,6 +214,10 @@
 	<include name="HomeWeatherFanartBGPath">
 		<thumb>$INFO[Skin.String(CustomWeatherBGPath)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
 	</include>
+	
+	<include name="HomeWeatherFanartAddonBGPath">
+		<thumb>$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
+	</include>
 
 	<include name="HomeGeneralCustomBGPath">
 		<thumb>$INFO[Skin.String(CustomGeneralBGPath)]</thumb>
@@ -273,6 +277,7 @@
 			<icon>homecategories/$INFO[System.Language]/weather-text-nofocus.png</icon>
 			<include condition="Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3)">HomeWeatherCustomBGPath</include>
 			<include condition="Skin.String(CustomWeatherBGType,4)">HomeWeatherFanartBGPath</include>
+			<include condition="Skin.String(CustomWeatherBGType,5)">HomeWeatherFanartAddonBGPath</include>
 			<onclick>ActivateWindow(Weather)</onclick>	
 		</item>
 	</include>

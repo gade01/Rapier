@@ -1506,6 +1506,13 @@
 					<include>CustomImagePreviewOpenCloseAnim</include>
 				</control>
 				
+				<control type="multiimage">
+					<include>CustomImagePreview</include>
+					<imagepath background="true" fallback=".">$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+					<visible>Skin.String(CustomWeatherBGType,5)</visible>
+					<include>CustomImagePreviewOpenCloseAnim</include>
+				</control>
+				
 				<control type="grouplist" id="951">		
 					<left>520</left>
 					<top>65</top>
@@ -1522,6 +1529,7 @@
 						<onclick>Skin.SetString(CustomWeatherBGType,1)</onclick>
 						<onclick>Skin.Reset(CustomWeatherBGPath)</onclick>
 						<label>$LOCALIZE[31058]</label>
+						<animation effect="slide" end="0,-3" condition="System.HasAddon(script.image.resource.select)">Conditional</animation>
 					</control>
 					<control type="radiobutton" id="4311">
 						<description>Single Image</description>
@@ -1530,6 +1538,7 @@
 						<onclick>Skin.SetString(CustomWeatherBGType,2)</onclick>
 						<onclick>Skin.Reset(CustomWeatherBGPath)</onclick>
 						<label>$LOCALIZE[31056]</label>
+						<animation effect="slide" end="0,-6" condition="System.HasAddon(script.image.resource.select)">Conditional</animation>
 					</control>
 					<control type="radiobutton" id="4312">
 						<description>Multi Image</description>
@@ -1538,6 +1547,7 @@
 						<onclick>Skin.SetString(CustomWeatherBGType,3)</onclick>
 						<onclick>Skin.Reset(CustomWeatherBGPath)</onclick>
 						<label>$LOCALIZE[31057]</label>
+						<animation effect="slide" end="0,-9" condition="System.HasAddon(script.image.resource.select)">Conditional</animation>
 					</control>
 					<control type="radiobutton" id="4313">
 						<description>Weather Fanart</description>
@@ -1545,14 +1555,26 @@
 						<selected>Skin.String(CustomWeatherBGType,4)</selected>
 						<onclick>Skin.SetString(CustomWeatherBGType,4)</onclick>
 						<onclick>Skin.Reset(CustomWeatherBGPath)</onclick>
-						<label>$LOCALIZE[33020]</label>
+						<label>$LOCALIZE[31100]</label>
+						<animation effect="slide" end="0,-12" condition="System.HasAddon(script.image.resource.select)">Conditional</animation>
+					</control>
+					<control type="radiobutton" id="4314">
+						<description>Weather Fanart</description>
+						<include>SettingsCustomBGRadioBtn</include>
+						<selected>Skin.String(CustomWeatherBGType,5)</selected>
+						<onclick>Skin.SetString(CustomWeatherBGType,5)</onclick>
+						<onclick>Skin.Reset(CustomWeatherBGPath)</onclick>
+						<label>$LOCALIZE[31101]</label>
+						<animation effect="slide" end="0,-15" condition="true">Conditional</animation>
+						<visible>System.HasAddon(script.image.resource.select)</visible>
 					</control>
 				</control>
 				
 				<control type="grouplist" id="961">
 					<top>379</top>
 					<itemgap>0</itemgap>
-					<onup>4313</onup>
+					<onup condition="!System.HasAddon(script.image.resource.select)">4313</onup>
+					<onup condition="System.HasAddon(script.image.resource.select)">4314</onup>
 					<ondown>4310</ondown>
 					<onleft>1951</onleft>
 					<control type="button" id="4410">
@@ -1569,6 +1591,13 @@
 						<onclick>Skin.SetPath(CustomWeatherBGPath)</onclick>
 						<visible>Skin.String(CustomWeatherBGType,3) | Skin.String(CustomWeatherBGType,4)</visible>
 					</control>
+					<control type="button" id="4414">
+						<description>Resource Image Fanart Add-on Path</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[24000] - [COLOR=DefaultColor2]$INFO[Skin.String(CustomWeatherBGPath.name)][/COLOR]</label>
+						<onclick>RunScript(script.image.resource.select,property=CustomWeatherBGPath&amp;type=resource.images.weatherfanart)</onclick>
+						<visible>System.HasAddon(script.image.resource.select) + Skin.String(CustomWeatherBGType,5)</visible>
+					</control>
 					<control type="togglebutton" id="4412">
 						<description>Background Brightness</description>
 						<include>SettingsContentToggleBtn</include>
@@ -1576,7 +1605,7 @@
 						<altlabel>$LOCALIZE[31060] - $LOCALIZE[392]</altlabel>
 						<usealttexture>Skin.HasSetting(WeatherBackgroundBrightnessHigh)</usealttexture>
 						<onclick>Skin.ToggleSetting(WeatherBackgroundBrightnessHigh)</onclick>
-						<visible>Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3) | Skin.String(CustomWeatherBGType,4)</visible>
+						<visible>Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3) | Skin.String(CustomWeatherBGType,4) | Skin.String(CustomWeatherBGType,5)</visible>
 					</control>
 					<control type="togglebutton" id="4413">
 						<description>Apply To All Windows</description>
@@ -1585,7 +1614,7 @@
 						<altlabel>$LOCALIZE[31051]</altlabel>
 						<usealttexture>!Skin.HasSetting(ApplyAllWeatherCustomBG)</usealttexture>
 						<onclick>Skin.ToggleSetting(ApplyAllWeatherCustomBG)</onclick>
-						<visible>Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3) | Skin.String(CustomWeatherBGType,4)</visible>
+						<visible>Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3) | Skin.String(CustomWeatherBGType,4) | Skin.String(CustomWeatherBGType,5)</visible>
 					</control>
 				</control>
 				
