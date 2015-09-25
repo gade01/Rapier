@@ -50,18 +50,6 @@
 					<enable>!IsEmpty(Weather.Plugin)</enable>
 					<visible>System.HasAddon(script.image.resource.select)</visible>
 				</control>
-				<control type="togglebutton" id="1009">
-					<description>Animated Weather Icons Apply To All Windows</description>
-					<include>SettingsContentToggleBtn</include>
-					<label>$LOCALIZE[31031]</label>
-					<altlabel>$LOCALIZE[31032]</altlabel>
-					<usealttexture>!Skin.HasSetting(ApplyAllAnimWeatherIcons)</usealttexture>
-					<onclick>Skin.ToggleSetting(ApplyAllAnimWeatherIcons)</onclick>
-					<onclick>ReloadSkin()</onclick>
-					<include>ReloadSkinNotification</include>
-					<enable>!Skin.HasSetting(DisableWeather) + !IsEmpty(Weather.Plugin)</enable>
-					<visible>!IsEmpty(Skin.String(WeatherIconsAddon.multi))</visible>
-				</control>
 			</control>
 		</control>
 	</include>

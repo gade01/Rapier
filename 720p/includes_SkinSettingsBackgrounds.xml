@@ -1509,7 +1509,20 @@
 				<control type="multiimage">
 					<include>CustomImagePreview</include>
 					<imagepath background="true" fallback=".">$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-					<visible>Skin.String(CustomWeatherBGType,5)</visible>
+					<visible>Skin.String(CustomWeatherBGType,5) + Skin.HasSetting(CustomWeatherBGPath.multi)</visible>
+					<include>CustomImagePreviewOpenCloseAnim</include>
+				</control>
+				
+				<control type="image">
+					<left>14</left>
+					<top>79</top>
+					<width>472</width>
+					<height>266</height>
+					<aspectratio>scale</aspectratio>
+					<bordersize>15</bordersize>
+					<fadetime>BackgroundCrossfadeTime</fadetime>
+					<texture background="true" fallback=".">$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</texture>
+					<visible>Skin.String(CustomWeatherBGType,5) + !Skin.HasSetting(CustomWeatherBGPath.multi)</visible>
 					<include>CustomImagePreviewOpenCloseAnim</include>
 				</control>
 				

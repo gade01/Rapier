@@ -216,6 +216,10 @@
 	</include>
 	
 	<include name="HomeWeatherFanartAddonBGPath">
+		<thumb>$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</thumb>
+	</include>
+	
+	<include name="HomeWeatherFanartAddonMultiBGPath">
 		<thumb>$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
 	</include>
 
@@ -277,7 +281,8 @@
 			<icon>homecategories/$INFO[System.Language]/weather-text-nofocus.png</icon>
 			<include condition="Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3)">HomeWeatherCustomBGPath</include>
 			<include condition="Skin.String(CustomWeatherBGType,4)">HomeWeatherFanartBGPath</include>
-			<include condition="Skin.String(CustomWeatherBGType,5)">HomeWeatherFanartAddonBGPath</include>
+			<include condition="Skin.String(CustomWeatherBGType,5) + Skin.HasSetting(CustomWeatherBGPath.multi)">HomeWeatherFanartAddonMultiBGPath</include>
+			<include condition="Skin.String(CustomWeatherBGType,5) + !Skin.HasSetting(CustomWeatherBGPath.multi)">HomeWeatherFanartAddonBGPath</include>
 			<onclick>ActivateWindow(Weather)</onclick>	
 		</item>
 	</include>
@@ -7598,8 +7603,8 @@
 				<texture border="5">panels/panel-content-border.png</texture>
 			</control>
 			
-			<include condition="![!IsEmpty(Skin.String(WeatherIconsAddon.multi)) + Skin.HasSetting(ApplyAllAnimWeatherIcons)]">WeatherHomeIcon</include>
-			<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi)) + Skin.HasSetting(ApplyAllAnimWeatherIcons)">WeatherAnimHomeIcon</include>
+			<include condition="!Skin.HasSetting(WeatherIconsAddon.multi)">WeatherHomeIcon</include>
+			<include condition="Skin.HasSetting(WeatherIconsAddon.multi)">WeatherAnimHomeIcon</include>
 
 			<control type="label">
 				<description>Title</description>

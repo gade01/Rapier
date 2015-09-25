@@ -32,12 +32,23 @@
 				<include>BackgroundSize</include>
 				<include condition="Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3)">WeatherCustomBGPath</include>
 				<include condition="Skin.String(CustomWeatherBGType,4)">WeatherConditionBGPath</include>
-				<include condition="Skin.String(CustomWeatherBGType,5)">WeatherConditionAddonBGPath</include>
+				<include condition="Skin.String(CustomWeatherBGType,5) + Skin.HasSetting(CustomWeatherBGPath.multi)">WeatherConditionAddonBGPath</include>
 				<aspectratio>scale</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>BackgroundCrossfadeTime</fadetime>
 				<randomize>true</randomize>
 				<include condition="Skin.HasSetting(AnimateBackground)">CustomBackgroundAnim</include>
+				<visible>![Skin.String(CustomWeatherBGType,5) + !Skin.HasSetting(CustomWeatherBGPath.multi)]</visible>
+			</control>
+			
+			<control type="image">
+				<description>Custom Background</description>
+				<include>BackgroundSize</include>
+				<texture background="true" fallback=".">$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</texture>
+				<aspectratio>scale</aspectratio>
+				<fadetime>BackgroundCrossfadeTime</fadetime>
+				<include condition="Skin.HasSetting(AnimateBackground)">CustomBackgroundAnim</include>
+				<visible>Skin.String(CustomWeatherBGType,5) + !Skin.HasSetting(CustomWeatherBGPath.multi)</visible>
 			</control>
 
 			<include>WeatherBackgroundDim</include>

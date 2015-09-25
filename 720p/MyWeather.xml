@@ -8,8 +8,8 @@
 	<controls>
 		<control type="group">
 			<include>BackgroundDefault</include>
-			<include condition="[!IsEmpty(Skin.String(CustomWeatherBGPath)) + [Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3)
-			| Skin.String(CustomWeatherBGType,4)| Skin.String(CustomWeatherBGType,5)]] + Skin.HasSetting(ApplyAllWeatherCustomBG)">BackgroundWeather</include>
+			<include condition="[[!IsEmpty(Skin.String(CustomWeatherBGPath)) + [Skin.String(CustomWeatherBGType,2) | Skin.String(CustomWeatherBGType,3) | Skin.String(CustomWeatherBGType,4)]]
+			| [!IsEmpty(Skin.String(CustomWeatherBGPath.path)) + Skin.String(CustomWeatherBGType,5)]] + Skin.HasSetting(ApplyAllWeatherCustomBG)">BackgroundWeather</include>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
 			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
 			<include>BackgroundOpenCloseAnim</include>

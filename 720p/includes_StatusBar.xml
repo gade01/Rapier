@@ -186,8 +186,8 @@
 	</include>
 	
 	<include name="WeatherNotification">
-		<include condition="![!IsEmpty(Skin.String(WeatherIconsAddon.multi)) + Skin.HasSetting(ApplyAllAnimWeatherIcons)]">WeatherNotificationIcon</include>
-		<include condition="!IsEmpty(Skin.String(WeatherIconsAddon.multi)) + Skin.HasSetting(ApplyAllAnimWeatherIcons)">WeatherAnimNotificationIcon</include>
+		<include condition="!Skin.HasSetting(WeatherIconsAddon.multi)">WeatherNotificationIcon</include>
+		<include condition="Skin.HasSetting(WeatherIconsAddon.multi)">WeatherAnimNotificationIcon</include>
 
 		<control type="label" id="5568">
 			<width min="25" max="250">auto</width>
