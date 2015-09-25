@@ -3739,12 +3739,6 @@
 						<visible>Skin.HasSetting(EditSystemSubMenuBtn6) + !IsEmpty(Skin.String(SystemSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
-						<description>Credits</description>
-						<label>$LOCALIZE[31004]</label>
-						<onclick>ActivateWindow(3010)</onclick>
-						<visible>!Skin.HasSetting(EditSystemSubMenuBtn7)</visible>
-					</item>
-					<item id="7">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(SystemSubMenuBtn7Label)]</label>
 						<onclick condition="![Skin.String(SystemSubMenuBtn7Type,Favourite) | Skin.String(SystemSubMenuBtn7Type,)]">$INFO[Skin.String(SystemSubMenuBtn7Param)]</onclick>
