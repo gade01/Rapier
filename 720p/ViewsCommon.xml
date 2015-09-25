@@ -9501,7 +9501,7 @@
 					<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 					<control type="label">
 						<include>InfoPaneHeadLabel2</include>
-						<label>$VAR[MovieInfoPaneLabel2]</label>
+						<label>$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(Movies.UnWatched),  -  , $LOCALIZE[16101]]</label>
 					</control>
 					<control type="grouplist">
 						<description>Media Flags Area</description>
