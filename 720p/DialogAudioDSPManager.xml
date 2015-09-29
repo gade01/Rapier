@@ -13,7 +13,7 @@
 	<controls>
 		<control type="image">
 			<width>1150</width>
-			<height>550</height>
+			<height>560</height>
 			<texture border="50,70,50,75">panels/dialog-background.png</texture>
 		</control>
 		
@@ -47,14 +47,14 @@
 			<control type="image">
 				<description>Menu Background</description>
 				<width>200</width>
-				<height>435</height>
+				<height>445</height>
 				<texture border="5">controls/button-nofocus.png</texture>
 			</control>
 			
 			<control type="list" id="9000">
 				<description>processing mode selection list</description>
 				<width>200</width>
-				<height>435</height>
+				<height>445</height>
 				<ondown>22</ondown>
 				<onleft>22</onleft>
 				<onright>20</onright>
@@ -159,14 +159,14 @@
 				<control type="image">
 					<top>40</top>
 					<width>416</width>
-					<height>360</height>
+					<height>370</height>
 					<texture background="true" border="7">controls/button-nofocus.png</texture>
 				</control>
 				
 				<control type="list" id="20">
 					<top>40</top>
 					<width>416</width>
-					<height>360</height>
+					<height>370</height>
 					<onleft>9000</onleft>
 					<onright>60</onright>
 					<onup>20</onup>
@@ -212,8 +212,10 @@
 						</control>
 						<control type="label">
 							<description>active addon name and mode name</description>
-							<left>15</left>
-							<width>386</width>
+							<top>12</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<include>DialogContentLabel</include>
 							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
 						</control>
@@ -253,6 +255,7 @@
 							<bordersize>5</bordersize>
 							<texture>$INFO[ListItem.Property(Icon)]</texture>
 							<aspectratio aligny="center" align="center">scale</aspectratio>
+							<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 							<visible>!StringCompare(ListItem.Property(Icon),"")</visible>
 						</control>
 						<control type="image">
@@ -262,36 +265,53 @@
 							<bordersize>5</bordersize>
 							<texture>DefaultAudioDSP.png</texture>
 							<aspectratio aligny="center" align="center">keep</aspectratio>
+							<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 							<visible>StringCompare(ListItem.Property(Icon),"")</visible>
 						</control>
 						<control type="label">
 							<description>addon name and mode name on focus</description>
-							<left>15</left>
-							<width>386</width>
-							<height>40</height>
-							<include>DialogContentLabel</include>
+							<top>12</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<textcolor>SelectedColor</textcolor>
 							<scroll>true</scroll>
+							<include>DialogContentLabel</include>
 							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
+							<visible>Control.HasFocus(20)</visible>
 						</control>
 						<control type="label">
-							<description>ADSP-Mode description on focus</description>
-							<left>15</left>
-							<width>386</width>
+							<description>addon name and mode name not on focus</description>
+							<top>12</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<scroll>false</scroll>
 							<include>DialogContentLabel</include>
-							<label>$INFO[ListItem.Property(Description)]</label>
+							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
 							<visible>!Control.HasFocus(20)</visible>
 						</control>
 						<control type="label">
 							<description>ADSP-Mode description on focus</description>
-							<left>15</left>
-							<width>386</width>
+							<top>38</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<scroll>true</scroll>
 							<include>DialogContentLabel</include>
-							<scrollsuffix>&gt;   &lt;</scrollsuffix>
 							<label>$INFO[ListItem.Property(Description)]</label>
 							<visible>Control.HasFocus(20)</visible>
+						</control>
+						<control type="label">
+							<description>ADSP-Mode description not on focus</description>
+							<top>38</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+							<include>DialogContentLabel</include>
+							<label>$INFO[ListItem.Property(Description)]</label>
+							<visible>!Control.HasFocus(20)</visible>
 						</control>
 					</focusedlayout>
 				</control>
@@ -302,13 +322,13 @@
 					
 					<control type="image">
 						<width>14</width>
-						<height>360</height>
+						<height>370</height>
 						<texture border="4">controls/scrollbar-background.png</texture>
 					</control>
 					
 					<control type="scrollbar" id="60">
 						<description>scrollbar for available modes list</description>
-						<height>360</height>
+						<height>370</height>
 						<texturesliderbackground>-</texturesliderbackground>
 						<onleft>20</onleft>
 						<onright>21</onright>
@@ -340,18 +360,18 @@
 				<control type="image">
 					<top>40</top>
 					<width>416</width>
-					<height>360</height>
+					<height>370</height>
 					<texture background="true" border="7">controls/button-nofocus.png</texture>
 				</control>
 				
 				<control type="list" id="21">
 					<top>40</top>
 					<width>416</width>
-					<height>360</height>
+					<height>370</height>
 					<onup>21</onup>
 					<ondown>24</ondown>
 					<onleft>60</onleft>
-					<onright>24</onright>
+					<onright>61</onright>
 					<scrolltime>200</scrolltime>
 					<pagecontrol>61</pagecontrol>
 					<itemlayout height="74" width="416">
@@ -393,8 +413,10 @@
 						</control>
 						<control type="label">
 							<description>active addon name and mode name</description>
-							<left>15</left>
-							<width>386</width>
+							<top>12</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<include>DialogContentLabel</include>
 							<label>$INFO[ListItem.Property(Number)].  $INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
 						</control>
@@ -434,6 +456,7 @@
 							<bordersize>5</bordersize>
 							<texture>$INFO[ListItem.Property(Icon)]</texture>
 							<aspectratio aligny="center" align="center">scale</aspectratio>
+							<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 							<visible>!StringCompare(ListItem.Property(Icon),"")</visible>
 						</control>
 						<control type="image">
@@ -443,36 +466,53 @@
 							<bordersize>5</bordersize>
 							<texture>DefaultAudioDSP.png</texture>
 							<aspectratio aligny="center" align="center">keep</aspectratio>
+							<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 							<visible>StringCompare(ListItem.Property(Icon),"")</visible>
 						</control>
 						<control type="label">
 							<description>addon name and mode name on focus</description>
-							<left>15</left>
-							<width>386</width>
-							<height>40</height>
-							<include>DialogContentLabel</include>
+							<top>12</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<textcolor>SelectedColor</textcolor>
 							<scroll>true</scroll>
+							<include>DialogContentLabel</include>
 							<label>$INFO[ListItem.Property(Number)].  $INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
+							<visible>Control.HasFocus(21)</visible>
 						</control>
 						<control type="label">
-							<description>ADSP-Mode description on focus</description>
-							<left>15</left>
-							<width>386</width>
+							<description>addon name and mode name not on focus</description>
+							<top>12</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<scroll>false</scroll>
 							<include>DialogContentLabel</include>
-							<label>$INFO[ListItem.Property(Description)]</label>
+							<label>$INFO[ListItem.Property(Number)].  $INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
 							<visible>!Control.HasFocus(21)</visible>
 						</control>
 						<control type="label">
 							<description>ADSP-Mode description on focus</description>
-							<left>15</left>
-							<width>386</width>
+							<top>38</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
 							<scroll>true</scroll>
 							<include>DialogContentLabel</include>
-							<scrollsuffix>&gt;   &lt;</scrollsuffix>
 							<label>$INFO[ListItem.Property(Description)]</label>
 							<visible>Control.HasFocus(21)</visible>
+						</control>
+						<control type="label">
+							<description>ADSP-Mode description not on focus</description>
+							<top>38</top>
+							<left>78</left>
+							<width>328</width>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+							<include>DialogContentLabel</include>
+							<label>$INFO[ListItem.Property(Description)]</label>
+							<visible>!Control.HasFocus(21)</visible>
 						</control>
 					</focusedlayout>
 				</control>
@@ -482,13 +522,13 @@
 					<top>40</top>					
 					<control type="image">
 						<width>14</width>
-						<height>360</height>
+						<height>370</height>
 						<texture border="4">controls/scrollbar-background.png</texture>
 					</control>
 					
 					<control type="scrollbar" id="61">
 						<description>scrollbar for active modes list</description>
-						<height>360</height>
+						<height>370</height>
 						<texturesliderbackground>-</texturesliderbackground>
 						<onleft>21</onleft>
 						<onright>24</onright>
@@ -500,7 +540,7 @@
 		</control>
 		
 		<control type="grouplist" id="9001">
-			<top>497</top>
+			<top>507</top>
 			<width>1150</width>
 			<align>center</align>
 			<onleft>SetFocus(9000,95)</onleft>
