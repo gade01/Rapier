@@ -7600,6 +7600,10 @@
 		<content target="video" sortorder="ascending" sortby="artist">$VAR[ExtendedListContentMusicVideoVar]</content>
 	</include>
 	
+	<include name="ExtendedListContentMovieSets">
+		<content target="video" sortorder="ascending" sortby="year">videodb://movies/sets/$INFO[ListItem.DBID]/</content>
+	</include>
+	
 	<include name="ExtendedListContentMusic">
 		<content target="music" sortorder="ascending" sortby="artist">$VAR[ExtendedListContentMusicVar]</content>
 	</include>
@@ -7611,7 +7615,6 @@
 		<value condition="Substring(Container.FolderPath,videodb://movies/directors/)">videodb://movies/directors/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://movies/studios/)">videodb://movies/studios/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://movies/countries/)">videodb://movies/countries/$INFO[ListItem.DBID]/</value>
-		<value condition="Substring(Container.FolderPath,videodb://movies/sets/)">videodb://movies/sets/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/)">videodb://tvshows/genres/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/years/)">videodb://tvshows/years/$INFO[ListItem.Label]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/actors/)">videodb://tvshows/actors/$INFO[ListItem.DBID]/</value>
@@ -9099,8 +9102,9 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<include condition="SubString(Container.FolderPath,videodb://movies/) | SubString(Container.FolderPath,videodb://tvshows/)">ExtendedListContentVideo</include>
+				<include condition="[SubString(Container.FolderPath,videodb://movies/) + !SubString(Container.FolderPath,videodb://movies/sets/)] | SubString(Container.FolderPath,videodb://tvshows/)">ExtendedListContentVideo</include>
 				<include condition="SubString(Container.FolderPath,videodb://musicvideos/)">ExtendedListContentMusicVideo</include>
+				<include condition="SubString(Container.FolderPath,videodb://movies/sets/)">ExtendedListContentMovieSets</include>
 				<include condition="Window.IsActive(MusicLibrary)">ExtendedListContentMusic</include>
 			</control>
 			
