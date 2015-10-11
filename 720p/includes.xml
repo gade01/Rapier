@@ -187,6 +187,8 @@
 	
 	<variable name="SortLetterNotificationVar">
 		<value condition="Control.HasFocus(584)">$INFO[Container(584).ListItem.SortLetter]</value>
+		<value condition="Control.HasFocus(120)">$INFO[Container(120).ListItem.SortLetter]</value>
+		<value condition="Control.HasFocus(145)">$INFO[Container(145).ListItem.SortLetter]</value>
 		<value>$INFO[ListItem.SortLetter]</value>
 	</variable>
 	
@@ -796,7 +798,7 @@
 
 	<include name="SortLetterNotification">
 		<control type="group">
-			<visible>Container.Scrolling | Container(584).Scrolling</visible>
+			<visible>Container.Scrolling | Container(584).Scrolling | Container(120).Scrolling | Container(145).Scrolling</visible>
 		
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="300" delay="100"/>
@@ -1502,7 +1504,8 @@
 	</variable>
 	
 	<variable name="PosterImageOSD">
-		<value condition="VideoPlayer.Content(Movies)">$INFO[Player.Art(poster)]</value>
+		<value condition="VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+		<value condition="VideoPlayer.Content(Movies) + IsEmpty(Player.Art(poster))">$INFO[Player.Art(thumb)]</value>
 		<value condition="VideoPlayer.Content(Episodes)">$INFO[Player.Art(tvshow.poster)]</value>
 	</variable>
 	

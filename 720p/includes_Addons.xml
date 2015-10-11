@@ -2260,4 +2260,23 @@
         <value condition="!System.HasAddon(script.cinemavision)">$INFO[System.AddonTitle(script.cinema.experience)]</value>
         <value>$INFO[System.AddonTitle(script.cinemavision)]</value>
     </variable>
+	
+	<variable name="CDArtManagerNumItems">
+		<value condition="[Control.HasFocus(120) | Control.HasFocus(121)] + !StringCompare(Container(120).NumItems,0)">$INFO[Container(120).NumItems] $LOCALIZE[133]</value>
+		<value condition="[Control.HasFocus(122) | Control.HasFocus(62)] + !StringCompare(Container(122).NumItems,0)">$INFO[Container(122).NumItems] $LOCALIZE[31202]</value>
+		<value condition="[Control.HasFocus(145) | Control.HasFocus(146)] + !StringCompare(Container(145).NumItems,0)">$INFO[Container(145).NumItems] $LOCALIZE[31202]</value>
+		<value condition="[Control.HasFocus(160) | Control.HasFocus(65)] + !StringCompare(Container(160).NumItems,0)">$INFO[Container(160).NumItems] $LOCALIZE[31202]</value>
+		<value condition="[Control.HasFocus(167) | Control.HasFocus(61)] + !StringCompare(Container(167).NumItems,0)">$INFO[Container(167).NumItems] $LOCALIZE[31202]</value>
+		<value condition="[Control.HasFocus(199) | Control.HasFocus(63)] + !StringCompare(Container(199).NumItems,0)">$INFO[Container(199).NumItems] $LOCALIZE[31202]</value>
+		<value condition="[Control.HasFocus(202) | Control.HasFocus(64)] + !StringCompare(Container(202).NumItems,0)">$INFO[Container(202).NumItems] $LOCALIZE[31202]</value>
+	</variable>
+	
+	<variable name="CDArtManagerArtistBreadCrumb">
+		<value condition="Control.IsVisible(120) + !IsEmpty(Container(120).ListItem.Label)">$INFO[Container(120).ListItem.Label,$LOCALIZE[557]: ,]</value>
+		<value condition="Control.IsVisible(122) + !IsEmpty(Container(122).ListItem.Label)">$INFO[Container(122).ListItem.Label,$LOCALIZE[557]: ,]</value>
+		<value condition="Control.IsVisible(145) + !IsEmpty(Container(145).ListItem.Label)">$INFO[Container(145).ListItem.Label,$LOCALIZE[557]: ,]</value>
+		<value condition="Control.IsVisible(160) + !IsEmpty(Container(160).ListItem.Label)">$INFO[Container(160).ListItem.Label,$LOCALIZE[557]: ,]</value>
+		<value condition="Control.IsVisible(199) + !IsEmpty(Container(199).ListItem.Label)">$INFO[Container(199).ListItem.Label,$LOCALIZE[557]: ,]</value>
+		<value condition="Control.IsVisible(202) + !IsEmpty(Container(202).ListItem.Label)">$INFO[Container(202).ListItem.Label,$LOCALIZE[557]: ,]</value>
+	</variable>
 </includes>
