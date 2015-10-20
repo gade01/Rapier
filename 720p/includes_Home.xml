@@ -910,29 +910,33 @@
 					</item>				
 				</content>					
 			</control>
-
-			<control type="image">
-				<Description>Category Focus Image</Description>
-				<include>HomeCategoryFocusImage</include>
-				<texture>homecategories/$INFO[System.Language]/$INFO[Control.GetLabel(850)]-text-focus.png</texture>
+			
+			<control type="group">
+				<depth>DepthHomeMenuCategoryFocus</depth>
+				
+				<control type="image">
+					<Description>Category Focus Image</Description>
+					<include>HomeCategoryFocusImage</include>
+					<texture>homecategories/$INFO[System.Language]/$INFO[Control.GetLabel(850)]-text-focus.png</texture>
+				</control>
+		
+				<include condition="Skin.HasSetting(EnableCustomCategory1)">HomeCustomCategoryFocus1</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory2)">HomeCustomCategoryFocus2</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory3)">HomeCustomCategoryFocus3</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory4)">HomeCustomCategoryFocus4</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory5)">HomeCustomCategoryFocus5</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory6)">HomeCustomCategoryFocus6</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory7)">HomeCustomCategoryFocus7</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory8)">HomeCustomCategoryFocus8</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory9)">HomeCustomCategoryFocus9</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory10)">HomeCustomCategoryFocus10</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory11)">HomeCustomCategoryFocus11</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory12)">HomeCustomCategoryFocus12</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory13)">HomeCustomCategoryFocus13</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory14)">HomeCustomCategoryFocus14</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory15)">HomeCustomCategoryFocus15</include>
+				<include condition="Skin.HasSetting(EnableCustomCategory16)">HomeCustomCategoryFocus16</include>
 			</control>
-	
-			<include condition="Skin.HasSetting(EnableCustomCategory1)">HomeCustomCategoryFocus1</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory2)">HomeCustomCategoryFocus2</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory3)">HomeCustomCategoryFocus3</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory4)">HomeCustomCategoryFocus4</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory5)">HomeCustomCategoryFocus5</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory6)">HomeCustomCategoryFocus6</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory7)">HomeCustomCategoryFocus7</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory8)">HomeCustomCategoryFocus8</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory9)">HomeCustomCategoryFocus9</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory10)">HomeCustomCategoryFocus10</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory11)">HomeCustomCategoryFocus11</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory12)">HomeCustomCategoryFocus12</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory13)">HomeCustomCategoryFocus13</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory14)">HomeCustomCategoryFocus14</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory15)">HomeCustomCategoryFocus15</include>
-			<include condition="Skin.HasSetting(EnableCustomCategory16)">HomeCustomCategoryFocus16</include>
 		</control>
 	</include>
 
@@ -3737,9 +3741,9 @@
 						<visible>Skin.HasSetting(EditSystemSubMenuBtn5) + !IsEmpty(Skin.String(SystemSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
-						<description>System Info</description>
-						<label>$LOCALIZE[130]</label>
-						<onclick>ActivateWindow(SystemInfo)</onclick>
+						<description>Events</description>
+						<label>$LOCALIZE[14111]</label>
+						<onclick>ActivateWindow(EventLog,events://,return)</onclick>
 						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn6)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn5)]]</visible>
 					</item>
 					<item id="6">
@@ -3748,6 +3752,12 @@
 						<onclick condition="![Skin.String(SystemSubMenuBtn6Type,Favourite) | Skin.String(SystemSubMenuBtn6Type,)]">$INFO[Skin.String(SystemSubMenuBtn6Param)]</onclick>
 						<onclick condition="Skin.String(SystemSubMenuBtn6Type,Favourite) | Skin.String(SystemSubMenuBtn6Type,)">$INFO[Skin.String(SystemSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditSystemSubMenuBtn6) + !IsEmpty(Skin.String(SystemSubMenuBtn6Label))</visible>
+					</item>
+					<item id="7">
+						<description>System Info</description>
+						<label>$LOCALIZE[130]</label>
+						<onclick>ActivateWindow(SystemInfo)</onclick>
+						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn7)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn6)]]</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
@@ -5579,6 +5589,7 @@
 			[!IsEmpty(Container(6893).ListItem.ActualIcon) + Control.HasFocus(6893)] |
 			[!IsEmpty(Container(6928).ListItem.Art(fanart)) + Control.HasFocus(6928)] |
 			[!IsEmpty(Container(6929).ListItem.Art(fanart)) + Control.HasFocus(6929)]</visible>
+			<depth>DepthBackground</depth>
 			<include>RecentlyAddedFanartOpenCloseAnim</include>
 
 			<control type="multiimage">
@@ -5611,6 +5622,7 @@
 	<include name="HomePanelFanartNextAired">
 		<control type="group">
 			<visible>!IsEmpty(Container(6926).ListItem.ActualIcon) + Control.HasFocus(6926)</visible>
+			<depth>DepthBackground</depth>
 			<include>RecentlyAddedFanartOpenCloseAnim</include>
 
 			<control type="multiimage">

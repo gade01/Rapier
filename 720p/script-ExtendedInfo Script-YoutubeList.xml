@@ -6,6 +6,7 @@
 	
     <controls>
 		<control type="group">
+			<depth>DepthBackground</depth>
 			<include>BackgroundDefault</include>
 			<include condition="[[!IsEmpty(Skin.String(CustomVideosBGPath)) + [Skin.String(CustomVideosBGType,2) | Skin.String(CustomVideosBGType,3)]] 
 			| Skin.String(CustomVideosBGType,4)] + Skin.HasSetting(ApplyAllVideosCustomBG)">BackgroundVideos</include>
@@ -41,6 +42,8 @@
 		</control>
 		
 		<control type="group">
+			<depth>DepthContent</depth>
+			
 			<control type="scrollbar" id="904">
 				<left>1262</left>
 				<top>112</top>
@@ -251,6 +254,7 @@
 		
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
+			<depth>DepthMenuBar</depth>
 			<top>MenuBarOffsetY</top>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim2</include>
@@ -259,6 +263,7 @@
 			
 		<control type="group">
 			<description>Top Bar Area</description>
+			<depth>DepthTopBar</depth>
 			<include>TopBarImage</include>
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbExtendedInfoVideoList</include>

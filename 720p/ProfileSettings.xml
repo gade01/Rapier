@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="130">
-	<allowoverlay>no</allowoverlay>
-
 	<coordinates>
 		<system>1</system>
 		<origin x="305" y="120">true</origin>
@@ -9,6 +7,7 @@
 	
 	<controls>
 		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>ProfileSettingsDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="fade" start="100" end="0" time="250" condition="Window.IsActive(FileBrowser) | Window.IsActive(VirtualKeyboard) | Window.IsActive(LockSettings)">Conditional</animation>

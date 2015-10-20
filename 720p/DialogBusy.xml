@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="138">
 	<defaultcontrol>-</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 	
 	<coordinates>
 		<system>1</system>
@@ -11,6 +10,7 @@
 	<controls>
 		<control type="group">
 			<visible>![System.HasAddon(script.cinemavision) + !IsEmpty(Window(Home).Property(script.cinemavision.running))]</visible>
+			<depth>DepthDialog+</depth>
 			<include>KaiToastDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 						

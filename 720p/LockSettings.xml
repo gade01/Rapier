@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="131">
 	<defaultcontrol always="true">5</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
@@ -10,6 +9,7 @@
 	
 	<controls>
 		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>LockSettingsDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="fade" start="100" end="30" time="250" condition="Window.IsActive(ContextMenu) | Window.IsActive(NumericInput) | Window.IsActive(OKDialog)">Conditional</animation>	

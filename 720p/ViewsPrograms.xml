@@ -1496,6 +1496,7 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -1544,6 +1545,7 @@
 
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Plot</description>
@@ -1645,6 +1647,7 @@
 			</itemlayout>    
 			<focusedlayout width="150">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -1696,7 +1699,10 @@
 			</focusedlayout>                    
 		</control>
 
-		<include>ProgramsWrapInfoViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>ProgramsWrapInfoViewScrollbar</include>
+		</control>
 	</include>
 
 	<include name="ProgramsWrapListInfoStyle2">			
@@ -1764,6 +1770,7 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -1812,6 +1819,7 @@
 
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Plot</description>
@@ -1913,6 +1921,7 @@
 			</itemlayout>    
 			<focusedlayout width="214">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
 					<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -1974,7 +1983,10 @@
 			</focusedlayout>                    
 		</control>
 
-		<include>ProgramsWrapInfoViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>ProgramsWrapInfoViewScrollbar</include>
+		</control>
 	</include>
 
 	<!-- WRAP INFO 2 -->
@@ -2043,6 +2055,7 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -2091,6 +2104,7 @@
 
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Plot</description>
@@ -2192,6 +2206,7 @@
 			</itemlayout>    
 			<focusedlayout width="150">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -2243,7 +2258,10 @@
 			</focusedlayout>                    
 		</control>
 
-		<include>ProgramsWrapInfo2ViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>ProgramsWrapInfo2ViewScrollbar</include>
+		</control>
 	</include>
 
 	<include name="ProgramsWrapListInfo2Style2">
@@ -2311,6 +2329,7 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -2359,6 +2378,7 @@
 
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Plot</description>
@@ -2460,6 +2480,7 @@
 			</itemlayout>    
 			<focusedlayout width="214">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
 					<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -2511,7 +2532,10 @@
 			</focusedlayout>                    
 		</control>
 
-		<include>ProgramsWrapInfo2ViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>ProgramsWrapInfo2ViewScrollbar</include>
+		</control>
 	</include>
 
 	<!-- WRAP INFO 3 -->
@@ -2580,6 +2604,7 @@
 
 		<control type="grouplist">
 			<description>Programs Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -2628,6 +2653,7 @@
 
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo3CompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Plot</description>
@@ -2729,6 +2755,7 @@
 			</itemlayout>    
 			<focusedlayout width="209">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -2780,7 +2807,10 @@
 			</focusedlayout>                    
 		</control>
 
-		<include>ProgramsWrapInfo3ViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>ProgramsWrapInfo3ViewScrollbar</include>
+		</control>
 	</include>
 	<!--//// END WRAP LIST INFO VIEW //////////////////////////////////////////////////////////////////-->
 </includes>

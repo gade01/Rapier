@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="3006">
 	<defaultcontrol always="true">450</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
@@ -10,6 +9,7 @@
 
 	<controls>
 		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>PresetsDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 
@@ -1006,7 +1006,7 @@
 						<item id="117">
 							<description>Event Log</description>
 							<label>$LOCALIZE[14111]</label>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(EventLog))</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(EventLog,events://,return))</onclick>
 							<onclick>Dialog.Close(3006)</onclick>
 							<visible>Container(450).HasFocus(12)</visible>
 						</item>

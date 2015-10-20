@@ -2,11 +2,13 @@
 <window type="dialog" id="114">
 	<defaultcontrol always="true">107</defaultcontrol>
 	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
+	<depth>DepthDialog</depth>
 	<include>DialogOpenCloseAnim</include>
 
 	<coordinates>
 		<system>1</system>
-		<origin x="312" y="180">true</origin>
+		<top>180</top>
+		<left>262</left>
 	</coordinates>
 
 	<controls>
@@ -19,7 +21,7 @@
 				<description>Title</description>
 				<left>232</left>
 				<top>39</top>
-				<width>300</width>
+				<width>400</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -30,7 +32,7 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
+				<left>650</left>
 				<top>40</top>
 				<width>70</width>
 				<height>16</height>		
@@ -77,7 +79,7 @@
 				<description>No Information</description>
 				<left>232</left>
 				<top>120</top>
-				<width>400</width>
+				<width>500</width>
 				<font>DialogMediaInfoFont</font>
 				<textcolor>MediaInfoItemColor2</textcolor>
 				<label>$LOCALIZE[20159][CR]$LOCALIZE[416]</label>
@@ -92,7 +94,7 @@
 				<description>Title</description>
 				<left>232</left>
 				<top>39</top>
-				<width>300</width>
+				<width>400</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -103,7 +105,7 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
+				<left>650</left>
 				<top>40</top>
 				<width>70</width>
 				<height>16</height>		
@@ -190,13 +192,13 @@
 				<description>Media Info Background</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -204,7 +206,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -212,7 +214,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -222,7 +224,7 @@
 				<description>Media Info</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
 				<scrolltime>200</scrolltime>
@@ -231,7 +233,7 @@
 				<onright>202</onright>
 				<onup>901</onup>
 				<ondown>901</ondown>
-				<itemlayout height="32" width="388">	
+				<itemlayout height="32" width="488">	
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
@@ -246,7 +248,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
@@ -254,9 +256,9 @@
 						<label fallback="31000">$INFO[ListItem.Label2]</label>
 					</control>		
 				</itemlayout>				
-				<focusedlayout height="32" width="388">
+				<focusedlayout height="32" width="488">
 					<control type="image">
-						<width>388</width>
+						<width>488</width>
 						<height>32</height>
 						<texture border="4">views/list-focus.png</texture>
 						<include>ListViewSelectFadeAnim</include>
@@ -275,7 +277,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -325,7 +327,7 @@
 				<description>Title</description>
 				<left>232</left>
 				<top>39</top>
-				<width>300</width>
+				<width>400</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -336,7 +338,7 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
+				<left>650</left>
 				<top>40</top>
 				<width>70</width>
 				<height>16</height>		
@@ -384,13 +386,13 @@
 				<description>Media Info Background</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -398,7 +400,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -406,7 +408,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -416,7 +418,7 @@
 				<description>Media Info</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
 				<scrolltime>200</scrolltime>
@@ -425,7 +427,7 @@
 				<onright>202</onright>
 				<onup>901</onup>
 				<ondown>901</ondown>
-				<itemlayout height="32" width="388">	
+				<itemlayout height="32" width="488">	
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
@@ -440,7 +442,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
@@ -448,9 +450,9 @@
 						<label fallback="31000">$INFO[ListItem.Label2]</label>
 					</control>		
 				</itemlayout>				
-				<focusedlayout height="32" width="388">
+				<focusedlayout height="32" width="488">
 					<control type="image">
-						<width>388</width>
+						<width>488</width>
 						<height>32</height>
 						<texture border="4">views/list-focus.png</texture>
 						<include>ListViewSelectFadeAnim</include>
@@ -469,7 +471,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -519,7 +521,7 @@
 				<description>Title</description>
 				<left>232</left>
 				<top>39</top>
-				<width>300</width>
+				<width>400</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -530,7 +532,7 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
+				<left>650</left>
 				<top>40</top>
 				<width>70</width>
 				<height>16</height>		
@@ -578,13 +580,13 @@
 				<description>Media Info Background</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -592,7 +594,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -600,7 +602,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -610,7 +612,7 @@
 				<description>Media Info</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
 				<scrolltime>200</scrolltime>
@@ -619,7 +621,7 @@
 				<onright>202</onright>
 				<onup>901</onup>
 				<ondown>901</ondown>
-				<itemlayout height="32" width="388">	
+				<itemlayout height="32" width="488">	
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
@@ -634,7 +636,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
@@ -642,9 +644,9 @@
 						<label fallback="31000">$INFO[ListItem.Label2]</label>
 					</control>		
 				</itemlayout>				
-				<focusedlayout height="32" width="388">
+				<focusedlayout height="32" width="488">
 					<control type="image">
-						<width>388</width>
+						<width>488</width>
 						<height>32</height>
 						<texture border="4">views/list-focus.png</texture>
 						<include>ListViewSelectFadeAnim</include>
@@ -663,7 +665,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -713,7 +715,7 @@
 				<description>Title</description>
 				<left>232</left>
 				<top>39</top>
-				<width>300</width>
+				<width>400</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -724,7 +726,7 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
+				<left>650</left>
 				<top>40</top>
 				<width>70</width>
 				<height>16</height>		
@@ -771,13 +773,13 @@
 				<description>Media Info Background</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -785,7 +787,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -793,7 +795,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -803,7 +805,7 @@
 				<description>Media Info</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
 				<scrolltime>200</scrolltime>
@@ -812,7 +814,7 @@
 				<onright>202</onright>
 				<onup>901</onup>
 				<ondown>901</ondown>
-				<itemlayout height="32" width="388">	
+				<itemlayout height="32" width="488">	
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
@@ -827,7 +829,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
@@ -835,9 +837,9 @@
 						<label fallback="31000">$INFO[ListItem.Label2]</label>
 					</control>		
 				</itemlayout>				
-				<focusedlayout height="32" width="388">
+				<focusedlayout height="32" width="488">
 					<control type="image">
-						<width>388</width>
+						<width>488</width>
 						<height>32</height>
 						<texture border="4">views/list-focus.png</texture>
 						<include>ListViewSelectFadeAnim</include>
@@ -856,7 +858,7 @@
 					<control type="label">
 						<left>100</left>
 						<top>-1</top>
-						<width>283</width>
+						<width>383</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -906,7 +908,7 @@
 				<description>Title</description>
 				<left>232</left>
 				<top>39</top>
-				<width>300</width>
+				<width>400</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -917,7 +919,7 @@
 
 			<control type="image">
 				<description>Star Rating</description>
-				<left>550</left>
+				<left>650</left>
 				<top>40</top>
 				<width>70</width>
 				<height>16</height>		
@@ -964,13 +966,13 @@
 				<description>Media Info Background</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -978,7 +980,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -986,7 +988,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>388</width>
+					<width>488</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -996,7 +998,7 @@
 				<description>Media Info</description>
 				<left>232</left>
 				<top>65</top>
-				<width>388</width>
+				<width>488</width>
 				<height>280</height>
 				<viewtype label="">list</viewtype>
 				<scrolltime>200</scrolltime>
@@ -1005,7 +1007,7 @@
 				<onright>202</onright>
 				<onup>901</onup>
 				<ondown>901</ondown>
-				<itemlayout height="32" width="388">	
+				<itemlayout height="32" width="488">	
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
@@ -1020,7 +1022,7 @@
 					<control type="label">
 						<left>110</left>
 						<top>-1</top>
-						<width>273</width>
+						<width>373</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
@@ -1028,9 +1030,9 @@
 						<label fallback="31000">$INFO[ListItem.Label2]</label>
 					</control>		
 				</itemlayout>				
-				<focusedlayout height="32" width="388">
+				<focusedlayout height="32" width="488">
 					<control type="image">
-						<width>388</width>
+						<width>488</width>
 						<height>32</height>
 						<texture border="4">views/list-focus.png</texture>
 						<include>ListViewSelectFadeAnim</include>
@@ -1049,7 +1051,7 @@
 					<control type="label">
 						<left>110</left>
 						<top>-1</top>
-						<width>273</width>
+						<width>373</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -1096,7 +1098,7 @@
 			<description>Player Controls Background</description>
 			<left>DialogMarginOffsetX</left>
 			<top>232</top>
-			<width>585</width>
+			<width>685</width>
 			<height>50</height>
 			<texture border="5">panels/panel-content-border2.png</texture>
 			<animation effect="fade" end="8" condition="true">Conditional</animation>
@@ -1151,9 +1153,9 @@
 		<control type="grouplist" id="202">
 			<description>Player Controls</description>
 			<visible>Player.HasAudio | !VideoPlayer.Content(LiveTV)</visible>
-			<left>225</left>
+			<left>230</left>
 			<top>238</top>
-			<width>400</width>
+			<width>492</width>
 			<height>50</height>
 			<itemgap>10</itemgap>
 			<align>center</align>
@@ -1220,48 +1222,22 @@
 				<onclick>PlayerControl(Next)</onclick>
 				<pulseonselect>false</pulseonselect>
 			</control>
-			<control type="button" id="110">
+			<control type="togglebutton" id="110">
 				<description>Rec</description>
 				<width>38</width>
 				<height>38</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
 				<onclick>PlayerControl(Record)</onclick>
+				<pulseonselect>false</pulseonselect>					
+				<label>264</label>
+				<altlabel>265</altlabel>
+				<font>-</font>					
+				<texturefocus>osd/osd-record-focus.png</texturefocus>
+				<texturenofocus>osd/osd-record-nofocus.png</texturenofocus>
+				<usealttexture>Player.Recording</usealttexture>
+				<alttexturefocus>osd/osd-record-focus.png</alttexturefocus>
+				<alttexturenofocus>osd/osd-record-2.png</alttexturenofocus>
 				<visible>Player.CanRecord</visible>
-				<pulseonselect>false</pulseonselect>
 			</control>
-			<control type="image" id="111">
-				<description>Rec No Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-nofocus.png</texture>
-				<visible>Player.CanRecord + !Control.HasFocus(110)</visible>
-			</control>
-			<control type="image" id="112">
-				<description>Rec Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-focus.png</texture>
-				<visible>Player.CanRecord + Control.HasFocus(110)</visible>
-			</control>
-			<control type="image" id="113">
-				<description>Rec 2 No Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-2.png</texture>
-				<visible>Player.CanRecord + Player.Recording + !Control.HasFocus(110)</visible>
-			</control>
-			<control type="image" id="114">
-				<description>Rec 2 Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-focus.png</texture>
-				<visible>Player.CanRecord + Player.Recording + Control.HasFocus(110)</visible>
-			</control>	
 			<control type="button" id="250">
 				<description>Repeat</description>
 				<width>38</width>
@@ -1342,9 +1318,9 @@
 		<control type="grouplist" id="202">
 			<description>Player Controls</description>
 			<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
-			<left>225</left>
+			<left>230</left>
 			<top>238</top>
-			<width>400</width>
+			<width>492</width>
 			<height>50</height>
 			<itemgap>10</itemgap>
 			<align>center</align>
@@ -1399,47 +1375,21 @@
 				<onclick>PlayerControl(Previous)</onclick>
 				<pulseonselect>false</pulseonselect>
 			</control>
-			<control type="button" id="110">
+			<control type="togglebutton" id="110">
 				<description>Rec</description>
 				<width>38</width>
 				<height>38</height>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
 				<onclick>PlayerControl(Record)</onclick>
+				<pulseonselect>false</pulseonselect>					
+				<label>264</label>
+				<altlabel>265</altlabel>
+				<font>-</font>					
+				<texturefocus>osd/osd-record-focus.png</texturefocus>
+				<texturenofocus>osd/osd-record-nofocus.png</texturenofocus>
+				<usealttexture>Player.Recording</usealttexture>
+				<alttexturefocus>osd/osd-record-focus.png</alttexturefocus>
+				<alttexturenofocus>osd/osd-record-2.png</alttexturenofocus>
 				<visible>Player.CanRecord</visible>
-				<pulseonselect>false</pulseonselect>
-			</control>
-			<control type="image" id="111">
-				<description>Rec No Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-nofocus.png</texture>
-				<visible>Player.CanRecord + !Control.HasFocus(110)</visible>
-			</control>
-			<control type="image" id="112">
-				<description>Rec Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-focus.png</texture>
-				<visible>Player.CanRecord + Control.HasFocus(110)</visible>
-			</control>
-			<control type="image" id="113">
-				<description>Rec 2 No Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-2.png</texture>
-				<visible>Player.CanRecord + Player.Recording + !Control.HasFocus(110)</visible>
-			</control>
-			<control type="image" id="114">
-				<description>Rec 2 Focus</description>
-				<left>-48</left>
-				<width>38</width>
-				<height>38</height>
-				<texture>osd/osd-record-focus.png</texture>
-				<visible>Player.CanRecord + Player.Recording + Control.HasFocus(110)</visible>
 			</control>
 			<control type="button" id="250">
 				<visible>false</visible>

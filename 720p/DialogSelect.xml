@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="2000">
 	<defaultcontrol always="true">3</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 	
 	<coordinates>
 		<system>1</system>
@@ -10,6 +9,7 @@
 	
 	<controls>
 		<control type="group">
+			<depth>DepthDialog+</depth>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="slide" end="-378,-4" condition="[Window.IsActive(FullScreenVideo) | Window.IsActive(Visualisation)] + !Control.IsVisible(6)">Conditional</animation>
 			<animation effect="slide" end="-162,-4" condition="[Window.IsActive(FullScreenVideo) | Window.IsActive(Visualisation)] + Control.IsVisible(6)">Conditional</animation>

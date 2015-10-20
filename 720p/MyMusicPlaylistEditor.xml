@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="503">
 	<defaultcontrol always="true">50</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
 	
 	<controls>
-		<control type="group">		
+		<control type="group">
+			<depth>DepthBackground</depth>
 			<include>BackgroundDefault</include>
 			<include condition="[[!IsEmpty(Skin.String(CustomMusicBGPath)) + [Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)]] 
 			| Skin.String(CustomMusicBGType,4)] + Skin.HasSetting(ApplyAllMusicCustomBG)">BackgroundMusic</include>
@@ -14,6 +14,7 @@
 		</control>
 		
 		<control type="group">	
+			<depth>DepthContent</depth>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ViewContentPanel</include>
 			
@@ -362,6 +363,7 @@
 		<control type="group">	
 			<description>Top Bar Area</description>
 			<visible>![System.IdleTime(3) + Skin.HasSetting(HideTopBar) + !Control.HasFocus(555)]</visible>
+			<depth>DepthTopBar</depth>
 			<include>TopBarImage</include>
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbMusicPlaylistEditor</include>
@@ -371,6 +373,7 @@
 		
 		<control type="group">
 			<description>Bottom Bar Area</description>
+			<depth>DepthContent</depth>
 			<top>BottomPaneOffsetY</top>	
 			<include>InfoPaneMusicPlaylistEditorDetails</include>
 			<include>BottomPaneOpenCloseAnim</include>

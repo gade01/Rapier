@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="980">
 	<defaultcontrol always="true">981</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
@@ -10,7 +9,8 @@
 
 	<controls>
 		<control type="group">
-			<animation effect="slide" end="0,-18" condition="System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)">Conditional</animation>
+			<depth>DepthDialog</depth>
+			<animation effect="slide" end="0,-18" condition="[System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)] | Skin.String(DialogVideoInfoButtonMenu,top250)">Conditional</animation>
 			<include>DialogOpenCloseAnim</include>
 			
 			<control type="image">
@@ -24,17 +24,17 @@
 				<width>364</width>
 				<height>199</height>
 				<texture border="50,50,50,75">panels/dialog-background2.png</texture>
-				<visible>System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)</visible>
+				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)] | Skin.String(DialogVideoInfoButtonMenu,top250)</visible>
 			</control>
 			
 			<control type="grouplist" id="981">
 				<top>32</top>
 				<left>32</left>
 				<width>300</width>
-				<onright>987</onright>
-				<onleft>987</onleft>
-				<ondown>987</ondown>
-				<onup>987</onup>
+				<onright>990</onright>
+				<onleft>990</onleft>
+				<ondown>990</ondown>
+				<onup>990</onup>
 				<itemgap>2</itemgap>
 				<control type="button" id="982">
 					<description>Show Related Movies and TV Shows</description>
@@ -75,16 +75,28 @@
 					<visible>[Skin.String(DialogVideoInfoButtonMenu,director) | Skin.String(DialogVideoInfoButtonMenu,writer) | Skin.String(DialogVideoInfoButtonMenu,artist)] + System.HasAddon(script.extendedinfo)</visible>
 				</control>
 				<control type="button" id="985">
-					<description>Edit Rating</description>
-					<label>$LOCALIZE[31975]</label>
+					<description>Set My Rating</description>
+					<label>$LOCALIZE[38023]</label>
 					<onclick>Dialog.Close(980)</onclick>
-					<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=Movie)</onclick>
+					<onclick>SendClick(2003,7)</onclick>
 					<width>300</width>
 					<textwidth>290</textwidth>
 					<include>ContextMenuBtn</include>
-					<visible>Skin.String(DialogVideoInfoButtonMenu,rating) + System.HasAddon(script.libraryeditor)</visible>
+					<visible>Skin.String(DialogVideoInfoButtonMenu,rating) | Skin.String(DialogVideoInfoButtonMenu,top250)</visible>
 				</control>
 				<control type="button" id="986">
+					<description>Edit Rating</description>
+					<label>$LOCALIZE[31975]</label>
+					<onclick>Dialog.Close(980)</onclick>
+					<onclick condition="Container.Content(Movies)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=Movie)</onclick>
+					<onclick condition="Container.Content(TVShows)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=TVShow)</onclick>
+					<onclick condition="Container.Content(Episodes)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=Episode)</onclick>
+					<width>300</width>
+					<textwidth>290</textwidth>
+					<include>ContextMenuBtn</include>
+					<visible>[Skin.String(DialogVideoInfoButtonMenu,rating) | Skin.String(DialogVideoInfoButtonMenu,top250)] + System.HasAddon(script.libraryeditor)</visible>
+				</control>
+				<control type="button" id="987">
 					<description>Edit Top 250</description>
 					<label>$LOCALIZE[31976]</label>
 					<onclick>Dialog.Close(980)</onclick>
@@ -92,7 +104,7 @@
 					<width>300</width>
 					<textwidth>290</textwidth>
 					<include>ContextMenuBtn</include>
-					<visible>Skin.String(DialogVideoInfoButtonMenu,rating) + System.HasAddon(script.libraryeditor)</visible>
+					<visible>Skin.String(DialogVideoInfoButtonMenu,top250) + System.HasAddon(script.libraryeditor)</visible>
 				</control>
 			</control>
 			
@@ -101,7 +113,7 @@
 				<include>DialogCloseBtn</include>
 			</control>
 			
-			<control type="button" id="987">
+			<control type="button" id="990">
 				<description>Close</description>
 				<left>97</left>
 				<top>110</top>
@@ -110,11 +122,12 @@
 				<onclick>Dialog.Close(980)</onclick>
 				<onup condition="Skin.String(DialogVideoInfoButtonMenu,director) | Skin.String(DialogVideoInfoButtonMenu,writer) | Skin.String(DialogVideoInfoButtonMenu,artist)">984</onup>
 				<onup condition="Skin.String(DialogVideoInfoButtonMenu,rating)">986</onup>
+				<onup condition="Skin.String(DialogVideoInfoButtonMenu,top250)">987</onup>
 				<ondown condition="Skin.String(DialogVideoInfoButtonMenu,director) | Skin.String(DialogVideoInfoButtonMenu,writer) | Skin.String(DialogVideoInfoButtonMenu,artist)">982</ondown>
-				<ondown condition="Skin.String(DialogVideoInfoButtonMenu,rating)">985</ondown>
+				<ondown condition="Skin.String(DialogVideoInfoButtonMenu,rating) | Skin.String(DialogVideoInfoButtonMenu,top250)">985</ondown>
 				<onleft>981</onleft>
 				<onright>981</onright>
-				<animation effect="slide" end="0,37" condition="System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)">Conditional</animation>
+				<animation effect="slide" end="0,37" condition="[System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)] | Skin.String(DialogVideoInfoButtonMenu,top250)">Conditional</animation>
 			</control>
 		</control>		
 	</controls>	

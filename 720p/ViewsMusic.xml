@@ -3055,6 +3055,7 @@
 		
 		<control type="grouplist">
 			<description>Media Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -3103,6 +3104,7 @@
 
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Album) + !Skin.HasSetting(EnableMusicWrapListInfoCompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Description</description>
@@ -3228,6 +3230,7 @@
 			</itemlayout>    
 			<focusedlayout width="150">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -3279,7 +3282,10 @@
 			</focusedlayout>                    
 		</control>
 		
-		<include>WrapInfoViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>WrapInfoViewScrollbar</include>
+		</control>
 	</include>
 	
 	<include name="MusicWrapInfoStyle2">	
@@ -3362,6 +3368,7 @@
 		
 		<control type="grouplist">
 			<description>Media Info</description>
+			<depth>DepthContent+</depth>
 			<left>485</left>
 			<top>472</top>
 			<width>765</width>
@@ -3410,6 +3417,7 @@
 		
 		<control type="group">
 			<visible>!IsEmpty(ListItem.Album) + !Skin.HasSetting(EnableMusicWrapListInfoCompactMode)</visible>
+			<depth>DepthContent+</depth>
 
 			<control type="textbox">
 				<description>Description</description>
@@ -3535,6 +3543,7 @@
 			</itemlayout>    
 			<focusedlayout width="214">
 				<control type="group">
+					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
 					<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -3586,7 +3595,10 @@
 			</focusedlayout>                    
 		</control>
 			
-		<include>WrapInfoViewScrollbar</include>
+		<control type="group">
+			<depth>DepthContent+</depth>
+			<include>WrapInfoViewScrollbar</include>
+		</control>
 	</include>
 	<!--//// END WRAP LIST INFO VIEW //////////////////////////////////////////////////////////////////-->
 
@@ -3646,6 +3658,7 @@
 				<focusedlayout width="214" height="225" condition="Container.Column(0) + Container.Row(0)">
 					<control type="group">
 						<description>Top Left Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewTopLeftCornerFocusAnim</include>
 					</control>
@@ -3653,6 +3666,7 @@
 				<focusedlayout width="214" height="225" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(0)">
 					<control type="group">
 						<description>Top Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewTopEdgeFocusAnim</include>
 					</control>
@@ -3660,6 +3674,7 @@
 				<focusedlayout width="214" height="225" condition="Container.Column(5) + Container.Row(0)">
 					<control type="group">
 						<description>Top Right Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewTopRightCornerFocusAnim</include>
 					</control>
@@ -3667,6 +3682,7 @@
 				<focusedlayout width="214" height="225" condition="Container.Column(0) + Container.Row(1)">
 					<control type="group">
 						<description>Left Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewLeftEdgeFocusAnim</include>
 					</control>
@@ -3674,6 +3690,7 @@
 				<focusedlayout width="214" height="225" condition="!Container.Row(0) + !Container.Row(2) + !Container.Column(0) + !Container.Column(5)">
 					<control type="group">
 						<description>Mid Row Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewMidRowFocusAnim</include>
 					</control>
@@ -3681,6 +3698,7 @@
 				<focusedlayout width="214" height="225" condition="Container.Column(5) + Container.Row(1)">
 					<control type="group">
 						<description>Right Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewRightEdgeFocusAnim</include>
 					</control>
@@ -3688,6 +3706,7 @@
 				<focusedlayout width="214" height="225" condition="Container.Column(0) + Container.Row(2)">
 					<control type="group">
 						<description>Bottom Left Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewBottomLeftCornerFocusAnim</include>
 					</control>
@@ -3695,6 +3714,7 @@
 				<focusedlayout width="214" height="225" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(2)">
 					<control type="group">
 						<description>Bottom Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewBottomEdgeFocusAnim</include>
 					</control>
@@ -3702,6 +3722,7 @@
 				<focusedlayout width="214" height="225" condition="Container.Column(5) + Container.Row(2)">
 					<control type="group">
 						<description>Bottom Right Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>AlbumWallCoverImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MusicWallViewBottomRightCornerFocusAnim</include>
 					</control>
@@ -3712,6 +3733,7 @@
 			
 			<control type="group" id="659">
 				<description>Bottom Bar Area</description>
+				<depth>DepthContent+</depth>
 				<top>BottomPaneOffsetY</top>
 				<visible>Control.HasFocus(70) + System.IdleTime(2) + !Skin.HasSetting(HideMusicWallInfoPanel)</visible>
 				<animation effect="slide" start="0,65" time="300">Visible</animation>

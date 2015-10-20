@@ -2,12 +2,12 @@
 <window id="2">
     <defaultcontrol always="true">500</defaultcontrol>
 	<menucontrol>850</menucontrol>
-	<allowoverlay>yes</allowoverlay>
 	<views>50,52,90,91,93</views>
 	<onload>Skin.Reset(ShowMediaExtraOptions)</onload>
 	
 	<controls>
-		<control type="group">	
+		<control type="group">
+			<depth>DepthBackground</depth>
 			<include condition="Skin.String(CustomPicturesBGType,4) | Skin.String(CustomPicturesBGType,5)">MyPicsDBFadelabels</include>
 			<include>BackgroundDefault</include>
 			<include condition="[[!IsEmpty(Skin.String(CustomPicturesBGPath)) + [Skin.String(CustomPicturesBGType,2) | Skin.String(CustomPicturesBGType,3)]] | Skin.String(CustomPicturesBGType,4) | Skin.String(CustomPicturesBGType,5)]
@@ -20,6 +20,7 @@
 
 		<control type="group">	
 			<visible>!Window.IsActive(AddonInformation)</visible>
+			<depth>DepthContent</depth>
 			<include>IconView</include> <!-- 50 -->
 			<include>ListView</include> <!-- 52 -->
 			<include>AddonsWideListView</include> <!-- 90 -->
@@ -32,6 +33,7 @@
 		<control type="group">
 			<description>Top Bar Area</description>
 			<visible>![System.IdleTime(3) + !Control.IsVisible(505) + Skin.HasSetting(HideTopBar) + !Control.HasFocus(555)]</visible>
+			<depth>DepthTopBar</depth>
 			<include>TopBarImage</include>
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbPictures</include>

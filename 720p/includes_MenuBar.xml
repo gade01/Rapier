@@ -182,29 +182,6 @@
 		<pulseonselect>false</pulseonselect>
 	</include>
 	
-	<include name="DropDownMenuCDArtManagerRadioBtn">
-		<width>242</width>
-		<height>37</height>
-		<font>MenuItemFont</font>
-		<textcolor>ContentTitleColor</textcolor>
-		<focusedcolor>MenuItemFocusColor</focusedcolor>
-		<textoffsetx>18</textoffsetx>
-		<align>left</align>
-		<radiowidth>18</radiowidth>
-		<radioheight>12</radioheight>
-		<radioposx>206</radioposx>
-		<radioposy>-</radioposy>
-		<textwidth>196</textwidth>
-		<textureradiofocus flipy="true">controls/nav-arrow-up-nofocus.png</textureradiofocus>
-		<textureradionofocus flipy="true">controls/nav-arrow-up-nofocus.png</textureradionofocus>
-		<texturefocus border="12,4,12,5">gui/menu-bar-item-focus.png</texturefocus>
-		<texturenofocus border="9,0,9,3">gui/menu-bar-item-nofocus.png</texturenofocus>
-		<textureradioondisabled colordiffuse="66FFFFFF" flipy="true">controls/nav-arrow-up-nofocus.png</textureradioondisabled>
-		<textureradiooffdisabled colordiffuse="66FFFFFF" flipy="true">controls/nav-arrow-up-nofocus.png</textureradiooffdisabled>
-		<pulseonselect>false</pulseonselect>
-		<onclick>noop</onclick>
-	</include>
-	
 	<include name="DropDownMenuHeader">	
 		<width>212</width>
 		<height>30</height>
@@ -240,6 +217,7 @@
 	<include name="MediaMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
+			<depth>DepthMenuBar</depth>
 			<top>MenuBarOffsetY</top>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
@@ -1141,6 +1119,7 @@
 	<include name="PVRMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
+			<depth>DepthMenuBar</depth>
 			<top>MenuBarOffsetY</top>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
@@ -1419,6 +1398,7 @@
 	<include name="EventLogMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
+			<depth>DepthMenuBar</depth>
 			<top>MenuBarOffsetY</top>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
@@ -1534,6 +1514,7 @@
 	<include name="NextAiredMenuBar">
 		<control type="group" id="505">
 			<description>Menu Bar Area</description>
+			<depth>DepthMenuBar</depth>
 			<top>MenuBarOffsetY</top>
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
@@ -1718,7 +1699,6 @@
 				<description>Cinema Experience / CinemaVision</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$VAR[CinemaLabelVar][/UPPERCASE]</label>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + !IsEmpty(Skin.String(ExtendedInfoDialogPos))">Skin.Reset(ExtendedInfoDialogPos)</onfocus>
 				<onclick condition="!System.HasAddon(script.cinemavision)">Playlist.Clear</onclick>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
 				<onclick condition="!System.HasAddon(script.cinemavision)">RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
@@ -1731,8 +1711,6 @@
 			</control>
 			<control type="button" id="8">
 				<description>Play / Open</description>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + !IsEmpty(Skin.String(ExtendedInfoDialogPos)) + !Control.IsVisible(210)">Skin.Reset(ExtendedInfoDialogPos)</onfocus>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + [[Control.IsVisible(210) + Skin.String(ExtendedInfoDialogPos,2)] | Skin.String(ExtendedInfoDialogPos,3)]">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$VAR[DialogVideoInfoButton8][/UPPERCASE]</label>
 			</control>
@@ -1743,8 +1721,6 @@
 				<description>Cast/Plot</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[206][/UPPERCASE]</label>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,2)</onfocus>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + !Control.IsVisible(210) + Skin.String(ExtendedInfoDialogPos,2)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
 				<onfocus condition="!IsEmpty(Skin.String(VideoInfoMenubar))">Skin.Reset(VideoInfoMenubar)</onfocus>
 			</control>	
 			<control type="image" id="116">
@@ -1774,37 +1750,17 @@
 				<include>MenuBarSeparator</include>
 				<visible>Control.IsVisible(212) | Control.IsVisible(215)</visible>
 			</control>
-			<control type="button" id="6">
-				<description>Refresh</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[184][/UPPERCASE]</label>
+			<control type="button" id="119">
+				<description>Manage</description>
+				<width>156</width>
+				<textwidth>105</textwidth>
+				<include>MenuBarArrowBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31130][/UPPERCASE]</label>
+				<onclick>ActivateWindow(3013)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="10">
-				<description>Choose Art</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[13511][/UPPERCASE]</label>	
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-			</control>
-			<control type="image" id="119">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="14">
-				<description>Get Artwork</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31302][/UPPERCASE]</label>
-				<onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
-				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(musicvideos)</visible>
-				<enable>!Skin.HasSetting(EnableKioskMode) + System.HasAddon(script.artwork.downloader)</enable>
-			</control>
-			<control type="image" id="123">
-				<include>MenuBarSeparator</include>
-				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(musicvideos)</visible>
 			</control>
 			<control type="button" id="11">
 				<description>Play Trailer</description>
@@ -1831,62 +1787,22 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="group" id="128">
-				<visible>Control.IsVisible(213)</visible>
-				<width>159</width>
-				<control type="button" id="213">
-					<description>TV Tunes</description>
-					<include>MenuBarSettingsBtn</include>
-					<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
-					<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + !Skin.String(ExtendedInfoDialogPos,2) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
-					<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
-					<onleft condition="Control.IsVisible(211)">211</onleft>
-					<onleft condition="Control.IsVisible(15)">15</onleft>
-					<onleft condition="Control.IsVisible(11)">11</onleft>
-					<onright condition="Control.IsVisible(214)">214</onright>
-					<onright condition="!Control.IsVisible(214) + Control.IsVisible(218)">218</onright>
-					<onright condition="!Control.IsVisible(214) + !Control.IsVisible(218) + Control.IsVisible(210)">210</onright>
-					<onright condition="!Control.IsVisible(214) + !Control.IsVisible(218) + !Control.IsVisible(210)">8</onright>
-					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-					<visible>System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
-				</control>
-				<control type="image" id="124">
-					<left>156</left>
-					<include>MenuBarSeparator</include>
-				</control>
+			<control type="button" id="213">
+				<description>TV Tunes</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
+				<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+				<visible>System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
 			</control>
-			<control type="group" id="129">
-				<visible>System.HasAddon(script.libraryeditor)</visible>
-				<width>159</width>
-				<control type="button" id="214">
-					<description>Edit Database</description>
-					<include>MenuBarSettingsBtn</include>
-					<label>[UPPERCASE]$LOCALIZE[21435] $LOCALIZE[15101][/UPPERCASE]</label>
-					<onfocus condition="System.HasAddon(script.extendedinfo) + [[Control.IsVisible(210) + !Control.IsVisible(213)] | [!Control.IsVisible(210) + Control.IsVisible(213)]] + !Skin.String(ExtendedInfoDialogPos,2) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
-					<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + Control.IsVisible(213) + !Skin.String(ExtendedInfoDialogPos,3)">Skin.SetString(ExtendedInfoDialogPos,2)</onfocus>
-					<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
-					<onleft condition="Control.IsVisible(213)">213</onleft>
-					<onleft condition="!Control.IsVisible(213) + Control.IsVisible(211)">211</onleft>
-					<onleft condition="!Control.IsVisible(213) + Control.IsVisible(15)">15</onleft>
-					<onleft condition="!Control.IsVisible(213) + Control.IsVisible(11)">11</onleft>
-					<onright condition="Control.IsVisible(218)">218</onright>
-					<onright condition="!Control.IsVisible(218) + Control.IsVisible(210)">210</onright>
-					<onright condition="!Control.IsVisible(218) + !Control.IsVisible(210)">8</onright>
-					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-					<visible>System.HasAddon(script.libraryeditor)</visible>
-				</control>
-				<control type="image" id="125">
-					<left>156</left>
-					<include>MenuBarSeparator</include>
-				</control>
+			<control type="image" id="124">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(213)</visible>
 			</control>
 			<control type="button" id="218">
 				<description>Video Extras</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$ADDON[script.videoextras 32001][/UPPERCASE]</label>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + [[Control.IsVisible(210) + !Control.IsVisible(213) + !Control.IsVisible(214)] | [!Control.IsVisible(210) + [[Control.IsVisible(213) + !Control.IsVisible(214)] | [!Control.IsVisible(213) + Control.IsVisible(214)]]]]">Skin.SetString(ExtendedInfoDialogPos,1)</onfocus>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + [[Control.IsVisible(210) + [[Control.IsVisible(213) + !Control.IsVisible(214)] | [!Control.IsVisible(213) + Control.IsVisible(214)]]] | [!Control.IsVisible(210) + Control.IsVisible(213) + Control.IsVisible(214)]]">Skin.SetString(ExtendedInfoDialogPos,2)</onfocus>
-				<onfocus condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(210) + Control.IsVisible(213) + Control.IsVisible(214)">Skin.SetString(ExtendedInfoDialogPos,3)</onfocus>
 				<onclick>RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
 				<visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)]
 				+ IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
@@ -2053,21 +1969,12 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="11">
-				<description>Rollback</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[24048][/UPPERCASE]</label>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-			</control>
-			<control type="image" id="122">
-				<include>MenuBarSeparator</include>
-			</control>
 			<control type="button" id="10">
 				<description>Changelog</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24036][/UPPERCASE]</label>
 			</control>
-			<control type="image" id="123">
+			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
 			</control>
 		</control>		
@@ -2704,91 +2611,6 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			-->
-		</control>		
-	</include>
-	
-	<include name="CDArtManagerMenuBar">
-		<control type="grouplist" id="987">
-			<top>0</top>
-			<width>ScreenWidth</width>
-			<height>MenuBarHeight</height>
-			<itemgap>0</itemgap>
-			<align>center</align>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<onup>555</onup>
-			<include>MenuBarBtnOpenCloseAnim</include>
-			<control type="image" id="301">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="302">
-				<description>Album</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[558][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,1)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="303">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="304">
-				<description>Artist</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[557][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,2)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="305">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="306">
-				<description>Add-on Database</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31004][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,3)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="307">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="308">
-				<description>Miscellaneous</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31019][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,4)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="309">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="104">
-				<description>Settings</description>
-				<width>169</width>
-				<textwidth>155</textwidth>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$ADDON[script.cdartmanager 32146][/UPPERCASE]</label>
-			</control>
-			<control type="image" id="310">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="111">
-				<description>Exit</description>
-				<width>169</width>
-				<textwidth>155</textwidth>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$ADDON[script.cdartmanager 32147][/UPPERCASE]</label>
-			</control>
-			<control type="image" id="311">
-				<include>MenuBarSeparator</include>
-			</control>
 		</control>		
 	</include>
 </includes>

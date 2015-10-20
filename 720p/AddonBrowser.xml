@@ -2,11 +2,11 @@
 <window id="40">
 	<defaultcontrol always="true">500</defaultcontrol>
 	<menucontrol>850</menucontrol>
-	<allowoverlay>yes</allowoverlay>
 	<views>50,52,63,90,91,93</views>
 	
 	<controls>
-		<control type="group">	
+		<control type="group">
+			<depth>DepthBackground</depth>
 			<include>BackgroundDefault</include>
 			<include>BackgroundAddonsFanart</include>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
@@ -16,6 +16,7 @@
 		
 		<control type="group">
 			<visible>!Window.IsActive(AddonInformation)</visible>
+			<depth>DepthContent</depth>
 			<include>MediaInfoOpenCloseAnim</include>
 			<include>IconView</include> <!-- 50 -->
 			<include>ListView</include> <!-- 52 -->
@@ -29,6 +30,7 @@
 		
 		<control type="group">
 			<description>Top Bar Area</description>
+			<depth>DepthTopBar</depth>
 			<include>TopBarImage</include>
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbAddons</include>

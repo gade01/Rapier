@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="135">
-	<defaultcontrol always="true">10</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<defaultcontrol always="true">12</defaultcontrol>
 
 	<coordinates>
 		<system>1</system>
-		<origin x="220" y="180">true</origin>
+		<origin x="194" y="168">true</origin>
 	</coordinates>
 	
 	<controls>
 		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>SongInfoDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="fade" start="100" end="0" time="250" condition="Window.IsActive(MusicInformation)">Conditional</animation>	
 			
 			<control type="label">
 				<description>Title</description>
-				<left>296</left>
+				<left>328</left>
 				<top>39</top>
-				<width>388</width>
+				<width>408</width>
 				<height>16</height>
 				<font>DialogTitleFont</font>
 				<textcolor>DialogTitleColor</textcolor>
@@ -31,8 +31,8 @@
 				<description>Default Cover Background</description>
 				<left>DialogMarginOffsetX</left>
 				<top>Dialog4MarginOffsetY</top>
-				<width>254</width>
-				<height>254</height>
+				<width>286</width>
+				<height>286</height>
 				<texture border="5">panels/panel-content-border.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>IsEmpty(ListItem.Thumb)</visible>
@@ -43,8 +43,8 @@
 				<description>Default Cover</description>
 				<left>DialogMarginOffsetX</left>
 				<top>Dialog4MarginOffsetY</top>
-				<width>254</width>
-				<height>254</height>
+				<width>286</width>
+				<height>286</height>
 				<texture>DefaultAudio.png</texture>
 				<bordersize>35</bordersize>
 				<aspectratio>keep</aspectratio>
@@ -55,23 +55,23 @@
 				<description>Cover</description>
 				<left>DialogMarginOffsetX</left>
 				<top>Dialog4MarginOffsetY</top>
-				<width>254</width>
-				<height>254</height>
-				<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[ListItem.Thumb]</texture>
+				<width>286</width>
+				<height>286</height>
+				<texture diffuse="covers/list-info-thumb-diffuse.png">$INFO[ListItem.Thumb]</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			
 			<control type="grouplist">
 				<description>Media Info Background</description>
-				<left>296</left>
+				<left>328</left>
 				<top>65</top>
-				<width>508</width>
+				<width>528</width>
 				<itemgap>0</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>vertical</orientation>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 				<control type="image">
-					<width>508</width>
+					<width>528</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -79,7 +79,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>508</width>
+					<width>528</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -87,7 +87,7 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>508</width>
+					<width>528</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
@@ -95,29 +95,29 @@
 					<height>32</height>
 				</control>
 				<control type="image">
-					<width>508</width>
+					<width>528</width>
 					<height>32</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
 				</control>
 			</control>
 			
 			<control type="panel" id="901">
-				<left>296</left>
+				<left>328</left>
 				<top>65</top>
-				<width>508</width>
-				<height>224</height>
+				<width>528</width>
+				<height>256</height>
 				<viewtype label="">list</viewtype>
 				<scrolltime>200</scrolltime>
 				<itemgap>0</itemgap>
-				<onleft>256</onleft>
-				<onright>256</onright>
+				<onleft>12</onleft>
+				<onright>7</onright>
 				<onup>901</onup>
 				<ondown>901</ondown>
-				<itemlayout height="32" width="388">	
+				<itemlayout height="32" width="528">	
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
-						<width>85</width>
+						<width>105</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
@@ -126,9 +126,9 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
+						<left>120</left>
 						<top>-1</top>
-						<width>403</width>
+						<width>423</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
@@ -136,9 +136,9 @@
 						<label fallback="31000">$INFO[ListItem.Label2]</label>
 					</control>		
 				</itemlayout>				
-				<focusedlayout height="32" width="508">
+				<focusedlayout height="32" width="528">
 					<control type="image">
-						<width>508</width>
+						<width>528</width>
 						<height>32</height>
 						<texture border="4">views/list-focus.png</texture>
 						<include>ListViewSelectFadeAnim</include>
@@ -146,7 +146,7 @@
 					<control type="label">
 						<left>5</left>
 						<top>-1</top>
-						<width>85</width>
+						<width>105</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
@@ -155,9 +155,9 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<left>100</left>
+						<left>120</left>
 						<top>-1</top>
-						<width>403</width>
+						<width>423</width>
 						<height>32</height>
 						<font>DialogMediaInfoFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -202,6 +202,13 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 					</item>
 					<item id="6">
+						<description>User Rating</description>
+						<label>$LOCALIZE[38018]</label>
+						<label2>$INFO[ListItem.Rating]</label2>
+						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=Song)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
+					</item>
+					<item id="6">
 						<description>Track</description>
 						<label>$LOCALIZE[554]</label>
 						<label2>$INFO[ListItem.TrackNumber]</label2>
@@ -217,68 +224,28 @@
 				</content>
 			</control>
 			
-			<control type="group" id="256">
-				<control type="button" id="14">
-					<description>Decrease Rating</description>
-					<left>44</left>
-					<top>306</top>
-					<width>28</width>
-					<height>28</height>
-					<texturefocus>controls/arrow-scroll-left-focus2.png</texturefocus>
-					<texturenofocus>controls/arrow-scroll-left-nofocus2.png</texturenofocus>
-					<onclick>DecreaseRating</onclick>
-					<onup>901</onup>
-					<onleft>10</onleft>
-					<onright>15</onright>
+			<control type="grouplist" id="505">
+				<left>DialogMarginOffsetX</left>
+				<top>330</top>
+				<width>812</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<onup>901</onup>
+				<control type="button" id="12">
+					<description>Album Info</description>
+					<include>DialogMenuBarBtn</include>
+					<label>$LOCALIZE[10523]</label>
 				</control>
-				
-				<control type="image">
-					<description>Star Rating</description>
-					<left>104</left>
-					<top>297</top>
-					<width>115</width>
-					<height>46</height>
-					<info>ListItem.Rating</info>
-					<aspectratio align="left">keep</aspectratio>
+				<control type="button" id="13">
+					<description>Get Thumb</description>
+					<include>DialogMenuBarBtn</include>
+					<label>$LOCALIZE[13405]</label>
 				</control>
-				
-				<control type="button" id="15">
-					<description>Increase Rating</description>
-					<left>251</left>
-					<top>306</top>
-					<width>28</width>
-					<height>28</height>
-					<texturefocus flipx="true">controls/arrow-scroll-left-focus2.png</texturefocus>
-					<texturenofocus flipx="true">controls/arrow-scroll-left-nofocus2.png</texturenofocus>
-					<onclick>IncreaseRating</onclick>
-					<onup>901</onup>
-					<onleft>14</onleft>
-					<onright>12</onright>
-				</control>
-				
-				<control type="grouplist" id="505">
-					<left>359</left>
-					<top>297</top>
-					<itemgap>0</itemgap>
-					<orientation>horizontal</orientation>
-					<onup>901</onup>
-					<onleft>15</onleft>
-					<onright>14</onright>
-					<control type="button" id="12">
-						<description>Albume Info</description>
-						<include>DialogMenuBarSmallerBtn</include>
-						<label>$LOCALIZE[10523]</label>
-					</control>
-					<control type="button" id="13">
-						<description>Get Thumb</description>
-						<include>DialogMenuBarSmallerBtn</include>
-						<label>$LOCALIZE[13405]</label>
-					</control>
-					<control type="button" id="10">
-						<description>OK</description>
-						<include>DialogMenuBarSmallestBtn</include>
-						<label>$LOCALIZE[186]</label>
-					</control>
+				<control type="button" id="7">
+					<description>Set My Rating</description>
+					<include>DialogMenuBarBtn</include>
+					<label>$LOCALIZE[38023]</label>
 				</control>
 			</control>
 		</control>

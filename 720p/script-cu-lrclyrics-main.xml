@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<allowoverlay>no</allowoverlay>
-
 	<coordinates>
 		<system>1</system>
 		<left>28</left>
@@ -10,6 +8,7 @@
 	
 	<controls>
 		<control type="group">
+			<depth>DepthOSD-</depth>
 			<animation effect="fade" start="100" end="0" time="250" condition="Window.IsActive(AddonSettings)">Conditional</animation>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			

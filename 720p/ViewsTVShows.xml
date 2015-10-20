@@ -5119,6 +5119,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [Container.Column(0) + Container.Row(0)]">
 					<control type="group">
 						<description>Top Left Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewTopLeftCornerFocusAnim</include>
@@ -5127,6 +5128,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [!Container.Column(0) + !Container.Column(7) + Container.Row(0)]">
 					<control type="group">
 						<description>Top Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewTopEdgeFocusAnim</include>
@@ -5135,6 +5137,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [Container.Column(7) + Container.Row(0)]">
 					<control type="group">
 						<description>Top Right Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewTopRightCornerFocusAnim</include>
@@ -5143,6 +5146,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [Container.Column(0) + Container.Row(1)]">
 					<control type="group">
 						<description>Left Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewLeftEdgeFocusAnim</include>
@@ -5151,6 +5155,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [!Container.Row(0) + !Container.Row(2) + !Container.Column(0) + !Container.Column(7)]">
 					<control type="group">
 						<description>Mid Row Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewMidRowFocusAnim</include>
@@ -5159,6 +5164,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [Container.Column(7) + Container.Row(1)]">
 					<control type="group">
 						<description>Right Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewRightEdgeFocusAnim</include>
@@ -5167,6 +5173,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [Container.Column(0) + Container.Row(2)]">
 					<control type="group">
 						<description>Bottom Left Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewBottomLeftCornerFocusAnim</include>
@@ -5175,6 +5182,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [!Container.Column(0) + !Container.Column(7) + Container.Row(2)]">
 					<control type="group">
 						<description>Bottom Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewBottomEdgeFocusAnim</include>
@@ -5183,6 +5191,7 @@
 				<focusedlayout width="160" height="225" condition="[Skin.String(TVShowsWallStyle,1) | Skin.String(TVShowsWallStyle,)] + [Container.Column(7) + Container.Row(2)]">
 					<control type="group">
 						<description>Bottom Right Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<include>DVDWallCoverImage</include>
 						<include>DVDWallOverlayImage</include>
 						<include condition="!Skin.HasSetting(DisableWallViewCoverFocusAnim)">MoviesWallViewBottomRightCornerFocusAnim</include>
@@ -5191,6 +5200,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [Container.Column(0) + Container.Row(0)]">
 					<control type="group">
 						<description>Top Left Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5200,6 +5210,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [!Container.Column(0) + !Container.Column(13) + Container.Row(0)]">
 					<control type="group">
 						<description>Top Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5209,6 +5220,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [Container.Column(13) + Container.Row(0)]">
 					<control type="group">
 						<description>Top Right Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5218,6 +5230,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [Container.Column(0) + ![Container.Row(0) | Container.Row(4)]]">
 					<control type="group">
 						<description>Left Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5227,6 +5240,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [!Container.Row(0) + !Container.Row(4) + !Container.Column(0) + !Container.Column(13)]">
 					<control type="group">
 						<description>Mid Row Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5236,6 +5250,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [Container.Column(13) + ![Container.Row(0) | Container.Row(4)]]">
 					<control type="group">
 						<description>Right Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5245,6 +5260,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [Container.Column(0) + Container.Row(4)]">
 					<control type="group">
 						<description>Bottom Left Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5254,6 +5270,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [!Container.Column(0) + !Container.Column(13) + Container.Row(4)]">
 					<control type="group">
 						<description>Bottom Edge Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5263,6 +5280,7 @@
 				<focusedlayout width="92" height="135" condition="Skin.String(TVShowsWallStyle,2) + [Container.Column(13) + Container.Row(4)]">
 					<control type="group">
 						<description>Bottom Right Corner Cover</description>
+						<depth>DepthContent+</depth>
 						<left>-2</left>
 						<include>DVDWallCoverImageSmall</include>
 						<include>DVDWallOverlayImageSmall</include>
@@ -5273,6 +5291,7 @@
 			
 			<control type="group">
 				<visible>Control.HasFocus(586) + System.IdleTime(1) + Skin.HasSetting(HideTVShowsWallExtendedInfoPanel) + !IsEmpty(ListItem.Title)</visible>
+				<depth>DepthContent+</depth>
 				<left>-3</left>
 				<top>43</top>
 				
@@ -5484,6 +5503,7 @@
 			
 			<control type="group" id="659">
 				<description>Bottom Bar Area</description>
+				<depth>DepthContent+</depth>
 				<top>BottomPaneOffsetY</top>
 				<visible>Control.HasFocus(586) + System.IdleTime(2) + !Skin.HasSetting(HideTVShowsWallInfoPanel)</visible>
 				<animation effect="slide" start="0,65" time="300">Visible</animation>

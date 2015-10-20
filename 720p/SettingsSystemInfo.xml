@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="7">
 	<defaultcontrol always="true">850</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
 	
 	<controls>
-		<control type="group">					
+		<control type="group">
+			<depth>DepthBackground</depth>
     		<include>BackgroundDefault</include>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
 			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>   
@@ -12,6 +12,7 @@
 		</control>
 		
 		<control type="group">
+			<depth>DepthContent</depth>
 			<include>ControlsOpenCloseAnim</include>
 		
 			<control type="grouplist" id="850">
@@ -119,6 +120,7 @@
 		
 		<control type="group">
 			<description>Top Bar Area</description>
+			<depth>DepthTopBar</depth>
 			<include>TopBarImage</include>
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbSystemInfo</include>
@@ -127,6 +129,7 @@
 		
 		<control type="group">
 			<description>Bottom Bar Area</description>
+			<depth>DepthContent</depth>
 			<top>BottomPaneOffsetY</top>	
 			<include>InfoPaneSystemInfoDetails</include>
 			<include>BottomPaneOpenCloseAnim</include>

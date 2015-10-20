@@ -48,7 +48,22 @@
 	<constant name="IconCrossfadeTime">400</constant>
 	<constant name="FanartCrossfadeTime">600</constant>
 	<constant name="MediaFlagsCrossfadeTime">400</constant>
-	 
+	<constant name="DepthDialog">0.50</constant>
+	<constant name="DepthDialog+">0.54</constant>
+	<constant name="DepthDialog-">0.46</constant>
+	<constant name="DepthMax">0.54</constant>
+	<constant name="DepthOSD">0.40</constant>
+	<constant name="DepthOSD+">0.44</constant>
+	<constant name="DepthOSD-">0.20</constant>
+	<constant name="DepthContent">0</constant>
+	<constant name="Depth3DWrapPosters">0.03</constant>
+	<constant name="DepthContent+">0.06</constant>
+	<constant name="DepthTopBar">0.11</constant>
+	<constant name="DepthMenuBar">0.08</constant>
+	<constant name="DepthHomeMenu">0.11</constant>
+	<constant name="DepthHomeMenuCategoryFocus">0.15</constant>
+	<constant name="DepthBackground">-0.80</constant>
+	
 	 <variable name="DurationMinutes">
          <value condition="SubString(ListItem.Duration,1,Right) | SubString(Window(home).Property(Set.Movies.Runtime),1,Right) | SubString(Window.Property(duration),1,Right)">$NUMBER[1]</value>
          <value condition="SubString(ListItem.Duration,2,Right) | SubString(Window(home).Property(Set.Movies.Runtime),2,Right) | SubString(Window.Property(duration),2,Right)">$NUMBER[2]</value>
@@ -778,19 +793,21 @@
 
 	<include name="FSMediaInfoBackgroundDim">
 		<control type="image">
-			 <include>BackgroundSize</include>
-			 <texture>views/fanart-dim.png</texture>
-			 <include>MediaViewOpenCloseAnim</include>
-			 <animation effect="fade" end="60" condition="true">Conditional</animation>
+			<depth>DepthBackground</depth>
+			<include>BackgroundSize</include>
+			<texture>views/fanart-dim.png</texture>
+			<include>MediaViewOpenCloseAnim</include>
+			<animation effect="fade" end="60" condition="true">Conditional</animation>
 		</control>
 	</include>
 	
 	<include name="FSMediaInfoBackgroundDim2">
 		<control type="image">
-			 <include>BackgroundSize</include>
-			 <texture>views/fanart-dim.png</texture>
-			 <include>MediaViewOpenCloseAnim</include>
-			 <animation effect="fade" end="80" condition="true">Conditional</animation>
+			<depth>DepthBackground</depth>
+			<include>BackgroundSize</include>
+			<texture>views/fanart-dim.png</texture>
+			<include>MediaViewOpenCloseAnim</include>
+			<animation effect="fade" end="80" condition="true">Conditional</animation>
 		</control>
 	</include>
 	
@@ -805,7 +822,7 @@
 
 	<include name="SortLetterNotification">
 		<control type="group">
-			<visible>Container.Scrolling | Container(584).Scrolling | Container(120).Scrolling | Container(145).Scrolling</visible>
+			<visible>Container.Scrolling | Container(584).Scrolling</visible>
 		
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="300" delay="100"/>
@@ -1558,4 +1575,16 @@
 		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Episode,E0]</value>
 		<value>$INFO[VideoPlayer.Episode,E]</value>
 	</variable>
+	
+	<include name="MusicOSDItemgap1">
+		<itemgap>10</itemgap>
+	</include>
+	
+	<include name="MusicOSDItemgap2">
+		<itemgap>7</itemgap>
+	</include>
+	
+	<include name="MusicOSDItemgap3">
+		<itemgap>3</itemgap>
+	</include>
 </includes>

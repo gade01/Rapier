@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="3007">
 	<defaultcontrol always="true">450</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 	<visible>Window.IsVisible(SkinSettings) + System.HasAddon(script.cdartmanager) + IsEmpty(Skin.String(MusicLibraryClearLogosPath)) + !Skin.HasSetting(EnableMusicLibraryClearLogos) + !Skin.HasSetting(CloseDialog3007)</visible>
 	
 	<coordinates>
@@ -11,6 +10,7 @@
 	
 	<controls>
 		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>DialogOpenCloseAnim</include>
 			<control type="image">
 				<width>490</width>
@@ -22,7 +22,7 @@
 				<left>430</left>
 				<include>DialogCloseBtn</include>
 			</control>
-						
+			
 			<control type="label">
 				<include>DialogTitle2</include>
 				<label>$LOCALIZE[31942]</label>

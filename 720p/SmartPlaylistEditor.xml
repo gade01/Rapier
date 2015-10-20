@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="129">
 	<defaultcontrol always="true">22</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
@@ -9,7 +8,8 @@
 	</coordinates>
 	
 	<controls>
-		<control type="group">	
+		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>SmartPlaylistEditorDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="fade" start="100" end="0" time="250" condition="Window.IsActive(VirtualKeyboard) | Window.IsActive(SmartPlaylistRule)">Conditional</animation>

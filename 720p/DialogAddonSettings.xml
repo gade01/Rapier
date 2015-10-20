@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="10140">
 	<defaultcontrol always="true">2</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 	
 	<coordinates>
 		<system>1</system>
@@ -10,6 +9,7 @@
 
 	<controls>	
 		<control type="group">
+			<depth>DepthDialog</depth>
 			<include>AddonSettingsDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="slide" end="-205,-4" condition="Window.IsActive(FullScreenVideo) | Window.IsActive(Visualisation)">Conditional</animation>
@@ -19,24 +19,22 @@
 				<include>DialogTitle3</include>
 			</control>
 			
-			<control type="group">	
-				<control type="image">
-					<left>798</left>
-					<top>47</top>
-					<width>14</width>
-					<height>379</height>
-					<texture border="4">controls/scrollbar-background.png</texture>
-				</control>
-				
-				<control type="scrollbar" id="919">
-					<left>798</left>
-					<top>47</top>
-					<height>379</height>
-					<texturesliderbackground>-</texturesliderbackground>
-					<onleft>2</onleft>
-					<onright>9</onright>
-					<ondown>9001</ondown>
-				</control>
+			<control type="image">
+				<left>798</left>
+				<top>47</top>
+				<width>14</width>
+				<height>379</height>
+				<texture border="4">controls/scrollbar-background.png</texture>
+			</control>
+			
+			<control type="scrollbar" id="919">
+				<left>798</left>
+				<top>47</top>
+				<height>379</height>
+				<texturesliderbackground>-</texturesliderbackground>
+				<onleft>2</onleft>
+				<onright>9</onright>
+				<ondown>9001</ondown>
 			</control>
 			
 			<control type="group">
@@ -131,7 +129,7 @@
 			</control>
 
 			<control type="grouplist" id="9001">		
-				<description>Dialog Button Area</description>	
+				<description>Dialog Button Area</description>
 				<width>842</width>
 				<align>center</align>
 				<top>430</top>

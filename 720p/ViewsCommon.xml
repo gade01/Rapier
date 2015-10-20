@@ -1614,6 +1614,18 @@
 					<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
+				<control type="image">
+					<description>Watched Partial</description>
+					<left>686</left>
+					<top>39</top>
+					<width>24</width>
+					<height>24</height>
+					<texture background="true">$VAR[WatchedPartial]</texture>
+					<aspectratio align="right">keep</aspectratio>
+					<visible>ListItem.IsResumable</visible>
+					<include>ListViewPartialWatchedOverlayFadeAnim</include>
+					<include>ListViewWatchedOverlayFadeAnim</include>
+				</control>
 			</control>
 		</itemlayout>
 		<itemlayout condition="Container.Content(TVShows)" height="74">
@@ -1715,7 +1727,7 @@
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!Skin.HasSetting(HideTVShowsListOverlay)</visible>
 				<include>ListViewOverlayFadeAnim</include>
-			</control>	
+			</control>
 		</itemlayout>
 		<itemlayout condition="Container.Content(Episodes)" height="74">
 			<include>ListTallStyleNoFocus</include>
@@ -1921,7 +1933,7 @@
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!Skin.HasSetting(HideSeasonsListOverlay)</visible>
 				<include>ListViewOverlayFadeAnim</include>
-			</control>	
+			</control>
 		</itemlayout>
 		<itemlayout condition="Container.Content(Albums)" height="74">	
 			<include>ListTallStyleNoFocus</include>
@@ -2324,7 +2336,7 @@
 				<texture background="true">$INFO[ListItem.Overlay]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<include>ListViewOverlayFadeAnim</include>
-			</control>	
+			</control>
 		</itemlayout>
 	</include>
 	
@@ -2536,6 +2548,18 @@
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
+					<control type="image">
+						<description>Watched Partial</description>
+						<left>686</left>
+						<top>39</top>
+						<width>24</width>
+						<height>24</height>
+						<texture background="true">$VAR[WatchedPartial]</texture>
+						<aspectratio align="right">keep</aspectratio>
+						<visible>ListItem.IsResumable</visible>
+						<include>ListViewPartialWatchedOverlayFadeAnim</include>
+						<include>ListViewWatchedOverlayFadeAnim</include>
 					</control>
 				</control>
 			</control>
@@ -3192,7 +3216,7 @@
 				<height>20</height>
 				<texture background="true">$INFO[ListItem.Overlay]</texture>
 				<aspectratio align="right">keep</aspectratio>
-			</control>	
+			</control>
 		</focusedlayout>			
 	</include>
 	
@@ -4399,6 +4423,7 @@
 				<focusedlayout width="180">
 					<control type="group">
 						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(3DWrapMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(3DWrapTVShowsStyle,2)]</visible>
+						<depth>DepthContent+</depth>
 						<control type="image">
 							<description>Cover</description>
 							<left>14</left>
@@ -4889,6 +4914,7 @@
 			<control type="group">
 				<visible>[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(3DWrapMoviesStyle,) | Skin.String(3DWrapMoviesStyle,1)]] | [Container.Content(TVShows) + [Skin.String(3DWrapTVShowsStyle,) | Skin.String(3DWrapTVShowsStyle,1)]]</visible>
 				<control type="group" id="5051">
+					<depth>Depth3DWrapPosters</depth>
 					<top>367</top>
 					<camera x="640" y="540" />
 					<visible>Control.IsVisible(588) + Container.OnNext</visible>
@@ -5782,6 +5808,7 @@
 				</control> 
 				
 				<control type="group" id="5052">
+					<depth>Depth3DWrapPosters</depth>
 					<top>367</top>
 					<camera x="640" y="540" />
 					<visible>Control.IsVisible(588) + Container.OnPrevious</visible>
@@ -6675,6 +6702,7 @@
 				</control>
 				
 				<control type="group" id="5050">
+					<depth>Depth3DWrapPosters</depth>
 					<top>367</top>
 					<animation effect="fade" time="500">WindowOpen</animation>
 					<animation effect="fade" time="200">WindowClose</animation>
@@ -7440,6 +7468,7 @@
 				
 				<control type="group">
 					<visible>Control.IsVisible(588) + ![Control.IsVisible(5051) | Control.IsVisible(5052)]</visible>
+					<depth>DepthContent+</depth>
 					<left>543</left>
 					<top>425</top>
 					<animation effect="zoom" start="100" end="70" center="643,495" time="300" tween="circle" easing="inout" condition="Control.HasFocus(929) | ControlGroup(850).HasFocus">Conditional</animation>
@@ -7545,12 +7574,14 @@
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
+				<depth>DepthContent+</depth>
 				<top>BottomPaneOffsetY</top>
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
 			</control>
 			
 			<control type="group">
+				<depth>DepthContent+</depth>
 				<animation type="Conditional" condition="Control.HasFocus(929)" reversible="false">
 					<effect type="fade" start="0" end="100" time="200"/>
 					<effect type="zoom" start="70" end="100" center="640,687" time="400" tween="back" easing="inout"/>
@@ -7587,7 +7618,7 @@
 			</control>
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>			
+		</control>
 	</include>
 	<!--//// END 3D WRAP VIEW ////////////////////////////////////////////////////////////////////////////-->
 	
@@ -9350,6 +9381,7 @@
 			</control>
 			
 			<control type="group">
+				<depth>DepthContent+</depth>
 				<left>528</left>
 				<top>366</top>
 				<animation effect="zoom" start="100" end="70" center="640,666" time="400" tween="back" easing="inout" condition="!Control.HasFocus(583)">Conditional</animation>
@@ -9468,6 +9500,7 @@
 			</control>
 			
 			<control type="group">
+				<depth>DepthContent+</depth>
 				<animation type="Conditional" condition="Control.HasFocus(150)" reversible="false">
 					<effect type="fade" start="0" end="100" time="200"/>
 					<effect type="zoom" start="70" end="100" center="640,699" time="400" tween="back" easing="inout"/>
@@ -9504,6 +9537,7 @@
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
+				<depth>DepthContent+</depth>
 				<top>BottomPaneOffsetY</top>
 				<control type="label">
 					<include>InfoPaneHeadLabel</include>
