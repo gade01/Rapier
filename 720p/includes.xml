@@ -799,7 +799,7 @@
 
 	<include name="SortLetterNotification">
 		<control type="group">
-			<visible>Container.Scrolling | Container(584).Scrolling | Container(120).Scrolling | Container(145).Scrolling</visible>
+			<visible>Container.Scrolling | Container(584).Scrolling</visible>
 		
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="300" delay="100"/>
@@ -1552,4 +1552,12 @@
 		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Episode,E0]</value>
 		<value>$INFO[VideoPlayer.Episode,E]</value>
 	</variable>
+	
+	<include name="MusicOSDItemgap1">
+		<itemgap>10</itemgap>
+	</include>
+	
+	<include name="MusicOSDItemgap2">
+		<itemgap>7</itemgap>
+	</include>
 </includes>
