@@ -180,29 +180,6 @@
 		<pulseonselect>false</pulseonselect>		
 	</include>
 	
-	<include name="DropDownMenuCDArtManagerRadioBtn">
-		<width>242</width>
-		<height>37</height>
-		<font>MenuItemFont</font>
-		<textcolor>ContentTitleColor</textcolor>
-		<focusedcolor>MenuItemFocusColor</focusedcolor>
-		<textoffsetx>18</textoffsetx>
-		<align>left</align>
-		<radiowidth>18</radiowidth>
-		<radioheight>12</radioheight>
-		<radioposx>206</radioposx>
-		<radioposy>-</radioposy>
-		<textwidth>196</textwidth>
-		<textureradiofocus flipy="true">controls/nav-arrow-up-nofocus.png</textureradiofocus>
-		<textureradionofocus flipy="true">controls/nav-arrow-up-nofocus.png</textureradionofocus>
-		<texturefocus border="12,4,12,5">gui/menu-bar-item-focus.png</texturefocus>
-		<texturenofocus border="9,0,9,3">gui/menu-bar-item-nofocus.png</texturenofocus>
-		<textureradioondisabled colordiffuse="66FFFFFF" flipy="true">controls/nav-arrow-up-nofocus.png</textureradioondisabled>
-		<textureradiooffdisabled colordiffuse="66FFFFFF" flipy="true">controls/nav-arrow-up-nofocus.png</textureradiooffdisabled>
-		<pulseonselect>false</pulseonselect>
-		<onclick>noop</onclick>
-	</include>
-	
 	<include name="DropDownMenuHeader">	
 		<width>212</width>
 		<height>30</height>
@@ -1671,6 +1648,8 @@
 					<onright condition="!Control.IsVisible(214) + Control.IsVisible(218)">218</onright>
 					<onright condition="!Control.IsVisible(214) + !Control.IsVisible(218) + Control.IsVisible(210)">210</onright>
 					<onright condition="!Control.IsVisible(214) + !Control.IsVisible(218) + !Control.IsVisible(210)">8</onright>
+					<ondown>901</ondown>
+					<onup>555</onup>
 					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 					<visible>System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
 				</control>
@@ -1696,6 +1675,8 @@
 					<onright condition="Control.IsVisible(218)">218</onright>
 					<onright condition="!Control.IsVisible(218) + Control.IsVisible(210)">210</onright>
 					<onright condition="!Control.IsVisible(218) + !Control.IsVisible(210)">8</onright>
+					<ondown>901</ondown>
+					<onup>555</onup>
 					<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 					<visible>System.HasAddon(script.libraryeditor)</visible>
 				</control>
@@ -2528,91 +2509,6 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			-->
-		</control>		
-	</include>
-	
-	<include name="CDArtManagerMenuBar">
-		<control type="grouplist" id="987">
-			<top>0</top>
-			<width>ScreenWidth</width>
-			<height>MenuBarHeight</height>
-			<itemgap>0</itemgap>
-			<align>center</align>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<onup>555</onup>
-			<include>MenuBarBtnOpenCloseAnim</include>
-			<control type="image" id="301">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="302">
-				<description>Album</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[558][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,1)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="303">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="304">
-				<description>Artist</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[557][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,2)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="305">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="306">
-				<description>Add-on Database</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31004][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,3)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="307">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="308">
-				<description>Miscellaneous</description>
-				<width>230</width>
-				<textwidth>179</textwidth>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31019][/UPPERCASE]</label>
-				<onfocus>Skin.SetString(CDArtManagerDialog,4)</onfocus>
-				<onclick>ActivateWindow(3012)</onclick>
-			</control>
-			<control type="image" id="309">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="104">
-				<description>Settings</description>
-				<width>169</width>
-				<textwidth>155</textwidth>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$ADDON[script.cdartmanager 32146][/UPPERCASE]</label>
-			</control>
-			<control type="image" id="310">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="111">
-				<description>Exit</description>
-				<width>169</width>
-				<textwidth>155</textwidth>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$ADDON[script.cdartmanager 32147][/UPPERCASE]</label>
-			</control>
-			<control type="image" id="311">
-				<include>MenuBarSeparator</include>
-			</control>
 		</control>		
 	</include>
 </includes>

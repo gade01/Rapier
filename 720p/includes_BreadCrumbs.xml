@@ -38,17 +38,17 @@
 		<hitrect x="-20" y="-20" w="60" h="60"/>
 		<texturenofocus>gui/breadcrumb-home-nofocus.png</texturenofocus>
 		<texturefocus>gui/breadcrumb-home-focus.png</texturefocus>
-		<onright condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml) | Window.IsActive(script-cdartmanager.xml)">987</onright>
-		<onright condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml) | Window.IsActive(script-cdartmanager.xml)]">850</onright>
-		<ondown condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml) | Window.IsActive(script-cdartmanager.xml)">987</ondown>
-		<ondown condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml) | Window.IsActive(script-cdartmanager.xml)]">850</ondown>
+		<onright condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">987</onright>
+		<onright condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)]">850</onright>
+		<ondown condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">987</ondown>
+		<ondown condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)]">850</ondown>
 		<onclick>Dialog.Close(all,true)</onclick>
 		<onclick>ActivateWindow(Home)</onclick>
-		<animation type="Conditional" condition="![Container.Scrolling | Container(584).Scrolling | Container(120).Scrolling | Container(145).Scrolling]">
+		<animation type="Conditional" condition="![Container.Scrolling | Container(584).Scrolling]">
 			<effect type="fade" start="0" end="100" time="300" delay="1100"/>
 			<effect type="slide" start="-60,0" time="400" tween="cubic" easing="out" delay="1100"/>	
 		</animation>		
-		<animation type="Conditional" condition="Container.Scrolling | Container(584).Scrolling | Container(120).Scrolling | Container(145).Scrolling">
+		<animation type="Conditional" condition="Container.Scrolling | Container(584).Scrolling">
 			<effect type="fade" start="100" end="0" time="300"/>
 			<effect type="slide" end="-60,0" time="400" tween="cubic" easing="out"/>	
 		</animation>
@@ -1552,50 +1552,6 @@
 				<include condition="Window.IsActive(script-ExtendedInfo Script-VideoList.xml)">BreadCrumbSlideLvl3Anim</include>
 				<include condition="Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">BreadCrumbSlideLvl4Anim</include>
 				<visible>!IsEmpty(Window.Property(Filter_Label))</visible>
-			</control>
-		</control>
-	</include>
-	
-	<include name="BreadCrumbCDArtManager">
-		<control type="grouplist">
-			<left>10</left>
-			<top>StatusBartop</top>
-			<height>43</height>
-			<width>740</width>
-			<itemgap>8</itemgap>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<control type="button" id="555">
-				<include>BreadCrumbHomeIcon</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-				<ondown>987</ondown>
-				<onright>987</onright>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<control type="label">
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$INFO[System.AddonTitle(script.cdartmanager)][/B][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="label">
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$VAR[CDArtManagerArtistBreadCrumb][/B][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>[SubString(Window(10001).Property(artwork),fanart) | SubString(Window(10001).Property(artwork),cover) | SubString(Window(10001).Property(artwork),cdart)
-				| SubString(Window(10001).Property(artwork),clearlogo) | SubString(Window(10001).Property(artwork),artistthumb) | Control.HasFocus(145)] + !Control.HasFocus(120)</visible>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>[SubString(Window(10001).Property(artwork),fanart) | SubString(Window(10001).Property(artwork),cover) | SubString(Window(10001).Property(artwork),cdart)
-				| SubString(Window(10001).Property(artwork),clearlogo) | SubString(Window(10001).Property(artwork),artistthumb) | Control.HasFocus(145)] + !Control.HasFocus(120)</visible>
 			</control>
 		</control>
 	</include>
