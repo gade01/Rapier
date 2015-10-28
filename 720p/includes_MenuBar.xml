@@ -2575,6 +2575,7 @@
 				<onclick>Dialog.Close(3008)</onclick>
 				<ondown condition="IsEmpty(Skin.String(DialogMovieSetInfo))">901</ondown>
 				<ondown condition="Skin.String(DialogMovieSetInfo,1)">902</ondown>
+				<oninfo>Dialog.Close(3008)</oninfo>
 			</control>
 			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
@@ -2585,6 +2586,7 @@
 				<label>[UPPERCASE]$LOCALIZE[207][/UPPERCASE]</label>
 				<onfocus>Skin.Reset(DialogMovieSetInfo)</onfocus>
 				<ondown>901</ondown>
+				<oninfo>Dialog.Close(3008)</oninfo>
 			</control>
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
@@ -2595,6 +2597,7 @@
 				<label>[UPPERCASE]$LOCALIZE[20342][/UPPERCASE]</label>
 				<onfocus>Skin.SetString(DialogMovieSetInfo,1)</onfocus>
 				<ondown>902</ondown>
+				<oninfo>Dialog.Close(3008)</oninfo>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>

@@ -272,6 +272,7 @@
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<onright condition="!Control.IsVisible(61)">987</onright>
 						<ondown condition="Control.IsVisible(61)">61</ondown>
+						<oninfo>Dialog.Close(3008)</oninfo>
 						<itemlayout width="720" height="29">
 							<control type="image">
 								<top>27</top>
@@ -462,6 +463,7 @@
 						<onleft>987</onleft>
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<pagecontrol>61</pagecontrol>
+						<oninfo>Dialog.Close(3008)</oninfo>
 						<itemlayout width="482" height="30">
 							<control type="image">
 								<top>28</top>
@@ -879,6 +881,7 @@
 					<onup condition="Skin.String(DialogMovieSetInfo,1)">902</onup>
 					<onleft condition="IsEmpty(Skin.String(DialogMovieSetInfo))">901</onleft>
 					<onleft condition="Skin.String(DialogMovieSetInfo,1)">902</onleft>
+					<oninfo>Dialog.Close(3008)</oninfo>
 					<include>NotificationsOpenCloseAnim</include>
 					<visible>[!StringCompare(Container(903).NumPages,1) + !IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + IsEmpty(Skin.String(DialogMovieSetInfo))] | [!StringCompare(Container(902).NumPages,1) + !IsEmpty(Container(902).ListItem.Label) + Skin.String(DialogMovieSetInfo,1)]</visible>
 				</control>

@@ -21,6 +21,8 @@
 				<ondown>50</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>
+				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
+				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.info.service)">ActivateWindow(3008)</oninfo>
 				<itemlayout condition="Container.Content(TVShows)" height="185" width="203">
 					<control type="image">
 						<description>Default Cover</description>
@@ -734,7 +736,9 @@
 				<onup>52</onup>
 				<ondown>52</ondown>
 				<onleft>850</onleft>
-				<onright>150</onright>				
+				<onright>150</onright>
+				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
+				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.info.service)">ActivateWindow(3008)</oninfo>
 				<include condition="Skin.String(CommonListStyle,) | Skin.String(CommonListStyle,1) | Skin.String(CommonListStyle,3)">CommonListItemLayout</include>
 				<include condition="Skin.String(CommonListStyle,2)">CommonListTallStyleItemLayout</include>
 				<include condition="Skin.String(CommonListStyle,) | Skin.String(CommonListStyle,1)">CommonListFocusedLayout</include>
@@ -8706,6 +8710,7 @@
 				<onleft condition="!IntegerGreaterThan(Container(585).NumPages,1)">850</onleft>
 				<onright>584</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
+				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.info.service)">ActivateWindow(3008)</oninfo>
 				<itemlayout height="37">
 					<control type="image">
 						<left>0</left>
@@ -9271,6 +9276,7 @@
                 <focusposition>0</focusposition>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(583)">Conditional</animation>
+				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.info.service)">ActivateWindow(3008)</oninfo>
 				<itemlayout width="560" height="400">			
 					<control type="group">
 						<visible>!IsEmpty(ListItem.Title) + [[!Skin.HasSetting(HideMoviesFanartMediaInfo) + [Container.Content(Movies) | Container.Content(Sets)]] | [!Skin.HasSetting(HideTVShowsFanartMediaInfo) + Container.Content(TVShows)]]</visible>
