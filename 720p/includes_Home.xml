@@ -3678,7 +3678,13 @@
 						<description>Settings</description>
 						<label>$LOCALIZE[5]</label>
 						<onclick>ActivateWindow(AppearanceSettings)</onclick>
-						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]]</visible>
+						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + ![System.HasAddon(service.openelec.settings) + System.Platform.Linux.RaspberryPi]</visible>
+					</item>
+					<item id="2">
+						<description>OpenELEC Settings</description>
+						<label>$LOCALIZE[31129]</label>
+						<onclick>RunAddon(service.openelec.settings)</onclick>
+						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + [System.HasAddon(service.openelec.settings) + System.Platform.Linux.RaspberryPi]</visible>
 					</item>
 					<item id="2">
 						<description>Custom Button</description>
