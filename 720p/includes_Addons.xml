@@ -1649,11 +1649,6 @@
 		<value>$INFO[ListItem.Plot]</value>
 	</variable>
 	
-	<variable name="FanartGrabberRefreshIntervalVar">
-		<value condition="IsEmpty(Skin.String(FanartGrabberRefreshIntervalValue))">$NUMBER[8]</value>
-		<value>$INFO[Skin.String(FanartGrabberRefreshIntervalValue)]</value>
-	</variable>
-	
 	<variable name="ExtendedInfoThumb">
 		<value condition="Skin.String(ExtendedInfo,2)">$INFO[Container(150).ListItem.Thumb]</value>
 		<value condition="Skin.String(ExtendedInfo,3)">$INFO[Container(250).ListItem.Thumb]</value>

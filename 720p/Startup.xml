@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">10</defaultcontrol>
 	<onload condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onload>
 	<onload condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
+	<onload condition="System.GetBool(pvrmanager.enabled) + System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	
 	<controls>
 		<control type="image">
