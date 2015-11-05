@@ -142,7 +142,7 @@
 						<textcolor>ButtonColor</textcolor>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
-						<visible>![IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version))]</visible>
+						<visible>![IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version)) + IsEmpty(ListItem.Property(Addon.Summary))]</visible>
 					</control>
 					<control type="label">
 						<left>128</left>
@@ -152,7 +152,7 @@
 						<textcolor>ButtonColor</textcolor>
 						<aligny>center</aligny>
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-						<visible>IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version))</visible>
+						<visible>IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version)) + IsEmpty(ListItem.Property(Addon.Summary))</visible>
 					</control>
 					<control type="label">
 						<left>128</left>
@@ -175,6 +175,17 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(Addon.Version)]</label>
 						<visible>IsEmpty(ListItem.Label2) + !IsEmpty(ListItem.Property(Addon.Version))</visible>
+					</control>
+					<control type="label">
+						<left>128</left>
+						<top>26</top>
+						<width>274</width>
+						<height>35</height>
+						<font>ListFont2</font>
+						<textcolor>MediaInfoTitleColor2</textcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+						<visible>IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version)) + !IsEmpty(ListItem.Property(Addon.Summary))</visible>
 					</control>
 				</itemlayout>				
 				<focusedlayout height="68" width="410">	
@@ -211,7 +222,7 @@
 						<textcolor>ButtonFocusColor</textcolor>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
-						<visible>![IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version))]</visible>
+						<visible>![IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version)) + IsEmpty(ListItem.Property(Addon.Summary))]</visible>
 					</control>
 					<control type="label">
 						<left>128</left>
@@ -221,7 +232,7 @@
 						<textcolor>ButtonFocusColor</textcolor>
 						<aligny>center</aligny>
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-						<visible>IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version))</visible>
+						<visible>IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version)) + IsEmpty(ListItem.Property(Addon.Summary))</visible>
 					</control>
 					<control type="label">
 						<left>128</left>
@@ -244,6 +255,17 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(Addon.Version)]</label>
 						<visible>IsEmpty(ListItem.Label2) + !IsEmpty(ListItem.Property(Addon.Version))</visible>
+					</control>
+					<control type="label">
+						<left>128</left>
+						<top>26</top>
+						<width>274</width>
+						<height>35</height>
+						<font>ListFont2</font>
+						<textcolor>MediaInfoTitleColor2</textcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+						<visible>IsEmpty(ListItem.Label2) + IsEmpty(ListItem.Property(Addon.Version)) + !IsEmpty(ListItem.Property(Addon.Summary))</visible>
 					</control>
 				</focusedlayout>
 			</control>
