@@ -244,8 +244,8 @@
 					<include>SettingsCatBtn</include>
 					<label>$VAR[SkinSettingsLabel]</label>
 					<onfocus>Skin.SetString(SkinSettingsCategory,6)</onfocus>
-					<onclick condition="!System.HasAddon(script.toolbox)">Skin.ResetSettings</onclick>
-					<onclick condition="!System.HasAddon(script.toolbox)">Notification($LOCALIZE[31023],$LOCALIZE[31219],3000,)</onclick>
+					<onclick condition="!System.HasAddon(script.skin.helper.service)">Skin.ResetSettings</onclick>
+					<onclick condition="!System.HasAddon(script.skin.helper.service)">Notification($LOCALIZE[31023],$LOCALIZE[31219],3000,)</onclick>
 					<visible>!ControlGroup(905).HasFocus</visible>
 				</control>
 				<control type="button" id="14">
@@ -277,7 +277,7 @@
 					<texturenofocus>-</texturenofocus>
 					<include>SettingsHeaderBtn</include>
 					<label>$LOCALIZE[32026]</label>
-					<visible>Skin.String(SkinSettingsCategory,6) + !Skin.HasSetting(ExpandedSettings) + !System.HasAddon(script.toolbox)</visible>
+					<visible>Skin.String(SkinSettingsCategory,6) + !Skin.HasSetting(ExpandedSettings) + !System.HasAddon(script.skin.helper.service)</visible>
 					<include>ContentSettingsOpenCloseAnim</include>
 				</control>
 				
@@ -291,7 +291,7 @@
 					<ondown>905</ondown>
 					<onleft>6</onleft>
 					<onright>150</onright>
-					<visible>Skin.String(SkinSettingsCategory,6) + !Skin.HasSetting(ExpandedSettings) + System.HasAddon(script.toolbox)</visible>
+					<visible>Skin.String(SkinSettingsCategory,6) + !Skin.HasSetting(ExpandedSettings) + System.HasAddon(script.skin.helper.service)</visible>
 					<include>ContentSettingsOpenCloseAnim</include>
 					<control type="button" id="6000">
 						<description>Skin Settings Label</description>
@@ -310,13 +310,13 @@
 						<description>Export Skin Settings</description>
 						<include>SettingsContentBtn</include>
 						<label>$LOCALIZE[31932]</label>
-						<onclick>RunScript(script.toolbox,info=exportskinsettings)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
 					</control>
 					<control type="button" id="6003">
 						<description>Import Skin Settings</description>
 						<include>SettingsContentBtn</include>
 						<label>$LOCALIZE[31933]</label>
-						<onclick>RunScript(script.toolbox,info=importskinsettings)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
 					</control>
 				</control>
 			</control>
