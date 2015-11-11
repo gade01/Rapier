@@ -1215,7 +1215,7 @@
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
-			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(NextAired.Genre)) + IsEmpty(Window(Home).Property(Set.Movies.Genre))]</visible>
+			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(NextAired.Genre)) + IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))]</visible>
 			<visible>![Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesGenres)]</visible>
 		</control>
 					
@@ -1230,7 +1230,7 @@
 			<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="90" condition="true">Conditional</animation>
-			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(Set.Movies.Genre))]</visible>
+			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))]</visible>
 			<visible>![Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesGenres)]</visible>
 		</control>
 		
@@ -1484,7 +1484,7 @@
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
-			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(NextAired.Genre)) + IsEmpty(Window(Home).Property(Set.Movies.Genre))]</visible>
+			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(NextAired.Genre)) + IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))]</visible>
 			<visible>![Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesGenres)]</visible>
 		</control>
 					
@@ -1499,7 +1499,7 @@
 			<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="90" condition="true">Conditional</animation>
-			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(Set.Movies.Genre))]</visible>
+			<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))]</visible>
 			<visible>![Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesGenres)]</visible>
 		</control>
 		

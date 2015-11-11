@@ -273,15 +273,8 @@
 				
 				<control type="multiimage">
 					<include>CustomImagePreview</include>
-					<imagepath background="true" fallback=".">$INFO[Skin.String(CustomMusicBGPath)]</imagepath>
-					<visible>Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)</visible>
-					<include>CustomImagePreviewOpenCloseAnim</include>
-				</control>
-				
-				<control type="multiimage">
-					<include>CustomImagePreview</include>
-					<imagepath background="true" fallback=".">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</imagepath>
-					<visible>Skin.String(CustomMusicBGType,4)</visible>
+					<imagepath background="true" fallback=".">$VAR[CustomMusicBGVar]</imagepath>
+					<visible>Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3) | Skin.String(CustomMusicBGType,4)</visible>
 					<include>CustomImagePreviewOpenCloseAnim</include>
 				</control>
 				
@@ -292,7 +285,9 @@
 					<height>340</height>
 					<itemgap>15</itemgap>
 					<onup>4613</onup>
-					<ondown>4610</ondown>
+					<ondown condition="Skin.String(CustomMusicBGType,2)">4610</ondown>
+					<ondown condition="Skin.String(CustomMusicBGType,3)">4611</ondown>
+					<ondown condition="Skin.String(CustomMusicBGType,4)">4614</ondown>
 					<onleft>1952</onleft>
 					<control type="radiobutton" id="4510">
 						<description>Default</description>
@@ -324,7 +319,7 @@
 						<selected>Skin.String(CustomMusicBGType,4)</selected>
 						<onclick>Skin.SetString(CustomMusicBGType,4)</onclick>
 						<onclick>Skin.Reset(CustomMusicBGPath)</onclick>
-						<label>$LOCALIZE[31923]</label>
+						<label>$LOCALIZE[20445]</label>
 						<visible>System.HasAddon(script.skin.helper.service)</visible>
 					</control>
 				</control>
@@ -335,6 +330,39 @@
 					<onup>4513</onup>
 					<ondown>4510</ondown>
 					<onleft>1952</onleft>
+					<control type="group" id="4614">
+						<visible>Skin.String(CustomMusicBGType,4)</visible>
+						<height>55</height>
+						<control type="radiobutton" id="4615">
+							<description>Random</description>
+							<width>185</width>
+							<textwidth>125</textwidth>
+							<radioposx>133</radioposx>
+							<include>SettingsCustomBGRadioBtn</include>
+							<selected>Skin.String(CustomMusicFanartBGType,random) | Skin.String(CustomMusicFanartBGType,)</selected>
+							<onclick>Skin.SetString(CustomMusicFanartBGType,random)</onclick>
+							<label>$LOCALIZE[590]</label>
+							<ondown>4613</ondown>
+							<onup>4513</onup>
+							<onleft>1952</onleft>
+							<onright>4616</onright>
+						</control>
+						<control type="radiobutton" id="4616">
+							<description>Recent</description>
+							<left>190</left>
+							<width>185</width>
+							<textwidth>125</textwidth>
+							<radioposx>133</radioposx>
+							<include>SettingsCustomBGRadioBtn</include>
+							<selected>Skin.String(CustomMusicFanartBGType,recent)</selected>
+							<onclick>Skin.SetString(CustomMusicFanartBGType,recent)</onclick>
+							<label>$LOCALIZE[31924]</label>
+							<ondown>4613</ondown>
+							<onup>4513</onup>
+							<onleft>4615</onleft>
+							<onright>4615</onright>
+						</control>
+					</control>
 					<control type="button" id="4610">
 						<description>Single Image Path</description>
 						<include>SettingsContentBtn</include>
@@ -365,6 +393,7 @@
 						<altlabel>$LOCALIZE[31051]</altlabel>
 						<usealttexture>!Skin.HasSetting(ApplyAllMusicCustomBG)</usealttexture>
 						<onclick>Skin.ToggleSetting(ApplyAllMusicCustomBG)</onclick>
+						<onup condition="Skin.String(CustomMusicBGType,4)">4614</onup>
 						<visible>Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3) | Skin.String(CustomMusicBGType,4)</visible>
 					</control>	
 				</control>
