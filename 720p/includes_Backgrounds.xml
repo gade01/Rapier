@@ -35,6 +35,12 @@
 		<value condition="Skin.String(CustomTVShowsBGType,4) + Skin.String(CustomTVShowsFanartBGType,inprogress)">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
 	</variable>
 	
+	<variable name="CustomMusicBGVar">
+		<value condition="Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)">$INFO[Skin.String(CustomMusicBGPath)]</value>
+		<value condition="Skin.String(CustomMusicBGType,4) + [Skin.String(CustomMusicFanartBGType,random) | Skin.String(CustomMusicFanartBGType,)]">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(CustomMusicBGType,4) + Skin.String(CustomMusicFanartBGType,recent)">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
 	<include name="BackgroundLoginScreen">
 		<control type="image">
 			<depth>DepthBackground</depth>
@@ -133,8 +139,7 @@
 			<control type="multiimage">
 				<description>Custom Background</description>
 				<include>BackgroundSize</include>
-				<include condition="Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)">MusicCustomBGPath</include>
-				<include condition="Skin.String(CustomMusicBGType,4) + System.HasAddon(script.skin.helper.service)">MusicFanartBGPath</include>
+				<imagepath>$VAR[CustomMusicBGVar]</imagepath>
 				<aspectratio>scale</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -626,14 +631,6 @@
 			<include>BackgroundDim</include>
 			<animation effect="fade" end="70" reversible="false" condition="Skin.HasSetting(PVRBackgroundBrightnessHigh)">Conditional</animation>
 		</control>
-	</include>
-
-	<include name="MusicCustomBGPath">
-		<imagepath>$INFO[Skin.String(CustomMusicBGPath)]</imagepath>
-	</include>
-	
-	<include name="MusicFanartBGPath">
-		<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</imagepath>
 	</include>
 	
 	<include name="PVRCustomBGPath">
