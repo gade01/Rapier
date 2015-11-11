@@ -164,14 +164,6 @@
 		</focusedlayout>
 	</include>
 
-	<include name="HomeMusicCustomBGPath">
-		<thumb>$INFO[Skin.String(CustomMusicBGPath)]</thumb>
-	</include>
-	
-	<include name="HomeMusicFanartBGPath">
-		<thumb>$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</thumb>
-	</include>
-
 	<include name="HomeProgramsCustomBGPath">
 		<thumb>$INFO[Skin.String(CustomProgramsBGPath)]</thumb>
 	</include>
@@ -786,8 +778,7 @@
 						<description>Music Category</description>
 						<label>music</label>
 						<icon>homecategories/$INFO[System.Language]/music-text-nofocus.png</icon>
-						<include condition="Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)">HomeMusicCustomBGPath</include>
-						<include condition="Skin.String(CustomMusicBGType,4) + System.HasAddon(script.skin.helper.service)">HomeMusicFanartBGPath</include>
+						<thumb>$VAR[CustomMusicBGVar]</thumb>
 						<include condition="Skin.HasSetting(RedirectMusicCategoryFiles)">RedirectMusicCategoryFiles</include>
 						<include condition="!Skin.HasSetting(RedirectMusicCategoryFiles)">RedirectMusicCategoryLibrary</include>
 						<visible>!Skin.HasSetting(HideMusicCategory)</visible>
