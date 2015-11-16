@@ -283,7 +283,7 @@
 			<width>56</width>
 			<height>35</height>
 			<texture border="6">flagging/$VAR[MediaFlagTheme]/subtitle/subtitle.png</texture>
-			<visible>![SubString(Window(Home).Property(SkinHelper.ListItemSubtitles.Count),0) | !Skin.HasSetting(HideSubtitleMediaFlag) | SubString(ListItem.Path,videodb://movies/sets,left)] + System.HasAddon(script.skin.helper.service)</visible>
+			<visible>![StringCompare(Window(Home).Property(SkinHelper.ListItemSubtitles.Count),0) | IsEmpty(Window(Home).Property(SkinHelper.ListItemSubtitles.Count)) | !Skin.HasSetting(HideSubtitleMediaFlag)] + System.HasAddon(script.skin.helper.service)</visible>
 		</control>
 				
 		<control type="label">
@@ -297,7 +297,7 @@
 			<aligny>center</aligny>
 			<label>[B]$INFO[Window(Home).Property(SkinHelper.ListItemSubtitles.Count)][/B]</label>
 			<animation effect="fade" end="60" condition="true">Conditional</animation>
-			<visible>![SubString(Window(Home).Property(SkinHelper.ListItemSubtitles.Count),0) | !Skin.HasSetting(HideSubtitleMediaFlag) | SubString(ListItem.Path,videodb://movies/sets,left)] + System.HasAddon(script.skin.helper.service)</visible>
+			<visible>![StringCompare(Window(Home).Property(SkinHelper.ListItemSubtitles.Count),0) | IsEmpty(Window(Home).Property(SkinHelper.ListItemSubtitles.Count)) | !Skin.HasSetting(HideSubtitleMediaFlag)] + System.HasAddon(script.skin.helper.service)</visible>
 		</control>
 	</include>
 	
