@@ -219,7 +219,7 @@
 	
 	<include name="RedirectMusicCategoryLibrary">
 		<label>$LOCALIZE[14022]</label>
-		<onclick>ActivateWindow(Music)</onclick>
+		<onclick>ActivateWindow(Music,Return)</onclick>
 	</include>
 	
 	<include name="RedirectVideosCategoryFiles">
@@ -229,7 +229,7 @@
 	
 	<include name="RedirectVideosCategoryLibrary">
 		<label>$LOCALIZE[14022]</label>
-		<onclick>ActivateWindow(Videos)</onclick>
+		<onclick>ActivateWindow(Videos,Return)</onclick>
 	</include>
 
 	<include name="RedirectPVRCategoryChannels">
@@ -1901,7 +1901,8 @@
 					<item id="7">
 						<description>Music Add-ons</description>
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(Music,Addons,Return)</onclick>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Music,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Music,AndroidApps,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn7)</visible>
 					</item>
 					<item id="7">
@@ -2015,7 +2016,8 @@
 					<item id="7">
 						<description>Video Add-ons</description>
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(Videos,Addons,Return)</onclick>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Videos,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Videos,AndroidApps,Return)</onclick>
 						<visible>!Skin.HasSetting(EditVideosSubMenuBtn7)</visible>
 					</item>
 					<item id="7">
@@ -2359,7 +2361,8 @@
 					<item id="1">
 						<description>Program Add-ons</description>
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(Programs,Addons,Return)</onclick>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Programs,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Programs,AndroidApps,Return)</onclick>
 						<visible>!Skin.HasSetting(EditProgramsSubMenuBtn1)</visible>
 					</item>
 					<item id="1">
@@ -2432,7 +2435,8 @@
 					<item id="1">
 						<description>Picture Add-ons</description>
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(Pictures,Addons,Return)</onclick>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Pictures,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Pictures,AndroidApps,Return)</onclick>
 						<visible>!Skin.HasSetting(EditPicturesSubMenuBtn1)</visible>
 					</item>
 					<item id="1">
