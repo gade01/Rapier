@@ -4,13 +4,26 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="468" y="148">true</origin>
+		<origin x="468" y="107">true</origin>
 	</coordinates>	
 
 	<controls>
 		<control type="group">
 			<depth>DepthDialog</depth>
 			<include>DialogOpenCloseAnim</include>
+			<animation effect="slide" end="0,-37" condition="StringCompare(Container(996).NumItems,14)">Conditional</animation>
+			<animation effect="slide" end="0,-19" condition="StringCompare(Container(996).NumItems,13)">Conditional</animation>
+			<animation effect="slide" end="0,18" condition="StringCompare(Container(996).NumItems,11)">Conditional</animation>
+			<animation effect="slide" end="0,37" condition="StringCompare(Container(996).NumItems,10)">Conditional</animation>
+			<animation effect="slide" end="0,55" condition="StringCompare(Container(996).NumItems,9)">Conditional</animation>
+			<animation effect="slide" end="0,74" condition="StringCompare(Container(996).NumItems,8)">Conditional</animation>
+			<animation effect="slide" end="0,92" condition="StringCompare(Container(996).NumItems,7)">Conditional</animation>
+			<animation effect="slide" end="0,111" condition="StringCompare(Container(996).NumItems,6)">Conditional</animation>
+			<animation effect="slide" end="0,129" condition="StringCompare(Container(996).NumItems,5)">Conditional</animation>
+			<animation effect="slide" end="0,148" condition="StringCompare(Container(996).NumItems,4)">Conditional</animation>
+			<animation effect="slide" end="0,166" condition="StringCompare(Container(996).NumItems,3)">Conditional</animation>
+			<animation effect="slide" end="0,185" condition="StringCompare(Container(996).NumItems,2)">Conditional</animation>
+			<animation effect="slide" end="0,203" condition="StringCompare(Container(996).NumItems,1)">Conditional</animation>
 			
 			<control type="grouplist">
 				<width>344</width>

@@ -187,17 +187,17 @@
 	</variable>
 	
 	<variable name="ExtraFanartImageVar">
-		<value condition="Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/sets/) | Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)">$INFO[Container(584).ListItem.Path]extrafanart</value>
+		<value condition="Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/sets/) | Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]extrafanart</value>
 		<value>$INFO[ListItem.Path]extrafanart</value>
 	</variable>
 	
 	<variable name="ExtraFanartImage2Var">
-		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)">$INFO[Container(584).ListItem.Path]../extrafanart</value>
+		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../extrafanart</value>
 		<value>$INFO[ListItem.Path]../extrafanart</value>
 	</variable>
 	
 	<variable name="ExtraFanartImage3Var">
-		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)">$INFO[Container(584).ListItem.Path]../../extrafanart</value>
+		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../../extrafanart</value>
 		<value>$INFO[ListItem.Path]../../extrafanart</value>
 	</variable>
 	
@@ -530,12 +530,12 @@
 	</include>
 	
 	<include name="SettingsCatBtn">
-		<width>210</width>
+		<width>215</width>
 		<height>50</height>
 		<font>SettingsCatFont</font>
 		<textcolor>SettingsCatColor</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
-		<textwidth>190</textwidth>
+		<textwidth>195</textwidth>
 		<textoffsetx>10</textoffsetx>
 		<align>left</align>
 		<texturefocus border="5">controls/button-focus.png</texturefocus>
@@ -544,12 +544,12 @@
 	</include>
 	
 	<include name="SettingsInactiveCatBtn">
-		<width>210</width>
+		<width>215</width>
 		<height>50</height>
 		<font>SettingsCatFont</font>
 		<textcolor>SelectedColor</textcolor>
 		<shadowcolor>ShadowColor</shadowcolor>
-		<textwidth>190</textwidth>
+		<textwidth>195</textwidth>
 		<textoffsetx>10</textoffsetx>
 		<align>left</align>
 		<texturefocus border="5">-</texturefocus>
@@ -1575,6 +1575,106 @@
 	<variable name="VideoPlayerEpisodeVal">
 		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Episode,E0]</value>
 		<value>$INFO[VideoPlayer.Episode,E]</value>
+	</variable>
+	
+	<variable name="StatusUISoundsVar">
+		<value condition="System.HasAddon(resource.uisounds.rapier)">$INFO[System.AddonVersion(resource.uisounds.rapier)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusImageResourceSelectVar">
+		<value condition="System.HasAddon(script.image.resource.select)">$INFO[System.AddonVersion(script.image.resource.select)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusStudioIconsVar">
+		<value condition="System.HasAddon(resource.images.studios.white)">$INFO[System.AddonVersion(resource.images.studios.white)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusSkinHelperServiceVar">
+		<value condition="System.HasAddon(script.skin.helper.service)">$INFO[System.AddonVersion(script.skin.helper.service)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusFavouritesScriptVar">
+		<value condition="System.HasAddon(script.favourites)">$INFO[System.AddonVersion(script.favourites)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusArtistSlideshowVar">
+		<value condition="System.HasAddon(script.artistslideshow)">$INFO[System.AddonVersion(script.artistslideshow)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusSkinWidgetsVar">
+		<value condition="System.HasAddon(service.skin.widgets)">$INFO[System.AddonVersion(service.skin.widgets)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusRandomAndLastItemsVar">
+		<value condition="System.HasAddon(script.randomandlastitems)">$INFO[System.AddonVersion(script.randomandlastitems)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusArtworkDownloaderVar">
+		<value condition="System.HasAddon(script.artwork.downloader)">$INFO[System.AddonVersion(script.artwork.downloader)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusTVShowNextAiredVar">
+		<value condition="System.HasAddon(script.tv.show.next.aired)">$INFO[System.AddonVersion(script.tv.show.next.aired)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusGlobalSearchVar">
+		<value condition="System.HasAddon(script.globalsearch)">$INFO[System.AddonVersion(script.globalsearch)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusCULRCLyricsVar">
+		<value condition="System.HasAddon(script.cu.lrclyrics)">$INFO[System.AddonVersion(script.cu.lrclyrics)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusCDArtManagerVar">
+		<value condition="System.HasAddon(script.cdartmanager)">$INFO[System.AddonVersion(script.cdartmanager)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusTVTunesVar">
+		<value condition="System.HasAddon(script.tvtunes)">$INFO[System.AddonVersion(script.tvtunes)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusVideoExtrasVar">
+		<value condition="System.HasAddon(script.videoextras)">$INFO[System.AddonVersion(script.videoextras)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusExtendedInfoVar">
+		<value condition="System.HasAddon(script.extendedinfo)">$INFO[System.AddonVersion(script.extendedinfo)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusOpenWeatherMapExtendedVar">
+		<value condition="System.HasAddon(weather.openweathermap.extended)">$INFO[System.AddonVersion(weather.openweathermap.extended)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusNextupNotificationVar">
+		<value condition="System.HasAddon(service.nextup.notification)">$INFO[System.AddonVersion(service.nextup.notification)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusCinemaExperienceVar">
+		<value condition="System.HasAddon(script.cinema.experience)">$INFO[System.AddonVersion(script.cinema.experience)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
+	<variable name="StatusCinemaVisionVar">
+		<value condition="System.HasAddon(script.cinemavision)">$INFO[System.AddonVersion(script.cinemavision)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
 	</variable>
 	
 	<include name="MusicOSDItemgap1">
