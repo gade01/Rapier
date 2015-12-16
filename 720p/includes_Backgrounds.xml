@@ -352,6 +352,9 @@
 				| [Control.IsVisible(52) + !Skin.HasSetting(HideMusicVideosListFanart)]</visible>
 				<include>BackgroundVisibleAnim</include>
 				<include>FanartImage</include>
+				<include condition="Skin.HasSetting(EnableMusicVideosExtraFanart)">ExtraFanartImage</include>
+				<include condition="Skin.HasSetting(EnableMusicVideosExtraFanart)">ExtraFanartImage2</include>
+				<include condition="Skin.HasSetting(EnableMusicVideosExtraFanart)">ExtraFanartImage3</include>
 				<include>FanartDim</include>
 			</control>
 
