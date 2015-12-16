@@ -35,8 +35,17 @@
 					<label>$LOCALIZE[31064]</label>
 					<selected>Skin.HasSetting(AnimateBackground)</selected>
 					<onclick>Skin.ToggleSetting(AnimateBackground)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
+					<onclick>ReloadSkin()</onclick>
+					<include>ReloadSkinNotification</include>
+				</control>
+				<control type="radiobutton" id="4051">
+					<description>Animate Fanart Background</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31063]</label>
+					<selected>Skin.HasSetting(AnimateFanart)</selected>
+					<onclick>Skin.ToggleSetting(AnimateFanart)</onclick>
+					<onclick>ReloadSkin()</onclick>
+					<include>ReloadSkinNotification</include>
 				</control>
 				<control type="button" id="4050">
 					<description>Fanart Backgrounds</description>
@@ -342,7 +351,7 @@
 							<selected>Skin.String(CustomMusicFanartBGType,random) | Skin.String(CustomMusicFanartBGType,)</selected>
 							<onclick>Skin.SetString(CustomMusicFanartBGType,random)</onclick>
 							<label>$LOCALIZE[590]</label>
-							<ondown>4613</ondown>
+							<ondown>4612</ondown>
 							<onup>4513</onup>
 							<onleft>1952</onleft>
 							<onright>4616</onright>
@@ -357,7 +366,7 @@
 							<selected>Skin.String(CustomMusicFanartBGType,recent)</selected>
 							<onclick>Skin.SetString(CustomMusicFanartBGType,recent)</onclick>
 							<label>$LOCALIZE[31924]</label>
-							<ondown>4613</ondown>
+							<ondown>4612</ondown>
 							<onup>4513</onup>
 							<onleft>4615</onleft>
 							<onright>4615</onright>
@@ -384,7 +393,7 @@
 						<altlabel>$LOCALIZE[31060] - $LOCALIZE[392]</altlabel>
 						<usealttexture>Skin.HasSetting(MusicBackgroundBrightnessHigh)</usealttexture>
 						<onclick>Skin.ToggleSetting(MusicBackgroundBrightnessHigh)</onclick>
-						<visible>Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)</visible>
+						<visible>Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3) | Skin.String(CustomMusicBGType,4)</visible>
 					</control>
 					<control type="togglebutton" id="4613">
 						<description>Apply To All Windows</description>
@@ -516,7 +525,7 @@
 						<altlabel>$LOCALIZE[31060] - $LOCALIZE[392]</altlabel>
 						<usealttexture>Skin.HasSetting(PVRBackgroundBrightnessHigh)</usealttexture>
 						<onclick>Skin.ToggleSetting(PVRBackgroundBrightnessHigh)</onclick>
-						<visible>Skin.String(CustomPVRBGType,2) | Skin.String(CustomPVRBGType,3)</visible>
+						<visible>Skin.String(CustomPVRBGType,2) | Skin.String(CustomPVRBGType,3) | Skin.String(CustomPVRBGType,4)</visible>
 					</control>
 					<control type="togglebutton" id="94213">
 						<description>Apply To All Windows</description>
@@ -633,7 +642,7 @@
 							<selected>Skin.String(CustomVideosFanartBGType,random) | Skin.String(CustomVideosFanartBGType,)</selected>
 							<onclick>Skin.SetString(CustomVideosFanartBGType,random)</onclick>
 							<label>$LOCALIZE[590]</label>
-							<ondown>4223</ondown>
+							<ondown>4222</ondown>
 							<onup>4123</onup>
 							<onleft>1942</onleft>
 							<onright>4226</onright>
@@ -648,7 +657,7 @@
 							<selected>Skin.String(CustomVideosFanartBGType,recent)</selected>
 							<onclick>Skin.SetString(CustomVideosFanartBGType,recent)</onclick>
 							<label>$LOCALIZE[31924]</label>
-							<ondown>4223</ondown>
+							<ondown>4222</ondown>
 							<onup>4123</onup>
 							<onleft>4225</onleft>
 							<onright>4227</onright>
@@ -663,7 +672,7 @@
 							<selected>Skin.String(CustomVideosFanartBGType,inprogress)</selected>
 							<onclick>Skin.SetString(CustomVideosFanartBGType,inprogress)</onclick>
 							<label>$LOCALIZE[31311]</label>
-							<ondown>4223</ondown>
+							<ondown>4222</ondown>
 							<onup>4123</onup>
 							<onleft>4226</onleft>
 							<onright>4225</onright>
@@ -690,7 +699,7 @@
 						<altlabel>$LOCALIZE[31060] - $LOCALIZE[392]</altlabel>
 						<usealttexture>Skin.HasSetting(VideosBackgroundBrightnessHigh)</usealttexture>
 						<onclick>Skin.ToggleSetting(VideosBackgroundBrightnessHigh)</onclick>
-						<visible>Skin.String(CustomVideosBGType,2) | Skin.String(CustomVideosBGType,3)</visible>
+						<visible>Skin.String(CustomVideosBGType,2) | Skin.String(CustomVideosBGType,3) | Skin.String(CustomVideosBGType,4)</visible>
 					</control>
 					<control type="togglebutton" id="4223">
 						<description>Apply To All Windows</description>
@@ -808,7 +817,7 @@
 							<selected>Skin.String(CustomMoviesFanartBGType,random) | Skin.String(CustomMoviesFanartBGType,)</selected>
 							<onclick>Skin.SetString(CustomMoviesFanartBGType,random)</onclick>
 							<label>$LOCALIZE[590]</label>
-							<ondown>4233</ondown>
+							<ondown>4232</ondown>
 							<onup>4133</onup>
 							<onleft>1943</onleft>
 							<onright>4236</onright>
@@ -823,7 +832,7 @@
 							<selected>Skin.String(CustomMoviesFanartBGType,recent)</selected>
 							<onclick>Skin.SetString(CustomMoviesFanartBGType,recent)</onclick>
 							<label>$LOCALIZE[31924]</label>
-							<ondown>4233</ondown>
+							<ondown>4232</ondown>
 							<onup>4133</onup>
 							<onleft>4235</onleft>
 							<onright>4237</onright>
@@ -838,7 +847,7 @@
 							<selected>Skin.String(CustomMoviesFanartBGType,inprogress)</selected>
 							<onclick>Skin.SetString(CustomMoviesFanartBGType,inprogress)</onclick>
 							<label>$LOCALIZE[31311]</label>
-							<ondown>4233</ondown>
+							<ondown>4232</ondown>
 							<onup>4133</onup>
 							<onleft>4236</onleft>
 							<onright>4238</onright>
@@ -853,7 +862,7 @@
 							<selected>Skin.String(CustomMoviesFanartBGType,unwatched)</selected>
 							<onclick>Skin.SetString(CustomMoviesFanartBGType,unwatched)</onclick>
 							<label>$LOCALIZE[16101]</label>
-							<ondown>4233</ondown>
+							<ondown>4232</ondown>
 							<onup>4133</onup>
 							<onleft>4237</onleft>
 							<onright>4235</onright>
@@ -880,7 +889,7 @@
 						<altlabel>$LOCALIZE[31060] - $LOCALIZE[392]</altlabel>
 						<usealttexture>Skin.HasSetting(MoviesBackgroundBrightnessHigh)</usealttexture>
 						<onclick>Skin.ToggleSetting(MoviesBackgroundBrightnessHigh)</onclick>
-						<visible>Skin.String(CustomMoviesBGType,2) | Skin.String(CustomMoviesBGType,3)</visible>
+						<visible>Skin.String(CustomMoviesBGType,2) | Skin.String(CustomMoviesBGType,3) | Skin.String(CustomMoviesBGType,4)</visible>
 					</control>	
 					<control type="togglebutton" id="4233">
 						<description>Apply To All Windows</description>
@@ -998,7 +1007,7 @@
 							<selected>Skin.String(CustomTVShowsFanartBGType,random) | Skin.String(CustomTVShowsFanartBGType,)</selected>
 							<onclick>Skin.SetString(CustomTVShowsFanartBGType,random)</onclick>
 							<label>$LOCALIZE[590]</label>
-							<ondown>4243</ondown>
+							<ondown>4242</ondown>
 							<onup>4143</onup>
 							<onleft>1944</onleft>
 							<onright>4246</onright>
@@ -1013,7 +1022,7 @@
 							<selected>Skin.String(CustomTVShowsFanartBGType,recent)</selected>
 							<onclick>Skin.SetString(CustomTVShowsFanartBGType,recent)</onclick>
 							<label>$LOCALIZE[31924]</label>
-							<ondown>4243</ondown>
+							<ondown>4242</ondown>
 							<onup>4143</onup>
 							<onleft>4245</onleft>
 							<onright>4247</onright>
@@ -1028,7 +1037,7 @@
 							<selected>Skin.String(CustomTVShowsFanartBGType,inprogress)</selected>
 							<onclick>Skin.SetString(CustomTVShowsFanartBGType,inprogress)</onclick>
 							<label>$LOCALIZE[31311]</label>
-							<ondown>4243</ondown>
+							<ondown>4242</ondown>
 							<onup>4143</onup>
 							<onleft>4246</onleft>
 							<onright>4245</onright>
@@ -1055,7 +1064,7 @@
 						<altlabel>$LOCALIZE[31060] - $LOCALIZE[392]</altlabel>
 						<usealttexture>Skin.HasSetting(TVShowsBackgroundBrightnessHigh)</usealttexture>
 						<onclick>Skin.ToggleSetting(TVShowsBackgroundBrightnessHigh)</onclick>
-						<visible>Skin.String(CustomTVShowsBGType,2) | Skin.String(CustomTVShowsBGType,3)</visible>
+						<visible>Skin.String(CustomTVShowsBGType,2) | Skin.String(CustomTVShowsBGType,3) | Skin.String(CustomTVShowsBGType,4)</visible>
 					</control>
 					<control type="togglebutton" id="4243">
 						<description>Apply To All Windows</description>

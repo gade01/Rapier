@@ -4555,6 +4555,67 @@
 			</control>
 			
 			<control type="image">
+				<left>647</left>
+				<top>70</top>
+				<width>592</width>
+				<height>324</height>
+				<texture background="true">home-movies-icon.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<include>BackgroundVisibleAnim</include>
+				<visible>IsEmpty(ListItem.Art(fanart)) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+			</control>
+			
+			<control type="image">
+				<left>647</left>
+				<top>50</top>
+				<width>592</width>
+				<height>335</height>
+				<texture background="true">home-tvshows-icon.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<include>BackgroundVisibleAnim</include>
+				<visible>IsEmpty(ListItem.Art(fanart)) + Container.Content(TVShows)</visible>
+			</control>
+			
+			<control type="multiimage">
+				<left>647</left>
+				<top>103</top>
+				<width>592</width>
+				<height>324</height>
+				<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]extrafanart</imagepath>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<timeperimage>10000</timeperimage>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<randomize>true</randomize>
+				<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(Enable3DWrapMoviesSmallExtraFanart)] | [Container.Content(TVShows) + Skin.HasSetting(Enable3DWrapTVShowsSmallExtraFanart)]</visible>
+			</control>
+			
+			<control type="multiimage">
+				<left>647</left>
+				<top>103</top>
+				<width>592</width>
+				<height>324</height>
+				<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]../extrafanart</imagepath>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<timeperimage>10000</timeperimage>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<randomize>true</randomize>
+				<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(Enable3DWrapMoviesSmallExtraFanart)] | [Container.Content(TVShows) + Skin.HasSetting(Enable3DWrapTVShowsSmallExtraFanart)]</visible>
+			</control>
+			
+			<control type="multiimage">
+				<left>647</left>
+				<top>103</top>
+				<width>592</width>
+				<height>324</height>
+				<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]../../extrafanart</imagepath>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<timeperimage>10000</timeperimage>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<randomize>true</randomize>
+				<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(Enable3DWrapMoviesSmallExtraFanart)] | [Container.Content(TVShows) + Skin.HasSetting(Enable3DWrapTVShowsSmallExtraFanart)]</visible>
+			</control>
+			
+			<control type="image">
 				<description>Genre Background</description>
 				<left>655</left>
 				<top>394</top>
@@ -4564,6 +4625,7 @@
 				<include>ControlsOpenCloseAnim</include>
 				<include>BackgroundVisibleAnim</include>
 				<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))]</visible>
+				<visible>![[Container.Content(TVShows) + Skin.HasSetting(HideTVShowsGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 			</control>
 			
 			<control type="label">
@@ -4579,6 +4641,7 @@
 				<scroll>true</scroll>
 				<include>BackgroundVisibleAnim</include>
 				<visible>![IsEmpty(ListItem.Genre) + IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Genre))]</visible>
+				<visible>![[Container.Content(TVShows) + Skin.HasSetting(HideTVShowsGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 			</control>
 
 			<control type="group">				
