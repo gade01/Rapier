@@ -255,11 +255,267 @@
 		</item>
 	</include>
 
+	<variable name="Custom1BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn1BackgroundImageType,multi)">$INFO[Skin.String(Custom1BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom2BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn2BackgroundImageType,multi)">$INFO[Skin.String(Custom2BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn2BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn2BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom3BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn3BackgroundImageType,multi)">$INFO[Skin.String(Custom3BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn3BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn3BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom4BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn4BackgroundImageType,multi)">$INFO[Skin.String(Custom4BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn4BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn4BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom5BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn5BackgroundImageType,multi)">$INFO[Skin.String(Custom5BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn5BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom6BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn6BackgroundImageType,multi)">$INFO[Skin.String(Custom6BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn6BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom7BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn7BackgroundImageType,multi)">$INFO[Skin.String(Custom7BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn7BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom8BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn8BackgroundImageType,multi)">$INFO[Skin.String(Custom8BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn8BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom9BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn9BackgroundImageType,multi)">$INFO[Skin.String(Custom9BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn9BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom10BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn10BackgroundImageType,multi)">$INFO[Skin.String(Custom10BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn10BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom11BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn11BackgroundImageType,multi)">$INFO[Skin.String(Custom11BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn11BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom12BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn12BackgroundImageType,multi)">$INFO[Skin.String(Custom12BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom13BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn13BackgroundImageType,multi)">$INFO[Skin.String(Custom13BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn13BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom14BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn14BackgroundImageType,multi)">$INFO[Skin.String(Custom14BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn14BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom15BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn15BackgroundImageType,multi)">$INFO[Skin.String(Custom15BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn15BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+	
+	<variable name="Custom16BackgroundImagePathVar">
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn16BackgroundImageType,multi)">$INFO[Skin.String(Custom16BackgroundImagePath)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[342] ($LOCALIZE[16101]))">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[20343] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + StringCompare(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
+	</variable>
+
 	<include name="HomeCustomCategory1">
 		<item id="7">
 			<label>-</label>
 			<icon fallback="homecategories/custom1-text-nofocus.png">$INFO[Skin.String(Custom1NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom1BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom1BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom1ParamType)">$INFO[Skin.String(Custom1BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom1ParamType)">$INFO[Skin.String(CustomCategoryFavourite.1.Path)]</onclick>
 		</item>
@@ -269,7 +525,7 @@
 		<item id="8">
 			<label>-</label>
 			<icon fallback="homecategories/custom2-text-nofocus.png">$INFO[Skin.String(Custom2NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom2BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom2BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom2ParamType)">$INFO[Skin.String(Custom2BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom2ParamType)">$INFO[Skin.String(CustomCategoryFavourite.2.Path)]</onclick>
 		</item>
@@ -279,7 +535,7 @@
 		<item id="9">
 			<label>-</label>
 			<icon fallback="homecategories/custom3-text-nofocus.png">$INFO[Skin.String(Custom3NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom3BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom3BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom3ParamType)">$INFO[Skin.String(Custom3BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom3ParamType)">$INFO[Skin.String(CustomCategoryFavourite.3.Path)]</onclick>
 		</item>
@@ -289,7 +545,7 @@
 		<item id="10">
 			<label>-</label>
 			<icon fallback="homecategories/custom4-text-nofocus.png">$INFO[Skin.String(Custom4NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom4BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom4BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom4ParamType)">$INFO[Skin.String(Custom4BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom4ParamType)">$INFO[Skin.String(CustomCategoryFavourite.4.Path)]</onclick>
 		</item>
@@ -299,7 +555,7 @@
 		<item id="11">
 			<label>-</label>
 			<icon fallback="homecategories/custom5-text-nofocus.png">$INFO[Skin.String(Custom5NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom5BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom5BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom5ParamType)">$INFO[Skin.String(Custom5BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom5ParamType)">$INFO[Skin.String(CustomCategoryFavourite.5.Path)]</onclick>
 		</item>
@@ -309,7 +565,7 @@
 		<item id="12">
 			<label>-</label>
 			<icon fallback="homecategories/custom6-text-nofocus.png">$INFO[Skin.String(Custom6NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom6BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom6BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom6ParamType)">$INFO[Skin.String(Custom6BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom6ParamType)">$INFO[Skin.String(CustomCategoryFavourite.6.Path)]</onclick>
 		</item>
@@ -319,7 +575,7 @@
 		<item id="13">
 			<label>-</label>
 			<icon fallback="homecategories/custom7-text-nofocus.png">$INFO[Skin.String(Custom7NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom7BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom7BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom7ParamType)">$INFO[Skin.String(Custom7BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom7ParamType)">$INFO[Skin.String(CustomCategoryFavourite.7.Path)]</onclick>
 		</item>
@@ -329,7 +585,7 @@
 		<item id="14">
 			<label>-</label>
 			<icon fallback="homecategories/custom8-text-nofocus.png">$INFO[Skin.String(Custom8NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom8BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom8BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom8ParamType)">$INFO[Skin.String(Custom8BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom8ParamType)">$INFO[Skin.String(CustomCategoryFavourite.8.Path)]</onclick>
 		</item>
@@ -339,7 +595,7 @@
 		<item id="17">
 			<label>-</label>
 			<icon fallback="homecategories/custom9-text-nofocus.png">$INFO[Skin.String(Custom9NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom9BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom9BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom9ParamType)">$INFO[Skin.String(Custom9BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom9ParamType)">$INFO[Skin.String(CustomCategoryFavourite.9.Path)]</onclick>
 		</item>
@@ -349,7 +605,7 @@
 		<item id="18">
 			<label>-</label>
 			<icon fallback="homecategories/custom10-text-nofocus.png">$INFO[Skin.String(Custom10NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom10BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom10BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom10ParamType)">$INFO[Skin.String(Custom10BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom10ParamType)">$INFO[Skin.String(CustomCategoryFavourite.10.Path)]</onclick>
 		</item>
@@ -359,7 +615,7 @@
 		<item id="19">
 			<label>-</label>
 			<icon fallback="homecategories/custom11-text-nofocus.png">$INFO[Skin.String(Custom11NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom11BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom11BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom11ParamType)">$INFO[Skin.String(Custom11BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom11ParamType)">$INFO[Skin.String(CustomCategoryFavourite.11.Path)]</onclick>
 		</item>
@@ -369,7 +625,7 @@
 		<item id="20">
 			<label>-</label>
 			<icon fallback="homecategories/custom12-text-nofocus.png">$INFO[Skin.String(Custom12NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom12BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom12BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom12ParamType)">$INFO[Skin.String(Custom12BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom12ParamType)">$INFO[Skin.String(CustomCategoryFavourite.12.Path)]</onclick>
 		</item>
@@ -379,7 +635,7 @@
 		<item id="21">
 			<label>-</label>
 			<icon fallback="homecategories/custom13-text-nofocus.png">$INFO[Skin.String(Custom13NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom13BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom13BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom13ParamType)">$INFO[Skin.String(Custom13BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom13ParamType)">$INFO[Skin.String(CustomCategoryFavourite.13.Path)]</onclick>
 		</item>
@@ -389,7 +645,7 @@
 		<item id="22">
 			<label>-</label>
 			<icon fallback="homecategories/custom14-text-nofocus.png">$INFO[Skin.String(Custom14NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom14BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom14BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom14ParamType)">$INFO[Skin.String(Custom14BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom14ParamType)">$INFO[Skin.String(CustomCategoryFavourite.14.Path)]</onclick>
 		</item>
@@ -399,7 +655,7 @@
 		<item id="23">
 			<label>-</label>
 			<icon fallback="homecategories/custom15-text-nofocus.png">$INFO[Skin.String(Custom15NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom15BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom15BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom15ParamType)">$INFO[Skin.String(Custom15BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom15ParamType)">$INFO[Skin.String(CustomCategoryFavourite.15.Path)]</onclick>
 		</item>
@@ -409,7 +665,7 @@
 		<item id="24">
 			<label>-</label>
 			<icon fallback="homecategories/custom16-text-nofocus.png">$INFO[Skin.String(Custom16NoFocusImagePath)]</icon>
-			<thumb>$INFO[Skin.String(Custom16BackgroundImagePath)]</thumb>
+			<thumb>$VAR[Custom16BackgroundImagePathVar]</thumb>
 			<onclick condition="Skin.HasSetting(Custom16ParamType)">$INFO[Skin.String(Custom16BtnParam)]</onclick>
 			<onclick condition="!Skin.HasSetting(Custom16ParamType)">$INFO[Skin.String(CustomCategoryFavourite.16.Path)]</onclick>
 		</item>
