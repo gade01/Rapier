@@ -8005,24 +8005,24 @@
 	
 	<include name="WeatherPanel">
 		<control type="group">
-			<left>5</left>
-			<top>280</top>
+			<left>495r</left>
+			<top>105</top>
 			<visible>[!Skin.HasSetting(EnableWeatherCategory) + Container(850).HasFocus(15)] | [Skin.HasSetting(EnableWeatherCategory) + Container(850).HasFocus(51)]</visible>
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
-			<include>HomeLeftPanelOpenCloseAnim</include>
+			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="image">
 				<width>490</width>
-				<height>140</height>
+				<height>315</height>
 				<texture border="8">panels/panel.png</texture>
-			</control>	
-
+			</control>
+			
 			<control type="image">
 				<description>Cover Border</description>
-				<left>15</left>
-				<top>15</top>
+				<left>345</left>
+				<top>47</top>
 				<width>130</width>
-				<height>111</height>
+				<height>118</height>
 				<texture border="5">panels/panel-content-border.png</texture>
 			</control>
 			
@@ -8031,9 +8031,9 @@
 
 			<control type="label">
 				<description>Title</description>
-				<left>157</left>
+				<left>15</left>
 				<top>9</top>
-				<width>318</width>
+				<width>368</width>
 				<font>PanelTitleFont</font>
 				<textcolor>MediaInfoTitleColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
@@ -8041,14 +8041,14 @@
 			</control>
 
 			<control type="grouplist">
-				<left>157</left>
+				<left>15</left>
 				<top>42</top>
-				<itemgap>15</itemgap>
+				<itemgap>10</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
 					<description>Temperature</description>
 					<width>318</width>
-					<height>12</height>
+					<height>19</height>
 					<font>PanelInfoHeadFont</font>
 					<textcolor>WhiteColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
@@ -8058,27 +8058,362 @@
 					<description>Conditions</description>
 					<top>7</top>
 					<width>318</width>
-					<height>12</height>
+					<height>13</height>
 					<font>PanelInfoFont</font>
 					<textcolor>MediaInfoItemColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$LOCALIZE[33020]: $INFO[Weather.Conditions]</label>
 					<scroll>true</scroll>
 				</control>
-				<control type="fadelabel">
-					<description>Humidity/Wind</description>
+				<control type="label">
+					<description>Wind</description>
+					<top>7</top>
 					<width>318</width>
-					<height>12</height>
+					<height>13</height>
+					<font>PanelInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$LOCALIZE[404]: $INFO[Window(Weather).Property(Current.Wind)]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<description>Humidity</description>
+					<top>7</top>
+					<width>318</width>
+					<height>13</height>
 					<font>PanelInfoFont</font>
 					<textcolor>MediaInfoItemColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$LOCALIZE[406]: $INFO[Window(Weather).Property(Current.Humidity)]</label>
-					<label>$LOCALIZE[404]: $INFO[Window(Weather).Property(Current.Wind)]</label>
 					<scroll>true</scroll>
-					<scrollout>false</scrollout>
-					<pauseatend>2000</pauseatend>
-					<resetonlabelchange>false</resetonlabelchange>
-				</control>			
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>15</left>
+				<top>178</top>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<include condition="System.HasAddon(weather.openweathermap.extended)">OpenWeatherMapFadeAnim</include>
+				<control type="group">
+					<description>Day 1</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day1.Title)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day1.LowTemp)] - $INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Day1.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 2</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day2.LowTemp)] - $INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Day2.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 3</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day3.LowTemp)] - $INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Day3.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 4</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day4.Title)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day4.LowTemp)] - $INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Day4.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Day4.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 5</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day5.Title)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Day5.LowTemp)] - $INFO[Window(Weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Day5.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Day5.FanartCode)]</imagepath>
+					</control>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>15</left>
+				<top>178</top>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<include>OpenWeatherMapFadeAnim2</include>
+				<visible>System.HasAddon(weather.openweathermap.extended)</visible>
+				<control type="group">
+					<description>Day 6</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.7.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.7.LowTemperature)] - $INFO[Window(Weather).Property(Daily.7.HighTemperature)]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Daily.7.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 7</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.8.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.8.LowTemperature)] - $INFO[Window(Weather).Property(Daily.8.HighTemperature)]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Daily.8.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Daily.8.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 8</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.9.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.9.LowTemperature)] - $INFO[Window(Weather).Property(Daily.9.HighTemperature)]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Daily.9.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Daily.9.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 9</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.10.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.10.LowTemperature)] - $INFO[Window(Weather).Property(Daily.10.HighTemperature)]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Daily.10.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Daily.10.FanartCode)]</imagepath>
+					</control>
+				</control>
+				<control type="group">
+					<description>Day 10</description>
+					<height>125</height>
+					<width>84</width>
+					<control type="label">
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.11.ShortDay)]</label>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>84</width>
+						<align>center</align>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[Window(Weather).Property(Daily.11.LowTemperature)] - $INFO[Window(Weather).Property(Daily.11.HighTemperature)]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<include>WeatherHomeWeekdayIcon</include>
+						<texture background="true">$INFO[Window(Weather).Property(Daily.11.OutlookIcon)]</texture>
+					</control>
+					<control type="multiimage">
+						<include>WeatherAnimHomeWeekdayIcon</include>
+						<imagepath>icons/weather/$INFO[Window(Weather).Property(Daily.11.FanartCode)]</imagepath>
+					</control>
+				</control>
 			</control>
 		</control>
 	</include>
@@ -8253,7 +8588,7 @@
 	<include name="SystemInfoPanel">
 		<control type="group">
 			<left>495r</left>
-			<top>280</top>
+			<top>105</top>
 			<visible>Container(850).HasFocus(16)</visible>
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
