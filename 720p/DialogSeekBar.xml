@@ -5,16 +5,40 @@
 	<visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused | Player.Caching | Window.IsActive(FullscreenInfo)] + ![Window.IsVisible(VideoOSD) | Window.IsVisible(MusicOSD) | Skin.HasSetting(HideSeekBarOSD)]</visible>
 			
 	<controls>		
-		<control type="image">
-			<description>Cover</description>
-			<left>25</left>
-			<bottom>0</bottom>
-			<width>290</width>
-			<height>162</height>
-			<texture>$VAR[ClearImageOSD1]</texture>
-			<aspectratio align="left" aligny="bottom">keep</aspectratio>
-			<include>BottomPaneOpenCloseAnim</include>
+		<control type="group">
 			<visible>Window.IsActive(FullscreenVideo) + Player.Paused + !Window.IsActive(FullscreenInfo)</visible>
+			<include>BottomPaneOpenCloseAnim</include>
+			
+			<control type="image">
+				<description>Clearart / Clearlogo Cover</description>
+				<left>25</left>
+				<bottom>0</bottom>
+				<width>290</width>
+				<height>162</height>
+				<texture>$VAR[ClearImageOSD1]</texture>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<visible>[VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.clearlogo))]</visible>
+			</control>
+			
+			<control type="image">
+				<left>28</left>
+				<bottom>-4</bottom>
+				<width>185</width>
+				<height>268</height>
+				<texture border="8">panels/panel.png</texture>
+				<visible>!Skin.HasSetting(ShowClearArtOSD) + [[VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))] | [VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))]]</visible>
+			</control>
+			
+			<control type="image">
+				<description>Poster Cover</description>
+				<left>32</left>
+				<bottom>0</bottom>
+				<width>177</width>
+				<height>260</height>
+				<texture diffuse="covers/list-info-poster-diffuse.png">$VAR[ClearImageOSD2]</texture>
+				<aspectratio aligny="bottom" align="left" scalediffuse="false">scale</aspectratio>
+				<visible>[VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))] | [VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))]</visible>
+			</control>
 		</control>
 		
 		<control type="group" id="682">

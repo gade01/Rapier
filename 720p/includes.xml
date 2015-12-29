@@ -1539,6 +1539,11 @@
 		<value condition="VideoPlayer.Content(Episodes) + [[Skin.HasSetting(ShowClearLogoOSD) + !IsEmpty(Player.Art(tvshow.clearlogo))] | [Skin.HasSetting(ShowClearArtOSD) + IsEmpty(Player.Art(tvshow.clearart)) + !IsEmpty(Player.Art(tvshow.clearlogo))]]">$INFO[Player.Art(tvshow.clearlogo)]</value>
 	</variable>
 	
+	<variable name="ClearImageOSD2">
+		<value condition="VideoPlayer.Content(Episodes) + !Skin.HasSetting(ShowClearArtOSD) + !IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!Skin.HasSetting(ShowClearArtOSD) + !IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+	</variable>
+	
 	<variable name="MusicVizDescription">
 		<value condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</value>
 		<value>$INFO[MusicPlayer.Property(Album_Description)]</value>
