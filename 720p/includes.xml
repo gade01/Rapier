@@ -1517,6 +1517,13 @@
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
 	</variable>
 	
+	<variable name="SeasonEpisodesNumberVar">
+		<value condition="!IntegerGreaterThan(ListItem.Season,9) + !IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,]</value> 
+		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,]</value> 
+		<value condition="!IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,]</value> 
+		<value>$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,]</value>
+	</variable>
+	
 	<variable name="PosterImageOSD">
 		<value condition="VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(Movies) + IsEmpty(Player.Art(poster))">$INFO[Player.Art(thumb)]</value>
