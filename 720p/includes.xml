@@ -268,6 +268,22 @@
 		<value condition="Player.Rewinding32x + !Player.Seeking">-32X</value>
 		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 	</variable>
+	
+	<variable name="HomeRandomAlbums">
+		<value condition="!Window.IsVisible(3050)">musicdb://albums/</value>
+	</variable>
+	
+	<variable name="HomeRandomMovies">
+		<value condition="!Window.IsVisible(3050)">videodb://movies/</value>
+	</variable>
+	
+	<variable name="HomeRandomEpisodes">
+		<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/HomeRandomEpisodes.xsp</value>
+	</variable>
+	
+	<variable name="HomeRandomMusicVideos">
+		<value condition="!Window.IsVisible(3050)">videodb://musicvideos/</value>
+	</variable>
 
 	<include name="ScreenSize">
 		<width>ScreenWidth</width>
@@ -1552,6 +1568,13 @@
 	</variable>
 	-->
 	
+	<variable name="SeasonEpisodesNumberVar">
+		<value condition="!IntegerGreaterThan(ListItem.Season,9) + !IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0,]</value> 
+		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E,]</value> 
+		<value condition="!IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0,]</value> 
+		<value>$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,]</value>
+	</variable>
+	
 	<variable name="PosterImageOSD">
 		<value condition="VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(Movies) + IsEmpty(Player.Art(poster))">$INFO[Player.Art(thumb)]</value>
@@ -1621,11 +1644,6 @@
 	
 	<variable name="StatusArtistSlideshowVar">
 		<value condition="System.HasAddon(script.artistslideshow)">$INFO[System.AddonVersion(script.artistslideshow)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
-	</variable>
-	
-	<variable name="StatusSkinWidgetsVar">
-		<value condition="System.HasAddon(service.skin.widgets)">$INFO[System.AddonVersion(service.skin.widgets)] $LOCALIZE[31437]</value>
 		<value>$LOCALIZE[31438]</value>
 	</variable>
 	

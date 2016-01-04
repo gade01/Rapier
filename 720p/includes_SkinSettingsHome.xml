@@ -432,7 +432,6 @@
 					<selected>Skin.HasSetting(HideWatchListHomePanel)</selected>
 					<onclick>Skin.ToggleSetting(HideWatchListHomePanel)</onclick>
 					<enable>!Skin.HasSetting(HideRecentlyAddedHomePanel)</enable>
-					<visible>System.HasAddon(service.skin.widgets)</visible>
 				</control>
 				<control type="radiobutton" id="2346">
 					<description>Hide In Cinemas / Upcoming Movies Widget</description>
@@ -1313,7 +1312,6 @@
 							<description>Custom Panel Type</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[564] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn1PanelTypeLabel][/COLOR]</label>
-							<onclick condition="!System.HasAddon(service.skin.widgets)">Notification($LOCALIZE[24076],service.skin.widgets,5000,)</onclick>
 							<onclick condition="!System.HasAddon(script.randomandlastitems)">Notification($LOCALIZE[24076],script.randomandlastitems,5000,)</onclick>
 							<onclick>ActivateWindow(1130)</onclick>
 						</control>
@@ -1580,7 +1578,6 @@
 							<description>Custom Panel Type</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[564] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn2PanelTypeLabel][/COLOR]</label>
-							<onclick condition="!System.HasAddon(service.skin.widgets)">Notification($LOCALIZE[24076],service.skin.widgets,5000,)</onclick>
 							<onclick condition="!System.HasAddon(script.randomandlastitems)">Notification($LOCALIZE[24076],script.randomandlastitems,5000,)</onclick>
 							<onclick>ActivateWindow(1130)</onclick>
 						</control>
@@ -1847,7 +1844,6 @@
 							<description>Custom Panel Type</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[564] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn3PanelTypeLabel][/COLOR]</label>
-							<onclick condition="!System.HasAddon(service.skin.widgets)">Notification($LOCALIZE[24076],service.skin.widgets,5000,)</onclick>
 							<onclick condition="!System.HasAddon(script.randomandlastitems)">Notification($LOCALIZE[24076],script.randomandlastitems,5000,)</onclick>
 							<onclick>ActivateWindow(1130)</onclick>
 						</control>
@@ -2114,7 +2110,6 @@
 							<description>Custom Panel Type</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[564] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn4PanelTypeLabel][/COLOR]</label>
-							<onclick condition="!System.HasAddon(service.skin.widgets)">Notification($LOCALIZE[24076],service.skin.widgets,5000,)</onclick>
 							<onclick condition="!System.HasAddon(script.randomandlastitems)">Notification($LOCALIZE[24076],script.randomandlastitems,5000,)</onclick>
 							<onclick>ActivateWindow(1130)</onclick>
 						</control>
@@ -3636,7 +3631,7 @@
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + !StringCompare(Skin.String(ExtraCategoriesPath),special://skin/extras/)">Skin.SetString(Custom9FocusImagePath,$INFO[Skin.String(ExtraCategoriesPath)])</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + !StringCompare(Skin.String(ExtraCategoriesPath),special://skin/extras/)">Skin.SetString(Custom13FocusImagePath,$INFO[Skin.String(ExtraCategoriesPath)])</value>
 	</variable>
-
+	
 	<variable name="AddMoreCategoryBtn1BackgroundImagePathLabel">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + [Skin.String(AddMoreCategoryBtn1BackgroundImageType,single) | Skin.String(AddMoreCategoryBtn1BackgroundImageType,multi)]">$INFO[Skin.String(Custom1BackgroundImagePath)]</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(AddMoreCategoryBtn1BackgroundImageType,fanart)">$INFO[Skin.String(AddMoreCategoryBtn1BackgroundImagePathLabel)]</value>
