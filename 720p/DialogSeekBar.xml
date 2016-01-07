@@ -2,67 +2,12 @@
 <window id="115">
 	<defaultcontrol>-</defaultcontrol>
 	<zorder>0</zorder>
-	<visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused | Player.Caching | Window.IsActive(FullscreenInfo)] + ![Window.IsVisible(VideoOSD) | Window.IsVisible(MusicOSD) | Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(script.pseudotv.TVOverlay.xml) | Window.IsActive(script.pseudotv.live.TVOverlay.xml)]</visible>
+	<visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused | Player.Caching | Player.ShowInfo] + ![Window.IsVisible(VideoOSD) | Window.IsVisible(MusicOSD) | Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(script.pseudotv.TVOverlay.xml) | Window.IsActive(script.pseudotv.live.TVOverlay.xml)]</visible>
 	<depth>DepthOSD</depth>
 	
 	<controls>
-		<!--
 		<control type="group">
-			<visible>Window.IsActive(FullscreenVideo) + Player.Paused + !Window.IsActive(FullscreenInfo)</visible>
-			<include>BottomPaneOpenCloseAnim</include>
-			
-			<control type="image">
-				<description>Cover</description>
-				<left>50</left>
-				<bottom>63</bottom>
-				<width>290</width>
-				<height>162</height>
-				<texture>$VAR[ClearImageOSD1]</texture>
-				<aspectratio align="left" aligny="bottom">keep</aspectratio>
-			</control>
-			
-			<control type="group">
-				<top>655</top>
-				<left>22</left>
-				<include>FSSeekBar</include>
-				
-				<control type="label">
-					<description>NOW PLAYING</description>
-					<left>37</left>
-					<top>11</top>
-					<font>OSDFont</font>
-					<width>312</width>
-					<textcolor>SelectedColor2</textcolor>
-					<label>[UPPERCASE]$LOCALIZE[31964][/UPPERCASE]</label>
-				</control>
-				
-				<control type="image">
-					<description>Star Rating</description>
-					<top>9</top>
-					<left>352</left>
-					<width>100</width>
-					<height>32</height>		
-					<texture>$INFO[Player.StarRating]</texture>
-					<aspectratio>keep</aspectratio>
-					<include>StarRatingFadeAnim</include>
-				</control>
-				
-				<control type="label">
-					<description>Title</description>
-					<left>37</left>
-					<top>34</top>
-					<font>OSDFont</font>
-					<width>410</width>
-					<textcolor>ProgressColor</textcolor>
-					<label>[UPPERCASE]$VAR[FSInfoLabel4][/UPPERCASE]</label>
-					<scroll>true</scroll>
-				</control>
-			</control>
-		</control>
-		-->
-		
-		<control type="group">
-			<visible>Window.IsActive(FullscreenVideo) + Player.Paused + !Window.IsActive(FullscreenInfo)</visible>
+			<visible>Window.IsActive(FullscreenVideo) + Player.Paused + !Player.ShowInfo</visible>
 			<include>BottomPaneOpenCloseAnim</include>
 			
 			<control type="image">
@@ -73,7 +18,7 @@
 				<height>162</height>
 				<texture>$VAR[ClearImageOSD1]</texture>
 				<aspectratio align="left" aligny="bottom">keep</aspectratio>
-				<visible>[VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.clearlogo))]</visible>
+				<visible>Skin.HasSetting(ShowClearArtOSD) | Skin.HasSetting(ShowClearLogoOSD)</visible>
 			</control>
 			
 			<control type="image">
@@ -82,7 +27,7 @@
 				<width>185</width>
 				<height>268</height>
 				<texture border="8">panels/panel.png</texture>
-				<visible>!Skin.HasSetting(ShowClearArtOSD) + [[VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))] | [VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))]]</visible>
+				<visible>!Skin.HasSetting(ShowClearArtOSD) + !Skin.HasSetting(ShowClearLogoOSD)</visible>
 			</control>
 			
 			<control type="image">
@@ -93,7 +38,7 @@
 				<height>260</height>
 				<texture diffuse="covers/list-info-poster-diffuse.png">$VAR[ClearImageOSD2]</texture>
 				<aspectratio aligny="bottom" align="left" scalediffuse="false">scale</aspectratio>
-				<visible>[VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))] | [VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))]</visible>
+				<visible>!Skin.HasSetting(ShowClearArtOSD) + !Skin.HasSetting(ShowClearLogoOSD)</visible>
 			</control>
 		</control>
 		
