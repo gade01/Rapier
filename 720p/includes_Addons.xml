@@ -1832,4 +1832,9 @@
         <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(MusicGenreIconsAddon.path))">$INFO[Skin.String(MusicGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
         <value>$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</value>
     </variable>
+	
+	<variable name="SplashScreenImageDuration">
+		<value condition="!IsEmpty(Skin.String(SplashScreenImageDuration))">$INFO[Skin.String(SplashScreenImageDuration)]</value>
+		<value>5</value>
+	</variable>
 </includes>
