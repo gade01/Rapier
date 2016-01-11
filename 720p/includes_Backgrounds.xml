@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<variable name="GlobalSearchFanart">
-		<value condition="Control.HasFocus(111) + !IsEmpty(Container(111).ListItem.Property(Fanart))">$INFO[Container(111).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(211) + !IsEmpty(Container(211).ListItem.Property(Fanart))">$INFO[Container(211).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(121) + !IsEmpty(Container(121).ListItem.Property(Fanart))">$INFO[Container(121).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(131) + !IsEmpty(Container(131).ListItem.Property(Fanart))">$INFO[Container(131).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(141) + !IsEmpty(Container(141).ListItem.Property(Fanart))">$INFO[Container(141).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(151) + !IsEmpty(Container(151).ListItem.Property(Fanart))">$INFO[Container(151).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(161) + !IsEmpty(Container(161).ListItem.Property(Fanart))">$INFO[Container(161).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(171) + !IsEmpty(Container(171).ListItem.Property(Fanart))">$INFO[Container(171).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(181) + !IsEmpty(Container(181).ListItem.Property(Fanart))">$INFO[Container(181).ListItem.Property(Fanart)]</value>
-		<value condition="Control.HasFocus(221) + !IsEmpty(Container(221).ListItem.Property(Fanart))">$INFO[Container(221).ListItem.Property(Fanart)]</value>
+	<variable name="FanartImageVar">
+		<value condition="!IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Art(fanart)]</value>
+	</variable>
+	
+	<variable name="ExtraFanartImageVar">
+		<value condition="Substring(Container.FolderPath,videodb://movies/genres/) | Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/sets/) | Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]extrafanart</value>
+		<value>$INFO[ListItem.Path]extrafanart</value>
+	</variable>
+	
+	<variable name="ExtraFanartImage2Var">
+		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../extrafanart</value>
+		<value>$INFO[ListItem.Path]../extrafanart</value>
+	</variable>
+	
+	<variable name="ExtraFanartImage3Var">
+		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/) | Substring(Container.FolderPath,videodb://musicvideos/genres/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../../extrafanart</value>
+		<value>$INFO[ListItem.Path]../../extrafanart</value>
 	</variable>
 	
 	<variable name="CustomVideosBGVar">

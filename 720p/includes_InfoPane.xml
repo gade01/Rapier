@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="MovieInfoPaneLabel2">
+		<value condition="Substring(Container.FolderPath,videodb://movies/titles/)">$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(Movies.UnWatched),  -  , $LOCALIZE[16101]]</value>
+		<value condition="Container.Content(Sets)">$INFO[Container.NumItems,, $LOCALIZE[20434]]$INFO[Container.TotalUnwatched,  -  , $LOCALIZE[16101]]</value>
+		<value>$INFO[Container.NumItems,, $LOCALIZE[20342]]$INFO[Container.TotalUnwatched,  -  , $LOCALIZE[16101]]</value>
+	</variable>
+	
 	<include name="InfoPaneImage">
 		<control type="image">
 			<left>-20</left>

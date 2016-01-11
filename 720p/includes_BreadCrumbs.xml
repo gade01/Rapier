@@ -24,11 +24,9 @@
 		<value condition="StringCompare(Container.FolderPath,special://musicplaylists/) | Substring(Container.FolderPath,.m3u,Right)">$LOCALIZE[136]</value>
 	</variable>
 	
-	<variable name="ExtendedInfoDialogVideoInfoLabel">
-		<value condition="SubString(Window.Property(type),movie)">$LOCALIZE[20342]</value>
-		<value condition="SubString(Window.Property(type),tvshow)">$LOCALIZE[20343]</value>
-		<value condition="SubString(Window.Property(type),episode)">$LOCALIZE[20360]</value>
-		<value condition="SubString(Window.Property(type),season)">$LOCALIZE[33054]</value>
+	<variable name="BreadCrumbTVShowTitleLabel">
+		<value condition="!IsEmpty(ListItem.TVShowTitle)">[UPPERCASE][B]$INFO[ListItem.TVShowTitle][/B][/UPPERCASE]</value>
+		<value condition="IsEmpty(ListItem.TVShowTitle)">[UPPERCASE][B]$INFO[ListItem(-1).TVShowTitle][/B][/UPPERCASE]</value>
 	</variable>
 	
 	<include name="BreadCrumbHomeIcon">	
@@ -71,11 +69,6 @@
 		<aligny>center</aligny>
 		<scroll>false</scroll>
 	</include>
-	
-	<variable name="BreadCrumbTVShowTitleLabel">
-		<value condition="!IsEmpty(ListItem.TVShowTitle)">[UPPERCASE][B]$INFO[ListItem.TVShowTitle][/B][/UPPERCASE]</value>
-		<value condition="IsEmpty(ListItem.TVShowTitle)">[UPPERCASE][B]$INFO[ListItem(-1).TVShowTitle][/B][/UPPERCASE]</value>
-	</variable>
 	
 	<include name="BreadCrumbVideoLibrary">	
 		<control type="grouplist">

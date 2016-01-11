@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="HomeRandomAlbums">
+		<value condition="!Window.IsVisible(3050)">musicdb://albums/</value>
+	</variable>
+	
+	<variable name="HomeRandomMovies">
+		<value condition="!Window.IsVisible(3050)">videodb://movies/</value>
+	</variable>
+	
+	<variable name="HomeRandomEpisodes">
+		<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/HomeRandomEpisodes.xsp</value>
+	</variable>
+	
+	<variable name="HomeRandomMusicVideos">
+		<value condition="!Window.IsVisible(3050)">videodb://musicvideos/</value>
+	</variable>
+	
 	<include name="KodiLogo">
 		<control type="image">
 			<left>9</left>
