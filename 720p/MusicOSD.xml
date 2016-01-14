@@ -23,7 +23,7 @@
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[System.CurrentControl]</label>
-				<visible>!Control.HasFocus(257)</visible>
+				<visible>![Control.HasFocus(257) | Window.IsVisible(OSDAudioDSPSettings)]</visible>
 			</control>
 			
 			<control type="label">
@@ -33,18 +33,31 @@
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$LOCALIZE[590]$INFO[Playlist.Random,: ]</label>
-				<visible>Control.HasFocus(257)</visible>
+				<visible>Control.HasFocus(257) + !Window.IsVisible(OSDAudioDSPSettings)</visible>
 			</control>
 			
 			<control type="grouplist" id="201">
 				<description>Player Settings Controls</description>
 				<left>52</left>
 				<top>17</top>
-				<width>310</width>
+				<width>324</width>
 				<height>35</height>
-				<include condition="!Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus]">MusicOSDItemgap1</include>
-				<include condition="Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus]">MusicOSDItemgap2</include>
-				<include condition="Player.CanRecord + MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus">MusicOSDItemgap3</include>
+				<include condition="!Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets">MusicOSDItemgap1</include>
+				<include condition="[Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [!Player.CanRecord + [MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [!Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [!Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]">MusicOSDItemgap2</include>
+				<include condition="[Player.CanRecord + MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus + !system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]
+				| [!Player.CanRecord + [MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [!Player.CanRecord + [MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]
+				| [!Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]
+				| [Player.CanRecord + [MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + !Visualisation.HasPresets]
+				| [Player.CanRecord + [MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + !system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]
+				| [Player.CanRecord + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]
+				| [!Player.CanRecord + [MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus] + system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets]">MusicOSDItemgap3</include>
+				<include condition="Player.CanRecord + MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus + system.getbool(audiooutput.dspaddonsenabled) + Visualisation.HasPresets">MusicOSDItemgap4</include>
 				<orientation>horizontal</orientation>	
 				<onup condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">Dialog.Close(MusicOSD,true)</onup>
 				<onup condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">SetFocus(9000)</onup>
@@ -121,6 +134,18 @@
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<pulseonselect>false</pulseonselect>
 				</control>
+				<control type="button" id="153">
+					<description>Audio DSP</description>
+					<width>35</width>
+					<height>35</height>
+					<font>-</font>
+					<label>$LOCALIZE[15047]</label>
+					<texturefocus>osd/osd-audio-settings-focus.png</texturefocus>
+					<texturenofocus>osd/osd-audio-settings-nofocus.png</texturenofocus>
+					<onclick>ActivateWindow(OSDAudioDSPSettings)</onclick>
+					<pulseonselect>false</pulseonselect>
+					<visible>system.getbool(audiooutput.dspaddonsenabled)</visible>
+				</control>
 				<control type="button" id="151">
 					<description>Lyrics Script</description>
 					<width>35</width>
@@ -148,18 +173,17 @@
 					<visible>MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus</visible>
 				</control>
 			</control>
-			
-			<control type="grouplist" id="203">
-				<description>Player Extra Controls</description>
-				<left>319</left>
-				<top>15</top>
-				<width>160</width>
-				<height>40</height>
+				
+			<control type="grouplist" id="202">
+				<description>Player Controls</description>
+				<left>389</left>
+				<top>10</top>
+				<width>480</width>
+				<height>50</height>
 				<include condition="!Player.CanRecord">MusicOSDItemgap1</include>
-				<include condition="Player.CanRecord">MusicOSDItemgap2</include>
-				<orientation>horizontal</orientation>
-				<align>right</align>
+				<include condition="Player.CanRecord">MusicOSDItemgap5</include>
 				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>horizontal</orientation>	
 				<onup condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">Dialog.Close(MusicOSD,true)</onup>
 				<onup condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">SetFocus(9000)</onup>
 				<onback condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">Dialog.Close(MusicOSD,true)</onback>
@@ -167,11 +191,12 @@
 				<ondown>noop</ondown>
 				<onleft condition="Control.IsVisible(152)">152</onleft>
 				<onleft condition="!Control.IsVisible(152) + Control.IsVisible(151)">151</onleft>
-				<onleft condition="!Control.IsVisible(152) + !Control.IsVisible(151)">150</onleft>
-				<onright>106</onright>
-				<animation effect="slide" end="15,0" condition="Player.CanRecord">Conditional</animation>
+				<onleft condition="!Control.IsVisible(152) + !Control.IsVisible(151) + Control.IsVisible(153)">153</onleft>
+				<onleft condition="!Control.IsVisible(152) + !Control.IsVisible(151) + !Control.IsVisible(153)">150</onleft>
+				<onright>100</onright>
 				<control type="togglebutton" id="110">
 					<description>Rec</description>
+					<top>5</top>
 					<width>40</width>
 					<height>40</height>
 					<onclick>PlayerControl(Record)</onclick>
@@ -188,6 +213,7 @@
 				</control>
 				<control type="button" id="250">
 					<description>Repeat</description>
+					<top>5</top>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>-</texturefocus>
@@ -198,66 +224,73 @@
 				</control>
 				<control type="image" id="251">
 					<description>Repeat No Focus</description>
+					<top>5</top>
 					<left>-50</left>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-nofocus.png</texture>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 					<visible>!Control.HasFocus(250)</visible>
 				</control>
 				<control type="image" id="252">
 					<description>Repeat Focus</description>
+					<top>5</top>
 					<left>-50</left>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-focus.png</texture>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 					<visible>Control.HasFocus(250)</visible>
 				</control>
 				<control type="image" id="253">
 					<description>Repeat One No Focus</description>
+					<top>5</top>
 					<left>-50</left>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-one-nofocus.png</texture>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 					<visible>Playlist.IsRepeatOne</visible>
 					<visible>!Control.HasFocus(250)</visible>
 				</control>
 				<control type="image" id="254">
 					<description>Repeat One Focus</description>
+					<top>5</top>
 					<left>-50</left>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-one-focus.png</texture>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 					<visible>Playlist.IsRepeatOne</visible>
 					<visible>Control.HasFocus(250)</visible>
 				</control>
 				<control type="image" id="255">
 					<description>Repeat All No Focus</description>
+					<top>5</top>
 					<left>-50</left>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-all-nofocus.png</texture>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 					<visible>Playlist.IsRepeat</visible>
 					<visible>!Control.HasFocus(250)</visible>
 				</control>
 				<control type="image" id="256">
 					<description>Repeat All Focus</description>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<top>5</top>
 					<left>-50</left>
 					<width>40</width>
 					<height>40</height>
 					<texture>osd/osd-repeat-all-focus.png</texture>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 					<visible>Playlist.IsRepeat</visible>
 					<visible>Control.HasFocus(250)</visible>
 				</control>
 				<control type="togglebutton" id="257">
 					<description>Random</description>
+					<top>5</top>
 					<width>40</width>
 					<height>40</height>
 					<texturefocus>osd/osd-random-off-focus.png</texturefocus>
@@ -267,28 +300,8 @@
 					<alttexturenofocus>osd/osd-random-on-nofocus.png</alttexturenofocus>
 					<onclick>PlayerControl(Random)</onclick>
 					<pulseonselect>false</pulseonselect>
-					<animation effect="slide" end="3,0" condition="Player.CanRecord">Conditional</animation>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>
-			</control>
-							
-			<control type="grouplist" id="202">
-				<description>Player Controls</description>
-				<left>489</left>
-				<top>10</top>
-				<width>310</width>
-				<height>50</height>
-				<include condition="!Player.CanRecord">MusicOSDItemgap1</include>
-				<include condition="Player.CanRecord">MusicOSDItemgap2</include>
-				<usecontrolcoords>true</usecontrolcoords>
-				<orientation>horizontal</orientation>	
-				<onup condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">Dialog.Close(MusicOSD,true)</onup>
-				<onup condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">SetFocus(9000)</onup>
-				<onback condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">Dialog.Close(MusicOSD,true)</onback>
-				<onback condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">SetFocus(9000)</onback>
-				<ondown>noop</ondown>
-				<onleft>257</onleft>
-				<onright>201</onright>
-				<animation effect="slide" end="15,0" condition="Player.CanRecord">Conditional</animation>
 				<control type="button" id="106">
 					<description>Skip Prev</description>
 					<top>5</top>
@@ -298,6 +311,7 @@
 					<texturenofocus>osd/osd-skip-prev-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Previous)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>
 				<control type="button" id="105">
 					<description>Rewind</description>
@@ -308,6 +322,7 @@
 					<texturenofocus>osd/osd-rewind-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Rewind)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>
 				<control type="button" id="104">
 					<description>Stop</description>
@@ -318,6 +333,7 @@
 					<texturenofocus>osd/osd-stop-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Stop)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>
 				<control type="togglebutton" id="107">
 					<description>Play/Pause</description>
@@ -331,6 +347,7 @@
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>
 				<control type="button" id="108">
 					<description>Forward</description>
@@ -341,6 +358,7 @@
 					<texturenofocus>osd/osd-forward-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Forward)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>		
 				<control type="button" id="109">
 					<description>Skip Next</description>
@@ -351,6 +369,7 @@
 					<texturenofocus>osd/osd-skip-next-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<animation effect="slide" end="6,0" condition="Player.CanRecord">Conditional</animation>
 				</control>
 			</control>
 		
