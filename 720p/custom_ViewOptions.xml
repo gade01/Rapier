@@ -1211,34 +1211,6 @@
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingEpisodes)</onclick>
 				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,68)] + Container.Content(Episodes)</visible>
 			</control>
-			<control type="radiobutton" id="2063">
-				<description>Use Half Stars (Movies)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31918]</label>
-				<selected>!Skin.HasSetting(UseHalfStarsMovies)</selected>
-				<onclick>Skin.ToggleSetting(UseHalfStarsMovies)</onclick>
-				<enable>![Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowDVDThumbsRating)]
-				+ ![Skin.String(CurrentViewMode,69) + !Skin.HasSetting(ShowMoviesWallRating)]</enable>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + [[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,66) | Skin.String(CurrentViewMode,53)
-				| Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,75) | Skin.String(CurrentViewMode,69)] + [Container.Content(Movies) | Container.Content(Sets)]]</visible>
-			</control>
-			<control type="radiobutton" id="2064">
-				<description>Use Half Stars (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31918]</label>
-				<selected>!Skin.HasSetting(UseHalfStarsTVShows)</selected>
-				<onclick>Skin.ToggleSetting(UseHalfStarsTVShows)</onclick>
-				<enable>![Skin.String(CurrentViewMode,586) + !Skin.HasSetting(ShowTVShowsWallRating)]</enable>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + [[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,586)] + Container.Content(TVShows)]</visible>
-			</control>
-			<control type="radiobutton" id="2065">
-				<description>Use Half Stars (Episodes)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31918]</label>
-				<selected>!Skin.HasSetting(UseHalfStarsEpisodes)</selected>
-				<onclick>Skin.ToggleSetting(UseHalfStarsEpisodes)</onclick>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + [[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,68)] + Container.Content(Episodes)]</visible>
-			</control>
 			<control type="radiobutton" id="3006">
 				<description>Do Not Show Star Rating (Addons)</description>
 				<include>DropDownMenuRadioBtn</include>
@@ -1553,14 +1525,6 @@
 				<selected>!Skin.HasSetting(DoNotUseStarRatingMusicVideos)</selected>
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingMusicVideos)</onclick>
 				<visible>Skin.String(CurrentViewMode,587) + Container.Content(musicvideos)</visible>
-			</control>
-			<control type="radiobutton" id="2061">
-				<description>Use Half Stars (Music Videos)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31918]</label>
-				<selected>!Skin.HasSetting(UseHalfStarsMusicVideos)</selected>
-				<onclick>Skin.ToggleSetting(UseHalfStarsMusicVideos)</onclick>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingMusicVideos) + [Skin.String(CurrentViewMode,587) + Container.Content(musicvideos)]</visible>
 			</control>
 			<control type="button" id="1039">
 				<description>View Styles Header</description>

@@ -55,7 +55,7 @@
 		<value>OverlayUnknown.png</value>
 	</variable>
 	
-	<variable name="HalfStarRating">
+	<variable name="StarRating">
 		<value condition="IntegerGreaterThan(ListItem.Rating,9)">flagging/imdbstarrating/10,0.png</value>
 		<value condition="IntegerGreaterThan(ListItem.Rating,8) + !IntegerGreaterThan(ListItem.Rating,10)">flagging/imdbstarrating/9,0.png</value>
 		<value condition="IntegerGreaterThan(ListItem.Rating,7) + !IntegerGreaterThan(ListItem.Rating,9)">flagging/imdbstarrating/8,0.png</value>

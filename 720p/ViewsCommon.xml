@@ -816,22 +816,10 @@
 					<top>10</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies) + Skin.HasSetting(UseHalfStarsMovies)]
-					| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes) + Skin.HasSetting(UseHalfStarsEpisodes)]</visible>
-					<include>StarRatingFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Half Star Rating</description>
-					<left>610</left>
-					<top>10</top>
-					<width>100</width>
-					<height>16</height>		
-					<texture background="true">$VAR[HalfStarRating]</texture>
-					<aspectratio align="right">keep</aspectratio>
-					<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies) + !Skin.HasSetting(UseHalfStarsMovies)]
-					| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes) + !Skin.HasSetting(UseHalfStarsEpisodes)]</visible>
+					<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
+					| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="image">
@@ -963,20 +951,9 @@
 				<top>10</top>
 				<width>100</width>
 				<height>16</height>		
-				<texture background="true">$INFO[ListItem.StarRating]</texture>
+				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + Skin.HasSetting(UseHalfStarsTVShows)</visible>
-				<include>StarRatingFadeAnim</include>
-			</control>
-			<control type="image">
-				<description>Half Star Rating</description>
-				<left>610</left>
-				<top>10</top>
-				<width>100</width>
-				<height>16</height>		
-				<texture background="true">$VAR[HalfStarRating]</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !Skin.HasSetting(UseHalfStarsTVShows)</visible>
+				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 		</itemlayout>		
@@ -1121,21 +1098,10 @@
 						<top>10</top>
 						<width>100</width>
 						<height>16</height>		
-						<texture background="true">$INFO[ListItem.StarRating]</texture>
+						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies) + Skin.HasSetting(UseHalfStarsMovies)]
-						| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes) + Skin.HasSetting(UseHalfStarsEpisodes)]</visible>
-					</control>
-					<control type="image">
-						<description>Half Star Rating</description>
-						<left>610</left>
-						<top>10</top>
-						<width>100</width>
-						<height>16</height>		
-						<texture background="true">$VAR[HalfStarRating]</texture>
-						<aspectratio align="right">keep</aspectratio>
-						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies) + !Skin.HasSetting(UseHalfStarsMovies)]
-						| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes) + !Skin.HasSetting(UseHalfStarsEpisodes)]</visible>
+						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
+						| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]</visible>
 					</control>
 					<control type="image">
 						<description>Quality</description>
@@ -1286,19 +1252,9 @@
 					<top>10</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + Skin.HasSetting(UseHalfStarsTVShows)</visible>
-				</control>
-				<control type="image">
-					<description>Half Star Rating</description>
-					<left>610</left>
-					<top>10</top>
-					<width>100</width>
-					<height>16</height>		
-					<texture background="true">$VAR[HalfStarRating]</texture>
-					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !Skin.HasSetting(UseHalfStarsTVShows)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				</control>
 			</control>
 		</focusedlayout>		
@@ -1461,20 +1417,9 @@
 					<top>16</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + Skin.HasSetting(UseHalfStarsMovies)</visible>
-					<include>StarRatingFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Half Star Rating</description>
-					<left>610</left>
-					<top>16</top>
-					<width>100</width>
-					<height>16</height>		
-					<texture background="true">$VAR[HalfStarRating]</texture>
-					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !Skin.HasSetting(UseHalfStarsMovies)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="group">
@@ -1705,20 +1650,9 @@
 				<top>16</top>
 				<width>100</width>
 				<height>16</height>		
-				<texture background="true">$INFO[ListItem.StarRating]</texture>
+				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows) + Skin.HasSetting(UseHalfStarsTVShows)</visible>
-				<include>StarRatingFadeAnim</include>
-			</control>
-			<control type="image">
-				<description>Half Star Rating</description>
-				<left>610</left>
-				<top>16</top>
-				<width>100</width>
-				<height>16</height>		
-				<texture background="true">$VAR[HalfStarRating]</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows) + !Skin.HasSetting(UseHalfStarsTVShows)</visible>
+				<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 			<control type="image">
@@ -1821,20 +1755,9 @@
 					<top>16</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + Skin.HasSetting(UseHalfStarsEpisodes)</visible>
-					<include>StarRatingFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Half Star Rating</description>
-					<left>610</left>
-					<top>16</top>
-					<width>100</width>
-					<height>16</height>		
-					<texture background="true">$VAR[HalfStarRating]</texture>
-					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + !Skin.HasSetting(UseHalfStarsEpisodes)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="group">
@@ -2410,19 +2333,9 @@
 						<top>16</top>
 						<width>100</width>
 						<height>16</height>		
-						<texture background="true">$INFO[ListItem.StarRating]</texture>
+						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + Skin.HasSetting(UseHalfStarsMovies)</visible>
-					</control>
-					<control type="image">
-						<description>Half Star Rating</description>
-						<left>610</left>
-						<top>16</top>
-						<width>100</width>
-						<height>16</height>		
-						<texture background="true">$VAR[HalfStarRating]</texture>
-						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !Skin.HasSetting(UseHalfStarsMovies)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
 					</control>
 					<control type="group">
 						<visible>!Skin.HasSetting(HideMoviesListOverlay)</visible>
@@ -2634,19 +2547,9 @@
 					<top>16</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows) + Skin.HasSetting(UseHalfStarsTVShows)</visible>
-				</control>
-				<control type="image">
-					<description>Half Star Rating</description>
-					<left>610</left>
-					<top>16</top>
-					<width>100</width>
-					<height>16</height>		
-					<texture background="true">$VAR[HalfStarRating]</texture>
-					<aspectratio align="right">keep</aspectratio>
-					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows) + !Skin.HasSetting(UseHalfStarsTVShows)</visible>
+					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				</control>
 				<control type="image">
 					<description>Overlay</description>
@@ -2741,19 +2644,9 @@
 						<top>16</top>
 						<width>100</width>
 						<height>16</height>		
-						<texture background="true">$INFO[ListItem.StarRating]</texture>
+						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + Skin.HasSetting(UseHalfStarsEpisodes)</visible>
-					</control>
-					<control type="image">
-						<description>Half Star Rating</description>
-						<left>610</left>
-						<top>16</top>
-						<width>100</width>
-						<height>16</height>		
-						<texture background="true">$VAR[HalfStarRating]</texture>
-						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + !Skin.HasSetting(UseHalfStarsEpisodes)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes)</visible>
 					</control>
 					<control type="group">
 						<visible>!Skin.HasSetting(HideEpisodesListOverlay)</visible>
@@ -3325,20 +3218,9 @@
 							<top>24</top>
 							<width>100</width>
 							<height>16</height>
-							<texture background="true">$INFO[ListItem.StarRating]</texture>
+							<texture background="true">$VAR[StarRating]</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + Skin.HasSetting(UseHalfStarsMovies)</visible>
-							<include>MediaFlagFadeAnim</include>
-						</control>
-						
-						<control type="image">
-							<left>590</left>
-							<top>24</top>
-							<width>100</width>
-							<height>16</height>
-							<texture background="true">$VAR[HalfStarRating]</texture>
-							<aspectratio>keep</aspectratio>
-							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !Skin.HasSetting(UseHalfStarsMovies)</visible>
+							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
 							<include>MediaFlagFadeAnim</include>
 						</control>
 					</control>
