@@ -8309,7 +8309,7 @@
 
 			<control type="image">
 				<width>490</width>
-				<height>140</height>
+				<height>164</height>
 				<texture border="8">panels/panel.png</texture>
 			</control>	
 
@@ -8347,7 +8347,7 @@
 			<control type="grouplist">
 				<left>15</left>
 				<top>42</top>
-				<itemgap>15</itemgap>
+				<itemgap>14</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
 					<description>IP Address</description>
@@ -8372,16 +8372,35 @@
 				<control type="fadelabel">
 					<description>Free Memory/Screen Resolution</description>
 					<width>352</width>
-					<height>12</height>
+					<height>17</height>
 					<font>PanelInfoFont</font>
 					<textcolor>MediaInfoItemColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$LOCALIZE[158]: $INFO[System.FreeMemory]</label>
+					<label>$LOCALIZE[154]: $INFO[System.FreeSpace]</label>
 					<label>$LOCALIZE[169]: $INFO[System.ScreenWidth] x $INFO[System.ScreenHeight] $INFO[System.ScreenMode]</label>
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>
 					<pauseatend>2000</pauseatend>
 					<resetonlabelchange>false</resetonlabelchange>
+				</control>
+				<control type="group">
+					<height>17</height>
+					<control type="progress">
+						<width>460</width>
+						<height>17</height>
+						<info>System.CpuUsage</info>
+					</control>
+					<control type="label">
+						<width>460</width>
+						<height>17</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>PanelInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$LOCALIZE[31216]</label>
+					</control>
 				</control>
 			</control>
 		</control>
