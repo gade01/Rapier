@@ -3189,7 +3189,7 @@
 					</control>
 					
 					<control type="group">
-						<visible>!Skin.HasSetting(ShowDVDThumbsRating)</visible>
+						<visible>![Skin.HasSetting(ShowDVDThumbsRating) + [Container.Content(Movies) | Container.Content(TVShows)]] + !Skin.HasSetting(ShowDVDThumbsYear)</visible>
 						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
@@ -3200,13 +3200,13 @@
 					</control>
 					
 					<control type="group">
-						<visible>Skin.HasSetting(ShowDVDThumbsRating)</visible>
+						<visible>Skin.HasSetting(ShowDVDThumbsRating) + !Container.Content(Seasons)</visible>
 						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
 							<label>$INFO[ListItem.Rating]</label>
-							<visible>Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+							<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(TVShows) + Skin.HasSetting(DoNotUseStarRatingTVShows)]</visible>
 						</control>
 						
 						<control type="image">
@@ -3216,8 +3216,18 @@
 							<height>16</height>
 							<texture background="true">$VAR[StarRating]</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+							<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(TVShows) + !Skin.HasSetting(DoNotUseStarRatingTVShows)]</visible>
 							<include>MediaFlagFadeAnim</include>
+						</control>
+					</control>
+					
+					<control type="group">
+						<visible>Skin.HasSetting(ShowDVDThumbsYear)</visible>
+						<animation effect="slide" end="0,10" time="100" condition="![[[IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						
+						<control type="label">
+							<include>InfoPaneItemTitle2</include>
+							<label>$INFO[ListItem.Year]</label>
 						</control>
 					</control>
 				</control>

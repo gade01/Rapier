@@ -132,11 +132,21 @@
 				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists) | Container.Content(Addons)]</visible>
 			</control>
 			<control type="radiobutton" id="3082">
-				<description>Thumbnail Show Rating (Movies) (TVShows) (Seasons)</description>
+				<description>Thumbnail Show Rating (Movies) (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31047]</label>
 				<selected>Skin.HasSetting(ShowDVDThumbsRating)</selected>
-				<onclick>Skin.ToggleSetting(ShowDVDThumbsRating)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowDVDThumbsRating)</onclick>
+				<onclick>Skin.Reset(ShowDVDThumbsYear)</onclick>
+				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
+			</control>
+			<control type="radiobutton" id="3089">
+				<description>Thumbnail Show Year (Movies) (TVShows) (Seasons)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31123]</label>
+				<selected>Skin.HasSetting(ShowDVDThumbsYear)</selected>
+				<onclick>Skin.ToggleSetting(ShowDVDThumbsYear)</onclick>	
+				<onclick>Skin.Reset(ShowDVDThumbsRating)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			</control>
 			<control type="radiobutton" id="2003">
@@ -1201,7 +1211,7 @@
 				<selected>!Skin.HasSetting(DoNotUseStarRatingTVShows)</selected>
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingTVShows)</onclick>
 				<enable>![Skin.String(CurrentViewMode,586) + !Skin.HasSetting(ShowTVShowsWallRating)]</enable>
-				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,586)] + Container.Content(TVShows)</visible>
+				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,586)] + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="2076">
 				<description>Do Not Use Star Rating (Episodes)</description>
