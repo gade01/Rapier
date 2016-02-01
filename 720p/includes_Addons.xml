@@ -1828,8 +1828,8 @@
 	
 	<!-- Movie Genre Icons add-on -->	
 	<variable name="MovieGenreIconsAddonVar">
-		<value condition="System.HasAddon(script.image.resource.select) + [SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.transparent) | SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.xzener-flat) | SubString(Skin.String(MovieGenreIconsAddon.path),resource.images.moviegenreicons.xzener-reflection)]">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.png]</value>
-        <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(MovieGenreIconsAddon.path))">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + StringCompare(Skin.String(MovieGenreIconsAddon.ext),.png) + !IsEmpty(Skin.String(MovieGenreIconsAddon.path))">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.png]</value>
+        <value condition="System.HasAddon(script.image.resource.select) + StringCompare(Skin.String(MovieGenreIconsAddon.ext),.jpg) + !IsEmpty(Skin.String(MovieGenreIconsAddon.path))">$INFO[Skin.String(MovieGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
         <value>$INFO[ListItem.Label,special://skin/extras/moviegenres/,.png]</value>
     </variable>
 	
@@ -1841,7 +1841,8 @@
 	
 	<!-- Music Genre Icons add-on -->
 	<variable name="MusicGenreIconsAddonVar">
-        <value condition="System.HasAddon(script.image.resource.select) + !IsEmpty(Skin.String(MusicGenreIconsAddon.path))">$INFO[Skin.String(MusicGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
+        <value condition="System.HasAddon(script.image.resource.select) + StringCompare(Skin.String(MovieGenreIconsAddon.ext),.jpg) + !IsEmpty(Skin.String(MusicGenreIconsAddon.path))">$INFO[Skin.String(MusicGenreIconsAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
+        <value condition="System.HasAddon(script.image.resource.select) + StringCompare(Skin.String(MovieGenreIconsAddon.ext),.png) + !IsEmpty(Skin.String(MusicGenreIconsAddon.path))">$INFO[Skin.String(MusicGenreIconsAddon.path)]$INFO[ListItem.Label,,.png]</value>
         <value>$INFO[ListItem.Label,special://skin/extras/musicgenres/,.png]</value>
     </variable>
 	
