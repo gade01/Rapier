@@ -679,6 +679,14 @@
 				<onclick>Skin.ToggleSetting(HideMoviesWrapListInfoOverlay)</onclick>
 				<visible>[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,53)</visible>
 			</control>
+			<control type="radiobutton" id="2026">
+				<description>Recommended Hide Overlay (Movies)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31046]</label>
+				<selected>Skin.HasSetting(HideMoviesRecommendedOverlay)</selected>
+				<onclick>Skin.ToggleSetting(HideMoviesRecommendedOverlay)</onclick>
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,582)</visible>
+			</control>
 			<control type="radiobutton" id="1020">
 				<description>Wrap List Info Hide Fanart (Music)</description>
 				<include>DropDownMenuRadioBtn</include>
@@ -841,6 +849,14 @@
 				<onclick>Skin.ToggleSetting(HideTVShowsFanartFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,583) + Container.Content(TVShows)</visible>
 			</control>
+			<control type="radiobutton" id="4125">
+				<description>Recommended Hide Fanart (Movies)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
+				<selected>Skin.HasSetting(HideMoviesRecommendedFanart)</selected>
+				<onclick>Skin.ToggleSetting(HideMoviesRecommendedFanart)</onclick>
+				<visible>Skin.String(CurrentViewMode,582) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+			</control>
 			<control type="radiobutton" id="1033">
 				<description>Wall Do Not Dim Cover (Music)</description>
 				<include>DropDownMenuRadioBtn</include>
@@ -959,6 +975,7 @@
 				+ ![Skin.String(CurrentViewMode,66) + Skin.HasSetting(HideMoviesListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,95) + Skin.HasSetting(HideMoviesListInfo3Fanart)]
 				+ ![Skin.String(CurrentViewMode,97) + Skin.HasSetting(HideMoviesThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,582) + Skin.HasSetting(HideMoviesRecommendedFanart)]
 				+ ![Skin.String(CurrentViewMode,583) + Skin.HasSetting(HideMoviesFanartFanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideMoviesExtendedListFanart)]
 				+ ![Skin.String(CurrentViewMode,53) + Skin.HasSetting(HideMoviesWrapListInfoFanart)]</enable>
@@ -1421,6 +1438,14 @@
 				<selected>Skin.HasSetting(HideExtendedListViewScrollbar2)</selected>
 				<onclick>Skin.ToggleSetting(HideExtendedListViewScrollbar2)</onclick>
 				<visible>[Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)] + Skin.String(CurrentViewMode,585)</visible>
+			</control>
+			<control type="radiobutton" id="4126">
+				<description>Recommended Hide Scrollbar</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31025]</label>
+				<selected>Skin.HasSetting(HideRecommendedViewScrollbar)</selected>
+				<onclick>Skin.ToggleSetting(HideRecommendedViewScrollbar)</onclick>
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,582)</visible>
 			</control>
 			<control type="radiobutton" id="1034">
 				<description>Wall Hide Scrollbar</description>
