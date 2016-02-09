@@ -333,6 +333,7 @@
 				| [Control.IsVisible(95) + !Skin.HasSetting(HideMoviesListInfo3Fanart)]
 				| [Control.IsVisible(97) + !Skin.HasSetting(HideMoviesThumbsInfoFanart)]
 				| [Control.IsVisible(75) + !Skin.HasSetting(HideMoviesWideListFanart)]
+				| [Control.IsVisible(582) + !Skin.HasSetting(HideMoviesRecommendedFanart)]
 				| [Control.IsVisible(583) + !Skin.HasSetting(HideMoviesFanartFanart)]
 				| [Control.IsVisible(585) + !Skin.HasSetting(HideMoviesExtendedListFanart)]
 				| [Control.IsVisible(588) + !Skin.HasSetting(HideMovies3DWrapFanart)]
@@ -481,8 +482,8 @@
 			<texture background="true">$VAR[FanartImageVar]</texture>
 			<aspectratio>scale</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<include condition="Skin.HasSetting(AnimateFanart)">FanartBackgroundAnim</include>
-			<visible>!IsEmpty(ListItem.Art(fanart)) | !IsEmpty(Container(584).ListItem.Art(fanart))</visible>
+			<include condition="Skin.HasSetting(AnimateFanart)">BackgroundAnim</include>
+			<visible>!IsEmpty(ListItem.Art(fanart)) | !IsEmpty(Container(584).ListItem.Art(fanart)) | !IsEmpty(Container(581).ListItem.Property(Fanart))</visible>
 		</control>
 	</include>
 
