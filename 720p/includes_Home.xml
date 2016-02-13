@@ -6528,7 +6528,7 @@
 				<label>$INFO[ListItem.Artist]$INFO[ListItem.Title,: ,]$INFO[ListItem.Year, (,)]</label>
 			</control>
 		</focusedlayout>
-		<content target="music">plugin://script.skin.helper.service/?action=recentalbums&limit=20&reload=$INFO[Window(Home).Property(widgetreloadmusic)]</content>
+		<content target="music">plugin://script.skin.helper.service/?action=recentalbums&amp;limit=20&amp;reload=$INFO[Window(Home).Property(widgetreloadmusic)]</content>
 	</include>
 	
 	<include name="RecentlyAddedPicturesPanelLayout">
@@ -6886,7 +6886,7 @@
 							<label>$VAR[SeasonEpisodesNumberVar]: $INFO[ListItem.TVShowTitle]</label>
 						</control>
 					</focusedlayout>
-					<content target="video">plugin://script.skin.helper.service/?action=nextepisodes&limit=20&reload=$INFO[Window(Home).Property(widgetreload)]</content>
+					<content target="video">plugin://script.skin.helper.service/?action=nextepisodes&amp;limit=20&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
 				</control>
 			</control>
 		</control>
