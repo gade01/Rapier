@@ -323,7 +323,7 @@
 							<label>Rapier UI Sounds</label>
 							<label2>$VAR[StatusUISoundsVar]</label2>
 							<onclick condition="System.HasAddon(resource.uisounds.rapier)">Addon.OpenSettings(resource.uisounds.rapier)</onclick>
-							<onclick condition="!System.HasAddon(resource.uisounds.rapier)">RunPlugin(plugin://resource.uisounds.rapier)</onclick>
+							<onclick condition="!System.HasAddon(resource.uisounds.rapier)">InstallAddon(resource.uisounds.rapier)</onclick>
 						</control>
 						<control type="button" id="7003">
 							<description>script.image.resource.select</description>
@@ -331,8 +331,7 @@
 							<label>Image Resource Select Add-on</label>
 							<label2>$VAR[StatusImageResourceSelectVar]</label2>
 							<onclick condition="System.HasAddon(script.image.resource.select)">Addon.OpenSettings(script.image.resource.select)</onclick>
-							<onclick condition="!System.HasAddon(script.image.resource.select)">RunPlugin(plugin://script.image.resource.select)</onclick>
-							<onclick condition="!System.HasAddon(script.image.resource.select)">StopScript(script.image.resource.select)</onclick>
+							<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 						</control>
 						<control type="button" id="7004">
 							<description>resource.images.studios.white</description>
@@ -340,7 +339,7 @@
 							<label>Studio Icons - White</label>
 							<label2>$VAR[StatusStudioIconsVar]</label2>
 							<onclick condition="System.HasAddon(resource.images.studios.white)">Addon.OpenSettings(resource.images.studios.white)</onclick>
-							<onclick condition="!System.HasAddon(resource.images.studios.white)">RunPlugin(plugin://resource.images.studios.white)</onclick>
+							<onclick condition="!System.HasAddon(resource.images.studios.white)">InstallAddon(resource.images.studios.white)</onclick>
 						</control>
 						<control type="button" id="7005">
 							<description>script.skin.helper.service</description>
@@ -348,8 +347,7 @@
 							<label>Skin Helper Service</label>
 							<label2>$VAR[StatusSkinHelperServiceVar]</label2>
 							<onclick condition="System.HasAddon(script.skin.helper.service)">Addon.OpenSettings(script.skin.helper.service)</onclick>
-							<onclick condition="!System.HasAddon(script.skin.helper.service)">RunPlugin(plugin://script.skin.helper.service)</onclick>
-							<onclick condition="!System.HasAddon(script.skin.helper.service)">StopScript(script.skin.helper.service)</onclick>
+							<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
 						</control>
 						<control type="button" id="7006">
 							<description>script.favourites</description>
@@ -357,8 +355,7 @@
 							<label>Favourites script</label>
 							<label2>$VAR[StatusFavouritesScriptVar]</label2>
 							<onclick condition="System.HasAddon(script.favourites)">Addon.OpenSettings(script.favourites)</onclick>
-							<onclick condition="!System.HasAddon(script.favourites)">RunPlugin(plugin://script.favourites)</onclick>
-							<onclick condition="!System.HasAddon(script.favourites)">StopScript(script.favourites)</onclick>
+							<onclick condition="!System.HasAddon(script.favourites)">InstallAddon(script.favourites)</onclick>
 						</control>
 						<control type="button" id="7007">
 							<description>script.artistslideshow</description>
@@ -366,8 +363,7 @@
 							<label>Artist Slideshow</label>
 							<label2>$VAR[StatusArtistSlideshowVar]</label2>
 							<onclick condition="System.HasAddon(script.artistslideshow)">Addon.OpenSettings(script.artistslideshow)</onclick>
-							<onclick condition="!System.HasAddon(script.artistslideshow)">RunPlugin(plugin://script.artistslideshow)</onclick>
-							<onclick condition="!System.HasAddon(script.artistslideshow)">StopScript(script.artistslideshow)</onclick>
+							<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
 						</control>
 						<control type="button" id="7009">
 							<description>script.randomandlastitems</description>
@@ -375,8 +371,7 @@
 							<label>Random and Last items script</label>
 							<label2>$VAR[StatusRandomAndLastItemsVar]</label2>
 							<onclick condition="System.HasAddon(script.randomandlastitems)">Addon.OpenSettings(script.randomandlastitems)</onclick>
-							<onclick condition="!System.HasAddon(script.randomandlastitems)">RunPlugin(plugin://script.randomandlastitems)</onclick>
-							<onclick condition="!System.HasAddon(script.randomandlastitems)">StopScript(script.randomandlastitems)</onclick>
+							<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
 						</control>
 						<control type="button" id="7010">
 							<description>script.artwork.downloader</description>
@@ -384,8 +379,7 @@
 							<label>Artwork Downloader</label>
 							<label2>$VAR[StatusArtworkDownloaderVar]</label2>
 							<onclick condition="System.HasAddon(script.artwork.downloader)">Addon.OpenSettings(script.artwork.downloader)</onclick>
-							<onclick condition="!System.HasAddon(script.artwork.downloader)">RunPlugin(plugin://script.artwork.downloader)</onclick>
-							<onclick condition="!System.HasAddon(script.artwork.downloader)">StopScript(script.artwork.downloader)</onclick>
+							<onclick condition="!System.HasAddon(script.artwork.downloader)">InstallAddon(script.artwork.downloader)</onclick>
 						</control>
 						<control type="button" id="7011">
 							<description>script.tv.show.next.aired</description>
@@ -393,8 +387,7 @@
 							<label>TV Show - Next Aired</label>
 							<label2>$VAR[StatusTVShowNextAiredVar]</label2>
 							<onclick condition="System.HasAddon(script.tv.show.next.aired)">Addon.OpenSettings(script.tv.show.next.aired)</onclick>
-							<onclick condition="!System.HasAddon(script.tv.show.next.aired)">RunPlugin(plugin://script.tv.show.next.aired)</onclick>
-							<onclick condition="!System.HasAddon(script.tv.show.next.aired)">StopScript(script.tv.show.next.aired)</onclick>
+							<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
 						</control>
 						<control type="button" id="7012">
 							<description>script.globalsearch</description>
@@ -402,8 +395,7 @@
 							<label>Global Search</label>
 							<label2>$VAR[StatusGlobalSearchVar]</label2>
 							<onclick condition="System.HasAddon(script.globalsearch)">Addon.OpenSettings(script.globalsearch)</onclick>
-							<onclick condition="!System.HasAddon(script.globalsearch)">RunPlugin(plugin://script.globalsearch)</onclick>
-							<onclick condition="!System.HasAddon(script.globalsearch)">StopScript(script.globalsearch)</onclick>
+							<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
 						</control>
 						<control type="button" id="7013">
 							<description>script.extendedinfo</description>
@@ -411,8 +403,7 @@
 							<label>ExtendedInfo Script</label>
 							<label2>$VAR[StatusExtendedInfoVar]</label2>
 							<onclick condition="System.HasAddon(script.extendedinfo)">Addon.OpenSettings(script.extendedinfo)</onclick>
-							<onclick condition="!System.HasAddon(script.extendedinfo)">RunPlugin(plugin://script.extendedinfo)</onclick>
-							<onclick condition="!System.HasAddon(script.extendedinfo)">StopScript(script.extendedinfo)</onclick>
+							<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 						</control>
 						<control type="button" id="7014">
 							<description>script.cu.lrclyrics</description>
@@ -420,8 +411,7 @@
 							<label>CU LRC Lyrics</label>
 							<label2>$VAR[StatusCULRCLyricsVar]</label2>
 							<onclick condition="System.HasAddon(script.cu.lrclyrics)">Addon.OpenSettings(script.cu.lrclyrics)</onclick>
-							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">RunPlugin(plugin://script.cu.lrclyrics)</onclick>
-							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">StopScript(script.cu.lrclyrics)</onclick>
+							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
 						</control>
 						<control type="button" id="7015">
 							<description>script.cdartmanager</description>
@@ -429,8 +419,7 @@
 							<label>cdART Manager</label>
 							<label2>$VAR[StatusCDArtManagerVar]</label2>
 							<onclick condition="System.HasAddon(script.cdartmanager)">Addon.OpenSettings(script.cdartmanager)</onclick>
-							<onclick condition="!System.HasAddon(script.cdartmanager)">RunPlugin(plugin://script.cdartmanager)</onclick>
-							<onclick condition="!System.HasAddon(script.cdartmanager)">StopScript(script.cdartmanager)</onclick>
+							<onclick condition="!System.HasAddon(script.cdartmanager)">InstallAddon(script.cdartmanager)</onclick>
 						</control>
 						<control type="button" id="7016">
 							<description>service.nextup.notification</description>
@@ -438,7 +427,7 @@
 							<label>Nextup Service Notification</label>
 							<label2>$VAR[StatusNextupNotificationVar]</label2>
 							<onclick condition="System.HasAddon(service.nextup.notification)">Addon.OpenSettings(service.nextup.notification)</onclick>
-							<onclick condition="!System.HasAddon(service.nextup.notification)">RunPlugin(plugin://service.nextup.notification)</onclick>
+							<onclick condition="!System.HasAddon(service.nextup.notification)">InstallAddon(service.nextup.notification)</onclick>
 						</control>
 						<control type="button" id="7017">
 							<description>script.tvtunes</description>
@@ -446,8 +435,7 @@
 							<label>TvTunes</label>
 							<label2>$VAR[StatusTVTunesVar]</label2>
 							<onclick condition="System.HasAddon(script.tvtunes)">Addon.OpenSettings(script.tvtunes)</onclick>
-							<onclick condition="!System.HasAddon(script.tvtunes)">RunPlugin(plugin://script.tvtunes)</onclick>
-							<onclick condition="!System.HasAddon(script.tvtunes)">StopScript(script.tvtunes)</onclick>
+							<onclick condition="!System.HasAddon(script.tvtunes)">InstallAddon(script.tvtunes)</onclick>
 						</control>
 						<control type="button" id="7018">
 							<description>script.videoextras</description>
@@ -455,8 +443,7 @@
 							<label>VideoExtras</label>
 							<label2>$VAR[StatusVideoExtrasVar]</label2>
 							<onclick condition="System.HasAddon(script.videoextras)">Addon.OpenSettings(script.videoextras)</onclick>
-							<onclick condition="!System.HasAddon(script.videoextras)">RunPlugin(plugin://script.videoextras)</onclick>
-							<onclick condition="!System.HasAddon(script.videoextras)">StopScript(script.videoextras)</onclick>
+							<onclick condition="!System.HasAddon(script.videoextras)">InstallAddon(script.videoextras)</onclick>
 						</control>
 						<control type="button" id="7019">
 							<description>weather.openweathermap.extended</description>
@@ -464,7 +451,7 @@
 							<label>OpenWeatherMap Extended</label>
 							<label2>$VAR[StatusOpenWeatherMapExtendedVar]</label2>
 							<onclick condition="System.HasAddon(weather.openweathermap.extended)">Addon.OpenSettings(weather.openweathermap.extended)</onclick>
-							<onclick condition="!System.HasAddon(weather.openweathermap.extended)">RunPlugin(plugin://weather.openweathermap.extended)</onclick>
+							<onclick condition="!System.HasAddon(weather.openweathermap.extended)">InstallAddon(weather.openweathermap.extended)</onclick>
 						</control>
 						<control type="button" id="7020">
 							<description>script.cinema.experience</description>
@@ -472,8 +459,7 @@
 							<label>Cinema Experience</label>
 							<label2>$VAR[StatusCinemaExperienceVar]</label2>
 							<onclick condition="System.HasAddon(script.cinema.experience)">Addon.OpenSettings(script.cinema.experience)</onclick>
-							<onclick condition="!System.HasAddon(script.cinema.experience)">RunPlugin(plugin://script.cinema.experience)</onclick>
-							<onclick condition="!System.HasAddon(script.cinema.experience)">StopScript(script.cinema.experience)</onclick>
+							<onclick condition="!System.HasAddon(script.cinema.experience)">InstallAddon(script.cinema.experience)</onclick>
 							<visible>!System.HasAddon(script.cinemavision)</visible>
 						</control>
 						<control type="button" id="7021">
@@ -482,8 +468,7 @@
 							<label>CinemaVision</label>
 							<label2>$VAR[StatusCinemaVisionVar]</label2>
 							<onclick condition="System.HasAddon(script.cinemavision)">Addon.OpenSettings(script.cinemavision)</onclick>
-							<onclick condition="!System.HasAddon(script.cinemavision)">RunPlugin(plugin://script.cinemavision)</onclick>
-							<onclick condition="!System.HasAddon(script.cinemavision)">StopScript(script.cinemavision)</onclick>
+							<onclick condition="!System.HasAddon(script.cinemavision)">InstallAddon(script.cinemavision)</onclick>
 						</control>
 					</control>
 					

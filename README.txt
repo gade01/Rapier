@@ -1,4 +1,4 @@
----------- ABOUT RAPIER 9.x FOR KODI 16 JARVIS----------------------------------------------------------------------------
+---------- ABOUT RAPIER 10.x FOR KODI 17 KRYPTON----------------------------------------------------------------------------
 
 The goal is to provide a simple to use but clean and elegant interface that focuses on efficiency when browsing your media. 
 Important considerations are put on usability, performance, and providing the user with flexibility when it comes to customization. 
@@ -48,7 +48,7 @@ script.randomandlastitems v2.2.1
 script.tv.show.next.aired v6.0.10
 script.skin.helper.service v1.0.11
 script.globalsearch v2.0.8
-script.image.resource.select 0.0.5
+script.image.resource.select 0.0.9
 resource.uisounds.rapier 1.0.1
 resource.images.studios.white 0.0.2
 

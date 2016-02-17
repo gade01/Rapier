@@ -4,11 +4,22 @@
 	<menucontrol>987</menucontrol>
 	<!--<onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
 	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>-->
-	<onunload condition="!IsEmpty(Skin.String(AlbumInfoMenubar))">Skin.Reset(AlbumInfoMenubar)</onunload>
+	<onunload condition="!IsEmpty(Skin.String(MusicInfoMenubar))">Skin.Reset(MusicInfoMenubar)</onunload>
+	<onunload>Skin.Reset(MusicInfoTracksReviewToggle)</onunload>
 	<include>ControlsOpenCloseAnim</include>
 	
 	<controls>
-		<include>FSMediaInfoBackgroundDim2</include>
+		<control type="group">
+			<depth>DepthBackground</depth>
+			<include>BackgroundDefault</include>
+			<include condition="[[!IsEmpty(Skin.String(CustomMusicBGPath)) + [Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)]] 
+			| Skin.String(CustomMusicBGType,4)] + Skin.HasSetting(ApplyAllMusicCustomBG)">BackgroundMusic</include>
+			<include>BackgroundMusicFanart</include>
+			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
+			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
+			<include>BackgroundOpenCloseAnim</include>
+			<include>FSMediaInfoBackgroundDim2</include>
+		</control>
 		
 		<control type="group">
 			<visible>![Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml)]</visible>
@@ -53,7 +64,7 @@
 					<bordersize>50</bordersize>
 					<aspectratio>keep</aspectratio>
 					<include>FSMediaInfoOpenCloseAnim</include>
-					<visible>Container.Content(Albums) + IsEmpty(ListItem.Thumb) + ![Control.HasFocus(50) + !IsEmpty(Container(50).ListItem.Thumb)]</visible>
+					<visible>[Container.Content(Albums) | Container.Content(Songs)] + IsEmpty(ListItem.Thumb) + ![Control.HasFocus(50) + !IsEmpty(Container(50).ListItem.Thumb)]</visible>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
 				
@@ -83,22 +94,8 @@
 					<font>FullMediaInfoTitleFont3</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Album][/UPPERCASE]</label>		
+					<label>[UPPERCASE]$VAR[MusicInfoLabel1][/UPPERCASE]</label>		
 					<scroll>true</scroll>
-					<visible>Container.Content(Albums)</visible>
-				</control>
-				
-				<control type="label">
-					<description>Title</description>
-					<top>32</top>
-					<width>710</width>
-					<align>center</align>
-					<font>FullMediaInfoTitleFont3</font>
-					<textcolor>MediaInfoTitleColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>		
-					<scroll>true</scroll>
-					<visible>Container.Content(Artists)</visible>
 				</control>
 				
 				<control type="image">
@@ -117,7 +114,7 @@
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label fallback="31000">[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+					<label fallback="31000">[UPPERCASE]$VAR[MusicInfoLabel2][/UPPERCASE]</label>
 				</control>
 				
 				<control type="image">
@@ -298,19 +295,26 @@
 					<item id="9">
 						<description>Rating</description>
 						<label>$LOCALIZE[563]</label>
-						<label2>$INFO[ListItem.Rating]</label2>
+						<label2>$INFO[ListItem.RatingAndVotes]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=Album)</onclick>
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Albums) + !IsEmpty(ListItem.Rating)</visible>
 					</item>
 					<item id="10">
+						<description>User Rating</description>
+						<label>$LOCALIZE[38018]</label>
+						<label2>$INFO[ListItem.UserRating]</label2>
+						<onclick>SendClick(7)</onclick>
+						<visible>Container.Content(Albums) + !IsEmpty(ListItem.UserRating)</visible>
+					</item>
+					<item id="11">
 						<description>File Path</description>
 						<label>$LOCALIZE[573]</label>
 						<label2>$INFO[ListItem.FileNameAndPath]</label2>
 						<onclick>noop</onclick>
 						<visible>Container.Content(Albums)</visible>
 					</item>				
-					<item id="11">
+					<item id="12">
 						<description>Born</description>
 						<label>$LOCALIZE[21893]</label>
 						<label2>$INFO[ListItem.Property(Artist_Born)]</label2>
@@ -318,7 +322,7 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</item>
-					<item id="12">
+					<item id="13">
 						<description>Formed</description>
 						<label>$LOCALIZE[21894]</label>
 						<label2>$INFO[ListItem.Property(Artist_Formed)]</label2>
@@ -326,14 +330,14 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</item>
-					<item id="13">
+					<item id="14">
 						<description>Formed / Born</description>
 						<label>$LOCALIZE[21893] / $LOCALIZE[21894]</label>
 						<label2>$LOCALIZE[31001]</label2>
 						<onclick>noop</onclick>
 						<visible>Container.Content(Artists) + IsEmpty(ListItem.Property(Artist_Formed)) + IsEmpty(ListItem.Property(Artist_Born)) + !System.HasAddon(script.skin.helper.service)</visible>
 					</item>
-					<item id="14">
+					<item id="15">
 						<description>Died</description>
 						<label>$LOCALIZE[21897]</label>
 						<label2>$INFO[ListItem.Property(Artist_Died)]</label2>
@@ -341,7 +345,7 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>!IsEmpty(ListItem.Property(Artist_Died)) + Container.Content(Artists)</visible>
 					</item>
-					<item id="15">
+					<item id="16">
 						<description>Disbanded</description>
 						<label>$LOCALIZE[21896]</label>
 						<label2>$INFO[ListItem.Property(Artist_Disbanded)]</label2>
@@ -349,14 +353,14 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
 					</item>
-					<item id="16">
+					<item id="17">
 						<description>Disbanded / Died</description>
 						<label>$LOCALIZE[21896] / $LOCALIZE[21897]</label>
 						<label2>$LOCALIZE[31001]</label2>
 						<onclick>noop</onclick>
 						<visible>Container.Content(Artists) + IsEmpty(ListItem.Property(Artist_Disbanded)) + IsEmpty(ListItem.Property(Artist_Died)) + !System.HasAddon(script.skin.helper.service)</visible>
 					</item>
-					<item id="17">
+					<item id="18">
 						<description>Years Active</description>
 						<label>$LOCALIZE[21898]</label>
 						<label2>$INFO[ListItem.Property(Artist_YearsActive)]</label2>
@@ -364,14 +368,14 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
 					</item>
-					<item id="18">
+					<item id="19">
 						<description>Albums</description>
 						<label>$LOCALIZE[132]</label>
 						<label2>$INFO[Window(home).Property(SkinHelper.Music.AlbumCount)]</label2>
 						<onclick>noop</onclick>
 						<visible>Container.Content(Artists) + System.HasAddon(script.skin.helper.service) + !IsEmpty(Window(home).Property(SkinHelper.Music.AlbumCount))</visible>
 					</item>
-					<item id="19">
+					<item id="20">
 						<description>Moods</description>
 						<label>$LOCALIZE[175]</label>
 						<label2>$INFO[ListItem.Property(Artist_Mood)]</label2>
@@ -379,7 +383,7 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_Mood))</visible>
 					</item>
-					<item id="20">
+					<item id="21">
 						<description>Styles</description>
 						<label>$LOCALIZE[176]</label>
 						<label2>$INFO[ListItem.Property(Artist_Style)]</label2>
@@ -387,13 +391,144 @@
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_Style))</visible>
 					</item>
-					<item id="21">
+					<item id="22">
 						<description>Instruments</description>
 						<label>$LOCALIZE[21892]</label>
 						<label2>$INFO[ListItem.Property(Artist_Instrument)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=instruments&amp;type=Artist)</onclick>
 						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>Container.Content(Artists) + !IsEmpty(ListItem.Property(Artist_Instruments))</visible>
+					</item>					
+					<item id="23">
+						<description>Genre</description>
+						<label>$LOCALIZE[515]</label>
+						<label2>$INFO[ListItem.Genre]</label2>
+						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=genre&amp;type=Song)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Genre)</visible>
+					</item>
+					<item id="24">
+						<description>Album</description>
+						<label>$LOCALIZE[558]</label>
+						<label2>$INFO[ListItem.Album]</label2>
+						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=album&amp;type=Song)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Album)</visible>
+					</item>
+					<item id="25">
+						<description>Year</description>
+						<label>$LOCALIZE[345]</label>
+						<label2>$INFO[ListItem.Year]</label2>
+						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=year&amp;type=Song)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Year)</visible>
+					</item>
+					<item id="26">
+						<description>Rating</description>
+						<label>$LOCALIZE[38018]</label>
+						<label2>$INFO[ListItem.RatingAndVotes]</label2>
+						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=Rating&amp;type=Song)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Rating)</visible>
+					</item>
+					<item id="27">
+						<description>User Rating</description>
+						<label>$LOCALIZE[38018]</label>
+						<label2>$INFO[ListItem.UserRating]</label2>
+						<onclick>SendClick(7)</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.UserRating)</visible>
+					</item>
+					<item id="28">
+						<description>Mood</description>
+						<label>$LOCALIZE[175]</label>
+						<label2>$INFO[ListItem.Mood]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Mood)</visible>
+					</item>
+					<item id="29">
+						<description>Composer</description>
+						<label>$LOCALIZE[29903]</label>
+						<label2>$INFO[ListItem.Property(Role.Composer)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Composer))</visible>
+					</item>
+					<item id="30">
+						<description>Conductor</description>
+						<label>$LOCALIZE[29905]</label>
+						<label2>$INFO[ListItem.Property(Role.Conductor)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Conductor))</visible>
+					</item>
+					<item id="31">
+						<description>Orchestra</description>
+						<label>$LOCALIZE[388034]</label>
+						<label2>$INFO[ListItem.Property(Role.Orchestra)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Orchestra))</visible>
+					</item>
+					<item id="32">
+						<description>Lyricist</description>
+						<label>$LOCALIZE[388035]</label>
+						<label2>$INFO[ListItem.Property(Role.Lyricist)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Lyricist))</visible>
+					</item>
+					<item id="33">
+						<description>Remixer</description>
+						<label>$LOCALIZE[388036]</label>
+						<label2>$INFO[ListItem.Property(Role.Remixer)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Remixer))</visible>
+					</item>
+					<item id="34">
+						<description>Arranger</description>
+						<label>$LOCALIZE[388037]</label>
+						<label2>$INFO[ListItem.Property(Role.Arranger)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Arranger))</visible>
+					</item>
+					<item id="35">
+						<description>Engineer</description>
+						<label>$LOCALIZE[388038]</label>
+						<label2>$INFO[ListItem.Property(Role.Engineer)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Engineer))</visible>
+					</item>
+					<item id="36">
+						<description>Producer</description>
+						<label>$LOCALIZE[388039]</label>
+						<label2>$INFO[ListItem.Property(Role.Producer)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Producer))</visible>
+					</item>
+					<item id="37">
+						<description>DJMixer</description>
+						<label>$LOCALIZE[388040]</label>
+						<label2>$INFO[ListItem.Property(Role.DJMixer)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.DJMixer))</visible>
+					</item>
+					<item id="38">
+						<description>Mixer</description>
+						<label>$LOCALIZE[388041]</label>
+						<label2>$INFO[ListItem.Property(Role.Mixer)]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.Property(Role.Mixer))</visible>
+					</item>
+					<item id="39">
+						<description>Track</description>
+						<label>$LOCALIZE[554]</label>
+						<label2>$INFO[ListItem.TrackNumber]</label2>
+						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=Track&amp;type=Song)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
+						<visible>Container.Content(Songs) + !IsEmpty(ListItem.TrackNumber)</visible>
+					</item>
+					<item id="40">
+						<description>File Path</description>
+						<label>$LOCALIZE[21801]</label>
+						<label2>$INFO[ListItem.FileNameAndPath]</label2>
+						<onclick>noop</onclick>
+						<visible>Container.Content(Songs)</visible>
 					</item>
 				</content>
 			</control>
@@ -407,8 +542,8 @@
 				<texture>views/videoinfo-separator.png</texture>
 			</control>
 			
-			<control type="textbox" id="4">
-				<description>Album Description/Artist Bio Value</description>
+			<control type="textbox">
+				<description>Album Description/Artist Bio Value/Song Comment</description>
 				<left>100</left>
 				<top>462</top>
 				<width>1080</width>
@@ -418,8 +553,23 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<pagecontrol>61</pagecontrol>
-				<visible>!Control.IsVisible(50) + IsEmpty(Skin.String(AlbumInfoMenubar))</visible>
+				<label>$VAR[MusicInfoTextbox]</label>
+				<visible>!Control.IsVisible(50) + IsEmpty(Skin.String(MusicInfoMenubar))
+				+ ![[Container.Content(Artists) + IsEmpty(ListItem.Property(Artist_Description))] | [Container.Content(Albums) + IsEmpty(ListItem.Property(Album_Description))] | [Container.Content(Songs) + IsEmpty(ListItem.Comment)]]</visible>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
+				<include>FSMediaInfoOpenCloseAnim</include>
+			</control>
+			
+			<control type="label">
+				<left>100</left>
+				<top>462</top>
+				<width>1080</width>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$VAR[MusicInfoTextboxFallback]</label>
+				<visible>!Control.IsVisible(50) + IsEmpty(Skin.String(MusicInfoMenubar))
+				+ [[Container.Content(Artists) + IsEmpty(ListItem.Property(Artist_Description))] | [Container.Content(Albums) + IsEmpty(ListItem.Property(Album_Description))] | [Container.Content(Songs) + IsEmpty(ListItem.Comment)]]</visible>
 				<include>FSMediaInfoOpenCloseAnim</include>
 			</control>
 			
@@ -437,7 +587,7 @@
 					<ondown condition="Control.IsVisible(61)">61</ondown>	
 					<onleft>987</onleft>
 					<onright condition="Control.IsVisible(61)">61</onright>
-					<visible>IsEmpty(Skin.String(AlbumInfoMenubar))</visible>
+					<visible>IsEmpty(Skin.String(MusicInfoMenubar)) + Skin.HasSetting(MusicInfoTracksReviewToggle) + [Container.Content(Albums) | Container.Content(Artists)]</visible>
 					<itemlayout condition="Container.Content(Albums)" height="35" width="360">		
 						<control type="image">
 							<left>5</left>
@@ -552,7 +702,7 @@
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>Skin.String(AlbumInfoMenubar,MostLovedTracks)</visible>
+				<visible>Skin.String(MusicInfoMenubar,MostLovedTracks)</visible>
 				<itemlayout height="173" width="271">		
 					<control type="image">
 						<width>268</width>
@@ -666,7 +816,7 @@
 				<ondown condition="Control.IsVisible(61)">61</ondown>
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
-				<visible>Skin.String(AlbumInfoMenubar,SimilarArtists)</visible>
+				<visible>Skin.String(MusicInfoMenubar,SimilarArtists)</visible>
 				<itemlayout height="173" width="155">		
 					<control type="image">
 						<width>152</width>
@@ -783,7 +933,7 @@
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>Skin.String(AlbumInfoMenubar,Discography)</visible>
+				<visible>Skin.String(MusicInfoMenubar,Discography)</visible>
 				<itemlayout height="173" width="181">		
 					<control type="image">
 						<width>173</width>
@@ -900,7 +1050,7 @@
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>Skin.String(AlbumInfoMenubar,MusicVideos)</visible>
+				<visible>Skin.String(MusicInfoMenubar,MusicVideos)</visible>
 				<itemlayout height="173" width="271">		
 					<control type="image">
 						<width>268</width>
@@ -1012,8 +1162,8 @@
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
-				<label>$VAR[DialogAlbumInfoEmptyExtendedInfo]</label>
-				<visible>[Skin.String(AlbumInfoMenubar,MostLovedTracks) + IsEmpty(Container(966).ListItem.Label)] | [Skin.String(AlbumInfoMenubar,SimilarArtists) + IsEmpty(Container(967).ListItem.Label)] | [Skin.String(AlbumInfoMenubar,Discography) + IsEmpty(Container(968).ListItem.Label)]</visible>
+				<label>$VAR[DialogMusicInfoEmptyExtendedInfo]</label>
+				<visible>[Skin.String(MusicInfoMenubar,MostLovedTracks) + IsEmpty(Container(966).ListItem.Label)] | [Skin.String(MusicInfoMenubar,SimilarArtists) + IsEmpty(Container(967).ListItem.Label)] | [Skin.String(MusicInfoMenubar,Discography) + IsEmpty(Container(968).ListItem.Label)]</visible>
 				<include>FSMediaInfoOpenCloseAnim</include>
 			</control>
 			
@@ -1048,7 +1198,7 @@
 				<onleft condition="Control.IsVisible(969)">969</onleft>
 				<onleft condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968) | Control.IsVisible(969)]">901</onleft>
 				<include>NotificationsOpenCloseAnim</include>
-				<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [IntegerGreaterThan(Container(50).NumPages,1) + Control.IsVisible(50)] | [IntegerGreaterThan(Container(966).NumPages,1) + Skin.String(AlbumInfoMenubar,MostLovedTracks)] | [IntegerGreaterThan(Container(967).NumPages,1) + Skin.String(AlbumInfoMenubar,SimilarArtists)] | [IntegerGreaterThan(Container(968).NumPages,1) + Skin.String(AlbumInfoMenubar,Discography)] | [IntegerGreaterThan(Container(969).NumPages,1) + Skin.String(AlbumInfoMenubar,MusicVideos)]</visible>
+				<visible>[IntegerGreaterThan(Container(4).NumPages,1) + Control.IsVisible(4)] | [IntegerGreaterThan(Container(50).NumPages,1) + Control.IsVisible(50)] | [IntegerGreaterThan(Container(966).NumPages,1) + Skin.String(MusicInfoMenubar,MostLovedTracks)] | [IntegerGreaterThan(Container(967).NumPages,1) + Skin.String(MusicInfoMenubar,SimilarArtists)] | [IntegerGreaterThan(Container(968).NumPages,1) + Skin.String(MusicInfoMenubar,Discography)] | [IntegerGreaterThan(Container(969).NumPages,1) + Skin.String(MusicInfoMenubar,MusicVideos)]</visible>
 			</control>
 			
 			<control type="image">
@@ -1064,7 +1214,7 @@
 				<top>MenuBarOffsetY</top>
 				<include>MenuBarImage</include>
 				<include>MenuBarOpenCloseAnim2</include>
-				<include>AlbumInfoMenuBar</include>
+				<include>MusicInfoMenubar</include>
 			</control>
 			
 			<control type="group">

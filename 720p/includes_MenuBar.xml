@@ -39,6 +39,16 @@
 		<texturefocus border="4">gui/menu-bar-button-focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>		
 	</include>
+	
+	<include name="PVRMenuBarSlimBtn1">
+		<width>137</width>
+		<textwidth>111</textwidth>
+	</include>
+	
+	<include name="PVRMenuBarSlimBtn2">
+		<width>136</width>
+		<textwidth>110</textwidth>
+	</include>
 
 	<include name="MenuBarMidBtn">
 		<width>166.166</width>
@@ -222,7 +232,7 @@
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultMenuBar</include>
-			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation)]</visible>
+			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation)]</visible>
 		</control>
 	</include>
 	
@@ -694,6 +704,21 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Pictures)</visible>
 			</control>
+			<control type="button" id="120">
+				<description>Get More Add-ons</description>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[21452][/UPPERCASE]</label>
+				<onclick condition="Window.IsActive(MusicLibrary)">ActivateWindow(addonbrowser,addons://more/audio/,return)</onclick> 
+				<onclick condition="Window.IsActive(Pictures)">ActivateWindow(addonbrowser,addons://more/image/,return)</onclick> 
+				<onclick condition="Window.IsActive(Programs)">ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick> 
+				<onclick condition="Window.IsActive(Videos)">ActivateWindow(addonbrowser,addons://more/video/,return)</onclick> 
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+				<visible>Container.Content(Addons)</visible>
+			</control>
+			<control type="image" id="121">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(120)</visible>
+			</control>
 		</control>		
 	</include>
 	
@@ -741,17 +766,6 @@
 				<visible>Container.CanFilterAdvanced</visible>
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="5">
-				<description>Enable auto-updates</description>
-				<width>190</width>
-				<textwidth>164</textwidth>
-				<include>MenuBarBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[24063][/UPPERCASE]</label>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-			</control>
-			<control type="image" id="120">
-				<include>MenuBarSeparator</include>
-			</control>
 			<control type="button" id="9">
 				<description>Force Refresh Repo</description>
 				<width>190</width>
@@ -760,18 +774,7 @@
 				<label>[UPPERCASE]$LOCALIZE[24034][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
-			<control type="image" id="121">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="radiobutton" id="6">
-				<description>No notifications</description>
-				<width>197</width>
-				<textwidth>122</textwidth>
-				<include>MenuBarRadioBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[25000][/UPPERCASE]</label>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-			</control>
-			<control type="image" id="122">
+			<control type="image" id="120">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="radiobutton" id="7">
@@ -782,7 +785,7 @@
 				<label>[UPPERCASE]$LOCALIZE[25001][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
-			<control type="image" id="123">
+			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="radiobutton" id="8">
@@ -793,7 +796,18 @@
 				<label>[UPPERCASE]$LOCALIZE[24999][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
-			<control type="image" id="124">
+			<control type="image" id="122">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="5">
+				<description>Settings</description>
+				<width>190</width>
+				<textwidth>164</textwidth>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+			</control>
+			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
 			</control>
 		</control>		
@@ -1202,6 +1216,7 @@
 			</control>
 			<control type="button" id="32">
 				<description>Channels</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19019][/UPPERCASE]</label>
 				<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
@@ -1213,6 +1228,7 @@
 			</control>
 			<control type="button" id="33">
 				<description>TV Guide</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn2</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[22020][/UPPERCASE]</label>
 				<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
@@ -1224,6 +1240,7 @@
 			</control>
 			<control type="button" id="36">
 				<description>Search</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[137][/UPPERCASE]</label>
 				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
@@ -1233,41 +1250,48 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="35">
+				<description>Timer Rules</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn2</include>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[19138][/UPPERCASE]</label>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+			</control>
+			<control type="image" id="354">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="40">
 				<description>Timers</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19040][/UPPERCASE]</label>
 				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
 				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
 			</control>
-			<control type="image" id="354">
+			<control type="image" id="355">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="34">
 				<description>Recordings</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn2</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19163][/UPPERCASE]</label>
 				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
 				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
 			</control>
-			<control type="image" id="355">
+			<control type="image" id="356">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="2">
 				<description>View As button</description>
+				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>-</label>
 				<visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>
 			</control>
-			<control type="button" id="37">
-				<description>Settings</description>
-				<include>MenuBarBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick>ActivateWindow(PVRSettings)</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>![Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)]</visible>
-			</control>
-			<control type="image" id="356">
+			<control type="image" id="357">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(2)</visible>
 			</control>
 			<control type="button" id="475">
 				<description>View Options</description>
@@ -1368,17 +1392,18 @@
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 			</control>
-			<control type="button" id="39">
-				<description>Search for missing icons</description>
-				<include>MenuBarBigBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31221][/UPPERCASE]</label>
-				<onclick>PVR.SearchMissingChannelIcons</onclick>
+			<control type="radiobutton" id="8">
+				<description>Hide Disabled Timers</description>
+				<width>200</width>
+				<textwidth>125</textwidth>
+				<include>MenuBarRadioBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[19077][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>![Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings) | Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)]</visible>
+				<visible>Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)</visible>
 			</control>
 			<control type="image" id="106">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVGuide) | Window.IsActive(RadioGuide) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings) | Window.IsActive(TVSearch) | Window.IsActive(RadioSearch)</visible>
+				<visible>Control.IsVisible(6) | Control.IsVisible(7) | Control.IsVisible(8)</visible>
 			</control>
 			<control type="button" id="38">
 				<description>Settings</description>
@@ -1386,11 +1411,20 @@
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
 				<onclick>ActivateWindow(PVRSettings)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>
+				<visible>![Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)]</visible>
+			</control>
+			<control type="button" id="41">
+				<description>Settings</description>
+				<width>160</width>
+				<textwidth>134</textwidth>
+				<include>MenuBarBigBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
+				<onclick>ActivateWindow(PVRSettings)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 			</control>
 			<control type="image" id="107">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>
 			</control>
 			<!--
 			<control type="button" id="108">
@@ -1829,7 +1863,7 @@
 		</control>		
 	</include>
 
-	<include name="AlbumInfoMenuBar">	
+	<include name="MusicInfoMenubar">	
 		<control type="grouplist" id="987">
 			<top>0</top>
 			<width>ScreenWidth</width>
@@ -1846,14 +1880,29 @@
 			<control type="image" id="115">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="5">
-				<description>Tracks</description>
+			<control type="togglebutton" id="116">
+				<description>Tracks / Review</description>
+				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
+				<alttexturenofocus>-</alttexturenofocus>
 				<include>MenuBarSettingsBtn</include>
-				<onfocus condition="!IsEmpty(Skin.String(AlbumInfoMenubar))">Skin.Reset(AlbumInfoMenubar)</onfocus>
-				<label>[UPPERCASE]$LOCALIZE[206][/UPPERCASE]</label>
-			</control>	
-			<control type="image" id="116">
+				<onfocus condition="!IsEmpty(Skin.String(MusicInfoMenubar))">Skin.Reset(MusicInfoMenubar)</onfocus>
+				<label>[UPPERCASE]$VAR[MusicInfoTextboxButtonLabel1][/UPPERCASE]</label>
+				<altlabel>[UPPERCASE]$VAR[MusicInfoTextboxButtonLabel2][/UPPERCASE]</altlabel>
+				<usealttexture>Skin.HasSetting(MusicInfoTracksReviewToggle)</usealttexture>
+				<onclick>Skin.ToggleSetting(MusicInfoTracksReviewToggle)</onclick>
+				<visible>!Container.Content(Songs)</visible>
+			</control>
+			<control type="button" id="125">
+				<description>Comment</description>
+				<include>MenuBarSettingsBtn</include>
+				<onfocus condition="!IsEmpty(Skin.String(MusicInfoMenubar))">Skin.Reset(MusicInfoMenubar)</onfocus>
+				<label>[UPPERCASE]$LOCALIZE[569][/UPPERCASE]</label>
+				<onclick>noop</onclick>
+				<visible>Container.Content(Songs)</visible>
+			</control>
+			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(116)</visible>
 			</control>
 			<control type="button" id="209">
 				<description>Extra Information</description>
@@ -1872,29 +1921,42 @@
 			<control type="button" id="6">
 				<description>Refresh</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[184][/UPPERCASE]</label>
+				<label>[UPPERCASE]-[/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(6)</visible>
 			</control>
 			<control type="button" id="10">
 				<description>Get Thumb</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[13405][/UPPERCASE]</label>	
+				<label>[UPPERCASE]-[/UPPERCASE]</label>	
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(10)</visible>
 			</control>
 			<control type="button" id="12">
 				<description>Get Fanart</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[20413][/UPPERCASE]</label>
+				<label>[UPPERCASE]-[/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="120">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(12)</visible>
+			</control>
+			<control type="button" id="7">
+				<description>Set My Rating</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]-[/UPPERCASE]</label>
+				<enable>!Skin.HasSetting(EnableKioskMode) + Control.IsEnabled(7)</enable>
+			</control>
+			<control type="image" id="122">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(7)</visible>
 			</control>
 			<control type="button" id="211">
 				<description>CD Art Manager</description>

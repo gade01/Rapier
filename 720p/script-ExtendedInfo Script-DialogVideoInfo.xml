@@ -28,7 +28,7 @@
 			</control>
 		</control>
 		
-		<include condition="![[Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(musicinformation)] + !IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
+		<include condition="![[Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation)] + !IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
 		
 		<control type="group">
 			<visible>!Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>

@@ -126,7 +126,7 @@
 						<font>WideListFont3</font>
 						<textcolor>ListColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Property(Addon.Version)]</label>			
+						<label>$INFO[ListItem.AddonVersion]</label>			
 					</control>
 					<control type="label">
 						<description>Author</description>
@@ -136,7 +136,7 @@
 						<font>WideListFont3</font>
 						<textcolor>ListColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Property(Addon.Creator)]</label>			
+						<label>$INFO[ListItem.AddonCreator]</label>			
 					</control>
 					<control type="label">
 						<description>Type</description>
@@ -147,7 +147,7 @@
 						<font>WideListFont2</font>
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[UPPERCASE]$INFO[ListItem.Property(Addon.Type)][/UPPERCASE]</label>
+						<label>[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 						<aligny>center</aligny>
 					</control>
 					<control type="textbox">
@@ -159,7 +159,7 @@
 						<font>MediaInfoDescFont</font>
 						<textcolor>ListColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31204">$INFO[ListItem.Property(Addon.Description)]</label>
+						<label fallback="31204">$INFO[ListItem.AddonDescription]</label>
 						<align>justify</align>
 						<wrapmultiline>true</wrapmultiline>
 					</control>
@@ -280,7 +280,7 @@
 						<font>WideListFont3</font>
 						<textcolor>ListColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Property(Addon.Version)]</label>			
+						<label>$INFO[ListItem.AddonVersion]</label>			
 					</control>
 					<control type="label">
 						<description>Author</description>
@@ -290,7 +290,7 @@
 						<font>WideListFont3</font>
 						<textcolor>ListColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Property(Addon.Creator)]</label>			
+						<label>$INFO[ListItem.AddonCreator]</label>			
 					</control>
 					<control type="label">
 						<description>Type</description>
@@ -301,7 +301,7 @@
 						<font>WideListFont2</font>
 						<textcolor>SelectedColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[UPPERCASE]$INFO[ListItem.Property(Addon.Type)][/UPPERCASE]</label>
+						<label>[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 						<aligny>center</aligny>
 					</control>
 					<control type="textbox">
@@ -313,7 +313,7 @@
 						<font>MediaInfoDescFont</font>
 						<textcolor>MediaInfoColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31204">$INFO[ListItem.Property(Addon.Description)]</label>
+						<label fallback="31204">$INFO[ListItem.AddonDescription]</label>
 						<align>justify</align>
 						<wrapmultiline>true</wrapmultiline>
 						<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
@@ -358,7 +358,7 @@
 			<include>ListInfoViewContentPanel</include>
 			
 			<control type="group">
-				<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+				<visible>!IsEmpty(ListItem.AddonName)</visible>
 				
 				<control type="image">
 					<description>Cover Background</description>
@@ -406,7 +406,7 @@
 					<font>MediaInfoFont2</font>
 					<textcolor>MediaInfoItemColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Property(Addon.Type)][/UPPERCASE]</label>
+					<label>[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 					<scroll>true</scroll>
 				</control>
 				
@@ -420,7 +420,7 @@
 					<textcolor>MediaInfoColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>justify</align>
-					<label fallback="31204">$INFO[ListItem.Property(Addon.Description)]</label>
+					<label fallback="31204">$INFO[ListItem.AddonDescription]</label>
 					<wrapmultiline>true</wrapmultiline>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 					<visible>!Skin.HasSetting(HideAddonsListInfoDescription) + !Container.OnNext + !Container.OnPrevious</visible> 
@@ -435,7 +435,7 @@
 					<align>center</align>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+					<visible>!IsEmpty(ListItem.AddonName)</visible>
 					<control type="label">
 						<description>Author</description>
 						<width min="0" max="110">auto</width>
@@ -447,7 +447,7 @@
 						<width min="0" max="174">auto</width>
 						<scroll>true</scroll>
 						<include>ListInfoViewCatValueLabel</include>
-						<label fallback="31001">$INFO[ListItem.Property(Addon.Creator)]</label>
+						<label fallback="31001">$INFO[ListItem.AddonCreator]</label>
 					</control>
 					<include>ListInfoViewDot</include>
 					<control type="label">
@@ -460,7 +460,7 @@
 						<description>Version Value</description>
 						<width min="0" max="110">auto</width>
 						<include>ListInfoViewCatValueLabel</include>
-						<label fallback="31001">$INFO[ListItem.Property(Addon.Version)]</label>
+						<label fallback="31001">$INFO[ListItem.AddonVersion]</label>
 					</control>
 					<include>ListInfoViewDot</include>
 					<control type="label">
@@ -715,7 +715,7 @@
 			<label>$INFO[ListItem.Label]</label>
 			<aligny>center</aligny>
 			<scroll>true</scroll>
-			<visible>IsEmpty(ListItem.Property(Addon.Name))</visible>
+			<visible>IsEmpty(ListItem.AddonName)</visible>
 		</control>
 		
 		<control type="label">
@@ -727,10 +727,10 @@
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
-			<label>$INFO[ListItem.Property(Addon.Name)]</label>
+			<label>$INFO[ListItem.AddonName]</label>
 			<aligny>center</aligny>
 			<scroll>true</scroll>
-			<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+			<visible>!IsEmpty(ListItem.AddonName)</visible>
 		</control>
 		
 		<control type="image">
@@ -749,7 +749,7 @@
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+			<visible>!IsEmpty(ListItem.AddonName)</visible>
 			<control type="label">
 				<description>Author</description>
 				<width min="0" max="110">auto</width>
@@ -760,7 +760,7 @@
 				<description>Author Value</description>
 				<width min="0" max="310">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[ListItem.Property(Addon.Creator)]</label>
+				<label fallback="31001">$INFO[ListItem.AddonCreator]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -773,7 +773,7 @@
 				<description>Version Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[ListItem.Property(Addon.Version)]</label>
+				<label fallback="31001">$INFO[ListItem.AddonVersion]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -791,7 +791,7 @@
 		</control>
 	
 		<control type="group">
-			<visible>!IsEmpty(ListItem.Property(Addon.Name)) + !Skin.HasSetting(HideAddonsWrapListMediaInfo)</visible>
+			<visible>!IsEmpty(ListItem.AddonName) + !Skin.HasSetting(HideAddonsWrapListMediaInfo)</visible>
 			<depth>DepthContent+</depth>
 
 			<control type="textbox">
@@ -805,7 +805,7 @@
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
-				<label fallback="31204">$INFO[ListItem.Property(Addon.Description)]</label>
+				<label fallback="31204">$INFO[ListItem.AddonDescription]</label>
 				<wrapmultiline>true</wrapmultiline>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 				<visible>!Skin.HasSetting(HideAddonsWrapListInfoDescription) + !Container.OnNext + !Container.OnPrevious</visible>
@@ -825,7 +825,7 @@
 					<textcolor>WhiteColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Property(Addon.Type)][/UPPERCASE]</label>
+					<label>[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 				</control>
 				
 				<control type="label">
@@ -1025,7 +1025,7 @@
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
-			<label>$INFO[ListItem.Property(Addon.Name)]</label>
+			<label>$INFO[ListItem.AddonName]</label>
 			<aligny>center</aligny>
 			<scroll>true</scroll>
 		</control>
@@ -1046,7 +1046,7 @@
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!IsEmpty(ListItem.Property(Addon.Name))</visible>
+			<visible>!IsEmpty(ListItem.AddonName)</visible>
 			<control type="label">
 				<description>Author</description>
 				<width min="0" max="110">auto</width>
@@ -1057,7 +1057,7 @@
 				<description>Author Value</description>
 				<width min="0" max="310">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[ListItem.Property(Addon.Creator)]</label>
+				<label fallback="31001">$INFO[ListItem.AddonCreator]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -1070,7 +1070,7 @@
 				<description>Version Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[ListItem.Property(Addon.Version)]</label>
+				<label fallback="31001">$INFO[ListItem.AddonVersion]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -1088,7 +1088,7 @@
 		</control>
 		
 		<control type="group">
-			<visible>!IsEmpty(ListItem.Property(Addon.Name)) + !Skin.HasSetting(HideAddonsWrapListMediaInfo)</visible>
+			<visible>!IsEmpty(ListItem.AddonName) + !Skin.HasSetting(HideAddonsWrapListMediaInfo)</visible>
 			<depth>DepthContent+</depth>
 
 			<control type="textbox">
@@ -1101,7 +1101,7 @@
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
-				<label fallback="31204">$INFO[ListItem.Property(Addon.Description)]</label>
+				<label fallback="31204">$INFO[ListItem.AddonDescription]</label>
 				<wrapmultiline>true</wrapmultiline>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 				<visible>!Skin.HasSetting(HideAddonsWrapListInfoDescription) + !Container.OnNext + !Container.OnPrevious</visible>
@@ -1121,7 +1121,7 @@
 					<textcolor>WhiteColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Property(Addon.Type)][/UPPERCASE]</label>
+					<label>[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 				</control>
 				
 				<control type="label">

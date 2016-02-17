@@ -152,7 +152,7 @@
 						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -163,7 +163,7 @@
 						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -174,7 +174,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 					</control>
 					<control type="image">
 						<description>Countries Cover</description>
@@ -186,7 +186,7 @@
 						<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 						<bordersize>6</bordersize>
 						<aspectratio>scale</aspectratio>
-						<visible>Container.Content(Countries) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Cover</description>
@@ -363,7 +363,7 @@
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -375,7 +375,7 @@
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -387,7 +387,7 @@
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 					</control>
 					<control type="image">
 						<description>Countries Cover</description>
@@ -399,7 +399,7 @@
 						<bordertexture border="12">covers/cover-case-focus2.png</bordertexture>
 						<bordersize>12</bordersize>
 						<aspectratio>scale</aspectratio>
-						<visible>Container.Content(Countries) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Cover</description>
@@ -553,7 +553,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -566,7 +566,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -579,7 +579,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 					</control>
 					
 					<control type="image">
@@ -593,7 +593,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -607,7 +607,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -621,7 +621,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+						<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 					</control>
 					
 					<control type="image">
@@ -633,7 +633,7 @@
 						<bordersize>14</bordersize>
 						<aspectratio>scale</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>	
-						<visible>Container.Content(Countries) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -646,7 +646,7 @@
 						<bordersize>14</bordersize>
 						<aspectratio>scale</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<visible>Container.Content(Countries) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
 
@@ -1006,7 +1006,7 @@
 				<top>10</top>
 				<width>100</width>
 				<height>16</height>		
-				<texture background="true">$INFO[ListItem.StarRating]</texture>
+				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>[[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
 				<include>StarRatingFadeAnim</include>
@@ -1328,7 +1328,7 @@
 					<top>10</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>[[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
 				</control>
@@ -1537,7 +1537,7 @@
 					<top>16</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<include>StarRatingFadeAnim</include>
 				</control>
@@ -1937,7 +1937,7 @@
 				<top>16</top>
 				<width>100</width>
 				<height>16</height>		
-				<texture background="true">$INFO[ListItem.StarRating]</texture>
+				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!IsEmpty(ListItem.Album) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				<include>StarRatingFadeAnim</include>
@@ -2018,7 +2018,7 @@
 				<top>16</top>
 				<width>100</width>
 				<height>16</height>		
-				<texture background="true">$INFO[ListItem.StarRating]</texture>
+				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				<include>StarRatingFadeAnim</include>
@@ -2149,7 +2149,7 @@
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Property(Addon.Version)]$INFO[ListItem.Property(Addon.Creator),  -  ,]</label>
+				<label>$INFO[ListItem.AddonVersion]$INFO[ListItem.AddonCreator,  -  ,]</label>
 			</control>
 			<control type="label">
 				<description>Status (Addons)</description>
@@ -2186,7 +2186,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Cover</description>
@@ -2198,7 +2198,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Countries Cover</description>
@@ -2208,7 +2208,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true" fallback="studios/default-studio.png">$INFO[ListItem.Label,flagging/countries/,.png]</texture>
 				<aspectratio>scale</aspectratio>
-				<visible>Container.Content(Countries) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Dim</description>
@@ -2231,7 +2231,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+				<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
 			</control>								
 			<control type="label">
@@ -2443,7 +2443,7 @@
 						<top>16</top>
 						<width>100</width>
 						<height>16</height>		
-						<texture background="true">$INFO[ListItem.StarRating]</texture>
+						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
 					</control>
 					<control type="image">
@@ -2814,7 +2814,7 @@
 					<top>16</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!IsEmpty(ListItem.Album) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				</control>
@@ -2887,7 +2887,7 @@
 					<top>16</top>
 					<width>100</width>
 					<height>16</height>		
-					<texture background="true">$INFO[ListItem.StarRating]</texture>
+					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				</control>
@@ -3003,7 +3003,7 @@
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Property(Addon.Version)]$INFO[ListItem.Property(Addon.Creator),  -  ,]</label>
+					<label>$INFO[ListItem.AddonVersion]$INFO[ListItem.AddonCreator,  -  ,]</label>
 				</control>
 				<control type="label">
 					<description>Status (Addons)</description>
@@ -3043,7 +3043,7 @@
 				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
-				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>Window.IsActive(Videos) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Cover</description>
@@ -3056,7 +3056,7 @@
 				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
-				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Countries Cover</description>
@@ -3067,7 +3067,7 @@
 				<texture background="true" fallback="studios/default-studio.png">$INFO[ListItem.Label,flagging/countries/,.png]</texture>
 				<aspectratio>scale</aspectratio>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
-				<visible>Container.Content(Countries) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
@@ -3078,7 +3078,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+				<visible>IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>	
 			<control type="group">
@@ -8222,7 +8222,7 @@
 					<width>253</width>
 					<height>27</height>
 					<texture border="8">views/genre-background.png</texture>
-					<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png) + [Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)]</visible>
+					<visible>!ListItem.IsParentFolder + [Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)]</visible>
 				</control>
 							
 				<control type="label">
@@ -8237,7 +8237,7 @@
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					<scroll>true</scroll>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
-					<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png) + [Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)]</visible>
+					<visible>!ListItem.IsParentFolder + [Substring(Container.FolderPath,videodb://movies/countries/) | Substring(Container.FolderPath,videodb://movies/actors/) | Substring(Container.FolderPath,videodb://movies/directors/) | Substring(Container.FolderPath,videodb://movies/studios/) | Substring(Container.FolderPath,videodb://tvshows/actors/) | Substring(Container.FolderPath,videodb://tvshows/studios/)]</visible>
 				</control>
 				
 				<control type="image">
@@ -8247,7 +8247,7 @@
 					<width>212</width>
 					<height>27</height>
 					<texture border="8">views/genre-background.png</texture>
-					<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png) + [Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
+					<visible>!ListItem.IsParentFolder + [Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
 				</control>
 				
 				<control type="label">
@@ -8262,7 +8262,7 @@
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					<scroll>true</scroll>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
-					<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png) + [Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
+					<visible>!ListItem.IsParentFolder + [Substring(Container.FolderPath,videodb://musicvideos/directors/) | Substring(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
 				</control>
 				
 				<control type="image">
@@ -8301,7 +8301,7 @@
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 					<animation effect="slide" end="-20,-20" condition="Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)">Conditional</animation>
-					<visible>[Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,musicdb://years/)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					<visible>[Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,musicdb://years/)] + !ListItem.IsParentFolder</visible>
 				</control>
 				
 				<control type="image">
@@ -8313,7 +8313,7 @@
 					<bordersize>1</bordersize>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
-					<visible>!IsEmpty(Container(584).ListItem.Art(poster)) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png) + ![Substring(Container.FolderPath,videodb://musicvideos/) | Container.Content(Sets)]</visible>
+					<visible>!IsEmpty(Container(584).ListItem.Art(poster)) + !ListItem.IsParentFolder + ![Substring(Container.FolderPath,videodb://musicvideos/) | Container.Content(Sets)]</visible>
 				</control>
 				
 				<control type="image">
@@ -8325,7 +8325,7 @@
 					<bordersize>1</bordersize>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
-					<visible>!IsEmpty(Container(584).ListItem.Art(poster)) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png) + Container.Content(Sets)</visible>
+					<visible>!IsEmpty(Container(584).ListItem.Art(poster)) + !ListItem.IsParentFolder + Container.Content(Sets)</visible>
 				</control>
 				
 				<control type="image">
@@ -8337,12 +8337,12 @@
 					<bordersize>1</bordersize>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
-					<visible>[Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					<visible>[Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)] + !ListItem.IsParentFolder</visible>
 				</control>
 			</control>
 
 			<control type="group">
-				<visible>![[Window.IsActive(Videos) + IsEmpty(Container(584).ListItem.Title)] | [Window.IsActive(MusicLibrary) + IsEmpty(Container(584).ListItem.Artist)]] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>![[Window.IsActive(Videos) + IsEmpty(Container(584).ListItem.Title)] | [Window.IsActive(MusicLibrary) + IsEmpty(Container(584).ListItem.Artist)]] + !ListItem.IsParentFolder</visible>
 				<animation effect="slide" end="0,-41" condition="Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)">Conditional</animation>
 				<animation effect="slide" end="0,61" condition="Container.Content(Sets)">Conditional</animation>
 				
@@ -8773,7 +8773,7 @@
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
-						<visible>![Container.Content(Sets) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+						<visible>![Container.Content(Sets) + !ListItem.IsParentFolder]</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
 					<control type="image">
@@ -8785,7 +8785,7 @@
 						<texture background="true">DefaultSets.png.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>Container.Content(Sets) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+						<visible>Container.Content(Sets) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -8836,7 +8836,7 @@
 							<height>24</height>
 							<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 							<aspectratio>stretch</aspectratio>
-							<visible>![Container.Content(Sets) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)]</visible>
+							<visible>![Container.Content(Sets) + !ListItem.IsParentFolder]</visible>
 						</control>
 						<control type="image">
 							<description>Icon</description>
@@ -8846,7 +8846,7 @@
 							<height>24</height>
 							<texture background="true">DefaultSets.png.png</texture>
 							<aspectratio>stretch</aspectratio>
-							<visible>Container.Content(Sets) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+							<visible>Container.Content(Sets) + !ListItem.IsParentFolder</visible>
 						</control>
 						<control type="label">
 							<description>Label</description>
@@ -8903,7 +8903,7 @@
 				<oninfo condition="System.HasAddon(script.extendedinfo) + SubString(Container.FolderPath,videodb://movies/)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(584).ListItem.DBID],id=$INFO[ListItem.Property(id)])</oninfo>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + SubString(Container.FolderPath,videodb://tvshows/)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(584).ListItem.DBID],id=$INFO[ListItem.Property(id)])</oninfo>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [SubString(Container.FolderPath,musicdb://) | SubString(Container.FolderPath,videodb://musicvideos/)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(584).ListItem.Artist])</oninfo>
-				<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<left>0</left>
@@ -9215,7 +9215,7 @@
 				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + ![Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)]">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
 				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,videodb://musicvideos/)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label],return)</onright>
 				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,musicdb://)">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, music video],return)</onright>
-				<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 			</control>
 			
 			<control type="group">
@@ -9230,8 +9230,9 @@
 					<texture>$INFO[Container(584).ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
+					<include>NotificationsOpenCloseAnim</include>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
-					<visible>!IsEmpty(Container(584).ListItem.Art(clearlogo)) + [[Substring(Container.FolderPath,videodb://movies/) + !Skin.HasSetting(DisableMoviesClearLogo)] | [Substring(Container.FolderPath,videodb://tvshows/) + !Skin.HasSetting(DisableTVShowsLogo)]]</visible>
+					<visible>!ListItem.IsParentFolder + !IsEmpty(Container(584).ListItem.Art(clearlogo)) + [[Substring(Container.FolderPath,videodb://movies/) + !Skin.HasSetting(DisableMoviesClearLogo)] | [Substring(Container.FolderPath,videodb://tvshows/) + !Skin.HasSetting(DisableTVShowsLogo)]]</visible>
 				</control>
 				<control type="image">
 					<left>582</left>
@@ -9254,7 +9255,7 @@
 					<align>right</align>
 					<include>InfoPaneHeadLabel</include>
 					<label>[B]$VAR[ExtendedListInfoPaneVar][/B]</label>
-					<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 				</control>
 				<include>BottomPaneOpenCloseAnim</include>
 			</control>	

@@ -458,9 +458,16 @@
 							<visible>Container(450).HasFocus(2)</visible>
 						</item>
 						<item id="22">
-							<description>TV Timer</description>
+							<description>TV Timers</description>
 							<label>$LOCALIZE[19040]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(TVTimers))</onclick>
+							<onclick>Dialog.Close(3006)</onclick>
+							<visible>Container(450).HasFocus(2)</visible>
+						</item>
+						<item id="120">
+							<description>TV Timer Rules</description>
+							<label>$LOCALIZE[19138]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(TVTimerRules))</onclick>
 							<onclick>Dialog.Close(3006)</onclick>
 							<visible>Container(450).HasFocus(2)</visible>
 						</item>
@@ -494,9 +501,16 @@
 							<visible>Container(450).HasFocus(3)</visible>
 						</item>
 						<item id="27">
-							<description>Radio Timer</description>
+							<description>Radio Timers</description>
 							<label>$LOCALIZE[19040]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(RadioTimers))</onclick>
+							<onclick>Dialog.Close(3006)</onclick>
+							<visible>Container(450).HasFocus(3)</visible>
+						</item>
+						<item id="121">
+							<description>Radio Timer Rules</description>
+							<label>$LOCALIZE[19138]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(RadioTimerRules))</onclick>
 							<onclick>Dialog.Close(3006)</onclick>
 							<visible>Container(450).HasFocus(3)</visible>
 						</item>
@@ -737,7 +751,7 @@
 						<item id="104">
 							<description>In Progress TV Shows</description>
 							<label>$LOCALIZE[626]</label>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Videos,library://video/inprogressshows.xml/,Return))</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Videos,InProgressTvShows,Return))</onclick>
 							<onclick>Dialog.Close(3006)</onclick>
 							<visible>Container(450).HasFocus(6)</visible>
 						</item>

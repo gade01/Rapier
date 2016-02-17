@@ -49,7 +49,7 @@
 					<font>FullMediaInfoTitleFont3</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Property(Addon.Name)][/UPPERCASE]</label>
+					<label>[UPPERCASE]$INFO[ListItem.AddonName][/UPPERCASE]</label>
 					<scroll>true</scroll>
 				</control>
 				
@@ -69,7 +69,7 @@
 					<font>FullMediaInfoTitleFont2</font>
 					<textcolor>MediaInfoTitleColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label fallback="31000">[UPPERCASE]$INFO[ListItem.Property(Addon.Type)][/UPPERCASE]</label>
+					<label fallback="31000">[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 				</control>
 				
 				<control type="image">
@@ -180,13 +180,13 @@
 					<item id="1">
 						<description>Author</description>
 						<label>$LOCALIZE[21863]</label>
-						<label2>$INFO[ListItem.Property(Addon.Creator)]</label2>
+						<label2>$INFO[ListItem.AddonCreator]</label2>
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
 						<description>Version</description>
 						<label>$LOCALIZE[24051]</label>
-						<label2>$INFO[ListItem.Property(Addon.Version)]</label2>
+						<label2>$INFO[ListItem.AddonVersion]</label2>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
@@ -204,26 +204,42 @@
 					<item id="5">
 						<description>Broken</description>
 						<label>$LOCALIZE[24098]</label>
-						<label2 fallback="106">$INFO[ListItem.Property(Addon.Broken)]</label2>
+						<label2 fallback="106">$INFO[ListItem.AddonBroken]</label2>
 						<onclick>noop</onclick>
 					</item>
 					<item id="6">
 						<description>Summary</description>
 						<label>$LOCALIZE[20037]</label>
-						<label2>$INFO[ListItem.Property(Addon.Summary)]</label2>
+						<label2>$INFO[ListItem.AddonSummary]</label2>
 						<onclick>noop</onclick>
 					</item>
 					<item id="7">
 						<description>Disclaimer</description>
 						<label>$LOCALIZE[24052]</label>
-						<label2 fallback="16018">$INFO[ListItem.Property(Addon.Disclaimer)]</label2>
+						<label2 fallback="16018">$INFO[ListItem.AddonDisclaimer]</label2>
 						<onclick>noop</onclick>
+						<visible>IsEmpty(ListItem.AddonLastUpdated) + [IsEmpty(ListItem.AddonLastUsed) | IsEmpty(ListItem.AddonInstallDate)]</visible>
 					</item>
 					<item id="8">
-						<description>File Path</description>
-						<label>$LOCALIZE[21801]</label>
-						<label2>$INFO[ListItem.Property(Addon.Path)]</label2>
+						<description>Last Updated</description>
+						<label>$LOCALIZE[31124]</label>
+						<label2>$INFO[ListItem.AddonLastUpdated]</label2>
 						<onclick>noop</onclick>
+						<visible>!IsEmpty(ListItem.AddonLastUpdated)</visible>
+					</item>
+					<item id="9">
+						<description>Last Used</description>
+						<label>$LOCALIZE[12012]</label>
+						<label2>$INFO[ListItem.AddonLastUsed]</label2>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(ListItem.AddonLastUsed)</visible>
+					</item>
+					<item id="10">
+						<description>Install Date</description>
+						<label>$LOCALIZE[12013]</label>
+						<label2>$INFO[ListItem.AddonInstallDate]</label2>
+						<onclick>noop</onclick>
+						<visible>IsEmpty(ListItem.AddonLastUsed) + !IsEmpty(ListItem.AddonInstallDate)</visible>
 					</item>
 				</content>
 			</control>
@@ -246,7 +262,7 @@
 				<font>FullMediaInfoDescFont</font>
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Property(Addon.Description)]</label>
+				<label>$INFO[ListItem.AddonDescription]</label>
 				<align>justify</align>
 				<pagecontrol>61</pagecontrol>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>

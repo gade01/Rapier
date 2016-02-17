@@ -500,7 +500,7 @@
 				<aspectratio aligny="top">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
 				<visible>[Window.IsActive(TVGuide) | Window.IsActive(TVSearch) | Window.IsActive(RadioGuide) | Window.IsActive(RadioSearch) | 
-				[[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + !StringCompare(ListItem.Label,$LOCALIZE[19026])]] + !Player.HasVideo</visible>
+				[[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)] + !StringCompare(ListItem.Label,$LOCALIZE[19026])]] + !Player.HasVideo</visible>
 			</control>
 
 			<control type="image">
@@ -511,7 +511,7 @@
 				<texture background="true">pvr/DefaultPVRLogo.png</texture>
 				<aspectratio aligny="top">keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>[[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + StringCompare(ListItem.Label,$LOCALIZE[19026])] + !Player.HasVideo</visible>
+				<visible>[[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)] + StringCompare(ListItem.Label,$LOCALIZE[19026])] + !Player.HasVideo</visible>
 			</control>
 
 			<control type="group">
@@ -602,7 +602,7 @@
 			<control type="group">
 				<description>Info</description>
 				<left>220</left>
-				<visible>[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + !StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
+				<visible>[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)] + !StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
 				<control type="label">
 					<description>Label</description>
 					<width>700</width>
@@ -657,7 +657,7 @@
 			<control type="group">
 				<description>No Info</description>
 				<left>220</left>
-				<visible>[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)] + StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
+				<visible>[Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)] + StringCompare(ListItem.Label,$LOCALIZE[19026])</visible>
 				<control type="label">
 					<description>Label</description>
 					<top>20</top>

@@ -2492,10 +2492,10 @@
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn5) + !IsEmpty(Skin.String(TVShowsSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
-						<description>TV Show Next Aired</description>
-						<label>$LOCALIZE[4]</label>
-						<onclick>RunScript(script.tv.show.next.aired)</onclick>
-						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn6) + System.HasAddon(script.tv.show.next.aired)</visible>
+						<description>In Progress TV Shows</description>
+						<label>$LOCALIZE[575]</label>
+						<onclick>ActivateWindow(Videos,InProgressTvShows,Return)</onclick>
+						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn6)</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
@@ -2503,6 +2503,12 @@
 						<onclick condition="![Skin.String(TVShowsSubMenuBtn6Type,Favourite) | Skin.String(TVShowsSubMenuBtn6Type,)]">$INFO[Skin.String(TVShowsSubMenuBtn6Param)]</onclick>
 						<onclick condition="Skin.String(TVShowsSubMenuBtn6Type,Favourite) | Skin.String(TVShowsSubMenuBtn6Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn6) + !IsEmpty(Skin.String(TVShowsSubMenuBtn6Label))</visible>
+					</item>
+					<item id="7">
+						<description>TV Show Next Aired</description>
+						<label>$LOCALIZE[4]</label>
+						<onclick>RunScript(script.tv.show.next.aired)</onclick>
+						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn7) + System.HasAddon(script.tv.show.next.aired)</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
@@ -2568,9 +2574,9 @@
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn3) + !IsEmpty(Skin.String(PVRSubMenuBtn3Label))</visible>
 					</item>
 					<item id="4">
-						<description>Timer</description>
-						<label>$LOCALIZE[19040]</label>
-						<onclick>ActivateWindow(TVTimers)</onclick>
+						<description>Timer Rules</description>
+						<label>$LOCALIZE[19138]</label>
+						<onclick>ActivateWindow(TVTimerRules)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn4)</visible>
 					</item>
 					<item id="4">
@@ -2581,9 +2587,9 @@
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn4) + !IsEmpty(Skin.String(PVRSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
-						<description>Search</description>
-						<label>$LOCALIZE[137]</label>
-						<onclick>ActivateWindow(TVSearch)</onclick>
+						<description>Timers</description>
+						<label>$LOCALIZE[19040]</label>
+						<onclick>ActivateWindow(TVTimers)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn5)</visible>
 					</item>
 					<item id="5">
@@ -2594,9 +2600,9 @@
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn5) + !IsEmpty(Skin.String(PVRSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
-						<description>Radio Channels</description>
-						<label>$LOCALIZE[19024]</label>
-						<onclick>ActivateWindow(RadioChannels)</onclick>
+						<description>Search</description>
+						<label>$LOCALIZE[137]</label>
+						<onclick>ActivateWindow(TVSearch)</onclick>
 						<visible>!Skin.HasSetting(EditPVRSubMenuBtn6)</visible>
 					</item>
 					<item id="6">
@@ -2605,6 +2611,12 @@
 						<onclick condition="![Skin.String(PVRSubMenuBtn6Type,Favourite) | Skin.String(PVRSubMenuBtn6Type,)]">$INFO[Skin.String(PVRSubMenuBtn6Param)]</onclick>
 						<onclick condition="Skin.String(PVRSubMenuBtn6Type,Favourite) | Skin.String(PVRSubMenuBtn6Type,)">$INFO[Skin.String(PVRSubMenuFavourite.6.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn6) + !IsEmpty(Skin.String(PVRSubMenuBtn6Label))</visible>
+					</item>
+					<item id="7">
+						<description>Radio Channels</description>
+						<label>$LOCALIZE[19024]</label>
+						<onclick>ActivateWindow(RadioChannels)</onclick>
+						<visible>!Skin.HasSetting(EditPVRSubMenuBtn7)</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
@@ -4308,7 +4320,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4320,7 +4332,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4332,7 +4344,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4344,7 +4356,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4356,7 +4368,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4368,7 +4380,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4380,7 +4392,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4392,7 +4404,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4404,7 +4416,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4416,7 +4428,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4428,7 +4440,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4440,7 +4452,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4452,7 +4464,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4464,7 +4476,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4476,7 +4488,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4488,7 +4500,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4500,7 +4512,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4512,7 +4524,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4524,7 +4536,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4536,7 +4548,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4548,7 +4560,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4560,7 +4572,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4572,7 +4584,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4584,7 +4596,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 		</control>
 	</include>
@@ -4603,7 +4615,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4615,7 +4627,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4627,7 +4639,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4639,7 +4651,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4651,7 +4663,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4663,7 +4675,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4675,7 +4687,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4687,7 +4699,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4699,7 +4711,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4711,7 +4723,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4723,7 +4735,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4735,7 +4747,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4747,7 +4759,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4759,7 +4771,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4771,7 +4783,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4783,7 +4795,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4795,7 +4807,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4807,7 +4819,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4819,7 +4831,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4831,7 +4843,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4843,7 +4855,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4855,7 +4867,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4867,7 +4879,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[IntegerGreaterThan(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
 			</control>
 			
 			<control type="rss">
@@ -4879,7 +4891,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Window.IsActive(MuteBug) + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [IntegerGreaterThan(System.BatteryLevel,0) + !IntegerGreaterThan(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 		</control>
 	</include>
