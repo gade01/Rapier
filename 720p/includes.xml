@@ -1518,6 +1518,11 @@
 		<value>$LOCALIZE[31438]</value>
 	</variable>
 	
+	<variable name="StatusAutoCompletionVar">
+		<value condition="System.HasAddon(plugin.program.autocompletion)">$INFO[System.AddonVersion(plugin.program.autocompletion)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
 	<variable name="StatusOpenWeatherMapExtendedVar">
 		<value condition="System.HasAddon(weather.openweathermap.extended)">$INFO[System.AddonVersion(weather.openweathermap.extended)] $LOCALIZE[31437]</value>
 		<value>$LOCALIZE[31438]</value>
@@ -1537,6 +1542,7 @@
 		<value condition="System.HasAddon(script.cinemavision)">$INFO[System.AddonVersion(script.cinemavision)] $LOCALIZE[31437]</value>
 		<value>$LOCALIZE[31438]</value>
 	</variable>
+	
 	<!-- END Skin Settings -->
 	
 	<!-- Fullscreen / OSD -->
