@@ -194,6 +194,12 @@
 				<visible>Window.IsActive(AddonBrowser)</visible>
 			</control>
 			
+			<control type="label">
+				<include>InfoPaneHeadLabel2</include>
+				<label>$INFO[ListItem.Date]</label>
+				<visible>Window.IsActive(Pictures) + [Control.IsVisible(50) | [Control.IsVisible(52) + [Skin.String(CommonListStyle,) | Skin.String(CommonListStyle,1) | [!IsEmpty(ListItem.Label2) + [Skin.String(CommonListStyle,2) | Skin.String(CommonListStyle,3)]]]]]</visible>
+			</control>
+			
 			<include condition="Window.IsActive(Videos) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">VideoDetails</include>
 			<include condition="Window.IsActive(MusicLibrary)">MusicDetails</include>
 		</control>
