@@ -1405,7 +1405,7 @@
 				<label>$LOCALIZE[31025]</label>
 				<selected>Skin.HasSetting(HideListInfoView3Scrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideListInfoView3Scrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,94) | Skin.String(CurrentViewMode,95) | Skin.String(CurrentViewMode,96)</visible>
+				<visible>Skin.String(CurrentViewMode,94) | Skin.String(CurrentViewMode,95) | Skin.String(CurrentViewMode,96) | Skin.String(CurrentViewMode,578)</visible>
 			</control>
 			<control type="radiobutton" id="3070">
 				<description>Thumbs Info Hide Scrollbar</description>
@@ -1413,7 +1413,7 @@
 				<label>$LOCALIZE[31025]</label>
 				<selected>Skin.HasSetting(HideThumbsInfoViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideThumbsInfoViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,599) | Skin.String(CurrentViewMode,100)</visible>
+				<visible>Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,599) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,579)</visible>
 			</control>
 			<control type="radiobutton" id="1031">
 				<description>Wrap Info Hide Scrollbar</description>
@@ -1567,7 +1567,7 @@
 				<label>$LOCALIZE[31206]</label>
 				<visible>Control.IsVisible(3050) | Control.IsVisible(3052) | Control.IsVisible(3018) | Control.IsVisible(3019)
 				| Control.IsVisible(1006) | Control.IsVisible(1012) | Control.IsVisible(2010) | Control.IsVisible(2017) 
-				| Control.IsVisible(2044) | Control.IsVisible(2050) | Control.IsVisible(3008) | Control.IsVisible(3012)
+				| Control.IsVisible(2044) | Control.IsVisible(2050) | Control.IsVisible(3008) | Control.IsVisible(3012) | Control.IsVisible(3060)
 				| Control.IsVisible(4026) | Control.IsVisible(4036) | Control.IsVisible(4046) | Control.IsVisible(4087) | Control.IsVisible(2028)
 				| Control.IsVisible(4097) | Control.IsVisible(3092) | Control.IsVisible(3094) | Control.IsVisible(3096) | Control.IsVisible(2021)
 				| Control.IsVisible(3098) | Control.IsVisible(3100) | Control.IsVisible(3102) | Control.IsVisible(4003) | Control.IsVisible(2066)</visible>
@@ -1714,6 +1714,39 @@
 				<include>ReloadSkinNotification</include>
 				<onclick>Container.SetViewMode(52)</onclick>
 				<visible>Skin.String(CurrentViewMode,52)</visible>
+			</control>
+			<control type="radiobutton" id="3060">
+				<description>Pictures List Use Style 1</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31418]</label>
+				<selected>Skin.String(PicturesListStyle,1) | Skin.String(PicturesListStyle,)</selected>
+				<onclick>Skin.SetString(PicturesListStyle,1)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<onclick>Container.SetViewMode(578)</onclick>
+				<visible>Skin.String(CurrentViewMode,578)</visible>
+			</control>
+			<control type="radiobutton" id="3061">
+				<description>Pictures List Use Style 2</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31417]</label>
+				<selected>Skin.String(PicturesListStyle,2)</selected>
+				<onclick>Skin.SetString(PicturesListStyle,2)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<onclick>Container.SetViewMode(578)</onclick>
+				<visible>Skin.String(CurrentViewMode,578)</visible>
+			</control>
+			<control type="radiobutton" id="3062">
+				<description>Pictures List Use Style 3</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[20395]</label>
+				<selected>Skin.String(PicturesListStyle,3)</selected>
+				<onclick>Skin.SetString(PicturesListStyle,3)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<onclick>Container.SetViewMode(578)</onclick>
+				<visible>Skin.String(CurrentViewMode,578)</visible>
 			</control>
 			<control type="radiobutton" id="3096">
 				<description>Wide List Use Style 1 (TVShow)</description>
