@@ -4668,7 +4668,7 @@
 					<width>572</width>
 					<height>60</height>
 					<align>center</align>
-					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
 					<visible>!IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableMoviesClearLogo)</visible>
@@ -9251,7 +9251,7 @@
 					<top>-4</top>
 					<width>116</width>
 					<height>45</height>
-					<texture>$INFO[Container(584).ListItem.Art(clearlogo)]</texture>
+					<texture background="true">$INFO[Container(584).ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
@@ -9263,7 +9263,7 @@
 					<top>-4</top>
 					<width>116</width>
 					<height>45</height>
-					<texture fallback="empty.png">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</texture>
+					<texture fallback="empty.png" background="true">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
