@@ -2249,6 +2249,18 @@
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Label2]</label>
+				<visible>!IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="label">
+				<description>Label2</description>
+				<left>80</left>
+				<top>38</top>
+				<width>535</width>
+				<font>ListFont2</font>
+				<textcolor>ListColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Date]</label>
+				<visible>IsEmpty(ListItem.Label2)</visible>
 			</control>
 			<control type="image">
 				<description>Overlay</description>
@@ -3099,6 +3111,18 @@
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label2]</label>
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+				</control>
+				<control type="label">
+					<description>Label2</description>
+					<left>80</left>
+					<top>38</top>
+					<width>535</width>
+					<font>ListFont2</font>
+					<textcolor>ListColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$INFO[ListItem.Date]</label>
+					<visible>IsEmpty(ListItem.Label2)</visible>
 				</control>
 			</control>
 			<control type="image">
@@ -4548,7 +4572,7 @@
 					<width>572</width>
 					<height>60</height>
 					<align>center</align>
-					<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
 					<visible>!IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableMoviesClearLogo)</visible>
@@ -9108,7 +9132,7 @@
 					<top>-4</top>
 					<width>116</width>
 					<height>45</height>
-					<texture>$INFO[Container(584).ListItem.Art(clearlogo)]</texture>
+					<texture background="true">$INFO[Container(584).ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
@@ -9120,7 +9144,7 @@
 					<top>-4</top>
 					<width>116</width>
 					<height>45</height>
-					<texture fallback="empty.png">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</texture>
+					<texture fallback="empty.png" background="true">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>400</fadetime>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
