@@ -128,10 +128,11 @@
 				<onclick condition="Container.Content(Episodes)">Container.SetViewMode(94)</onclick>
 				<onclick condition="Container.Content(Albums)">Container.SetViewMode(96)</onclick>
 				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(589)</onclick>
+				<onclick condition="Window.IsActive(Pictures)">Container.SetViewMode(578)</onclick>
 				<onclick condition="Substring(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(592)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(TVShows)]]
-				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)] | Substring(Container.FolderPath,plugin://plugin.program)</visible>
+				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)] | Substring(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 			
 			<control type="button" id="17">
@@ -150,10 +151,11 @@
 				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Container.SetViewMode(97)</onclick>
 				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(100)</onclick>
 				<onclick condition="Container.Content(Albums)">Container.SetViewMode(599)</onclick>
+				<onclick condition="Window.IsActive(Pictures)">Container.SetViewMode(579)</onclick>
 				<onclick condition="Substring(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(593)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
-				| Substring(Container.FolderPath,plugin://plugin.program)</visible>
+				| Substring(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 
 			<control type="button" id="10">
@@ -325,7 +327,7 @@
 				<texture>gui/view-list-info-3.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Episodes)]]
-				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)]</visible>
+				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)] | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
@@ -347,7 +349,7 @@
 				<texture>gui/view-thumbs-info.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
-				| Substring(Container.FolderPath,plugin://plugin.program)</visible>
+				| Substring(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 			<control type="image">
 				<width>38</width>

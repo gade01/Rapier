@@ -342,6 +342,8 @@
 				<onclick condition="Control.IsVisible(97)">Skin.SetString(CurrentViewMode,97)</onclick>
 				<onclick condition="Control.IsVisible(599)">Skin.SetString(CurrentViewMode,599)</onclick>
 				<onclick condition="Control.IsVisible(100)">Skin.SetString(CurrentViewMode,100)</onclick>
+				<onclick condition="Control.IsVisible(578)">Skin.SetString(CurrentViewMode,578)</onclick>
+				<onclick condition="Control.IsVisible(579)">Skin.SetString(CurrentViewMode,579)</onclick>
 				<onclick condition="Control.IsVisible(582)">Skin.SetString(CurrentViewMode,582)</onclick>
 				<onclick condition="Control.IsVisible(583)">Skin.SetString(CurrentViewMode,583)</onclick>
 				<onclick condition="Control.IsVisible(585)">Skin.SetString(CurrentViewMode,585)</onclick>
@@ -590,10 +592,10 @@
 			<control type="button" id="408">
 				<description>Go to playlist</description>
 				<include>MenuBarBtn</include>
-				<onclick condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + !StringCompare(Playlist.Length(music),0)">ActivateWindow(musicplaylist)</onclick>
-				<onclick condition="Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)">ActivateWindow(videoplaylist)</onclick>
+				<onclick condition="Player.HasAudio | [Window.IsActive(musiclibrary) + !StringCompare(Playlist.Length(music),0)]">ActivateWindow(musicplaylist)</onclick>
+				<onclick condition="Player.HasVideo | [Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)]">ActivateWindow(videoplaylist)</onclick>
 				<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
-				<visible>[[Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)] | [[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + !StringCompare(Playlist.Length(music),0)]] + ![Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)]</visible>
+				<visible>[Player.HasAudio | [Player.HasVideo + !VideoPlayer.Content(livetv)] | [Window.IsActive(videolibrary) + !StringCompare(Playlist.Length(video),0)] | [Window.IsActive(musiclibrary) + !StringCompare(Playlist.Length(music),0)]] + ![Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)]</visible>
 			</control>
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
