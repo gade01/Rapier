@@ -533,20 +533,13 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Videos)</visible>
 			</control>
-			<control type="button" id="8">			
+			<control type="button" id="367">			
 				<description>Search</description>
 				<include>MenuBarBtn</include>
 				<label>$LOCALIZE[137]</label>
+				<onclick>ActivateWindow(1107)</onclick>
 				<enable>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary)</enable>
-				<visible>[Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicFiles)] + Skin.HasSetting(UseGlobalsearch)</visible>
-			</control>
-			<control type="button" id="367">			
-				<description>Global Search</description>
-				<include>MenuBarBtn</include>
-				<label>$LOCALIZE[31058] $LOCALIZE[137]</label>
-				<onclick>RunScript(script.globalsearch)</onclick>
-				<enable>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary)</enable>
-				<visible>[Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicFiles)] + !Skin.HasSetting(UseGlobalsearch)</visible>
+				<visible>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files)</visible>
 			</control>
 			<control type="image" id="368">
 				<include>MenuBarSeparator</include>
