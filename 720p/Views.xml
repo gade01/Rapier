@@ -7,6 +7,7 @@
 	</variable>
 	
 	<variable name="PosterThumb">
+		<value condition="Skin.HasSetting(EnableAnimatedPosters) + [Container.Content(Movies) | Container.Content(Sets)] + System.HasAddon(script.skin.helper.service) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster)) + [Control.IsVisible(58) | Control.IsVisible(95) | Control.IsVisible(583) | Window.IsVisible(MovieInformation)]">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
