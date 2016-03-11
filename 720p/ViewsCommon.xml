@@ -357,6 +357,31 @@
 					</control>
 					
 					<control type="image">
+						<description>Animated Cover</description>
+						<width>400</width>
+						<height>400</height>
+						<texture background="true">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</texture>
+						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
+						<bordersize>14</bordersize>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>	
+						<visible>Skin.HasSetting(EnableAnimatedPosters) + [Container.Content(Movies) | Container.Content(Sets)] + System.HasAddon(script.skin.helper.service) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))</visible>
+					</control>
+					
+					<control type="image">
+						<description>Animated Cover Reflection</description>
+						<top>395</top>
+						<width>400</width>
+						<height>400</height>
+						<texture background="true" flipy="true" diffuse="views/reflection.png">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</texture>
+						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
+						<bordersize>14</bordersize>
+						<aspectratio aligny="top">keep</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<visible>Skin.HasSetting(EnableAnimatedPosters) + [Container.Content(Movies) | Container.Content(Sets)] + System.HasAddon(script.skin.helper.service) + !IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))</visible>
+					</control>
+					
+					<control type="image">
 						<description>Cover Video Library</description>
 						<width>400</width>
 						<height>400</height>
@@ -10565,7 +10590,7 @@
 					<control type="image">
 						<width>224</width>
 						<height>320</height>
-						<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster0]</texture>
+						<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[PosterThumb]</texture>
 						<bordertexture border="4">covers/3dwrap-poster-shadow.png</bordertexture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<bordersize>10</bordersize>
@@ -10584,7 +10609,7 @@
 						<top>312</top>
 						<width>204</width>
 						<height>300</height>
-						<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster0]</texture>
+						<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[PosterThumb]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<fadetime>400</fadetime>
 					</control>

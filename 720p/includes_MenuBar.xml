@@ -699,6 +699,20 @@
 				<visible>Window.IsVisible(Pictures)</visible>
 			</control>
 			<control type="button" id="120">
+				<description>Edit nodes</description>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31218][/UPPERCASE]</label>
+				<onclick condition="System.HasAddon(plugin.library.node.editor) + Window.IsActive(Videos)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
+				<onclick condition="System.HasAddon(plugin.library.node.editor) + Window.IsActive(MusicLibrary)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
+				<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+				<visible>Container.Content() + IsEmpty(Container.PluginName)</visible>
+			</control>
+			<control type="image" id="121">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(120)</visible>
+			</control>
+			<control type="button" id="122">
 				<description>Get More Add-ons</description>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[21452][/UPPERCASE]</label>
@@ -709,9 +723,9 @@
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				<visible>Container.Content(Addons)</visible>
 			</control>
-			<control type="image" id="121">
+			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
-				<visible>Control.IsVisible(120)</visible>
+				<visible>Control.IsVisible(122)</visible>
 			</control>
 		</control>		
 	</include>
@@ -1778,9 +1792,10 @@
 				<textwidth>105</textwidth>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31038][/UPPERCASE]</label>
-				<onclick>Skin.SetString(ExtendedInfoDialog,7)</onclick>
-				<onclick>ActivateWindow(3009)</onclick>
-				<visible>System.HasAddon(script.extendedinfo) + ![Container.Content(Episodes) | Container.Content(musicvideos)]</visible>
+				<onclick condition="System.HasAddon(script.extendedinfo)">Skin.SetString(ExtendedInfoDialog,7)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo)">ActivateWindow(3009)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<visible>![Container.Content(Episodes) | Container.Content(musicvideos)]</visible>
 			</control>
 			<control type="button" id="215">
 				<description>Search Youtube</description>
@@ -2245,12 +2260,13 @@
 			<control type="button" id="106">
 				<include>MenuBarSettingsBtn</include>
 				<label>$LOCALIZE[31038]</label>
-				<onclick condition="Control.IsVisible(110)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
-				<onclick condition="Control.IsVisible(120)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
-				<onclick condition="Control.IsVisible(130) | Control.IsVisible(140)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(100).ListItem.Property(TvShowTitle)])</onclick>
-				<onclick condition="Control.IsVisible(150) | Control.IsVisible(170) | Control.IsVisible(180)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(100).ListItem.Property(Artist)])</onclick>
-				<onclick condition="Control.IsVisible(160)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
-				<visible>System.HasAddon(script.extendedinfo) + !Control.IsVisible(200)</visible>
+				<onclick condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(110)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(120)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(130) | Control.IsVisible(140)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(100).ListItem.Property(TvShowTitle)])</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(150) | Control.IsVisible(170) | Control.IsVisible(180)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(100).ListItem.Property(Artist)])</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + Control.IsVisible(160)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(100).ListItem.Label])</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<visible>!Control.IsVisible(200)</visible>
 			</control>			
 			<control type="image" id="107">
 				<include>MenuBarSeparator</include>

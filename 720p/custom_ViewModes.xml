@@ -217,9 +217,10 @@
 				<description>Movies Recommended Poster</description>
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31010]</label>
-				<onclick>Container.SetViewMode(582)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] + System.HasAddon(script.extendedinfo)</visible>
+				<onclick condition="System.HasAddon(script.extendedinfo)">Container.SetViewMode(582)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(3002)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			</control>
 			
 			<control type="button" id="16">
