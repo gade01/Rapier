@@ -688,6 +688,21 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Pictures)</visible>
 			</control>
+			<control type="button" id="120">
+				<description>Edit nodes</description>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31218][/UPPERCASE]</label>
+				<onclick condition="System.HasAddon(plugin.library.node.editor) + Window.IsActive(Videos)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
+				<onclick condition="System.HasAddon(plugin.library.node.editor) + Window.IsActive(MusicLibrary)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
+				<onclick condition="!System.HasAddon(plugin.library.node.editor)">RunPlugin(plugin://plugin.library.node.editor)</onclick>
+				<onclick condition="!System.HasAddon(plugin.library.node.editor)">StopScript(plugin.library.node.editor)</onclick>
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+				<visible>Container.Content() + IsEmpty(Container.PluginName)</visible>
+			</control>
+			<control type="image" id="121">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(120)</visible>
+			</control>
 		</control>		
 	</include>
 	
