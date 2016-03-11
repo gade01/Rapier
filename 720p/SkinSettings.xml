@@ -427,6 +427,15 @@
 						<onclick condition="System.HasAddon(service.nextup.notification)">Addon.OpenSettings(service.nextup.notification)</onclick>
 						<onclick condition="!System.HasAddon(service.nextup.notification)">RunPlugin(plugin://service.nextup.notification)</onclick>
 					</control>
+					<control type="button" id="7023">
+						<description>plugin.library.node.editor</description>
+						<include>SettingsContentBtn</include>
+						<label>Library Node Editor</label>
+						<label2>$VAR[StatusLibraryNodeEditorVar]</label2>
+						<onclick condition="System.HasAddon(plugin.library.node.editor)">Addon.OpenSettings(plugin.library.node.editor)</onclick>
+						<onclick condition="!System.HasAddon(plugin.library.node.editor)">RunPlugin(plugin://plugin.library.node.editor)</onclick>
+						<onclick condition="!System.HasAddon(plugin.library.node.editor)">StopScript(plugin.library.node.editor)</onclick>
+					</control>
 					<control type="button" id="7017">
 						<description>script.tvtunes</description>
 						<include>SettingsContentBtn</include>
