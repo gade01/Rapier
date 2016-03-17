@@ -179,7 +179,7 @@
 					<selected>Skin.HasSetting(EnableArtistFanartSlideshow)</selected>
 					<onclick condition="System.HasAddon(script.artistslideshow)">Skin.ToggleSetting(EnableArtistFanartSlideshow)</onclick>
 					<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
-					<visible>Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)</visible>
+					<enable>Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)</enable>
 				</control>
 				<control type="radiobutton" id="3006">
 					<description>Animate Fanart</description>
