@@ -413,6 +413,14 @@
 							<onclick condition="System.HasAddon(plugin.program.autocompletion)">Addon.OpenSettings(plugin.program.autocompletion)</onclick>
 							<onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
 						</control>
+						<control type="button" id="7024">
+							<description>script.module.t9.search</description>
+							<include>SettingsContentBtn</include>
+							<label>T9 search dialog</label>
+							<label2>$VAR[StatusT9SearchDialogVar]</label2>
+							<onclick condition="System.HasAddon(script.module.t9.search)">Addon.OpenSettings(script.module.t9.search)</onclick>
+							<onclick condition="!System.HasAddon(script.module.t9.search)">InstallAddon(script.module.t9.search)</onclick>
+						</control>
 						<control type="button" id="7014">
 							<description>script.cu.lrclyrics</description>
 							<include>SettingsContentBtn</include>
