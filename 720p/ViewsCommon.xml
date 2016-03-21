@@ -3604,7 +3604,7 @@
 			<onleft>850</onleft>
 			<onright>150</onright>
 			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(3008)</oninfo>
-			<animation effect="slide" end="18,5" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
+			<animation effect="slide" end="15,5" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="179" width="138">	
 				<control type="image">
@@ -3648,7 +3648,7 @@
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>
-			<itemlayout condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)" height="103" width="406">
+			<itemlayout condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)" height="104" width="407">
 				<control type="image">
 					<description>Cover Case</description>
 					<width>396</width>
@@ -3794,7 +3794,7 @@
 					</control>
 				</control>	
 			</focusedlayout>
-			<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)" height="103" width="406">
+			<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)" height="104" width="407">
 				<control type="group">
 					<animation effect="zoom" end="106" center="auto" time="100">Focus</animation>
 					<animation effect="zoom" start="106" end="100" center="auto" time="100">UnFocus</animation>
