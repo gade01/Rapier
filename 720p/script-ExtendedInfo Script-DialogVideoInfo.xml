@@ -165,9 +165,9 @@
 						<width>710</width>
 						<height>85</height>
 						<align>center</align>
-						<texture background="true">$INFO[Window.Property(Logo)]</texture>
+						<texture background="true">$INFO[Window.Property(clearlogo)]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!IsEmpty(Window.Property(Logo)) + IsEmpty(Window.Property(TagLine))</visible>
+						<visible>!IsEmpty(Window.Property(clearlogo)) + IsEmpty(Window.Property(TagLine))</visible>
 					</control>
 					
 					<control type="image">
@@ -175,9 +175,9 @@
 						<width>710</width>
 						<height>63</height>
 						<align>center</align>
-						<texture background="true">$INFO[Window.Property(Logo)]</texture>
+						<texture background="true">$INFO[Window.Property(clearlogo)]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!IsEmpty(Window.Property(Logo)) + !IsEmpty(Window.Property(TagLine))</visible>
+						<visible>!IsEmpty(Window.Property(clearlogo)) + !IsEmpty(Window.Property(TagLine))</visible>
 					</control>
 
 					<control type="label">
@@ -191,7 +191,7 @@
 						<label>[UPPERCASE]$INFO[Window.Property(Title)][/UPPERCASE]</label>
 						<scroll>true</scroll>
 						<animation effect="slide" end="0,22" condition="IsEmpty(Window.Property(TagLine))">Conditional</animation>
-						<visible>IsEmpty(Window.Property(Logo))</visible>
+						<visible>IsEmpty(Window.Property(clearlogo))</visible>
 					</control>
 					
 					<control type="label">
@@ -435,7 +435,7 @@
 							<item id="10">
 								<description>Release Date</description>
 								<label fallback="172">$INFO[Window.Property(Status)]</label>
-								<label2>$INFO[Window.Property(release_date)]</label2>
+								<label2>$INFO[Window.Property(Premiered)]</label2>
 								<onclick>noop</onclick>
 							</item>
 							<item id="11">
@@ -2052,7 +2052,7 @@
 								<align>center</align>
 								<font>FullMediaInfoTaglineFont</font>
 								<textcolor>MediaInfoItemColor2</textcolor>
-								<label>$INFO[ListItem.Property(release_date)][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
+								<label>$INFO[ListItem.Premiered][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
 							</control>
 						</itemlayout>				
 						<focusedlayout height="109" width="102">
@@ -2086,7 +2086,7 @@
 									<align>center</align>
 									<font>FullMediaInfoTaglineFont</font>
 									<textcolor>SelectedColor2</textcolor>
-									<label>$INFO[ListItem.Property(release_date)][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
+									<label>$INFO[ListItem.Premiered][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
 								</control>
 							</control>
 						</focusedlayout>
