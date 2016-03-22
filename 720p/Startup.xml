@@ -2,16 +2,16 @@
 <window>
 	<defaultcontrol>-</defaultcontrol>
 	<onload condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
-	<onload condition="System.GetBool(pvrmanager.enabled) + System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
+	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	<onload condition="Skin.String(SplashScreen)">RunScript(script.skin.helper.service,action=splashscreen,file=$INFO[Skin.String(SplashScreen)],duration=$VAR[SplashScreenImageDuration])</onload>
 	<onload condition="!Skin.String(SplashScreen)">SetFocus(10)</onload>
 	
 	<controls>		
 		<control type="button" id="10">
 			<left>1300</left>
-			<onfocus condition="!System.GetBool(pvrmanager.enabled) | [System.GetBool(pvrmanager.enabled) + Skin.HasSetting(HidePVRChannelsWidget)]
-			| [System.GetBool(pvrmanager.enabled) + !Skin.HasSetting(HidePVRChannelsWidget) + Pvr.HasTVChannels]">ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-			<onfocus condition="System.GetBool(pvrmanager.enabled) + !Skin.HasSetting(HidePVRChannelsWidget) + !Pvr.HasTVChannels">AlarmClock(UpdateDelay,SetFocus(11),00:01,silent)</onfocus>
+			<onfocus condition="Skin.HasSetting(HidePVRChannelsWidget)
+			| [!Skin.HasSetting(HidePVRChannelsWidget) + Pvr.HasTVChannels]">ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onfocus condition="!Skin.HasSetting(HidePVRChannelsWidget) + !Pvr.HasTVChannels">AlarmClock(UpdateDelay,SetFocus(11),00:01,silent)</onfocus>
 			<onclick>ReplaceWindow($INFO[System.StartupWindow])</onclick>
 			<onback>ReplaceWindow($INFO[System.StartupWindow])</onback>
 			<onleft>ReplaceWindow($INFO[System.StartupWindow])</onleft>
@@ -81,7 +81,7 @@
 				<align>center</align>
 				<label>$LOCALIZE[31990]</label>
 				<animation effect="fade" end="75" condition="true">Conditional</animation>
-				<visible>System.GetBool(pvrmanager.enabled) + !Skin.HasSetting(HidePVRChannelsWidget) + !PvrHasTVChannels</visible>
+				<visible>!Skin.HasSetting(HidePVRChannelsWidget) + !PvrHasTVChannels</visible>
 			</control>
 			
 			<control type="label">
