@@ -568,10 +568,12 @@
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="98">
+			<control type="radiobutton" id="98">
 				<visible>Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
-				<include>MenuBarBtn</include>
+				<width>160</width>
+				<textwidth>85</textwidth>
+				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
 				<onclick>Filter</onclick>
@@ -760,12 +762,12 @@
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="98">
+			<control type="radiobutton" id="98">
 				<visible>Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<width>190</width>
-				<textwidth>164</textwidth>
-				<include>MenuBarBtn</include>
+				<textwidth>115</textwidth>
+				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
 				<onclick>Filter</onclick>
@@ -1360,12 +1362,13 @@
 			<control type="image" id="103">
 				<include>MenuBarSeparator</include>
 			</control>			
-			<control type="button" id="31">
+			<control type="radiobutton" id="31">
 				<description>Filter</description>
-				<include>MenuBarBigBtn</include>
+				<width>200</width>
+				<textwidth>125</textwidth>
+				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
-				<onclick>right</onclick>
 				<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
 			</control>
 			<control type="image" id="104">
