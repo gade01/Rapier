@@ -547,12 +547,14 @@
 				<include>MenuBarSeparator</include>
 				<visible>Window.IsVisible(Videos) | Window.IsActive(MusicLibrary) | Window.IsVisible(Videos,Files)</visible>
 			</control>
-			<control type="button" id="19">
+			<control type="radiobutton" id="19">
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
-				<textwidth>230</textwidth>
-				<include>MenuBarBtn</include>
+				<width>160</width>
+				<textwidth>85</textwidth>
+				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
+				<selected>Container.Filtered</selected>
 			</control>
 			<control type="image" id="101">
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
@@ -726,13 +728,14 @@
 			<control type="image" id="99">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="19">
+			<control type="radiobutton" id="19">
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<width>190</width>
-				<textwidth>164</textwidth>
-				<include>MenuBarBtn</include>
+				<textwidth>115</textwidth>
+				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
+				<selected>Container.Filtered</selected>
 			</control>
 			<control type="image" id="101">
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
