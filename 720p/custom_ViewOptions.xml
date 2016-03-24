@@ -1177,14 +1177,6 @@
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingEpisodes)</onclick>
 				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,68)] + Container.Content(Episodes)</visible>
 			</control>
-			<control type="radiobutton" id="3006">
-				<description>Do Not Show Star Rating (Addons)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31050]</label>
-				<selected>!Skin.HasSetting(DoNotUseStarRatingAddons)</selected>
-				<onclick>Skin.ToggleSetting(DoNotUseStarRatingAddons)</onclick>
-				<visible>Skin.String(CurrentViewMode,90) | Skin.String(CurrentViewMode,91) | Skin.String(CurrentViewMode,93)</visible>
-			</control>
 			<control type="radiobutton" id="2091">
 				<description>Display Title on Top Bar (Music Library)</description>
 				<include>DropDownMenuRadioBtn</include>
