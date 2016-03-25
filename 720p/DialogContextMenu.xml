@@ -70,6 +70,13 @@
 					<left>32</left>
 					<include>ContextMenuBtn</include>
 				</control>
+				<control type="button" id="2068">
+					<description>Set My Rating</description>
+					<label>$LOCALIZE[38023]</label>
+					<onclick>RunScript(script.user.rating)</onclick>
+					<include>ContextMenuBtn</include>
+					<visible>System.HasAddon(script.user.rating) + !IsEmpty(ListItem.DBID) + !ListItem.IsCollection + Skin.HasSetting(ContextMenuSetMyRating) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]</visible>
+				</control>
 				<control type="button" id="2001">
 					<description>ExtendedInfo</description>
 					<label>$VAR[ContextMenuLabel2001]</label>
