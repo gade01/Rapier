@@ -161,6 +161,14 @@
 						<selected>!Skin.HasSetting(ContextMenuTrailer)</selected>
 						<onclick>Skin.ToggleSetting(ContextMenuTrailer)</onclick>
 					</control>
+					<control type="radiobutton" id="6206">
+						<description>Set My Rating</description>
+						<include>SettingsContentRadioBtn</include>
+						<label>$LOCALIZE[38023]</label>
+						<selected>Skin.HasSetting(ContextMenuSetMyRating)</selected>
+						<onclick condition="System.HasAddon(script.user.rating)">Skin.ToggleSetting(ContextMenuSetMyRating)</onclick>
+						<onclick condition="!System.HasAddon(script.user.rating)">InstallAddon(script.user.rating)</onclick>
+					</control>
 					<control type="radiobutton" id="6202">
 						<description>Extended Information</description>
 						<include>SettingsContentRadioBtn</include>

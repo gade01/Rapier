@@ -1545,6 +1545,11 @@
 		<value>$LOCALIZE[31438]</value>
 	</variable>
 	
+	<variable name="StatusUserRatingVar">
+		<value condition="System.HasAddon(script.user.rating)">$INFO[System.AddonVersion(script.user.rating)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
 	<variable name="StatusCinemaExperienceVar">
 		<value condition="System.HasAddon(script.cinema.experience)">$INFO[System.AddonVersion(script.cinema.experience)] $LOCALIZE[31437]</value>
 		<value>$LOCALIZE[31438]</value>
