@@ -284,7 +284,7 @@
 			<control type="label" id="5527">
 				<description>Movie Title</description>
 				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$INFO[Container(581).ListItem.Property(Title)][/UPPERCASE][/B]</label>
+				<label>[UPPERCASE][B]$INFO[Container(581).ListItem.Title][/UPPERCASE][/B]</label>
 				<visible>Skin.HasSetting(DisplayMovieTitle) + Control.IsVisible(582) + [Control.HasFocus(581) | Control.HasFocus(907)] + [Container.Content(Movies) | Container.Content(Sets)]</visible>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
