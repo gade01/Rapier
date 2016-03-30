@@ -78,7 +78,16 @@
 					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
 					<onclick>Control.SetFocus(952)</onclick>
 				</control>
-				<include condition="System.GetBool(pvrmanager.enabled)">CustomPVRBGRadioBtn</include>
+				<control type="radiobutton" id="4012">
+					<description>Customize PVR Background Settings</description>
+					<include>SettingsContentExpandBtn</include>
+					<label>$LOCALIZE[19180]</label>
+					<selected>Skin.HasSetting(ExpandCustomPVRBGSettings)</selected>
+					<onclick>Skin.SetBool(ExpandCustomPVRBGSettings)</onclick>
+					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
+					<onclick>Control.SetFocus(9941)</onclick>
+					<visible>Pvr.HasTVChannels</visible>
+				</control>
 				<control type="radiobutton" id="4002">
 					<description>Customize Videos Background Settings</description>
 					<include>SettingsContentExpandBtn</include>
@@ -1847,18 +1856,6 @@
 		<alttexturefocus border="5">controls/button-focus.png</alttexturefocus>
 		<alttexturenofocus border="5">controls/button-nofocus.png</alttexturenofocus>
 		<pulseonselect>false</pulseonselect>
-	</include>
-	
-	<include name="CustomPVRBGRadioBtn">
-		<control type="radiobutton" id="4012">
-			<description>Customize PVR Background Settings</description>
-			<include>SettingsContentExpandBtn</include>
-			<label>$LOCALIZE[19180]</label>
-			<selected>Skin.HasSetting(ExpandCustomPVRBGSettings)</selected>
-			<onclick>Skin.SetBool(ExpandCustomPVRBGSettings)</onclick>
-			<onclick>Skin.SetBool(ExpandedSettings)</onclick>
-			<onclick>Control.SetFocus(9941)</onclick>
-		</control>
 	</include>
 	
 	<include name="CustomImagePreviewBG">

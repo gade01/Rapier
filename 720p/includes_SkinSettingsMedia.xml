@@ -101,7 +101,7 @@
 					<description>TV / Radio Label</description>
 					<include>SettingsHeaderBtn</include>
 					<label>$LOCALIZE[19180] / $LOCALIZE[19183]</label>
-					<visible>System.GetBool(pvrmanager.enabled)</visible>
+					<visible>Pvr.HasTVChannels | Pvr.HasRadioChannels</visible>
 				</control>
 				<control type="button" id="3039">
 					<description>Select Multi Image Path for TV Channels / Recordings</description>

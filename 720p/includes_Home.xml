@@ -244,18 +244,6 @@
 		<onclick>ActivateWindow(TVGuide)</onclick>
 	</include>
 
-	<include name="HomePVRCategory">
-		<item id="50">
-			<description>PVR Category</description>
-			<label>pvr</label>
-			<icon>homecategories/$INFO[System.Language]/pvr-text-nofocus.png</icon>			
-			<include condition="Skin.String(CustomPVRBGType,2) | Skin.String(CustomPVRBGType,3)">HomePVRCustomBGPath</include>
-			<include condition="Skin.String(CustomPVRBGType,4) + System.HasAddon(script.skin.helper.service)">HomePVRFanartBGPath</include>
-			<include condition="!Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryChannels</include>
-			<include condition="Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryEPG</include>
-		</item>
-	</include>
-
 	<include name="HomeWeatherCategory">
 		<item id="51">
 			<description>Weather Category</description>
@@ -1053,9 +1041,16 @@
 						<include condition="!Skin.HasSetting(RedirectMusicCategoryFiles)">RedirectMusicCategoryLibrary</include>
 						<visible>!Skin.HasSetting(HideMusicCategory)</visible>
 					</item>
-	
-					<include condition="!Skin.HasSetting(HidePVRCategory) + System.GetBool(pvrmanager.enabled)">HomePVRCategory</include>
-					
+					<item id="50">
+						<description>PVR Category</description>
+						<label>pvr</label>
+						<icon>homecategories/$INFO[System.Language]/pvr-text-nofocus.png</icon>			
+						<include condition="Skin.String(CustomPVRBGType,2) | Skin.String(CustomPVRBGType,3)">HomePVRCustomBGPath</include>
+						<include condition="Skin.String(CustomPVRBGType,4) + System.HasAddon(script.skin.helper.service)">HomePVRFanartBGPath</include>
+						<include condition="!Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryChannels</include>
+						<include condition="Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryEPG</include>
+						<visible>!Skin.HasSetting(HidePVRCategory) + Pvr.HasTVChannels</visible>
+					</item>
 					<item id="2">
 						<description>Videos Category</description>
 						<label>videos</label>
@@ -7511,7 +7506,7 @@
 	<include name="PVRChannelsPanel">
 		<control type="group">
 			<visible>Container(850).HasFocus(50)</visible>
-			<visible>System.GetBool(pvrmanager.enabled) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
+			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			<left>495r</left>
 			<top>105</top>

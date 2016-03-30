@@ -71,7 +71,7 @@
 					<altlabel>$LOCALIZE[31722]</altlabel>
 					<usealttexture>Skin.HasSetting(RedirectPVRCategoryEPG)</usealttexture>
 					<onclick>Skin.ToggleSetting(RedirectPVRCategoryEPG)</onclick>
-					<visible>System.GetBool(pvrmanager.enabled)</visible>
+					<visible>Pvr.HasTVChannels</visible>
 				</control>
 				<control type="radiobutton" id="2009">
 					<description>Hide Categories</description>
@@ -220,7 +220,7 @@
 					<onclick>Skin.SetBool(ExpandPVRSubMenuSettings)</onclick>
 					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
 					<onclick>Control.SetFocus(931)</onclick>
-					<visible>!Skin.HasSetting(HidePVRCategory) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Skin.HasSetting(HidePVRCategory) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="radiobutton" id="2026">
 					<description>Customize Custom 1 Sub Menus</description>
@@ -455,7 +455,7 @@
 					<label>$LOCALIZE[31983]</label>
 					<selected>Skin.HasSetting(HidePVRChannelsWidget)</selected>
 					<onclick>Skin.ToggleSetting(HidePVRChannelsWidget)</onclick>
-					<visible>System.GetBool(pvrmanager.enabled)</visible>
+					<visible>Pvr.HasTVChannels</visible>
 				</control>
 				<control type="radiobutton" id="2019">
 					<description>Hide Weather Info Panel</description>
@@ -470,7 +470,7 @@
 					<label>$LOCALIZE[31080]</label>
 					<selected>Skin.HasSetting(HideRecordingInfoHomePanel)</selected>
 					<onclick>Skin.ToggleSetting(HideRecordingInfoHomePanel)</onclick>
-					<visible>System.GetBool(pvrmanager.enabled)</visible>
+					<visible>Pvr.HasTVChannels</visible>
 				</control>
 				<control type="radiobutton" id="2020">
 					<description>Hide System Info Panel</description>
@@ -943,7 +943,7 @@
 						<label>$LOCALIZE[31909]</label>
 						<selected>Skin.HasSetting(HidePVRCategory)</selected>
 						<onclick>Skin.ToggleSetting(HidePVRCategory)</onclick>
-						<visible>System.GetBool(pvrmanager.enabled)</visible>
+						<visible>Pvr.HasTVChannels</visible>
 					</control>
 					<control type="radiobutton" id="2310">
 						<description>Weather</description>
@@ -1009,7 +1009,7 @@
 						<include>ExpandedSettingsListBtn</include>
 						<label>$LOCALIZE[19180] - [COLOR=DefaultColor2]$INFO[Skin.String(PVRCategoryIconPath)][/COLOR]</label>
 						<onclick>Skin.SetImage(PVRCategoryIconPath)</onclick>
-						<visible>System.GetBool(pvrmanager.enabled)</visible>
+						<visible>Pvr.HasTVChannels</visible>
 					</control>
 					<control type="button" id="2303">
 						<description>Videos</description>
