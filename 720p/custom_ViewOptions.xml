@@ -147,7 +147,7 @@
 				<onclick condition="System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(EnableAnimatedPosters)">Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onclick>
 				<onclick condition="System.HasAddon(script.skin.helper.service) + Skin.HasSetting(EnableAnimatedPosters)">Skin.Reset(SkinHelper.EnableAnimatedPosters)</onclick>
 				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,95) | Skin.String(CurrentViewMode,583)]</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			</control>
 			<control type="radiobutton" id="3041">
 				<description>List Extra Thumbs (Movies) (Episodes)</description>
