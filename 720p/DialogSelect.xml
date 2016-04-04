@@ -17,27 +17,26 @@
 				
 				<control type="group">
 					<visible>Control.IsVisible(3)</visible>
-					<include>SettingsDialogBox</include>
+					<include content="DialogWithCloseBtn">
+						<param name="width" value="630"/>
+						<param name="height" value="557" />
+						<param name="left" value="570" />
+					</include>
 				</control>
 				
 				<control type="group">
 					<visible>Control.IsVisible(6)</visible>
-					<control type="image">
-						<width>912</width>
-						<height>520</height>
-						<texture border="50,70,50,75">panels/dialog-background.png</texture>
-					</control>
-
-					<control type="button">
-						<left>852</left>
-						<include>DialogCloseBtn</include>
-					</control>
+					<include content="DialogWithCloseBtn">
+						<param name="width" value="912"/>
+						<param name="height" value="520" />
+						<param name="left" value="852" />
+					</include>
 				</control>
 
 				<control type="label" id="1">
 					<animation effect="slide" end="141,0" condition="Control.IsVisible(6)">Conditional</animation>
 					<width>550</width>
-					<include>SettingsDialogTitle</include>
+					<include>DialogTitle</include>
 				</control>
 				
 				<control type="panel" id="3">

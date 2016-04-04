@@ -13,23 +13,13 @@
 		<control type="group">
 			<depth>DepthDialog</depth>
 			
-			<control type="image">
-				<width>1150</width>
-				<height>562</height>
-				<texture border="50,70,50,75">panels/dialog-background.png</texture>
-			</control>
-			
-			<control type="button">
-				<left>1090</left>
-				<include>DialogCloseBtn</include>
-			</control>
-			
-			<control type="label">
-				<description>Window Header Label</description>
-				<width>1080</width>
-				<include>DialogTitle</include>
-				<label>$LOCALIZE[15020]</label>
-			</control>
+			<include content="DialogWithCloseBtnLabel">
+				<param name="width" value="1150"/>
+				<param name="height" value="562" />
+				<param name="left" value="1090" />
+				<param name="labelwidth" value="1080" />
+				<param name="label" value="$LOCALIZE[15020]" />
+			</include>
 			
 			<control type="label">
 				<description>Description</description>

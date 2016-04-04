@@ -13,18 +13,22 @@
 			<animation effect="slide" end="0,-18" condition="[System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)] | Skin.String(DialogVideoInfoButtonMenu,top250)">Conditional</animation>
 			<include>DialogOpenCloseAnim</include>
 			
-			<control type="image">
-				<width>364</width>
-				<height>162</height>
-				<texture border="50,50,50,75">panels/dialog-background2.png</texture>
+			<control type="group">
 				<visible>[[System.HasAddon(script.extendedinfo) | System.HasAddon(script.libraryeditor)] + Skin.String(DialogVideoInfoButtonMenu,director)] | Skin.String(DialogVideoInfoButtonMenu,rating) | Skin.String(DialogVideoInfoButtonMenu,writer) | Skin.String(DialogVideoInfoButtonMenu,artist)</visible>
+				<include content="DialogWithCloseBtn2">
+					<param name="width" value="364"/>
+					<param name="height" value="162" />
+					<param name="left" value="302" />
+				</include>
 			</control>
 			
-			<control type="image">
-				<width>364</width>
-				<height>199</height>
-				<texture border="50,50,50,75">panels/dialog-background2.png</texture>
+			<control type="group">
 				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(script.libraryeditor) + Skin.String(DialogVideoInfoButtonMenu,director)] | Skin.String(DialogVideoInfoButtonMenu,top250)</visible>
+				<include content="DialogWithCloseBtn2">
+					<param name="width" value="364"/>
+					<param name="height" value="199" />
+					<param name="left" value="302" />
+				</include>
 			</control>
 			
 			<control type="grouplist" id="981">
@@ -107,11 +111,6 @@
 					<include>ContextMenuBtn</include>
 					<visible>Skin.String(DialogVideoInfoButtonMenu,top250) + System.HasAddon(script.libraryeditor)</visible>
 				</control>
-			</control>
-			
-			<control type="button">
-				<left>302</left>
-				<include>DialogCloseBtn</include>
 			</control>
 			
 			<control type="button" id="990">

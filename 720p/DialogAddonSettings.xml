@@ -10,12 +10,16 @@
 	<controls>	
 		<control type="group">
 			<depth>DepthDialog</depth>
-			<include>AddonSettingsDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			
-			<control type="label" id="20">
-				<include>DialogTitle3</include>
-			</control>
+			<include content="DialogWithCloseBtnLabelID">
+				<param name="width" value="882"/>
+				<param name="height" value="483" />
+				<param name="left" value="782" />
+				<param name="labelwidth" value="762" />
+				<param name="label" value="" />
+				<param name="id" value="20" />
+			</include>
 			
 			<control type="image">
 				<left>798</left>
