@@ -344,8 +344,8 @@
 						<width>720</width>
 						<height>233</height>
 						<onup>505</onup>
-						<ondown condition="!Control.IsVisible(50) + !Control.IsVisible(966) + Control.IsVisible(61)">61</ondown>
-						<ondown condition="Control.IsVisible(50) | Control.IsVisible(966)">965</ondown>
+						<ondown condition="!Control.IsVisible(50) + !Control.IsVisible(966) + !Control.IsVisible(967) + Control.IsVisible(61)">61</ondown>
+						<ondown condition="Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967)">965</ondown>
 						<onleft>505</onleft>
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<include>FSMediaInfoOpenCloseAnim</include>
@@ -1568,6 +1568,20 @@
 						<include condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoSimilar2</include>
 						<content>$VAR[SimilarVideos]</content>
 					</control>
+					
+					<control type="panel" id="967">
+						<description>Movie Set</description>
+						<viewtype label="">list</viewtype>
+						<scrolltime>200</scrolltime>
+						<pagecontrol>61</pagecontrol>
+						<orientation>horizontal</orientation>
+						<ondown condition="Control.IsVisible(61)">61</ondown>
+						<onright condition="Control.IsVisible(61)">61</onright>
+						<include>FSMediaInfoOpenCloseAnim</include>
+						<visible>!Control.HasFocus(15) + Skin.String(VideoInfoMenubar,MovieSet)</visible>
+						<include>DialogVideoInfoSimilar1</include>
+						<content target="video">videodb://movies/sets/$INFO[ListItem.SetID]</content>
+					</control>
 				</control>
 				
 				<control type="spincontrol" id="61">
@@ -1578,12 +1592,12 @@
 					<height>28</height>
 					<spinwidth>30</spinwidth>
 					<spinheight>30</spinheight>
-					<onup condition="!Control.IsVisible(50) + !Control.IsVisible(966)">901</onup>
-					<onup condition="Control.IsVisible(50) | Control.IsVisible(966)">965</onup>
-					<onleft condition="!Control.IsVisible(50) + !Control.IsVisible(966)">901</onleft>
-					<onleft condition="Control.IsVisible(50) | Control.IsVisible(966)">965</onleft>
+					<onup condition="!Control.IsVisible(50) + !Control.IsVisible(966) + !Control.IsVisible(967)">901</onup>
+					<onup condition="Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967)">965</onup>
+					<onleft condition="!Control.IsVisible(50) + !Control.IsVisible(966) + !Control.IsVisible(967)">901</onleft>
+					<onleft condition="Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967)">965</onleft>
 					<include>NotificationsOpenCloseAnim</include>
-					<visible>[Integer.IsGreater(Container(902).NumPages,1) + Control.IsVisible(902) + !String.IsEmpty(ListItem.Plot)] | [Integer.IsGreater(Container(50).NumPages,1) + Control.IsVisible(50)] | [Integer.IsGreater(Container(966).NumPages,1) + Skin.String(VideoInfoMenubar,SimilarVideos)]</visible>
+					<visible>[Integer.IsGreater(Container(902).NumPages,1) + Control.IsVisible(902) + !String.IsEmpty(ListItem.Plot)] | [Integer.IsGreater(Container(50).NumPages,1) + Control.IsVisible(50)] | [Integer.IsGreater(Container(966).NumPages,1) + Skin.String(VideoInfoMenubar,SimilarVideos)] | [Integer.IsGreater(Container(967).NumPages,1) + Skin.String(VideoInfoMenubar,MovieSet)]</visible>
 				</control>
 				
 				<control type="image">

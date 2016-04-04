@@ -468,6 +468,17 @@
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)</visible>
 			</control>
 			<control type="button" id="792">
+				<description>Movie Set</description>
+				<width>173</width>
+				<textwidth>149</textwidth>
+				<textoffsetx>12</textoffsetx>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[20457]</label>
+				<onclick>Dialog.Close(3009)</onclick>
+				<onclick>Skin.SetString(VideoInfoMenubar,MovieSet)</onclick>
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] + !String.IsEmpty(ListItem.SetID)</visible>
+			</control>
+			<control type="button" id="793">
 				<description>Similar Movies / TV Shows</description>
 				<width>173</width>
 				<textwidth>149</textwidth>
@@ -478,7 +489,7 @@
 				<onclick>Skin.SetString(VideoInfoMenubar,SimilarVideos)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 			</control>
-			<control type="button" id="793">
+			<control type="button" id="794">
 				<description>Search Youtube</description>
 				<width>173</width>
 				<textwidth>149</textwidth>
@@ -491,7 +502,7 @@
 				<onclick condition="System.HasAddon(plugin.video.youtube) + Container.Content(Seasons)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label],return)</onclick>
 				<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
 			</control>
-			<control type="image" id="794">
+			<control type="image" id="795">
 				<width>173</width>
 				<include>DropDownMenuBottomBorder</include>
 			</control>
