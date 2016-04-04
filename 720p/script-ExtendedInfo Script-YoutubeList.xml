@@ -100,7 +100,7 @@
 						<width>291</width>
 						<height>176</height>
 						<bordersize>14</bordersize>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 						<aspectratio>scale</aspectratio>
 					</control>
 					<control type="image">
@@ -111,7 +111,7 @@
 						<bordersize>25</bordersize>
 						<texture background="true">DefaultVideo.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 						<animation effect="fade" end="40" condition="true">Conditional</animation>
 					</control>
 					<control type="textbox">
@@ -161,7 +161,7 @@
 							<width>291</width>
 							<height>176</height>
 							<bordersize>14</bordersize>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
@@ -172,7 +172,7 @@
 							<bordersize>25</bordersize>
 							<texture background="true">DefaultVideo.png</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>String.IsEmpty(ListItem.Thumb)</visible>
+							<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 						</control>
 						<control type="textbox">
 							<description>Label</description>
