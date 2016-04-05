@@ -476,7 +476,7 @@
 				<label>$LOCALIZE[20457]</label>
 				<onclick>Dialog.Close(3009)</onclick>
 				<onclick>Skin.SetString(VideoInfoMenubar,MovieSet)</onclick>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] + !String.IsEmpty(ListItem.SetID)</visible>
+				<visible>[Container.Content(Movies) + !String.IsEmpty(ListItem.SetID)] | Container.Content(Sets)</visible>
 			</control>
 			<control type="button" id="793">
 				<description>Similar Movies / TV Shows</description>
@@ -487,7 +487,7 @@
 				<label>$VAR[SimilarVideosLabel]</label>
 				<onclick>Dialog.Close(3009)</onclick>
 				<onclick>Skin.SetString(VideoInfoMenubar,SimilarVideos)</onclick>
-				<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
 			</control>
 			<control type="button" id="794">
 				<description>Search Youtube</description>
