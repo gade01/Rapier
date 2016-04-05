@@ -12,27 +12,21 @@
 			<depth>DepthOSD</depth>
 			<include>DialogOpenCloseAnim</include>	
 			
-			<control type="group">
-				<visible>!pvr.IsPlayingRadio</visible>
-				<include content="DialogWithCloseBtnLabel">
-					<param name="width" value="500"/>
-					<param name="height" value="558" />
-					<param name="left" value="440" />
-					<param name="labelwidth" value="420" />
-					<param name="label" value="$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]" />
-				</include>
-			</control>
+			<include content="DialogWithCloseBtnLabel" condition="!pvr.IsPlayingRadio">
+				<param name="width" value="500"/>
+				<param name="height" value="558" />
+				<param name="left" value="440" />
+				<param name="labelwidth" value="420" />
+				<param name="label" value="$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]" />
+			</include>
 			
-			<control type="group">
-				<visible>pvr.IsPlayingRadio</visible>
-				<include content="DialogWithCloseBtnLabel">
-					<param name="width" value="500"/>
-					<param name="height" value="558" />
-					<param name="left" value="440" />
-					<param name="labelwidth" value="420" />
-					<param name="label" value="$LOCALIZE[19023] - $INFO[MusicPlayer.ChannelGroup]" />
-				</include>
-			</control>
+			<include content="DialogWithCloseBtnLabel" condition="pvr.IsPlayingRadio">
+				<param name="width" value="500"/>
+				<param name="height" value="558" />
+				<param name="left" value="440" />
+				<param name="labelwidth" value="420" />
+				<param name="label" value="$LOCALIZE[19023] - $INFO[MusicPlayer.ChannelGroup]" />
+			</include>
 
 			<control type="group">
 				<left>DialogMarginOffsetX</left>

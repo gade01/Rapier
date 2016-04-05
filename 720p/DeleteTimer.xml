@@ -14,27 +14,21 @@
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="slide" end="0,15" condition="System.HasAddon(pvr.dvblink)">Conditional</animation>
 			
-			<control type="group">
-				<visible>System.HasAddon(pvr.wmc)</visible>
-				<include content="DialogWithCloseBtnLabel">
-					<param name="width" value="570"/>
-					<param name="height" value="220" />
-					<param name="left" value="510" />
-					<param name="labelwidth" value="490" />
-					<param name="label" value="$ADDON[pvr.wmc 30120]" />
-				</include>
-			</control>
+			<include content="DialogWithCloseBtnLabel" condition="System.HasAddon(pvr.wmc)">
+				<param name="width" value="570"/>
+				<param name="height" value="220" />
+				<param name="left" value="510" />
+				<param name="labelwidth" value="490" />
+				<param name="label" value="$ADDON[pvr.wmc 30120]" />
+			</include>
 			
-			<control type="group">
-				<visible>System.HasAddon(pvr.dvblink)</visible>
-				<include content="DialogWithCloseBtnLabel">
-					<param name="width" value="570"/>
-					<param name="height" value="190" />
-					<param name="left" value="510" />
-					<param name="labelwidth" value="490" />
-					<param name="label" value="$ADDON[pvr.dvblink 32014]" />
-				</include>
-			</control>
+			<include content="DialogWithCloseBtnLabel" condition="System.HasAddon(pvr.dvblink)">
+				<param name="width" value="570"/>
+				<param name="height" value="190" />
+				<param name="left" value="510" />
+				<param name="labelwidth" value="490" />
+				<param name="label" value="$ADDON[pvr.dvblink 32014]" />
+			</include>
 			
 			<control type="grouplist">
 				<left>DialogMarginOffsetX</left>
