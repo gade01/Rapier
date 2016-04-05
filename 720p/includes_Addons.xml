@@ -1935,12 +1935,12 @@
 	</variable>
 	
 	<variable name="SimilarVideos">
-		<value condition="Container.Content(Movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="Container.Content(Movies) | Container.Content(Sets)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
 		<value condition="Container.Content(TVShows)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
 	</variable>
 	
 	<variable name="SimilarVideosLabel">
-		<value condition="Container.Content(Movies)">$LOCALIZE[31614]</value>
+		<value condition="Container.Content(Movies) | Container.Content(Sets)">$LOCALIZE[31614]</value>
 		<value condition="Container.Content(TVShows)">$LOCALIZE[31615]</value>
 	</variable>
 	
