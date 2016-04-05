@@ -1775,28 +1775,28 @@
 	</include>
 	
 	<variable name="PlayerStarRating">
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,9)">flagging/imdbstarrating/10,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,8) + !Integer.IsGreater(VideoPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,7) + !Integer.IsGreater(VideoPlayer.Rating,9)">flagging/imdbstarrating/8,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,6) + !Integer.IsGreater(VideoPlayer.Rating,8)">flagging/imdbstarrating/7,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,5) + !Integer.IsGreater(VideoPlayer.Rating,7)">flagging/imdbstarrating/6,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,4) + !Integer.IsGreater(VideoPlayer.Rating,6)">flagging/imdbstarrating/5,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,3) + !Integer.IsGreater(VideoPlayer.Rating,5)">flagging/imdbstarrating/4,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,2) + !Integer.IsGreater(VideoPlayer.Rating,4)">flagging/imdbstarrating/3,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,1) + !Integer.IsGreater(VideoPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
-		<value condition="Player.HasVideo + Integer.IsGreater(VideoPlayer.Rating,0) + !Integer.IsGreater(VideoPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
-		<value condition="Player.HasVideo + !Integer.IsGreater(VideoPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,9)">flagging/imdbstarrating/10,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,8) + !Integer.IsGreater(MusicPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,7) + !Integer.IsGreater(MusicPlayer.Rating,9)">flagging/imdbstarrating/8,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,6) + !Integer.IsGreater(MusicPlayer.Rating,8)">flagging/imdbstarrating/7,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,5) + !Integer.IsGreater(MusicPlayer.Rating,7)">flagging/imdbstarrating/6,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,4) + !Integer.IsGreater(MusicPlayer.Rating,6)">flagging/imdbstarrating/5,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,3) + !Integer.IsGreater(MusicPlayer.Rating,5)">flagging/imdbstarrating/4,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,2) + !Integer.IsGreater(MusicPlayer.Rating,4)">flagging/imdbstarrating/3,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,1) + !Integer.IsGreater(MusicPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
-		<value condition="Player.HasAudio + Integer.IsGreater(MusicPlayer.Rating,0) + !Integer.IsGreater(MusicPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
-		<value condition="Player.HasAudio + !Integer.IsGreater(MusicPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,4)">flagging/imdbstarrating/3,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,5)">flagging/imdbstarrating/4,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,6)">flagging/imdbstarrating/5,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,7)">flagging/imdbstarrating/6,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,8)">flagging/imdbstarrating/7,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,9)">flagging/imdbstarrating/8,0.png</value>
+		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
+		<value condition="Player.HasVideo">flagging/imdbstarrating/10,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,4)">flagging/imdbstarrating/3,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,5)">flagging/imdbstarrating/4,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,6)">flagging/imdbstarrating/5,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,7)">flagging/imdbstarrating/6,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,8)">flagging/imdbstarrating/7,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,9)">flagging/imdbstarrating/8,0.png</value>
+		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
+		<value condition="Player.HasAudio">flagging/imdbstarrating/10,0.png</value>
 	</variable>
 	<!-- END Fullscreen / OSD -->
 	
