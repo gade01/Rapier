@@ -26,24 +26,24 @@
 	</variable>
 	
 	<variable name="WatchedPartial">
-		<value condition="!Integer.IsGreater(ListItem.PercentPlayed,20)">watched/watched-10pct.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,20) + !Integer.IsGreater(ListItem.PercentPlayed,40)">watched/watched-30pct.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,40) + !Integer.IsGreater(ListItem.PercentPlayed,60)">watched/watched-50pct.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,60) + !Integer.IsGreater(ListItem.PercentPlayed,80)">watched/watched-70pct.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,20)">watched/watched-10pct.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,40)">watched/watched-30pct.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,60)">watched/watched-50pct.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,80)">watched/watched-70pct.png</value>
 		<value condition="Integer.IsGreater(ListItem.PercentPlayed,80)">watched/watched-90pct.png</value>
 	</variable>
 	
 	<variable name="WatchedPartialAlt">
-		<value condition="!Integer.IsGreater(ListItem.PercentPlayed,20)">watched/watched-10pct-alt.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,20) + !Integer.IsGreater(ListItem.PercentPlayed,40)">watched/watched-30pct-alt.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,40) + !Integer.IsGreater(ListItem.PercentPlayed,60)">watched/watched-50pct-alt.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,60) + !Integer.IsGreater(ListItem.PercentPlayed,80)">watched/watched-70pct-alt.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,20)">watched/watched-10pct-alt.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,40)">watched/watched-30pct-alt.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,60)">watched/watched-50pct-alt.png</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.PercentPlayed,80)">watched/watched-70pct-alt.png</value>
 		<value condition="Integer.IsGreater(ListItem.PercentPlayed,80)">watched/watched-90pct-alt.png</value>
 	</variable>
 	
 	<variable name="VideoQualityOverlayWatched">
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,719)">OverlayHDAlt.png</value>
-		<value condition="[!String.IsEmpty(ListItem.VideoResolution) + !Integer.IsGreater(ListItem.VideoResolution,719)] | [String.IsEmpty(ListItem.VideoResolution) + [String.EndsWith(ListItem.filename,.iso)
+		<value condition="[!String.IsEmpty(ListItem.VideoResolution) + Integer.IsLessOrEqual(ListItem.VideoResolution,719)] | [String.IsEmpty(ListItem.VideoResolution) + [String.EndsWith(ListItem.filename,.iso)
 		| String.EndsWith(ListItem.filename,.img) | String.EndsWith(ListItem.filename,.ifo) | String.EndsWith(ListItem.filename,.vob)]]">OverlaySDAlt.png</value>
 		<value condition="ListItem.IsCollection">OverlayWatched.png</value>
 		<value>OverlayUnknownAlt.png</value>
@@ -51,7 +51,7 @@
 	
 	<variable name="VideoQualityOverlayUnwatched">
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,719)">OverlayHD.png</value>
-		<value condition="[!String.IsEmpty(ListItem.VideoResolution) + !Integer.IsGreater(ListItem.VideoResolution,719)] | [String.IsEmpty(ListItem.VideoResolution) + [String.EndsWith(ListItem.filename,.iso)
+		<value condition="[!String.IsEmpty(ListItem.VideoResolution) + Integer.IsLessOrEqual(ListItem.VideoResolution,719)] | [String.IsEmpty(ListItem.VideoResolution) + [String.EndsWith(ListItem.filename,.iso)
 		| String.EndsWith(ListItem.filename,.img) | String.EndsWith(ListItem.filename,.ifo) | String.EndsWith(ListItem.filename,.vob)]]">OverlaySD.png</value>
 		<value condition="ListItem.IsCollection">DefaultVideo.png.png</value>
 		<value>OverlayUnknown.png</value>
@@ -452,7 +452,7 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
-				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 			</control>			
 			<control type="label">
 				<description>Unwatched Episodes</description>
@@ -502,7 +502,7 @@
 			<align>center</align>
 			<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 			<animation effect="fade" end="85" condition="true">Conditional</animation>
-			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 		</control>
 		<control type="label">
 			<description>Unwatched Episodes</description>
@@ -646,7 +646,7 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
-				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 			</control>
 			<control type="label">
 				<description>Unwatched Episodes</description>
@@ -745,7 +745,7 @@
 			<align>center</align>
 			<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 			<animation effect="fade" end="85" condition="true">Conditional</animation>
-			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+			<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 		</control>
 		
 		<control type="label">
@@ -1017,7 +1017,7 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
-				<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 			</control>
 			<control type="label">
 				<description>Unwatched Episodes</description>
@@ -1124,7 +1124,7 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
-				<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 			</control>
 			<control type="label">
 				<description>Unwatched Episodes</description>

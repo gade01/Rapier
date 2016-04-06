@@ -1364,7 +1364,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>
@@ -1483,7 +1483,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-							<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+							<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 						</control>
 						<control type="label">
 							<description>Unwatched Episodes</description>
@@ -2362,7 +2362,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-				<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 			</control>
 			<control type="label">
 				<description>Unwatched Episodes</description>
@@ -2484,7 +2484,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
 				<control type="label">
 					<description>Unwatched Episodes</description>
@@ -2892,7 +2892,7 @@
 					<align>center</align>
 					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 					<animation effect="fade" end="85" condition="true">Conditional</animation>
-					<visible>!Skin.HasSetting(HideTVShowsListInfo2Overlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					<visible>!Skin.HasSetting(HideTVShowsListInfo2Overlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
 				<control type="label">
 					<description>Unwatched Episodes</description>
@@ -3015,7 +3015,7 @@
 					<align>center</align>
 					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 					<animation effect="fade" end="85" condition="true">Conditional</animation>
-					<visible>!Skin.HasSetting(HideTVShowsListInfo2Overlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					<visible>!Skin.HasSetting(HideTVShowsListInfo2Overlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
 				<control type="label">
 					<description>Unwatched Episodes</description>
@@ -3320,7 +3320,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-							<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+							<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 						</control>
 						<control type="label">
 							<description>Unwatched Episodes</description>
@@ -3432,7 +3432,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-								<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+								<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 							</control>
 							<control type="label">
 								<description>Unwatched Episodes</description>
@@ -3810,7 +3810,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
-						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>
@@ -3898,7 +3898,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
-						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>
@@ -4204,7 +4204,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
-						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>
@@ -4415,7 +4415,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
-						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>
@@ -4620,7 +4620,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
-						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>
@@ -4699,7 +4699,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
-						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+						<visible>!Skin.HasSetting(HideTVShowsWallOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
 					<control type="label">
 						<description>Unwatched Episodes</description>

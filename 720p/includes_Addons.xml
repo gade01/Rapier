@@ -553,14 +553,14 @@
 	
 	<variable name="VideoQualityOverlayWatchedGlobalSearch">
 		<value condition="Integer.IsGreater(ListItem.Property(VideoResolution),719)">OverlayHDAlt.png</value>
-		<value condition="[!String.IsEmpty(ListItem.Property(VideoResolution)) + !Integer.IsGreater(ListItem.Property(VideoResolution),719)] | [String.IsEmpty(ListItem.Property(VideoResolution)) + [String.EndsWith(ListItem.Property(Path),.iso)
+		<value condition="[!String.IsEmpty(ListItem.Property(VideoResolution)) + Integer.IsLessOrEqual(ListItem.Property(VideoResolution),719)] | [String.IsEmpty(ListItem.Property(VideoResolution)) + [String.EndsWith(ListItem.Property(Path),.iso)
 		| String.EndsWith(ListItem.Property(Path),.img) | String.EndsWith(ListItem.Property(Path),.ifo) | String.EndsWith(ListItem.Property(Path),.vob)]]">OverlaySDAlt.png</value>
 		<value>OverlayUnknownAlt.png</value>
 	</variable>
 	
 	<variable name="VideoQualityOverlayUnwatchedGlobalSearch">
 		<value condition="Integer.IsGreater(ListItem.Property(VideoResolution),719)">OverlayHD.png</value>
-		<value condition="[!String.IsEmpty(ListItem.Property(VideoResolution)) + !Integer.IsGreater(ListItem.Property(VideoResolution),719)] | [String.IsEmpty(ListItem.Property(VideoResolution)) + [String.EndsWith(ListItem.Property(Path),.iso)
+		<value condition="[!String.IsEmpty(ListItem.Property(VideoResolution)) + Integer.IsLessOrEqual(ListItem.Property(VideoResolution),719)] | [String.IsEmpty(ListItem.Property(VideoResolution)) + [String.EndsWith(ListItem.Property(Path),.iso)
 		| String.EndsWith(ListItem.Property(Path),.img) | String.EndsWith(ListItem.Property(Path),.ifo) | String.EndsWith(ListItem.Property(Path),.vob)]]">OverlaySD.png</value>
 		<value>OverlayUnknown.png</value>
 	</variable>
@@ -1176,10 +1176,10 @@
 	</variable>
 	
 	<variable name="ExtendedInfoWatchedPartial">
-		<value condition="!Integer.IsGreater(Window.Property(PercentPlayed),20)">watched/watched-10pct.png</value>
-		<value condition="Integer.IsGreater(Window.Property(PercentPlayed),20) + !Integer.IsGreater(Window.Property(PercentPlayed),40)">watched/watched-30pct.png</value>
-		<value condition="Integer.IsGreater(Window.Property(PercentPlayed),40) + !Integer.IsGreater(Window.Property(PercentPlayed),60)">watched/watched-50pct.png</value>
-		<value condition="Integer.IsGreater(Window.Property(PercentPlayed),60) + !Integer.IsGreater(Window.Property(PercentPlayed),80)">watched/watched-70pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),20)">watched/watched-10pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),40)">watched/watched-30pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),60)">watched/watched-50pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),80)">watched/watched-70pct.png</value>
 		<value condition="Integer.IsGreater(Window.Property(PercentPlayed),80)">watched/watched-90pct.png</value>
 	</variable>
 	
@@ -1781,21 +1781,21 @@
 	
 	<!-- Next Up Notification -->
 	<variable name="NextUpInfoPlayButton">
-        <value condition="!Integer.IsGreater(Player.TimeRemaining(ss),30)">$INFO[Player.TimeRemaining(ss),gui/play/,.png]</value>
+        <value condition="Integer.IsLessOrEqual(Player.TimeRemaining(ss),30)">$INFO[Player.TimeRemaining(ss),gui/play/,.png]</value>
         <value>gui/play/30.png</value>
     </variable>
 	
 	<variable name="NextUpEpisodeNumber1">
-		<value condition="!Integer.IsGreater(Control.GetLabel(3015),9) + !Integer.IsGreater(Control.GetLabel(3016),9)">$INFO[Control.GetLabel(3015),S0,]$INFO[Control.GetLabel(3016),E0,]</value> 
-		<value condition="!Integer.IsGreater(Control.GetLabel(3015),9)">$INFO[Control.GetLabel(3015),S0,]$INFO[Control.GetLabel(3016),E,]</value> 
-		<value condition="!Integer.IsGreater(Control.GetLabel(3016),9)">$INFO[Control.GetLabel(3015),S,]$INFO[Control.GetLabel(3016),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Control.GetLabel(3015),9) + Integer.IsLessOrEqual(Control.GetLabel(3016),9)">$INFO[Control.GetLabel(3015),S0,]$INFO[Control.GetLabel(3016),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Control.GetLabel(3015),9)">$INFO[Control.GetLabel(3015),S0,]$INFO[Control.GetLabel(3016),E,]</value> 
+		<value condition="Integer.IsLessOrEqual(Control.GetLabel(3016),9)">$INFO[Control.GetLabel(3015),S,]$INFO[Control.GetLabel(3016),E0,]</value> 
 		<value>$INFO[Control.GetLabel(3015),S,]$INFO[Control.GetLabel(3016),E,]</value>
 	</variable>
 	
 	<variable name="NextUpEpisodeNumber2">
-		<value condition="!Integer.IsGreater(Control.GetLabel(4008),9) + !Integer.IsGreater(Control.GetLabel(4009),9)">$INFO[Control.GetLabel(4008),S0,]$INFO[Control.GetLabel(4009),E0,]</value> 
-		<value condition="!Integer.IsGreater(Control.GetLabel(4008),9)">$INFO[Control.GetLabel(4008),S0,]$INFO[Control.GetLabel(4009),E,]</value> 
-		<value condition="!Integer.IsGreater(Control.GetLabel(4009),9)">$INFO[Control.GetLabel(4008),S,]$INFO[Control.GetLabel(4009),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Control.GetLabel(4008),9) + Integer.IsLessOrEqual(Control.GetLabel(4009),9)">$INFO[Control.GetLabel(4008),S0,]$INFO[Control.GetLabel(4009),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Control.GetLabel(4008),9)">$INFO[Control.GetLabel(4008),S0,]$INFO[Control.GetLabel(4009),E,]</value> 
+		<value condition="Integer.IsLessOrEqual(Control.GetLabel(4009),9)">$INFO[Control.GetLabel(4008),S,]$INFO[Control.GetLabel(4009),E0,]</value> 
 		<value>$INFO[Control.GetLabel(4008),S,]$INFO[Control.GetLabel(4009),E,]</value>
 	</variable>
 	<!-- END Next Up Notification -->

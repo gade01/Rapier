@@ -87,7 +87,7 @@
 						<aligny>center</aligny>
 						<label>$INFO[Window(Home).Property(SkinHelper.MovieSet.UnWatchedCount)]</label>
 						<include>FSMediaInfoOpenCloseAnim</include>
-						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.MovieSet.UnWatchedCount),0) + !Integer.IsGreater(Window(Home).Property(SkinHelper.MovieSet.UnWatchedCount),99)</visible>
+						<visible>!String.IsEqual(Window(Home).Property(SkinHelper.MovieSet.UnWatchedCount),0) + Integer.IsLessOrEqual(Window(Home).Property(SkinHelper.MovieSet.UnWatchedCount),99)</visible>
 					</control>
 					
 					<control type="label">

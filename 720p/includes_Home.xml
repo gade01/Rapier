@@ -1179,7 +1179,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-music-icon.png">$INFO[Skin.String(MusicCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(1) + !Integer.IsGreater(Container(544).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(1) + String.IsEqual(Container(544).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1197,7 +1197,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-videos-icon.png">$INFO[Skin.String(VideosCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(2) + !Integer.IsGreater(Container(541).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(2) + String.IsEqual(Container(541).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1206,7 +1206,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-movies-icon.png">$INFO[Skin.String(MoviesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(3) + !Integer.IsGreater(Container(542).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(3) + String.IsEqual(Container(542).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1215,7 +1215,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-tvshows-icon.png">$INFO[Skin.String(TVShowsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(4) + !Integer.IsGreater(Container(543).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(4) + String.IsEqual(Container(543).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1224,7 +1224,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-programs-icon.png">$INFO[Skin.String(ProgramsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(5) + !Integer.IsGreater(Container(546).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(5) + String.IsEqual(Container(546).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1233,7 +1233,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-pictures-icon.png">$INFO[Skin.String(PicturesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(6) + !Integer.IsGreater(Container(545).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(6) + String.IsEqual(Container(545).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1251,7 +1251,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-general-icon.png">$INFO[Skin.String(GeneralCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(15) + !Integer.IsGreater(Container(547).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(15) + String.IsEqual(Container(547).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1293,7 +1293,7 @@
 	</include>
 	
 	<include name="HomeAddonShortcutsCommonLayout">
-		<ondown condition="!Integer.IsGreater(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
+		<ondown condition="String.IsEqual(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
 		<ondown condition="Integer.IsGreater(Container(110).NumItems,0)">110</ondown>
 		<left>120</left>
 		<top>460</top>
@@ -4316,7 +4316,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4340,7 +4340,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4364,7 +4364,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4388,7 +4388,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4412,7 +4412,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4436,7 +4436,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4460,7 +4460,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4484,7 +4484,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4508,7 +4508,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4532,7 +4532,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4556,7 +4556,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4580,7 +4580,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 		</control>
 	</include>
@@ -4611,7 +4611,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4635,7 +4635,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4659,7 +4659,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4683,7 +4683,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4707,7 +4707,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4731,7 +4731,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4755,7 +4755,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4779,7 +4779,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4803,7 +4803,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4827,7 +4827,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 
 			<control type="rss">
@@ -4851,7 +4851,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 			
 			<control type="rss">
@@ -4875,7 +4875,7 @@
 				<textcolor>GreyColor2</textcolor>
 				<titlecolor>DefaultColor</titlecolor>
 				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
+				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
 			</control>
 		</control>
 	</include>
@@ -5932,7 +5932,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6888).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6888).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6072,7 +6072,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6889).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6889).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6211,7 +6211,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6890).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6890).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6759,7 +6759,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6891).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6891).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6867,7 +6867,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6892).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6892).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6974,7 +6974,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6893).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6893).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -7303,7 +7303,7 @@
 					<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6928).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6928).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
@@ -7406,7 +7406,7 @@
 					<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6929).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6929).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
@@ -7520,7 +7520,7 @@
 					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6887).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6887).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
@@ -7666,7 +7666,7 @@
 					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!Integer.IsGreater(Container(6886).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6886).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
