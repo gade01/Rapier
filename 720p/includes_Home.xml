@@ -1154,7 +1154,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-music-icon.png">$INFO[Skin.String(MusicCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(1) + !IntegerGreaterThan(Container(544).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(1) + StringCompare(Container(544).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1172,7 +1172,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-videos-icon.png">$INFO[Skin.String(VideosCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(2) + !IntegerGreaterThan(Container(541).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(2) + StringCompare(Container(541).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1181,7 +1181,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-movies-icon.png">$INFO[Skin.String(MoviesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(3) + !IntegerGreaterThan(Container(542).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(3) + StringCompare(Container(542).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1190,7 +1190,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-tvshows-icon.png">$INFO[Skin.String(TVShowsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(4) + !IntegerGreaterThan(Container(543).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(4) + StringCompare(Container(543).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1199,7 +1199,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-programs-icon.png">$INFO[Skin.String(ProgramsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(5) + !IntegerGreaterThan(Container(546).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(5) + StringCompare(Container(546).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1208,7 +1208,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-pictures-icon.png">$INFO[Skin.String(PicturesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(6) + !IntegerGreaterThan(Container(545).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(6) + StringCompare(Container(545).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1226,7 +1226,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-general-icon.png">$INFO[Skin.String(GeneralCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(15) + !IntegerGreaterThan(Container(547).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(15) + StringCompare(Container(547).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1268,7 +1268,7 @@
 	</include>
 	
 	<include name="HomeAddonShortcutsCommonLayout">
-		<ondown condition="!IntegerGreaterThan(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
+		<ondown condition="StringCompare(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
 		<ondown condition="IntegerGreaterThan(Container(110).NumItems,0)">110</ondown>
 		<left>120</left>
 		<top>460</top>
@@ -5862,7 +5862,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6888).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="StringCompare(Container(6888).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6000,7 +6000,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6889).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="StringCompare(Container(6889).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6137,7 +6137,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6890).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="StringCompare(Container(6890).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6683,7 +6683,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6891).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="StringCompare(Container(6891).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -6790,7 +6790,7 @@
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
 			
-			<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6892).NumItems,0)">
+			<animation type="Conditional" reversible="false" condition="StringCompare(Container(6892).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 			</animation>
@@ -7214,7 +7214,7 @@
 					<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6928).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="StringCompare(Container(6928).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
@@ -7316,7 +7316,7 @@
 					<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6929).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="StringCompare(Container(6929).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
 				</animation>
@@ -7429,7 +7429,7 @@
 					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6887).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="StringCompare(Container(6887).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
@@ -7575,7 +7575,7 @@
 					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
 				
-				<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(6886).NumItems,0)">
+				<animation type="Conditional" reversible="false" condition="StringCompare(Container(6886).NumItems,0)">
 					<effect type="fade" end="0" time="250"/>
 					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
 				</animation>
