@@ -199,6 +199,8 @@
         <value condition="Container.Content(Actors)">$LOCALIZE[31035]</value>
         <value condition="Container.Content(Directors)">$LOCALIZE[31036]</value>
         <value condition="Container.Content(Movies) | Container.Content(TVShows)">$LOCALIZE[31087]</value>
+        <value condition="Container.Content(Seasons) + !String.IsEmpty(ListItem.Season)">$LOCALIZE[31045]</value>
+        <value condition="[Container.Content(Seasons) + String.IsEmpty(ListItem.Season)] | Container.Content(Episodes)">$LOCALIZE[31299]</value>
         <value>$LOCALIZE[21891]</value>
     </variable>
 	
