@@ -605,6 +605,43 @@
 			</control>
 		</control>
 		
+		<control type="group">
+			<description>Bottom Bar Area</description>
+			<top>BottomPaneOffsetY</top>	
+			<!--<include>InfoPaneImage</include>-->
+			<control type="textbox">
+				<description>description area 1</description>
+				<left>399</left>
+				<top>1</top>
+				<width>756</width>
+				<height>43</height>
+				<align>justify</align>
+				<font>InfoPaneFont2</font>
+				<textcolor>InfoPaneColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$VAR[SkinSettingsAddonsDescription]</label>
+				<autoscroll time="3000" delay="4000" repeat="10000">true</autoscroll>
+				<include>InfoPaneLabelFadeAnim</include>
+				<visible>ControlGroup(908).HasFocus</visible>
+			</control>
+			<control type="textbox">
+				<description>description area 2</description>
+				<left>399</left>
+				<top>1</top>
+				<width>756</width>
+				<height>43</height>
+				<align>justify</align>
+				<font>InfoPaneFont2</font>
+				<textcolor>InfoPaneColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$VAR[SettingsMenubarDescription]</label>
+				<autoscroll time="3000" delay="4000" repeat="10000">true</autoscroll>
+				<include>InfoPaneLabelFadeAnim</include>
+				<visible>ControlGroup(505).HasFocus</visible>
+			</control>
+			<include>BottomPaneOpenCloseAnim</include>
+		</control>
+		
 		<control type="group" id="505">
 			<depth>DepthMenuBar</depth>
 			<top>MenuBarOffsetY</top>
