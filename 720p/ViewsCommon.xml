@@ -10047,9 +10047,6 @@
 				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer,return)</onright>
 				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://)">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, music video],return)</onright>
 				<onright condition="Control.IsVisible(151)">151</onright>
-				<oninfo condition="System.HasAddon(script.extendedinfo) + String.Contains(Container.FolderPath,videodb://movies/)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(584).ListItem.DBID],id=$INFO[ListItem.Property(id)])</oninfo>
-				<oninfo condition="System.HasAddon(script.extendedinfo) + String.Contains(Container.FolderPath,videodb://tvshows/)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(584).ListItem.DBID],id=$INFO[ListItem.Property(id)])</oninfo>
-				<oninfo condition="System.HasAddon(script.extendedinfo) + [String.Contains(Container.FolderPath,musicdb://) | String.Contains(Container.FolderPath,videodb://musicvideos/)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(584).ListItem.Artist])</oninfo>
 				<visible>!ListItem.IsParentFolder</visible>
 				<itemlayout height="37">
 					<control type="image">

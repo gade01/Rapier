@@ -5571,7 +5571,6 @@
 				<onleft condition="Control.IsVisible(543)">543</onleft>
 				<onleft condition="Control.IsVisible(110)">110</onleft>
 				<onleft>850</onleft>
-				<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(6926).ListItem.Label2])</oninfo>
 				<itemlayout height="24">
 					<control type="label">
 						<left>15</left>
@@ -5991,7 +5990,6 @@
 					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + !Control.IsVisible(110)">850</onleft>
 					<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onleft>
 					<onright>4829</onright>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(6888).ListItem.Title])</oninfo>
 					<include>RecentlyAddedMoviesPanelLayout</include>
 					<visible>!Skin.HasSetting(ShowMoreRecentlyAddedMovies) + [Integer.IsGreater(Container(6888).NumItems,0) | Container(6888).IsUpdating]</visible>
 				</control>
@@ -6009,7 +6007,6 @@
 					<onleft condition="Control.IsVisible(110)">110</onleft>
 					<onleft condition="!Control.IsVisible(110)">850</onleft>
 					<onright>4829</onright>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(6888).ListItem.Title])</oninfo>
 					<include>RecentlyAddedMoviesPanelLayout</include>
 					<visible>Skin.HasSetting(ShowMoreRecentlyAddedMovies) + [Integer.IsGreater(Container(6888).NumItems,0) | Container(6888).IsUpdating]</visible>
 				</control>
@@ -6131,7 +6128,6 @@
 					<onleft condition="!Control.IsVisible(543) + !Control.IsVisible(6926) + Control.IsVisible(110)">110</onleft>
 					<onleft condition="!Control.IsVisible(543) + !Control.IsVisible(6926) + !Control.IsVisible(110)">850</onleft>
 					<onright>4829</onright>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(6889).ListItem.TVShowTitle])</oninfo>
 					<include>RecentlyAddedTVShowsPanelLayout</include>
 					<visible>!Skin.HasSetting(ShowMoreRecentlyAddedTVShows) + [Integer.IsGreater(Container(6889).NumItems,0) | Container(6889).IsUpdating]</visible>
 				</control>
@@ -6148,7 +6144,6 @@
 					<onleft condition="Control.IsVisible(110)">110</onleft>
 					<onleft condition="!Control.IsVisible(110)">850</onleft>
 					<onright>4829</onright>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(6889).ListItem.TVShowTitle])</oninfo>
 					<include>RecentlyAddedTVShowsPanelLayout</include>
 					<visible>Skin.HasSetting(ShowMoreRecentlyAddedTVShows) + [Integer.IsGreater(Container(6889).NumItems,0) | Container(6889).IsUpdating]</visible>
 				</control>
@@ -6809,7 +6804,6 @@
 					<onleft condition="Control.IsVisible(6929)">6929</onleft>
 					<onleft>6888</onleft>
 					<onright>850</onright>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(6891).ListItem.Title])</oninfo>
 					<visible>Integer.IsGreater(Container(6891).NumItems,0) | Container(6891).IsUpdating</visible>
 					<itemlayout height="24">
 						<control type="label">
@@ -6916,7 +6910,6 @@
 					<ondown>6892</ondown>
 					<onleft>6889</onleft>
 					<onright>850</onright>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(6892).ListItem.TVShowTitle])</oninfo>
 					<visible>Integer.IsGreater(Container(6892).NumItems,0) | Container(6892).IsUpdating</visible>
 					<itemlayout height="24">
 						<control type="label">
@@ -7351,7 +7344,7 @@
 					<onleft condition="Control.IsVisible(542)">542</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
 					<onleft>850</onleft>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6928).ListItem.Property(id)])</oninfo>
+					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Label])</onclick>
 					<visible>Integer.IsGreater(Container(6928).NumItems,0) | Container(6928).IsUpdating</visible>
 					<itemlayout height="24">
 						<control type="label">
@@ -7454,7 +7447,7 @@
 					<onleft condition="Control.IsVisible(542)">542</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
 					<onleft>850</onleft>
-					<oninfo>RunScript(script.extendedinfo,info=extendedinfo,id=$INFO[Container(6929).ListItem.Property(id)])</oninfo>
+					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Label])</onclick>
 					<visible>Integer.IsGreater(Container(6929).NumItems,0) | Container(6929).IsUpdating</visible>
 					<itemlayout height="24">
 						<control type="label">
