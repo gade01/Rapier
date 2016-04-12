@@ -4135,6 +4135,7 @@
 					<onup>850</onup>
 					<ondown condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">908</ondown>
 					<ondown condition="Skin.HasSetting(HideRecommendedViewScrollbar)">581</ondown>
+					<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(3008)</oninfo>
 					<itemlayout width="128">
 						<control type="image">
 							<description>Cover Case</description>
