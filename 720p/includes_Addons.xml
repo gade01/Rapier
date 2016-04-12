@@ -1218,8 +1218,8 @@
 	</variable>
 	
 	<variable name="SimilarVideos">
-		<value condition="Container.Content(Movies) | Container.Content(Sets)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value condition="Container.Content(TVShows)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="Container.Content(Movies) | Container.Content(Sets)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="Container.Content(TVShows)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
 	</variable>
 	
 	<variable name="SimilarVideosLabel">

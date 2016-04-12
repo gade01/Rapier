@@ -4444,7 +4444,7 @@
 					<onup condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">908</onup>
 					<onup condition="Skin.HasSetting(HideRecommendedViewScrollbar)">582</onup>
 					<ondown condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">907</ondown>
-					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(581).ListItem.Title]))</oninfo>
+					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title]))</onclick>
 					<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Container(581).NumItems,0)">Conditional</animation>
 					<animation effect="fade" start="100" end="0" time="300" condition="Container(581).IsUpdating">Conditional</animation>
 					<animation effect="fade" start="100" end="0" time="300" condition="String.IsEmpty(Container(581).ListItem.Art(poster))">Conditional</animation>
@@ -4597,7 +4597,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<content target="video">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Container(582).ListItem.DBID]</content>
+					<content>plugin://script.extendedinfo?info=similarmovies&amp;&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;&amp;dbid=$INFO[ListItem.DBID]</content>
 				</control>
 				
 				<control type="grouplist">
