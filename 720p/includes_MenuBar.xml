@@ -414,61 +414,33 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="402">
-				<description>Video Library</description>
+				<description>Video / Music Library</description>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[14022][/UPPERCASE]</label>
 				<onclick>ActivateWindow(3004)</onclick>
 				<onclick>Control.SetFocus(500)</onclick>
-				<enable>String.Contains(Container.FolderPath,videodb)</enable>
-				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)</visible>
+				<enable>[[Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)] + String.Contains(Container.FolderPath,videodb)]
+				| [Window.IsVisible(MusicLibrary) + [String.Contains(Container.FolderPath,musicdb) | String.Contains(Container.FolderPath,videodb://musicvideos/)]]</enable>
+				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicLibrary)</visible>
 			</control>
 			<control type="image" id="353">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)</visible>
-			</control>
-			<control type="button" id="436">
-				<description>Music Library</description>
-				<include>MenuBarArrowBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[14022][/UPPERCASE]</label>
-				<onclick>ActivateWindow(3004)</onclick>
-				<onclick>Control.SetFocus(500)</onclick>
-				<enable>String.Contains(Container.FolderPath,musicdb) | String.Contains(Container.FolderPath,videodb://musicvideos/)</enable>
-				<visible>Window.IsVisible(MusicLibrary)</visible>
-			</control>
-			<control type="image" id="369">
-				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(MusicLibrary)</visible>
+				<visible>Control.IsVisible(402)</visible>
 			</control>
 			<control type="button" id="405">			
-				<description>Video Settings</description>
+				<description>Video / Music / Picture Settings</description>
 				<include>MenuBarBtn</include>
 				<align>center</align>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick>ActivateWindow(VideosSettings)</onclick>
+				<onclick condition="Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)">ActivateWindow(VideosSettings)</onclick>
+				<onclick condition="Window.IsVisible(MusicLibrary)">ActivateWindow(MusicSettings)</onclick>
+				<onclick condition="Window.IsVisible(Pictures)">ActivateWindow(PicturesSettings)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)</visible>
-			</control>
-			<control type="button" id="406">			
-				<description>Music Settings</description>
-				<include>MenuBarBtn</include>
-				<align>center</align>
-				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick>ActivateWindow(MusicSettings)</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsVisible(MusicLibrary)</visible>
-			</control>
-			<control type="button" id="407">			
-				<description>Picture Settings</description>
-				<include>MenuBarBtn</include>
-				<align>center</align>
-				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick>ActivateWindow(PicturesSettings)</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsVisible(Pictures)</visible>
+				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicLibrary) | Window.IsVisible(Pictures)</visible>
 			</control>
 			<control type="image" id="370">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(Pictures) | Window.IsVisible(MusicLibrary)</visible>
+				<visible>Control.IsVisible(405)</visible>
 			</control>
 			<control type="button" id="411">
 				<description>Go to playlist</description>
