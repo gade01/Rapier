@@ -310,6 +310,7 @@
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Episode Title" />
 						<param name="top" value="262" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[369]:" />
 						<param name="info" value="$VAR[NextAiredNextTitle]" />
 					</include>
@@ -317,6 +318,7 @@
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Episode" />
 						<param name="top" value="294" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[20359]:" />
 						<param name="info" value="$VAR[NextAiredNextNumber]" />
 					</include>
@@ -324,30 +326,23 @@
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Runtime" />
 						<param name="top" value="326" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[2050]:" />
 						<param name="info" value="$VAR[NextAiredRuntime]" />
 					</include>
 					
-					<control type="grouplist">
-						<description>Latest Episode</description>
-						<left>9</left>
-						<top>358</top>
-						<width>322</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<include>NextAiredInfoLabel</include>
-							<label>$LOCALIZE[31966]:</label>
-						</control>
-						<control type="label">
-							<include>NextAiredInfoLabelVal</include>
-							<label fallback="31001">$VAR[NextAiredLatestEpisode]</label>
-						</control>
-					</control>
+					<include content="NextAiredInfoGrouplist">
+						<param name="description" value="Latest Episode" />
+						<param name="top" value="358" />
+						<param name="labelwidth" value="150" />
+						<param name="label" value="$LOCALIZE[31966]:" />
+						<param name="info" value="$VAR[NextAiredLatestEpisode]" />
+					</include>
 					
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Status" />
 						<param name="top" value="390" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[126]:" />
 						<param name="info" value="$VAR[NextAiredStatus]" />
 					</include>
@@ -355,6 +350,7 @@
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Genre" />
 						<param name="top" value="422" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[515]:" />
 						<param name="info" value="$VAR[NextAiredGenre]" />
 					</include>
@@ -362,6 +358,7 @@
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Network" />
 						<param name="top" value="454" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[705]:" />
 						<param name="info" value="$VAR[NextAiredNetwork]" />
 					</include>
@@ -369,6 +366,7 @@
 					<include content="NextAiredInfoGrouplist">
 						<param name="description" value="Country" />
 						<param name="top" value="486" />
+						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[574]:" />
 						<param name="info" value="$VAR[NextAiredCountry]" />
 					</include>
