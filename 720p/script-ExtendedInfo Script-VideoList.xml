@@ -428,7 +428,7 @@
 						<height>30</height>
 						<texture background="true">OverlayClean.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="label">
 						<left>145</left>
@@ -440,7 +440,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31007]</label>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 				</itemlayout>
 				<itemlayout condition="Skin.String(ExtendedInfoViewStyle,2)" height="179" width="138">	
@@ -512,7 +512,7 @@
 						<height>24</height>
 						<texture background="true">OverlayClean.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="label">
 						<left>97</left>
@@ -524,7 +524,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31007]</label>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 				</itemlayout>
 				<itemlayout condition="Skin.String(ExtendedInfoViewStyle,3)" height="77" width="720">
@@ -612,7 +612,7 @@
 						<height>26</height>
 						<texture background="true">OverlayClean.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="label">
 						<left>685</left>
@@ -624,7 +624,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31007]</label>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 				</itemlayout>
 				<itemlayout height="38" width="1000" condition="Skin.String(ExtendedInfoViewStyle,4)">
@@ -653,7 +653,7 @@
 						<texture>DefaultVideo.png.png</texture>
 						<aspectratio aligny="center">keep</aspectratio>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="image">
 						<left>5</left>
@@ -662,7 +662,7 @@
 						<texture background="true">OverlayClean.png</texture>
 						<aspectratio aligny="center">keep</aspectratio>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="label">
 						<left>5</left>
@@ -674,7 +674,7 @@
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31007]</label>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 				</itemlayout>	
 				<focusedlayout condition="Skin.String(ExtendedInfoViewStyle,1) | Skin.String(ExtendedInfoViewStyle,)" height="270" width="208">	
@@ -747,7 +747,7 @@
 							<height>30</height>
 							<texture background="true">OverlayClean.png</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+							<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						</control>
 						<control type="label">
 							<left>145</left>
@@ -759,7 +759,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31007]</label>
-							<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+							<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						</control>	
 					</control>	
 				</focusedlayout>
@@ -833,7 +833,7 @@
 							<height>24</height>
 							<texture background="true">OverlayClean.png</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+							<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						</control>
 						<control type="label">
 							<left>97</left>
@@ -845,7 +845,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31007]</label>
-							<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+							<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						</control>
 					</control>	
 				</focusedlayout>
@@ -951,7 +951,7 @@
 							<height>26</height>
 							<texture background="true">OverlayClean.png</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+							<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						</control>
 						<control type="label">
 							<left>685</left>
@@ -963,7 +963,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$LOCALIZE[31007]</label>
-							<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+							<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						</control>
 					</control>
 				</focusedlayout>
@@ -1018,7 +1018,7 @@
 						<texture>DefaultVideo.png.png</texture>
 						<aspectratio aligny="center">keep</aspectratio>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="image">
 						<left>5</left>
@@ -1027,7 +1027,7 @@
 						<texture background="true">OverlayClean.png</texture>
 						<aspectratio aligny="center">keep</aspectratio>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 					<control type="label">
 						<left>5</left>
@@ -1039,7 +1039,7 @@
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31007]</label>
 						<include>ListViewOverlayFadeAnim</include>
-						<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1111,23 +1111,10 @@
 			</control>
 		</control>
 		
-		<control type="group" id="505">
-			<description>Menu Bar Area</description>
-			<depth>DepthMenuBar</depth>
-			<top>MenuBarOffsetY</top>
-			<include>MenuBarImage</include>
-			<include>MenuBarOpenCloseAnim2</include>
-			<include>ExtendedInfoVideoListMenuBar</include>
-		</control>
-			
-		<control type="group">
-			<description>Top Bar Area</description>
-			<depth>DepthTopBar</depth>
-			<include>TopBarImage</include>
-			<include>TopBarOpenCloseAnim</include>
-			<include>BreadCrumbExtendedInfoVideoList</include>
-			<include>Notifications</include>
-		</control>
+		<include content="MenubarTopbar">
+			<param name="Menubar" value="ExtendedInfoVideoListMenuBar" />
+			<param name="Breadcrumbs" value="BreadCrumbExtendedInfoVideoList" />
+		</include>
 		
 		<control type="group">
 			<left>2000</left>

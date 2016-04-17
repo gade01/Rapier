@@ -285,23 +285,11 @@
 		<control type="button" id="963">
 			<include>RedirectBtn</include>
 			<onfocus>Control.SetFocus(901)</onfocus>
-		</control>	
-
-		<control type="group" id="505">
-			<description>Menu Bar Area</description>
-			<depth>DepthMenuBar</depth>
-			<top>MenuBarOffsetY</top>
-			<include>MenuBarImage</include>
-			<include>MenuBarOpenCloseAnim2</include>
-			<include>ProgramsInfoMenuBar</include>
 		</control>
-
-		<control type="group">
-			<description>Top Bar Area</description>
-			<depth>DepthTopBar</depth>
-			<include>TopBarImage</include>
-			<include>BreadCrumbMediaInfo</include>
-			<include>Notifications</include>
-		</control>
+		
+		<include content="MenubarTopbar">
+			<param name="Menubar" value="ProgramsInfoMenuBar" />
+			<param name="Breadcrumbs" value="BreadCrumbMediaInfo" />
+		</include>
 	</controls>	
 </window>

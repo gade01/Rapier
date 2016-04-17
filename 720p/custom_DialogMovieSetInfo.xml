@@ -596,23 +596,11 @@
 					<visible>[!String.IsEqual(Container(903).NumPages,1) + !String.IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + String.IsEmpty(Skin.String(DialogMovieSetInfo))] | [!String.IsEqual(Container(902).NumPages,1) + !String.IsEmpty(Container(902).ListItem.Label) + Skin.String(DialogMovieSetInfo,1)]</visible>
 				</control>
 			</control>
-		
-			<control type="group" id="505">
-				<description>Menu Bar Area</description>
-				<depth>DepthMenuBar</depth>
-				<top>MenuBarOffsetY</top>
-				<include>MenuBarImage</include>
-				<include>MenuBarOpenCloseAnim2</include>
-				<include>MovieSetInfoMenuBar</include>
-			</control>
 			
-			<control type="group">
-				<description>Top Bar Area</description>
-				<depth>DepthTopBar</depth>
-				<include>TopBarImage</include>
-				<include>BreadCrumbMovieSetInfo</include>
-				<include>Notifications</include>
-			</control>
+			<include content="MenubarTopbar">
+				<param name="Menubar" value="MovieSetInfoMenuBar" />
+				<param name="Breadcrumbs" value="BreadCrumbMovieSetInfo" />
+			</include>
 		</control>
 	</controls>	
 </window>

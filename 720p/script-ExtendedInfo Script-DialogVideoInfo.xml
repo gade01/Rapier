@@ -872,7 +872,7 @@
 								<aligny>center</aligny>
 								<texture>OverlayClean.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 							<control type="label">
 								<left>407</left>
@@ -883,7 +883,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31007]</label>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 						</itemlayout>	
 						<focusedlayout width="443" height="30">
@@ -933,7 +933,7 @@
 								<aligny>center</aligny>
 								<texture>OverlayClean.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 							<control type="label">
 								<left>407</left>
@@ -944,7 +944,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31007]</label>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -1894,7 +1894,7 @@
 								<aligny>center</aligny>
 								<texture>OverlayClean.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 							<control type="label">
 								<left>407</left>
@@ -1905,7 +1905,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31007]</label>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 						</itemlayout>	
 						<focusedlayout width="443" height="30">
@@ -1955,7 +1955,7 @@
 								<aligny>center</aligny>
 								<texture>OverlayClean.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 							<control type="label">
 								<left>407</left>
@@ -1966,7 +1966,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31007]</label>
-								<visible>!String.IsEmpty(ListItem.Property(DBID))</visible>
+								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -2781,22 +2781,10 @@
 				</control>
 			</control>
 			
-			<control type="group" id="505">
-				<description>Menu Bar Area</description>
-				<depth>DepthMenuBar</depth>
-				<top>MenuBarOffsetY</top>
-				<include>MenuBarImage</include>
-				<include>MenuBarOpenCloseAnim2</include>
-				<include>ExtendedInfoVideoInfoMenuBar</include>
-			</control>
-			
-			<control type="group">
-				<description>Top Bar Area</description>
-				<depth>DepthTopBar</depth>
-				<include>TopBarImage</include>
-				<include>BreadCrumbExtendedInfoDialogVideoInfo</include>
-				<include>Notifications</include>
-			</control>
+			<include content="MenubarTopbar">
+				<param name="Menubar" value="ExtendedInfoVideoInfoMenuBar" />
+				<param name="Breadcrumbs" value="BreadCrumbExtendedInfoDialogVideoInfo" />
+			</include>
 		</control>
     </controls>
 </window>
