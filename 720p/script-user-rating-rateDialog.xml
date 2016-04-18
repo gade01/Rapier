@@ -75,93 +75,43 @@
 				</control>
 				<control type="button" id="11021">
 					<description>1 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11022">
 					<description>2 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11023">
 					<description>3 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11024">
 					<description>4 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11025">
 					<description>5 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11026">
 					<description>6 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11027">
 					<description>7 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11028">
 					<description>8 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11029">
 					<description>9 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 				<control type="button" id="11030">
 					<description>10 Button</description>
-					<width>30</width>
-					<height>30</height>
-					<texturefocus colordiffuse="e857a7ff">flagging/imdbstarrating/single-star.png</texturefocus>
-					<texturenofocus colordiffuse="44b9daff">flagging/imdbstarrating/single-star.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+					<include>UserRatingButton</include>
 				</control>
 			</control>
 			
@@ -173,65 +123,47 @@
 				<orientation>horizontal</orientation>
 				<control type="image">
 					<description>1 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11022) | Control.HasFocus(11023) | Control.HasFocus(11024) | Control.HasFocus(11025) | Control.HasFocus(11026) | Control.HasFocus(11027) | Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>2 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11023) | Control.HasFocus(11024) | Control.HasFocus(11025) | Control.HasFocus(11026) | Control.HasFocus(11027) | Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>3 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11024) | Control.HasFocus(11025) | Control.HasFocus(11026) | Control.HasFocus(11027) | Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>4 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11025) | Control.HasFocus(11026) | Control.HasFocus(11027) | Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>5 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11026) | Control.HasFocus(11027) | Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>6 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11027) | Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>7 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11028) | Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>8 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11029) | Control.HasFocus(11030)</visible>
 				</control>
 				<control type="image">
 					<description>9 Button Active</description>
-					<width>30</width>
-					<height>30</height>
-					<texture colordiffuse="dd57a7ff">flagging/imdbstarrating/single-star.png</texture>
+					<include>UserRatingImage</include>
 					<visible>Control.HasFocus(11030)</visible>
 				</control>
 			</control>
