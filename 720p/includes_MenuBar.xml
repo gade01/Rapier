@@ -1741,7 +1741,7 @@
 				<onclick>Dialog.Close(MovieInformation)</onclick>
 				<onclick condition="!System.HasAddon(script.cinemavision)">RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.cinemavision)">RunScript(script.cinemavision,experience)</onclick>
-				<visible>[System.HasAddon(script.cinema.experience) + Container.Content(Movies)] | [System.HasAddon(script.cinemavision) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]]</visible>
+				<visible>[System.HasAddon(script.cinema.experience) + String.IsEqual(ListItem.DBTYPE,movie)] | [System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]]</visible>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
@@ -1773,17 +1773,17 @@
 				<onclick condition="System.HasAddon(script.extendedinfo)">Skin.SetString(ExtendedInfoDialog,7)</onclick>
 				<onclick condition="System.HasAddon(script.extendedinfo)">ActivateWindow(3009)</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<visible>![Container.Content(Episodes) | Container.Content(musicvideos)]</visible>
+				<visible>![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]</visible>
 			</control>
 			<control type="button" id="215">
 				<description>Search Youtube</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="Container.Content(musicvideos)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onclick>
-				<onclick condition="Container.Content(Episodes) | [!System.HasAddon(script.extendedinfo) + Container.Content(Seasons)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label],return)</onclick>
-				<onclick condition="!System.HasAddon(script.extendedinfo) + ![Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(musicvideos)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Label],return)</onclick>
-				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube) + [Container.Content(Episodes) | Container.Content(musicvideos)]] | [!System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube)]</visible>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,musicvideo)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,episode) | [!System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,season)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label],return)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo) + ![String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Label],return)</onclick>
+				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube) + [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]] | [!System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube)]</visible>
 			</control>
 			<control type="image" id="127">
 				<include>MenuBarSeparator</include>
@@ -1819,8 +1819,8 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="![Container.Content(Episodes) | Container.Content(Seasons)]">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onclick>
-				<onclick condition="Container.Content(Episodes) | Container.Content(Seasons)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</onclick>
+				<onclick condition="![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</onclick>
 				<visible>String.IsEmpty(ListItem.Trailer)</visible>
 			</control>
 			<control type="image" id="121">
@@ -1832,7 +1832,7 @@
 				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
 				<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.HasAddon(script.tvtunes) + [Container.Content(TVShows) | Container.Content(movies) | Container.Content(musicvideos)] + String.IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
+				<visible>System.HasAddon(script.tvtunes) + [String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,musicvideo)] + String.IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
 			</control>
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
@@ -1843,7 +1843,7 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$ADDON[script.videoextras 32001][/UPPERCASE]</label>
 				<onclick>RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
-				<visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows) | Container.Content(musicvideos)]
+				<visible>System.HasAddon(script.videoextras) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,musicvideo)]
 				+ String.IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
 			</control>
 			<control type="image" id="126">

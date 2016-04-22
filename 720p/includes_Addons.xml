@@ -1250,9 +1250,9 @@
     </variable>
 	
 	<variable name="ExtraVideoInfoLabel">
-		<value condition="Container.Content(Movies)">$LOCALIZE[31616]</value>
-		<value condition="Container.Content(TVShows)">$LOCALIZE[31617]</value>
-		<value condition="Container.Content(Seasons)">$LOCALIZE[31618]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,movie)">$LOCALIZE[31616]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">$LOCALIZE[31617]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,season)">$LOCALIZE[31618]</value>
 	</variable>
 	
 	<variable name="SimilarVideos">
@@ -1261,8 +1261,8 @@
 	</variable>
 	
 	<variable name="SimilarVideosLabel">
-		<value condition="Container.Content(Movies) | Container.Content(Sets)">$LOCALIZE[31614]</value>
-		<value condition="Container.Content(TVShows)">$LOCALIZE[31615]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">$LOCALIZE[31614]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">$LOCALIZE[31615]</value>
 	</variable>
 	
 	<variable name="ExtendedInfoDialogVideoInfoLabel">
