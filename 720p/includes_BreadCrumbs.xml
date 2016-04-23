@@ -908,8 +908,8 @@
 				<description>Unknown</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]?[/B][/UPPERCASE]</label>
-				<visible>!Container.Content(Movies) + !Container.Content(TVShows) + !Container.Content(Seasons) + !Container.Content(Episodes) + !Container.Content(Songs)
-				+ !Container.Content(MusicVideos) + !Container.Content(Albums) + !Container.Content(Artists) + !Container.Content(Directors) + !Container.Content(Actors)
+				<visible>!String.IsEqual(ListItem.DBTYPE,movie) + !String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.DBTYPE,song)
+				+ !String.IsEqual(ListItem.DBTYPE,musicvideo) + !String.IsEqual(ListItem.DBTYPE,album) + !String.IsEqual(ListItem.DBTYPE,artist) + !Container.Content(Directors) + !Container.Content(Actors)
 				+ !Window.IsActive(AddonInformation) + !String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
@@ -917,42 +917,42 @@
 				<description>Movie</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[20338][/B][/UPPERCASE]</label>
-				<visible>Container.Content(Movies)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,movie)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5503">
 				<description>TV Show</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[20364][/B][/UPPERCASE]</label>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5504">
 				<description>Episode</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[20359][/B][/UPPERCASE]</label>
-				<visible>Container.Content(Episodes)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,episode)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5505">
 				<description>Music Video</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[20391][/B][/UPPERCASE]</label>
-				<visible>Container.Content(MusicVideos)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,musicvideo)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5506">
 				<description>Album</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[558][/B][/UPPERCASE]</label>
-				<visible>Container.Content(Albums)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,album)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5507">
 				<description>Artist</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[557][/B][/UPPERCASE]</label>
-				<visible>Container.Content(Artists)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,artist)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5508">
@@ -987,7 +987,7 @@
 				<description>Song</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[179][/B][/UPPERCASE]</label>
-				<visible>Container.Content(Songs)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="image">

@@ -1250,14 +1250,15 @@
     </variable>
 	
 	<variable name="ExtraVideoInfoLabel">
-		<value condition="String.IsEqual(ListItem.DBTYPE,movie)">$LOCALIZE[31616]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">$LOCALIZE[31616]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">$LOCALIZE[31617]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,season)">$LOCALIZE[31618]</value>
+		<value>$LOCALIZE[31038]</value>
 	</variable>
 	
 	<variable name="SimilarVideos">
-		<value condition="Container.Content(Movies) | Container.Content(Sets)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value condition="Container.Content(TVShows)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
 	</variable>
 	
 	<variable name="SimilarVideosLabel">

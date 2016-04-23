@@ -1454,13 +1454,13 @@
 	</variable>
 	
 	<variable name="MusicInfoTextboxButtonLabel1">
-		<value condition="Container.Content(Artists)">$LOCALIZE[132]</value>
-		<value condition="Container.Content(Albums)">$LOCALIZE[182]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,artist)">$LOCALIZE[132]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,album)">$LOCALIZE[182]</value>
 	</variable>
 	
 	<variable name="MusicInfoTextboxButtonLabel2">
-		<value condition="Container.Content(Artists)">$LOCALIZE[21887]</value>
-		<value condition="Container.Content(Albums)">$LOCALIZE[183]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,artist)">$LOCALIZE[21887]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,album)">$LOCALIZE[183]</value>
 	</variable>
 	<!-- END DialogMusicInfo.xml -->
 	

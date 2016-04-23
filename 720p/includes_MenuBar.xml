@@ -1880,7 +1880,7 @@
 				<altlabel>[UPPERCASE]$VAR[MusicInfoTextboxButtonLabel2][/UPPERCASE]</altlabel>
 				<usealttexture>Skin.HasSetting(MusicInfoTracksReviewToggle)</usealttexture>
 				<onclick>Skin.ToggleSetting(MusicInfoTracksReviewToggle)</onclick>
-				<visible>!Container.Content(Songs)</visible>
+				<visible>!String.IsEqual(ListItem.DBTYPE,song)</visible>
 			</control>
 			<control type="button" id="125">
 				<description>Comment</description>
@@ -1888,11 +1888,11 @@
 				<onfocus condition="!String.IsEmpty(Skin.String(MusicInfoMenubar))">Skin.Reset(MusicInfoMenubar)</onfocus>
 				<label>[UPPERCASE]$LOCALIZE[569][/UPPERCASE]</label>
 				<onclick>noop</onclick>
-				<visible>Container.Content(Songs)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
 			</control>
 			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
-				<visible>Control.IsVisible(116)</visible>
+				<visible>Control.IsVisible(116) | Control.IsVisible(125)</visible>
 			</control>
 			<control type="button" id="209">
 				<description>Extra Information</description>

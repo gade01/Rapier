@@ -424,8 +424,8 @@
 				<label>$LOCALIZE[31092]</label>
 				<onclick condition="System.HasAddon(plugin.video.youtube)">Dialog.Close(3009)</onclick>
 				<onclick condition="System.HasAddon(plugin.video.youtube)">Dialog.Close(2001)</onclick>
-				<onclick condition="System.HasAddon(plugin.video.youtube) + Container.Content(artists)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist],return)</onclick>
-				<onclick condition="System.HasAddon(plugin.video.youtube) + Container.Content(albums)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Album],return)</onclick>
+				<onclick condition="System.HasAddon(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,artist)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist],return)</onclick>
+				<onclick condition="System.HasAddon(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,album)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Album],return)</onclick>
 				<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
 			</control>
 			<control type="image" id="787">
@@ -462,10 +462,9 @@
 				<include>DropDownMenuBtn</include>
 				<label>$VAR[ExtraVideoInfoLabel]</label>
 				<onclick>Dialog.Close(3009)</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
+				<onclick condition="!String.IsEqual(ListItem.DBTYPE,season)">RunScript(script.extendedinfo,info=openinfodialog)</onclick>
 				<onclick condition="String.IsEqual(ListItem.DBTYPE,season)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season])</onclick>
-				<visible>String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,set) | Window.IsVisible(Home)</visible>
 			</control>
 			<control type="button" id="792">
 				<description>Movie Set</description>
