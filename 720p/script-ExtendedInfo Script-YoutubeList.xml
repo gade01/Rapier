@@ -222,20 +222,19 @@
 					<visible>!Skin.HasSetting(HideExtendedInfoThumbsLabel)</visible>
 					<control type="label">
 						<include>InfoPaneItemTitle</include>
-						<label>$INFO[Container(500).ListItem.Rating]</label>
+						<label>$INFO[ListItem.Rating]</label>
 						<visible>Skin.HasSetting(DoNotUseStarRatingExtendedInfo)</visible>
 					</control>
 					
 					<control type="image">
 						<left>590</left>
-						<top>-2</top>
+						<top>1</top>
 						<width>100</width>
-						<height>20</height>
-						<texture>$INFO[Container(500).ListItem.Rating,special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/stars/,.png]</texture>
-						<colordiffuse>ff57a7ff</colordiffuse>
+						<height>16</height>
+						<texture>$VAR[StarRating]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingExtendedInfo) + !String.IsEmpty(Container(500).ListItem.Rating)</visible>
-						<include>ListViewOverlayFadeAnim</include>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingExtendedInfo) + !String.IsEmpty(ListItem.Rating)</visible>
+						<include>MediaFlagFadeAnim</include>
 					</control>
 					
 					<control type="label">
@@ -249,7 +248,7 @@
 				<include>ScreenSize</include>
 				<texture>dim.png</texture>
 				<animation effect="fade" start="0" end="50" time="450">VisibleChange</animation>
-				<visible>Window.IsActive(3009) | Window.IsActive(script-ExtendedInfo Script-T9Search.xml)</visible>
+				<visible>Window.IsActive(3009) | Window.IsActive(script-script.module.t9.search-Main.xml)</visible>
 			</control>
 		</control>
 		
