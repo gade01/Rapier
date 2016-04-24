@@ -1292,9 +1292,14 @@
 		</control>
 	</include>
 	
-	<include name="HomeAddonShortcutsCommonLayout">
-		<ondown condition="String.IsEqual(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
-		<ondown condition="Integer.IsGreater(Container(110).NumItems,0)">110</ondown>
+	<include name="HomeAddonShortcutsLayout">
+		<visible>[Container(850).HasFocus($PARAM[Container850Position]) + Integer.IsGreater(Container($PARAM[id]).NumItems,0)] + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
+		<include>HomeMenuIconAnim</include>
+		<animation effect="slide" end="90,0" condition="String.IsEqual(Container($PARAM[id]).NumItems,5)">Conditional</animation>
+		<animation effect="slide" end="180,0" condition="String.IsEqual(Container($PARAM[id]).NumItems,4)">Conditional</animation>
+		<animation effect="slide" end="270,0" condition="String.IsEqual(Container($PARAM[id]).NumItems,3)">Conditional</animation>
+		<animation effect="slide" end="360,0" condition="String.IsEqual(Container($PARAM[id]).NumItems,2)">Conditional</animation>
+		<animation effect="slide" end="450,0" condition="String.IsEqual(Container($PARAM[id]).NumItems,1)">Conditional</animation>
 		<left>120</left>
 		<top>460</top>
 		<width>1280</width>
@@ -1302,6 +1307,10 @@
 		<pagecontrol>-</pagecontrol>
 		<scrolltime>300</scrolltime>
 		<orientation>Horizontal</orientation>
+		<onleft>$PARAM[id]</onleft>
+		<onright>$PARAM[id]</onright>
+		<ondown condition="String.IsEqual(Container(110).NumItems,0) | SkinHasSetting(HideHomeSubMenus)">850</ondown>
+		<ondown condition="Integer.IsGreater(Container(110).NumItems,0)">110</ondown>
 		<itemlayout height="140" width="180">
 			<control type="image">
 				<width>140</width>
@@ -1330,727 +1339,232 @@
 				</control>
 			</control>
 		</itemlayout>
+		<focusedlayout height="140" width="180">
+			<control type="image">
+				<width>140</width>
+				<height>140</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
+				<bordersize>8</bordersize>
+				<visible>!Control.HasFocus($PARAM[id])</visible>
+			</control>
+			<control type="group">
+				<include>ListViewCoverFocusAnim</include>
+				<control type="image">
+					<width>140</width>
+					<height>140</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
+					<bordersize>8</bordersize>
+					<visible>Control.HasFocus($PARAM[id])</visible>
+				</control>
+				<control type="group">
+					<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
+					<left>8</left>
+					<control type="image">
+						<top>108</top>
+						<width>124</width>
+						<height>24</height>
+						<texture>gui/addon-shortcut-title-background.png</texture>
+						<animation effect="fade" end="88" condition="true">Conditional</animation>
+					</control>
+					<control type="label">
+						<top>114</top>
+						<width>124</width>
+						<align>center</align>
+						<font>SubMenuArrowFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus($PARAM[id])</visible>
+					</control>
+					<control type="label">
+						<top>114</top>
+						<width>124</width>
+						<align>center</align>
+						<font>SubMenuArrowFont</font>
+						<textcolor>WhiteColor</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+						<visible>Control.HasFocus($PARAM[id])</visible>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>			
+		<content>
+			<item>
+				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon1)])</onclick>
+				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon1))]</icon>
+				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon1))]</label>
+				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon1))</visible>
+			</item>
+			<item>
+				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon2)])</onclick>
+				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon2))]</icon>
+				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon2))]</label>
+				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon2))</visible>
+			</item>
+			<item>
+				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon3)])</onclick>
+				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon3))]</icon>
+				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon3))]</label>
+				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon3))</visible>
+			</item>
+			<item>
+				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon4)])</onclick>
+				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon4))]</icon>
+				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon4))]</label>
+				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon4))</visible>
+			</item>
+			<item>
+				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon5)])</onclick>
+				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon5))]</icon>
+				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon5))]</label>
+				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon5))</visible>
+			</item>
+			<item>
+				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon6)])</onclick>
+				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon6))]</icon>
+				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon6))]</label>
+				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon6))</visible>
+			</item>	
+		</content>
 	</include>
 	
 	<include name="HomeAddonShortcuts">
 		<control type="group" id="556">
 			<control type="list" id="541">
-				<visible>[Container(850).HasFocus(2) + Integer.IsGreater(Container(541).NumItems,0)] + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(541).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(541).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(541).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(541).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(541).NumItems,1)">Conditional</animation>
-				<onleft>541</onleft>
-				<onright>541</onright>
 				<onup>555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(541)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(541)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(541)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(541)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(VideoAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(VideoAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(VideoAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(VideoAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(VideoAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(VideoAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(VideoAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(VideoAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(VideoAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(VideoAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(VideoAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(VideoAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(VideoAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(VideoAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(VideoAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(VideoAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(VideoAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(VideoAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(VideoAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(VideoAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(VideoAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(VideoAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(VideoAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(VideoAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="541" />
+					<param name="Container850Position" value="2" />
+					<param name="AddonType" value="Video" />
+				</include>
 			</control>
-
+			
 			<control type="list" id="542">
-				<visible>[Container(850).HasFocus(3) + Integer.IsGreater(Container(542).NumItems,0)] + !Skin.HasSetting(ShowMoreRecentlyAddedMovies) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(542).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(542).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(542).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(542).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(542).NumItems,1)">Conditional</animation>
-				<onleft>542</onleft>
-				<onright>542</onright>
 				<onup condition="Control.IsVisible(6888)">6888</onup>
 				<onup condition="!Control.IsVisible(6888)">555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(542)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(542)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(542)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(542)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MovieAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MovieAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MovieAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(MovieAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MovieAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MovieAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MovieAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(MovieAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MovieAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MovieAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MovieAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(MovieAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MovieAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MovieAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MovieAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(MovieAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MovieAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MovieAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MovieAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(MovieAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MovieAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MovieAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MovieAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(MovieAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="542" />
+					<param name="Container850Position" value="3" />
+					<param name="AddonType" value="Movie" />
+				</include>
 			</control>
 			
 			<control type="list" id="543">
-				<visible>[Container(850).HasFocus(4) + Integer.IsGreater(Container(543).NumItems,0)] + !Skin.HasSetting(ShowMoreRecentlyAddedTVShows) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(543).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(543).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(543).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(543).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(543).NumItems,1)">Conditional</animation>
-				<onleft>543</onleft>
-				<onright>543</onright>
 				<onup condition="Control.IsVisible(6889)">6889</onup>
 				<onup condition="!Control.IsVisible(6889)">555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(543)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(543)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(543)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(543)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(TVShowAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(TVShowAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(TVShowAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(TVShowAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(TVShowAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(TVShowAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(TVShowAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(TVShowAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(TVShowAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(TVShowAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(TVShowAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(TVShowAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(TVShowAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(TVShowAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(TVShowAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(TVShowAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(TVShowAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(TVShowAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(TVShowAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(TVShowAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(TVShowAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(TVShowAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(TVShowAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(TVShowAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="543" />
+					<param name="Container850Position" value="4" />
+					<param name="AddonType" value="TVShow" />
+				</include>
 			</control>
 			
 			<control type="list" id="544">
-				<visible>[Container(850).HasFocus(1) + Integer.IsGreater(Container(544).NumItems,0)] + !Skin.HasSetting(ShowMoreRecentlyAddedMusic) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(544).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(544).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(544).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(544).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(544).NumItems,1)">Conditional</animation>
-				<onleft>544</onleft>
-				<onright>544</onright>
 				<onup condition="Control.IsVisible(6890)">6890</onup>
 				<onup condition="!Control.IsVisible(6890)">555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(544)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(544)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(544)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(544)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MusicAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MusicAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MusicAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(MusicAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MusicAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MusicAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MusicAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(MusicAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MusicAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MusicAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MusicAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(MusicAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MusicAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MusicAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MusicAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(MusicAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MusicAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MusicAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MusicAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(MusicAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(MusicAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(MusicAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(MusicAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(MusicAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="544" />
+					<param name="Container850Position" value="1" />
+					<param name="AddonType" value="Music" />
+				</include>
 			</control>
 			
 			<control type="list" id="545">
-				<visible>[Container(850).HasFocus(6) + Integer.IsGreater(Container(545).NumItems,0)] + !Skin.HasSetting(ShowMoreRecentlyAddedPictures) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(545).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(545).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(545).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(545).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(545).NumItems,1)">Conditional</animation>
-				<onleft>545</onleft>
-				<onright>545</onright>
 				<onup condition="Control.IsVisible(6883)">6883</onup>
 				<onup condition="!Control.IsVisible(6883)">555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(545)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(545)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(545)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(545)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(PicturesAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(PicturesAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(PicturesAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(PicturesAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(PicturesAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(PicturesAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(PicturesAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(PicturesAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(PicturesAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(PicturesAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(PicturesAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(PicturesAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(PicturesAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(PicturesAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(PicturesAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(PicturesAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(PicturesAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(PicturesAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(PicturesAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(PicturesAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(PicturesAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(PicturesAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(PicturesAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(PicturesAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="545" />
+					<param name="Container850Position" value="6" />
+					<param name="AddonType" value="Pictures" />
+				</include>
 			</control>
 			
 			<control type="list" id="546">
-				<visible>[Container(850).HasFocus(5) + Integer.IsGreater(Container(546).NumItems,0)] + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(546).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(546).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(546).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(546).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(546).NumItems,1)">Conditional</animation>
-				<onleft>546</onleft>
-				<onright>546</onright>
 				<onup>555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(546)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(546)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(546)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(546)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(ProgramsAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(ProgramsAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(ProgramsAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(ProgramsAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(ProgramsAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(ProgramsAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(ProgramsAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(ProgramsAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(ProgramsAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(ProgramsAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(ProgramsAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(ProgramsAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(ProgramsAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(ProgramsAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(ProgramsAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(ProgramsAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(ProgramsAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(ProgramsAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(ProgramsAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(ProgramsAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(ProgramsAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(ProgramsAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(ProgramsAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(ProgramsAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="546" />
+					<param name="Container850Position" value="5" />
+					<param name="AddonType" value="Programs" />
+				</include>
 			</control>
 			
 			<control type="list" id="547">
-				<visible>[Container(850).HasFocus(15) + Integer.IsGreater(Container(547).NumItems,0)] + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
-				<include>HomeMenuIconAnim</include>
-				<animation effect="slide" end="90,0" condition="String.IsEqual(Container(547).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="180,0" condition="String.IsEqual(Container(547).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="270,0" condition="String.IsEqual(Container(547).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="360,0" condition="String.IsEqual(Container(547).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="450,0" condition="String.IsEqual(Container(547).NumItems,1)">Conditional</animation>
-				<onleft>547</onleft>
-				<onright>547</onright>
 				<onup>555</onup>
-				<include>HomeAddonShortcutsCommonLayout</include>
-				<focusedlayout height="140" width="180">
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<visible>!Control.HasFocus(547)</visible>
-					</control>
-					<control type="image">
-						<width>140</width>
-						<height>140</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-						<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
-						<bordersize>8</bordersize>
-						<include>ListViewCoverFocusAnim</include>
-						<visible>Control.HasFocus(547)</visible>
-					</control>
-					<control type="group">
-						<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
-						<left>8</left>
-						<include>ListViewCoverFocusAnim</include>
-						<control type="image">
-							<top>108</top>
-							<width>124</width>
-							<height>24</height>
-							<texture>gui/addon-shortcut-title-background.png</texture>
-							<animation effect="fade" end="88" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(547)</visible>
-						</control>
-						<control type="label">
-							<top>114</top>
-							<width>124</width>
-							<align>center</align>
-							<font>SubMenuArrowFont</font>
-							<textcolor>WhiteColor</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<visible>Control.HasFocus(547)</visible>
-						</control>
-					</control>
-				</focusedlayout>			
-				<content>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(GeneralAddon1)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(GeneralAddon1))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(GeneralAddon1))]</label>
-						<visible>!String.IsEmpty(Skin.String(GeneralAddon1))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(GeneralAddon2)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(GeneralAddon2))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(GeneralAddon2))]</label>
-						<visible>!String.IsEmpty(Skin.String(GeneralAddon2))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(GeneralAddon3)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(GeneralAddon3))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(GeneralAddon3))]</label>
-						<visible>!String.IsEmpty(Skin.String(GeneralAddon3))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(GeneralAddon4)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(GeneralAddon4))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(GeneralAddon4))]</label>
-						<visible>!String.IsEmpty(Skin.String(GeneralAddon4))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(GeneralAddon5)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(GeneralAddon5))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(GeneralAddon5))]</label>
-						<visible>!String.IsEmpty(Skin.String(GeneralAddon5))</visible>
-					</item>
-					<item>
-						<onclick>RunAddon($INFO[Skin.String(GeneralAddon6)])</onclick>
-						<icon>$INFO[system.addonicon(Skin.String(GeneralAddon6))]</icon>
-						<label>$INFO[system.addontitle(Skin.String(GeneralAddon6))]</label>
-						<visible>!String.IsEmpty(Skin.String(GeneralAddon6))</visible>
-					</item>	
-				</content>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="547" />
+					<param name="Container850Position" value="15" />
+					<param name="AddonType" value="General" />
+				</include>
 			</control>
+		</control>
+	</include>
+	
+	<include name="HomeCustomCategorySubMenu">
+		<control type="list" id="110">
+			<left>10</left>
+			<width>1260</width>
+			<height>34</height>
+			<onup condition="Control.IsVisible($PARAM[onup])">$PARAM[onup]</onup>
+			<onup condition="!Control.IsVisible($PARAM[onup])">555</onup>
+			<ondown>850</ondown>
+			<orientation>horizontal</orientation>
+			<visible>Container(850).HasFocus($PARAM[Container850Position])</visible>
+			<include>HomeSubMenuItemOpenCloseAnim</include>
+			<include>HomeSubMenuItemsCenterAlignAnim</include>
+			<include>HomeSubMenuItemLayout</include>
+			<content>
+				<item id="1">
+					<description>Category 1 Button 1</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.1.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn1) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn1Label))</visible>
+				</item>
+				<item id="2">
+					<description>Category 1 Button 2</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.2.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn2) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn2Label))</visible>
+				</item>
+				<item id="3">
+					<description>Category 1 Button 3</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.3.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn3) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn3Label))</visible>
+				</item>
+				<item id="4">
+					<description>Category 1 Button 4</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.4.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn4) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn4Label))</visible>
+				</item>
+				<item id="5">
+					<description>Category 1 Button 5</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.5.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn5) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn5Label))</visible>
+				</item>
+				<item id="6">
+					<description>Category 1 Button 6</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.6.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn6) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn6Label))</visible>
+				</item>
+				<item id="7">
+					<description>Category 1 Button 7</description>
+					<label>$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Label)]</label>
+					<onclick condition="![Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Type,)]">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Param)]</onclick>
+					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.7.Path)]</onclick>
+					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn7) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Label))</visible>
+				</item>
+			</content>						
 		</control>
 	</include>
 
@@ -2758,1061 +2272,101 @@
 				</content>						
 			</control>
 
-			<control type="list" id="110">
-				<description>Category 1 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6894)">6894</onup>
-				<onup condition="!Control.IsVisible(6894)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(7)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 1 Button 1</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn1Type,Favourite) | Skin.String(Custom1SubMenuBtn1Type,)]">$INFO[Skin.String(Custom1SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn1Type,Favourite) | Skin.String(Custom1SubMenuBtn1Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 1 Button 2</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn2Type,Favourite) | Skin.String(Custom1SubMenuBtn2Type,)]">$INFO[Skin.String(Custom1SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn2Type,Favourite) | Skin.String(Custom1SubMenuBtn2Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 1 Button 3</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn3Type,Favourite) | Skin.String(Custom1SubMenuBtn3Type,)]">$INFO[Skin.String(Custom1SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn3Type,Favourite) | Skin.String(Custom1SubMenuBtn3Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 1 Button 4</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn4Type,Favourite) | Skin.String(Custom1SubMenuBtn4Type,)]">$INFO[Skin.String(Custom1SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn4Type,Favourite) | Skin.String(Custom1SubMenuBtn4Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 1 Button 5</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn5Type,Favourite) | Skin.String(Custom1SubMenuBtn5Type,)]">$INFO[Skin.String(Custom1SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn5Type,Favourite) | Skin.String(Custom1SubMenuBtn5Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 1 Button 6</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn6Type,Favourite) | Skin.String(Custom1SubMenuBtn6Type,)]">$INFO[Skin.String(Custom1SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn6Type,Favourite) | Skin.String(Custom1SubMenuBtn6Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 1 Button 7</description>
-						<label>$INFO[Skin.String(Custom1SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom1SubMenuBtn7Type,Favourite) | Skin.String(Custom1SubMenuBtn7Type,)]">$INFO[Skin.String(Custom1SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom1SubMenuBtn7Type,Favourite) | Skin.String(Custom1SubMenuBtn7Type,)">$INFO[Skin.String(Custom1SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom1SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom1SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6894" />
+				<param name="Container850Position" value="7" />
+				<param name="CustomCategoryNumber" value="Custom1" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6896" />
+				<param name="Container850Position" value="8" />
+				<param name="CustomCategoryNumber" value="Custom2" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6898" />
+				<param name="Container850Position" value="9" />
+				<param name="CustomCategoryNumber" value="Custom3" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6900" />
+				<param name="Container850Position" value="10" />
+				<param name="CustomCategoryNumber" value="Custom4" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6902" />
+				<param name="Container850Position" value="11" />
+				<param name="CustomCategoryNumber" value="Custom5" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6904" />
+				<param name="Container850Position" value="12" />
+				<param name="CustomCategoryNumber" value="Custom6" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6906" />
+				<param name="Container850Position" value="13" />
+				<param name="CustomCategoryNumber" value="Custom7" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6908" />
+				<param name="Container850Position" value="14" />
+				<param name="CustomCategoryNumber" value="Custom8" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6910" />
+				<param name="Container850Position" value="17" />
+				<param name="CustomCategoryNumber" value="Custom9" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6912" />
+				<param name="Container850Position" value="18" />
+				<param name="CustomCategoryNumber" value="Custom10" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6914" />
+				<param name="Container850Position" value="19" />
+				<param name="CustomCategoryNumber" value="Custom11" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6916" />
+				<param name="Container850Position" value="20" />
+				<param name="CustomCategoryNumber" value="Custom12" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6918" />
+				<param name="Container850Position" value="21" />
+				<param name="CustomCategoryNumber" value="Custom13" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6920" />
+				<param name="Container850Position" value="22" />
+				<param name="CustomCategoryNumber" value="Custom14" />
+			</include>
 
-			<control type="list" id="110">
-				<description>Category 2 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6896)">6896</onup>
-				<onup condition="!Control.IsVisible(6896)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(8)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 2 Button 1</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn1Type,Favourite) | Skin.String(Custom2SubMenuBtn1Type,)]">$INFO[Skin.String(Custom2SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn1Type,Favourite) | Skin.String(Custom2SubMenuBtn1Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 2 Button 2</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn2Type,Favourite) | Skin.String(Custom2SubMenuBtn2Type,)]">$INFO[Skin.String(Custom2SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn2Type,Favourite) | Skin.String(Custom2SubMenuBtn2Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 2 Button 3</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn3Type,Favourite) | Skin.String(Custom2SubMenuBtn3Type,)]">$INFO[Skin.String(Custom2SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn3Type,Favourite) | Skin.String(Custom2SubMenuBtn3Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 2 Button 4</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn4Type,Favourite) | Skin.String(Custom2SubMenuBtn4Type,)]">$INFO[Skin.String(Custom2SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn4Type,Favourite) | Skin.String(Custom2SubMenuBtn4Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 2 Button 5</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn5Type,Favourite) | Skin.String(Custom2SubMenuBtn5Type,)]">$INFO[Skin.String(Custom2SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn5Type,Favourite) | Skin.String(Custom2SubMenuBtn5Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 2 Button 6</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn6Type,Favourite) | Skin.String(Custom2SubMenuBtn6Type,)]">$INFO[Skin.String(Custom2SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn6Type,Favourite) | Skin.String(Custom2SubMenuBtn6Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 2 Button 7</description>
-						<label>$INFO[Skin.String(Custom2SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom2SubMenuBtn7Type,Favourite) | Skin.String(Custom2SubMenuBtn7Type,)]">$INFO[Skin.String(Custom2SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom2SubMenuBtn7Type,Favourite) | Skin.String(Custom2SubMenuBtn7Type,)">$INFO[Skin.String(Custom2SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom2SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom2SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 3 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6898)">6898</onup>
-				<onup condition="!Control.IsVisible(6898)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(9)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 3 Button 1</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn1Type,Favourite) | Skin.String(Custom3SubMenuBtn1Type,)]">$INFO[Skin.String(Custom3SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn1Type,Favourite) | Skin.String(Custom3SubMenuBtn1Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 3 Button 2</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn2Type,Favourite) | Skin.String(Custom3SubMenuBtn2Type,)]">$INFO[Skin.String(Custom3SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn2Type,Favourite) | Skin.String(Custom3SubMenuBtn2Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 3 Button 3</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn3Type,Favourite) | Skin.String(Custom3SubMenuBtn3Type,)]">$INFO[Skin.String(Custom3SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn3Type,Favourite) | Skin.String(Custom3SubMenuBtn3Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 3 Button 4</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn4Type,Favourite) | Skin.String(Custom3SubMenuBtn4Type,)]">$INFO[Skin.String(Custom3SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn4Type,Favourite) | Skin.String(Custom3SubMenuBtn4Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 3 Button 5</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn5Type,Favourite) | Skin.String(Custom3SubMenuBtn5Type,)]">$INFO[Skin.String(Custom3SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn5Type,Favourite) | Skin.String(Custom3SubMenuBtn5Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 3 Button 6</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn6Type,Favourite) | Skin.String(Custom3SubMenuBtn6Type,)]">$INFO[Skin.String(Custom3SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn6Type,Favourite) | Skin.String(Custom3SubMenuBtn6Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 3 Button 7</description>
-						<label>$INFO[Skin.String(Custom3SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom3SubMenuBtn7Type,Favourite) | Skin.String(Custom3SubMenuBtn7Type,)]">$INFO[Skin.String(Custom3SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom3SubMenuBtn7Type,Favourite) | Skin.String(Custom3SubMenuBtn7Type,)">$INFO[Skin.String(Custom3SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom3SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom3SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 4 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6900)">6900</onup>
-				<onup condition="!Control.IsVisible(6900)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(10)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 4 Button 1</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn1Type,Favourite) | Skin.String(Custom4SubMenuBtn1Type,)]">$INFO[Skin.String(Custom4SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn1Type,Favourite) | Skin.String(Custom4SubMenuBtn1Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 4 Button 2</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn2Type,Favourite) | Skin.String(Custom4SubMenuBtn2Type,)]">$INFO[Skin.String(Custom4SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn2Type,Favourite) | Skin.String(Custom4SubMenuBtn2Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 4 Button 3</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn3Type,Favourite) | Skin.String(Custom4SubMenuBtn3Type,)]">$INFO[Skin.String(Custom4SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn3Type,Favourite) | Skin.String(Custom4SubMenuBtn3Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 4 Button 4</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn4Type,Favourite) | Skin.String(Custom4SubMenuBtn4Type,)]">$INFO[Skin.String(Custom4SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn4Type,Favourite) | Skin.String(Custom4SubMenuBtn4Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 4 Button 5</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn5Type,Favourite) | Skin.String(Custom4SubMenuBtn5Type,)]">$INFO[Skin.String(Custom4SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn5Type,Favourite) | Skin.String(Custom4SubMenuBtn5Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 4 Button 6</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn6Type,Favourite) | Skin.String(Custom4SubMenuBtn6Type,)]">$INFO[Skin.String(Custom4SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn6Type,Favourite) | Skin.String(Custom4SubMenuBtn6Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 4 Button 7</description>
-						<label>$INFO[Skin.String(Custom4SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom4SubMenuBtn7Type,Favourite) | Skin.String(Custom4SubMenuBtn7Type,)]">$INFO[Skin.String(Custom4SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom4SubMenuBtn7Type,Favourite) | Skin.String(Custom4SubMenuBtn7Type,)">$INFO[Skin.String(Custom4SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom4SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom4SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 5 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6902)">6902</onup>
-				<onup condition="!Control.IsVisible(6902)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(11)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 5 Button 1</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn1Type,Favourite) | Skin.String(Custom5SubMenuBtn1Type,)]">$INFO[Skin.String(Custom5SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn1Type,Favourite) | Skin.String(Custom5SubMenuBtn1Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 5 Button 2</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn2Type,Favourite) | Skin.String(Custom5SubMenuBtn2Type,)]">$INFO[Skin.String(Custom5SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn2Type,Favourite) | Skin.String(Custom5SubMenuBtn2Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 5 Button 3</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn3Type,Favourite) | Skin.String(Custom5SubMenuBtn3Type,)]">$INFO[Skin.String(Custom5SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn3Type,Favourite) | Skin.String(Custom5SubMenuBtn3Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 5 Button 4</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn4Type,Favourite) | Skin.String(Custom5SubMenuBtn4Type,)]">$INFO[Skin.String(Custom5SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn4Type,Favourite) | Skin.String(Custom5SubMenuBtn4Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 5 Button 5</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn5Type,Favourite) | Skin.String(Custom5SubMenuBtn5Type,)]">$INFO[Skin.String(Custom5SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn5Type,Favourite) | Skin.String(Custom5SubMenuBtn5Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 5 Button 6</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn6Type,Favourite) | Skin.String(Custom5SubMenuBtn6Type,)]">$INFO[Skin.String(Custom5SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn6Type,Favourite) | Skin.String(Custom5SubMenuBtn6Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 5 Button 7</description>
-						<label>$INFO[Skin.String(Custom5SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom5SubMenuBtn7Type,Favourite) | Skin.String(Custom5SubMenuBtn7Type,)]">$INFO[Skin.String(Custom5SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom5SubMenuBtn7Type,Favourite) | Skin.String(Custom5SubMenuBtn7Type,)">$INFO[Skin.String(Custom5SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom5SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom5SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 6 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6904)">6904</onup>
-				<onup condition="!Control.IsVisible(6904)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(12)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 6 Button 1</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn1Type,Favourite) | Skin.String(Custom6SubMenuBtn1Type,)]">$INFO[Skin.String(Custom6SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn1Type,Favourite) | Skin.String(Custom6SubMenuBtn1Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 6 Button 2</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn2Type,Favourite) | Skin.String(Custom6SubMenuBtn2Type,)]">$INFO[Skin.String(Custom6SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn2Type,Favourite) | Skin.String(Custom6SubMenuBtn2Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 6 Button 3</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn3Type,Favourite) | Skin.String(Custom6SubMenuBtn3Type,)]">$INFO[Skin.String(Custom6SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn3Type,Favourite) | Skin.String(Custom6SubMenuBtn3Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 6 Button 4</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn4Type,Favourite) | Skin.String(Custom6SubMenuBtn4Type,)]">$INFO[Skin.String(Custom6SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn4Type,Favourite) | Skin.String(Custom6SubMenuBtn4Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 6 Button 5</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn5Type,Favourite) | Skin.String(Custom6SubMenuBtn5Type,)]">$INFO[Skin.String(Custom6SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn5Type,Favourite) | Skin.String(Custom6SubMenuBtn5Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 6 Button 6</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn6Type,Favourite) | Skin.String(Custom6SubMenuBtn6Type,)]">$INFO[Skin.String(Custom6SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn6Type,Favourite) | Skin.String(Custom6SubMenuBtn6Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 6 Button 7</description>
-						<label>$INFO[Skin.String(Custom6SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom6SubMenuBtn7Type,Favourite) | Skin.String(Custom6SubMenuBtn7Type,)]">$INFO[Skin.String(Custom6SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom6SubMenuBtn7Type,Favourite) | Skin.String(Custom6SubMenuBtn7Type,)">$INFO[Skin.String(Custom6SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom6SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom6SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 7 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6906)">6906</onup>
-				<onup condition="!Control.IsVisible(6906)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(13)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 7 Button 1</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn1Type,Favourite) | Skin.String(Custom7SubMenuBtn1Type,)]">$INFO[Skin.String(Custom7SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn1Type,Favourite) | Skin.String(Custom7SubMenuBtn1Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 7 Button 2</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn2Type,Favourite) | Skin.String(Custom7SubMenuBtn2Type,)]">$INFO[Skin.String(Custom7SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn2Type,Favourite) | Skin.String(Custom7SubMenuBtn2Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 7 Button 3</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn3Type,Favourite) | Skin.String(Custom7SubMenuBtn3Type,)]">$INFO[Skin.String(Custom7SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn3Type,Favourite) | Skin.String(Custom7SubMenuBtn3Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 7 Button 4</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn4Type,Favourite) | Skin.String(Custom7SubMenuBtn4Type,)]">$INFO[Skin.String(Custom7SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn4Type,Favourite) | Skin.String(Custom7SubMenuBtn4Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 7 Button 5</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn5Type,Favourite) | Skin.String(Custom7SubMenuBtn5Type,)]">$INFO[Skin.String(Custom7SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn5Type,Favourite) | Skin.String(Custom7SubMenuBtn5Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 7 Button 6</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn6Type,Favourite) | Skin.String(Custom7SubMenuBtn6Type,)]">$INFO[Skin.String(Custom7SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn6Type,Favourite) | Skin.String(Custom7SubMenuBtn6Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 7 Button 7</description>
-						<label>$INFO[Skin.String(Custom7SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom7SubMenuBtn7Type,Favourite) | Skin.String(Custom7SubMenuBtn7Type,)]">$INFO[Skin.String(Custom7SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom7SubMenuBtn7Type,Favourite) | Skin.String(Custom7SubMenuBtn7Type,)">$INFO[Skin.String(Custom7SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom7SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom7SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 8 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6908)">6908</onup>
-				<onup condition="!Control.IsVisible(6908)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(14)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 8 Button 1</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn1Type,Favourite) | Skin.String(Custom8SubMenuBtn1Type,)]">$INFO[Skin.String(Custom8SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn1Type,Favourite) | Skin.String(Custom8SubMenuBtn1Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 8 Button 2</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn2Type,Favourite) | Skin.String(Custom8SubMenuBtn2Type,)]">$INFO[Skin.String(Custom8SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn2Type,Favourite) | Skin.String(Custom8SubMenuBtn2Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 8 Button 3</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn3Type,Favourite) | Skin.String(Custom8SubMenuBtn3Type,)]">$INFO[Skin.String(Custom8SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn3Type,Favourite) | Skin.String(Custom8SubMenuBtn3Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 8 Button 4</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn4Type,Favourite) | Skin.String(Custom8SubMenuBtn4Type,)]">$INFO[Skin.String(Custom8SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn4Type,Favourite) | Skin.String(Custom8SubMenuBtn4Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 8 Button 5</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn5Type,Favourite) | Skin.String(Custom8SubMenuBtn5Type,)]">$INFO[Skin.String(Custom8SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn5Type,Favourite) | Skin.String(Custom8SubMenuBtn5Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 8 Button 6</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn6Type,Favourite) | Skin.String(Custom8SubMenuBtn6Type,)]">$INFO[Skin.String(Custom8SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn6Type,Favourite) | Skin.String(Custom8SubMenuBtn6Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 8 Button 7</description>
-						<label>$INFO[Skin.String(Custom8SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom8SubMenuBtn7Type,Favourite) | Skin.String(Custom8SubMenuBtn7Type,)]">$INFO[Skin.String(Custom8SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom8SubMenuBtn7Type,Favourite) | Skin.String(Custom8SubMenuBtn7Type,)">$INFO[Skin.String(Custom8SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom8SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom8SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 9 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6910)">6910</onup>
-				<onup condition="!Control.IsVisible(6910)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(17)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 9 Button 1</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn1Type,Favourite) | Skin.String(Custom9SubMenuBtn1Type,)]">$INFO[Skin.String(Custom9SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn1Type,Favourite) | Skin.String(Custom9SubMenuBtn1Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 9 Button 2</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn2Type,Favourite) | Skin.String(Custom9SubMenuBtn2Type,)]">$INFO[Skin.String(Custom9SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn2Type,Favourite) | Skin.String(Custom9SubMenuBtn2Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 9 Button 3</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn3Type,Favourite) | Skin.String(Custom9SubMenuBtn3Type,)]">$INFO[Skin.String(Custom9SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn3Type,Favourite) | Skin.String(Custom9SubMenuBtn3Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 9 Button 4</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn4Type,Favourite) | Skin.String(Custom9SubMenuBtn4Type,)]">$INFO[Skin.String(Custom9SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn4Type,Favourite) | Skin.String(Custom9SubMenuBtn4Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 9 Button 5</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn5Type,Favourite) | Skin.String(Custom9SubMenuBtn5Type,)]">$INFO[Skin.String(Custom9SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn5Type,Favourite) | Skin.String(Custom9SubMenuBtn5Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 9 Button 6</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn6Type,Favourite) | Skin.String(Custom9SubMenuBtn6Type,)]">$INFO[Skin.String(Custom9SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn6Type,Favourite) | Skin.String(Custom9SubMenuBtn6Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 9 Button 7</description>
-						<label>$INFO[Skin.String(Custom9SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom9SubMenuBtn7Type,Favourite) | Skin.String(Custom9SubMenuBtn7Type,)]">$INFO[Skin.String(Custom9SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom9SubMenuBtn7Type,Favourite) | Skin.String(Custom9SubMenuBtn7Type,)">$INFO[Skin.String(Custom9SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom9SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom9SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 10 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6912)">6912</onup>
-				<onup condition="!Control.IsVisible(6912)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(18)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 10 Button 1</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn1Type,Favourite) | Skin.String(Custom10SubMenuBtn1Type,)]">$INFO[Skin.String(Custom10SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn1Type,Favourite) | Skin.String(Custom10SubMenuBtn1Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 10 Button 2</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn2Type,Favourite) | Skin.String(Custom10SubMenuBtn2Type,)]">$INFO[Skin.String(Custom10SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn2Type,Favourite) | Skin.String(Custom10SubMenuBtn2Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 10 Button 3</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn3Type,Favourite) | Skin.String(Custom10SubMenuBtn3Type,)]">$INFO[Skin.String(Custom10SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn3Type,Favourite) | Skin.String(Custom10SubMenuBtn3Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 10 Button 4</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn4Type,Favourite) | Skin.String(Custom10SubMenuBtn4Type,)]">$INFO[Skin.String(Custom10SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn4Type,Favourite) | Skin.String(Custom10SubMenuBtn4Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 10 Button 5</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn5Type,Favourite) | Skin.String(Custom10SubMenuBtn5Type,)]">$INFO[Skin.String(Custom10SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn5Type,Favourite) | Skin.String(Custom10SubMenuBtn5Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 10 Button 6</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn6Type,Favourite) | Skin.String(Custom10SubMenuBtn6Type,)]">$INFO[Skin.String(Custom10SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn6Type,Favourite) | Skin.String(Custom10SubMenuBtn6Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 10 Button 7</description>
-						<label>$INFO[Skin.String(Custom10SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom10SubMenuBtn7Type,Favourite) | Skin.String(Custom10SubMenuBtn7Type,)]">$INFO[Skin.String(Custom10SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom10SubMenuBtn7Type,Favourite) | Skin.String(Custom10SubMenuBtn7Type,)">$INFO[Skin.String(Custom10SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom10SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom10SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 11 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6914)">6914</onup>
-				<onup condition="!Control.IsVisible(6914)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(19)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 11 Button 1</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn1Type,Favourite) | Skin.String(Custom11SubMenuBtn1Type,)]">$INFO[Skin.String(Custom11SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn1Type,Favourite) | Skin.String(Custom11SubMenuBtn1Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 11 Button 2</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn2Type,Favourite) | Skin.String(Custom11SubMenuBtn2Type,)]">$INFO[Skin.String(Custom11SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn2Type,Favourite) | Skin.String(Custom11SubMenuBtn2Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 11 Button 3</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn3Type,Favourite) | Skin.String(Custom11SubMenuBtn3Type,)]">$INFO[Skin.String(Custom11SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn3Type,Favourite) | Skin.String(Custom11SubMenuBtn3Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 11 Button 4</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn4Type,Favourite) | Skin.String(Custom11SubMenuBtn4Type,)]">$INFO[Skin.String(Custom11SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn4Type,Favourite) | Skin.String(Custom11SubMenuBtn4Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 11 Button 5</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn5Type,Favourite) | Skin.String(Custom11SubMenuBtn5Type,)]">$INFO[Skin.String(Custom11SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn5Type,Favourite) | Skin.String(Custom11SubMenuBtn5Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 11 Button 6</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn6Type,Favourite) | Skin.String(Custom11SubMenuBtn6Type,)]">$INFO[Skin.String(Custom11SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn6Type,Favourite) | Skin.String(Custom11SubMenuBtn6Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 11 Button 7</description>
-						<label>$INFO[Skin.String(Custom11SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom11SubMenuBtn7Type,Favourite) | Skin.String(Custom11SubMenuBtn7Type,)]">$INFO[Skin.String(Custom11SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom11SubMenuBtn7Type,Favourite) | Skin.String(Custom11SubMenuBtn7Type,)">$INFO[Skin.String(Custom11SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom11SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom11SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 12 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6916)">6916</onup>
-				<onup condition="!Control.IsVisible(6916)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(20)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 12 Button 1</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn1Type,Favourite) | Skin.String(Custom12SubMenuBtn1Type,)]">$INFO[Skin.String(Custom12SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn1Type,Favourite) | Skin.String(Custom12SubMenuBtn1Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 12 Button 2</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn2Type,Favourite) | Skin.String(Custom12SubMenuBtn2Type,)]">$INFO[Skin.String(Custom12SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn2Type,Favourite) | Skin.String(Custom12SubMenuBtn2Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 12 Button 3</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn3Type,Favourite) | Skin.String(Custom12SubMenuBtn3Type,)]">$INFO[Skin.String(Custom12SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn3Type,Favourite) | Skin.String(Custom12SubMenuBtn3Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 12 Button 4</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn4Type,Favourite) | Skin.String(Custom12SubMenuBtn4Type,)]">$INFO[Skin.String(Custom12SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn4Type,Favourite) | Skin.String(Custom12SubMenuBtn4Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 12 Button 5</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn5Type,Favourite) | Skin.String(Custom12SubMenuBtn5Type,)]">$INFO[Skin.String(Custom12SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn5Type,Favourite) | Skin.String(Custom12SubMenuBtn5Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 12 Button 6</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn6Type,Favourite) | Skin.String(Custom12SubMenuBtn6Type,)]">$INFO[Skin.String(Custom12SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn6Type,Favourite) | Skin.String(Custom12SubMenuBtn6Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 12 Button 7</description>
-						<label>$INFO[Skin.String(Custom12SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom12SubMenuBtn7Type,Favourite) | Skin.String(Custom12SubMenuBtn7Type,)]">$INFO[Skin.String(Custom12SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom12SubMenuBtn7Type,Favourite) | Skin.String(Custom12SubMenuBtn7Type,)">$INFO[Skin.String(Custom12SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom12SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom12SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 13 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6918)">6918</onup>
-				<onup condition="!Control.IsVisible(6918)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(21)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 13 Button 1</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn1Type,Favourite) | Skin.String(Custom13SubMenuBtn1Type,)]">$INFO[Skin.String(Custom13SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn1Type,Favourite) | Skin.String(Custom13SubMenuBtn1Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 13 Button 2</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn2Type,Favourite) | Skin.String(Custom13SubMenuBtn2Type,)]">$INFO[Skin.String(Custom13SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn2Type,Favourite) | Skin.String(Custom13SubMenuBtn2Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 13 Button 3</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn3Type,Favourite) | Skin.String(Custom13SubMenuBtn3Type,)]">$INFO[Skin.String(Custom13SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn3Type,Favourite) | Skin.String(Custom13SubMenuBtn3Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 13 Button 4</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn4Type,Favourite) | Skin.String(Custom13SubMenuBtn4Type,)]">$INFO[Skin.String(Custom13SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn4Type,Favourite) | Skin.String(Custom13SubMenuBtn4Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 13 Button 5</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn5Type,Favourite) | Skin.String(Custom13SubMenuBtn5Type,)]">$INFO[Skin.String(Custom13SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn5Type,Favourite) | Skin.String(Custom13SubMenuBtn5Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 13 Button 6</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn6Type,Favourite) | Skin.String(Custom13SubMenuBtn6Type,)]">$INFO[Skin.String(Custom13SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn6Type,Favourite) | Skin.String(Custom13SubMenuBtn6Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 13 Button 7</description>
-						<label>$INFO[Skin.String(Custom13SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom13SubMenuBtn7Type,Favourite) | Skin.String(Custom13SubMenuBtn7Type,)]">$INFO[Skin.String(Custom13SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom13SubMenuBtn7Type,Favourite) | Skin.String(Custom13SubMenuBtn7Type,)">$INFO[Skin.String(Custom13SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom13SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom13SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 14 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6920)">6920</onup>
-				<onup condition="!Control.IsVisible(6920)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(22)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 14 Button 1</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn1Type,Favourite) | Skin.String(Custom14SubMenuBtn1Type,)]">$INFO[Skin.String(Custom14SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn1Type,Favourite) | Skin.String(Custom14SubMenuBtn1Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 14 Button 2</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn2Type,Favourite) | Skin.String(Custom14SubMenuBtn2Type,)]">$INFO[Skin.String(Custom14SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn2Type,Favourite) | Skin.String(Custom14SubMenuBtn2Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 14 Button 3</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn3Type,Favourite) | Skin.String(Custom14SubMenuBtn3Type,)]">$INFO[Skin.String(Custom14SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn3Type,Favourite) | Skin.String(Custom14SubMenuBtn3Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 14 Button 4</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn4Type,Favourite) | Skin.String(Custom14SubMenuBtn4Type,)]">$INFO[Skin.String(Custom14SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn4Type,Favourite) | Skin.String(Custom14SubMenuBtn4Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 14 Button 5</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn5Type,Favourite) | Skin.String(Custom14SubMenuBtn5Type,)]">$INFO[Skin.String(Custom14SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn5Type,Favourite) | Skin.String(Custom14SubMenuBtn5Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 14 Button 6</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn6Type,Favourite) | Skin.String(Custom14SubMenuBtn6Type,)]">$INFO[Skin.String(Custom14SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn6Type,Favourite) | Skin.String(Custom14SubMenuBtn6Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 14 Button 7</description>
-						<label>$INFO[Skin.String(Custom14SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom14SubMenuBtn7Type,Favourite) | Skin.String(Custom14SubMenuBtn7Type,)]">$INFO[Skin.String(Custom14SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom14SubMenuBtn7Type,Favourite) | Skin.String(Custom14SubMenuBtn7Type,)">$INFO[Skin.String(Custom14SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom14SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom14SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 15 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6922)">6922</onup>
-				<onup condition="!Control.IsVisible(6922)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(23)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 15 Button 1</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn1Type,Favourite) | Skin.String(Custom15SubMenuBtn1Type,)]">$INFO[Skin.String(Custom15SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn1Type,Favourite) | Skin.String(Custom15SubMenuBtn1Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 15 Button 2</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn2Type,Favourite) | Skin.String(Custom15SubMenuBtn2Type,)]">$INFO[Skin.String(Custom15SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn2Type,Favourite) | Skin.String(Custom15SubMenuBtn2Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 15 Button 3</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn3Type,Favourite) | Skin.String(Custom15SubMenuBtn3Type,)]">$INFO[Skin.String(Custom15SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn3Type,Favourite) | Skin.String(Custom15SubMenuBtn3Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 15 Button 4</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn4Type,Favourite) | Skin.String(Custom15SubMenuBtn4Type,)]">$INFO[Skin.String(Custom15SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn4Type,Favourite) | Skin.String(Custom15SubMenuBtn4Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 15 Button 5</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn5Type,Favourite) | Skin.String(Custom15SubMenuBtn5Type,)]">$INFO[Skin.String(Custom15SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn5Type,Favourite) | Skin.String(Custom15SubMenuBtn5Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 15 Button 6</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn6Type,Favourite) | Skin.String(Custom15SubMenuBtn6Type,)]">$INFO[Skin.String(Custom15SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn6Type,Favourite) | Skin.String(Custom15SubMenuBtn6Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 15 Button 7</description>
-						<label>$INFO[Skin.String(Custom15SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom15SubMenuBtn7Type,Favourite) | Skin.String(Custom15SubMenuBtn7Type,)]">$INFO[Skin.String(Custom15SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom15SubMenuBtn7Type,Favourite) | Skin.String(Custom15SubMenuBtn7Type,)">$INFO[Skin.String(Custom15SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom15SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom15SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>
-
-			<control type="list" id="110">
-				<description>Category 16 Menu Bar</description>
-				<left>10</left>
-				<width>1260</width>
-				<height>34</height>
-				<onup condition="Control.IsVisible(6924)">6924</onup>
-				<onup condition="!Control.IsVisible(6924)">555</onup>
-				<ondown>850</ondown>
-				<orientation>horizontal</orientation>
-				<visible>Container(850).HasFocus(24)</visible>
-				<include>HomeSubMenuItemOpenCloseAnim</include>
-				<include>HomeSubMenuItemsCenterAlignAnim</include>
-				<include>HomeSubMenuItemLayout</include>
-				<content>
-					<item id="1">
-						<description>Category 16 Button 1</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn1Type,Favourite) | Skin.String(Custom16SubMenuBtn1Type,)]">$INFO[Skin.String(Custom16SubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn1Type,Favourite) | Skin.String(Custom16SubMenuBtn1Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn1) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn1Label))</visible>
-					</item>
-					<item id="2">
-						<description>Category 16 Button 2</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn2Type,Favourite) | Skin.String(Custom16SubMenuBtn2Type,)]">$INFO[Skin.String(Custom16SubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn2Type,Favourite) | Skin.String(Custom16SubMenuBtn2Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn2) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn2Label))</visible>
-					</item>
-					<item id="3">
-						<description>Category 16 Button 3</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn3Type,Favourite) | Skin.String(Custom16SubMenuBtn3Type,)]">$INFO[Skin.String(Custom16SubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn3Type,Favourite) | Skin.String(Custom16SubMenuBtn3Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn3) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn3Label))</visible>
-					</item>
-					<item id="4">
-						<description>Category 16 Button 4</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn4Type,Favourite) | Skin.String(Custom16SubMenuBtn4Type,)]">$INFO[Skin.String(Custom16SubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn4Type,Favourite) | Skin.String(Custom16SubMenuBtn4Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn4) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn4Label))</visible>
-					</item>
-					<item id="5">
-						<description>Category 16 Button 5</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn5Type,Favourite) | Skin.String(Custom16SubMenuBtn5Type,)]">$INFO[Skin.String(Custom16SubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn5Type,Favourite) | Skin.String(Custom16SubMenuBtn5Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn5) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn5Label))</visible>
-					</item>
-					<item id="6">
-						<description>Category 16 Button 6</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn6Type,Favourite) | Skin.String(Custom16SubMenuBtn6Type,)]">$INFO[Skin.String(Custom16SubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn6Type,Favourite) | Skin.String(Custom16SubMenuBtn6Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn6) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn6Label))</visible>
-					</item>
-					<item id="7">
-						<description>Category 16 Button 7</description>
-						<label>$INFO[Skin.String(Custom16SubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(Custom16SubMenuBtn7Type,Favourite) | Skin.String(Custom16SubMenuBtn7Type,)]">$INFO[Skin.String(Custom16SubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(Custom16SubMenuBtn7Type,Favourite) | Skin.String(Custom16SubMenuBtn7Type,)">$INFO[Skin.String(Custom16SubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditCustom16SubMenuBtn7) + !String.IsEmpty(Skin.String(Custom16SubMenuBtn7Label))</visible>
-					</item>
-				</content>						
-			</control>		
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6922" />
+				<param name="Container850Position" value="23" />
+				<param name="CustomCategoryNumber" value="Custom15" />
+			</include>
+			
+			<include content="HomeCustomCategorySubMenu">
+				<param name="onup" value="6924" />
+				<param name="Container850Position" value="24" />
+				<param name="CustomCategoryNumber" value="Custom16" />
+			</include>	
 		</control>
 	</include>
 
@@ -4290,298 +2844,104 @@
 		</control>
 	</include>
 	
+	<include name="RSSFeedControl">
+		<control type="rss">
+			<description>RSS Feed</description>
+			<width>$PARAM[width]</width>
+			<height>44</height>
+			<font>RSSFont</font>
+			<urlset>1</urlset>
+			<textcolor>GreyColor2</textcolor>
+			<titlecolor>DefaultColor</titlecolor>
+			<headlinecolor>DefaultColor</headlinecolor>
+			<visible>$PARAM[visible]</visible>
+		</control>
+	</include>
+	
 	<include name="RSSFeed">
 		<control type="group">
 			<top>9</top>
 			<left>100</left>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>950</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>910</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="950" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>850</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="910" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>810</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="850" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>825</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="810" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>785</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="825" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>725</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="785" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>685</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>890</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="725" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>850</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="685" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>790</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="890" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>750</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>910</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="790" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>870</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="750" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>810</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="870" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>770</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>785</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="770" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>745</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="745" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>685</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="645" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>645</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>850</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
-			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>810</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>750</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
-			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>710</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="710" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 		</control>
 	</include>
 	
@@ -4589,294 +2949,86 @@
 		<control type="group">
 			<top>9</top>
 			<left>100</left>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>1065</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>1025</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="1065" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>965</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="1025" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>925</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>940</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="965" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>900</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="925" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>840</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="940" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>800</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>1005</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="900" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>965</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="840" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>905</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="800" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>865</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>1025</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="1005" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>985</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="905" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>925</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="865" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>885</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>900</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="985" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>860</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="885" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>800</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="860" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>760</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>965</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="760" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>925</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
-			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>865</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]</visible>
-			</control>
-			
-			<control type="rss">
-				<description>RSS Feed</description>
-				<width>825</width>
-				<height>44</height>
-				<font>RSSFont</font>
-				<urlset>1</urlset>
-				<textcolor>GreyColor2</textcolor>
-				<titlecolor>DefaultColor</titlecolor>
-				<headlinecolor>DefaultColor</headlinecolor>
-				<visible>!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)</visible>
-			</control>
+			<include content="RSSFeedControl">
+				<param name="width" value="825" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)" />
+			</include>
 		</control>
 	</include>
 
@@ -5251,6 +3403,37 @@
 		</control>
 	</include>
 	
+	<include name="NextAiredWidgetContent">
+		<control type="group">
+			<width>146</width>
+			<height>49</height>
+			<control type="image">
+				<width>146</width>
+				<height>49</height>
+				<texture>$VAR[NextAiredWidget$PARAM[Widget1Number]]</texture>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
+				<include>NextAiredFadeAnim</include>
+				<visible>String.Contains(Window(Home).Property(NextAired.$PARAM[Widget1Number].Today),true)</visible>
+			</control>
+			<control type="image">
+				<width>146</width>
+				<height>49</height>
+				<texture>$VAR[NextAiredWidget$PARAM[Widget2Number]]</texture>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
+				<include>NextAiredFadeAnim2</include>
+				<visible>String.Contains(Window(Home).Property(NextAired.$PARAM[Widget2Number].Today),true)</visible>
+			</control>
+			<control type="image">
+				<width>146</width>
+				<height>49</height>
+				<texture>$VAR[NextAiredWidget$PARAM[Widget3Number]]</texture>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
+				<include>NextAiredFadeAnim3</include>
+				<visible>String.Contains(Window(Home).Property(NextAired.$PARAM[Widget3Number].Today),true)</visible>
+			</control>
+		</control>
+	</include>
+	
 	<include name="NextAiredWidget">
 		<control type="group">	
 			<left>5</left>
@@ -5338,90 +3521,21 @@
 				<height>116</height>
 				<orientation>horizontal</orientation>
 				<itemgap>9</itemgap>
-				<control type="group">
-					<width>146</width>
-					<height>49</height>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget1]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.1.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget7]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim2</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.7.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget13]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim3</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.13.Today),true)</visible>
-					</control>
-				</control>
-				<control type="group">
-					<width>146</width>
-					<height>49</height>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget2]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim</include>					
-						<visible>String.Contains(Window(Home).Property(NextAired.2.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget8]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim2</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.8.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget14]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim3</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.14.Today),true)</visible>
-					</control>
-				</control>
-				<control type="group">
-					<width>146</width>
-					<height>49</height>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget3]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.3.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget9]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim2</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.9.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget15]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim3</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.15.Today),true)</visible>
-					</control>
-				</control>
+				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="1" />
+					<param name="Widget2Number" value="7" />
+					<param name="Widget3Number" value="13" />
+				</include>
+				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="2" />
+					<param name="Widget2Number" value="8" />
+					<param name="Widget3Number" value="14" />
+				</include>
+				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="3" />
+					<param name="Widget2Number" value="9" />
+					<param name="Widget3Number" value="15" />
+				</include>
 			</control>
 			
 			<control type="grouplist">
@@ -5432,90 +3546,21 @@
 				<height>116</height>
 				<orientation>horizontal</orientation>
 				<itemgap>9</itemgap>
-				<control type="group">
-					<width>146</width>
-					<height>49</height>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget4]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.4.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget10]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim2</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.10.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget16]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim3</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.16.Today),true)</visible>
-					</control>
-				</control>
-				<control type="group">
-					<width>146</width>
-					<height>49</height>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget5]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.5.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget11]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim2</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.11.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget17]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim3</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.17.Today),true)</visible>
-					</control>
-				</control>
-				<control type="group">
-					<width>146</width>
-					<height>49</height>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget6]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.6.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget12]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim2</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.12.Today),true)</visible>
-					</control>
-					<control type="image">
-						<width>146</width>
-						<height>49</height>
-						<texture>$VAR[NextAiredWidget18]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<include>NextAiredFadeAnim3</include>
-						<visible>String.Contains(Window(Home).Property(NextAired.18.Today),true)</visible>
-					</control>
-				</control>
+				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="4" />
+					<param name="Widget2Number" value="10" />
+					<param name="Widget3Number" value="16" />
+				</include>
+				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="5" />
+					<param name="Widget2Number" value="11" />
+					<param name="Widget3Number" value="17" />
+				</include>
+				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="6" />
+					<param name="Widget2Number" value="12" />
+					<param name="Widget3Number" value="18" />
+				</include>
 			</control>
 		</control>
 	</include>
