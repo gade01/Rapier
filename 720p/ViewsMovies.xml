@@ -862,208 +862,51 @@
 					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<visible>!ListItem.IsCollection</visible>
-					<left>38</left>
-					<top>430</top>
-		
-					<control type="grouplist">
-						<description>Director</description>
-						<left>10</left>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20339]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="310">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Director]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Writer</description>
-						<left>10</left>
-						<top>22</top>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20417]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="310">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Writer]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Year</description>
-						<left>406</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Year]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Duration</description>
-						<left>406</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ListInfo2MediaInfoArea">
+					<param name="visible" value="!ListItem.IsCollection" />
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[20339]" />
+					<param name="Grouplist1InfoWidth" value="310" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Director]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[20417]" />
+					<param name="Grouplist2InfoWidth" value="310" />
+					<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+				</include>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<visible>ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
-					<left>38</left>
-					<top>430</top>
-		
-					<control type="grouplist">
-						<description>Movies</description>
-						<left>10</left>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[342]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="310">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Years</description>
-						<left>10</left>
-						<top>22</top>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="360">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Rating</description>
-						<left>406</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Duration</description>
-						<left>406</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ListInfo2MediaInfoArea">
+					<param name="visible" value="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)" />
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[342]" />
+					<param name="Grouplist1InfoWidth" value="310" />
+					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist2InfoWidth" value="360" />
+					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Rating]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+				</include>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>494</top>
-					<width>526</width>
-					<height>120</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$VAR[MoviePlot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<include>ControlsOpenCloseAnim</include>
-				</control>
+				<include content="ListInfo2Plot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$VAR[MoviePlot]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious" />
+				</include>
 			</control>
 			
 			<control type="list" id="66">	
@@ -1590,212 +1433,48 @@
 					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<visible>!ListItem.IsCollection</visible>
-					<left>38</left>
-					<top>354</top>
-		
-					<control type="grouplist">
-						<description>Director</description>
-						<left>10</left>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20339]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="190">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Director]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Runtime</description>
-						<left>10</left>
-						<top>22</top>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Year</description>
-						<left>268</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Year]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Rating</description>
-						<left>268</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ThumbsInfoMediaInfoArea" condition="!ListItem.IsCollection">
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[20339]" />
+					<param name="Grouplist1InfoWidth" value="190" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Director]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist2InfoWidth" value="110" />
+					<param name="Grouplist2Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
+				</include>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<visible>ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
-					<left>38</left>
-					<top>354</top>
-		
-					<control type="grouplist">
-						<description>Movies</description>
-						<left>10</left>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20342]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="190">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Years</description>
-						<left>10</left>
-						<top>22</top>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="220">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Rating</description>
-						<left>268</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Duration</description>
-						<left>268</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ThumbsInfoMediaInfoArea" condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[20342]" />
+					<param name="Grouplist1InfoWidth" value="190" />
+					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist2InfoWidth" value="220" />
+					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Rating]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+				</include>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>418</top>
-					<width>388</width>
-					<height>189</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$VAR[MoviePlot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<include>ControlsOpenCloseAnim</include>
-				</control>
+				<include content="ThumbsInfoPlot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$VAR[MoviePlot]" />
+				</include>
 				
 				<include condition="!Skin.HasSetting(EnableMoviesListInfo3ExtraThumbs)">ListInfo3RightPanelCover</include>
 				<include condition="Skin.HasSetting(EnableMoviesListInfo3ExtraThumbs)">ListInfo3RightPanelMovieExtraThumbs</include>
@@ -2013,212 +1692,48 @@
 					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<visible>!ListItem.IsCollection</visible>
-					<left>38</left>
-					<top>354</top>
-		
-					<control type="grouplist">
-						<description>Director</description>
-						<left>10</left>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20339]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="190">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Director]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Runtime</description>
-						<left>10</left>
-						<top>22</top>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Year</description>
-						<left>268</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Year]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Rating</description>
-						<left>268</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ThumbsInfoMediaInfoArea" condition="!ListItem.IsCollection">
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[20339]" />
+					<param name="Grouplist1InfoWidth" value="190" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Director]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist2InfoWidth" value="110" />
+					<param name="Grouplist2Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
+				</include>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<visible>ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
-					<left>38</left>
-					<top>354</top>
-		
-					<control type="grouplist">
-						<description>Movies</description>
-						<left>10</left>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20342]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="190">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Years</description>
-						<left>10</left>
-						<top>22</top>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="220">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Rating</description>
-						<left>268</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Duration</description>
-						<left>268</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ThumbsInfoMediaInfoArea" condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[20342]" />
+					<param name="Grouplist1InfoWidth" value="190" />
+					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist2InfoWidth" value="220" />
+					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Rating]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+				</include>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>418</top>
-					<width>388</width>
-					<height>189</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$VAR[MoviePlot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<include>ControlsOpenCloseAnim</include>
-				</control>
+				<include content="ThumbsInfoPlot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$VAR[MoviePlot]" />
+				</include>
 			</control>
 			
 			<include condition="Skin.String(ThumbsInfoMoviesStyle,1) | Skin.String(ThumbsInfoMoviesStyle,) | String.Contains(Container.FolderPath,videodb://movies/sets/)">MoviesThumbsInfoDefaultStyle</include>

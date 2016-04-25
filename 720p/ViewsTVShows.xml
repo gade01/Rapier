@@ -2149,114 +2149,31 @@
 				<include condition="!Skin.HasSetting(ShowTVShowsLandscape)">ListInfo2PanelFanart</include>
 				<include condition="Skin.HasSetting(ShowTVShowsLandscape)">ListInfo2PanelLandscape</include>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<left>38</left>
-					<top>430</top>
-		
-					<control type="grouplist">
-						<description>Studio</description>
-						<left>10</left>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[572]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="310">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Studio]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Episodes</description>
-						<left>10</left>
-						<top>22</top>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20360]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="310">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Episode]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Year</description>
-						<left>406</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Year]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Rating</description>
-						<left>406</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ListInfo2MediaInfoArea">
+					<param name="visible" value="true" />
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[572]" />
+					<param name="Grouplist1InfoWidth" value="310" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[20360]" />
+					<param name="Grouplist2InfoWidth" value="310" />
+					<param name="Grouplist2Info" value="$INFO[ListItem.Episode]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
+				</include>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>494</top>
-					<width>526</width>
-					<height>120</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$INFO[ListItem.Plot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<include>ControlsOpenCloseAnim</include>
-				</control>
+				<include content="ListInfo2Plot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$INFO[ListItem.Plot]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious" />
+				</include>
 			</control>
 			
 			<control type="list" id="65">	
@@ -3170,23 +3087,10 @@
 					<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)</visible>
 				</control>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>418</top>
-					<width>388</width>
-					<height>189</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$INFO[ListItem.Plot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<include>ControlsOpenCloseAnim</include>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<visible>!System.HasAddon(script.tv.show.next.aired) | [System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(EnableNextAiredInfo)]</visible>
-				</control>
+				<include content="ThumbsInfoPlot" condition="!System.HasAddon(script.tv.show.next.aired) | [System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(EnableNextAiredInfo)]">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$INFO[ListItem.Plot]" />
+				</include>
 				
 				<include>ListInfo3RightPanelCover</include>
 			</control>
@@ -3599,23 +3503,10 @@
 					</control>
 				</control>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>418</top>
-					<width>388</width>
-					<height>189</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$INFO[ListItem.Plot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<visible>!System.HasAddon(script.tv.show.next.aired) | [System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(EnableNextAiredInfo)]</visible>
-					<include>ControlsOpenCloseAnim</include>
-				</control>
+				<include content="ThumbsInfoPlot" condition="!System.HasAddon(script.tv.show.next.aired) | [System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(EnableNextAiredInfo)]">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$INFO[ListItem.Plot]" />
+				</include>
 				
 				<control type="textbox">
 					<description>Plot</description>

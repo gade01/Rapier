@@ -819,114 +819,31 @@
 				<include condition="Skin.HasSetting(EnableEpisodesListInfo2ExtraThumbs)">ListInfo2PanelExtraThumbs</include>
 				<include condition="[Skin.HasSetting(ShowLandscape) | Skin.HasSetting(ShowDefaultThumb)] + !Skin.HasSetting(EnableEpisodesListInfo2ExtraThumbs)">ListInfo2PanelLandscape</include>
 				
-				<control type="group">
-					<description>Media Info Area</description>
-					<left>38</left>
-					<top>430</top>
-		
-					<control type="grouplist">
-						<description>Season</description>
-						<left>10</left>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20373]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Season]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>First Aired</description>
-						<left>10</left>
-						<top>22</top>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20416]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Premiered]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Episode</description>
-						<left>406</left>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20359]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[ListItem.Episode]</label>
-						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Runtime</description>
-						<left>406</left>
-						<top>22</top>
-						<width>130</width>
-						<orientation>horizontal</orientation>
-						<align>right</align>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[2050]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[MovieDuration]</label>
-						</control>
-					</control>
-				</control>
+				<include content="ListInfo2MediaInfoArea">
+					<param name="visible" value="true" />
+					<param name="Grouplist1LabelWidth" value="150" />
+					<param name="Grouplist1Label" value="$LOCALIZE[20373]" />
+					<param name="Grouplist1InfoWidth" value="150" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Season]" />
+					<param name="Grouplist2LabelWidth" value="150" />
+					<param name="Grouplist2Label" value="$LOCALIZE[20416]" />
+					<param name="Grouplist2InfoWidth" value="150" />
+					<param name="Grouplist2Info" value="$INFO[ListItem.Premiered]" />
+					<param name="Grouplist3LabelWidth" value="150" />
+					<param name="Grouplist3Label" value="$LOCALIZE[20359]" />
+					<param name="Grouplist3InfoWidth" value="150" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Episode]" />
+					<param name="Grouplist4LabelWidth" value="150" />
+					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
+					<param name="Grouplist4InfoWidth" value="150" />
+					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+				</include>
 				
-				<control type="textbox">
-					<description>Plot</description>
-					<left>48</left>
-					<top>494</top>
-					<width>526</width>
-					<height>120</height>
-					<font>MediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$INFO[ListItem.Plot]</label>
-					<wrapmultiline>true</wrapmultiline>
-					<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-					<visible>!Container.OnNext + !Container.OnPrevious</visible>
-					<include>ControlsOpenCloseAnim</include>
-				</control>
+				<include content="ListInfo2Plot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$INFO[ListItem.Plot]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious" />
+				</include>
 			</control>
 			
 			<control type="list" id="68">	
@@ -1547,6 +1464,7 @@
 							<label fallback="31001">$INFO[ListItem.Studio]</label>
 						</control>
 					</control>
+					
 					<control type="grouplist">
 						<description>Next Aired Status</description>
 						<visible>System.HasAddon(script.tv.show.next.aired)</visible>
@@ -1776,52 +1694,52 @@
 						</control>
 						
 						<control type="grouplist">
-						<description>Rating</description>
-						<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)</visible>
-						<left>10</left>
-						<top>62</top>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
+							<description>Rating</description>
+							<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)</visible>
+							<left>10</left>
+							<top>62</top>
+							<width>400</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<width min="0" max="150">auto</width>
+								<font>MediaInfoFont</font>
+								<textcolor>MediaInfoItemColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<label>$LOCALIZE[563]:</label>
+							</control>
+							<control type="label">
+								<width min="0" max="250">auto</width>
+								<font>MediaInfoFont</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<scroll>true</scroll>
+								<label fallback="31001">$INFO[ListItem.Rating]</label>
+							</control>
 						</control>
-						<control type="label">
-							<width min="0" max="250">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<scroll>true</scroll>
-							<label fallback="31001">$INFO[ListItem.Rating]</label>
+						
+						<control type="grouplist">
+							<description>Director</description>
+							<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)</visible>
+							<left>10</left>
+							<top>84</top>
+							<width>400</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<width min="0" max="150">auto</width>
+								<font>MediaInfoFont</font>
+								<textcolor>MediaInfoItemColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<label>$LOCALIZE[20339]:</label>
+							</control>
+							<control type="label">
+								<width min="0" max="265">auto</width>
+								<font>MediaInfoFont</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<scroll>true</scroll>
+								<label fallback="31001">$INFO[ListItem.Director]</label>
+							</control>
 						</control>
-					</control>
-					
-					<control type="grouplist">
-						<description>Director</description>
-						<visible>System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredInfo)</visible>
-						<left>10</left>
-						<top>84</top>
-						<width>400</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width min="0" max="150">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[20339]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="265">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<scroll>true</scroll>
-							<label fallback="31001">$INFO[ListItem.Director]</label>
-						</control>
-					</control>
 					</control>
 				
 					<control type="textbox">

@@ -1176,6 +1176,115 @@
 		</control>
 	</include>
 	
+	<include name="ThumbsInfoMediaInfoArea">
+		<control type="group">
+			<left>38</left>
+			<top>354</top>
+
+			<control type="grouplist">
+				<left>10</left>
+				<width>400</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist1LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist1Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist1InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist1Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>10</left>
+				<top>22</top>
+				<width>400</width>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist2LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist2Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist2InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist2Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>268</left>
+				<width>130</width>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist3LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist3Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist3InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist3Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>268</left>
+				<top>22</top>
+				<width>130</width>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist4LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist4Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist4InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist4Info]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+	
+	<include name="ThumbsInfoPlot">
+		<control type="textbox">
+			<left>48</left>
+			<top>418</top>
+			<width>388</width>
+			<height>189</height>
+			<font>MediaInfoDescFont</font>
+			<textcolor>MediaInfoColor</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<align>justify</align>
+			<label fallback="$PARAM[fallback]">$PARAM[label]</label>
+			<wrapmultiline>true</wrapmultiline>
+			<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
+			<visible>!Container.OnNext + !Container.OnPrevious</visible>
+			<include>ControlsOpenCloseAnim</include>
+		</control>
+	</include>
+	
 	<include name="ListInfo2MediaInfoPanelCommon">
 		<control type="group">
 			<left>34</left>
@@ -1505,6 +1614,114 @@
 			<animation effect="fade" end="90" condition="true">Conditional</animation>
 			<visible>String.IsEmpty(ListItem.Genre) + !String.IsEmpty(Window(Home).Property(NextAired.Genre))</visible>
 			<visible>![[Container.Content(Episodes) + Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
+		</control>
+	</include>
+	
+	<include name="ListInfo2MediaInfoArea">
+		<control type="group">
+			<visible>$PARAM[visible]</visible>
+			<left>38</left>
+			<top>430</top>
+
+			<control type="grouplist">
+				<left>10</left>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist1LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist1Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist1InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist1Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>10</left>
+				<top>22</top>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist2LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist2Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist2InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist2Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>406</left>
+				<width>130</width>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist3LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist3Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist3InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist3Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>406</left>
+				<top>22</top>
+				<width>130</width>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist4LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist4Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist4InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist4Info]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+	
+	<include name="ListInfo2Plot">
+		<control type="textbox">
+			<left>48</left>
+			<top>494</top>
+			<width>526</width>
+			<height>120</height>
+			<font>MediaInfoDescFont</font>
+			<textcolor>MediaInfoColor</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<align>justify</align>
+			<label fallback="$PARAM[fallback]">$PARAM[label]</label>
+			<wrapmultiline>true</wrapmultiline>
+			<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
+			<visible>$PARAM[visible]</visible>
+			<include>ControlsOpenCloseAnim</include>
 		</control>
 	</include>
 	
