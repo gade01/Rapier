@@ -604,7 +604,6 @@
 	<include name="CommonListItemLayout">
 		<itemlayout height="37" condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist)">
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -698,7 +697,6 @@
 		</itemlayout>
 		<itemlayout height="37" condition="Container.Content(TVShows) | Container.Content(Seasons)">
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -797,7 +795,6 @@
 		</itemlayout>		
 		<itemlayout height="37">
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -865,14 +862,12 @@
 	<include name="CommonListFocusedLayout">
 		<focusedlayout height="37" condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist)">	
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>36</height>	
 				<texture border="4">views/list-focus.png</texture>
@@ -882,7 +877,6 @@
 				<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>36</height>	
 				<texture border="4">views/list-alt-focus.png</texture>
@@ -978,14 +972,12 @@
 		</focusedlayout>
 		<focusedlayout height="37" condition="Container.Content(TVShows) | Container.Content(Seasons)">	
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>36</height>	
 				<texture border="4">views/list-focus.png</texture>
@@ -995,7 +987,6 @@
 				<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>36</height>	
 				<texture border="4">views/list-alt-focus.png</texture>
@@ -1098,14 +1089,12 @@
 		</focusedlayout>		
 		<focusedlayout height="37">	
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>36</height>	
 				<texture border="4">views/list-focus.png</texture>
@@ -1115,7 +1104,6 @@
 				<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
-				<left>0</left>
 				<width>720</width>
 				<height>36</height>	
 				<texture border="4">views/list-alt-focus.png</texture>
@@ -1303,8 +1291,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -1314,8 +1300,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1326,8 +1310,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1419,8 +1401,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1430,8 +1410,6 @@
 			</control>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -1441,8 +1419,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1509,7 +1485,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
 				<top>4</top>
 				<width>97</width>
 				<height>65</height>
@@ -1520,7 +1495,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
 				<top>4</top>
 				<width>97</width>
 				<height>65</height>
@@ -1532,7 +1506,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
 				<top>4</top>
 				<width>97</width>
 				<height>65</height>
@@ -1704,8 +1677,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -1715,8 +1686,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1727,8 +1696,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1785,8 +1752,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -1796,8 +1761,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1808,8 +1771,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1866,8 +1827,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -1877,8 +1836,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1889,8 +1846,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1936,8 +1891,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -1947,8 +1900,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -1959,8 +1910,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2005,8 +1954,6 @@
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2016,8 +1963,6 @@
 			</control>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2028,8 +1973,6 @@
 			</control>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2050,8 +1993,6 @@
 			</control>
 			<control type="image">
 				<description>Dim</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2062,8 +2003,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2229,8 +2168,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2241,8 +2178,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2335,8 +2270,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2346,8 +2279,6 @@
 			</control>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2417,7 +2348,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
 				<top>4</top>
 				<width>97</width>
 				<height>65</height>
@@ -2429,7 +2359,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
 				<top>4</top>
 				<width>97</width>
 				<height>65</height>
@@ -2540,8 +2469,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2552,8 +2479,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>53</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2601,8 +2526,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2613,8 +2536,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2674,8 +2595,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2686,8 +2605,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2747,8 +2664,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2759,8 +2674,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2810,8 +2723,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2822,8 +2733,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2872,8 +2781,6 @@
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2884,8 +2791,6 @@
 			</control>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2897,8 +2802,6 @@
 			</control>
 			<control type="image">
 				<description>Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
@@ -2921,8 +2824,6 @@
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
-				<left>0</left>
-				<top>0</top>
 				<width>73</width>
 				<height>73</height>
 				<bordersize>5</bordersize>
@@ -2981,14 +2882,12 @@
 	
 	<include name="ListTallStyleFocus">
 		<control type="image">
-			<left>0</left>
 			<width>720</width>
 			<height>74</height>	
 			<texture border="0,0,10,2">views/list-separator.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="image">
-			<left>0</left>
 			<width>720</width>
 			<height>73</height>
 			<texture border="4">views/list-focus.png</texture>
@@ -2999,7 +2898,6 @@
 			<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + Skin.String(CommonListStyle,3)">ListViewScrollAnim</include>
 		</control>
 		<control type="image">
-			<left>0</left>
 			<width>720</width>
 			<height>73</height>
 			<texture border="4">views/list-alt-focus.png</texture>
@@ -3011,7 +2909,6 @@
 	
 	<include name="ListTallStyleNoFocus">
 		<control type="image">
-			<left>0</left>
 			<width>720</width>
 			<height>74</height>	
 			<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -3141,7 +3038,6 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
-					<top>0</top>
 					<width>186</width>
 					<height>250</height>
 					<texture background="true" border="14">covers/cover-case-thumbnail-nofocus.png</texture>
@@ -3150,7 +3046,6 @@
 				<control type="image">
 					<description>Default Cover</description>
 					<left>11</left>
-					<top>0</top>
 					<width>186</width>
 					<height>250</height>
 					<bordersize>25</bordersize>
@@ -3161,7 +3056,6 @@
 				<control type="image">
 					<description>Cover</description>
 					<left>11</left>
-					<top>0</top>
 					<width>186</width>
 					<height>250</height>
 					<bordersize>14</bordersize>
@@ -3305,7 +3199,6 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
-					<top>0</top>
 					<width>186</width>
 					<height>250</height>
 					<texture background="true" border="14">covers/cover-case-thumbnail-nofocus.png</texture>
@@ -3314,7 +3207,6 @@
 				<control type="image">
 					<description>Cover</description>
 					<left>11</left>
-					<top>0</top>
 					<width>186</width>
 					<height>250</height>
 					<bordersize>14</bordersize>
@@ -3324,7 +3216,6 @@
 				<control type="image">
 					<description>Default Cover</description>
 					<left>11</left>
-					<top>0</top>
 					<width>186</width>
 					<height>250</height>
 					<bordersize>25</bordersize>
@@ -3360,7 +3251,6 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<left>11</left>
-						<top>0</top>
 						<width>186</width>
 						<height>250</height>
 						<texture background="true" border="14">covers/cover-case-thumbnail-focus.png</texture>
@@ -3369,7 +3259,6 @@
 					<control type="image">
 						<description>Default Cover</description>
 						<left>11</left>
-						<top>0</top>
 						<width>186</width>
 						<height>250</height>
 						<bordersize>25</bordersize>
@@ -3379,7 +3268,6 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>11</left>
-						<top>0</top>
 						<width>186</width>
 						<height>250</height>
 						<bordersize>14</bordersize>
@@ -3528,7 +3416,6 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<left>11</left>
-						<top>0</top>
 						<width>186</width>
 						<height>250</height>
 						<texture background="true" border="14">covers/cover-case-thumbnail-focus.png</texture>
@@ -3537,7 +3424,6 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>11</left>
-						<top>0</top>
 						<width>186</width>
 						<height>250</height>
 						<bordersize>14</bordersize>
@@ -3547,7 +3433,6 @@
 					<control type="image">
 						<description>Default Cover</description>
 						<left>11</left>
-						<top>0</top>
 						<width>186</width>
 						<height>250</height>
 						<bordersize>25</bordersize>
@@ -3610,7 +3495,6 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<left>15</left>
-					<top>0</top>
 					<width>122</width>
 					<height>163</height>
 					<texture background="true" border="14">covers/cover-case-thumbnail-nofocus.png</texture>
@@ -3619,7 +3503,6 @@
 				<control type="image">
 					<description>Default Cover</description>
 					<left>15</left>
-					<top>0</top>
 					<width>122</width>
 					<height>163</height>
 					<bordersize>17</bordersize>
@@ -3630,7 +3513,6 @@
 				<control type="image">
 					<description>Cover</description>
 					<left>15</left>
-					<top>0</top>
 					<width>122</width>
 					<height>163</height>
 					<bordersize>12</bordersize>
@@ -3701,7 +3583,6 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<left>15</left>
-					<top>0</top>
 					<width>122</width>
 					<height>163</height>
 					<texture background="true" border="14">covers/cover-case-thumbnail-nofocus.png</texture>
@@ -3710,7 +3591,6 @@
 				<control type="image">
 					<description>Cover</description>
 					<left>15</left>
-					<top>0</top>
 					<width>122</width>
 					<height>163</height>
 					<bordersize>12</bordersize>
@@ -3720,7 +3600,6 @@
 				<control type="image">
 					<description>Default Cover</description>
 					<left>15</left>
-					<top>0</top>
 					<width>122</width>
 					<height>163</height>
 					<bordersize>17</bordersize>
@@ -3756,7 +3635,6 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<left>15</left>
-						<top>0</top>
 						<width>122</width>
 						<height>163</height>
 						<texture background="true" border="14">covers/cover-case-thumbnail-focus.png</texture>
@@ -3765,7 +3643,6 @@
 					<control type="image">
 						<description>Default Cover</description>
 						<left>15</left>
-						<top>0</top>
 						<width>122</width>
 						<height>163</height>
 						<bordersize>17</bordersize>
@@ -3775,7 +3652,6 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>15</left>
-						<top>0</top>
 						<width>122</width>
 						<height>163</height>
 						<bordersize>12</bordersize>
@@ -3851,7 +3727,6 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<left>15</left>
-						<top>0</top>
 						<width>122</width>
 						<height>163</height>
 						<texture background="true" border="14">covers/cover-case-thumbnail-focus.png</texture>
@@ -3860,7 +3735,6 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>15</left>
-						<top>0</top>
 						<width>122</width>
 						<height>163</height>
 						<bordersize>12</bordersize>
@@ -3870,7 +3744,6 @@
 					<control type="image">
 						<description>Default Cover</description>
 						<left>15</left>
-						<top>0</top>
 						<width>122</width>
 						<height>163</height>
 						<bordersize>17</bordersize>
@@ -4932,7 +4805,6 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<left>10</left>
-					<top>0</top>
 					<width>231</width>
 					<height>231</height>
 					<texture background="true" border="14">covers/cover-case-thumbnail-nofocus.png</texture>
@@ -4941,7 +4813,6 @@
 				<control type="image">
 					<description>Cover</description>
 					<left>10</left>
-					<top>0</top>
 					<width>231</width>
 					<height>231</height>
 					<bordersize>14</bordersize>
@@ -4951,7 +4822,6 @@
 				<control type="image">
 					<description>Default Cover</description>
 					<left>10</left>
-					<top>0</top>
 					<width>231</width>
 					<height>231</height>
 					<bordersize>45</bordersize>
@@ -4967,7 +4837,6 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<left>10</left>
-						<top>0</top>
 						<width>231</width>
 						<height>231</height>
 						<texture background="true" border="14">covers/cover-case-thumbnail-focus.png</texture>
@@ -4975,7 +4844,6 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>10</left>
-						<top>0</top>
 						<width>231</width>
 						<height>231</height>
 						<bordersize>14</bordersize>
@@ -4985,7 +4853,6 @@
 					<control type="image">
 						<description>Default Cover</description>
 						<left>10</left>
-						<top>0</top>
 						<width>231</width>
 						<height>231</height>
 						<bordersize>45</bordersize>
@@ -5017,7 +4884,6 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<left>5</left>
-					<top>0</top>
 					<width>168</width>
 					<height>168</height>
 					<texture background="true" border="14">covers/cover-case-thumbnail-nofocus.png</texture>
@@ -5026,7 +4892,6 @@
 				<control type="image">
 					<description>Cover</description>
 					<left>5</left>
-					<top>0</top>
 					<width>168</width>
 					<height>168</height>
 					<bordersize>12</bordersize>
@@ -5036,7 +4901,6 @@
 				<control type="image">
 					<description>Default Cover</description>
 					<left>5</left>
-					<top>0</top>
 					<width>168</width>
 					<height>168</height>
 					<bordersize>33</bordersize>
@@ -5052,7 +4916,6 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<left>5</left>
-						<top>0</top>
 						<width>168</width>
 						<height>168</height>
 						<texture background="true" border="14">covers/cover-case-thumbnail-focus.png</texture>
@@ -5060,7 +4923,6 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>5</left>
-						<top>0</top>
 						<width>168</width>
 						<height>168</height>
 						<bordersize>12</bordersize>
@@ -5070,7 +4932,6 @@
 					<control type="image">
 						<description>Default Cover</description>
 						<left>5</left>
-						<top>0</top>
 						<width>168</width>
 						<height>168</height>
 						<bordersize>33</bordersize>
@@ -9501,7 +9362,6 @@
 					<control type="grouplist">
 						<description>Director / Seasons / Artist / Formed / Born</description>
 						<left>10</left>
-						<top>0</top>
 						<width>430</width>
 						<orientation>horizontal</orientation>
 						<control type="label">
@@ -9734,7 +9594,6 @@
 						<description>Year</description>
 						<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
 						<left>64</left>
-						<top>0</top>
 						<width>370</width>
 						<orientation>horizontal</orientation>
 						<align>right</align>
@@ -9906,7 +9765,6 @@
 				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(3008)</oninfo>
 				<itemlayout height="37">
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>37</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -9948,14 +9806,12 @@
 				</itemlayout>		
 				<focusedlayout height="37">	
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>37</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>36</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -9965,7 +9821,6 @@
 						<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 					</control>
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>36</height>	
 						<texture border="4">views/list-alt-focus.png</texture>
@@ -10050,7 +9905,6 @@
 				<visible>!ListItem.IsParentFolder</visible>
 				<itemlayout height="37">
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>37</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
@@ -10178,14 +10032,12 @@
 				</itemlayout>		
 				<focusedlayout height="37">	
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>37</height>	
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>36</height>	
 						<texture border="4">views/list-focus.png</texture>
@@ -10202,7 +10054,6 @@
 						</animation>
 					</control>
 					<control type="image">
-						<left>0</left>
 						<width>354</width>
 						<height>36</height>	
 						<texture border="4">views/list-alt-focus.png</texture>
