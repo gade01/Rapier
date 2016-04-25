@@ -1433,7 +1433,8 @@
 					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
-				<include content="ThumbsInfoMediaInfoArea" condition="!ListItem.IsCollection">
+				<include content="ThumbsInfoMediaInfoArea">
+					<param name="visible" value="!ListItem.IsCollection" />
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[20339]" />
 					<param name="Grouplist1InfoWidth" value="190" />
@@ -1452,7 +1453,8 @@
 					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
 				</include>
 				
-				<include content="ThumbsInfoMediaInfoArea" condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">
+				<include content="ThumbsInfoMediaInfoArea">
+					<param name="visible" value="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)" />
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[20342]" />
 					<param name="Grouplist1InfoWidth" value="190" />
@@ -1692,7 +1694,8 @@
 					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
-				<include content="ThumbsInfoMediaInfoArea" condition="!ListItem.IsCollection">
+				<include content="ThumbsInfoMediaInfoArea">
+					<param name="visible" value="!ListItem.IsCollection" />
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[20339]" />
 					<param name="Grouplist1InfoWidth" value="190" />
@@ -1711,7 +1714,8 @@
 					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
 				</include>
 				
-				<include content="ThumbsInfoMediaInfoArea" condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">
+				<include content="ThumbsInfoMediaInfoArea">
+					<param name="visible" value="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)" />
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[20342]" />
 					<param name="Grouplist1InfoWidth" value="190" />
