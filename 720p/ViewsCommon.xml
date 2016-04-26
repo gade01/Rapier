@@ -285,12 +285,12 @@
 						<description>Cover</description>
 						<width>400</width>
 						<height>400</height>
-						<texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>14</bordersize>
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>	
-						<visible>String.IsEmpty(ListItem.Thumb) + Container.Content(Seasons) + !String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<visible>!String.IsEmpty(ListItem.Thumb) + !Container.Content(Seasons)</visible>
 					</control>
 					
 					<control type="image">
@@ -298,12 +298,12 @@
 						<top>395</top>
 						<width>400</width>
 						<height>400</height>
-						<texture background="true" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+						<texture background="true" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Thumb]</texture>
 						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>14</bordersize>
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<visible>String.IsEmpty(ListItem.Thumb) + Container.Content(Seasons) + !String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+						<visible>!String.IsEmpty(ListItem.Thumb) + !Container.Content(Seasons)</visible>
 					</control>
 					
 					<control type="image">
@@ -314,7 +314,8 @@
 						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 						<bordersize>14</bordersize>
 						<aspectratio aligny="bottom">keep</aspectratio>
-						<fadetime>IconCrossfadeTime</fadetime>	
+						<fadetime>IconCrossfadeTime</fadetime>
+						<include>BackgroundVisibleAnim</include>
 						<visible>Container.Content(Seasons)</visible>
 					</control>
 					
@@ -328,32 +329,8 @@
 						<bordersize>14</bordersize>
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
+						<include>BackgroundVisibleAnim</include>
 						<visible>Container.Content(Seasons)</visible>
-					</control>
-					
-					<control type="image">
-						<description>Cover</description>
-						<width>400</width>
-						<height>400</height>
-						<texture background="true">$INFO[ListItem.Thumb]</texture>
-						<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
-						<bordersize>14</bordersize>
-						<aspectratio aligny="bottom">keep</aspectratio>
-						<fadetime>IconCrossfadeTime</fadetime>	
-						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
-					</control>
-					
-					<control type="image">
-						<description>Cover Reflection</description>
-						<top>395</top>
-						<width>400</width>
-						<height>400</height>
-						<texture background="true" flipy="true" diffuse="views/reflection.png">$INFO[ListItem.Thumb]</texture>
-						<bordertexture flipy="true" border="11" diffuse="views/reflection.png">covers/cover-case-curved-big-focus.png</bordertexture>
-						<bordersize>14</bordersize>
-						<aspectratio aligny="top">keep</aspectratio>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					
 					<control type="image">
@@ -417,7 +394,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>String.IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
+						<visible>String.IsEmpty(ListItem.Thumb) + String.IsEmpty(Container.Art(tvshow.poster)) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 					</control>
 					
 					<control type="image">
@@ -459,7 +436,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>String.IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
+						<visible>String.IsEmpty(ListItem.Thumb) + String.IsEmpty(Container.Art(tvshow.poster)) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 					</control>
 					
 					<control type="image">
