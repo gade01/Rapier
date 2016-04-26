@@ -1776,7 +1776,7 @@
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<scroll>true</scroll>
-						<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label>
+						<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.LatestTitle), ,]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
 					</control>
 				</control>
 				
@@ -1799,7 +1799,7 @@
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<scroll>true</scroll>
-						<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label>
+						<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.NextTitle), ,]$INFO[Window(Home).Property(NextAired.NextDate), (,)]</label>
 					</control>
 				</control>
 				
@@ -1928,7 +1928,7 @@
 	
 	<include name="SeasonsListInfoPosterMode">
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + Container.Content(Seasons)</visible>
+			<visible>Container.Content(Seasons)</visible>
 			
 			<control type="image">
 				<description>Cover Background</description>
@@ -1976,7 +1976,7 @@
 				<font>MediaInfoFont2</font>
 				<textcolor>MediaInfoItemColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+				<label>[UPPERCASE]$VAR[SeasonGenre][/UPPERCASE]</label>
 				<scroll>true</scroll>
 			</control>
 			
@@ -2001,7 +2001,7 @@
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<scroll>true</scroll>
-						<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label>
+						<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.LatestTitle), ,]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
 					</control>
 				</control>
 				
@@ -2024,7 +2024,7 @@
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<scroll>true</scroll>
-						<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label>
+						<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.NextTitle), ,]$INFO[Window(Home).Property(NextAired.NextDate), (,)]</label>
 					</control>
 				</control>
 				
@@ -2061,7 +2061,7 @@
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
-				<label fallback="31203">$INFO[ListItem.Plot]</label>
+				<label fallback="31203">$INFO[Container.ShowPlot]</label>
 				<wrapmultiline>true</wrapmultiline>
 				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 				<include>ControlsOpenCloseAnim</include>
@@ -2078,7 +2078,7 @@
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
-				<label fallback="31203">$INFO[ListItem.Plot]</label>
+				<label fallback="31203">$INFO[Container.ShowPlot]</label>
 				<wrapmultiline>true</wrapmultiline>
 				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 				<include>ControlsOpenCloseAnim</include>
@@ -2104,7 +2104,7 @@
 					<width min="0" max="200">auto</width>
 					<include>ListInfoViewCatValueLabel</include>
 					<scroll>true</scroll>
-					<label fallback="31001">$INFO[ListItem.Studio]</label>
+					<label fallback="31001">$VAR[SeasonStudio]</label>
 				</control>
 				<include>ListInfoViewDot</include>
 				<control type="label">
@@ -2117,7 +2117,7 @@
 					<description>Premiered Value</description>
 					<width min="0" max="110">auto</width>
 					<include>ListInfoViewCatValueLabel</include>
-					<label fallback="31001">$INFO[ListItem.Premiered]</label>
+					<label fallback="31001">$VAR[SeasonPremiered]</label>
 				</control>
 				<include>ListInfoViewDot</include>
 				<control type="label">
@@ -3017,7 +3017,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<scroll>true</scroll>
-							<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label>
+							<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.LatestTitle), ,]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
 						</control>
 					</control>
 					
@@ -3041,7 +3041,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<scroll>true</scroll>
-							<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label>
+							<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.NextTitle), ,]$INFO[Window(Home).Property(NextAired.NextDate), (,)]</label>
 						</control>
 					</control>
 					
@@ -3451,7 +3451,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<scroll>true</scroll>
-							<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label>
+							<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.LatestTitle), ,]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
 						</control>
 					</control>
 					
@@ -3475,7 +3475,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<scroll>true</scroll>
-							<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label>
+							<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.NextTitle), ,]$INFO[Window(Home).Property(NextAired.NextDate), (,)]</label>
 						</control>
 					</control>
 					

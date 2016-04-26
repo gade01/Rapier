@@ -2949,7 +2949,7 @@
 					<control type="label">
 						<include>InfoPaneItemTitle</include>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
-						<visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)]
+						<visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(tvshow(1).clearlogo)) + String.IsEmpty(ListItem(2).Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)]
 						| [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]</visible>
 					</control>
 					
@@ -2961,12 +2961,18 @@
 					
 					<control type="group">
 						<visible>![Skin.HasSetting(ShowDVDThumbsRating) + [Container.Content(Movies) | Container.Content(TVShows)]] + !Skin.HasSetting(ShowDVDThumbsYear)</visible>
-						<animation effect="slide" end="0,10" time="100" condition="![[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						<animation effect="slide" end="0,10" time="100" condition="![[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(1).Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(2).Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
 							<label>$VAR[MovieGenre]</label>
-							<visible>Window.IsActive(Videos)</visible>
+							<visible>Window.IsActive(Videos) + !String.IsEmpty(ListItem.Genre)</visible>
+						</control>
+						
+						<control type="label">
+							<include>InfoPaneItemTitle2</include>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Container.Content(Seasons) + String.IsEmpty(ListItem.Genre)</visible>
 						</control>
 					</control>
 					
@@ -2994,11 +3000,18 @@
 					
 					<control type="group">
 						<visible>Skin.HasSetting(ShowDVDThumbsYear)</visible>
-						<animation effect="slide" end="0,10" time="100" condition="![[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
+						<animation effect="slide" end="0,10" time="100" condition="![[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(1).Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(2).Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]]">Conditional</animation>
 						
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
 							<label>$VAR[DVDThumbsViewYearLabelVar]</label>
+							<visible>!String.IsEmpty(ListItem.Year)</visible>
+						</control>
+						
+						<control type="label">
+							<include>InfoPaneItemTitle2</include>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Container.Content(Seasons) + String.IsEmpty(ListItem.Year)</visible>
 						</control>
 					</control>
 				</control>
@@ -5884,7 +5897,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<scroll>true</scroll>
-							<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label>
+							<label fallback="31001">$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.LatestTitle), ,]$INFO[Window(Home).Property(NextAired.LatestDate), (,)]</label>
 						</control>
 					</control>
 				
@@ -5907,7 +5920,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<scroll>true</scroll>
-							<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label>
+							<label fallback="31001">$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.]$INFO[Window(Home).Property(NextAired.NextTitle), ,]$INFO[Window(Home).Property(NextAired.NextDate), (,)]</label>
 						</control>
 					</control>
 					
