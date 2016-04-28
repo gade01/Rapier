@@ -241,6 +241,12 @@
 		<value condition="Control.HasFocus(7021)">$LOCALIZE[31460]</value>
 	</variable>
 	
+	<variable name="DialogSelectLabel2">
+		<value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion]</value>
+		<value condition="!String.IsEmpty(ListItem.AddonSummary)">$INFO[ListItem.AddonSummary]</value>
+		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+	
 	<include name="ScreenSize">
 		<width>ScreenWidth</width>
 		<height>ScreenHeight</height>
