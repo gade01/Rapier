@@ -1577,7 +1577,7 @@
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>!Control.HasFocus(15) + Skin.String(VideoInfoMenubar,MovieSet)</visible>
 						<include>DialogVideoInfoSimilar1</include>
-						<content target="video">videodb://movies/sets/$INFO[ListItem.SetID]</content>
+						<content target="video" sortby="year">videodb://movies/sets/$INFO[ListItem.SetID]</content>
 					</control>
 				</control>
 				
