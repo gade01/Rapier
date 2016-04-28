@@ -52,8 +52,8 @@
 					<onclick condition="String.IsEqual(ListItem.DBTYPE,movie) + Skin.String(DialogVideoInfoButtonMenu,writer)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=writer&amp;type=Movie)</onclick>
 					<onclick condition="String.IsEqual(ListItem.DBTYPE,episode) + Skin.String(DialogVideoInfoButtonMenu,director)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=director&amp;type=Episode)</onclick>
 					<onclick condition="String.IsEqual(ListItem.DBTYPE,episode) + Skin.String(DialogVideoInfoButtonMenu,writer)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=writer&amp;type=Episode)</onclick>
-					<onclick condition="String.IsEqual(ListItem.DBTYPE,musicvideos) + Skin.String(DialogVideoInfoButtonMenu,director)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=director&amp;type=MusicVideo)</onclick>
-					<onclick condition="String.IsEqual(ListItem.DBTYPE,musicvideos) + Skin.String(DialogVideoInfoButtonMenu,artist)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=MusicVideo)</onclick>
+					<onclick condition="String.IsEqual(ListItem.DBTYPE,musicvideo) + Skin.String(DialogVideoInfoButtonMenu,director)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=director&amp;type=MusicVideo)</onclick>
+					<onclick condition="String.IsEqual(ListItem.DBTYPE,musicvideo) + Skin.String(DialogVideoInfoButtonMenu,artist)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=MusicVideo)</onclick>
 					<onclick condition="String.IsEqual(ListItem.DBTYPE,album) + Skin.String(DialogVideoInfoButtonMenu,artist)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=Album)</onclick>
 					<width>300</width>
 					<textwidth>290</textwidth>
@@ -64,9 +64,9 @@
 					<description>Director / Writer / Artist Information</description>
 					<label>$VAR[DialogVideoInfoLabel]</label>
 					<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(980)</onclick>
-					<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideos)] + Skin.String(DialogVideoInfoButtonMenu,director)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director])</onclick>
+					<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)] + Skin.String(DialogVideoInfoButtonMenu,director)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director])</onclick>
 					<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode)] + Skin.String(DialogVideoInfoButtonMenu,writer)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
-					<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,musicvideos) | String.IsEqual(ListItem.DBTYPE,album)] + Skin.String(DialogVideoInfoButtonMenu,artist)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
+					<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,album)] + Skin.String(DialogVideoInfoButtonMenu,artist)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 					<width>300</width>
 					<textwidth>290</textwidth>
