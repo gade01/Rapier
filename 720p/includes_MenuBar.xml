@@ -429,9 +429,9 @@
 				<include>MenuBarBtn</include>
 				<align>center</align>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick condition="Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)">ActivateWindow(VideosSettings)</onclick>
-				<onclick condition="Window.IsVisible(MusicLibrary)">ActivateWindow(MusicSettings)</onclick>
-				<onclick condition="Window.IsVisible(Pictures)">ActivateWindow(PicturesSettings)</onclick>
+				<onclick condition="Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)">ActivateWindow(LibrarySettings,video)</onclick>
+				<onclick condition="Window.IsVisible(MusicLibrary)">ActivateWindow(LibrarySettings,music)</onclick>
+				<onclick condition="Window.IsVisible(Pictures)">ActivateWindow(LibrarySettings,pictures)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(MusicLibrary) | Window.IsVisible(Pictures)</visible>
 			</control>
@@ -807,82 +807,82 @@
 			<usecontrolcoords>true</usecontrolcoords>
 			<include>MenuBarBtnOpenCloseAnim</include>
 			<control type="button" id="101">
-				<description>Appearance</description>
+				<description>Interface</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[480][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(AppearanceSettings)</onclick>	
-			</control>	
+				<label>[UPPERCASE]$LOCALIZE[14206][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(InterfaceSettings)</onclick>	
+			</control>
 			<control type="image" id="116">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="104">
-				<description>Music</description>
+				<description>Skin</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[2][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(MusicSettings)</onclick>	
+				<label>[UPPERCASE]$LOCALIZE[166][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(SkinSettings)</onclick>
 			</control>
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="105">
-				<description>Videos</description>
+				<description>Player</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[3][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(VideosSettings)</onclick>	
+				<label>[UPPERCASE]$LOCALIZE[14200][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(PlayerSettings)</onclick>	
 			</control>
 			<control type="image" id="120">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="110">
-				<description>PVR</description>
+				<description>Library</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[31909][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(PVRSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[14202][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(LibrarySettings)</onclick>	
 			</control>
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="103">
-				<description>Pictures</description>
+				<description>PVR</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[1][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(PicturesSettings)</onclick>	
+				<label>[UPPERCASE]$LOCALIZE[31909][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(PVRSettings)</onclick>
 			</control>
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="106">
-				<description>Weather</description>
-				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[8][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(WeatherSettings)</onclick>	
-			</control>
-			<control type="image" id="121">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="107">
 				<description>Services</description>
 				<include>MenuBarSettingsBtn2</include>
 				<label>[UPPERCASE]$LOCALIZE[14036][/UPPERCASE]</label>
 				<onclick>ReplaceWindow(ServiceSettings)</onclick>	
 			</control>
-			<control type="image" id="122">
+			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="108">
+			<control type="button" id="107">
 				<description>System</description>
 				<include>MenuBarSettingsBtn2</include>
 				<label>[UPPERCASE]$LOCALIZE[13000][/UPPERCASE]</label>
 				<onclick>ReplaceWindow(SystemSettings)</onclick>	
 			</control>
+			<control type="image" id="122">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="108">
+				<description>Profiles</description>
+				<include>MenuBarSettingsBtn2</include>
+				<label>[UPPERCASE]$LOCALIZE[13200][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(Profiles)</onclick>
+			</control>
 			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="109">
-				<description>Skin</description>
+				<description>Add-ons</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[166][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(SkinSettings)</onclick>	
+				<label>[UPPERCASE]$LOCALIZE[24001][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(AddonBrowser)</onclick>
 			</control>
 		</control>
 	</include>
@@ -1659,41 +1659,6 @@
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 			</control>
 			<control type="image" id="355">
-				<include>MenuBarSeparator</include>
-			</control>
-		</control>
-	</include>	
-
-	<include name="ProfileSettingsMenuBar">
-		<control type="grouplist" id="850">
-			<left>2</left>
-			<width>ScreenWidth</width>
-			<height>MenuBarHeight</height>
-			<itemgap>0</itemgap>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<onup>555</onup>
-			<ondown>2</ondown>
-			<onleft>850</onleft>
-			<onright>850</onright>
-			<include>MenuBarBtnOpenCloseAnim</include>
-			<control type="radiobutton" id="4">
-				<description>Enable Login Screen</description>
-				<include>MenuBarRadioBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[20096][/UPPERCASE]</label>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-			</control>	
-			<control type="image" id="116">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="5">
-				<description>Auto Login</description>
-				<include>MenuBarRadioBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31960][/UPPERCASE]</label>
-				<!--<label2>$INFO[System.ProfileAutoLogin]</label2>-->
-				<enable>!System.HasLoginScreen + !Skin.HasSetting(EnableKioskMode)</enable>
-			</control>	
-			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
 			</control>
 		</control>

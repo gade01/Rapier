@@ -25,6 +25,17 @@
 		<value condition="String.IsEqual(Container.FolderPath,special://musicplaylists/) | String.EndsWith(Container.FolderPath,.m3u)">$LOCALIZE[136]</value>
 	</variable>
 	
+	<variable name="BreadCrumbSettingsLabel">
+		<value condition="Window.IsActive(InterfaceSettings)">$LOCALIZE[14206]</value>
+		<value condition="Window.IsActive(SkinSettings)">$LOCALIZE[166]</value>
+		<value condition="Window.IsActive(PlayerSettings)">$LOCALIZE[14200]</value>
+		<value condition="Window.IsActive(LibrarySettings)">$LOCALIZE[14202]</value>
+		<value condition="Window.IsActive(PVRSettings)">$LOCALIZE[31909]</value>
+		<value condition="Window.IsActive(ServiceSettings)">$LOCALIZE[14036]</value>
+		<value condition="Window.IsActive(SystemSettings)">$LOCALIZE[13000]</value>
+		<value condition="Window.IsActive(Profiles)">$LOCALIZE[13200]</value>
+	</variable>
+	
 	<include name="BreadCrumbHomeIcon">	
 		<top>12</top>
 		<width>20</width>
@@ -788,66 +799,9 @@
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5502">
-				<description>Appearance</description>
+				<description>Label</description>
 				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[480][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(AppearanceSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5503">
-				<description>Music</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[2][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(MusicSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5504">
-				<description>Videos</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[3][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(VideosSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5505">
-				<description>Pictures</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[1][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(PicturesSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5506">
-				<description>Weather</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[8][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(WeatherSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5507">
-				<description>Services</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[14036][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(ServiceSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5508">
-				<description>System</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[13000][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(SystemSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5509">
-				<description>Skin</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[166][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(SkinSettings)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5510">
-				<description>PVR</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[31909][/B][/UPPERCASE]</label>
-				<visible>Window.IsActive(PVRSettings)</visible>
+				<label>[UPPERCASE][B]$VAR[BreadCrumbSettingsLabel][/B][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="image">
@@ -855,36 +809,6 @@
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
 		</control>
-	</include>
-	
-	<include name="BreadCrumbProfilesSettings">	
-		<control type="grouplist">
-			<left>10</left>
-			<top>StatusBartop</top>
-			<height>43</height>
-			<width>740</width>
-			<itemgap>8</itemgap>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<control type="button" id="555">
-				<include>BreadCrumbHomeIcon</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<control type="label" id="5501">
-				<description>Profiles</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE][B]$LOCALIZE[13200][/B][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-		</control>	
 	</include>
 	
 	<include name="BreadCrumbMediaInfo">

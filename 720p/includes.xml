@@ -205,27 +205,29 @@
     </variable>
 	
 	<variable name="SettingsMenubarDescription">
-		<value condition="Control.HasFocus(101)">$LOCALIZE[31951]</value>
-		<value condition="Control.HasFocus(104)">$LOCALIZE[31952]</value>
-		<value condition="Control.HasFocus(105)">$LOCALIZE[31953]</value>
-		<value condition="Control.HasFocus(110)">$LOCALIZE[31954]</value>
-		<value condition="Control.HasFocus(103)">$LOCALIZE[31955]</value>
-		<value condition="Control.HasFocus(106)">$LOCALIZE[31956]</value>
-		<value condition="Control.HasFocus(107)">$LOCALIZE[31957]</value>
-		<value condition="Control.HasFocus(108)">$LOCALIZE[31958]</value>
-		<value condition="Control.HasFocus(109)">$LOCALIZE[31959]</value>
+		<value condition="Control.HasFocus(101)">$LOCALIZE[31136]</value>
+		<value condition="Control.HasFocus(104)">$LOCALIZE[31959]</value>
+		<value condition="Control.HasFocus(105)">$LOCALIZE[31140]</value>
+		<value condition="Control.HasFocus(110)">$LOCALIZE[31141]</value>
+		<value condition="Control.HasFocus(103)">$LOCALIZE[31954]</value>
+		<value condition="Control.HasFocus(106)">$LOCALIZE[31139]</value>
+		<value condition="Control.HasFocus(107)">$LOCALIZE[31137]</value>
+		<value condition="Control.HasFocus(108)">$LOCALIZE[31138]</value>
+		<value condition="Control.HasFocus(109)">$LOCALIZE[31142]</value>
+		
 	</variable>
 	
 	<variable name="SkinSettingsAddonsDescription">
-		<value condition="Control.HasFocus(7002)">$LOCALIZE[31439]</value>
-		<value condition="Control.HasFocus(7003)">$LOCALIZE[31440]</value>
-		<value condition="Control.HasFocus(7005)">$LOCALIZE[31441]</value>
-		<value condition="Control.HasFocus(7006)">$LOCALIZE[31442]</value>
+		<value condition="Control.HasFocus(7002)">($LOCALIZE[31462]) $LOCALIZE[31439]</value>
+		<value condition="Control.HasFocus(7003)">($LOCALIZE[31462]) $LOCALIZE[31440]</value>
+		<value condition="Control.HasFocus(7004)">($LOCALIZE[31462])</value>
+		<value condition="Control.HasFocus(7005)">($LOCALIZE[31462]) $LOCALIZE[31441]</value>
+		<value condition="Control.HasFocus(7006)">($LOCALIZE[31462]) $LOCALIZE[31442]</value>
 		<value condition="Control.HasFocus(7007)">$LOCALIZE[31443]</value>
-		<value condition="Control.HasFocus(7009)">$LOCALIZE[31444]</value>
-		<value condition="Control.HasFocus(7010)">$LOCALIZE[31445]</value>
-		<value condition="Control.HasFocus(7011)">$LOCALIZE[31446]</value>
-		<value condition="Control.HasFocus(7012)">$LOCALIZE[31447]</value>
+		<value condition="Control.HasFocus(7009)">($LOCALIZE[31462]) $LOCALIZE[31444]</value>
+		<value condition="Control.HasFocus(7010)">($LOCALIZE[31462]) $LOCALIZE[31445]</value>
+		<value condition="Control.HasFocus(7011)">($LOCALIZE[31462]) $LOCALIZE[31446]</value>
+		<value condition="Control.HasFocus(7012)">($LOCALIZE[31462]) $LOCALIZE[31447]</value>
 		<value condition="Control.HasFocus(7013)">$LOCALIZE[31448]</value>
 		<value condition="Control.HasFocus(7022)">$LOCALIZE[31449]</value>
 		<value condition="Control.HasFocus(7024)">$LOCALIZE[31450]</value>
@@ -245,6 +247,11 @@
 		<value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion]</value>
 		<value condition="!String.IsEmpty(ListItem.AddonSummary)">$INFO[ListItem.AddonSummary]</value>
 		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+	
+	<variable name="ViewOptionsScrollbarLabel">
+		<value condition="Skin.HasSetting(EnableQuickJump)">$LOCALIZE[31135]</value>
+		<value>$LOCALIZE[31025]</value>
 	</variable>
 	
 	<include name="ScreenSize">

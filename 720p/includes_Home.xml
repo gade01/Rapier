@@ -1123,7 +1123,7 @@
 						<label>system</label>
 						<icon>homecategories/$INFO[System.Language]/system-text-nofocus.png</icon>
 						<include condition="Skin.String(CustomSystemBGType,2) | Skin.String(CustomSystemBGType,3)">HomeSystemCustomBGPath</include>
-						<onclick>ActivateWindow(AppearanceSettings)</onclick>    
+						<onclick>ActivateWindow(InterfaceSettings)</onclick>    
 						<visible>!Skin.HasSetting(HideSystemCategory)</visible>
 					</item>
 					<item id="25">
@@ -2493,7 +2493,7 @@
 					<item id="2">
 						<description>Settings</description>
 						<label>$LOCALIZE[5]</label>
-						<onclick>ActivateWindow(AppearanceSettings)</onclick>
+						<onclick>ActivateWindow(InterfaceSettings)</onclick>
 						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + ![System.HasAddon(service.openelec.settings) + System.Platform.Linux.RaspberryPi]</visible>
 					</item>
 					<item id="2">
