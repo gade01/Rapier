@@ -53,7 +53,7 @@
 					<usealttexture>Skin.HasSetting(SkinDateFormat)</usealttexture>
 					<onclick>Skin.ToggleSetting(SkinDateFormat)</onclick>
 					<visible>!Skin.HasSetting(HideTopBarDate)</visible>
-				</control>				
+				</control>
 				<control type="radiobutton" id="1012">
 					<description>Hide Top Media Menu Bar</description>
 					<include>SettingsContentRadioBtn</include>
@@ -69,6 +69,15 @@
 					<selected>Skin.HasSetting(HideTopBar)</selected>
 					<enable>Skin.HasSetting(HideMenuBar)</enable>
 					<onclick>Skin.ToggleSetting(HideTopBar)</onclick>
+				</control>
+				<control type="togglebutton" id="1002">
+					<description>Scrollbar / Quick Jump</description>
+					<include>SettingsContentToggleBtn</include>
+					<label>$LOCALIZE[31133]</label>
+					<altlabel>$LOCALIZE[31134]</altlabel>
+					<usealttexture>Skin.HasSetting(EnableQuickJump) + System.HasAddon(script.skin.helper.service)</usealttexture>
+					<onclick condition="System.HasAddon(script.skin.helper.service)">Skin.ToggleSetting(EnableQuickJump)</onclick>
+					<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
 				</control>
 				<control type="radiobutton" id="1014">
 					<description>Enable Battery Notification</description>
