@@ -9,7 +9,7 @@
 			<include>WideListViewContentPanel</include>
 					
 			<control type="list" id="75">	
-				<viewtype>Wide List</viewtype>
+				<viewtype label="31114">Wide List</viewtype>
 				<left>37</left>
 				<top>90</top>
 				<width>1188</width>
@@ -4133,7 +4133,7 @@
 					<preloaditems>2</preloaditems>
 					<scrolltime tween="sine" easing="inout">401</scrolltime>
 					<onup>850</onup>
-					<ondown condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">908</ondown>
+					<ondown condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">150</ondown>
 					<ondown condition="Skin.HasSetting(HideRecommendedViewScrollbar)">581</ondown>
 					<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(3008)</oninfo>
 					<itemlayout width="128">
@@ -4378,8 +4378,30 @@
 					</control>
 				</control>
 				
-				<control type="group">
-					<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(HideRecommendedViewScrollbar)">Conditional</animation>
+				<control type="group" id="150">
+					<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideRecommendedViewScrollbar)">Conditional</animation>
+					
+					<control type="image">
+						<left>15</left>
+						<top>239</top>
+						<width>1250</width>
+						<height>15</height>
+						<texture border="4">controls/scrollbar-background.png</texture>
+						<animation effect="fade" start="100" end="0" time="150" condition="!Control.HasFocus(958)">Conditional</animation>
+						<visible>Skin.HasSetting(EnableQuickJump)</visible>
+					</control>
+					
+					<control type="panel" id="958">
+						<ondown>581</ondown>
+						<animation effect="fade" start="100" end="0" time="150" condition="!Control.HasFocus(958)">Conditional</animation>
+						<include name="QuickJumpHorizontalLayout">
+							<param name="left" value="6" />
+							<param name="top" value="238" />
+							<param name="width" value="1269" />
+							<param name="itemwidth" value="47" />
+						</include>
+					</control>
+					
 					<control type="scrollbar" id="908">
 						<depth>DepthContent+</depth>
 						<left>15</left>
@@ -4393,7 +4415,8 @@
 						<textureslidernibfocus>-</textureslidernibfocus>
 						<onup>582</onup>
 						<ondown>581</ondown>
-						<animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(908)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="150" condition="!Control.HasFocus(908)">Conditional</animation>
+						<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 					</control>
 				</control>
 			</control>
@@ -4441,7 +4464,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>2</preloaditems>
 					<scrolltime tween="sine" easing="inout">401</scrolltime>
-					<onup condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">908</onup>
+					<onup condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">150</onup>
 					<onup condition="Skin.HasSetting(HideRecommendedViewScrollbar)">582</onup>
 					<ondown condition="!Skin.HasSetting(HideRecommendedViewScrollbar)">907</ondown>
 					<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(581).ListItem.Title]))</oninfo>
@@ -4663,7 +4686,7 @@
 				</control>
 				
 				<control type="group">
-					<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(HideRecommendedViewScrollbar)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideRecommendedViewScrollbar)">Conditional</animation>
 					<control type="scrollbar" id="907">
 						<depth>DepthContent+</depth>
 						<left>15</left>
@@ -4676,7 +4699,7 @@
 						<textureslidernib>-</textureslidernib>
 						<textureslidernibfocus>-</textureslidernibfocus>
 						<onup>581</onup>
-						<animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(907)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="150" condition="!Control.HasFocus(907)">Conditional</animation>
 					</control>
 				</control>
 			</control>

@@ -70,6 +70,15 @@
 					<enable>Skin.HasSetting(HideMenuBar)</enable>
 					<onclick>Skin.ToggleSetting(HideTopBar)</onclick>
 				</control>
+				<control type="togglebutton" id="1002">
+					<description>Scrollbar / Quick Jump</description>
+					<include>SettingsContentToggleBtn</include>
+					<label>$LOCALIZE[31133]</label>
+					<altlabel>$LOCALIZE[31134]</altlabel>
+					<usealttexture>Skin.HasSetting(EnableQuickJump) + System.HasAddon(script.skin.helper.service)</usealttexture>
+					<onclick>Skin.ToggleSetting(EnableQuickJump)</onclick>
+					<visible>System.HasAddon(script.skin.helper.service)</visible>
+				</control>
 				<control type="radiobutton" id="1014">
 					<description>Enable Battery Notification</description>
 					<include>SettingsContentRadioBtn</include>

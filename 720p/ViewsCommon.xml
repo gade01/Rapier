@@ -5428,7 +5428,7 @@
 				<onleft>588</onleft>
 				<onright>588</onright>
 				<onup>850</onup>
-				<ondown>929</ondown>
+				<ondown>150</ondown>
 				<pagecontrol>929</pagecontrol>
 				<orientation>horizontal</orientation>
 				<focusposition>4</focusposition>	
@@ -8668,7 +8668,7 @@
 					<depth>DepthContent+</depth>
 					<left>543</left>
 					<top>425</top>
-					<animation effect="zoom" start="100" end="70" center="643,495" time="300" tween="circle" easing="inout" condition="Control.HasFocus(929) | ControlGroup(850).HasFocus">Conditional</animation>
+					<animation effect="zoom" start="100" end="70" center="643,495" time="300" tween="circle" easing="inout" condition="ControlGroup(150).HasFocus | ControlGroup(850).HasFocus | Control.HasFocus(555)">Conditional</animation>
 					<animation effect="zoom" start="75" end="100" center="643,470" easing="inout" time="300">Visible</animation>
 					<control type="group">
 						<control type="image">
@@ -8777,14 +8777,14 @@
 				<include>BottomPaneOpenCloseAnim</include>
 			</control>
 			
-			<control type="group">
+			<control type="group" id="150">
 				<depth>DepthContent+</depth>
-				<animation type="Conditional" condition="Control.HasFocus(929)" reversible="false">
+				<animation type="Conditional" condition="ControlGroup(150).HasFocus" reversible="false">
 					<effect type="fade" start="0" end="100" time="200"/>
 					<effect type="zoom" start="70" end="100" center="640,687" time="400" tween="back" easing="inout"/>
 				</animation>
 				
-				<animation type="Conditional" condition="!Control.HasFocus(929)" reversible="false">
+				<animation type="Conditional" condition="!ControlGroup(150).HasFocus" reversible="false">
 					<effect type="fade" start="100" end="0" time="200" delay="200"/>
 					<effect type="zoom" start="100" end="70" center="640,687" time="400" tween="back" easing="inout"/>
 				</animation>
@@ -8795,6 +8795,18 @@
 					<width>180</width>
 					<height>14</height>
 					<texture border="4">controls/scrollbar-background.png</texture>
+				</control>
+				
+				<control type="panel" id="979">
+					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
+					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
+					<ondown condition="Container.Content(Episodes) + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</ondown>
+					<include name="QuickJumpHorizontalLayout">
+						<param name="left" value="550" />
+						<param name="top" value="678" />
+						<param name="width" value="180" />
+						<param name="itemwidth" value="20" />
+					</include>
 				</control>
 				
 				<control type="scrollbar" id="929">
@@ -8811,6 +8823,7 @@
 					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
 					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
 					<ondown condition="Container.Content(Episodes) + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</ondown>
+					<visible>!Skin.HasSetting(EnableQuickJump)</visible> 
 				</control>
 			</control>
 
@@ -9899,7 +9912,7 @@
 				<scrolltime tween="sine" easing="inout">300</scrolltime>
 				<onup>585</onup>
 				<ondown>585</ondown>
-				<onleft condition="IntegerGreaterThan(Container(585).NumPages,1)">150</onleft>
+				<onleft condition="IntegerGreaterThan(Container(585).NumPages,1)">152</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(585).NumPages,1)">850</onleft>
 				<onright>584</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
@@ -10011,24 +10024,42 @@
 				</focusedlayout>		
 			</control>
 		
-			<control type="image">
-				<left>34</left>
-				<top>110</top>
-				<width>12</width>
-				<height>517</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
+			<control type="group" id="152">
+				<control type="image">
+					<left>34</left>
+					<top>110</top>
+					<width>12</width>
+					<height>517</height>
+					<texture border="4">controls/scrollbar-background.png</texture>
+				</control>
+				
+				<control type="group">
+					<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideExtendedListViewScrollbar) + !ControlGroup(152).HasFocus">Conditional</animation>
+					
+					<control type="panel" id="970">
+						<onleft>850</onleft>
+						<onup>850</onup>
+						<onright>585</onright>
+						<include name="QuickJumpVerticalLayout">
+							<param name="left" value="34" />
+							<param name="top" value="113" />
+							<param name="height" value="514" />
+							<param name="itemheight" value="19" />
+						</include>
+					</control>
 			
-			<control type="scrollbar" id="150">
-				<left>34</left>
-				<top>110</top>
-				<width>12</width>
-				<height>517</height>
-				<texturesliderbackground>-</texturesliderbackground>
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideExtendedListViewScrollbar) + !Control.HasFocus(150)">Conditional</animation>
-				<onup>850</onup>
-				<onleft>850</onleft>
-				<onright>585</onright>
+					<control type="scrollbar" id="150">
+						<left>34</left>
+						<top>110</top>
+						<width>12</width>
+						<height>517</height>
+						<texturesliderbackground>-</texturesliderbackground>
+						<onup>850</onup>
+						<onleft>850</onleft>
+						<onright>585</onright>
+						<visible>!Skin.HasSetting(EnableQuickJump)</visible>
+					</control>
+				</control>
 			</control>
 			
 			<control type="list" id="584">
@@ -10461,7 +10492,7 @@
 				<top>430</top>
 				<width>560</width>
 				<height>500</height>
-				<pagecontrol>150</pagecontrol>
+				<pagecontrol>930</pagecontrol>
 				<onup>850</onup>
 				<ondown>150</ondown>
 				<onleft>583</onleft>
@@ -10703,14 +10734,14 @@
 				</control>
 			</control>
 			
-			<control type="group">
+			<control type="group" id="150">
 				<depth>DepthContent+</depth>
-				<animation type="Conditional" condition="Control.HasFocus(150)" reversible="false">
+				<animation type="Conditional" condition="ControlGroup(150).HasFocus" reversible="false">
 					<effect type="fade" start="0" end="100" time="200"/>
 					<effect type="zoom" start="70" end="100" center="640,699" time="400" tween="back" easing="inout"/>
 				</animation>
 				
-				<animation type="Conditional" condition="!Control.HasFocus(150)" reversible="false">
+				<animation type="Conditional" condition="!ControlGroup(150).HasFocus" reversible="false">
 					<effect type="fade" start="100" end="0" time="200" delay="200"/>
 					<effect type="zoom" start="100" end="70" center="640,699" time="400" tween="back" easing="inout"/>
 				</animation>
@@ -10723,6 +10754,17 @@
 					<texture border="4">controls/scrollbar-background.png</texture>
 				</control>
 				
+				<control type="panel" id="980">
+					<ondown condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
+					<ondown condition="IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
+					<include name="QuickJumpHorizontalLayout">
+						<param name="left" value="540" />
+						<param name="top" value="690" />
+						<param name="width" value="204" />
+						<param name="itemwidth" value="18" />
+					</include>
+				</control>
+				
 				<control type="scrollbar" id="150">
 					<left>538</left>
 					<top>692</top>
@@ -10733,9 +10775,10 @@
 					<texturesliderbarfocus border="2">controls/scrollbar-slider-horz-focus.png</texturesliderbarfocus>
 					<textureslidernib>-</textureslidernib>
 					<textureslidernibfocus>-</textureslidernibfocus>
-					<onup>588</onup>
+					<onup>500</onup>
 					<ondown condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
 					<ondown condition="IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
+					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 				</control>
 			</control>
 			
