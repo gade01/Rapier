@@ -1369,7 +1369,7 @@
 			<control type="radiobutton" id="1032">
 				<description>Extended List Hide Scrollbar 2</description>
 				<include>DropDownMenuRadioBtn</include>
-				<label>$VAR[ViewOptionsScrollbarLabel] $NUMBER[2]</label>
+				<label>$LOCALIZE[31025] $NUMBER[2]</label>
 				<selected>Skin.HasSetting(HideExtendedListViewScrollbar2)</selected>
 				<onclick>Skin.ToggleSetting(HideExtendedListViewScrollbar2)</onclick>
 				<visible>[Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)] + Skin.String(CurrentViewMode,585)</visible>

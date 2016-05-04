@@ -22,8 +22,9 @@
 				<onup>590</onup>
 				<ondown>590</ondown>
 				<onleft>850</onleft>
-				<onright condition="Control.IsVisible(920)">150</onright>
-				<onright condition="!Control.IsVisible(920)">ActivateWindow(1122)</onright>			
+				<onright condition="Control.IsVisible(920) | Control.IsVisible(970)">150</onright>
+				<onright condition="![Control.IsVisible(920) | Control.IsVisible(970)]">ActivateWindow(1122)</onright>
+				<oninfo>ActivateWindow(1122)</oninfo>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<include condition="Skin.String(ProgramsListInfoStyle,1) | Skin.String(ProgramsListInfoStyle,3)">ProgramsListInfoItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfoStyle,) | Skin.String(ProgramsListInfoStyle,2)">ProgramsListInfoTallStyleItemLayout</include>
@@ -66,8 +67,9 @@
 				<onup>591</onup>
 				<ondown>591</ondown>
 				<onleft>850</onleft>
-				<onright condition="Control.IsVisible(921)">150</onright>
-				<onright condition="!Control.IsVisible(921)">ActivateWindow(1122)</onright>			
+				<onright condition="Control.IsVisible(921) | Control.IsVisible(971)">150</onright>
+				<onright condition="![Control.IsVisible(921) | Control.IsVisible(971)]">ActivateWindow(1122)</onright>
+				<oninfo>ActivateWindow(1122)</oninfo>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<include condition="Skin.String(ProgramsListInfo2Style,1) | Skin.String(ProgramsListInfo2Style,3)">ProgramsListInfoItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfo2Style,) | Skin.String(ProgramsListInfo2Style,2)">ProgramsListInfo2TallStyleItemLayout</include>
@@ -110,8 +112,9 @@
 				<onup>592</onup>
 				<ondown>592</ondown>
 				<onleft>850</onleft>
-				<onright condition="Control.IsVisible(922)">150</onright>
-				<onright condition="!Control.IsVisible(922)">ActivateWindow(1122)</onright>			
+				<onright condition="Control.IsVisible(922) | Control.IsVisible(972)">150</onright>
+				<onright condition="![Control.IsVisible(922) | Control.IsVisible(972)]">ActivateWindow(1122)</onright>
+				<oninfo>ActivateWindow(1122)</oninfo>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<include condition="Skin.String(ProgramsListInfo3Style,1) | Skin.String(ProgramsListInfo3Style,3)">ProgramsListInfoItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfo3Style,) | Skin.String(ProgramsListInfo3Style,2)">ProgramsListInfo3TallStyleItemLayout</include>
@@ -703,6 +706,7 @@
 				<onright>150</onright>
 				<onup>593</onup>
 				<ondown>593</ondown>
+				<oninfo>ActivateWindow(1122)</oninfo>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<itemlayout width="129" height="172">
 					<control type="image">
@@ -857,6 +861,7 @@
 				<onright>150</onright>
 				<onup>594</onup>
 				<ondown>594</ondown>
+				<oninfo>ActivateWindow(1122)</oninfo>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<itemlayout width="129" height="129">
 					<control type="image">
@@ -1011,6 +1016,7 @@
 				<onright>150</onright>
 				<onup>595</onup>
 				<ondown>595</ondown>
+				<oninfo>ActivateWindow(1122)</oninfo>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<itemlayout width="155" height="129">
 					<control type="image">
@@ -1414,8 +1420,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(926)">150</ondown>
-			<ondown condition="!Control.IsVisible(926)">ActivateWindow(1122)</ondown>
+			<ondown condition="Control.IsVisible(926) | Control.IsVisible(976)">150</ondown>
+			<ondown condition="![Control.IsVisible(926) | Control.IsVisible(976)]">ActivateWindow(1122)</ondown>
+			<oninfo>ActivateWindow(1122)</oninfo>
 			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="150">
 				<control type="image">
@@ -1685,8 +1692,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">500</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(926)">150</ondown>
-			<ondown condition="!Control.IsVisible(926)">ActivateWindow(1122)</ondown>
+			<ondown condition="Control.IsVisible(926) | Control.IsVisible(976)">150</ondown>
+			<ondown condition="![Control.IsVisible(926) | Control.IsVisible(976)]">ActivateWindow(1122)</ondown>
+			<oninfo>ActivateWindow(1122)</oninfo>
 			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="214">
 				<control type="image">
@@ -1967,8 +1975,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(927)">150</ondown>
-			<ondown condition="!Control.IsVisible(927)">ActivateWindow(1122)</ondown>
+			<ondown condition="Control.IsVisible(927) | Control.IsVisible(977)">150</ondown>
+			<ondown condition="![Control.IsVisible(927) | Control.IsVisible(977)]">ActivateWindow(1122)</ondown>
+			<oninfo>ActivateWindow(1122)</oninfo>
 			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="150">
 				<control type="image">
@@ -2238,8 +2247,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">500</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(927)">150</ondown>
-			<ondown condition="!Control.IsVisible(927)">ActivateWindow(1122)</ondown>
+			<ondown condition="Control.IsVisible(927) | Control.IsVisible(977)">150</ondown>
+			<ondown condition="![Control.IsVisible(927) | Control.IsVisible(977)]">ActivateWindow(1122)</ondown>
+			<oninfo>ActivateWindow(1122)</oninfo>
 			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="214">
 				<control type="image">
@@ -2510,8 +2520,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(928)">150</ondown>
-			<ondown condition="!Control.IsVisible(928)">ActivateWindow(1122)</ondown>
+			<ondown condition="Control.IsVisible(928) | Control.IsVisible(978)">150</ondown>
+			<ondown condition="![Control.IsVisible(928) | Control.IsVisible(978)]">ActivateWindow(1122)</ondown>
+			<oninfo>ActivateWindow(1122)</oninfo>
 			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="209">
 				<control type="image">

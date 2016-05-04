@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="PVRBreadCrumbLabel">
-		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$LOCALIZE[19019]</value>
-		<value condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">$LOCALIZE[22020]</value>
-		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$LOCALIZE[19017]</value>
-		<value condition="Window.IsActive(TVSearch) | Window.IsActive(RadioSearch)">$LOCALIZE[137]</value>
-		<value condition="Window.IsActive(TVTimers) | Window.IsActive(RadioTimers)">$LOCALIZE[19040]</value>
-		<value condition="Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)">$LOCALIZE[19138]</value>
+		<value condition="Window.IsVisible(TVChannels) | Window.IsVisible(RadioChannels)">$LOCALIZE[19019]</value>
+		<value condition="Window.IsVisible(TVGuide) | Window.IsVisible(RadioGuide)">$LOCALIZE[22020]</value>
+		<value condition="Window.IsVisible(TVRecordings) | Window.IsVisible(RadioRecordings)">$LOCALIZE[19017]</value>
+		<value condition="Window.IsVisible(TVSearch) | Window.IsVisible(RadioSearch)">$LOCALIZE[137]</value>
+		<value condition="Window.IsVisible(TVTimers) | Window.IsVisible(RadioTimers)">$LOCALIZE[19040]</value>
+		<value condition="Window.IsVisible(TVTimerRules) | Window.IsVisible(RadioTimerRules)">$LOCALIZE[19138]</value>
 	</variable>
 	
 	<variable name="MusicLibraryBreadCrumbsLabel">
@@ -26,14 +26,14 @@
 	</variable>
 	
 	<variable name="BreadCrumbSettingsLabel">
-		<value condition="Window.IsActive(InterfaceSettings)">$LOCALIZE[14206]</value>
-		<value condition="Window.IsActive(SkinSettings)">$LOCALIZE[166]</value>
-		<value condition="Window.IsActive(PlayerSettings)">$LOCALIZE[14200]</value>
-		<value condition="Window.IsActive(LibrarySettings)">$LOCALIZE[14202]</value>
-		<value condition="Window.IsActive(PVRSettings)">$LOCALIZE[31909]</value>
-		<value condition="Window.IsActive(ServiceSettings)">$LOCALIZE[14036]</value>
-		<value condition="Window.IsActive(SystemSettings)">$LOCALIZE[13000]</value>
-		<value condition="Window.IsActive(Profiles)">$LOCALIZE[13200]</value>
+		<value condition="Window.IsVisible(InterfaceSettings)">$LOCALIZE[14206]</value>
+		<value condition="Window.IsVisible(SkinSettings)">$LOCALIZE[166]</value>
+		<value condition="Window.IsVisible(PlayerSettings)">$LOCALIZE[14200]</value>
+		<value condition="Window.IsVisible(LibrarySettings)">$LOCALIZE[14202]</value>
+		<value condition="Window.IsVisible(PVRSettings)">$LOCALIZE[31909]</value>
+		<value condition="Window.IsVisible(ServiceSettings)">$LOCALIZE[14036]</value>
+		<value condition="Window.IsVisible(SystemSettings)">$LOCALIZE[13000]</value>
+		<value condition="Window.IsVisible(Profiles)">$LOCALIZE[13200]</value>
 	</variable>
 	
 	<include name="BreadCrumbHomeIcon">	
