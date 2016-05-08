@@ -1273,6 +1273,24 @@
 		<value condition="String.Contains(Window.Property(type),season)">$LOCALIZE[20373]</value>
 	</variable>
 	
+	<variable name="ExtendedInfoYoutubeActualIcon">
+		<value condition="String.IsEqual(Window.Property(type),video)">DefaultVideo.png</value>
+		<value condition="String.IsEqual(Window.Property(type),playlist)">DefaultPlaylist.png</value>
+		<value condition="String.IsEqual(Window.Property(type),channel)">DefaultTVShows.png</value>
+	</variable>
+	
+	<variable name="ExtendedInfoYoutubeVideoQualityFocus">
+		<value condition="String.IsEqual(ListItem.Property(definition),hd)">OverlayHDAlt.png</value>
+		<value condition="String.IsEqual(ListItem.Property(definition),sd)">OverlaySDAlt.png</value>
+		<value>DefaultTVShows.png.png</value>
+	</variable>
+	
+	<variable name="ExtendedInfoYoutubeVideoQualityUnfocus">
+		<value condition="String.IsEqual(ListItem.Property(definition),hd)">OverlayHD.png</value>
+		<value condition="String.IsEqual(ListItem.Property(definition),sd)">OverlaySD.png</value>
+		<value>DefaultTVShows.png.png</value>
+	</variable>
+	
 	<!--
 	<include name="ExtendedInfoVideoInfoStudioMediaFlag">		
 		<control type="group">

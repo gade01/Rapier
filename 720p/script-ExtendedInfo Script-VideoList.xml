@@ -117,7 +117,8 @@
 						<height>538</height>
 						<texturesliderbackground>-</texturesliderbackground>
 						<onleft>500</onleft>
-						<onright>ActivateWindow(videos,$INFO[Container(500).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
+						<onright condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(500).ListItem.Label] trailer)</onright>
+						<onright condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
 						<ondown>600</ondown>
 						<onup>700</onup>
 						<include>MediaInfoOpenCloseAnim</include>
@@ -329,7 +330,8 @@
 						<height>531</height>
 						<texturesliderbackground>-</texturesliderbackground>
 						<onleft>500</onleft>
-						<onright>ActivateWindow(videos,$INFO[Container(500).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
+						<onright condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(500).ListItem.Label] trailer)</onright>
+						<onright condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
 						<ondown>600</ondown>
 						<onup>700</onup>
 						<include>MediaInfoOpenCloseAnim</include>

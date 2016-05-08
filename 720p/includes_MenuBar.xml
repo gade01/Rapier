@@ -1728,10 +1728,10 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,musicvideo)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,episode) | [!System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,season)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label],return)</onclick>
-				<onclick condition="!System.HasAddon(script.extendedinfo) + ![String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Label],return)</onclick>
-				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube) + [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]] | [!System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube)]</visible>
+				<onclick condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,musicvideo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,episode)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label])</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<visible>String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)</visible>
 			</control>
 			<control type="image" id="127">
 				<include>MenuBarSeparator</include>
@@ -1767,8 +1767,9 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + ![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 				<visible>String.IsEmpty(ListItem.Trailer)</visible>
 			</control>
 			<control type="image" id="121">
@@ -1847,13 +1848,12 @@
 				<textwidth>105</textwidth>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31038][/UPPERCASE]</label>
-				<onclick>Skin.SetString(ExtendedInfoDialog,6)</onclick>
-				<onclick>ActivateWindow(3009)</onclick>
-				<visible>System.HasAddon(script.extendedinfo) | System.HasAddon(plugin.video.youtube)</visible>
+				<onclick condition="System.HasAddon(script.extendedinfo)">Skin.SetString(ExtendedInfoDialog,6)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo)">ActivateWindow(3009)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.extendedinfo) | System.HasAddon(plugin.video.youtube)</visible>
 			</control>
 			<control type="button" id="6">
 				<description>Refresh</description>

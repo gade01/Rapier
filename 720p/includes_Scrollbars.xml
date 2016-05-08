@@ -137,9 +137,10 @@
 				<control type="panel" id="953">
 					<visible>Control.IsVisible(52) + ![Container.Content(Seasons) | [Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
-					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="767" />
 						<param name="top" value="113" />
@@ -155,9 +156,10 @@
 					<texturesliderbackground>-</texturesliderbackground>
 					<onleft>500</onleft>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
-					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<visible>![Skin.HasSetting(EnableQuickJump) + ![Container.Content(Seasons) | [Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]]</visible>
 				</control>
 			</control>
@@ -180,8 +182,9 @@
 				<control type="panel" id="960">
 					<visible>[Control.IsVisible(74) | Control.IsVisible(75) | Control.IsVisible(76) | Control.IsVisible(77) | Control.IsVisible(90)] + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
 						<param name="top" value="90" />
@@ -197,8 +200,9 @@
 					<texturesliderbackground>-</texturesliderbackground>
 					<onleft>500</onleft>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<visible>![Skin.HasSetting(EnableQuickJump) + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
 				</control>
 			</control>
@@ -266,8 +270,9 @@
 				<control type="panel" id="955">
 					<visible>[Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(62) | Control.IsVisible(73) | Control.IsVisible(91)] + ![Container.Content(Seasons) | [Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
 						<param name="top" value="331" />
@@ -283,8 +288,9 @@
 					<texturesliderbackground>-</texturesliderbackground>
 					<onleft>500</onleft>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<visible>![Skin.HasSetting(EnableQuickJump) + ![Container.Content(Seasons) | [Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]]</visible>
 				</control>
 			</control>
@@ -307,9 +313,10 @@
 				<control type="panel" id="956">
 					<visible>[Control.IsVisible(50) | Control.IsVisible(65) | Control.IsVisible(66) | Control.IsVisible(67) | Control.IsVisible(68) | Control.IsVisible(587) | Control.IsVisible(591)] + ![[Container.Content(Episodes) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml)] + ![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]]</visible>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
-					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
 						<param name="top" value="113" />
@@ -325,9 +332,10 @@
 					<texturesliderbackground>-</texturesliderbackground>
 					<onleft>500</onleft>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
-					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(musicvideos) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<visible>![Skin.HasSetting(EnableQuickJump) + ![[Container.Content(Episodes) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml)] + ![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]]]</visible>
 				</control>
 			</control>
@@ -350,8 +358,9 @@
 				<control type="panel" id="957">
 					<visible>[Control.IsVisible(94) | Control.IsVisible(95) | Control.IsVisible(96) | Control.IsVisible(578) | Control.IsVisible(589)] + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="817" />
 						<param name="top" value="113" />
@@ -368,8 +377,9 @@
 					<texturesliderbackground>-</texturesliderbackground>
 					<onleft>500</onleft>
 					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</onright>
+					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
+					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
+					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 					<visible>![Skin.HasSetting(EnableQuickJump) + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
 				</control>
 			</control>
@@ -427,8 +437,9 @@
 			<control type="panel" id="958">
 				<visible>Control.IsVisible(53) | Control.IsVisible(64) | Control.IsVisible(93)</visible>
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
-				<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</ondown>
+				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
+				<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
+				<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 				<include content="QuickJumpHorizontalLayout">
 					<param name="left" value="489" />
 					<param name="top" value="462" />
@@ -449,8 +460,9 @@
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<onup>500</onup>
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
-				<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer,return)</ondown>
+				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
+				<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
+				<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 				<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 			</control>
 		</control>
@@ -472,7 +484,8 @@
 			<control type="panel" id="959">
 				<visible>!Control.IsVisible(659) + [Control.IsVisible(69) | Control.IsVisible(70) | Control.IsVisible(586)]</visible>
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
+				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
+				<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 				<include content="QuickJumpHorizontalLayout">
 					<param name="left" value="4" />
 					<param name="top" value="704" />
@@ -493,7 +506,8 @@
 				<visible>!Control.IsVisible(659) + !Skin.HasSetting(EnableQuickJump)</visible>
 				<onup>500</onup>
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
+				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
+				<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
 			</control>
 		</control>
 	</include>
