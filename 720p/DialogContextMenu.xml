@@ -60,10 +60,10 @@
 					<description>Button Trailer</description>
 					<label>$LOCALIZE[20410]</label>
 					<onclick condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onclick>
-					<onclick condition="IsEmpty(ListItem.Trailer) + !Container.Content(Episodes)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onclick>
-					<onclick condition="IsEmpty(ListItem.Trailer) + Container.Content(Episodes)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</onclick>
+					<onclick condition="IsEmpty(ListItem.Trailer) + !Container.Content(Episodes)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onclick>
+					<onclick condition="IsEmpty(ListItem.Trailer) + Container.Content(Episodes)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onclick>
 					<include>ContextMenuBtn</include>
-					<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(ContextMenuTrailer)</visible>
+					<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(ContextMenuTrailer) + ![IsEmpty(ListItem.Trailer) + !System.HasAddon(script.extendedinfo)]</visible>
 				</control>
 				<control type="button" id="1000">
 					<description>Button Template</description>
