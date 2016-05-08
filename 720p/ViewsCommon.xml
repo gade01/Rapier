@@ -8661,8 +8661,8 @@
 					<textureslidernibfocus>-</textureslidernibfocus>
 					<onup>588</onup>
 					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
-					<ondown condition="Container.Content(Episodes) + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</ondown>
+					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
+					<ondown condition="Container.Content(Episodes) + IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
 				</control>
 			</control>
 
@@ -9883,9 +9883,9 @@
 				<ondown>584</ondown>
 				<onleft>585</onleft>
 				<onright condition="!Control.IsVisible(151) + !IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
-				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + ![Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)]">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,videodb://musicvideos/)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer,return)</onright>
-				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,musicdb://)">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, music video],return)</onright>
+				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + ![Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)] + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] trailer)</onright>
+				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,videodb://musicvideos/) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer)</onright>
+				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,musicdb://) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
 				<onright condition="Control.IsVisible(151)">151</onright>
 				<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
 				<itemlayout height="37">
@@ -10194,9 +10194,9 @@
 				<onup>850</onup>
 				<onleft>584</onleft>
 				<onright condition="!IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
-				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + ![Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)]">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onright>
-				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,videodb://musicvideos/)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label],return)</onright>
-				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,musicdb://)">ActivateWindow(videos,$INFO[Container(584).ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, music video],return)</onright>
+				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + ![Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)] + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] trailer)</onright>
+				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,videodb://musicvideos/) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label])</onright>
+				<onright condition="IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,musicdb://) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
 				<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
 			</control>
 			
@@ -10567,7 +10567,7 @@
 					<textureslidernibfocus>-</textureslidernibfocus>
 					<onup>588</onup>
 					<ondown condition="!IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-					<ondown condition="IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</ondown>
+					<ondown condition="IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
 				</control>
 			</control>
 			

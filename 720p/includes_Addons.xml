@@ -1341,6 +1341,24 @@
 		<value condition="IntegerGreaterThan(Window.Property(movie.PercentPlayed),80)">watched/watched-90pct.png</value>
 	</variable>
 	
+	<variable name="ExtendedInfoYoutubeActualIcon">
+		<value condition="StringCompare(Window.Property(type),video)">DefaultVideo.png</value>
+		<value condition="StringCompare(Window.Property(type),playlist)">DefaultPlaylist.png</value>
+		<value condition="StringCompare(Window.Property(type),channel)">DefaultTVShows.png</value>
+	</variable>
+	
+	<variable name="ExtendedInfoYoutubeVideoQualityFocus">
+		<value condition="StringCompare(ListItem.Property(definition),hd)">OverlayHDAlt.png</value>
+		<value condition="StringCompare(ListItem.Property(definition),sd)">OverlaySDAlt.png</value>
+		<value>DefaultTVShows.png.png</value>
+	</variable>
+	
+	<variable name="ExtendedInfoYoutubeVideoQualityUnfocus">
+		<value condition="StringCompare(ListItem.Property(definition),hd)">OverlayHD.png</value>
+		<value condition="StringCompare(ListItem.Property(definition),sd)">OverlaySD.png</value>
+		<value>DefaultTVShows.png.png</value>
+	</variable>
+	
 	<!--
 	<include name="ExtendedInfoVideoInfoStudioMediaFlag">		
 		<control type="group">

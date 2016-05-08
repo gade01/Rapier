@@ -1601,10 +1601,9 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="Container.Content(musicvideos)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Label],return)</onclick>
-				<onclick condition="Container.Content(Episodes) | [!System.HasAddon(script.extendedinfo) + Container.Content(Seasons)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label],return)</onclick>
-				<onclick condition="!System.HasAddon(script.extendedinfo) + ![Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(musicvideos)]">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Label],return)</onclick>
-				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube) + [Container.Content(Episodes) | Container.Content(musicvideos)]] | [!System.HasAddon(script.extendedinfo) + System.HasAddon(plugin.video.youtube)]</visible>
+				<onclick condition="Container.Content(musicvideos)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onclick>
+				<onclick condition="Container.Content(Episodes)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label])</onclick>
+				<visible>System.HasAddon(script.extendedinfo) + [Container.Content(Episodes) | Container.Content(musicvideos)]</visible>
 			</control>
 			<control type="image" id="127">
 				<include>MenuBarSeparator</include>
@@ -1660,12 +1659,13 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="![Container.Content(Episodes) | Container.Content(Seasons)]">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=, trailer],return)</onclick>
-				<onclick condition="Container.Content(Episodes) | Container.Content(Seasons)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer],return)</onclick>
-				<visible>IsEmpty(ListItem.Trailer)</visible>
+				<onclick condition="![Container.Content(Episodes) | Container.Content(Seasons)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onclick>
+				<onclick condition="Container.Content(Episodes) | Container.Content(Seasons)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onclick>
+				<visible>System.HasAddon(script.extendedinfo) + IsEmpty(ListItem.Trailer)</visible>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(11) | Control.IsVisible(15) | Control.IsVisible(211)</visible>
 			</control>
 			<control type="group" id="128">
 				<visible>Control.IsVisible(213)</visible>
@@ -1772,11 +1772,11 @@
 				<label>[UPPERCASE]$LOCALIZE[31038][/UPPERCASE]</label>
 				<onclick>Skin.SetString(ExtendedInfoDialog,6)</onclick>
 				<onclick>ActivateWindow(3009)</onclick>
-				<visible>System.HasAddon(script.extendedinfo) | System.HasAddon(plugin.video.youtube)</visible>
+				<visible>System.HasAddon(script.extendedinfo)</visible>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.extendedinfo) | System.HasAddon(plugin.video.youtube)</visible>
+				<visible>System.HasAddon(script.extendedinfo)</visible>
 			</control>
 			<control type="button" id="6">
 				<description>Refresh</description>
