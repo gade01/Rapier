@@ -25,7 +25,7 @@
 			</control>
 			<control type="image">
 				<include>BackgroundDim</include>
-				<animation effect="fade" end="70" reversible="false" condition="Skin.HasSetting(FanartBackgroundBrightnessHigh)">Conditional</animation>
+				<include>FanartBrightnessAnimations</include>
 			</control>
 		</control>
 		
@@ -1511,7 +1511,7 @@
 								<height>176</height>
 								<bordersize>4</bordersize>
 								<aspectratio align="center" aligny="top">keep</aspectratio>
-								<texture fallback="studios/default-studio.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
+								<texture fallback="studios/default-studio.png">$INFO[ListItem.Thumb]</texture>
 							</control>
 							<control type="image">
 								<left>10</left>
@@ -1554,7 +1554,7 @@
 									<height>176</height>
 									<bordersize>4</bordersize>
 									<aspectratio align="center" aligny="top">keep</aspectratio>
-									<texture fallback="studios/default-studio.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
+									<texture fallback="studios/default-studio.png">$INFO[ListItem.Thumb]</texture>
 								</control>
 								<control type="image">
 									<left>10</left>
@@ -1611,7 +1611,7 @@
 								<height>176</height>
 								<bordersize>4</bordersize>
 								<aspectratio align="center" aligny="top">keep</aspectratio>
-								<texture fallback="studios/default-studio.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
+								<texture fallback="studios/default-studio.png">$INFO[ListItem.Thumb]</texture>
 							</control>
 							<control type="image">
 								<left>10</left>
@@ -1654,7 +1654,7 @@
 									<height>176</height>
 									<bordersize>4</bordersize>
 									<aspectratio align="center" aligny="top">keep</aspectratio>
-									<texture fallback="studios/default-studio.png">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</texture>
+									<texture fallback="studios/default-studio.png">$INFO[ListItem.Thumb]</texture>
 								</control>
 								<control type="image">
 									<left>10</left>
