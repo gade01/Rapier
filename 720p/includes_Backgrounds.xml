@@ -132,6 +132,12 @@
 		<animation effect="fade" end="0" reversible="false" condition="StringCompare(Skin.String(GlobalBrightnessValue),100)">Conditional</animation>
 	</include>
 	
+	<include name="FanartBrightnessAnimations">
+		<include name="BrightnessAnimations">
+			<param name="type" value="FanartBrightnessValue" />
+		</include>
+	</include>
+	
 	<include name="MusicBrightnessAnimations">
 		<include name="BrightnessAnimations">
 			<param name="type" value="MusicBrightnessValue" />
