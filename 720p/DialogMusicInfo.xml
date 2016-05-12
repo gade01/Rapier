@@ -541,7 +541,7 @@
 				<texture>views/videoinfo-separator.png</texture>
 			</control>
 			
-			<control type="textbox">
+			<control type="textbox" id="902">
 				<description>Album Description/Artist Bio Value/Song Comment</description>
 				<left>100</left>
 				<top>462</top>
@@ -1197,7 +1197,7 @@
 				<onleft condition="Control.IsVisible(969)">969</onleft>
 				<onleft condition="![Control.IsVisible(50) | Control.IsVisible(966) | Control.IsVisible(967) | Control.IsVisible(968) | Control.IsVisible(969)]">901</onleft>
 				<include>NotificationsOpenCloseAnim</include>
-				<visible>[Integer.IsGreater(Container(4).NumPages,1) + Control.IsVisible(4)] | [Integer.IsGreater(Container(50).NumPages,1) + Control.IsVisible(50)] | [Integer.IsGreater(Container(966).NumPages,1) + Skin.String(MusicInfoMenubar,MostLovedTracks)] | [Integer.IsGreater(Container(967).NumPages,1) + Skin.String(MusicInfoMenubar,SimilarArtists)] | [Integer.IsGreater(Container(968).NumPages,1) + Skin.String(MusicInfoMenubar,Discography)] | [Integer.IsGreater(Container(969).NumPages,1) + Skin.String(MusicInfoMenubar,MusicVideos)]</visible>
+				<visible>[Integer.IsGreater(Container(902).NumPages,1) + Control.IsVisible(902)] | [Integer.IsGreater(Container(50).NumPages,1) + Control.IsVisible(50)] | [Integer.IsGreater(Container(966).NumPages,1) + Skin.String(MusicInfoMenubar,MostLovedTracks)] | [Integer.IsGreater(Container(967).NumPages,1) + Skin.String(MusicInfoMenubar,SimilarArtists)] | [Integer.IsGreater(Container(968).NumPages,1) + Skin.String(MusicInfoMenubar,Discography)] | [Integer.IsGreater(Container(969).NumPages,1) + Skin.String(MusicInfoMenubar,MusicVideos)]</visible>
 			</control>
 			
 			<control type="image">
