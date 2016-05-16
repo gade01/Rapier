@@ -402,7 +402,7 @@
 			<aspectratio>stretch</aspectratio>
 			<visible>[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + Control.HasFocus(50)</visible>
 			<include>ListViewSelectFadeAnim</include>
-			<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
+			<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewScrollAnim</include>
 		</control>
 
 		<control type="image">

@@ -495,7 +495,7 @@
 				</itemlayout>
 				<focusedlayout condition="Skin.String(ExtendedInfoYoutubeViewStyle,1) | Skin.String(ExtendedInfoYoutubeViewStyle,)" height="260" width="311">
 					<control type="group">
-						<include condition="!Skin.HasSetting(DisableThumbnailViewCoverFocusAnim)">ThumbnailViewCoverFocusAnim</include>
+						<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ThumbnailViewCoverFocusAnim</include>
 						<control type="label">
 							<left>14</left>
 							<width>165</width>
@@ -569,11 +569,11 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>Control.HasFocus(500)</visible>
 						<include>ListViewSelectFadeAnim</include>
-						<animation type="Focus" condition="Container(500).OnNext + !Skin.HasSetting(DisableListViewScrollAnim)" reversible="false">
+						<animation type="Focus" condition="Container(500).OnNext + !Skin.HasSetting(EnableLowCPUPowerMode)" reversible="false">
 							<effect type="Fade" start="40" end="100" time="550" tween="back" easing="in"/>
 							<effect type="slide" start="0,-74" time="250" tween="sine" easing="out"/>
 						</animation>					
-						<animation type="Focus" condition="Container(500).OnPrevious + !Skin.HasSetting(DisableListViewScrollAnim)" reversible="false">
+						<animation type="Focus" condition="Container(500).OnPrevious + !Skin.HasSetting(EnableLowCPUPowerMode)" reversible="false">
 							<effect type="Fade" start="40" end="100" time="550" tween="back" easing="in"/>
 							<effect type="slide" start="0,74" time="250" tween="sine" easing="out"/>
 						</animation>
@@ -595,7 +595,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 						<aspectratio>scale</aspectratio>
-						<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
+						<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -606,7 +606,7 @@
 						<texture>$VAR[ExtendedInfoYoutubeActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
-						<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
+						<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
 					</control>
 					<control type="group">
 						<include>ListViewFocusAnim</include>
@@ -678,11 +678,11 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>Control.HasFocus(500)</visible>
 						<include>ListViewSelectFadeAnim</include>
-						<animation type="Focus" condition="!Skin.HasSetting(DisableListViewScrollAnim) + Container(500).OnNext" reversible="false">
+						<animation type="Focus" condition="!Skin.HasSetting(EnableLowCPUPowerMode) + Container(500).OnNext" reversible="false">
 							<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 							<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
 						</animation>
-						<animation type="Focus" condition="!Skin.HasSetting(DisableListViewScrollAnim) + Container(500).OnPrevious" reversible="false">
+						<animation type="Focus" condition="!Skin.HasSetting(EnableLowCPUPowerMode) + Container(500).OnPrevious" reversible="false">
 							<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 							<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
 						</animation>
