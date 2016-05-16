@@ -91,14 +91,6 @@
 				<visible>ControlGroup(903).HasFocus | [Skin.String(SkinSettingsCategory,4) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 			</control>
 			
-			<control type="button" id="7">
-				<description>Animations</description>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onfocus>Control.SetFocus(7)</onfocus>
-				<visible>ControlGroup(906).HasFocus | [Skin.String(SkinSettingsCategory,7) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
-			</control>
-			
 			<control type="button" id="8">
 				<description>Weather</description>
 				<texturefocus>-</texturefocus>
@@ -199,19 +191,6 @@
 					<label>$LOCALIZE[33069]</label>
 					<visible>ControlGroup(903).HasFocus | [Skin.String(SkinSettingsCategory,4) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
-				<control type="button" id="7">
-					<description>Animations</description>
-					<include>SettingsCatBtn</include>
-					<label>$LOCALIZE[31420]</label>
-					<onfocus>Skin.SetString(SkinSettingsCategory,7)</onfocus>
-					<visible>![ControlGroup(906).HasFocus | [Skin.String(SkinSettingsCategory,7) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]]</visible>
-				</control>
-				<control type="button" id="16">
-					<description>Animations</description>
-					<include>SettingsInactiveCatBtn</include>
-					<label>$LOCALIZE[31420]</label>
-					<visible>ControlGroup(906).HasFocus | [Skin.String(SkinSettingsCategory,7) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
-				</control>
 				<control type="button" id="8">
 					<description>Weather</description>
 					<include>SettingsCatBtn</include>
@@ -276,7 +255,6 @@
 				<include>HomeSkinSettings</include>
 				<include>MediaSkinSettings</include>
 				<include>BackgroundsSkinSettings</include>
-				<include>AnimationsSkinSettings</include>
 				<include>WeatherSkinSettings</include>
 				<include>AddonsSkinSettings</include>
 				
