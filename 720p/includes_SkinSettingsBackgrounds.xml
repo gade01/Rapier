@@ -36,6 +36,7 @@
 					<onclick>Skin.ToggleSetting(AnimateBackground)</onclick>
 					<onclick>ReloadSkin()</onclick>
 					<include>ReloadSkinNotification</include>
+					<enable>!Skin.HasSetting(EnableLowCPUPowerMode)</enable>
 				</control>
 				<control type="radiobutton" id="4051">
 					<description>Animate Fanart Background</description>
@@ -45,6 +46,7 @@
 					<onclick>Skin.ToggleSetting(AnimateFanart)</onclick>
 					<onclick>ReloadSkin()</onclick>
 					<include>ReloadSkinNotification</include>
+					<enable>!Skin.HasSetting(EnableLowCPUPowerMode)</enable>
 				</control>
 				<control type="button" id="4052">
 					<description>Fanart Refresh Interval</description>
