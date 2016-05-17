@@ -20,6 +20,7 @@
 		<control type="button" id="555">
 			<left>9</left>
 			<top>9</top>
+			<ondown condition="Control.IsVisible(6930)">6930</ondown>
 			<ondown condition="Container(850).HasFocus(3) + Control.IsVisible(6928)">6928</ondown>
 			<ondown condition="Container(850).HasFocus(4) + Control.IsVisible(6927)">6926</ondown>
 			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</ondown>
@@ -1431,6 +1432,7 @@
 	<include name="HomeAddonShortcuts">
 		<control type="group" id="556">
 			<control type="list" id="541">
+				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="541" />
@@ -1441,7 +1443,8 @@
 			
 			<control type="list" id="542">
 				<onup condition="Control.IsVisible(6888)">6888</onup>
-				<onup condition="!Control.IsVisible(6888)">555</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="542" />
 					<param name="Container850Position" value="3" />
@@ -1451,7 +1454,8 @@
 			
 			<control type="list" id="543">
 				<onup condition="Control.IsVisible(6889)">6889</onup>
-				<onup condition="!Control.IsVisible(6889)">555</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="543" />
 					<param name="Container850Position" value="4" />
@@ -1461,7 +1465,8 @@
 			
 			<control type="list" id="544">
 				<onup condition="Control.IsVisible(6890)">6890</onup>
-				<onup condition="!Control.IsVisible(6890)">555</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="544" />
 					<param name="Container850Position" value="1" />
@@ -1471,7 +1476,8 @@
 			
 			<control type="list" id="545">
 				<onup condition="Control.IsVisible(6883)">6883</onup>
-				<onup condition="!Control.IsVisible(6883)">555</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="545" />
 					<param name="Container850Position" value="6" />
@@ -1480,6 +1486,7 @@
 			</control>
 			
 			<control type="list" id="546">
+				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="546" />
@@ -1489,6 +1496,7 @@
 			</control>
 			
 			<control type="list" id="547">
+				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="547" />
@@ -1505,7 +1513,8 @@
 			<width>1260</width>
 			<height>34</height>
 			<onup condition="Control.IsVisible($PARAM[onup])">$PARAM[onup]</onup>
-			<onup condition="!Control.IsVisible($PARAM[onup])">555</onup>
+			<onup condition="Control.IsVisible(6930)">6931</onup>
+			<onup>555</onup>
 			<ondown>850</ondown>
 			<orientation>horizontal</orientation>
 			<visible>Container(850).HasFocus($PARAM[Container850Position])</visible>
@@ -1577,9 +1586,10 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(6890) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6890</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
-				<onup condition="!Control.IsVisible(6890) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
+				<onup condition="Control.IsVisible(6890)">6890</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>		
 				<visible>Container(850).HasFocus(1)</visible>
@@ -1687,8 +1697,9 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(2)</visible>
@@ -1802,9 +1813,10 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(6888) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6888</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
-				<onup condition="!Control.IsVisible(6888) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
+				<onup condition="Control.IsVisible(6888)">6888</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(3)</visible>
@@ -1911,9 +1923,10 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(6889) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6889</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
-				<onup condition="!Control.IsVisible(6889) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
+				<onup condition="Control.IsVisible(6889)">6889</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(4)</visible>
@@ -2021,6 +2034,7 @@
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(6887) | Control.IsVisible(6886)">6885</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
@@ -2128,8 +2142,9 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(5)</visible>
@@ -2201,9 +2216,10 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(6883) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">6883</onup>
-				<onup condition="!Control.IsVisible(6883) + ![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(6883)">6883</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(6)</visible>
@@ -2379,8 +2395,9 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)]">555</onup>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(15)</visible>
@@ -2469,6 +2486,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
@@ -2582,6 +2600,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<ondown>850</ondown>
 				<orientation>horizontal</orientation>
@@ -2668,7 +2687,7 @@
 	
 	<include name="MusicPlayingPlayerControls">
 		<control type="group">
-			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)</visible>
+			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar) + !Control.IsVisible(6930)</visible>
 			<animation type="Visible" reversible="false">
 				<effect type="fade" time="400" delay="300"/>
 				<effect type="slide" start="0,25" time="400" tween="cubic" easing="out" delay="300"/>	
@@ -2770,7 +2789,7 @@
 					<height>38</height>
 					<texture>osd/osd-repeat-nofocus.png</texture>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
-					<visible>!Control.HasFocus(250)</visible>
+					<visible>!Control.HasFocus(207)</visible>
 				</control>
 				<control type="image" id="209">
 					<description>Repeat Focus</description>
@@ -2779,7 +2798,7 @@
 					<height>38</height>
 					<texture>osd/osd-repeat-focus.png</texture>
 					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
-					<visible>Control.HasFocus(250)</visible>
+					<visible>Control.HasFocus(207)</visible>
 				</control>
 				<control type="image" id="210">
 					<description>Repeat One No Focus</description>
@@ -2788,7 +2807,7 @@
 					<height>38</height>
 					<texture>osd/osd-repeat-one-nofocus.png</texture>
 					<visible>Playlist.IsRepeatOne</visible>
-					<visible>!Control.HasFocus(250)</visible>
+					<visible>!Control.HasFocus(207)</visible>
 				</control>
 				<control type="image" id="211">
 					<description>Repeat One Focus</description>
@@ -2797,7 +2816,7 @@
 					<height>38</height>
 					<texture>osd/osd-repeat-one-focus.png</texture>
 					<visible>Playlist.IsRepeatOne</visible>
-					<visible>Control.HasFocus(250)</visible>
+					<visible>Control.HasFocus(207)</visible>
 				</control>
 				<control type="image" id="212">
 					<description>Repeat All No Focus</description>
@@ -2806,7 +2825,7 @@
 					<height>38</height>
 					<texture>osd/osd-repeat-all-nofocus.png</texture>
 					<visible>Playlist.IsRepeat</visible>
-					<visible>!Control.HasFocus(250)</visible>
+					<visible>!Control.HasFocus(207)</visible>
 				</control>
 				<control type="image" id="213">
 					<description>Repeat All Focus</description>
@@ -2815,7 +2834,7 @@
 					<height>38</height>
 					<texture>osd/osd-repeat-all-focus.png</texture>
 					<visible>Playlist.IsRepeat</visible>
-					<visible>Control.HasFocus(250)</visible>
+					<visible>Control.HasFocus(207)</visible>
 				</control>
 				<control type="togglebutton" id="214">
 					<description>Random</description>
@@ -3263,138 +3282,537 @@
 
 			<control type="group">
 				<left>5</left>
-				<top>105</top>
 				<visible>Player.HasAudio + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 				<include>HomeLeftPanelOpenCloseAnim</include>
-
-				<control type="image">
-					<width>490</width>
-					<height>164</height>
-					<texture border="8">panels/panel.png</texture>
-				</control>
-
+				
 				<control type="group">
-					<visible>!Skin.HasSetting(EnableMusicCdArt)</visible>
+					<top>105</top>
 
 					<control type="image">
-						<description>Cover Border</description>
-						<left>15</left>
-						<top>15</top>
-						<width>134</width>
-						<height>134</height>
-						<texture border="5">panels/panel-content-border.png</texture>
+						<width>490</width>
+						<height>164</height>
+						<texture border="8">panels/panel.png</texture>
 					</control>
 
-					<control type="image">
-						<description>Cover</description>
-						<left>15</left>
-						<top>15</top>
-						<width>134</width>
-						<height>134</height>
-						<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[MusicPlayer.cover]</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-				</control>
+					<control type="group">
+						<visible>!Skin.HasSetting(EnableMusicCdArt)</visible>
 
-				<control type="group">
-					<visible>Skin.HasSetting(EnableMusicCdArt)</visible>
+						<control type="image">
+							<description>Cover Border</description>
+							<left>15</left>
+							<top>15</top>
+							<width>134</width>
+							<height>134</height>
+							<texture border="5">panels/panel-content-border.png</texture>
+						</control>
 
-					<control type="image">
-						<description>Cover Border</description>
-						<left>15</left>
-						<top>15</top>
-						<width>134</width>
-						<height>134</height>
-						<texture border="5">panels/panel-content-border.png</texture>
-					</control>
-
-					<control type="image">
-						<description>Default Cover</description>
-						<left>25</left>
-						<top>25</top>
-						<width>114</width>
-						<height>114</height>
-						<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
-						<texture diffuse="icons/cdart/cdart-mask.png">icons/cdart/cdart.png</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<include>CdArtImageRotateAnim</include>
-						<visible>String.IsEmpty(MusicPlayer.Cover)</visible>
+						<control type="image">
+							<description>Cover</description>
+							<left>15</left>
+							<top>15</top>
+							<width>134</width>
+							<height>134</height>
+							<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[MusicPlayer.cover]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
 					</control>
 
-					<control type="image">
-						<description>Cover</description>
-						<left>25</left>
-						<top>25</top>
-						<width>114</width>
-						<height>114</height>
-						<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
-						<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[MusicPlayer.Cover]</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<include>CdArtImageRotateAnim</include>
+					<control type="group">
+						<visible>Skin.HasSetting(EnableMusicCdArt)</visible>
+
+						<control type="image">
+							<description>Cover Border</description>
+							<left>15</left>
+							<top>15</top>
+							<width>134</width>
+							<height>134</height>
+							<texture border="5">panels/panel-content-border.png</texture>
+						</control>
+
+						<control type="image">
+							<description>Default Cover</description>
+							<left>25</left>
+							<top>25</top>
+							<width>114</width>
+							<height>114</height>
+							<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
+							<texture diffuse="icons/cdart/cdart-mask.png">icons/cdart/cdart.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<include>CdArtImageRotateAnim</include>
+							<visible>String.IsEmpty(MusicPlayer.Cover)</visible>
+						</control>
+
+						<control type="image">
+							<description>Cover</description>
+							<left>25</left>
+							<top>25</top>
+							<width>114</width>
+							<height>114</height>
+							<bordertexture>icons/cdart/cdart-mask.png</bordertexture>
+							<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[MusicPlayer.Cover]</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<include>CdArtImageRotateAnim</include>
+						</control>
 					</control>
-				</control>
 
-				<control type="label">
-					<description>Title</description>
-					<left>161</left>
-					<top>9</top>
-					<width>314</width>
-					<font>PanelTitleFont</font>
-					<textcolor>MediaInfoTitleColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
-				</control>
-
-				<control type="grouplist">
-					<left>161</left>
-					<top>47</top>
-					<itemgap>10</itemgap>
-					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
-						<description>Song Title</description>
-						<width>314</width>
-						<height>12</height>
-						<font>PanelInfoHeadFont</font>
-						<textcolor>WhiteColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[MusicPlayer.Title]</label>
-						<scroll>true</scroll>
-					</control>
-					<control type="label">
-						<description>Elapsed/Duration Time</description>
-						<top>5</top>
-						<width>314</width>
-						<height>12</height>
-						<font>PanelInfoHeadFont</font>
-						<textcolor>WhiteColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[COLOR=GreyColor]$INFO[MusicPlayer.Time][/COLOR] / $INFO[Player.Duration]</label>
-						<aligny>center</aligny>
-					</control>
-					<control type="fadelabel">
-						<description>Artist/Album/Year</description>
+						<description>Title</description>
+						<left>161</left>
 						<top>9</top>
 						<width>314</width>
-						<height>12</height>
-						<font>PanelInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
+						<font>PanelTitleFont</font>
+						<textcolor>MediaInfoTitleColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[MusicPlayer.Artist,$LOCALIZE[557]: ,]</label>
-						<label>$INFO[MusicPlayer.Album,$LOCALIZE[558]: ,] $INFO[MusicPlayer.Year,(,)]</label>
-						<scroll>true</scroll>
-						<scrollout>false</scrollout>
-						<pauseatend>2000</pauseatend>
-						<resetonlabelchange>false</resetonlabelchange>
+						<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
 					</control>
-					<control type="label">
-						<description>Next Track</description>
-						<width>314</width>
-						<height>12</height>
-						<font>PanelInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[MusicPlayer.offset(1).Artist,$LOCALIZE[209]: , -] $INFO[MusicPlayer.offset(1).Title]</label>
-						<scroll>true</scroll>
+
+					<control type="grouplist">
+						<left>161</left>
+						<top>47</top>
+						<itemgap>10</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+						<control type="label">
+							<description>Song Title</description>
+							<width>314</width>
+							<height>12</height>
+							<font>PanelInfoHeadFont</font>
+							<textcolor>WhiteColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[MusicPlayer.Title]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<description>Elapsed/Duration Time</description>
+							<top>5</top>
+							<width>314</width>
+							<height>12</height>
+							<font>PanelInfoHeadFont</font>
+							<textcolor>WhiteColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>[COLOR=GreyColor]$INFO[MusicPlayer.Time][/COLOR] / $INFO[Player.Duration]</label>
+							<aligny>center</aligny>
+						</control>
+						<control type="fadelabel">
+							<description>Artist/Album/Year</description>
+							<top>9</top>
+							<width>314</width>
+							<height>12</height>
+							<font>PanelInfoFont</font>
+							<textcolor>MediaInfoItemColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[MusicPlayer.Artist,$LOCALIZE[557]: ,]</label>
+							<label>$INFO[MusicPlayer.Album,$LOCALIZE[558]: ,] $INFO[MusicPlayer.Year,(,)]</label>
+							<scroll>true</scroll>
+							<scrollout>false</scrollout>
+							<pauseatend>2000</pauseatend>
+							<resetonlabelchange>false</resetonlabelchange>
+						</control>
+						<control type="label">
+							<description>Next Track</description>
+							<width>314</width>
+							<height>12</height>
+							<font>PanelInfoFont</font>
+							<textcolor>MediaInfoItemColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[MusicPlayer.offset(1).Artist,$LOCALIZE[209]: , -] $INFO[MusicPlayer.offset(1).Title]</label>
+							<scroll>true</scroll>
+						</control>
+					</control>
+				</control>
+				
+				<control type="group">
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+					<include>HomeLeftPanelOpenCloseAnim</include>
+					<top>280</top>
+					
+					<control type="image">
+						<width>490</width>
+						<height>164</height>
+						<texture border="8">panels/panel.png</texture>
+					</control>
+					
+					<control type="list" id="6930">
+						<viewtype label="">list</viewtype>
+						<top>11</top>
+						<width>480</width>
+						<height>96</height>
+						<scrolltime>200</scrolltime>
+						<onup>555</onup>
+						<ondown>6931</ondown>
+						<onright>6931</onright>
+						<onleft>6931</onleft>
+						<visible>Player.HasAudio + Integer.IsGreater(Playlist.Length(music),1)</visible>
+						<itemlayout height="24">
+							<control type="label">
+								<left>15</left>
+								<width>27</width>
+								<height>24</height>
+								<font>PanelInfoFont</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(Number)]</label>
+							</control>
+							<control type="label">
+								<left>42</left>
+								<width>428</width>
+								<height>24</height>
+								<font>PanelInfoFont</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="image">
+								<left>10</left>
+								<width>470</width>
+								<height>24</height>
+								<texture border="4">views/list-focus.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<visible>Control.HasFocus(6930)</visible>
+								<animation type="Focus" condition="Container(6930).OnNext" reversible="false">
+									<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+									<effect type="slide" start="0,-24" time="150" tween="quadratic" easing="out"/>
+								</animation>
+								<animation type="Focus" condition="Container(6930).OnPrevious" reversible="false">
+									<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+									<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
+								</animation>
+								<include>ListViewSelectFadeAnim</include>
+							</control>
+							<control type="label">
+								<left>15</left>
+								<width>27</width>
+								<height>24</height>
+								<font>PanelInfoFont</font>
+								<textcolor>SelectedColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(Number)]</label>
+							</control>
+							<control type="label">
+								<left>42</left>
+								<width>428</width>
+								<height>24</height>
+								<font>PanelInfoFont</font>
+								<textcolor>SelectedColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<scroll>true</scroll>
+							</control>
+						</focusedlayout>
+						<content>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(1).Artist]: $INFO[MusicPlayer.Offset(1).Title]</label>
+								<property name="Number">1.</property>
+								<onclick>Playlist.PlayOffset(1)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(2).Artist]: $INFO[MusicPlayer.Offset(2).Title]</label>
+								<property name="Number">2.</property>
+								<onclick>Playlist.PlayOffset(2)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(2).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(3).Artist]: $INFO[MusicPlayer.Offset(3).Title]</label>
+								<property name="Number">3.</property>
+								<onclick>Playlist.PlayOffset(3)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(3).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(4).Artist]: $INFO[MusicPlayer.Offset(4).Title]</label>
+								<property name="Number">4.</property>
+								<onclick>Playlist.PlayOffset(4)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(4).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(5).Artist]: $INFO[MusicPlayer.Offset(5).Title]</label>
+								<property name="Number">5.</property>
+								<onclick>Playlist.PlayOffset(5)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(6).Artist]: $INFO[MusicPlayer.Offset(6).Title]</label>
+								<property name="Number">6.</property>
+								<onclick>Playlist.PlayOffset(6)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(6).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(7).Artist]: $INFO[MusicPlayer.Offset(7).Title]</label>
+								<property name="Number">7.</property>
+								<onclick>Playlist.PlayOffset(7)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(7).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(8).Artist]: $INFO[MusicPlayer.Offset(8).Title]</label>
+								<property name="Number">8.</property>
+								<onclick>Playlist.PlayOffset(8)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(8).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(9).Artist]: $INFO[MusicPlayer.Offset(9).Title]</label>
+								<property name="Number">9.</property>
+								<onclick>Playlist.PlayOffset(9)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(9).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(10).Artist]: $INFO[MusicPlayer.Offset(10).Title]</label>
+								<property name="Number">10.</property>
+								<onclick>Playlist.PlayOffset(10)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(10).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(11).Artist]: $INFO[MusicPlayer.Offset(11).Title]</label>
+								<property name="Number">11.</property>
+								<onclick>Playlist.PlayOffset(11)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(11).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(12).Artist]: $INFO[MusicPlayer.Offset(12).Title]</label>
+								<property name="Number">12.</property>
+								<onclick>Playlist.PlayOffset(12)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(12).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(13).Artist]: $INFO[MusicPlayer.Offset(13).Title]</label>
+								<property name="Number">13.</property>
+								<onclick>Playlist.PlayOffset(13)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(13).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(14).Artist]: $INFO[MusicPlayer.Offset(14).Title]</label>
+								<property name="Number">14.</property>
+								<onclick>Playlist.PlayOffset(14)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(14).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(15).Artist]: $INFO[MusicPlayer.Offset(15).Title]</label>
+								<property name="Number">15.</property>
+								<onclick>Playlist.PlayOffset(15)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(15).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(16).Artist]: $INFO[MusicPlayer.Offset(16).Title]</label>
+								<property name="Number">16.</property>
+								<onclick>Playlist.PlayOffset(16)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(16).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(17).Artist]: $INFO[MusicPlayer.Offset(17).Title]</label>
+								<property name="Number">17.</property>
+								<onclick>Playlist.PlayOffset(17)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(17).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(18).Artist]: $INFO[MusicPlayer.Offset(18).Title]</label>
+								<property name="Number">18.</property>
+								<onclick>Playlist.PlayOffset(18)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(18).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(19).Artist]: $INFO[MusicPlayer.Offset(19).Title]</label>
+								<property name="Number">19.</property>
+								<onclick>Playlist.PlayOffset(19)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(19).Title)</visible>
+							</item>
+							<item>
+								<label>$INFO[MusicPlayer.Offset(20).Artist]: $INFO[MusicPlayer.Offset(20).Title]</label>
+								<property name="Number">20.</property>
+								<onclick>Playlist.PlayOffset(20)</onclick>
+								<visible>!String.IsEmpty(MusicPlayer.Offset(20).Title)</visible>
+							</item>
+						</content>
+					</control>
+					
+					<control type="image">
+						<left>15</left>
+						<top>115</top>
+						<width>460</width>
+						<height>39</height>
+						<texture border="5">panels/panel-content-border2.png</texture>
+						<animation effect="fade" end="6" condition="true">Conditional</animation>
+					</control>
+					
+					<control type="grouplist" id="6931">
+						<description>Player Controls</description>
+						<left>15</left>
+						<top>115</top>
+						<width>460</width>
+						<height>39</height>
+						<itemgap>10</itemgap>
+						<align>center</align>
+						<aligny>center</aligny>
+						<onup>6930</onup>
+						<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onleft>
+						<onleft condition="Control.IsVisible(110)">110</onleft>
+						<onleft>850</onleft>
+						<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onright>
+						<onright condition="Control.IsVisible(110)">110</onright>
+						<onright>850</onright>
+						<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</ondown>
+						<ondown condition="Control.IsVisible(110)">110</ondown>
+						<ondown>850</ondown>
+						<usecontrolcoords>true</usecontrolcoords>
+						<orientation>horizontal</orientation>
+						<control type="button" id="201">
+							<description>Skip Prev</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-skip-prev-focus.png</texturefocus>
+							<texturenofocus>osd/osd-skip-prev-nofocus.png</texturenofocus>
+							<onclick>PlayerControl(Previous)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
+						<control type="button" id="202">
+							<description>Rewind</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-rewind-focus.png</texturefocus>
+							<texturenofocus>osd/osd-rewind-nofocus.png</texturenofocus>
+							<onclick>PlayerControl(Rewind)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
+						<control type="button" id="203">
+							<description>Stop</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-stop-focus.png</texturefocus>
+							<texturenofocus>osd/osd-stop-nofocus.png</texturenofocus>
+							<onclick>PlayerControl(Stop)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
+						<control type="togglebutton" id="204">
+							<description>Pause/Play</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-pause-focus.png</texturefocus>
+							<texturenofocus>osd/osd-pause-nofocus.png</texturenofocus>
+							<alttexturefocus>osd/osd-play-focus.png</alttexturefocus>
+							<alttexturenofocus>osd/osd-play-nofocus.png</alttexturenofocus>
+							<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+							<onclick>PlayerControl(Play)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
+						<control type="button" id="205">
+							<description>Forward</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-forward-focus.png</texturefocus>
+							<texturenofocus>osd/osd-forward-nofocus.png</texturenofocus>
+							<onclick>PlayerControl(Forward)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>		
+						<control type="button" id="206">
+							<description>Skip Next</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-skip-next-focus.png</texturefocus>
+							<texturenofocus>osd/osd-skip-next-nofocus.png</texturenofocus>
+							<onclick>PlayerControl(Next)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
+						<control type="button" id="207">
+							<description>Repeat</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onclick>PlayerControl(Repeat)</onclick>
+							<pulseonselect>false</pulseonselect>
+						</control>
+						<control type="image" id="208">
+							<description>Repeat No Focus</description>
+							<left>-46</left>
+							<width>38</width>
+							<height>38</height>
+							<texture>osd/osd-repeat-nofocus.png</texture>
+							<animation effect="zoom" end="115" center="auto" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+							<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+							<visible>!Control.HasFocus(207)</visible>
+						</control>
+						<control type="image" id="209">
+							<description>Repeat Focus</description>
+							<left>-46</left>
+							<width>38</width>
+							<height>38</height>
+							<texture>osd/osd-repeat-focus.png</texture>
+							<animation effect="zoom" end="115" center="auto" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+							<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+							<visible>Control.HasFocus(207)</visible>
+						</control>
+						<control type="image" id="210">
+							<description>Repeat One No Focus</description>
+							<left>-46</left>
+							<width>38</width>
+							<height>38</height>
+							<texture>osd/osd-repeat-one-nofocus.png</texture>
+							<animation effect="zoom" end="115" center="auto" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+							<visible>Playlist.IsRepeatOne</visible>
+							<visible>!Control.HasFocus(207)</visible>
+						</control>
+						<control type="image" id="211">
+							<description>Repeat One Focus</description>
+							<left>-46</left>
+							<width>38</width>
+							<height>38</height>
+							<texture>osd/osd-repeat-one-focus.png</texture>
+							<animation effect="zoom" end="115" center="auto" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+							<visible>Playlist.IsRepeatOne</visible>
+							<visible>Control.HasFocus(207)</visible>
+						</control>
+						<control type="image" id="212">
+							<description>Repeat All No Focus</description>
+							<left>-46</left>
+							<width>38</width>
+							<height>38</height>
+							<texture>osd/osd-repeat-all-nofocus.png</texture>
+							<animation effect="zoom" end="115" center="auto" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+							<visible>Playlist.IsRepeat</visible>
+							<visible>!Control.HasFocus(207)</visible>
+						</control>
+						<control type="image" id="213">
+							<description>Repeat All Focus</description>
+							<left>-46</left>
+							<width>38</width>
+							<height>38</height>
+							<texture>osd/osd-repeat-all-focus.png</texture>
+							<animation effect="zoom" end="115" center="auto" time="100" condition="Control.HasFocus(207)">Conditional</animation>
+							<visible>Playlist.IsRepeat</visible>
+							<visible>Control.HasFocus(207)</visible>
+						</control>
+						<control type="togglebutton" id="214">
+							<description>Random</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-random-off-focus.png</texturefocus>
+							<texturenofocus>osd/osd-random-off-nofocus.png</texturenofocus>
+							<usealttexture>Playlist.IsRandom</usealttexture>
+							<alttexturefocus>osd/osd-random-on-focus.png</alttexturefocus>
+							<alttexturenofocus>osd/osd-random-on-nofocus.png</alttexturenofocus>
+							<onclick>PlayerControl(Random)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
+						<control type="button" id="215">
+							<description>Fullscreen</description>
+							<width>38</width>
+							<height>38</height>
+							<texturefocus>osd/osd-viz-focus.png</texturefocus>
+							<texturenofocus>osd/osd-viz-nofocus.png</texturenofocus>
+							<onclick>ActivateWindow(visualisation)</onclick>
+							<pulseonselect>false</pulseonselect>
+							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
+						</control>
 					</control>
 				</control>
 			</control>
@@ -3436,7 +3854,7 @@
 		<control type="group">	
 			<left>5</left>
 			<top>280</top>
-			<visible>Container(850).HasFocus(4) + Integer.IsGreater(Window(Home).Property(NextAired.TodayTotal),0) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
+			<visible>Container(850).HasFocus(4) + Integer.IsGreater(Window(Home).Property(NextAired.TodayTotal),0) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + !Control.IsVisible(6930)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
 
 			<control type="image">
@@ -4026,10 +4444,11 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6888</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft condition="Control.IsVisible(6928)">6928</onleft>
-					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + Control.IsVisible(110)">110</onleft>
-					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + !Control.IsVisible(110)">850</onleft>
-					<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onleft>
+					<onleft condition="Control.IsVisible(542)">542</onleft>
+					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft>850</onleft>
 					<onright>4829</onright>
 					<include>RecentlyAddedMoviesPanelLayout</include>
 					<visible>!Skin.HasSetting(ShowMoreRecentlyAddedMovies) + [Integer.IsGreater(Container(6888).NumItems,0) | Container(6888).IsUpdating]</visible>
@@ -4043,9 +4462,11 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6888</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft condition="Control.IsVisible(6928)">6928</onleft>
+					<onleft condition="Control.IsVisible(542)">542</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
-					<onleft condition="!Control.IsVisible(110)">850</onleft>
+					<onleft>850</onleft>
 					<onright>4829</onright>
 					<include>RecentlyAddedMoviesPanelLayout</include>
 					<visible>Skin.HasSetting(ShowMoreRecentlyAddedMovies) + [Integer.IsGreater(Container(6888).NumItems,0) | Container(6888).IsUpdating]</visible>
@@ -4162,10 +4583,11 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6889</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft condition="Control.IsVisible(6926)">6926</onleft>
-					<onleft condition="!Control.IsVisible(6926) + Control.IsVisible(543)">543</onleft>
-					<onleft condition="!Control.IsVisible(543) + !Control.IsVisible(6926) + Control.IsVisible(110)">110</onleft>
-					<onleft condition="!Control.IsVisible(543) + !Control.IsVisible(6926) + !Control.IsVisible(110)">850</onleft>
+					<onleft condition="Control.IsVisible(543)">543</onleft>
+					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft>850</onleft>
 					<onright>4829</onright>
 					<include>RecentlyAddedTVShowsPanelLayout</include>
 					<visible>!Skin.HasSetting(ShowMoreRecentlyAddedTVShows) + [Integer.IsGreater(Container(6889).NumItems,0) | Container(6889).IsUpdating]</visible>
@@ -4179,8 +4601,11 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6889</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
+					<onleft condition="Control.IsVisible(6926)">6926</onleft>
+					<onleft condition="Control.IsVisible(543)">543</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
-					<onleft condition="!Control.IsVisible(110)">850</onleft>
+					<onleft>850</onleft>
 					<onright>4829</onright>
 					<include>RecentlyAddedTVShowsPanelLayout</include>
 					<visible>Skin.HasSetting(ShowMoreRecentlyAddedTVShows) + [Integer.IsGreater(Container(6889).NumItems,0) | Container(6889).IsUpdating]</visible>
@@ -4298,9 +4723,10 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6890</ondown>
-					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + Control.IsVisible(110)">110</onleft>
-					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + !Control.IsVisible(110)">850</onleft>
-					<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onleft>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
+					<onleft condition="Control.IsVisible(544)">544</onleft>
+					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft>850</onleft>
 					<onright>4829</onright>
 					<onclick>PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
 					<include>RecentlyAddedMusicPanelLayout</include>
@@ -4315,8 +4741,10 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6890</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
+					<onleft condition="Control.IsVisible(544)">544</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
-					<onleft condition="!Control.IsVisible(110)">850</onleft>
+					<onleft>850</onleft>
 					<onright>4829</onright>
 					<onclick>PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
 					<include>RecentlyAddedMusicPanelLayout</include>
@@ -4424,9 +4852,10 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6883</ondown>
-					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + Control.IsVisible(110)">110</onleft>
-					<onleft condition="![Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)] + !Control.IsVisible(110)">850</onleft>
-					<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onleft>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
+					<onleft condition="Control.IsVisible(545)">545</onleft>
+					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft>850</onleft>
 					<onright>4828</onright>
 					<include>RecentlyAddedPicturesPanelLayout</include>
 					<visible>!Skin.HasSetting(ShowMoreRecentlyAddedPictures)</visible>
@@ -4440,8 +4869,10 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6883</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
+					<onleft condition="Control.IsVisible(545)">545</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
-					<onleft condition="!Control.IsVisible(110)">850</onleft>
+					<onleft>850</onleft>
 					<onright>4828</onright>
 					<include>RecentlyAddedPicturesPanelLayout</include>
 					<visible>Skin.HasSetting(ShowMoreRecentlyAddedPictures)</visible>
@@ -4834,6 +5265,7 @@
 					<scrolltime>200</scrolltime>
 					<onup>6891</onup>
 					<ondown>6891</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft condition="Control.IsVisible(6929)">6929</onleft>
 					<onleft>6888</onleft>
 					<onright>850</onright>
@@ -4940,6 +5372,7 @@
 					<scrolltime>200</scrolltime>
 					<onup>6892</onup>
 					<ondown>6892</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft>6889</onleft>
 					<onright>850</onright>
 					<visible>Integer.IsGreater(Container(6892).NumItems,0) | Container(6892).IsUpdating</visible>
@@ -5045,6 +5478,7 @@
 					<scrolltime>200</scrolltime>
 					<onup>6893</onup>
 					<ondown>6893</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft>6890</onleft>
 					<onright>850</onright>
 					<onclick>PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
@@ -5140,6 +5574,7 @@
 					<scrolltime>200</scrolltime>
 					<onup>6882</onup>
 					<ondown>6882</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft>6883</onleft>
 					<onright>850</onright>
 					<itemlayout height="24">
@@ -5421,6 +5856,7 @@
 			</control>
 			
 			<control type="group">
+				<visible>!Control.IsVisible(6930)</visible>
 				<top>175</top>
 				
 				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6929).NumItems,0)">
@@ -5572,6 +6008,7 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6887</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
 					<onleft>850</onleft>
 					<onright condition="Pvr.HasRadioChannels">Skin.SetString(PVRChannelsWidgetTV,false)</onright>
@@ -5718,6 +6155,7 @@
 					<scrolltime>200</scrolltime>
 					<onup>555</onup>
 					<ondown>6886</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
 					<onleft condition="Control.IsVisible(110)">110</onleft>
 					<onleft>850</onleft>
 					<onright>Skin.SetString(PVRChannelsWidgetTV,true)</onright>
@@ -6327,7 +6765,7 @@
 			</control>
 
 			<control type="group">
-				<visible>PVR.IsRecording</visible>
+				<visible>PVR.IsRecording + !Control.IsVisible(6930)</visible>
 				
 				<control type="image">
 					<width>490</width>
