@@ -32,14 +32,10 @@
 					<description>Enable Low CPU Power Mode</description>
 					<include>SettingsContentRadioBtn</include>
 					<label>$LOCALIZE[31131]</label>
-					<selected>Skin.HasSetting(EnableLowCPUPowerMode)</selected>
-					<onclick condition="System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(EnableLowCPUPowerMode) + !Skin.HasSetting(DisableVideoPlayingBG) + !Skin.HasSetting(DisableMusicPlayingBG)">RunScript(script.skin.helper.service,action=dialogyesno,header=$LOCALIZE[31131],message=$LOCALIZE[31132],yesaction=Skin.ToggleSetting(EnableLowCPUPowerMode)|Skin.ToggleSetting(DisableVideoPlayingBG)|Skin.Reset(PlayTrailerWindowed)|Skin.Reset(EnableMusicCdArt)|Skin.Reset(AnimateFanartMusicPlayingBG)|Skin.Reset(AnimateBackground)|Skin.Reset(AnimateFanart)|Skin.ToggleSetting(DisableMusicPlayingBG))</onclick>
-					<onclick condition="System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(EnableLowCPUPowerMode) + Skin.HasSetting(DisableVideoPlayingBG) + !Skin.HasSetting(DisableMusicPlayingBG)">RunScript(script.skin.helper.service,action=dialogyesno,header=$LOCALIZE[31131],message=$LOCALIZE[31132],yesaction=Skin.ToggleSetting(EnableLowCPUPowerMode)|Skin.Reset(PlayTrailerWindowed)|Skin.Reset(EnableMusicCdArt)|Skin.Reset(AnimateFanartMusicPlayingBG)|Skin.Reset(AnimateBackground)|Skin.Reset(AnimateFanart)|Skin.ToggleSetting(DisableMusicPlayingBG))</onclick>
-					<onclick condition="System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(EnableLowCPUPowerMode) + !Skin.HasSetting(DisableVideoPlayingBG) + Skin.HasSetting(DisableMusicPlayingBG)">RunScript(script.skin.helper.service,action=dialogyesno,header=$LOCALIZE[31131],message=$LOCALIZE[31132],yesaction=Skin.ToggleSetting(EnableLowCPUPowerMode)|Skin.ToggleSetting(DisableVideoPlayingBG)|Skin.Reset(PlayTrailerWindowed)|Skin.Reset(EnableMusicCdArt)|Skin.Reset(AnimateFanartMusicPlayingBG)|Skin.Reset(AnimateBackground)|Skin.Reset(AnimateFanart))</onclick>
-					<onclick condition="System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(EnableLowCPUPowerMode) + Skin.HasSetting(DisableVideoPlayingBG) + Skin.HasSetting(DisableMusicPlayingBG)">RunScript(script.skin.helper.service,action=dialogyesno,header=$LOCALIZE[31131],message=$LOCALIZE[31132],yesaction=Skin.ToggleSetting(EnableLowCPUPowerMode)|Skin.Reset(PlayTrailerWindowed)|Skin.Reset(EnableMusicCdArt)|Skin.Reset(AnimateFanartMusicPlayingBG)|Skin.Reset(AnimateBackground)|Skin.Reset(AnimateFanart))</onclick>
-					<onclick condition="System.HasAddon(script.skin.helper.service) + Skin.HasSetting(EnableLowCPUPowerMode)">Skin.ToggleSetting(EnableLowCPUPowerMode)</onclick>
-					<onclick condition="!System.HasAddon(script.skin.helper.service)">RunPlugin(plugin://script.skin.helper.service)</onclick>
-					<onclick condition="!System.HasAddon(script.skin.helper.service)">StopScript(script.skin.helper.service)</onclick>
+					<selected>Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)</selected>
+					<onclick condition="IsEmpty(Skin.String(LowCPUPowerMode))">Skin.SetString(DialogVideoInfoButtonMenu,LowCPUPowerMode)</onclick>
+					<onclick condition="IsEmpty(Skin.String(LowCPUPowerMode))">ActivateWindow(980)</onclick>
+					<onclick condition="Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)">Skin.Reset(LowCPUPowerMode)</onclick>
 				</control>
 				<control type="radiobutton" id="1006">
 					<description>Hide Dialog Close Buttons</description>

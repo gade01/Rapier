@@ -671,7 +671,7 @@
 			</itemlayout>	
 			<focusedlayout condition="Skin.String(ExtendedInfoViewStyle,1) | Skin.String(ExtendedInfoViewStyle,)" height="270" width="208">	
 				<control type="group">
-					<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ThumbnailViewCoverFocusAnim</include>
+					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
 						<description>Cover Case</description>
 						<left>11</left>
@@ -757,7 +757,7 @@
 			</focusedlayout>
 			<focusedlayout condition="Skin.String(ExtendedInfoViewStyle,2)" height="179" width="138">	
 				<control type="group">
-					<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ThumbnailViewCoverFocusAnim2</include>
+					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim2</include>
 					<control type="image">
 						<description>Cover Case</description>
 						<left>15</left>
@@ -855,11 +855,11 @@
 					<aspectratio>stretch</aspectratio>
 					<visible>Control.HasFocus(500)</visible>
 					<include>ListViewSelectFadeAnim</include>
-					<animation type="Focus" condition="Container(500).OnNext + !Skin.HasSetting(EnableLowCPUPowerMode)" reversible="false">
+					<animation type="Focus" condition="Container(500).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 						<effect type="Fade" start="40" end="100" time="550" tween="back" easing="in"/>
 						<effect type="slide" start="0,-77" time="250" tween="sine" easing="out"/>
 					</animation>					
-					<animation type="Focus" condition="Container(500).OnPrevious + !Skin.HasSetting(EnableLowCPUPowerMode)" reversible="false">
+					<animation type="Focus" condition="Container(500).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 						<effect type="Fade" start="40" end="100" time="550" tween="back" easing="in"/>
 						<effect type="slide" start="0,77" time="250" tween="sine" easing="out"/>
 					</animation>
@@ -880,7 +880,7 @@
 					<bordersize>5</bordersize>
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<aspectratio>scale</aspectratio>
-					<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
+					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 				</control>
 				<control type="image">
 					<description>Default Cover</description>
@@ -890,7 +890,7 @@
 					<texture background="true">DefaultVideo.png</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>IsEmpty(ListItem.Thumb)</visible>
-					<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
+					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 				</control>
 				<control type="group">
 					<include>ListViewFocusAnim</include>
@@ -973,11 +973,11 @@
 					<aspectratio>stretch</aspectratio>
 					<visible>Control.HasFocus(500)</visible>
 					<include>ListViewSelectFadeAnim</include>
-					<animation type="Focus" condition="Container(500).OnNext + !Skin.HasSetting(EnableLowCPUPowerMode)" reversible="false">
+					<animation type="Focus" condition="Container(500).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 						<effect type="Fade" start="40" end="100" time="550" tween="back" easing="in"/>
 						<effect type="slide" start="0,-37" time="250" tween="sine" easing="out"/>
 					</animation>					
-					<animation type="Focus" condition="Container(500).OnPrevious + !Skin.HasSetting(EnableLowCPUPowerMode)" reversible="false">
+					<animation type="Focus" condition="Container(500).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 						<effect type="Fade" start="40" end="100" time="550" tween="back" easing="in"/>
 						<effect type="slide" start="0,37" time="250" tween="sine" easing="out"/>
 					</animation>
