@@ -266,7 +266,7 @@
 								<bordersize>5</bordersize>
 								<texture>$INFO[ListItem.Property(Icon)]</texture>
 								<aspectratio aligny="center" align="center">keep</aspectratio>
-								<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 								<visible>!StringCompare(ListItem.Property(Icon),"")</visible>
 							</control>
 							<control type="image">
@@ -276,7 +276,7 @@
 								<bordersize>5</bordersize>
 								<texture>DefaultAudioDSP.png</texture>
 								<aspectratio aligny="center" align="center">keep</aspectratio>
-								<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 								<visible>StringCompare(ListItem.Property(Icon),"")</visible>
 							</control>
 							<control type="label">
@@ -476,7 +476,7 @@
 								<bordersize>5</bordersize>
 								<texture>$INFO[ListItem.Property(Icon)]</texture>
 								<aspectratio aligny="center" align="center">keep</aspectratio>
-								<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 								<visible>!StringCompare(ListItem.Property(Icon),"")</visible>
 							</control>
 							<control type="image">
@@ -486,7 +486,7 @@
 								<bordersize>5</bordersize>
 								<texture>DefaultAudioDSP.png</texture>
 								<aspectratio aligny="center" align="center">keep</aspectratio>
-								<include condition="!Skin.HasSetting(EnableLowCPUPowerMode)">ListViewCoverFocusAnim</include>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 								<visible>StringCompare(ListItem.Property(Icon),"")</visible>
 							</control>
 							<control type="label">
