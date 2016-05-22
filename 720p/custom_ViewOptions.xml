@@ -24,6 +24,14 @@
 			<control type="image" id="780">
 				<include>DropDownMenuTopBorder</include>
 			</control>
+			<control type="radiobutton" id="3059">
+				<description>Icon Hide Overlay (Episodes)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31046]</label>
+				<selected>Skin.HasSetting(HideEpisodesIconOverlay)</selected>
+				<onclick>Skin.ToggleSetting(HideEpisodesIconOverlay)</onclick>	
+				<visible>Skin.String(CurrentViewMode,50)</visible>
+			</control>
 			<control type="radiobutton" id="3000">
 				<description>Icon Hide Label (Pictures)</description>
 				<include>DropDownMenuRadioBtn</include>
