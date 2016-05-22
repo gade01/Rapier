@@ -35,6 +35,14 @@
 				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			</control>
+			<control type="radiobutton" id="3059">
+				<description>Icon Hide Overlay (Episodes)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31046]</label>
+				<selected>Skin.HasSetting(HideEpisodesIconOverlay)</selected>
+				<onclick>Skin.ToggleSetting(HideEpisodesIconOverlay)</onclick>	
+				<visible>Skin.String(CurrentViewMode,50)</visible>
+			</control>
 			<control type="radiobutton" id="3000">
 				<description>Icon Hide Label (Pictures)</description>
 				<include>DropDownMenuRadioBtn</include>
