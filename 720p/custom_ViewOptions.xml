@@ -817,6 +817,16 @@
 				<onclick>Skin.ToggleSetting(HideMoviesRecommendedFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,582) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
 			</control>
+			<control type="radiobutton" id="3063">
+				<description>Wall Vertical Navigation</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31132]</label>
+				<selected>Skin.HasSetting(WallViewVerticalNavigation)</selected>
+				<onclick>Skin.ToggleSetting(WallViewVerticalNavigation)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<visible>Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,70) | Skin.String(CurrentViewMode,586)</visible>
+			</control>
 			<control type="radiobutton" id="1033">
 				<description>Wall Do Not Dim Cover (Music)</description>
 				<include>DropDownMenuRadioBtn</include>
