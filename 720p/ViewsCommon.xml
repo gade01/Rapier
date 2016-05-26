@@ -2987,7 +2987,7 @@
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
 							<label>$VAR[MovieGenre]</label>
-							<visible>Window.IsActive(Videos) + !String.IsEmpty(ListItem.Genre)</visible>
+							<visible>Window.IsActive(Videos) + ![Container.Content(Seasons) + String.IsEmpty(ListItem.Genre)]</visible>
 						</control>
 						
 						<control type="label">
@@ -3026,7 +3026,7 @@
 						<control type="label">
 							<include>InfoPaneItemTitle2</include>
 							<label>$VAR[DVDThumbsViewYearLabelVar]</label>
-							<visible>!String.IsEmpty(ListItem.Year)</visible>
+							<visible>![Container.Content(Seasons) + String.IsEmpty(ListItem.Year)]</visible>
 						</control>
 						
 						<control type="label">
