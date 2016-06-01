@@ -565,7 +565,7 @@
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,musicdb://years/)]]</visible>
-			<visible>[Window.IsActive(MusicInformation) | Window.IsActive(SongInformation)]
+			<visible>[Window.IsActive(musicinformation) | Window.IsActive(songinformation)]
 			| [Control.IsVisible(50) + Skin.HasSetting(ShowMusicIconFanart)]
 			| [Control.IsVisible(63) + Skin.HasSetting(ShowMusicThumbnailFanart)]
 			| [Control.IsVisible(52) + !Skin.HasSetting(HideMusicListFanart)] 

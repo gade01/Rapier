@@ -19,7 +19,22 @@
 				<height>168</height>
 				<texture border="50">panels/dialog-background4.png</texture>
 			</control>
-						
+			
+			<control type="multiimage">
+				<left>37</left>
+				<top>35</top>
+				<width>98</width>
+				<height>98</height>
+				<imagepath fallback="notification.png">gui/busy-spinner/</imagepath>
+				<timeperimage>60</timeperimage>
+				<fadetime>10</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				<animation effect="fade" end="75" condition="true">Conditional</animation>
+			</control>
+			
+			<!--
 			<control type="image">
 				<left>25</left>
 				<top>35</top>
@@ -28,6 +43,7 @@
 				<texture>notification.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
+			-->
 			
 			<control type="label">
 				<description>Line 1</description>
