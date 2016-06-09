@@ -43,10 +43,10 @@
 		<hitrect x="-20" y="-20" w="60" h="60"/>
 		<texturenofocus>gui/breadcrumb-home-nofocus.png</texturenofocus>
 		<texturefocus>gui/breadcrumb-home-focus.png</texturefocus>
-		<onright condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">987</onright>
-		<onright condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)]">850</onright>
-		<ondown condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">987</ondown>
-		<ondown condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsActive(script-ExtendedInfo Script-VideoList.xml) | Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)]">850</ondown>
+		<onright condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-VideoList.xml) | Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">987</onright>
+		<onright condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-VideoList.xml) | Window.IsActive(script-script.extendedinfo-YoutubeList.xml)]">850</onright>
+		<ondown condition="Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-VideoList.xml) | Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">987</ondown>
+		<ondown condition="![Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-VideoList.xml) | Window.IsActive(script-script.extendedinfo-YoutubeList.xml)]">850</ondown>
 		<onclick>Dialog.Close(all,true)</onclick>
 		<onclick>ActivateWindow(Home)</onclick>
 		<animation type="Conditional" condition="![Container.Scrolling | Container(584).Scrolling | [Window.IsActive(script-globalsearch-main.xml) + [Container(221).Scrolling | Container(111).Scrolling | Container(211).Scrolling | Container(121).Scrolling | Container(131).Scrolling | Container(141).Scrolling | Container(151).Scrolling | Container(161).Scrolling | Container(171).Scrolling | Container(181).Scrolling]]]">
@@ -1375,38 +1375,38 @@
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$LOCALIZE[31012][/B][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl2Anim</include>
-				<visible>Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)</visible>
+				<visible>Window.IsActive(script-script.extendedinfo-YoutubeList.xml)</visible>
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl2Anim</include>
-				<visible>Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)</visible>
+				<visible>Window.IsActive(script-script.extendedinfo-YoutubeList.xml)</visible>
 			</control>
 			<control type="label">
 				<description>Type</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$INFO[Window.Property(Type)][/B][/UPPERCASE]</label>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-VideoList.xml)">BreadCrumbSlideLvl2Anim</include>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">BreadCrumbSlideLvl3Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">BreadCrumbSlideLvl2Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-VideoList.xml)">BreadCrumbSlideLvl2Anim</include>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">BreadCrumbSlideLvl3Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">BreadCrumbSlideLvl2Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="label">
 				<description>Filter</description>
 				<width min="10" max="800">auto</width>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE][B]$INFO[Window.Property(Filter_Label)][/B][/UPPERCASE]</label>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-VideoList.xml)">BreadCrumbSlideLvl3Anim</include>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">BreadCrumbSlideLvl4Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">BreadCrumbSlideLvl3Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">BreadCrumbSlideLvl4Anim</include>
 				<visible>!String.IsEmpty(Window.Property(Filter_Label))</visible>
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-VideoList.xml)">BreadCrumbSlideLvl3Anim</include>
-				<include condition="Window.IsActive(script-ExtendedInfo Script-YoutubeList.xml)">BreadCrumbSlideLvl4Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">BreadCrumbSlideLvl3Anim</include>
+				<include condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">BreadCrumbSlideLvl4Anim</include>
 				<visible>!String.IsEmpty(Window.Property(Filter_Label))</visible>
 			</control>
 		</control>

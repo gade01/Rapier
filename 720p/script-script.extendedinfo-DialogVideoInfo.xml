@@ -29,10 +29,10 @@
 			</control>
 		</control>
 		
-		<include condition="![[Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation)] + !String.IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
+		<include condition="![[Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation)] + !String.IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
 		
 		<control type="group">
-			<visible>!Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsActive(script-script.extendedinfo-DialogInfo.xml)</visible>
 			<include>MediaInfoOpenCloseAnim</include>
 			
 			<control type="group">
