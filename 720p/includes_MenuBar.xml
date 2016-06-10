@@ -1103,7 +1103,7 @@
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultPVRMenuBar</include>
-			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | !Skin.HasSetting(HideMenuBar)</visible>
+			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(DialogPVRInfo.xml)]</visible>
 		</control>
 	</include>
 
@@ -1903,6 +1903,71 @@
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
 				<visible>System.HasAddon(script.libraryeditor)</visible>
+			</control>
+		</control>		
+	</include>
+	
+	<include name="PVRInfoMenubar">	
+		<control type="grouplist" id="987">
+			<width>ScreenWidth</width>
+			<height>MenuBarHeight</height>
+			<itemgap>0</itemgap>
+			<align>center</align>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<onup>555</onup>
+			<ondown>61</ondown>
+			<onleft>987</onleft>
+			<onright>987</onright>
+			<include>MenuBarBtnOpenCloseAnim</include>
+			<control type="image" id="115">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="5">
+				<description>Play</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[208][/UPPERCASE]</label>
+				<visible>Window.IsActive(PVRGuideInfo)</visible>
+			</control>
+			<control type="button" id="8">
+				<description>Play</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[208][/UPPERCASE]</label>
+				<visible>Window.IsActive(PVRRecordingInfo)</visible>
+			</control>
+			<control type="image" id="116">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="6">
+				<description>Record</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]-[/UPPERCASE]</label>
+				<visible>Window.IsActive(PVRGuideInfo)</visible>
+			</control>
+			<control type="image" id="117">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsActive(PVRGuideInfo)</visible>
+			</control>
+			<control type="button" id="4">
+				<description>Find Similar</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[19003][/UPPERCASE]</label>
+				<visible>Window.IsActive(PVRGuideInfo)</visible>
+			</control>
+			<control type="image" id="118">
+				<include>MenuBarSeparator</include>
+				<visible>Window.IsActive(PVRGuideInfo)</visible>
+			</control>
+			<control type="button" id="119">
+				<description>Search Youtube</description>
+				<include>MenuBarSettingsBtn</include>
+				<onclick condition="System.HasAddon(script.extendedinfo)">Action(close)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Title])</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
+			</control>
+			<control type="image" id="120">
+				<include>MenuBarSeparator</include>
 			</control>
 		</control>		
 	</include>
