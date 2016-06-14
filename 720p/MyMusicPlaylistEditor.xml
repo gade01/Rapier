@@ -312,24 +312,16 @@
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
+						<include>FileManagerInfoLabel</include>
 						<label>$LOCALIZE[556]</label>
-						<align>center</align>
 						<visible>!IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
+						<scroll>true</scroll>
+						<include>FileManagerInfoLabel2</include>
 						<label>$INFO[Container(50).ListItem.Title]</label>
-						<align>center</align>
-						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="image">
@@ -337,24 +329,16 @@
 						<visible>!IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
+						<include>FileManagerInfoLabel</include>
 						<label>$LOCALIZE[557]</label>
-						<align>center</align>
 						<visible>!IsEmpty(ListItem.Artist)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
+						<scroll>true</scroll>
+						<include>FileManagerInfoLabel2</include>
 						<label>$INFO[Container(50).ListItem.Artist]</label>
-						<align>center</align>
-						<scroll>true</scroll>
 						<visible>!IsEmpty(ListItem.Artist)</visible>
 					</control>
 					<control type="image">
@@ -362,24 +346,16 @@
 						<visible>!IsEmpty(ListItem.Artist)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
+						<include>FileManagerInfoLabel</include>
 						<label>$LOCALIZE[558]</label>
-						<align>center</align>
 						<visible>!IsEmpty(ListItem.Album)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[Container(50).ListItem.Album]</label>
-						<align>center</align>
 						<scroll>true</scroll>
+						<include>FileManagerInfoLabel2</include>
+						<label>$INFO[Container(50).ListItem.Album]</label>
 						<visible>!IsEmpty(ListItem.Album)</visible>
 					</control>
 					<control type="image">
@@ -387,24 +363,15 @@
 						<visible>!IsEmpty(ListItem.Album)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[515]</label>
-						<align>center</align>
+						<include>FileManagerInfoLabel</include>
 						<visible>!IsEmpty(ListItem.Genre)</visible>
 					</control>
 					<control type="label">
-						<width>180</width>
 						<height>22</height>
-						<font>FileManagerInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[Container(50).ListItem.Genre]</label>
-						<align>center</align>
 						<scroll>true</scroll>
+						<include>FileManagerInfoLabel2</include>
+						<label>$INFO[Container(50).ListItem.Genre]</label>
 						<visible>!IsEmpty(ListItem.Genre)</visible>
 					</control>
 				</control>
