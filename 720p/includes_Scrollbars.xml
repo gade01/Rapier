@@ -891,8 +891,56 @@
 				<height>500</height>
 				<onleft condition="Window.IsVisible(SkinSettings)">851</onleft>
 				<onleft condition="!Window.IsVisible(SkinSettings)">5</onleft>
-				<visible>!Skin.HasSetting(ExpandedSettings)</visible>
-			</control>	
+				<visible>!Skin.HasSetting(ExpandedSettings) + ![Window.IsVisible(SkinSettings) + [Skin.String(SkinSettingsCategory,1) | Skin.String(SkinSettingsCategory,2) | Skin.String(SkinSettingsCategory,3) | Skin.String(SkinSettingsCategory,4) |Skin.String(SkinSettingsCategory,5) | Skin.String(SkinSettingsCategory,9)]]</visible>
+			</control>
+			
+			<control type="scrollbar" id="991">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>900</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,1)</visible>
+			</control>
+			
+			<control type="scrollbar" id="992">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>901</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,2)</visible>
+			</control>
+			
+			<control type="scrollbar" id="993">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>902</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,3)</visible>
+			</control>
+			
+			<control type="scrollbar" id="994">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>903</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,4)</visible>
+			</control>
+			
+			<control type="scrollbar" id="995">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>904</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,5)</visible>
+			</control>
+			
+			<control type="scrollbar" id="996">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>908</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,9)</visible>
+			</control>
 		</control>
 
 		<control type="group" id="151">
