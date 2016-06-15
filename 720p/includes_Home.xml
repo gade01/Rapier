@@ -168,8 +168,8 @@
 		</focusedlayout>
 	</include>
 
-	<include name="HomeProgramsCustomBGPath">
-		<thumb>$INFO[Skin.String(CustomProgramsBGPath)]</thumb>
+	<include name="HomeAddonsCustomBGPath">
+		<thumb>$INFO[Skin.String(CustomAddonsBGPath)]</thumb>
 	</include>
 
 	<include name="HomePicturesCustomBGPath">
@@ -1076,12 +1076,12 @@
 						<visible>!Skin.HasSetting(HideTVShowsCategory) + Library.HasContent(TVShows)</visible>
 					</item>
 					<item id="5">
-						<description>Programs Category</description>
-						<label>programs</label>
-						<icon>homecategories/$INFO[System.Language]/programs-text-nofocus.png</icon>
-						<include condition="Skin.String(CustomProgramsBGType,2) | Skin.String(CustomProgramsBGType,3)">HomeProgramsCustomBGPath</include>
-						<onclick>ActivateWindow(Programs)</onclick>	
-						<visible>!Skin.HasSetting(HideProgramsCategory)</visible>
+						<description>Add-ons Category</description>
+						<label>add-ons</label>
+						<icon>homecategories/$INFO[System.Language]/add-ons-text-nofocus.png</icon>
+						<include condition="Skin.String(CustomAddonsBGType,2) | Skin.String(CustomAddonsBGType,3)">HomeAddonsCustomBGPath</include>
+						<onclick>ActivateWindow(AddonBrowser)</onclick>	
+						<visible>!Skin.HasSetting(HideAddonsCategory)</visible>
 					</item>
 					<item id="6">
 						<description>Pictures Category</description>
@@ -1219,9 +1219,9 @@
 			</control>
 
 			<control type="image">
-				<description>Programs Icon</description>
+				<description>Add-ons Icon</description>
 				<include>HomeMenuIconDim</include>
-				<texture fallback="home-programs-icon.png">$INFO[Skin.String(ProgramsCategoryIconPath)]</texture>
+				<texture fallback="home-add-ons-icon.png">$INFO[Skin.String(AddonsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Container(850).HasFocus(5) + String.IsEqual(Container(546).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
@@ -1491,7 +1491,7 @@
 				<include content="HomeAddonShortcutsLayout">
 					<param name="id" value="546" />
 					<param name="Container850Position" value="5" />
-					<param name="AddonType" value="Programs" />
+					<param name="AddonType" value="Addons" />
 				</include>
 			</control>
 			
@@ -2138,7 +2138,7 @@
 			</control>
 
 			<control type="list" id="110">
-				<description>Programs Menu Bar</description>
+				<description>Add-ons Menu Bar</description>
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
@@ -2153,60 +2153,81 @@
 				<include>HomeSubMenuItemLayout</include>
 				<content>
 					<item id="1">
-						<description>Program Add-ons</description>
-						<label>$LOCALIZE[24001]</label>
-						<onclick condition="!System.Platform.Android">ActivateWindow(Programs,Addons,Return)</onclick>
-						<onclick condition="System.Platform.Android">ActivateWindow(Programs,AndroidApps,Return)</onclick>
-						<visible>!Skin.HasSetting(EditProgramsSubMenuBtn1)</visible>
+						<description>Video Add-ons</description>
+						<label>$LOCALIZE[1037]</label>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Videos,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Videos,AndroidApps,Return)</onclick>
+						<visible>!Skin.HasSetting(EditAddonsSubMenuBtn1)</visible>
 					</item>
 					<item id="1">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn1Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn1Type,Favourite) | Skin.String(ProgramsSubMenuBtn1Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn1Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn1Type,Favourite) | Skin.String(ProgramsSubMenuBtn1Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.1.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn1) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn1Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn1Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn1Type,Favourite) | Skin.String(AddonsSubMenuBtn1Type,)]">$INFO[Skin.String(AddonsSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn1Type,Favourite) | Skin.String(AddonsSubMenuBtn1Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.1.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn1) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn1Label))</visible>
+					</item>
+					<item id="2">
+						<description>Music Add-ons</description>
+						<label>$LOCALIZE[1038]</label>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Music,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Music,AndroidApps,Return)</onclick>
+						<visible>!Skin.HasSetting(EditAddonsSubMenuBtn2)</visible>
 					</item>
 					<item id="2">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn2Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn2Type,Favourite) | Skin.String(ProgramsSubMenuBtn2Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn2Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn2Type,Favourite) | Skin.String(ProgramsSubMenuBtn2Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.2.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn2) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn2Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn2Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn2Type,Favourite) | Skin.String(AddonsSubMenuBtn2Type,)]">$INFO[Skin.String(AddonsSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn2Type,Favourite) | Skin.String(AddonsSubMenuBtn2Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.2.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn2) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn2Label))</visible>
+					</item>
+					<item id="3">
+						<description>Picture Add-ons</description>
+						<label>$LOCALIZE[1039]</label>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Pictures,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Pictures,AndroidApps,Return)</onclick>
+						<visible>!Skin.HasSetting(EditAddonsSubMenuBtn3)</visible>
 					</item>
 					<item id="3">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn3Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn3Type,Favourite) | Skin.String(ProgramsSubMenuBtn3Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn3Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn3Type,Favourite) | Skin.String(ProgramsSubMenuBtn3Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.3.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn3) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn3Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn3Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn3Type,Favourite) | Skin.String(AddonsSubMenuBtn3Type,)]">$INFO[Skin.String(AddonsSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn3Type,Favourite) | Skin.String(AddonsSubMenuBtn3Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.3.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn3) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn3Label))</visible>
+					</item>
+					<item id="4">
+						<description>Program Add-ons</description>
+						<label>$LOCALIZE[1043]</label>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Programs,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Programs,AndroidApps,Return)</onclick>
+						<visible>!Skin.HasSetting(EditAddonsSubMenuBtn4)</visible>
 					</item>
 					<item id="4">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn4Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn4Type,Favourite) | Skin.String(ProgramsSubMenuBtn4Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn4Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn4Type,Favourite) | Skin.String(ProgramsSubMenuBtn4Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.4.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn4) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn4Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn4Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn4Type,Favourite) | Skin.String(AddonsSubMenuBtn4Type,)]">$INFO[Skin.String(AddonsSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn4Type,Favourite) | Skin.String(AddonsSubMenuBtn4Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.4.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn4) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn5Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn5Type,Favourite) | Skin.String(ProgramsSubMenuBtn5Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn5Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn5Type,Favourite) | Skin.String(ProgramsSubMenuBtn5Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.5.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn5) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn5Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn5Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn5Type,Favourite) | Skin.String(AddonsSubMenuBtn5Type,)]">$INFO[Skin.String(AddonsSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn5Type,Favourite) | Skin.String(AddonsSubMenuBtn5Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.5.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn5) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn5Label))</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn6Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn6Type,Favourite) | Skin.String(ProgramsSubMenuBtn6Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn6Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn6Type,Favourite) | Skin.String(ProgramsSubMenuBtn6Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.6.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn6) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn6Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn6Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn6Type,Favourite) | Skin.String(AddonsSubMenuBtn6Type,)]">$INFO[Skin.String(AddonsSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn6Type,Favourite) | Skin.String(AddonsSubMenuBtn6Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.6.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn6) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn6Label))</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
-						<label>$INFO[Skin.String(ProgramsSubMenuBtn7Label)]</label>
-						<onclick condition="![Skin.String(ProgramsSubMenuBtn7Type,Favourite) | Skin.String(ProgramsSubMenuBtn7Type,)]">$INFO[Skin.String(ProgramsSubMenuBtn7Param)]</onclick>
-						<onclick condition="Skin.String(ProgramsSubMenuBtn7Type,Favourite) | Skin.String(ProgramsSubMenuBtn7Type,)">$INFO[Skin.String(ProgramsSubMenuFavourite.7.Path)]</onclick>
-						<visible>Skin.HasSetting(EditProgramsSubMenuBtn7) + !String.IsEmpty(Skin.String(ProgramsSubMenuBtn7Label))</visible>
+						<label>$INFO[Skin.String(AddonsSubMenuBtn7Label)]</label>
+						<onclick condition="![Skin.String(AddonsSubMenuBtn7Type,Favourite) | Skin.String(AddonsSubMenuBtn7Type,)]">$INFO[Skin.String(AddonsSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(AddonsSubMenuBtn7Type,Favourite) | Skin.String(AddonsSubMenuBtn7Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.7.Path)]</onclick>
+						<visible>Skin.HasSetting(EditAddonsSubMenuBtn7) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn7Label))</visible>
 					</item>
 				</content>						
 			</control>

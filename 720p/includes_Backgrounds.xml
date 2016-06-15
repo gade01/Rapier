@@ -84,8 +84,8 @@
 		<value>30</value>
 	</variable>
 	
-	<variable name="ProgramsBrightnessValueVar">
-		<value condition="!String.IsEmpty(Skin.String(ProgramsBrightnessValue))">$INFO[Skin.String(ProgramsBrightnessValue)]</value>
+	<variable name="AddonsBrightnessValueVar">
+		<value condition="!String.IsEmpty(Skin.String(AddonsBrightnessValue))">$INFO[Skin.String(AddonsBrightnessValue)]</value>
 		<value>30</value>
 	</variable>
 	
@@ -168,9 +168,9 @@
 		</include>
 	</include>
 	
-	<include name="ProgramsBrightnessAnimations">
+	<include name="AddonsBrightnessAnimations">
 		<include content="BrightnessAnimations">
-			<param name="type" value="ProgramsBrightnessValue" />
+			<param name="type" value="AddonsBrightnessValue" />
 		</include>
 	</include>
 	
@@ -367,7 +367,7 @@
 			<control type="multiimage">
 				<description>Custom Background</description>
 				<include>BackgroundSize</include>
-				<imagepath>$INFO[Skin.String(CustomProgramsBGPath)]</imagepath>
+				<imagepath>$INFO[Skin.String(CustomAddonsBGPath)]</imagepath>
 				<aspectratio>scale</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>BackgroundCrossfadeTime</fadetime>
@@ -752,7 +752,7 @@
 	<include name="ProgramsBackgroundDim">
 		<control type="image">
 			<include>BackgroundDim</include>
-			<include>ProgramsBrightnessAnimations</include>
+			<include>AddonsBrightnessAnimations</include>
 		</control>
 	</include>
 
