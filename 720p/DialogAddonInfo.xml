@@ -212,13 +212,15 @@
 						<label2>$INFO[ListItem.AddonSummary]</label2>
 						<onclick>noop</onclick>
 					</item>
+					<!--
 					<item id="7">
-						<description>Disclaimer</description>
-						<label>$LOCALIZE[24052]</label>
-						<label2 fallback="16018">$INFO[ListItem.AddonDisclaimer]</label2>
+						<description>Add-on News</description>
+						<label>$LOCALIZE[24054]</label>
+						<label2 fallback="16018">$INFO[ListItem.AddonNews]</label2>
 						<onclick>noop</onclick>
 						<visible>String.IsEmpty(ListItem.AddonLastUpdated) + [String.IsEmpty(ListItem.AddonLastUsed) | String.IsEmpty(ListItem.AddonInstallDate)]</visible>
 					</item>
+					-->
 					<item id="8">
 						<description>Last Updated</description>
 						<label>$LOCALIZE[31124]</label>
@@ -266,6 +268,19 @@
 				<pagecontrol>61</pagecontrol>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 				<include>ControlsOpenCloseAnim</include>
+			</control>
+			
+			<control type="Label">
+				<description>Disclaimer</description>
+				<left>100</left>
+				<top>645</top>
+				<width>990</width>
+				<font>ListFont3</font>
+				<textcolor>MediaInfoItemColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>[UPPERCASE]$LOCALIZE[24052]: $INFO[ListItem.AddonDisclaimer][/UPPERCASE]</label>
+				<include>ControlsOpenCloseAnim</include>
+				<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 			</control>
 			
 			<control type="spincontrol" id="61">
