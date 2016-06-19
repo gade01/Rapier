@@ -2053,6 +2053,21 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
+			<control type="togglebutton" id="122">
+				<description>Description / News</description>
+				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
+				<alttexturenofocus>-</alttexturenofocus>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[24054][/UPPERCASE]</label>
+				<altlabel>[UPPERCASE]$LOCALIZE[21821][/UPPERCASE]</altlabel>
+				<usealttexture>Skin.HasSetting(AddonInfoDescriptionNewsToggle)</usealttexture>
+				<onclick>Skin.ToggleSetting(AddonInfoDescriptionNewsToggle)</onclick>
+				<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+			</control>
+			<control type="image" id="123">
+				<include>MenuBarSeparator</include>
+				<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+			</control>
 		</control>		
 	</include>
 	

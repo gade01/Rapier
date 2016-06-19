@@ -2,6 +2,7 @@
 <window id="146">
 	<defaultcontrol always="true">987</defaultcontrol>
 	<menucontrol>987</menucontrol>
+	<onunload>Skin.Reset(AddonInfoDescriptionNewsToggle)</onunload>
 	<include>ControlsOpenCloseAnim</include>
 	
 	<controls>
@@ -212,30 +213,21 @@
 						<label2>$INFO[ListItem.AddonSummary]</label2>
 						<onclick>noop</onclick>
 					</item>
-					<!--
 					<item id="7">
-						<description>Add-on News</description>
-						<label>$LOCALIZE[24054]</label>
-						<label2 fallback="16018">$INFO[ListItem.AddonNews]</label2>
-						<onclick>noop</onclick>
-						<visible>String.IsEmpty(ListItem.AddonLastUpdated) + [String.IsEmpty(ListItem.AddonLastUsed) | String.IsEmpty(ListItem.AddonInstallDate)]</visible>
-					</item>
-					-->
-					<item id="8">
 						<description>Last Updated</description>
 						<label>$LOCALIZE[31124]</label>
 						<label2>$INFO[ListItem.AddonLastUpdated]</label2>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.AddonLastUpdated)</visible>
 					</item>
-					<item id="9">
+					<item id="8">
 						<description>Last Used</description>
 						<label>$LOCALIZE[12012]</label>
 						<label2>$INFO[ListItem.AddonLastUsed]</label2>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.AddonLastUsed)</visible>
 					</item>
-					<item id="10">
+					<item id="9">
 						<description>Install Date</description>
 						<label>$LOCALIZE[12013]</label>
 						<label2>$INFO[ListItem.AddonInstallDate]</label2>
@@ -268,6 +260,24 @@
 				<pagecontrol>61</pagecontrol>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
 				<include>ControlsOpenCloseAnim</include>
+				<visible>!Skin.HasSetting(AddonInfoDescriptionNewsToggle)</visible>
+			</control>
+			
+			<control type="textbox" id="9001">
+				<description>Add-on News</description>
+				<left>100</left>
+				<top>462</top>
+				<width>1080</width>
+				<height>163</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.AddonNews]</label>
+				<align>justify</align>
+				<pagecontrol>61</pagecontrol>
+				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
+				<include>ControlsOpenCloseAnim</include>
+				<visible>Skin.HasSetting(AddonInfoDescriptionNewsToggle)</visible>
 			</control>
 			
 			<control type="Label">
@@ -293,7 +303,7 @@
 				<spinheight>30</spinheight>
 				<onup>901</onup>
 				<onleft>901</onleft>
-				<visible>Integer.IsGreater(Container(4).NumPages,1) + Control.IsVisible(4)</visible>
+				<visible>[Integer.IsGreater(Container(4).NumPages,1) + Control.IsVisible(4)] | [Integer.IsGreater(Container(9001).NumPages,1) + Control.IsVisible(9001)]</visible>
 			</control>
 		</control>
 		
