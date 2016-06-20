@@ -214,20 +214,27 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="7">
+						<description>Size</description>
+						<label>$LOCALIZE[289]</label>
+						<label2>$INFO[ListItem.AddonSize]</label2>
+						<onclick>noop</onclick>
+						<visible>!String.IsEmpty(ListItem.AddonSize)</visible>
+					</item>
+					<item id="8">
 						<description>Last Updated</description>
 						<label>$LOCALIZE[31124]</label>
 						<label2>$INFO[ListItem.AddonLastUpdated]</label2>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.AddonLastUpdated)</visible>
 					</item>
-					<item id="8">
+					<item id="9">
 						<description>Last Used</description>
 						<label>$LOCALIZE[12012]</label>
 						<label2>$INFO[ListItem.AddonLastUsed]</label2>
 						<onclick>noop</onclick>
-						<visible>!String.IsEmpty(ListItem.AddonLastUsed)</visible>
+						<visible>String.IsEmpty(ListItem.AddonSize) + !String.IsEmpty(ListItem.AddonLastUsed)</visible>
 					</item>
-					<item id="9">
+					<item id="10">
 						<description>Install Date</description>
 						<label>$LOCALIZE[12013]</label>
 						<label2>$INFO[ListItem.AddonInstallDate]</label2>
