@@ -68,7 +68,7 @@
 				<onclick condition="Container.Content(Addons)">Container.SetViewMode(90)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
-				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
 			</control>
 
@@ -86,7 +86,7 @@
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(590)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] 
-				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Container.Content(Addons) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -104,7 +104,7 @@
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(591)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(musicvideos)]] 
-				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -120,7 +120,7 @@
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(592)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(TVShows)]]
-				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)] | String.Contains(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
+				| [Window.IsActive(Music) + Container.Content(Albums)] | String.Contains(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 			
 			<control type="button" id="17">
@@ -142,7 +142,7 @@
 				<onclick condition="Container.Content(images)">Container.SetViewMode(579)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(593)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
-				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
+				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(Music) + Container.Content(Albums)]
 				| String.Contains(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 
@@ -173,7 +173,7 @@
 				<onclick condition="Container.Content(Addons)">Container.SetViewMode(93)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(596)</onclick>
 				<onclick>Dialog.Close(3002)</onclick>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] | [Window.IsActive(Music) + Container.Content(Albums)]
 				| Container.Content(Addons) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -285,7 +285,7 @@
 				<texture>gui/view-wide-list.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
-				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
 			</control>
 			<control type="image">
@@ -294,7 +294,7 @@
 				<texture>gui/view-list-info.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] 
-				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Container.Content(Addons)</visible>
 			</control>			
 			<control type="image">
@@ -310,7 +310,7 @@
 				<texture>gui/view-list-info-2.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(musicvideos)]] 
-				| [Window.IsActive(MusicLibrary) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">
@@ -319,7 +319,7 @@
 				<texture>gui/view-list-info-3.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Episodes)]]
-				| [Window.IsActive(MusicLibrary) + Container.Content(Albums)] | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
+				| [Window.IsActive(Music) + Container.Content(Albums)] | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
@@ -340,7 +340,7 @@
 				<height>25</height>
 				<texture>gui/view-thumbs-info.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
-				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
+				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(Music) + Container.Content(Albums)]
 				| String.Contains(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
 			<control type="image">
@@ -362,7 +362,7 @@
 				<height>25</height>
 				<texture>gui/view-wrap-info.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] | [Window.IsActive(MusicLibrary) + Container.Content(Albums)]
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] | [Window.IsActive(Music) + Container.Content(Albums)]
 				| Container.Content(Addons) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="image">

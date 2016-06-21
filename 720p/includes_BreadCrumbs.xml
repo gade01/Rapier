@@ -99,7 +99,7 @@
 				<description>Videos</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$LOCALIZE[3][/UPPERCASE]</label>
-				<visible>String.IsEqual(Container.FolderPath,sources://video/) | String.IsEmpty(Container.FolderPath) | Container.Content(Files) | Container.Content(Addons) | String.Contains(Container.FolderPath,plugin:)
+				<visible>String.IsEqual(Container.FolderPath,sources://video/) | String.IsEmpty(Container.FolderPath) | Container.Content(Addons) | String.Contains(Container.FolderPath,plugin:)
 				| [String.EndsWith(Container.FolderPath,.xsp) + !String.StartsWith(Container.FolderPath,special://skin/extras/playlists/)]</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>		
@@ -268,7 +268,7 @@
 				| [!Container.Content(Countries) + String.Contains(Container.FolderPath,videodb://movies/countries/)]
 				| [!Container.Content(Artists) + String.Contains(Container.FolderPath,videodb://musicvideos/artists/)]
 				| [!Container.Content(Albums) + String.Contains(Container.FolderPath,videodb://musicvideos/albums/)]
-				| [Container.Content(Files) + ![String.IsEmpty(Container.FolderPath) | String.IsEqual(Container.FolderPath,sources://video/)
+				| [Window.IsActive(Videos) + ![String.IsEmpty(Container.FolderPath) | String.IsEqual(Container.FolderPath,sources://video/)
 				| String.IsEqual(Container.FolderPath,special://videoplaylists/) | String.Contains(Container.FolderPath,plugin:)]]
 				| String.EndsWith(Container.FolderPath,.xsp) | String.Contains(Container.FolderPath,plugin:)</visible>
 				<include>BreadCrumbSlideLvl4Anim</include>
@@ -377,7 +377,7 @@
 				<description>Music</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$LOCALIZE[2][/UPPERCASE]</label>
-				<visible>String.IsEmpty(Container.FolderPath) | Window.IsActive(MusicLibrary) | String.Contains(Container.FolderPath,musicdb://) | String.IsEqual(Container.FolderPath,special://musicplaylists/) | String.EndsWith(Container.FolderPath,.m3u)
+				<visible>String.IsEmpty(Container.FolderPath) | Window.IsActive(Music) | String.Contains(Container.FolderPath,musicdb://) | String.IsEqual(Container.FolderPath,special://musicplaylists/) | String.EndsWith(Container.FolderPath,.m3u)
 				| Container.Content(Addons) | String.Contains(Container.FolderPath,plugin:)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
@@ -411,7 +411,7 @@
 				| [!Container.Content(Albums) + [String.Contains(Container.FolderPath,musicdb://recentlyaddedalbums/) | String.Contains(Container.FolderPath,musicdb://recentlyplayedalbums/) | String.Contains(Container.FolderPath,musicdb://compilations/)]]
 				| [String.Contains(Container.FolderPath,musicdb://top100/) + [Container.Content(Songs) | Container.Content(Albums)]]
 				| String.EndsWith(Container.FolderPath,.m3u) | String.Contains(Container.FolderPath,plugin:)				
-				| [Window.IsActive(MusicLibrary) + ![String.IsEmpty(Container.FolderPath) | String.IsEqual(Container.FolderPath,sources://audio/) | String.Contains(Container.FolderPath,musicdb://)
+				| [Window.IsActive(Music) + ![String.IsEmpty(Container.FolderPath) | String.IsEqual(Container.FolderPath,sources://audio/) | String.Contains(Container.FolderPath,musicdb://)
 				| String.IsEqual(Container.FolderPath,special://musicplaylists/) | Container.Content(Addons)]]</visible>
 				<include>BreadCrumbSlideLvl4Anim</include>
 			</control>
@@ -424,7 +424,7 @@
 				<description>Music Library Label</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-				<visible>Skin.HasSetting(DisplayMusicLibraryTitle) + Window.IsActive(MusicLibrary) + !String.IsEmpty(ListItem.Artist)</visible>
+				<visible>Skin.HasSetting(DisplayMusicLibraryTitle) + Window.IsActive(Music) + !String.IsEmpty(ListItem.Artist)</visible>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="image">

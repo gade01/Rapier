@@ -1215,7 +1215,7 @@
 				<onclick>Skin.ToggleSetting(DisplayMusicLibraryTitle)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Window.IsActive(MusicLibrary) + !String.IsEmpty(ListItem.Artist)</visible>
+				<visible>Window.IsActive(Music) + !String.IsEmpty(ListItem.Artist)</visible>
 			</control>
 			<control type="radiobutton" id="2095">
 				<description>Display Movie Title on Top Bar (Movies)</description>
@@ -1307,7 +1307,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>!Skin.HasSetting(ShowThumbnailViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(ShowThumbnailViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,63) + [Window.IsActive(MusicLibrary) | Container.Content(Addons)]</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Window.IsActive(Music) | Container.Content(Addons)]</visible>
 			</control>
 			<control type="radiobutton" id="2062">
 				<description>Thumbnail Hide Scrollbar</description>

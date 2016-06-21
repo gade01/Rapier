@@ -94,7 +94,7 @@
 						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
+						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -224,7 +224,7 @@
 						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
+						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -425,7 +425,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
+						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -466,7 +466,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
+						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 					</control>
 					
 					<control type="image">
@@ -2000,7 +2000,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
+				<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Countries Cover</description>
@@ -2830,7 +2830,7 @@
 				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-				<visible>Window.IsActive(MusicLibrary) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
+				<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<description>Countries Cover</description>
@@ -9399,7 +9399,7 @@
 			</control>
 
 			<control type="group">
-				<visible>![[Window.IsActive(Videos) + String.IsEmpty(Container(584).ListItem.Title)] | [Window.IsActive(MusicLibrary) + String.IsEmpty(Container(584).ListItem.Artist)]] + !ListItem.IsParentFolder</visible>
+				<visible>![[Window.IsActive(Videos) + String.IsEmpty(Container(584).ListItem.Title)] | [Window.IsActive(Music) + String.IsEmpty(Container(584).ListItem.Artist)]] + !ListItem.IsParentFolder</visible>
 				<animation effect="slide" end="0,-41" condition="String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)">Conditional</animation>
 				<animation effect="slide" end="0,61" condition="Container.Content(Sets)">Conditional</animation>
 				
@@ -10254,7 +10254,7 @@
 				<include condition="[String.Contains(Container.FolderPath,videodb://movies/) + !String.Contains(Container.FolderPath,videodb://movies/sets/)] | String.Contains(Container.FolderPath,videodb://tvshows/)">ExtendedListContentVideo</include>
 				<include condition="String.Contains(Container.FolderPath,videodb://musicvideos/)">ExtendedListContentMusicVideo</include>
 				<include condition="String.Contains(Container.FolderPath,videodb://movies/sets/)">ExtendedListContentMovieSets</include>
-				<include condition="Window.IsActive(MusicLibrary)">ExtendedListContentMusic</include>
+				<include condition="Window.IsActive(Music)">ExtendedListContentMusic</include>
 			</control>
 			
 			<control type="image">
