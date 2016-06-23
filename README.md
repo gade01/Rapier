@@ -8,9 +8,6 @@ Rapier tries to support all the latest features Kodi has to offer as long as it 
   
 Created by scarfa and Gade  
 
-### CONTACT:
-gade: christian_gade@hotmail.com
-
 ### DOWNLOAD:
 Can be installed through the official Kodi repository.
 
@@ -26,12 +23,12 @@ Can be installed through the official Kodi repository.
 ### KODI WIKI:  
 [Kodi Wiki for Rapier](http://kodi.wiki/view/Add-on:Rapier)
 
-### [SCREENSHOTS](http://kodi.wiki/view/Add-on:Rapier#Screenshots)
-
 ###DONATIONS:
 If you like Rapier and want to buy me a coffee or beer, feel free to donate. Greatly appreciated!
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TKBVTL8RFC43N&lc=DK&item_name=Gade&item_number=skin%2erapier&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TKBVTL8RFC43N&lc=DK&item_name=Gade&item_number=skin%2erapier&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)   
+
+### [SCREENSHOTS](http://kodi.wiki/view/Add-on:Rapier#Screenshots)
 
 ## INSTALL
 The recommended way to install Rapier is to launch Kodi and navigate to the official Kodi repository inside the add-ons node.
