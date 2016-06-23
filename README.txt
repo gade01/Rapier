@@ -37,6 +37,13 @@ SCREENSHOTS:
 http://kodi.wiki/view/Add-on:Rapier#Screenshots
 
 
+DONATIONS:
+
+If you like Rapier and want to buy me a coffee or beer, feel free to donate. Much appreciated! ;)
+
+https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TKBVTL8RFC43N&lc=DK&item_name=Gade&item_number=skin%2erapier&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest
+
+
 ---------- INSTALL --------------------------------------------------------------------------
 
 The recommended way to install Rapier is to launch Kodi and navigate to the official Kodi repository inside the add-ons node.
