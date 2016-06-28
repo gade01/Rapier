@@ -4,7 +4,7 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="468" y="126">true</origin>
+		<origin x="468" y="89">true</origin>
 	</coordinates>
 	
 	<controls>
@@ -21,7 +21,7 @@
 				</control>
 				<control type="image">
 					<width>344</width>
-					<height>442</height>
+					<height>479</height>
 					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
 				</control>
 				<control type="image">
@@ -61,6 +61,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<onclick>Dialog.Close(1130)</onclick>
 				</control>
 				<control type="button" id="102">
@@ -87,6 +95,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick>Dialog.Close(1130)</onclick>
 				</control>
@@ -114,6 +130,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick>Dialog.Close(1130)</onclick>
 				</control>
@@ -122,22 +146,46 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[559] ($LOCALIZE[342])</label>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom1PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom1PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom2PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom2PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom3PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom3PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom4PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom4PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom5PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom5PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom6PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom6PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom7PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom7PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom8PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom8PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom9PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom9PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom10PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom10PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom11PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom11PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom12PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom12PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom13PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom13PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom14PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom14PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom15PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,4)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick condition="System.HasAddon(script.randomandlastitems)">Dialog.Close(1130)</onclick>
 				</control>
@@ -146,22 +194,46 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[559] ($LOCALIZE[20360])</label>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom1PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom1PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom2PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom2PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom3PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom3PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom4PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom4PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom5PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom5PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom6PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom6PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom7PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom7PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom8PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom8PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom9PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom9PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom10PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom10PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom11PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom11PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom12PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom12PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom13PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom13PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom14PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom14PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom15PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,5)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick condition="System.HasAddon(script.randomandlastitems)">Dialog.Close(1130)</onclick>
 				</control>		
@@ -170,22 +242,46 @@
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[559] ($LOCALIZE[2])</label>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom1PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom1PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom2PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom2PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom3PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom3PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom4PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom4PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom5PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom5PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom6PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom6PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom7PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom7PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom8PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom8PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom9PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom9PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom10PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom10PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom11PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom11PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom12PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom12PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom13PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom13PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom14PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom14PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom15PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,9)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick condition="System.HasAddon(script.randomandlastitems)">Dialog.Close(1130)</onclick>
 				</control>
@@ -214,6 +310,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(1130)</onclick>
 				</control>
 				<control type="button" id="108">
@@ -241,6 +345,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(1130)</onclick>
 				</control>
 				<control type="button" id="109">
@@ -268,6 +380,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(1130)</onclick>
 				</control>
 				<control type="button" id="110">
@@ -294,6 +414,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick>Dialog.Close(1130)</onclick>
 				</control>
@@ -321,6 +449,14 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick>Dialog.Close(1130)</onclick>
 				</control>
@@ -348,8 +484,45 @@
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
 					<include>CustomPanelClearScripts</include>
 					<onclick>Dialog.Close(1130)</onclick>
+				</control>
+				<control type="button" id="113">
+					<description>Custom</description>
+					<include>ContextMenuBtn</include>
+					<label>$LOCALIZE[636]</label>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom1PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom2PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom3PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom4PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom5PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom6PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom7PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom8PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom9PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom10PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom11PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom12PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom13PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom14PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,13)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts)">Skin.SetString(DialogVideoInfoButtonMenu,CustomWidgets)</onclick>
+					<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts)">Dialog.Close(1130)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts)">ActivateWindow(980)</onclick>
 				</control>
 			</control>
 				
