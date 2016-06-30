@@ -1333,6 +1333,16 @@
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom5PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom9PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom13PanelType,13)]</visible>
 						</control>
 						<control type="button" id="2352">
+							<description>Change Top Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31626]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom1PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom5PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom9PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom13PanelCustomTopWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom5PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom9PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom13PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2353">
 							<description>Top Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31624] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn1PanelCustomTopAspect][/COLOR]</label>
@@ -1340,7 +1350,7 @@
 							<onclick>ActivateWindow(980)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom5PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom9PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom13PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2353">
+						<control type="button" id="2354">
 							<description>Bottom Custom Widget Name</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31622] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn1PanelCustomBottomWidgetName][/COLOR]</label>
@@ -1350,7 +1360,17 @@
 							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">RunScript(script.skinshortcuts,type=widgets&amp;showNone=False&amp;skinWidgetName=Custom13PanelCustomBottomWidgetName&amp;skinWidgetTarget=Custom13PanelCustomBottomWidgetTarget&amp;skinWidgetPath=Custom13PanelCustomBottomWidgetPath)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom5PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom9PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom13PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2354">
+						<control type="button" id="2355">
+							<description>Change Bottom Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31627]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom1PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom5PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom9PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom13PanelCustomBottomWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom5PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom9PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom13PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2356">
 							<description>Bottom Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31625] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn1PanelCustomBottomAspect][/COLOR]</label>
@@ -1636,6 +1656,16 @@
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom2PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom6PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom10PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom14PanelType,13)]</visible>
 						</control>
 						<control type="button" id="2352">
+							<description>Change Top Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31626]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom2PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom6PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom10PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom14PanelCustomTopWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom2PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom6PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom10PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom14PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2353">
 							<description>Top Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31624] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn2PanelCustomTopAspect][/COLOR]</label>
@@ -1643,7 +1673,7 @@
 							<onclick>ActivateWindow(980)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom2PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom6PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom10PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom14PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2353">
+						<control type="button" id="2354">
 							<description>Bottom Custom Widget Name</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31622] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn2PanelCustomBottomWidgetName][/COLOR]</label>
@@ -1653,7 +1683,17 @@
 							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">RunScript(script.skinshortcuts,type=widgets&amp;showNone=False&amp;skinWidgetName=Custom14PanelCustomBottomWidgetName&amp;skinWidgetTarget=Custom14PanelCustomBottomWidgetTarget&amp;skinWidgetPath=Custom14PanelCustomBottomWidgetPath)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom2PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom6PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom10PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom14PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2354">
+						<control type="button" id="2355">
+							<description>Change Bottom Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31627]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom2PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom6PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom10PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom14PanelCustomBottomWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom2PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom6PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom10PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom14PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2356">
 							<description>Bottom Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31625] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn2PanelCustomBottomAspect][/COLOR]</label>
@@ -1939,6 +1979,16 @@
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom3PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom7PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom11PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom15PanelType,13)]</visible>
 						</control>
 						<control type="button" id="2352">
+							<description>Change Top Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31626]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom3PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom7PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom11PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom15PanelCustomTopWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom3PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom7PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom11PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom15PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2353">
 							<description>Top Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31624] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn3PanelCustomTopAspect][/COLOR]</label>
@@ -1946,7 +1996,7 @@
 							<onclick>ActivateWindow(980)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom3PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom7PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom11PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom15PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2353">
+						<control type="button" id="2354">
 							<description>Bottom Custom Widget Name</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31622] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn3PanelCustomBottomWidgetName][/COLOR]</label>
@@ -1956,7 +2006,17 @@
 							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">RunScript(script.skinshortcuts,type=widgets&amp;showNone=False&amp;skinWidgetName=Custom15PanelCustomBottomWidgetName&amp;skinWidgetTarget=Custom15PanelCustomBottomWidgetTarget&amp;skinWidgetPath=Custom15PanelCustomBottomWidgetPath)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom3PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom7PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom11PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom15PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2354">
+						<control type="button" id="2355">
+							<description>Change Bottom Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31627]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom3PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom7PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom11PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom15PanelCustomBottomWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom3PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom7PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom11PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom15PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2356">
 							<description>Bottom Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31625] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn3PanelCustomBottomAspect][/COLOR]</label>
@@ -2242,6 +2302,16 @@
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom4PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom8PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom12PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom16PanelType,13)]</visible>
 						</control>
 						<control type="button" id="2352">
+							<description>Change Top Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31626]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom4PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom8PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom12PanelCustomTopWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom16PanelCustomTopWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom4PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom8PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom12PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom16PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2353">
 							<description>Top Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31624] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn4PanelCustomTopAspect][/COLOR]</label>
@@ -2249,7 +2319,7 @@
 							<onclick>ActivateWindow(980)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom4PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom8PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom12PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom16PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2353">
+						<control type="button" id="2354">
 							<description>Bottom Custom Widget Name</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31622] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn4PanelCustomBottomWidgetName][/COLOR]</label>
@@ -2259,7 +2329,17 @@
 							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">RunScript(script.skinshortcuts,type=widgets&amp;showNone=False&amp;skinWidgetName=Custom16PanelCustomBottomWidgetName&amp;skinWidgetTarget=Custom16PanelCustomBottomWidgetTarget&amp;skinWidgetPath=Custom16PanelCustomBottomWidgetPath)</onclick>
 							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom4PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom8PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom12PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom16PanelType,13)]</visible>
 						</control>
-						<control type="button" id="2354">
+						<control type="button" id="2355">
+							<description>Change Bottom Custom Widget Name</description>
+							<include>ExpandedSettingsListBtn</include>
+							<label>$LOCALIZE[31627]</label>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(Custom4PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(Custom8PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(Custom12PanelCustomBottomWidgetName)</onclick>
+							<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(Custom16PanelCustomBottomWidgetName)</onclick>
+							<visible>[Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom4PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(Custom8PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(Custom12PanelType,13)] | [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(Custom16PanelType,13)]</visible>
+						</control>
+						<control type="button" id="2356">
 							<description>Bottom Custom Widget Aspect</description>
 							<include>ExpandedSettingsListBtn</include>
 							<label>$LOCALIZE[31625] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn4PanelCustomBottomAspect][/COLOR]</label>
