@@ -58,7 +58,16 @@
 				<onclick>Dialog.Close(3010)</onclick>
 				<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
 			</control>
-			<control type="image" id="784">
+			<control type="button" id="784">
+				<description>Add-on Settings</description>
+				<width>147</width>
+				<textwidth>111</textwidth>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[10140]</label>
+				<onclick>Dialog.Close(3010)</onclick>
+				<onclick>Addon.OpenSettings($INFO[Weather.Plugin])</onclick>
+			</control>
+			<control type="image" id="785">
 				<width>176</width>
 				<include>DropDownMenuBottomBorder</include>
 			</control>
@@ -78,11 +87,11 @@
 			<onright>Dialog.Close(3010)</onright>
 			<include>MenuOpenCloseAnim</include>
 			<visible>String.IsEqual(Weather.Plugin,weather.openweathermap.extended)</visible>
-			<control type="image" id="785">
+			<control type="image" id="786">
 				<width>147</width>
 				<include>DropDownMenuTopBorder</include>
 			</control>
-			<control type="button" id="786">
+			<control type="button" id="787">
 				<description>Weather Icons</description>
 				<width>147</width>
 				<textwidth>111</textwidth>
@@ -93,7 +102,7 @@
 				<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 				<enable>!String.IsEmpty(Weather.Plugin)</enable>
 			</control>
-			<control type="button" id="787">
+			<control type="button" id="788">
 				<description>Weather Fanart</description>
 				<width>147</width>
 				<textwidth>111</textwidth>
@@ -105,7 +114,7 @@
 				<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 				<enable>!String.IsEmpty(Weather.Plugin)</enable>
 			</control>
-			<control type="button" id="788">
+			<control type="button" id="789">
 				<description>Settings</description>
 				<width>147</width>
 				<textwidth>111</textwidth>
@@ -114,7 +123,16 @@
 				<onclick>Dialog.Close(3010)</onclick>
 				<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
 			</control>
-			<control type="image" id="789">
+			<control type="button" id="790">
+				<description>Add-on Settings</description>
+				<width>147</width>
+				<textwidth>111</textwidth>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[10140]</label>
+				<onclick>Dialog.Close(3010)</onclick>
+				<onclick>Addon.OpenSettings($INFO[Weather.Plugin])</onclick>
+			</control>
+			<control type="image" id="791">
 				<width>147</width>
 				<include>DropDownMenuBottomBorder</include>
 			</control>
