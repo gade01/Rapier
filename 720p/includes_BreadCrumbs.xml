@@ -666,24 +666,24 @@
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5502">
-				<description>Enabled Add-ons</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$LOCALIZE[24062][/UPPERCASE]</label>
-				<visible>String.Contains(Container.FolderPath,addons://enabled/)</visible>
-				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>
-			<control type="label" id="5503">
 				<description>Repository Name</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$INFO[Container.Property(reponame)][/UPPERCASE]</label>
-				<visible>![String.IsEmpty(Container.Property(reponame)) | String.Contains(Container.FolderPath,addons://enabled/)]</visible>
+				<visible>!String.IsEmpty(Container.Property(reponame))</visible>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
-			<control type="label" id="5504">
+			<control type="label" id="5503">
 				<description>Get Add-ons</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$LOCALIZE[24033][/UPPERCASE]</label>
-				<visible>String.IsEqual(Container.FolderPath,addons://repos/)</visible>
+				<visible>String.IsEqual(Container.FolderPath,addons://repos/) + String.IsEmpty(Container.Property(reponame))</visible>
+				<include>BreadCrumbSlideLvl3Anim</include>
+			</control>
+			<control type="label" id="5504">
+				<description>Folder</description>
+				<include>BreadCrumbLabel</include>
+				<label>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE]</label>
+				<visible>!String.IsEqual(Container.FolderPath,addons://) + !String.IsEqual(Container.FolderPath,addons://repos/) + String.IsEmpty(Container.Property(reponame))</visible>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="image">
@@ -695,7 +695,7 @@
 				<description>Add-on Category</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$INFO[Container.Property(AddonCategory)][/UPPERCASE]</label>
-				<visible>!String.IsEmpty(Container.Property(AddonCategory))</visible>
+				<visible>!String.IsEmpty(Container.Property(AddonCategory)) + !String.IsEmpty(Container.Property(reponame))</visible>
 				<include>BreadCrumbSlideLvl4Anim</include>
 			</control>
 			<control type="image">
