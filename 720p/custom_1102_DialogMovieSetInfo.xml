@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog" id="3008">
+<window type="dialog" id="1102">
 	<defaultcontrol always="true">116</defaultcontrol>
 	<menucontrol>987</menucontrol>
 	<onload>SetProperty("TvTunesSupported", "Movies")</onload>
@@ -189,7 +189,7 @@
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<onright condition="!Control.IsVisible(61)">987</onright>
 						<ondown condition="Control.IsVisible(61)">61</ondown>
-						<oninfo>Dialog.Close(3008)</oninfo>
+						<oninfo>Dialog.Close(1102)</oninfo>
 						<itemlayout width="720" height="29">
 							<control type="image">
 								<top>27</top>
@@ -380,7 +380,7 @@
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Title])</onclick>
 						<pagecontrol>61</pagecontrol>
-						<oninfo>Dialog.Close(3008)</oninfo>
+						<oninfo>Dialog.Close(1102)</oninfo>
 						<visible>!String.IsEmpty(ListItem.DBID)</visible>
 						<itemlayout width="482" height="30">
 							<control type="image">
@@ -589,7 +589,7 @@
 					<onup condition="Skin.String(DialogMovieSetInfo,1)">902</onup>
 					<onleft condition="String.IsEmpty(Skin.String(DialogMovieSetInfo))">901</onleft>
 					<onleft condition="Skin.String(DialogMovieSetInfo,1)">902</onleft>
-					<oninfo>Dialog.Close(3008)</oninfo>
+					<oninfo>Dialog.Close(1102)</oninfo>
 					<include>NotificationsOpenCloseAnim</include>
 					<visible>[!String.IsEqual(Container(903).NumPages,1) + !String.IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + String.IsEmpty(Skin.String(DialogMovieSetInfo))] | [!String.IsEqual(Container(902).NumPages,1) + !String.IsEmpty(Container(902).ListItem.Label) + Skin.String(DialogMovieSetInfo,1)]</visible>
 				</control>

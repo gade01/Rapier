@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog" id="3002">
+<window type="dialog" id="1112">
 	<defaultcontrol always="true">200</defaultcontrol>
 
 	<controls>
 		<control type="button">
-			<onclick>Dialog.Close(3002)</onclick>
+			<onclick>Dialog.Close(1112)</onclick>
 			<include>DropDownMenuCloseHitRect</include>
 		</control>
 
@@ -18,8 +18,8 @@
 			<orientation>vertical</orientation>
 			<onup>200</onup>
 			<ondown>200</ondown>
-			<onleft>Dialog.Close(3002)</onleft>
-			<onright>Dialog.Close(3002)</onright>
+			<onleft>Dialog.Close(1112)</onleft>
+			<onright>Dialog.Close(1112)</onright>
 			<include>MenuOpenCloseAnim</include>
 			<control type="image" id="780">
 				<include>DropDownMenuTopBorder</include>
@@ -30,7 +30,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31103]</label>
 				<onclick>Container.SetViewMode(50)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)
 				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)]</visible>
 			</control>
@@ -41,7 +41,7 @@
 				<label>$LOCALIZE[31103]</label>
 				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)">Container.SetViewMode(54)</onclick>
 				<onclick condition="Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)">Container.SetViewMode(63)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)
 				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
 			</control>
@@ -51,7 +51,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31105]</label>
 				<onclick>Container.SetViewMode(52)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 			</control>
 
 			<control type="button" id="5">
@@ -66,7 +66,7 @@
 				<onclick condition="Container.Content(Artists)">Container.SetViewMode(77)</onclick>
 				<onclick condition="Window.IsActive(MusicPlaylist)">Container.SetViewMode(77)</onclick>
 				<onclick condition="Container.Content(Addons)">Container.SetViewMode(90)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
 				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
@@ -84,7 +84,7 @@
 				<onclick condition="Container.Content(Artists)">Container.SetViewMode(62)</onclick>
 				<onclick condition="Container.Content(Addons)">Container.SetViewMode(91)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(590)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] 
 				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| Container.Content(Addons) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
@@ -102,7 +102,7 @@
 				<onclick condition="Container.Content(Songs)">Container.SetViewMode(67)</onclick>
 				<onclick condition="Container.Content(Artists)">Container.SetViewMode(67)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(591)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(musicvideos)]] 
 				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
@@ -118,7 +118,7 @@
 				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(589)</onclick>
 				<onclick condition="Container.Content(images)">Container.SetViewMode(578)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(592)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(TVShows)]]
 				| [Window.IsActive(Music) + Container.Content(Albums)] | String.Contains(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
@@ -128,7 +128,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31122]</label>
 				<onclick>Container.SetViewMode(585)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)</visible>
 			</control>
 
@@ -141,7 +141,7 @@
 				<onclick condition="Container.Content(Albums)">Container.SetViewMode(599)</onclick>
 				<onclick condition="Container.Content(images)">Container.SetViewMode(579)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(593)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Window.IsActive(Music) + Container.Content(Albums)]
 				| String.Contains(Container.FolderPath,plugin://plugin.program) | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles]]</visible>
 			</control>
@@ -151,7 +151,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31119]</label>
 				<onclick>Container.SetViewMode(594)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -160,7 +160,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31120]</label>
 				<onclick>Container.SetViewMode(595)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -172,7 +172,7 @@
 				<onclick condition="Container.Content(Albums)">Container.SetViewMode(64)</onclick>
 				<onclick condition="Container.Content(Addons)">Container.SetViewMode(93)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(596)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[Container.Content(Movies) | Container.Content(Sets)] | [Window.IsActive(Music) + Container.Content(Albums)]
 				| Container.Content(Addons) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
@@ -182,7 +182,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31117]</label>
 				<onclick>Container.SetViewMode(597)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -191,7 +191,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31118]</label>
 				<onclick>Container.SetViewMode(598)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 
@@ -200,7 +200,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31121]</label>
 				<onclick>Container.SetViewMode(588)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
 			</control>
 			
@@ -209,7 +209,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[20445]</label>
 				<onclick>Container.SetViewMode(583)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
 			</control>
 			
@@ -218,7 +218,7 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31010]</label>
 				<onclick condition="System.HasAddon(script.extendedinfo)">Container.SetViewMode(582)</onclick>
-				<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(3002)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo)">Dialog.Close(1112)</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			</control>
@@ -230,7 +230,7 @@
 				<onclick condition="Container.Content(Movies)">Container.SetViewMode(69)</onclick>
 				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(586)</onclick>
 				<onclick condition="Container.Content(Albums)">Container.SetViewMode(70)</onclick>
-				<onclick>Dialog.Close(3002)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Albums)</visible>
 			</control>
 

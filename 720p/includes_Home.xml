@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="HomeRandomAlbums">
-		<value condition="!Window.IsVisible(3050)">musicdb://albums/</value>
+		<value condition="!Window.IsVisible(1111)">musicdb://albums/</value>
 	</variable>
 	
 	<variable name="HomeRandomMovies">
-		<value condition="!Window.IsVisible(3050)">videodb://movies/titles/</value>
+		<value condition="!Window.IsVisible(1111)">videodb://movies/titles/</value>
 	</variable>
 	
 	<variable name="HomeRandomEpisodes">
-		<value condition="!Window.IsVisible(3050)">special://skin/extras/playlists/HomeRandomEpisodes.xsp</value>
+		<value condition="!Window.IsVisible(1111)">special://skin/extras/playlists/HomeRandomEpisodes.xsp</value>
 	</variable>
 	
 	<variable name="HomeRandomMusicVideos">
-		<value condition="!Window.IsVisible(3050)">videodb://musicvideos/titles/</value>
+		<value condition="!Window.IsVisible(1111)">videodb://musicvideos/titles/</value>
 	</variable>
 	
 	<include name="KodiLogo">			
@@ -1026,8 +1026,7 @@
 						<aspectratio>keep</aspectratio>
 						<include condition="Skin.HasSetting(ToggleCategoryColors)">ColoredCategoryNoFocusImage</include>
 						<animation effect="fade" start="100" end="30" time="650" condition="true">Conditional</animation>
-						<animation effect="fade" start="100" end="30" time="650" condition="Window.IsActive(3006) | Window.IsActive(3011)
-						| Window.IsActive(3012) | Window.IsActive(3013) | Window.IsActive(3014) | Window.IsActive(3015) | Window.IsActive(3016)">Conditional</animation>
+						<animation effect="fade" start="100" end="30" time="650" condition="Window.IsActive(1103) | Window.IsActive(3011) | Window.IsActive(1106)">Conditional</animation>
 					</control>
 				</itemlayout>	
 				<focusedlayout width="340">
