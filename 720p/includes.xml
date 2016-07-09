@@ -231,6 +231,7 @@
 		<value condition="Control.HasFocus(7022)">$LOCALIZE[31449]</value>
 		<value condition="Control.HasFocus(7024)">$LOCALIZE[31450]</value>
 		<value condition="Control.HasFocus(7014)">$LOCALIZE[31451]</value>
+		<value condition="Control.HasFocus(7026)">$LOCALIZE[31463]</value>
 		<value condition="Control.HasFocus(7015)">$LOCALIZE[31452]</value>
 		<value condition="Control.HasFocus(7016)">$LOCALIZE[31453]</value>
 		<value condition="Control.HasFocus(7023)">$LOCALIZE[31454]</value>
@@ -1542,6 +1543,11 @@
 		<value>$LOCALIZE[31438]</value>
 	</variable>
 	
+	<variable name="StatusSkinShortcutsVar">
+		<value condition="System.HasAddon(script.skinshortcuts)">$INFO[System.AddonVersion(script.skinshortcuts)] $LOCALIZE[31437]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
 	<variable name="StatusCDArtManagerVar">
 		<value condition="System.HasAddon(script.cdartmanager)">$INFO[System.AddonVersion(script.cdartmanager)] $LOCALIZE[31437]</value>
 		<value>$LOCALIZE[31438]</value>
@@ -1729,56 +1735,62 @@
 	</include>
 	
 	<include name="FSMediaInfoPanel">
-		<control type="image" id="1">
-			<width>1224</width>
-			<height>280</height>
-			<texture border="8">panels/panel.png</texture>
+		<control type="group" id="1">
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+			
+			<control type="image" id="1">
+				<width>1224</width>
+				<height>280</height>
+				<texture border="8">panels/panel.png</texture>
+			</control>
+			
+			<control type="image" id="1">
+				<left>4</left>
+				<top>4</top>
+				<width>1216</width>
+				<height>70</height>
+				<texture border="5">panels/panel-content-border2.png</texture>
+				<animation effect="fade" end="5" condition="true">Conditional</animation>
+				<visible>![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)]</visible>
+			</control>
+			
+			<control type="image" id="1">
+				<left>193</left>
+				<top>4</top>
+				<width>1027</width>
+				<height>70</height>
+				<texture border="5">panels/panel-content-border2.png</texture>
+				<animation effect="fade" end="5" condition="true">Conditional</animation>
+				<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
+			</control>
 		</control>
 		
-		<control type="image" id="1">
-			<left>4</left>
-			<top>4</top>
-			<width>1216</width>
-			<height>70</height>
-			<texture border="5">panels/panel-content-border2.png</texture>
-			<animation effect="fade" end="5" condition="true">Conditional</animation>
-			<visible>![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)]</visible>
-		</control>
-		
-		<control type="image" id="1">
-			<left>193</left>
-			<top>4</top>
-			<width>1027</width>
-			<height>70</height>
-			<texture border="5">panels/panel-content-border2.png</texture>
-			<animation effect="fade" end="5" condition="true">Conditional</animation>
-			<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
-		</control>
-	</include>
-	
-	<include name="FSMediaInfoPanelLiveTV">
-		<control type="image" id="1">
-			<width>1224</width>
-			<height>300</height>
-			<texture border="8">panels/panel.png</texture>
-		</control>
-		
-		<control type="image" id="1">
-			<left>4</left>
-			<top>4</top>
-			<width>1216</width>
-			<height>70</height>
-			<texture border="5">panels/panel-content-border2.png</texture>
-			<animation effect="fade" end="5" condition="true">Conditional</animation>
-		</control>
-		
-		<control type="image" id="1">
-			<left>4</left>
-			<top>275</top>
-			<width>1216</width>
-			<height>21</height>
-			<texture border="5">panels/panel-content-border2.png</texture>
-			<animation effect="fade" end="5" condition="true">Conditional</animation>
+		<control type="group" id="1">
+			<visible>VideoPlayer.Content(LiveTV)</visible>
+			
+			<control type="image" id="1">
+				<width>1224</width>
+				<height>300</height>
+				<texture border="8">panels/panel.png</texture>
+			</control>
+			
+			<control type="image" id="1">
+				<left>4</left>
+				<top>4</top>
+				<width>1216</width>
+				<height>70</height>
+				<texture border="5">panels/panel-content-border2.png</texture>
+				<animation effect="fade" end="5" condition="true">Conditional</animation>
+			</control>
+			
+			<control type="image" id="1">
+				<left>4</left>
+				<top>275</top>
+				<width>1216</width>
+				<height>21</height>
+				<texture border="5">panels/panel-content-border2.png</texture>
+				<animation effect="fade" end="5" condition="true">Conditional</animation>
+			</control>
 		</control>
 	</include>
 	

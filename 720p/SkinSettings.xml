@@ -423,6 +423,14 @@
 							<onclick condition="System.HasAddon(script.cu.lrclyrics)">Addon.OpenSettings(script.cu.lrclyrics)</onclick>
 							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
 						</control>
+						<control type="button" id="7026">
+							<description>script.skinshortcuts</description>
+							<include>SettingsContentBtn</include>
+							<label>Skin Shortcuts</label>
+							<label2>$VAR[StatusSkinShortcutsVar]</label2>
+							<onclick condition="System.HasAddon(script.skinshortcuts)">Addon.OpenSettings(script.skinshortcuts)</onclick>
+							<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+						</control>
 						<control type="button" id="7015">
 							<description>script.cdartmanager</description>
 							<include>SettingsContentBtn</include>
