@@ -26,19 +26,19 @@
 				<include>DropDownMenuTopBorder</include>
 			</control>
 			<control type="button" id="1">
+				<description>Title</description>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[556]</label>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>ActivateWindow(Videos,MovieTitles)</onclick>
+			</control>
+			<control type="button" id="2">
 				<description>Genres</description>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[135]</label>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>ActivateWindow(Videos,MovieGenres)</onclick>				
 			</control>
-			<control type="button" id="2">
-				<description>Title</description>
-				<include>DropDownMenuBtn</include>
-				<label>$LOCALIZE[556]</label>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>ActivateWindow(Videos,MovieTitles)</onclick>
-			</control>	
 			<control type="button" id="3">
 				<description>Year</description>
 				<include>DropDownMenuBtn</include>
@@ -147,18 +147,18 @@
 				<include>DropDownMenuTopBorder</include>
 			</control>
 			<control type="button" id="1">
-				<description>Genres</description>
-				<include>DropDownMenuBtn</include>
-				<label>$LOCALIZE[135]</label>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>ActivateWindow(Videos,TVShowGenres)</onclick>
-			</control>
-			<control type="button" id="2">
 				<description>Title</description>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[556]</label>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>ActivateWindow(Videos,TVShowTitles)</onclick>
+			</control>
+			<control type="button" id="2">
+				<description>Genres</description>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[135]</label>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>ActivateWindow(Videos,TVShowGenres)</onclick>
 			</control>
 			<control type="button" id="3">
 				<description>Year</description>
@@ -240,19 +240,19 @@
 				<include>DropDownMenuTopBorder</include>
 			</control>
 			<control type="button" id="1">
+				<description>Title</description>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[556]</label>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>ActivateWindow(Videos,MusicVideoTitles)</onclick>
+			</control>
+			<control type="button" id="2">
 				<description>Genres</description>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[135]</label>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>ActivateWindow(Videos,MusicVideoGenres)</onclick>
 			</control>
-			<control type="button" id="2">
-				<description>Title</description>
-				<include>DropDownMenuBtn</include>
-				<label>$LOCALIZE[556]</label>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>ActivateWindow(Videos,MusicVideoTitles)</onclick>
-			</control>	
 			<control type="button" id="3">
 				<description>Year</description>
 				<include>DropDownMenuBtn</include>
@@ -332,13 +332,6 @@
 			<control type="image" id="780">
 				<include>DropDownMenuTopBorder</include>
 			</control>
-			<control type="button" id="1">
-				<description>Genres</description>
-				<include>DropDownMenuBtn</include>
-				<label>$LOCALIZE[135]</label>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>ActivateWindow(Music,Genres)</onclick>
-			</control>
 			<control type="button" id="2">
 				<description>Artists</description>
 				<include>DropDownMenuBtn</include>
@@ -353,12 +346,19 @@
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>ActivateWindow(Music,Albums)</onclick>
 			</control>
-			<control type="button" id="5">
+			<control type="button" id="4">
 				<description>Songs</description>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[134]</label>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>ActivateWindow(Music,Songs)</onclick>
+			</control>
+			<control type="button" id="5">
+				<description>Genres</description>
+				<include>DropDownMenuBtn</include>
+				<label>$LOCALIZE[135]</label>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>ActivateWindow(Music,Genres)</onclick>
 			</control>
 			<control type="button" id="6">
 				<description>Years</description>
