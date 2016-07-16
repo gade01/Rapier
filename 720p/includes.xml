@@ -1617,20 +1617,20 @@
 	</variable>
 	
 	<variable name="SeekbarLabels">
-		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
-		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$INFO[Player.CacheLevel,,%]</value>
-		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">$INFO[Player.SeekStepSize]</value>
-		<value condition="Player.Forwarding2x + !Player.Seeking">+2X</value>
-		<value condition="Player.Forwarding4x + !Player.Seeking">+4X</value>
-		<value condition="Player.Forwarding8x + !Player.Seeking">+8X</value>
-		<value condition="Player.Forwarding16x + !Player.Seeking">+16X</value>
-		<value condition="Player.Forwarding32x + !Player.Seeking">+32X</value>
-		<value condition="Player.Rewinding2x + !Player.Seeking">-2X</value>
-		<value condition="Player.Rewinding4x + !Player.Seeking">-4X</value>
-		<value condition="Player.Rewinding8x + !Player.Seeking">-8X</value>
-		<value condition="Player.Rewinding16 + !Player.Seeking">-16X</value>
-		<value condition="Player.Rewinding32x + !Player.Seeking">-32X</value>
-		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
+		<value condition="!String.IsEmpty(Player.SeekStepSize)">$INFO[Player.SeekStepSize]</value>
+		<value condition="Player.Caching">$INFO[Player.CacheLevel,,%]</value>
+		<value condition="!String.IsEmpty(Player.SeekOffset) + Player.DisplayAfterSeek">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
+		<value condition="Player.Paused">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
+		<value condition="Player.Forwarding2x">+2X</value>
+		<value condition="Player.Forwarding4x">+4X</value>
+		<value condition="Player.Forwarding8x">+8X</value>
+		<value condition="Player.Forwarding16x">+16X</value>
+		<value condition="Player.Forwarding32x">+32X</value>
+		<value condition="Player.Rewinding2x">-2X</value>
+		<value condition="Player.Rewinding4x">-4X</value>
+		<value condition="Player.Rewinding8x">-8X</value>
+		<value condition="Player.Rewinding16x">-16X</value>
+		<value condition="Player.Rewinding32x">-32X</value>
 	</variable>
 	
 	<variable name="FSInfoTitle">
