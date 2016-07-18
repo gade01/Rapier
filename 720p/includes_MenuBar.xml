@@ -2039,23 +2039,33 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="togglebutton" id="122">
-				<description>Description / News</description>
+			<control type="button" id="122">
+				<description>Description / News / Screenshots</description>
 				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
 				<alttexturenofocus>-</alttexturenofocus>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[24054][/UPPERCASE]</label>
-				<altlabel>[UPPERCASE]$LOCALIZE[21821][/UPPERCASE]</altlabel>
-				<usealttexture>Skin.HasSetting(AddonInfoDescriptionNewsToggle)</usealttexture>
-				<onclick>Skin.ToggleSetting(AddonInfoDescriptionNewsToggle)</onclick>
-				<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+				<label>[UPPERCASE]$VAR[AddonInfoMenuBarBtn122Label][/UPPERCASE]</label>
+				<onclick>$VAR[AddonInfoMenuBarBtn122Click]</onclick>
+				<visible>![String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0)]</visible>
 			</control>
 			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
-				<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+				<visible>![String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0)]</visible>
 			</control>
 		</control>		
 	</include>
+	
+	<variable name="AddonInfoMenuBarBtn122Label">
+		<value condition="[Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">$LOCALIZE[24054]</value>
+		<value condition="[[Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description)] + String.IsEmpty(ListItem.AddonNews)] | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">$LOCALIZE[20008]</value>
+		<value>$LOCALIZE[21821]</value>
+	</variable>
+	
+	<variable name="AddonInfoMenuBarBtn122Click">
+		<value condition="[Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">Skin.SetString(AddonInfoContentToggle,news)</value>
+		<value condition="Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description) | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">Skin.SetString(AddonInfoContentToggle,screenshots)</value>
+		<value>Skin.SetString(AddonInfoContentToggle,description)</value>
+	</variable>
 	
 	<include name="ProgramsInfoMenuBar">	
 		<control type="grouplist" id="987">
