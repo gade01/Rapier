@@ -2061,7 +2061,7 @@
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Date]</label>
+				<label>$INFO[ListItem.Date]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]</label>
 				<visible>String.IsEmpty(ListItem.Label2)</visible>
 			</control>
 			<control type="image">
@@ -2885,7 +2885,7 @@
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Date]</label>
+					<label>$INFO[ListItem.Date]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]</label>
 					<visible>String.IsEmpty(ListItem.Label2)</visible>
 				</control>
 			</control>

@@ -572,10 +572,10 @@
 				<include>MenuBarSeparator</include>
 				<visible>Player.HasMedia</visible>
 			</control>
-			<control type="radiobutton" id="410">			
+			<control type="button" id="410">			
 				<description>Shuffle</description>
-				<include>MenuBarRadioBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[191][/UPPERCASE]</label>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[191]$INFO[Playlist.Random,: ][/UPPERCASE]</label>
 				<onclick>PlayerControl(Random)</onclick>
 				<visible>Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)</visible>
 			</control>
@@ -587,8 +587,6 @@
 				<description>Repeat</description>
 				<include>MenuBarBtn</include>
 				<align>center</align>
-				<label>[UPPERCASE]$LOCALIZE[486][/UPPERCASE]</label>
-				<onclick>PlayerControl(Repeat)</onclick>
 				<visible>Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)</visible>
 			</control>
 			<control type="image" id="110">
