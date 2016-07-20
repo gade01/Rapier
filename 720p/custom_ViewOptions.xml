@@ -563,6 +563,15 @@
 				<onclick>Skin.ToggleSetting(HideProgramsListInfo3Fanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,592) + Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
+			<control type="radiobutton" id="4035">
+				<description>Playlist Hide Fanart (VideoPlaylist / MusicPlaylist)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
+				<selected>[Window.IsActive(VideoPlaylist) + Skin.HasSetting(HideVideoPlaylistFanart)] | [Window.IsActive(MusicPlaylist) + Skin.HasSetting(HideMusicPlaylistFanart)]</selected>
+				<onclick condition="Window.IsActive(VideoPlaylist)">Skin.ToggleSetting(HideVideoPlaylistFanart)</onclick>
+				<onclick condition="Window.IsActive(MusicPlaylist)">Skin.ToggleSetting(HideMusicPlaylistFanart)</onclick>
+				<visible>Skin.String(CurrentViewMode,580)</visible>
+			</control>
 			<control type="radiobutton" id="3084">
 				<description>Thumbs Info Hide Label (Music)</description>
 				<include>DropDownMenuRadioBtn</include>
@@ -970,11 +979,12 @@
 				+ ![Skin.String(CurrentViewMode,66) + Skin.HasSetting(HideMoviesListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,95) + Skin.HasSetting(HideMoviesListInfo3Fanart)]
 				+ ![Skin.String(CurrentViewMode,97) + Skin.HasSetting(HideMoviesThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(HideVideoPlaylistFanart)]
 				+ ![Skin.String(CurrentViewMode,582) + Skin.HasSetting(HideMoviesRecommendedFanart)]
 				+ ![Skin.String(CurrentViewMode,583) + Skin.HasSetting(HideMoviesFanartFanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideMoviesExtendedListFanart)]
 				+ ![Skin.String(CurrentViewMode,53) + Skin.HasSetting(HideMoviesWrapListInfoFanart)]</enable>
-				<visible>[Container.Content(Movies) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://movies/)]] + !Skin.String(CurrentViewMode,69)</visible>
+				<visible>[Container.Content(Movies) | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://movies/)]] + !Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="3038">
 				<description>Extra Fanart (TVShows) (Seasons) (Episodes)</description>
@@ -995,10 +1005,11 @@
 				+ ![Skin.String(CurrentViewMode,68) + Skin.HasSetting(HideEpisodesListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,94) + Skin.HasSetting(HideEpisodesListInfo3Fanart)]
 				+ ![Skin.String(CurrentViewMode,100) + Skin.HasSetting(HideTVShowsThumbsInfoFanart)]
+				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(HideVideoPlaylistFanart)]
 				+ ![Skin.String(CurrentViewMode,583) + Skin.HasSetting(HideTVShowsFanartFanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideTVShowsExtendedListFanart)]
 				+ ![Skin.String(CurrentViewMode,589) + Skin.HasSetting(HideTVShowsListInfo3Fanart)]</enable>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://tvshows/)]] 
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://tvshows/)]] 
 				+ ![Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,586)]</visible>
 			</control>
 			<control type="radiobutton" id="3044">
@@ -1011,9 +1022,10 @@
 				<include>ReloadSkinNotification</include>
 				<enable>![Skin.String(CurrentViewMode,50) + !Skin.HasSetting(ShowMusicVideosIconFanart)]
 				+ ![Skin.String(CurrentViewMode,52) + Skin.HasSetting(HideMusicVideosListFanart)]
+				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(HideVideoPlaylistFanart)]
 				+ ![Skin.String(CurrentViewMode,587) + Skin.HasSetting(HideMusicVideosListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideMusicVideosExtendedListFanart)]</enable>
-				<visible>[Container.Content(MusicVideos) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://musicvideos/)]]</visible>
+				<visible>[Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://musicvideos/)]]</visible>
 			</control>
 			<control type="radiobutton" id="3043">
 				<description>Clear Logo (TVShows)</description>
@@ -1467,6 +1479,14 @@
 				<selected>!Skin.HasSetting(ShowWrapInfoViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(ShowWrapInfoViewScrollbar)</onclick>
 				<visible>Skin.String(CurrentViewMode,598)</visible>
+			</control>
+			<control type="radiobutton" id="4039">
+				<description>Playlist Hide Scrollbar (VideoPlaylist / MusicPlaylist)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$VAR[ViewOptionsScrollbarLabel]</label>
+				<selected>Skin.HasSetting(HidePlaylistViewScrollbar)</selected>
+				<onclick>Skin.ToggleSetting(HidePlaylistViewScrollbar)</onclick>
+				<visible>Skin.String(CurrentViewMode,580)</visible>
 			</control>
 			<control type="radiobutton" id="2057">
 				<description>List Info 2 Hide Overlay (Music Videos)</description>
