@@ -110,7 +110,7 @@
 	
 	<include name="InfoPaneClearLogoMovies">
 		<control type="group">
-			<visible>Container.Content(Movies) | Container.Content(musicvideos) | Container.Content(Sets)</visible>
+			<visible>Container.Content(Movies) | Container.Content(musicvideos) | Container.Content(Sets) | Window.IsActive(VideoPlaylist)</visible>
 			<control type="image">
 				<left>582</left>
 				<top>-4</top>
@@ -143,7 +143,7 @@
 	
 	<include name="InfoPaneClearLogo">
 		<control type="group">
-			<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+			<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsActive(VideoPlaylist)</visible>
 			<control type="image">
 				<left>582</left>
 				<top>-4</top>
@@ -159,7 +159,7 @@
 	
 	<include name="InfoPaneClearLogoMusic">
 		<control type="group">
-			<visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(musicvideos)</visible>
+			<visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(musicvideos) | Window.IsActive(MusicPlaylist)</visible>
 			<control type="image" id="558">
 				<left>582</left>
 				<top>-4</top>
