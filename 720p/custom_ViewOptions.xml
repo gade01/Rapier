@@ -1021,7 +1021,7 @@
 				+ ![Skin.String(CurrentViewMode,583) + Skin.HasSetting(HideTVShowsFanartFanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideTVShowsExtendedListFanart)]
 				+ ![Skin.String(CurrentViewMode,589) + Skin.HasSetting(HideTVShowsListInfo3Fanart)]</enable>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://tvshows/)]] 
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://tvshows/)]] 
 				+ ![Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,586)]</visible>
 			</control>
 			<control type="radiobutton" id="3044">
@@ -1037,7 +1037,7 @@
 				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(HideVideoPlaylistFanart)]
 				+ ![Skin.String(CurrentViewMode,587) + Skin.HasSetting(HideMusicVideosListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,585) + Skin.HasSetting(HideMusicVideosExtendedListFanart)]</enable>
-				<visible>[Container.Content(MusicVideos) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://musicvideos/)]]</visible>
+				<visible>[Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + Substring(Container.FolderPath,videodb://musicvideos/)]]</visible>
 			</control>
 			<control type="radiobutton" id="3043">
 				<description>Clear Logo (TVShows)</description>
