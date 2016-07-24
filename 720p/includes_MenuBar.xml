@@ -1664,14 +1664,13 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="210">
-				<description>Cinema Experience / CinemaVision</description>
+				<description>CinemaVision</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$VAR[CinemaLabelVar][/UPPERCASE]</label>
+				<label>[UPPERCASE]$INFO[System.AddonTitle(script.cinemavision)][/UPPERCASE]</label>
 				<onclick condition="!System.HasAddon(script.cinemavision)">Playlist.Clear</onclick>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
-				<onclick condition="!System.HasAddon(script.cinemavision)">RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="System.HasAddon(script.cinemavision)">RunScript(script.cinemavision,experience)</onclick>
-				<visible>[System.HasAddon(script.cinema.experience) + String.IsEqual(ListItem.DBTYPE,movie)] | [System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]]</visible>
+				<onclick>RunScript(script.cinemavision,experience)</onclick>
+				<visible>System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>

@@ -487,15 +487,6 @@
 							<onclick condition="System.HasAddon(weather.openweathermap.extended)">Addon.OpenSettings(weather.openweathermap.extended)</onclick>
 							<onclick condition="!System.HasAddon(weather.openweathermap.extended)">InstallAddon(weather.openweathermap.extended)</onclick>
 						</control>
-						<control type="button" id="7020">
-							<description>script.cinema.experience</description>
-							<include>SettingsContentBtn</include>
-							<label>Cinema Experience</label>
-							<label2>$VAR[StatusCinemaExperienceVar]</label2>
-							<onclick condition="System.HasAddon(script.cinema.experience)">Addon.OpenSettings(script.cinema.experience)</onclick>
-							<onclick condition="!System.HasAddon(script.cinema.experience)">InstallAddon(script.cinema.experience)</onclick>
-							<visible>!System.HasAddon(script.cinemavision)</visible>
-						</control>
 						<control type="button" id="7021">
 							<description>script.cinemavision</description>
 							<include>SettingsContentBtn</include>
