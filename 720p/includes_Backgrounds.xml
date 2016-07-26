@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="FanartImageVar">
-		<value condition="!String.IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(581).ListItem.Property(Fanart)) + [Control.HasFocus(581) | Control.HasFocus(907)]">$INFO[Container(581).ListItem.Property(Fanart)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
 	
 	<variable name="ExtraFanartImageVar">
-		<value condition="String.Contains(Container.FolderPath,videodb://movies/genres/) | String.Contains(Container.FolderPath,videodb://movies/years/) | String.Contains(Container.FolderPath,videodb://movies/actors/) | String.Contains(Container.FolderPath,videodb://movies/directors/) | String.Contains(Container.FolderPath,videodb://movies/studios/) | String.Contains(Container.FolderPath,videodb://movies/countries/) | String.Contains(Container.FolderPath,videodb://movies/sets/) | String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]extrafanart</value>
+		<value condition="String.Contains(Container.FolderPath,videodb://movies/genres/) | String.Contains(Container.FolderPath,videodb://movies/years/) | String.Contains(Container.FolderPath,videodb://movies/actors/) | String.Contains(Container.FolderPath,videodb://movies/directors/) | String.Contains(Container.FolderPath,videodb://movies/studios/) | String.Contains(Container.FolderPath,videodb://movies/countries/) | String.Contains(Container.FolderPath,videodb://movies/sets/) | String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,/tags/)">$INFO[Container(584).ListItem.Path]extrafanart</value>
 		<value>$INFO[ListItem.Path]extrafanart</value>
 	</variable>
 	
 	<variable name="ExtraFanartImage2Var">
-		<value condition="String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../extrafanart</value>
+		<value condition="String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../extrafanart</value>
 		<value>$INFO[ListItem.Path]../extrafanart</value>
 	</variable>
 	
 	<variable name="ExtraFanartImage3Var">
-		<value condition="String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../../extrafanart</value>
+		<value condition="String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/)">$INFO[Container(584).ListItem.Path]../../extrafanart</value>
 		<value>$INFO[ListItem.Path]../../extrafanart</value>
 	</variable>
 	
@@ -491,7 +491,7 @@
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [Player.HasAudio + Window.IsActive(MovieInformation)] | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
 
 			<control type="group">
-				<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://movies/genres/) | String.Contains(Container.FolderPath,videodb://movies/years/) | String.Contains(Container.FolderPath,videodb://movies/actors/) | String.Contains(Container.FolderPath,videodb://movies/directors/) | String.Contains(Container.FolderPath,videodb://movies/studios/) | String.Contains(Container.FolderPath,videodb://movies/countries/)]]</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://movies/genres/) | String.Contains(Container.FolderPath,videodb://movies/years/) | String.Contains(Container.FolderPath,videodb://movies/actors/) | String.Contains(Container.FolderPath,videodb://movies/directors/) | String.Contains(Container.FolderPath,videodb://movies/studios/) | String.Contains(Container.FolderPath,videodb://movies/countries/) | String.Contains(Container.FolderPath,videodb://movies/tags/)]]</visible>
 				<visible>Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml)
 				| [Control.IsVisible(54) + Skin.HasSetting(ShowMoviesThumbnailFanart)]
 				| [Control.IsVisible(52) + !Skin.HasSetting(HideMoviesListFanart)] 
@@ -514,7 +514,7 @@
 			</control>
 			
 			<control type="group">
-				<visible>Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/)]]</visible>
+				<visible>Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/)]]</visible>
 				<visible>Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml)
 				| [Control.IsVisible(50) + Skin.HasSetting(ShowMusicVideosIconFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(HideVideoPlaylistFanart)]
@@ -548,7 +548,7 @@
 				| [Control.IsVisible(74) + !Skin.HasSetting(HideEpisodesWideListFanart)]
 				| [Control.IsVisible(589) + !Skin.HasSetting(HideTVShowsListInfo3Fanart)]</visible>
 				<control type="group">
-					<visible>Container.Content(TVShows) | Window.IsActive(script-videoextras-main.xml) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/)]]</visible>
+					<visible>Container.Content(TVShows) | Window.IsActive(script-videoextras-main.xml) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/)]]</visible>
 					<include>BackgroundVisibleAnim</include>
 					<include>FanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage</include>
