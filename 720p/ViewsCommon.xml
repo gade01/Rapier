@@ -8733,14 +8733,17 @@
 		<value condition="Substring(Container.FolderPath,videodb://movies/studios/)">videodb://movies/studios/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://movies/countries/)">videodb://movies/countries/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://movies/sets/)">videodb://movies/sets/$INFO[ListItem.DBID]/</value>
+		<value condition="Substring(Container.FolderPath,videodb://movies/tags/)">videodb://movies/tags/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/genres/)">videodb://tvshows/genres/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/years/)">videodb://tvshows/years/$INFO[ListItem.Label]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/actors/)">videodb://tvshows/actors/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://tvshows/studios/)">videodb://tvshows/studios/$INFO[ListItem.DBID]/</value>
+		<value condition="Substring(Container.FolderPath,videodb://tvshows/tags/)">videodb://tvshows/tags/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/genres/)">videodb://musicvideos/genres/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/years/)">videodb://musicvideos/years/$INFO[ListItem.Label]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/directors/)">videodb://musicvideos/directors/$INFO[ListItem.DBID]/</value>
 		<value condition="Substring(Container.FolderPath,videodb://musicvideos/studios/)">videodb://musicvideos/studios/$INFO[ListItem.DBID]/</value>
+		<value condition="Substring(Container.FolderPath,videodb://musicvideos/tags/)">videodb://musicvideos/tags/$INFO[ListItem.DBID]/</value>
 	</variable>
 	
 	<variable name="ExtendedListContentMusicVar">
@@ -9335,7 +9338,22 @@
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 					<animation effect="slide" end="-20,-20" condition="Substring(Container.FolderPath,videodb://musicvideos/) | Substring(Container.FolderPath,musicdb://)">Conditional</animation>
-					<visible>[Substring(Container.FolderPath,videodb://movies/years/) | Substring(Container.FolderPath,videodb://tvshows/years/) | Substring(Container.FolderPath,videodb://musicvideos/years/) | Substring(Container.FolderPath,musicdb://years/)] + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+					<visible>Substring(Container.FolderPath,/years/) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+				</control>
+				
+				<control type="textbox">
+					<description>Tags Title</description>
+					<left>420</left>
+					<width>259</width>
+					<height>259</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<autoscroll time="3000" delay="4000" repeat="10000">true</autoscroll>
+					<font>DefaultHeadFont2</font>
+					<textcolor>GreyColor</textcolor>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<animation effect="fade" end="75" condition="true">Conditional</animation>
+					<visible>Substring(Container.FolderPath,/tags/) + !SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
 				</control>
 				
 				<control type="image">
@@ -9789,7 +9807,7 @@
 				<onleft condition="IntegerGreaterThan(Container(585).NumPages,1)">150</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(585).NumPages,1)">850</onleft>
 				<onright>584</onright>
-				<visible>Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)</visible>
+				<visible>Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<left>0</left>
@@ -9934,7 +9952,7 @@
 				<onright condition="!Control.IsVisible(151) + IsEmpty(Container(584).ListItem.Trailer) + Substring(Container.FolderPath,musicdb://) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
 				<onright condition="Control.IsVisible(151)">151</onright>
 				<visible>!SubString(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
-				<visible>Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries)</visible>
+				<visible>Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<left>0</left>
