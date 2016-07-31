@@ -9,7 +9,7 @@ Rapier tries to support all the latest features Kodi has to offer as long as it 
 Created by scarfa and Gade  
 
 ### DOWNLOAD / INSTALL:
-Can be installed through the official Kodi repository or Gade's Development repository.
+Can be installed through the official Kodi repository or Gade's Development Repository.
 
 ### DEVELOPMENT:
 [Github](https://github.com/gade01/Rapier)
@@ -18,7 +18,7 @@ Can be installed through the official Kodi repository or Gade's Development repo
 By installing Gade's Development Repository you will always automatically receive the newest and freshest development updates of Rapier and my other add-ons. You will still automatically get the official updates.  
 To install this repository, you must do so by following these steps:  
 
-1. [Download the zip file containing Gade's Add-on Repository from Github](https://github.com/gade01/repository.gade/blob/master/repository.gade-1.0.4.zip?raw=true)   
+1. [Download the zip file containing Gade's Add-on Repository from Github](https://github.com/gade01/repository.gade/raw/master/krypton/repository.gade/repository.gade-2.0.0.zip)   
 2. Start Kodi   
 3. Navigate to settings   
 4. Add-ons   
