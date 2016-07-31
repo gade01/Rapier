@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog" id="1100">
+<window>
 	<defaultcontrol>-</defaultcontrol>
 	
 	<controls>		
 		<control type="group">
-			<description>Media Processing Info</description>
-			<visible>Window.IsActive(FullscreenVideo) + ![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsActive(subtitlesearch) | Window.IsActive(osdcmssettings)]</visible>
+			<description>Player Process Information</description>
+			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsActive(subtitlesearch) | Window.IsActive(osdcmssettings)]</visible>
 			<depth>DepthOSD</depth>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<left>28</left>
@@ -132,7 +132,7 @@
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[Player.Process(videowidth)]$INFO[Player.Process(videoheight),X,]$INFO[Player.Process(videodar), (, $LOCALIZE[31230])]</label>
+						<label>$INFO[Player.Process(videowidth)]$INFO[Player.Process(videoheight),X, px]$INFO[Player.Process(videodar), (, $LOCALIZE[31230])]</label>
 					</control>
 				</control>
 				<control type="group">
@@ -150,7 +150,7 @@
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(videofps),,FPS]</label>
+						<label fallback="31001">$INFO[Player.Process(videofps),, FPS]</label>
 					</control>
 				</control>
 				<control type="group">
@@ -256,7 +256,7 @@
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(audiosamplerate),,Hz]</label>
+						<label fallback="31001">$INFO[Player.Process(audiosamplerate),, Hz]</label>
 					</control>
 				</control>
 				<control type="group">
@@ -274,7 +274,7 @@
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[Player.Process(audiobitspersample),,Bit]</label>
+						<label>$INFO[Player.Process(audiobitspersample),, Bit]</label>
 					</control>
 				</control>
 			</control>

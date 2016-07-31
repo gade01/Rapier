@@ -11,7 +11,7 @@
 
 	<controls>		
 		<control type="group">
-			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings) | Window.IsActive(1100)]</visible>
+			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings) | Window.IsActive(playerprocessinfo)]</visible>
 			<top>655</top>
 			<include>BottomPaneOpenCloseAnim</include>
 			<include>PlayerControlsPanel</include>
@@ -581,7 +581,7 @@
 		</control>
 		
 		<control type="group">
-			<visible>![Window.IsActive(1100) | Window.IsActive(2000) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings)] + [Control.HasFocus(104) | ControlGroup(400).HasFocus | Control.HasFocus(116) | ControlGroup(401).HasFocus | Control.HasFocus(127) | ControlGroup(402).HasFocus | Control.HasFocus(403) | Control.HasFocus(404) | Control.HasFocus(405)]</visible>
+			<visible>![Window.IsActive(playerprocessinfo) | Window.IsActive(2000) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings)] + [Control.HasFocus(104) | ControlGroup(400).HasFocus | Control.HasFocus(116) | ControlGroup(401).HasFocus | Control.HasFocus(127) | ControlGroup(402).HasFocus | Control.HasFocus(403) | Control.HasFocus(404) | Control.HasFocus(405)]</visible>
 			<left>22</left>
 			<bottom>84</bottom>
 			<height>273</height>
@@ -785,7 +785,7 @@
 						<hitrect x="-10" y="-1" w="290" h="39"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[31231]</label>
-						<onclick condition="Window.IsActive(1100)">Dialog.Close(1100)</onclick>
+						<onclick condition="Window.IsActive(playerprocessinfo)">playerprocessinfo</onclick>
 						<onclick>Info</onclick>
 					</control>
 					<control type="button" id="130">
@@ -795,7 +795,7 @@
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[31232]</label>
 						<onclick condition="Player.ShowInfo">Info</onclick>
-						<onclick>ActivateWindow(1100)</onclick>
+						<onclick>playerprocessinfo</onclick>
 					</control>
 				</control>
 			</control>
