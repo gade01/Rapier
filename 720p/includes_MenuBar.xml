@@ -413,9 +413,9 @@
 				<include>MenuBarBtn</include>
 				<align>center</align>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick condition="Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)">ActivateWindow(LibrarySettings,video)</onclick>
-				<onclick condition="Window.IsVisible(Music)">ActivateWindow(LibrarySettings,music)</onclick>
-				<onclick condition="Window.IsVisible(Pictures)">ActivateWindow(LibrarySettings,pictures)</onclick>
+				<onclick condition="Window.IsVisible(Videos) | Window.IsVisible(Videos,Files)">ActivateWindow(MediaSettings,video)</onclick>
+				<onclick condition="Window.IsVisible(Music)">ActivateWindow(MediaSettings,music)</onclick>
+				<onclick condition="Window.IsVisible(Pictures)">ActivateWindow(MediaSettings,pictures)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				<visible>Window.IsVisible(Videos) | Window.IsVisible(Videos,Files) | Window.IsVisible(Music) | Window.IsVisible(Pictures)</visible>
 			</control>
@@ -819,7 +819,7 @@
 				<description>Library</description>
 				<include>MenuBarSettingsBtn2</include>
 				<label>[UPPERCASE]$LOCALIZE[14202][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(LibrarySettings)</onclick>	
+				<onclick>ReplaceWindow(MediaSettings)</onclick>	
 			</control>
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
