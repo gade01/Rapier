@@ -169,6 +169,7 @@
 				<description>Folder</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE]</label>
+				<visible>!String.IsEmpty(Container.FolderName)</visible>
 				<visible>![String.IsEmpty(Container.FolderPath) | String.IsEqual(Container.FolderPath,sources://video/) | String.IsEqual(Container.FolderPath,special://videoplaylists/) | String.Contains(Container.FolderPath,plugin:)
 				| String.Contains(Container.FolderPath,/titles/) | String.Contains(Container.FolderPath,videodb://movies/sets/) | Container.Content() | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Artists) | Container.Content(Tags) | Container.Content(Addons)
 				| String.IsEqual(Container.FolderPath,videodb://recentlyaddedmovies/)| String.IsEqual(Container.FolderPath,videodb://recentlyaddedepisodes/)| String.IsEqual(Container.FolderPath,videodb://recentlyaddedmusicvideos/)]
