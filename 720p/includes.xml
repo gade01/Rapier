@@ -1635,6 +1635,7 @@
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,,%]</value>
 		<value condition="!String.IsEmpty(Player.SeekOffset) + Player.DisplayAfterSeek">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 		<value condition="Player.Paused">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
+		<!--<value condition="player.istempo">[UPPERCASE]$INFO[player.playspeed][/UPPERCASE]</value>-->
 		<value condition="Player.Forwarding2x">+2X</value>
 		<value condition="Player.Forwarding4x">+4X</value>
 		<value condition="Player.Forwarding8x">+8X</value>
@@ -1648,10 +1649,10 @@
 	</variable>
 	
 	<variable name="FSInfoTitle">
-		<value condition="VideoPlayer.Content(LiveTV) + Integer.IsLessOrEqual(VideoPlayer.Season,9) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
-		<value condition="VideoPlayer.Content(LiveTV) + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
-		<value condition="VideoPlayer.Content(LiveTV) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + Integer.IsLessOrEqual(VideoPlayer.Season,9) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording]">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
 		<value>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
 	</variable>
 	
@@ -1661,30 +1662,30 @@
 		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S0,]$INFO[VideoPlayer.Episode,E,)]</value> 
 		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E0,)]</value> 
 		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E,)]</value>
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,  -  ]</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,  -  ]</value>
 	</variable>
 	
 	<variable name="FSInfoLabel2">
-		<value condition="VideoPlayer.Content(LiveTV) + !String.IsEmpty(VideoPlayer.Director)">$LOCALIZE[20339]:</value>
-		<value condition="VideoPlayer.Content(LiveTV) + String.IsEmpty(VideoPlayer.Director)">$LOCALIZE[19127]:</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + !String.IsEmpty(VideoPlayer.Director)">$LOCALIZE[20339]:</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$LOCALIZE[19127]:</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$LOCALIZE[557]:</value>
 	</variable>
 	
 	<variable name="FSInfoLabel2Val">
-		<value condition="VideoPlayer.Content(LiveTV) + !String.IsEmpty(VideoPlayer.Director)">$INFO[VideoPlayer.Director]</value>
-		<value condition="VideoPlayer.Content(LiveTV) + String.IsEmpty(VideoPlayer.Director)">$INFO[VideoPlayer.EndTime]</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + !String.IsEmpty(VideoPlayer.Director)">$INFO[VideoPlayer.Director]</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$INFO[VideoPlayer.EndTime]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Artist]</value>
 	</variable>
 	
 	<variable name="FSInfoLabel3">
-		<value condition="VideoPlayer.Content(LiveTV) + !String.IsEmpty(VideoPlayer.Writer)">$LOCALIZE[20417]:</value>
-		<value condition="VideoPlayer.Content(LiveTV) + String.IsEmpty(VideoPlayer.Writer)">$LOCALIZE[19141]:</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + !String.IsEmpty(VideoPlayer.Writer)">$LOCALIZE[20417]:</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$LOCALIZE[19141]:</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$LOCALIZE[558]:</value>
 	</variable>
 	
 	<variable name="FSInfoLabel3Val">
-		<value condition="VideoPlayer.Content(LiveTV) + !String.IsEmpty(VideoPlayer.Writer)">$INFO[VideoPlayer.Writer]</value>
-		<value condition="VideoPlayer.Content(LiveTV) + String.IsEmpty(VideoPlayer.Writer)">$INFO[VideoPlayer.ChannelGroup]</value>
+		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + !String.IsEmpty(VideoPlayer.Writer)">$INFO[VideoPlayer.Writer]</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$INFO[VideoPlayer.ChannelGroup]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
 	</variable>
 	
@@ -1694,7 +1695,7 @@
 		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E,]. $INFO[VideoPlayer.Title]</value> 
 		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E0,]. $INFO[VideoPlayer.Title]</value> 
 		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,]. $INFO[VideoPlayer.Title]</value>		
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,  -  ]</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,  -  ]</value>
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Artist]: $INFO[VideoPlayer.Title] $INFO[VideoPlayer.Year,(,)]</value>
 		<value>$INFO[VideoPlayer.Title] $INFO[VideoPlayer.Year,(,)]</value>
 	</variable>
