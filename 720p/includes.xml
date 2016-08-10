@@ -1635,7 +1635,7 @@
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,,%]</value>
 		<value condition="!String.IsEmpty(Player.SeekOffset) + Player.DisplayAfterSeek">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 		<value condition="Player.Paused">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
-		<!--<value condition="player.istempo">[UPPERCASE]$INFO[player.playspeed][/UPPERCASE]</value>-->
+		<value condition="Player.IsTempo">[UPPERCASE]$INFO[Player.PlaySpeed,+,X][/UPPERCASE]</value>
 		<value condition="Player.Forwarding2x">+2X</value>
 		<value condition="Player.Forwarding4x">+4X</value>
 		<value condition="Player.Forwarding8x">+8X</value>

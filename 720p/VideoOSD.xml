@@ -218,6 +218,8 @@
 					<alttexturenofocus>osd/osd-play-nofocus.png</alttexturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
+					<onup condition="Player.TempoEnabled">PlayerControl(tempoup)</onup>
+					<ondown condition="Player.TempoEnabled">PlayerControl(tempodown)</ondown>
 					<pulseonselect>false</pulseonselect>
 				</control>
 				<control type="button" id="108">
