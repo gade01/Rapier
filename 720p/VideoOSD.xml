@@ -216,11 +216,12 @@
 					<texturenofocus>osd/osd-pause-nofocus.png</texturenofocus>
 					<alttexturefocus>osd/osd-play-focus.png</alttexturefocus>
 					<alttexturenofocus>osd/osd-play-nofocus.png</alttexturenofocus>
-					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
 					<onup condition="Player.TempoEnabled">PlayerControl(tempoup)</onup>
 					<ondown condition="Player.TempoEnabled">PlayerControl(tempodown)</ondown>
 					<pulseonselect>false</pulseonselect>
+					<hitrect x="0" y="-20" w="46" h="86"/>
 				</control>
 				<control type="button" id="108">
 					<description>Forward</description>
@@ -251,36 +252,32 @@
 				<animation effect="slide" end="-50,0" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
 				<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
 				
-				<control type="image">
+				<control type="togglebutton">
 					<top>6</top>
 					<width>10</width>
 					<height>7</height>
-					<texture>controls/arrow-scroll-up-focus.png</texture>
-					<visible>Integer.IsGreaterOrEqual(Player.PlaySpeed,1.10)</visible>
+					<texturefocus>controls/arrow-scroll-up-focus.png</texturefocus>
+					<texturenofocus>controls/arrow-scroll-up-nofocus.png</texturenofocus>
+					<alttexturefocus>controls/arrow-scroll-up-focus.png</alttexturefocus>
+					<alttexturenofocus>controls/arrow-scroll-up-focus.png</alttexturenofocus>
+					<usealttexture>Player.IsTempo + String.StartsWith(Player.PlaySpeed,1.)</usealttexture>
+					<onclick>PlayerControl(tempoup)</onclick>
+					<ondown>107</ondown>
+					<hitrect x="-20" y="-20" w="50" h="32"/>
 				</control>
 				
-				<control type="image">
-					<top>6</top>
-					<width>10</width>
-					<height>7</height>
-					<texture>controls/arrow-scroll-up-nofocus.png</texture>
-					<visible>!Player.IsTempo | Integer.IsLessOrEqual(Player.PlaySpeed,0.90)</visible>
-				</control>
-				
-				<control type="image">
+				<control type="togglebutton">
 					<top>58</top>
 					<width>10</width>
 					<height>7</height>
-					<texture flipy="true">controls/arrow-scroll-up-focus.png</texture>
-					<visible>Integer.IsLessOrEqual(Player.PlaySpeed,0.90)</visible>
-				</control>
-				
-				<control type="image">
-					<top>58</top>
-					<width>10</width>
-					<height>7</height>
-					<texture flipy="true">controls/arrow-scroll-up-nofocus.png</texture>
-					<visible>!Player.IsTempo | Integer.IsGreaterOrEqual(Player.PlaySpeed,1.10)</visible>
+					<texturefocus flipy="true">controls/arrow-scroll-up-focus.png</texturefocus>
+					<texturenofocus flipy="true">controls/arrow-scroll-up-nofocus.png</texturenofocus>
+					<alttexturefocus flipy="true">controls/arrow-scroll-up-focus.png</alttexturefocus>
+					<alttexturenofocus flipy="true">controls/arrow-scroll-up-focus.png</alttexturenofocus>
+					<usealttexture>Player.IsTempo + String.StartsWith(Player.PlaySpeed,0.)</usealttexture>
+					<onclick>PlayerControl(tempodown)</onclick>
+					<onup>107</onup>
+					<hitrect x="-20" y="57" w="50" h="15"/>
 				</control>
 			</control>
 
@@ -455,11 +452,12 @@
 					<texturenofocus>osd/osd-pause-nofocus.png</texturenofocus>
 					<alttexturefocus>osd/osd-play-focus.png</alttexturefocus>
 					<alttexturenofocus>osd/osd-play-nofocus.png</alttexturenofocus>
-					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
 					<onup condition="Player.TempoEnabled">PlayerControl(tempoup)</onup>
 					<ondown condition="Player.TempoEnabled">PlayerControl(tempodown)</ondown>
 					<pulseonselect>false</pulseonselect>
+					<hitrect x="0" y="-20" w="46" h="86"/>
 				</control>
 				<control type="button" id="108">
 					<description>Forward</description>
