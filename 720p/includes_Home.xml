@@ -2308,6 +2308,84 @@
 					</item>
 				</content>						
 			</control>
+			
+			<control type="list" id="110">
+				<description>Weather Menu Bar</description>
+				<left>10</left>
+				<width>1260</width>
+				<height>34</height>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
+				<ondown>850</ondown>
+				<orientation>horizontal</orientation>		
+				<visible>Container(850).HasFocus(51)</visible>
+				<include>HomeSubMenuItemOpenCloseAnim</include>
+				<include>HomeSubMenuItemsCenterAlignAnim</include>
+				<include>HomeSubMenuItemLayout</include>
+				<content>
+					<item id="1">
+						<description>Refresh</description>
+						<label>$LOCALIZE[184]</label>
+						<onclick>Weather.Refresh</onclick>
+						<visible>!Skin.HasSetting(EditWeatherSubMenuBtn1)</visible>
+					</item>
+					<item id="1">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn1Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn1Type,Favourite) | Skin.String(WeatherSubMenuBtn1Type,)]">$INFO[Skin.String(WeatherSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn1Type,Favourite) | Skin.String(WeatherSubMenuBtn1Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.1.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn1) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn1Label))</visible>
+					</item>
+					<item id="2">
+						<description>Settings</description>
+						<label>$LOCALIZE[5]</label>
+						<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+						<visible>!Skin.HasSetting(EditWeatherSubMenuBtn2)</visible>
+					</item>
+					<item id="2">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn2Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn2Type,Favourite) | Skin.String(WeatherSubMenuBtn2Type,)]">$INFO[Skin.String(WeatherSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn2Type,Favourite) | Skin.String(WeatherSubMenuBtn2Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.2.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn2) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn2Label))</visible>
+					</item>
+					<item id="3">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn3Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn3Type,Favourite) | Skin.String(WeatherSubMenuBtn3Type,)]">$INFO[Skin.String(WeatherSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn3Type,Favourite) | Skin.String(WeatherSubMenuBtn3Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.3.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn3) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn3Label))</visible>
+					</item>
+					<item id="4">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn4Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn4Type,Favourite) | Skin.String(WeatherSubMenuBtn4Type,)]">$INFO[Skin.String(WeatherSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn4Type,Favourite) | Skin.String(WeatherSubMenuBtn4Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.4.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn4) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn4Label))</visible>
+					</item>
+					<item id="5">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn5Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn5Type,Favourite) | Skin.String(WeatherSubMenuBtn5Type,)]">$INFO[Skin.String(WeatherSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn5Type,Favourite) | Skin.String(WeatherSubMenuBtn5Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.5.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn5) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn5Label))</visible>
+					</item>
+					<item id="6">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn6Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn6Type,Favourite) | Skin.String(WeatherSubMenuBtn6Type,)]">$INFO[Skin.String(WeatherSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn6Type,Favourite) | Skin.String(WeatherSubMenuBtn6Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.6.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn6) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn6Label))</visible>
+					</item>
+					<item id="7">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(WeatherSubMenuBtn7Label)]</label>
+						<onclick condition="![Skin.String(WeatherSubMenuBtn7Type,Favourite) | Skin.String(WeatherSubMenuBtn7Type,)]">$INFO[Skin.String(WeatherSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(WeatherSubMenuBtn7Type,Favourite) | Skin.String(WeatherSubMenuBtn7Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.7.Path)]</onclick>
+						<visible>Skin.HasSetting(EditWeatherSubMenuBtn7) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn7Label))</visible>
+					</item>
+				</content>						
+			</control>
 
 			<include content="HomeCustomCategorySubMenu">
 				<param name="onup" value="6894" />
