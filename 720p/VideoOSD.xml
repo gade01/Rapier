@@ -243,6 +243,46 @@
 					<pulseonselect>false</pulseonselect>
 				</control>
 			</control>
+			
+			<control type="group">
+				<left>664</left>
+				<width>56</width>
+				<visible>ControlGroup(202).HasFocus + Control.HasFocus(107) + Player.TempoEnabled</visible>
+				<animation effect="slide" end="-50,0" condition="VideoPlayer.Content(LiveTV)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+				
+				<control type="image">
+					<top>6</top>
+					<width>10</width>
+					<height>7</height>
+					<texture>controls/arrow-scroll-up-focus.png</texture>
+					<visible>Integer.IsGreaterOrEqual(Player.PlaySpeed,1.10)</visible>
+				</control>
+				
+				<control type="image">
+					<top>6</top>
+					<width>10</width>
+					<height>7</height>
+					<texture>controls/arrow-scroll-up-nofocus.png</texture>
+					<visible>!Player.IsTempo | Integer.IsLessOrEqual(Player.PlaySpeed,0.90)</visible>
+				</control>
+				
+				<control type="image">
+					<top>58</top>
+					<width>10</width>
+					<height>7</height>
+					<texture flipy="true">controls/arrow-scroll-up-focus.png</texture>
+					<visible>Integer.IsLessOrEqual(Player.PlaySpeed,0.90)</visible>
+				</control>
+				
+				<control type="image">
+					<top>58</top>
+					<width>10</width>
+					<height>7</height>
+					<texture flipy="true">controls/arrow-scroll-up-nofocus.png</texture>
+					<visible>!Player.IsTempo | Integer.IsGreaterOrEqual(Player.PlaySpeed,1.10)</visible>
+				</control>
+			</control>
 
 			<control type="grouplist" id="201">
 				<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -417,6 +457,8 @@
 					<alttexturenofocus>osd/osd-play-nofocus.png</alttexturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
+					<onup condition="Player.TempoEnabled">PlayerControl(tempoup)</onup>
+					<ondown condition="Player.TempoEnabled">PlayerControl(tempodown)</ondown>
 					<pulseonselect>false</pulseonselect>
 				</control>
 				<control type="button" id="108">
