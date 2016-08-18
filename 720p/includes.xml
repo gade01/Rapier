@@ -1738,6 +1738,11 @@
 		<value>$INFO[VideoPlayer.Episode,E]</value>
 	</variable>
 	
+	<variable name="PVRChannelManagerHeader">
+		<value condition="!String.IsEmpty(Window.Property(IsRadio))">$LOCALIZE[19199] • $LOCALIZE[19024]</value>
+		<value>$LOCALIZE[19199] • $LOCALIZE[19023]</value>
+	</variable>
+	
 	<include name="FSMediaInfoPanel">
 		<control type="group" id="1">
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
