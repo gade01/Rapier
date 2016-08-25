@@ -482,7 +482,7 @@
 				<include>BackgroundSize</include>
 			</control>
 
-			<include condition="!Window.IsActive(Home)">MediaPlayingVizDim</include>
+			<include condition="![Window.IsActive(Home) | Window.IsActive(TVGuide)]">MediaPlayingVizDim</include>
 		</control>
 	</include>
 
@@ -566,6 +566,14 @@
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage3</include>
 					<include>FanartDim</include>		
 				</control>
+			</control>
+			
+			<control type="group">
+				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				<visible>[Control.IsVisible(50) | Window.IsActive(DialogPVRInfo.xml)] + !Skin.HasSetting(HidePVRRecordingsFanart)</visible>
+				<include>BackgroundVisibleAnim</include>
+				<include>FanartImage</include>
+				<include>FanartDim</include>
 			</control>
 		</control>
 	</include>

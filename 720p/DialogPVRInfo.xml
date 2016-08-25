@@ -22,7 +22,7 @@
 				<texture fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
 				<bordertexture border="4">covers/cover-case2.png</bordertexture>
 				<bordersize>4</bordersize>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<animation effect="fade" end="70" condition="String.IsEqual(Control.GetLabel(903),DefaultTVShows.png) | String.IsEqual(Control.GetLabel(903),DefaultVideo.png)">Conditional</animation>
 				<include>FSMediaInfoOpenCloseAnim</include>
 			</control>

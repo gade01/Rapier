@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="LiveTVListInfoCoverImage">
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
-		<value condition="[Window.IsActive(TVChannels) | [Window.IsActive(TVRecordings) + String.IsEmpty(ListItem.Thumb)]] + String.IsEmpty(Skin.String(TVMultiimagePath))">pvr\pvr-background.jpg</value>
-		<value condition="[Window.IsActive(TVChannels) | [Window.IsActive(TVRecordings) + String.IsEmpty(ListItem.Thumb)]] + !String.IsEmpty(Skin.String(TVMultiimagePath))">$INFO[Skin.String(TVMultiimagePath)]</value>
-		<value condition="[Window.IsActive(RadioChannels) | [Window.IsActive(RadioRecordings) + String.IsEmpty(ListItem.Thumb)]] + String.IsEmpty(Skin.String(RadioMultiimagePath))">pvr\pvr-radio-background.jpg</value>
-		<value condition="[Window.IsActive(RadioChannels) | [Window.IsActive(RadioRecordings) + String.IsEmpty(ListItem.Thumb)]] + !String.IsEmpty(Skin.String(RadioMultiimagePath))">$INFO[Skin.String(RadioMultiimagePath)]</value>
+		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="[Window.IsActive(TVChannels) | [Window.IsActive(TVRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + String.IsEmpty(Skin.String(TVMultiimagePath))">pvr\pvr-background.jpg</value>
+		<value condition="[Window.IsActive(TVChannels) | [Window.IsActive(TVRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + !String.IsEmpty(Skin.String(TVMultiimagePath))">$INFO[Skin.String(TVMultiimagePath)]</value>
+		<value condition="[Window.IsActive(RadioChannels) | [Window.IsActive(RadioRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + String.IsEmpty(Skin.String(RadioMultiimagePath))">pvr\pvr-radio-background.jpg</value>
+		<value condition="[Window.IsActive(RadioChannels) | [Window.IsActive(RadioRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + !String.IsEmpty(Skin.String(RadioMultiimagePath))">$INFO[Skin.String(RadioMultiimagePath)]</value>
 	</variable>
 
 	<variable name="LiveTVListInfoLabel1">
@@ -38,11 +38,6 @@
 		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)] + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Title]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
 		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)] + String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Title]</value>
 		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.StartDate]$INFO[ListItem.StartTime,  -  ]</value>
-	</variable>
-	
-	<variable name="LiveTVListInfoItemImage">
-		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.Icon]</value>
-		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.Thumb]</value>
 	</variable>
 	
 	<variable name="PVRGenreTitleLabel">
@@ -360,7 +355,7 @@
 			<width>73</width>
 			<height>73</height>
 			<bordersize>5</bordersize>
-			<texture background="true" fallback="pvr/DefaultPVR.png">$VAR[LiveTVListInfoItemImage]</texture>
+			<texture background="true" fallback="pvr/DefaultPVR.png">$INFO[ListItem.Icon]</texture>
 			<aspectratio>keep</aspectratio>
 		</control>
 
@@ -419,7 +414,7 @@
 			<width>73</width>
 			<height>73</height>
 			<bordersize>5</bordersize>
-			<texture background="true" fallback="pvr/DefaultPVR.png">$VAR[LiveTVListInfoItemImage]</texture>
+			<texture background="true" fallback="pvr/DefaultPVR.png">$INFO[ListItem.Icon]</texture>
 			<aspectratio>keep</aspectratio>
 			<include condition="!Skin.HasSetting(DisableViewFocusAnim)">ListViewCoverFocusAnim</include>
 		</control>
@@ -720,7 +715,8 @@
 			<description>Title Area</description>
 			<left>220</left>
 			<control type="image">
-				<width>620</width>
+				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth</include>
+				<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth</include>
 				<height>30</height>
 				<texture border="8">pvr/column.png</texture>
 				<colordiffuse>LiveTVColumnColor</colordiffuse>
@@ -728,7 +724,8 @@
 			</control>
 			<control type="label">
 				<left>10</left>
-				<width>620</width>
+				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth</include>
+				<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth</include>
 				<height>30</height>
 				<include>LiveTVColumnHeaderLabel</include>
 				<label>$LOCALIZE[369]</label>
@@ -738,6 +735,7 @@
 		<control type="group">
 			<description>Time Area</description>
 			<left>844</left>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<control type="image">
 				<width>176</width>
 				<height>30</height>
@@ -757,6 +755,7 @@
 		<control type="group">
 			<description>Date Area</description>
 			<left>1024</left>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<control type="image">
 				<width>176</width>
 				<height>30</height>
@@ -798,7 +797,8 @@
 			<description>Title Area</description>
 			<left>220</left>
 			<control type="image">
-				<width>700</width>
+				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth2</include>
+				<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth2</include>
 				<height>30</height>
 				<texture border="8">pvr/column.png</texture>
 				<colordiffuse>LiveTVColumnColor</colordiffuse>
@@ -806,7 +806,8 @@
 			</control>
 			<control type="label">
 				<left>10</left>
-				<width>700</width>
+				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth2</include>
+				<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth2</include>
 				<height>30</height>
 				<include>LiveTVColumnHeaderLabel</include>
 				<label>$LOCALIZE[369]</label>
@@ -816,6 +817,7 @@
 		<control type="group">
 			<description>Time Area</description>
 			<left>924</left>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<control type="image">
 				<width>136</width>
 				<height>30</height>
@@ -835,6 +837,7 @@
 		<control type="group">
 			<description>Duration Area</description>
 			<left>1064</left>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<control type="image">
 				<width>136</width>
 				<height>30</height>
@@ -862,6 +865,7 @@
 			<height>22</height>
 			<texture>pvr/status_timer.png</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 		</control>
 
@@ -873,6 +877,7 @@
 			<height>22</height>
 			<texture>pvr/status_recording.png</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<visible>ListItem.IsRecording</visible>
 		</control>
 		
@@ -897,7 +902,8 @@
 		<control type="label">
 			<description>Title</description>
 			<left>230</left>
-			<width>553</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth3</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth3</include>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Title]</label>
@@ -907,7 +913,8 @@
 		<control type="label">
 			<description>Title</description>
 			<left>230</left>
-			<width>553</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth3</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth3</include>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Label]</label>
@@ -922,6 +929,7 @@
 			<align>center</align>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]</label>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 
 		<control type="label">
@@ -932,6 +940,7 @@
 			<align>center</align>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.StartDate]</label>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 	</include>
 
@@ -945,6 +954,7 @@
 			<height>22</height>
 			<texture>pvr/status_timer.png</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 		</control>
 
@@ -956,6 +966,7 @@
 			<height>22</height>
 			<texture>pvr/status_recording.png</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 			<visible>ListItem.IsRecording</visible>
 		</control>
 
@@ -980,7 +991,8 @@
 		<control type="label">
 			<description>Title</description>
 			<left>230</left>
-			<width>553</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth3</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth3</include>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Title]</label>
@@ -990,7 +1002,8 @@
 		<control type="label">
 			<description>Title</description>
 			<left>230</left>
-			<width>553</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth3</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth3</include>
 			<height>38</height>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Label]</label>
@@ -1005,6 +1018,7 @@
 			<align>center</align>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.StartTime]</label>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 
 		<control type="label">
@@ -1015,6 +1029,7 @@
 			<align>center</align>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.Duration]</label>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 	</include>
 
@@ -1113,7 +1128,8 @@
 
 		<control type="image">
 			<left>220</left>
-			<width>620</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth</include>
 			<height>38</height>
 			<texture border="8">pvr/column.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
@@ -1127,6 +1143,7 @@
 			<texture border="8">pvr/column.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
 			<include>LiveTVColumnFadeAnim</include>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 
 		<control type="image">
@@ -1136,6 +1153,7 @@
 			<texture border="8" flipx="true">pvr/column-left.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
 			<include>LiveTVColumnFadeAnim</include>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 	</include>
 
@@ -1150,7 +1168,8 @@
 
 		<control type="image">
 			<left>220</left>
-			<width>700</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth2</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth2</include>
 			<height>38</height>
 			<texture border="8">pvr/column.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
@@ -1164,6 +1183,7 @@
 			<texture border="8">pvr/column.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
 			<include>LiveTVColumnFadeAnim</include>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 
 		<control type="image">
@@ -1173,6 +1193,7 @@
 			<texture border="8" flipx="true">pvr/column-left.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
 			<include>LiveTVColumnFadeAnim</include>
+			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 	</include>
 
@@ -1187,7 +1208,8 @@
 
 		<control type="image">
 			<left>220</left>
-			<width>980</width>
+			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth4</include>
+			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth4</include>
 			<height>38</height>
 			<texture border="8" flipx="true">pvr/column-left.png</texture>
 			<colordiffuse>LiveTVColumnColor3</colordiffuse>

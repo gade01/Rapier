@@ -1862,6 +1862,78 @@
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
 		<value condition="Player.HasAudio">flagging/imdbstarrating/10,0.png</value>
 	</variable>
+	
+	<include name="TVGuideNormal">
+		<width>1240</width>
+		<height>370</height>
+		<onback>850</onback>
+		<onup>850</onup>
+		<ondown>10</ondown>
+	</include>
+	
+	<include name="TVGuideFullscreen">
+		<width>929</width>
+		<height>492</height>
+		<onback>9200</onback>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+	</include>
+	
+	<include name="TVGuideNormal2">
+		<height>336</height>
+		<onleft>850</onleft>
+		<onright condition="!Control.IsVisible(904)">850</onright>
+		<onup>850</onup>
+		<onback>850</onback>
+	</include>
+	
+	<include name="TVGuideFullscreen2">
+		<height>462</height>
+		<onback>9200</onback>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onleft>9001</onleft>
+		<onright condition="!Control.IsVisible(904)">9002</onright>
+	</include>
+	
+	<include name="TVGuideNormalWidth">
+		<width>620</width>
+	</include>
+	
+	<include name="TVGuideFullscreenWidth">
+		<width>349</width>
+	</include>
+	
+	<include name="TVGuideNormalWidth2">
+		<width>700</width>
+	</include>
+	
+	<include name="TVGuideFullscreenWidth2">
+		<width>429</width>
+	</include>
+	
+	<include name="TVGuideNormalWidth3">
+		<width>553</width>
+	</include>
+	
+	<include name="TVGuideFullscreenWidth3">
+		<width>282</width>
+	</include>
+	
+	<include name="TVGuideNormalWidth4">
+		<width>980</width>
+	</include>
+	
+	<include name="TVGuideFullscreenWidth4">
+		<width>709</width>
+	</include>
+	
+	<variable name="TVGuideFullscreenBtn9001">
+		<value condition="Control.IsVisible(10)">$LOCALIZE[19032]</value>
+		<value condition="Control.IsVisible(11)">$LOCALIZE[19030]</value>
+		<value condition="Control.IsVisible(12)">$LOCALIZE[19031]</value>
+		<value condition="Control.IsVisible(13)">$LOCALIZE[19029]</value>
+	</variable>
 	<!-- END Fullscreen / OSD -->
 	
 	<!-- Music Visualization -->
@@ -1872,10 +1944,10 @@
 	<!-- END Music Visualization -->
 	
 	<!-- Custom Windows -->
-		<variable name="videohwdecoder">
-			<value condition="Player.Process(videohwdecoder)">$LOCALIZE[31223]</value>
-			<value>$LOCALIZE[31224]</value>
-		</variable>
+	<variable name="videohwdecoder">
+		<value condition="Player.Process(videohwdecoder)">$LOCALIZE[31223]</value>
+		<value>$LOCALIZE[31224]</value>
+	</variable>
 	<!-- END Custom Windows -->
 	
 	<!-- PARAMS -->	
