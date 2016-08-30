@@ -40,6 +40,7 @@
 			<onright condition="Container(850).HasFocus(12) + Control.IsVisible(6904)">6904</onright>
 			<onright condition="Container(850).HasFocus(13) + Control.IsVisible(6906)">6906</onright>
 			<onright condition="Container(850).HasFocus(14) + Control.IsVisible(6908)">6908</onright>
+			<onright condition="Container(850).HasFocus(15) + Control.IsVisible(6878)">6878</onright>
 			<onright condition="Container(850).HasFocus(17) + Control.IsVisible(6910)">6910</onright>
 			<onright condition="Container(850).HasFocus(18) + Control.IsVisible(6912)">6912</onright>
 			<onright condition="Container(850).HasFocus(19) + Control.IsVisible(6914)">6914</onright>
@@ -1004,6 +1005,7 @@
 				<onup condition="Container(850).HasFocus(12) + Control.IsVisible(6904)">6904</onup>
 				<onup condition="Container(850).HasFocus(13) + Control.IsVisible(6906)">6906</onup>
 				<onup condition="Container(850).HasFocus(14) + Control.IsVisible(6908)">6908</onup>
+				<onup condition="Container(850).HasFocus(15) + Control.IsVisible(6878)">6878</onup>
 				<onup condition="Container(850).HasFocus(17) + Control.IsVisible(6910)">6910</onup>
 				<onup condition="Container(850).HasFocus(18) + Control.IsVisible(6912)">6912</onup>
 				<onup condition="Container(850).HasFocus(19) + Control.IsVisible(6914)">6914</onup>
@@ -2497,6 +2499,7 @@
 				<width>1260</width>
 				<height>34</height>
 				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(6878)">6878</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<ondown>850</ondown>
@@ -4442,6 +4445,7 @@
 			[!String.IsEmpty(Container(6893).ListItem.Art(fanart)) + Control.HasFocus(6893)] |
 			[!String.IsEmpty(Container(6928).ListItem.Art(fanart)) + Control.HasFocus(6928)] |
 			[!String.IsEmpty(Container(6929).ListItem.Art(fanart)) + Control.HasFocus(6929)] |
+			[!String.IsEmpty(Container(6878).ListItem.Art(fanart)) + Control.HasFocus(6878)] |
 			[!String.IsEmpty(Container(6880).ListItem.Art(fanart)) + Control.HasFocus(6880)] |
 			[!String.IsEmpty(Container(6881).ListItem.Art(fanart)) + Control.HasFocus(6881)]</visible>
 			<depth>DepthBackground</depth>
@@ -4472,6 +4476,7 @@
 		<value condition="!String.IsEmpty(Container(6893).ListItem.Art(fanart)) + Control.HasFocus(6893)">$INFO[Container(6893).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(6928).ListItem.Art(fanart)) + Control.HasFocus(6928)">$INFO[Container(6928).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(6929).ListItem.Art(fanart)) + Control.HasFocus(6929)">$INFO[Container(6929).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(6878).ListItem.Art(fanart)) + Control.HasFocus(6878)">$INFO[Container(6878).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(6880).ListItem.Art(fanart)) + Control.HasFocus(6880)">$INFO[Container(6880).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(6881).ListItem.Art(fanart)) + Control.HasFocus(6881)">$INFO[Container(6881).ListItem.Art(fanart)]</value>
 	</variable>
@@ -6566,6 +6571,168 @@
 						</focusedlayout>
 						<content target="music">addons://sources/audio/</content>
 					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	
+	<variable name="FavouritesWidgetThumb">
+		<value condition="!String.IsEmpty(ListItem.Art(thumb)) + !String.IsEmpty(ListItem.Season)">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value>DefaultAddon.png</value>
+	</variable>
+	
+	<include name="FavouritesWidget">
+		<control type="group">
+			<visible>Container(850).HasFocus(15)</visible>
+			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
+			<include>HomeRightPanelOpenCloseAnim</include>
+			<left>495r</left>
+			<top>105</top>
+				
+			<control type="group" id="6879">
+				<include>HomeRightPanelOpenCloseAnim</include>
+				
+				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6878).NumItems,0)">
+					<effect type="fade" end="100" time="250"/>
+					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
+				</animation>
+				
+				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6878).NumItems,0)">
+					<effect type="fade" end="0" time="250"/>
+					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
+				</animation>
+				
+				<control type="image">
+					<width>490</width>
+					<height>315</height>
+					<texture border="8">panels/panel.png</texture>
+				</control>
+				
+				<control type="label">
+					<description>Title</description>
+					<left>15</left>
+					<top>9</top>
+					<width>368</width>
+					<font>PanelTitleFont</font>
+					<textcolor>MediaInfoTitleColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>[UPPERCASE]$LOCALIZE[1036][/UPPERCASE]</label>
+				</control>
+
+				<control type="list" id="6878">
+					<viewtype label="">list</viewtype>
+					<left>10</left>
+					<top>38</top>
+					<width>600</width>
+					<height>268</height>
+					<scrolltime>200</scrolltime>
+					<onup>555</onup>
+					<ondown>6878</ondown>
+					<onleft condition="Control.IsVisible(6930)">6930</onleft>
+					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft>850</onleft>
+					<onright condition="Control.IsVisible(110)">110</onright>
+					<onright condition="!Control.IsVisible(110)">850</onright>
+					<visible>Integer.IsGreater(Container(6878).NumItems,0) | Container(6878).IsUpdating</visible>
+					<itemlayout height="53">
+						<control type="image">
+							<description>Cover Background</description>
+							<top>-2</top>
+							<left>-1</left>
+							<width>57</width>
+							<height>57</height>
+							<texture border="7">covers/cover-case-nofocus.png</texture>
+						</control>
+						<control type="image">
+							<description>Cover</description>
+							<top>-2</top>
+							<left>-1</left>
+							<width>57</width>
+							<height>57</height>
+							<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true">$VAR[FavouritesWidgetThumb]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>6</bordersize>
+						</control>
+						<control type="label">
+							<top>6</top>
+							<left>60</left>
+							<width>402</width>
+							<font>PanelInfoFont</font>
+							<textcolor>MediaInfoItemColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<top>28</top>
+							<left>60</left>
+							<width>402</width>
+							<font>PanelStatsFont</font>
+							<textcolor>GreyColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.TVShowTitle]$INFO[ListItem.Season,  &#x2022;  $LOCALIZE[20373] ,]$INFO[ListItem.Episode,  &#x2022;  $LOCALIZE[20359] ,]$INFO[ListItem.Year]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]$INFO[ListItem.Property(TotalSeasons),  &#x2022;  , $LOCALIZE[33054]]$INFO[ListItem.Property(TotalEpisodes),  &#x2022;  , $LOCALIZE[20360]]</label>
+							<animation effect="fade" end="60" condition="true">Conditional</animation>
+						</control>
+					</itemlayout>
+					<focusedlayout height="53">
+						<control type="image">
+							<width>470</width>
+							<height>53</height>
+							<texture border="4">views/list-focus.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<visible>Control.HasFocus(6878)</visible>
+							<animation type="Focus" condition="Container(6878).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,-53" time="150" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="Focus" condition="Container(6878).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+								<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+								<effect type="slide" start="0,53" time="150" tween="quadratic" easing="out"/>
+							</animation>
+							<include>ListViewSelectFadeAnim</include>
+						</control>
+						<control type="image">
+							<description>Cover Background</description>
+							<top>-2</top>
+							<left>-1</left>
+							<width>57</width>
+							<height>57</height>
+							<texture border="7">covers/cover-case-nofocus.png</texture>
+							<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideListViewCoverFocusAnim</include>
+						</control>
+						<control type="image">
+							<description>Cover</description>
+							<top>-2</top>
+							<left>-1</left>
+							<width>57</width>
+							<height>57</height>
+							<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true">$VAR[FavouritesWidgetThumb]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>6</bordersize>
+							<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideListViewCoverFocusAnim</include>
+						</control>
+						<control type="label">
+							<top>6</top>
+							<left>60</left>
+							<width>402</width>
+							<font>PanelInfoFont</font>
+							<textcolor>SelectedColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<top>28</top>
+							<left>60</left>
+							<width>402</width>
+							<font>PanelStatsFont</font>
+							<textcolor>MediaInfoItemColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.TVShowTitle]$INFO[ListItem.Season,  &#x2022;  $LOCALIZE[20373] ,]$INFO[ListItem.Episode,  &#x2022;  $LOCALIZE[20359] ,]$INFO[ListItem.Year]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]$INFO[ListItem.Property(TotalSeasons),  &#x2022;  , $LOCALIZE[33054]]$INFO[ListItem.Property(TotalEpisodes),  &#x2022;  , $LOCALIZE[20360]]</label>
+						</control>
+					</focusedlayout>
+					<content>plugin://script.skin.helper.service/?action=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content> 
 				</control>
 			</control>
 		</control>

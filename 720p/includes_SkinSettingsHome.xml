@@ -474,6 +474,14 @@
 					<selected>Skin.HasSetting(HideAddonsWidget)</selected>
 					<onclick>Skin.ToggleSetting(HideAddonsWidget)</onclick>
 				</control>
+				<control type="radiobutton" id="2360">
+					<description>Hide Favourites Widget</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31710]</label>
+					<selected>Skin.HasSetting(HideFavouritesWidget)</selected>
+					<onclick>Skin.ToggleSetting(HideFavouritesWidget)</onclick>
+					<visible>System.HasAddon(script.skin.helper.service)</visible>
+				</control>
 				<control type="radiobutton" id="2019">
 					<description>Hide Weather Info Panel</description>
 					<include>SettingsContentRadioBtn</include>
