@@ -1631,8 +1631,8 @@
 	</variable>
 	
 	<variable name="SeekbarLabels">
-		<value condition="!String.IsEmpty(Player.SeekStepSize)">$INFO[Player.SeekStepSize]</value>
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,,%]</value>
+		<value condition="!String.IsEmpty(Player.SeekStepSize)">$INFO[Player.SeekStepSize]</value>
 		<value condition="!String.IsEmpty(Player.SeekOffset) + Player.DisplayAfterSeek">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 		<value condition="Player.Paused">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
 		<value condition="Player.Forwarding2x">+2X</value>
