@@ -11,6 +11,7 @@
 		<control type="group">
 			<visible>![[Window.Is(osdaudiosettings) | Window.Is(osdvideosettings)] + [Window.IsActive(SliderDialog) | Window.IsActive(DialogSelect.xml) | Window.IsActive(osdaudiodspsettings)]]</visible>
 			<visible>![Window.Is(osdaudiodspsettings) + [Window.IsActive(SliderDialog) | Window.IsActive(DialogParametricEQ.xml) | Window.IsActive(DialogSpeakerGain.xml) | Window.IsActive(DialogSpeakerDistance.xml) | Window.IsActive(DialogMasterModeFreeSurround.xml)]]</visible>
+			<visible>![Window.IsActive(MyPVRTimers.xml) + Window.IsActive(DialogSelect.xml)]</visible>
 			<depth>DepthOSD</depth>
 			<include>DialogOpenCloseAnim</include>
 			<animation effect="fade" start="100" end="30" time="250" condition="Window.Is(LockSettings) + [Window.IsActive(ContextMenu) | Window.IsActive(NumericInput) | Window.IsActive(OKDialog)]">Conditional</animation>	

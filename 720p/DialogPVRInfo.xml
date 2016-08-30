@@ -41,6 +41,17 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>		
 					<scroll>true</scroll>
+					<visible>String.IsEmpty(Window(Home).Property(SkinHelper.PVR.ClearLogo))</visible>
+				</control>
+				
+				<control type="image">
+					<top>10</top>
+					<width>710</width>
+					<height>68</height>
+					<align>center</align>
+					<texture background="true">$INFO[Window(Home).Property(SkinHelper.PVR.ClearLogo)]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.ClearLogo))</visible>
 				</control>
 				
 				<control type="image">
@@ -221,6 +232,13 @@
 						<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					</item>
 					<item id="9">
+						<description>Rating</description>
+						<label>$LOCALIZE[563]</label>
+						<label2>$INFO[Window(Home).Property(SkinHelper.PVR.Rating)]</label2>
+						<onclick>noop</onclick>
+						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Rating)) + [String.IsEmpty(ListItem.Director) | String.IsEmpty(ListItem.Writer) | String.IsEmpty(ListItem.Premiered)]</visible>
+					</item>
+					<item id="10">
 						<description>Premiered</description>
 						<label>$LOCALIZE[31936]</label>
 						<label2>$INFO[ListItem.Premiered]</label2>

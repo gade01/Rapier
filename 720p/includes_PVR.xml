@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="LiveTVListInfoCoverImage">
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="[Window.IsActive(TVChannels) | [Window.IsActive(TVRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + String.IsEmpty(Skin.String(TVMultiimagePath))">pvr\pvr-background.jpg</value>
-		<value condition="[Window.IsActive(TVChannels) | [Window.IsActive(TVRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + !String.IsEmpty(Skin.String(TVMultiimagePath))">$INFO[Skin.String(TVMultiimagePath)]</value>
-		<value condition="[Window.IsActive(RadioChannels) | [Window.IsActive(RadioRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + String.IsEmpty(Skin.String(RadioMultiimagePath))">pvr\pvr-radio-background.jpg</value>
-		<value condition="[Window.IsActive(RadioChannels) | [Window.IsActive(RadioRecordings) + String.IsEmpty(ListItem.Art(fanart))]] + !String.IsEmpty(Skin.String(RadioMultiimagePath))">$INFO[Skin.String(RadioMultiimagePath)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(TVRecordings)] + !String.IsEmpty(Skin.String(TVMultiimagePath))">$INFO[Skin.String(TVMultiimagePath)]</value>
+		<value condition="Window.IsActive(TVChannels) | Window.IsActive(TVRecordings)">pvr\pvr-background.jpg</value>
+		<value condition="[Window.IsActive(RadioChannels) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(Skin.String(RadioMultiimagePath))">$INFO[Skin.String(RadioMultiimagePath)]</value>
+		<value condition="Window.IsActive(RadioChannels) | Window.IsActive(RadioRecordings)">pvr\pvr-radio-background.jpg</value>
 	</variable>
 
 	<variable name="LiveTVListInfoLabel1">
@@ -43,6 +44,15 @@
 	<variable name="PVRGenreTitleLabel">
 		<value condition="Player.HasVideo">$INFO[Player.Title]</value>
 		<value>$INFO[ListItem.Genre]</value>
+	</variable>
+	
+	<variable name="PVRStatusIcon">
+		<value condition="ListItem.IsRecording">pvr/status_recording.png</value>
+		<value condition="[ListItem.HasTimer | ListItem.HasTimerSchedule] + ListItem.TimerHasError">pvr/status_error.png</value>
+		<value condition="[ListItem.HasTimer | ListItem.HasTimerSchedule] + ListItem.TimerHasConflict">pvr/status_conflict.png</value>
+		<value condition="ListItem.HasTimer | ListItem.HasTimerSchedule">pvr/status_timer.png</value>
+		<value condition="ListItem.HasRecording">DefaultVideo.png.png</value>
+		<value condition="[ListItem.HasTimer | ListItem.HasTimerSchedule] + !ListItem.TimerIsActive">pvr/status_none.png</value>
 	</variable>
 	
 	<include name="LiveTVListInfoPanelCover">
@@ -639,7 +649,7 @@
 						<aligny>center</aligny>
 						<font>FullMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
-						<label>$INFO[ListItem.Comment]</label>
+						<label>$INFO[ListItem.Comment]$INFO[ListItem.Timertype,: ,]</label>
 					</control>
 				</control>
 
@@ -858,27 +868,15 @@
 	<include name="LiveTVColumnLayoutArea">
 		<!-- LiveTVGuideChannelView, LiveTVSearchView -->
 		<control type="image">
-			<description>Timer</description>
+			<description>Status Icon</description>
 			<left>808</left>
 			<top>8</top>
 			<width>22</width>
 			<height>22</height>
-			<texture>pvr/status_timer.png</texture>
+			<texture>$VAR[PVRStatusIcon]</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
 			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-		</control>
-
-		<control type="image">
-			<description>Record</description>
-			<left>808</left>
-			<top>8</top>
-			<width>22</width>
-			<height>22</height>
-			<texture>pvr/status_recording.png</texture>
-			<colordiffuse>WhiteColor</colordiffuse>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<visible>ListItem.IsRecording</visible>
+			<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
 		</control>
 		
 		<control type="label">
@@ -947,27 +945,15 @@
 	<include name="LiveTVColumnLayoutArea2">
 		<!-- LiveTVGuideNowNextView -->
 		<control type="image">
-			<description>Timer</description>
+			<description>Status Icon</description>
 			<left>888</left>
 			<top>8</top>
 			<width>22</width>
 			<height>22</height>
-			<texture>pvr/status_timer.png</texture>
+			<texture>$VAR[PVRStatusIcon]</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
 			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-		</control>
-
-		<control type="image">
-			<description>Record</description>
-			<left>888</left>
-			<top>8</top>
-			<width>22</width>
-			<height>22</height>
-			<texture>pvr/status_recording.png</texture>
-			<colordiffuse>WhiteColor</colordiffuse>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<visible>ListItem.IsRecording</visible>
+			<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
 		</control>
 
 		<control type="label">
@@ -1043,7 +1029,7 @@
 			<height>22</height>
 			<texture>pvr/status_none.png</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
-			<visible>!String.IsEqual(ListItem.Label,$LOCALIZE[19026]) + !String.IsEqual(ListItem.Comment,$LOCALIZE[305]) + !String.IsEqual(ListItem.Comment,$LOCALIZE[19162])</visible>
+			<visible>!String.IsEqual(ListItem.Label,$LOCALIZE[19026]) + !String.IsEqual(ListItem.Comment,$LOCALIZE[305]) + !String.IsEqual(ListItem.Comment,$LOCALIZE[19162]) + ![Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)]</visible>
 		</control>
 
 		<control type="image">

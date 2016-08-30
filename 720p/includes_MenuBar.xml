@@ -1955,6 +1955,19 @@
 				<visible>Window.IsVisible(PVRGuideInfo)</visible>
 			</control>
 			<control type="button" id="119">
+				<description>Trailer</description>
+				<include>MenuBarSettingsBtn</include>
+				<onclick condition="System.HasAddon(script.skin.helper.service)">Action(close)</onclick>
+				<onclick condition="System.HasAddon(script.skin.helper.service)">PlayMedia($INFO[Window(Home).Property(SkinHelper.PVR.Trailer)])</onclick>
+				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Trailer))</visible>
+			</control>
+			<control type="image" id="120">
+				<include>MenuBarSeparator</include>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Trailer))</visible>
+			</control>
+			<control type="button" id="121">
 				<description>Search Youtube</description>
 				<include>MenuBarSettingsBtn</include>
 				<onclick condition="System.HasAddon(script.extendedinfo)">Action(close)</onclick>
@@ -1962,7 +1975,7 @@
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
 			</control>
-			<control type="image" id="120">
+			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
 			</control>
 		</control>		

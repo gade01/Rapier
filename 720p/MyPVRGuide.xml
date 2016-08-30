@@ -310,7 +310,7 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>![ListItem.HasTimer | ListItem.IsRecording]</visible>
+							<visible>![ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording]</visible>
 						</control>
 						<control type="label" id="1">
 							<left>40</left>
@@ -319,27 +319,17 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
 						</control>
 						<control type="image">
-							<description>Timer</description>
+							<description>Status Icon</description>
 							<left>10</left>
 							<top>8</top>
 							<width>22</width>
 							<height>22</height>
-							<texture>pvr/status_timer.png</texture>
+							<texture>$VAR[PVRStatusIcon]</texture>
 							<colordiffuse>WhiteColor</colordiffuse>
-							<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-						</control>
-						<control type="image">
-							<description>Record</description>
-							<left>10</left>
-							<top>8</top>
-							<width>22</width>
-							<height>22</height>
-							<texture>pvr/status_recording.png</texture>
-							<colordiffuse>WhiteColor</colordiffuse>
-							<visible>ListItem.IsRecording</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="42" width="102">
@@ -357,7 +347,7 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>![ListItem.HasTimer | ListItem.IsRecording]</visible>
+							<visible>![ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording]</visible>
 						</control>
 						<control type="label" id="1">
 							<left>40</left>
@@ -366,27 +356,17 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
 						</control>
 						<control type="image">
-							<description>Timer</description>
+							<description>Status Icon</description>
 							<left>10</left>
 							<top>8</top>
 							<width>22</width>
 							<height>22</height>
-							<texture>pvr/status_timer.png</texture>
+							<texture>$VAR[PVRStatusIcon]</texture>
 							<colordiffuse>WhiteColor</colordiffuse>
-							<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-						</control>
-						<control type="image">
-							<description>Record</description>
-							<left>10</left>
-							<top>8</top>
-							<width>22</width>
-							<height>22</height>
-							<texture>pvr/status_recording.png</texture>
-							<colordiffuse>WhiteColor</colordiffuse>
-							<visible>ListItem.IsRecording</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
 						</control>
 					</focusedlayout>
 				</control>
