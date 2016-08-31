@@ -459,14 +459,6 @@
 					<onclick>Skin.ToggleSetting(HideNextAiredWidget)</onclick>
 					<visible>System.HasAddon(script.tv.show.next.aired)</visible>
 				</control>
-				<control type="radiobutton" id="2122">
-					<description>Hide PVR Channels Widget</description>
-					<include>SettingsContentRadioBtn</include>
-					<label>$LOCALIZE[31983]</label>
-					<selected>Skin.HasSetting(HidePVRChannelsWidget)</selected>
-					<onclick>Skin.ToggleSetting(HidePVRChannelsWidget)</onclick>
-					<visible>Pvr.HasTVChannels</visible>
-				</control>
 				<control type="radiobutton" id="2350">
 					<description>Hide Add-ons Widget</description>
 					<include>SettingsContentRadioBtn</include>
@@ -488,6 +480,14 @@
 					<label>$LOCALIZE[31073]</label>
 					<selected>Skin.HasSetting(HideWeatherHomePanel)</selected>
 					<onclick>Skin.ToggleSetting(HideWeatherHomePanel)</onclick>
+				</control>
+				<control type="radiobutton" id="2122">
+					<description>Hide PVR Channels Widget</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31983]</label>
+					<selected>Skin.HasSetting(HidePVRChannelsWidget)</selected>
+					<onclick>Skin.ToggleSetting(HidePVRChannelsWidget)</onclick>
+					<visible>Pvr.HasTVChannels</visible>
 				</control>
 				<control type="radiobutton" id="2341">
 					<description>Hide Recording Info Panel</description>
