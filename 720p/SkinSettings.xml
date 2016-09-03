@@ -69,72 +69,72 @@
 
 				<control type="button" id="1">
 					<description>General</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(1)</onfocus>
 					<visible>ControlGroup(900).HasFocus | [[Skin.String(SkinSettingsCategory,) | Skin.String(SkinSettingsCategory,1)] + [Control.HasFocus(991) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="2">
 					<description>Home</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(2)</onfocus>
 					<visible>ControlGroup(901).HasFocus | [Skin.String(SkinSettingsCategory,2) + [Control.HasFocus(992) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="3">
 					<description>Media</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(3)</onfocus>
 					<visible>ControlGroup(902).HasFocus | [Skin.String(SkinSettingsCategory,3) + [Control.HasFocus(993) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="10">
 					<description>Configure Menus</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(10)</onfocus>
 					<visible>ControlGroup(909).HasFocus | [Skin.String(SkinSettingsCategory,10) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="4">
 					<description>Backgrounds</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(4)</onfocus>
 					<visible>ControlGroup(903).HasFocus | [Skin.String(SkinSettingsCategory,4) + [Control.HasFocus(994) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="8">
 					<description>Weather</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(8)</onfocus>
 					<visible>ControlGroup(907).HasFocus | [Skin.String(SkinSettingsCategory,8) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="5">
 					<description>Add-ons</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(5)</onfocus>
 					<visible>ControlGroup(904).HasFocus | [Skin.String(SkinSettingsCategory,5) + [Control.HasFocus(995) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="9">
 					<description>Supported Add-ons</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(9)</onfocus>
 					<visible>ControlGroup(908).HasFocus | [Skin.String(SkinSettingsCategory,9) + [Control.HasFocus(996) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
 				<control type="button" id="6">
 					<description>Reset Skin</description>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus />
+					<texturenofocus />
 					<onfocus>Control.SetFocus(6)</onfocus>
 					<visible>ControlGroup(905).HasFocus | [Skin.String(SkinSettingsCategory,6) + [Control.HasFocus(911) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
@@ -502,8 +502,8 @@
 						<description>Reset Skin Label</description>
 						<top>150</top>
 						<align>center</align>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturefocus />
+						<texturenofocus />
 						<include>SettingsHeaderBtn</include>
 						<label>$LOCALIZE[32026]</label>
 						<visible>Skin.String(SkinSettingsCategory,6) + !Skin.HasSetting(ExpandedSettings) + !System.HasAddon(script.skin.helper.service)</visible>
