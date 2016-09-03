@@ -604,7 +604,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/ratings/no-rating.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.IsEmpty(ListItem.MPAA) + !ListItem.IsCollection + !String.Contains(ListItem.FilenameAndPath,.unrated)</visible>  
+			<visible>String.IsEmpty(ListItem.MPAA) + !ListItem.IsCollection + !String.Contains(ListItem.FilenameAndPath,.unrated) + !ListItem.IsParentFolder</visible>  
 		</control>
 	</include>
 	
