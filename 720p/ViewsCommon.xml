@@ -2970,8 +2970,8 @@
 					<control type="label">
 						<include>InfoPaneItemTitle</include>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
-						<visible>[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(tvshow(1).clearlogo)) + String.IsEmpty(ListItem(2).Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)]
-						| [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]</visible>
+						<visible>[[[String.IsEmpty(ListItem.Art(clearlogo)) + !Container.Content(Seasons)] | [String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(tvshow(1).clearlogo)) + String.IsEmpty(ListItem(2).Art(tvshow.clearlogo)) + Container.Content(Seasons)]] | [[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(DisableTVShowsLogo)]
+						| [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DisableMoviesClearLogo)]] + ![!Container.Content(Seasons) + ListItem.IsParentFolder]</visible>
 					</control>
 					
 					<control type="group">
