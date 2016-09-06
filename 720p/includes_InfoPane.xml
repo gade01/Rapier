@@ -17,7 +17,7 @@
 		<value condition="Window.IsActive(AddonBrowser)">$INFO[Window(AddonBrowser).Property(Updated),$LOCALIZE[31996]: ,]</value>
 		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[PVR.backenddiskspace]</value>
 		<value condition="Window.IsActive(Pictures) + [Control.IsVisible(50) | [Control.IsVisible(52) + [Skin.String(CommonListStyle,) | Skin.String(CommonListStyle,1) | [!String.IsEmpty(ListItem.Label2) + [Skin.String(CommonListStyle,2) | Skin.String(CommonListStyle,3)]]]]]">$INFO[ListItem.Date]</value>
-		<value condition="Skin.HasSetting(HideMenuBar)">$LOCALIZE[31193]: $INFO[Container.SortMethod]</value>
+		<value condition="Skin.HasSetting(HideMenuBar) + !String.IsEmpty(Container.SortMethod)">$LOCALIZE[31193]: $INFO[Container.SortMethod]</value>
 	</variable>
 	
 	<include name="InfoPaneImage">
@@ -205,7 +205,7 @@
 			<control type="label">
 				<include>InfoPaneHeadLabel2</include>
 				<label>$VAR[InfoPaneHeadLabel2Var]</label>
-				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)] + !String.IsEmpty(Container.SortMethod)</visible>
+				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]</visible>
 			</control>
 			
 			<include condition="Window.IsActive(Videos) | Window.IsActive(VideoPlaylist)">VideoDetails</include>
