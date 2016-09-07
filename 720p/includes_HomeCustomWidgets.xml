@@ -469,7 +469,7 @@
 					<onup>555</onup>
 					<ondown>$PARAM[ContainerIDTop]</ondown>
 					<onleft condition="Control.IsVisible(6930)">6930</onleft>
-					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft condition="Integer.IsGreater(Container(110).NumItems,0)">110</onleft>
 					<onleft>850</onleft>
 					<onright>4829</onright>
 					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,6)">CustomPanelOnclick1</include>
@@ -507,7 +507,7 @@
 					<onup>555</onup>
 					<ondown>$PARAM[ContainerIDTop]</ondown>
 					<onleft condition="Control.IsVisible(6930)">6930</onleft>
-					<onleft condition="Control.IsVisible(110)">110</onleft>
+					<onleft condition="Integer.IsGreater(Container(110).NumItems,0)">110</onleft>
 					<onleft>850</onleft>
 					<onright>4829</onright>
 					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,6)">CustomPanelOnclick1</include>
@@ -562,7 +562,7 @@
 						<animation effect="fade" end="90" condition="true">Conditional</animation>
 						<onup>$PARAM[ContainerIDTop]</onup>
 						<onleft condition="Control.IsVisible(6930)">6930</onleft>
-						<onleft condition="Control.IsVisible(110)">110</onleft>
+						<onleft condition="Integer.IsGreater(Container(110).NumItems,0)">110</onleft>
 						<onleft>850</onleft>
 						<ondown condition="!Control.IsVisible($PARAM[ContainerIDBottom])">850</ondown>
 						<ondown condition="Control.IsVisible($PARAM[ContainerIDBottom])">$PARAM[ContainerIDBottom]</ondown>
