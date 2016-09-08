@@ -6368,7 +6368,7 @@
 							<font>PanelStatsFont</font>
 							<textcolor>GreyColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$VAR[MovieDuration,, $LOCALIZE[12391]]</label>
+							<label>$VAR[MovieDuration,, $LOCALIZE[12391]]$INFO[ListItem.StartDate,  &#x2022;  ,]</label>
 							<animation effect="fade" end="60" condition="true">Conditional</animation>
 						</control>
 					</itemlayout>
@@ -6425,7 +6425,7 @@
 							<font>PanelStatsFont</font>
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$VAR[MovieDuration,, $LOCALIZE[12391]]</label>
+							<label>$VAR[MovieDuration,, $LOCALIZE[12391]]$INFO[ListItem.StartDate,  &#x2022;  ,]</label>
 						</control>
 					</focusedlayout>
 					<content target="pvr">plugin://script.skin.helper.service/?action=pvrrecordings&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content> 
