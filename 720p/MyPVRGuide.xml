@@ -99,7 +99,7 @@
 				</control>
 				<control type="image">
 					<left>220</left>
-					<width>1030</width>
+					<width>980</width>
 					<height>30</height>
 					<texture border="8" flipx="true">pvr/column-left.png</texture>
 					<colordiffuse>LiveTVColumnColor</colordiffuse>
@@ -120,13 +120,13 @@
 					<viewtype label="19032">list</viewtype>
 					<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormal</include>
 					<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreen</include>
-					<pagecontrol>10</pagecontrol>
+					<pagecontrol>904</pagecontrol>
 					<scrolltime>150</scrolltime>
 					<timeblocks>40</timeblocks>
 					<rulerunit>6</rulerunit>
 					<progresstexture border="0,45,20,7">pvr/EpgProgressIndicator.png</progresstexture>
 					<onleft>10</onleft>
-					<onright>10</onright>
+					<onright condition="Control.IsVisible(904)">904</onright>
 					<rulerlayout height="34" width="42">
 						<control type="label">
 							<description>Date</description>
@@ -370,6 +370,8 @@
 						</control>
 					</focusedlayout>
 				</control>
+				
+				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">ColumnsViewScrollbar</include>
 			</control>
 
 			<control type="group" id="500">
