@@ -69,6 +69,11 @@
 		<value>30</value>
 	</variable>
 	
+	<variable name="RadioBrightnessValueVar">
+		<value condition="!String.IsEmpty(Skin.String(RadioBrightnessValue))">$INFO[Skin.String(RadioBrightnessValue)]</value>
+		<value>30</value>
+	</variable>
+	
 	<variable name="VideosBrightnessValueVar">
 		<value condition="!String.IsEmpty(Skin.String(VideosBrightnessValue))">$INFO[Skin.String(VideosBrightnessValue)]</value>
 		<value>30</value>
@@ -147,6 +152,12 @@
 	<include name="TVBrightnessAnimations">
 		<include content="BrightnessAnimations">
 			<param name="type" value="TVBrightnessValue" />
+		</include>
+	</include>
+	
+	<include name="RadioBrightnessAnimations">
+		<include content="BrightnessAnimations">
+			<param name="type" value="RadioBrightnessValue" />
 		</include>
 	</include>
 	
@@ -443,6 +454,26 @@
 			</control>
 
 			<include>PVRBackgroundDim</include>
+		</control>
+	</include>
+	
+	<include name="BackgroundPVRRadio">		
+		<control type="group">
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
+
+			<control type="multiimage">
+				<description>Custom Background</description>
+				<include>BackgroundSize</include>
+				<include condition="Skin.String(CustomPVRRadioBGType,2) | Skin.String(CustomPVRRadioBGType,3)">PVRRadioCustomBGPath</include>
+				<include condition="Skin.String(CustomPVRRadioBGType,4) + System.HasAddon(script.skin.helper.service)">PVRFanartBGPath</include>
+				<aspectratio>scale</aspectratio>
+				<timeperimage>10000</timeperimage>
+				<fadetime>BackgroundCrossfadeTime</fadetime>
+				<randomize>true</randomize>
+				<include condition="Skin.HasSetting(AnimateBackground)">BackgroundAnim</include>
+			</control>
+
+			<include>PVRRadioBackgroundDim</include>
 		</control>
 	</include>
 
@@ -802,12 +833,23 @@
 		</control>
 	</include>
 	
+	<include name="PVRRadioBackgroundDim">
+		<control type="image">
+			<include>BackgroundDim</include>
+			<include>RadioBrightnessAnimations</include>
+		</control>
+	</include>
+	
 	<include name="PVRCustomBGPath">
 		<imagepath>$INFO[Skin.String(CustomPVRBGPath)]</imagepath>
 	</include>
 	
 	<include name="PVRFanartBGPath">
 		<imagepath background="true">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</imagepath>
+	</include>
+	
+	<include name="PVRRadioCustomBGPath">
+		<imagepath>$INFO[Skin.String(CustomPVRRadioBGPath)]</imagepath>
 	</include>
 	
 	<include name="WeatherCustomBGPath">
