@@ -1061,7 +1061,7 @@
 						<label>pvr</label>
 						<icon>homecategories/$INFO[System.Language]/pvr-text-nofocus.png</icon>			
 						<include condition="Skin.String(CustomPVRBGType,2) | Skin.String(CustomPVRBGType,3)">HomePVRCustomBGPath</include>
-						<include condition="Skin.String(CustomPVRBGType,4) + System.HasAddon(script.skin.helper.service)">HomePVRFanartBGPath</include>
+						<include condition="Skin.String(CustomPVRBGType,4)">HomePVRFanartBGPath</include>
 						<include condition="!Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryChannels</include>
 						<include condition="Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryEPG</include>
 						<visible>!Skin.HasSetting(HidePVRCategory) + Pvr.HasTVChannels</visible>
@@ -1071,7 +1071,7 @@
 						<label>radio</label>
 						<icon>homecategories/$INFO[System.Language]/radio-text-nofocus.png</icon>			
 						<include condition="Skin.String(CustomPVRRadioBGType,2) | Skin.String(CustomPVRRadioBGType,3)">HomePVRRadioCustomBGPath</include>
-						<include condition="Skin.String(CustomPVRRadioBGType,4) + System.HasAddon(script.skin.helper.service)">HomePVRFanartBGPath</include>
+						<include condition="Skin.String(CustomPVRRadioBGType,4)">HomePVRFanartBGPath</include>
 						<include condition="!Skin.HasSetting(RedirectPVRRadioCategoryEPG)">RedirectPVRRadioCategoryChannels</include>
 						<include condition="Skin.HasSetting(RedirectPVRRadioCategoryEPG)">RedirectPVRRadioCategoryEPG</include>
 						<visible>!Skin.HasSetting(HidePVRRadioCategory) + Pvr.HasRadioChannels</visible>
