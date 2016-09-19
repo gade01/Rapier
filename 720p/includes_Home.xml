@@ -1064,7 +1064,7 @@
 						<include condition="Skin.String(CustomPVRBGType,4)">HomePVRFanartBGPath</include>
 						<include condition="!Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryChannels</include>
 						<include condition="Skin.HasSetting(RedirectPVRCategoryEPG)">RedirectPVRCategoryEPG</include>
-						<visible>!Skin.HasSetting(HidePVRCategory) + Pvr.HasTVChannels</visible>
+						<visible>!Skin.HasSetting(HidePVRCategory) + System.HasPVRAddon</visible>
 					</item>
 					<item id="52">
 						<description>PVR Radio Category</description>
@@ -1074,7 +1074,7 @@
 						<include condition="Skin.String(CustomPVRRadioBGType,4)">HomePVRFanartBGPath</include>
 						<include condition="!Skin.HasSetting(RedirectPVRRadioCategoryEPG)">RedirectPVRRadioCategoryChannels</include>
 						<include condition="Skin.HasSetting(RedirectPVRRadioCategoryEPG)">RedirectPVRRadioCategoryEPG</include>
-						<visible>!Skin.HasSetting(HidePVRRadioCategory) + Pvr.HasRadioChannels</visible>
+						<visible>!Skin.HasSetting(HidePVRRadioCategory) + System.HasPVRAddon</visible>
 					</item>
 					<item id="2">
 						<description>Videos Category</description>
