@@ -1958,9 +1958,19 @@
 	<!-- END Fullscreen / OSD -->
 	
 	<!-- Music Visualization -->
+	<variable name="MusicPlayingTitle">
+		<value condition="!String.IsEmpty(MusicPlayer.ChannelName)">$INFO[MusicPlayer.ChannelName]</value>
+		<value>$INFO[MusicPlayer.Title]</value>
+	</variable>
+	
 	<variable name="MusicVizDescription">
 		<value condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</value>
 		<value>$INFO[MusicPlayer.Property(Album_Description)]</value>
+	</variable>
+	
+	<variable name="MusicVizGenre">
+		<value condition="!String.IsEmpty(MusicPlayer.ChannelGroup)">$INFO[MusicPlayer.ChannelGroup]</value>
+		<value>$INFO[MusicPlayer.Genre]</value>
 	</variable>
 	<!-- END Music Visualization -->
 	

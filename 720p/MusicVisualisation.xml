@@ -73,7 +73,7 @@
 						<font>FSInfoTitleFont</font>
 						<textcolor>MediaInfoTitleColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[UPPERCASE]$INFO[MusicPlayer.Title][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[MusicPlayingTitle][/UPPERCASE]</label>
 						<aligny>center</aligny>
 						<include>CdArtLabelOpenCloseAnim</include>
 					</control>
@@ -218,7 +218,7 @@
 							<font>FSInfoTitleFont</font>
 							<textcolor>MediaInfoTitleColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>[UPPERCASE]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Year, (,)][/UPPERCASE]</label>
+							<label>[UPPERCASE]$VAR[MusicPlayingTitle]$INFO[MusicPlayer.Year, (,)][/UPPERCASE]</label>
 							<aligny>top</aligny>
 							<scroll>true</scroll>
 						</control>
@@ -242,7 +242,7 @@
 						<font>FSInfoFont</font>
 						<textcolor>MediaInfoTitleColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[UPPERCASE]$INFO[MusicPlayer.Genre][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[MusicVizGenre][/UPPERCASE]</label>
 						<aligny>center</aligny>
 					</control>
 					
@@ -280,6 +280,7 @@
 						<width>400</width>
 						<align>right</align>
 						<orientation>horizontal</orientation>
+						<visible>!String.IsEmpty(MusicPlayer.offset(1).Title)</visible>
 						<control type="label">
 							<width min="10" max="110">auto</width>
 							<height>26</height>
