@@ -1764,7 +1764,7 @@
 	
 	<include name="FSMediaInfoPanel">
 		<control type="group" id="1">
-			<visible>!VideoPlayer.Content(LiveTV)</visible>
+			<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio]</visible>
 			
 			<control type="image" id="1">
 				<width>1224</width>
@@ -1794,7 +1794,7 @@
 		</control>
 		
 		<control type="group" id="1">
-			<visible>VideoPlayer.Content(LiveTV)</visible>
+			<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio</visible>
 			
 			<control type="image" id="1">
 				<width>1224</width>
@@ -1966,11 +1966,6 @@
 	<variable name="MusicVizDescription">
 		<value condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</value>
 		<value>$INFO[MusicPlayer.Property(Album_Description)]</value>
-	</variable>
-	
-	<variable name="MusicVizGenre">
-		<value condition="!String.IsEmpty(MusicPlayer.ChannelGroup)">$INFO[MusicPlayer.ChannelGroup]</value>
-		<value>$INFO[MusicPlayer.Genre]</value>
 	</variable>
 	<!-- END Music Visualization -->
 	
