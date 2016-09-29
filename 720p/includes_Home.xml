@@ -268,7 +268,9 @@
 			<include condition="Skin.String(CustomWeatherBGType,4)">HomeWeatherFanartBGPath</include>
 			<include condition="Skin.String(CustomWeatherBGType,5) + Skin.HasSetting(CustomWeatherBGPath.multi)">HomeWeatherFanartAddonMultiBGPath</include>
 			<include condition="Skin.String(CustomWeatherBGType,5) + !Skin.HasSetting(CustomWeatherBGPath.multi)">HomeWeatherFanartAddonBGPath</include>
-			<onclick>ActivateWindow(Weather)</onclick>	
+			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+			<onclick condition="String.IsEmpty(Weather.Plugin)">Notification($LOCALIZE[8],$LOCALIZE[31309],9000)</onclick>
+			<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
 		</item>
 	</include>
 	
