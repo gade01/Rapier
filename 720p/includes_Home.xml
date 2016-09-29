@@ -2349,11 +2349,23 @@
 						<visible>Skin.HasSetting(EditAddonsSubMenuBtn4) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn4Label))</visible>
 					</item>
 					<item id="5">
+						<description>Add-on Browser</description>
+						<label>$LOCALIZE[10040]</label>
+						<onclick>ActivateWindow(addonbrowser,root)</onclick>
+						<visible>!Skin.HasSetting(EditAddonsSubMenuBtn5)</visible>
+					</item>
+					<item id="5">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(AddonsSubMenuBtn5Label)]</label>
 						<onclick condition="![Skin.String(AddonsSubMenuBtn5Type,Favourite) | Skin.String(AddonsSubMenuBtn5Type,)]">$INFO[Skin.String(AddonsSubMenuBtn5Param)]</onclick>
 						<onclick condition="Skin.String(AddonsSubMenuBtn5Type,Favourite) | Skin.String(AddonsSubMenuBtn5Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.5.Path)]</onclick>
 						<visible>Skin.HasSetting(EditAddonsSubMenuBtn5) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn5Label))</visible>
+					</item>
+					<item id="6">
+						<description>Search Add-on</description>
+						<label>$LOCALIZE[31909]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://search/,return)</onclick>
+						<visible>!Skin.HasSetting(EditAddonsSubMenuBtn6)</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
