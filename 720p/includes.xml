@@ -1667,6 +1667,11 @@
 		<value condition="Player.IsTempo">[UPPERCASE]$INFO[Player.PlaySpeed,+,X][/UPPERCASE]</value>
 	</variable>
 	
+	<variable name="PausedLabels">
+		<value condition="Player.Caching">$INFO[Player.CacheLevel,$LOCALIZE[10213] ,%]</value>
+		<value>$LOCALIZE[112]</value>
+	</variable>
+	
 	<variable name="FSInfoTitle">
 		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + Integer.IsLessOrEqual(VideoPlayer.Season,9) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="[VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording] + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>
