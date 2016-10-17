@@ -2050,19 +2050,7 @@
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Label2]</label>
-				<visible>!String.IsEmpty(ListItem.Label2)</visible>
-			</control>
-			<control type="label">
-				<description>Label2</description>
-				<left>80</left>
-				<top>38</top>
-				<width>535</width>
-				<font>ListFont2</font>
-				<textcolor>ListColor2</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Date]$INFO[ListItem.Premiered]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]</label>
-				<visible>String.IsEmpty(ListItem.Label2)</visible>
+				<label>$VAR[ListViewLabel2]</label>
 			</control>
 			<control type="image">
 				<description>Overlay</description>
@@ -2874,19 +2862,7 @@
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Label2]</label>
-					<visible>!String.IsEmpty(ListItem.Label2)</visible>
-				</control>
-				<control type="label">
-					<description>Label2</description>
-					<left>80</left>
-					<top>38</top>
-					<width>535</width>
-					<font>ListFont2</font>
-					<textcolor>ListColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Date]$INFO[ListItem.Premiered]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]</label>
-					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<label>$VAR[ListViewLabel2]</label>
 				</control>
 			</control>
 			<control type="image">
