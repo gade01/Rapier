@@ -24,6 +24,14 @@
 			<control type="image" id="780">
 				<include>DropDownMenuTopBorder</include>
 			</control>
+			<control type="radiobutton" id="475">
+				<description>Channel Icons (Guide)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[19066]</label>
+				<selected>Skin.HasSetting(ShowPVRGuideChannelIcons)</selected>
+				<onclick>Skin.ToggleSetting(ShowPVRGuideChannelIcons)</onclick>
+				<visible>Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRSearch.xml)</visible>
+			</control>
 			<control type="radiobutton" id="476">
 				<description>Hide Plot (PVR)</description>
 				<include>DropDownMenuRadioBtn</include>
