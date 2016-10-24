@@ -1669,7 +1669,8 @@
 	
 	<variable name="PausedLabels">
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,$LOCALIZE[10213] ,%]</value>
-		<value>$LOCALIZE[112]</value>
+		<value condition="Player.Paused">$LOCALIZE[112]</value>
+		<value>$LOCALIZE[31184]</value>
 	</variable>
 	
 	<variable name="FSInfoTitle">
