@@ -1077,7 +1077,7 @@
 						<width>248</width>
 						<height>27</height>
 						<texture border="8">views/genre-background.png</texture>
-						<visible>!String.IsEmpty(ListItem.Title)</visible>
+						<visible>!String.IsEmpty(ListItem.Label)</visible>
 					</control>
 					<control type="label">
 						<left>15</left>
@@ -1087,8 +1087,8 @@
 						<font>SubMenuArrowFont</font>
 						<textcolor>WhiteColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Title]</label>
-						<visible>!String.IsEmpty(ListItem.Title)</visible>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!String.IsEmpty(ListItem.Label)</visible>
 					</control>
 				</itemlayout>				
 				<focusedlayout height="173" width="271">
@@ -1131,7 +1131,7 @@
 							<width>248</width>
 							<height>27</height>
 							<texture border="8">views/genre-background.png</texture>
-							<visible>!String.IsEmpty(ListItem.Title)</visible>
+							<visible>!String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>15</left>
@@ -1141,12 +1141,12 @@
 							<font>SubMenuArrowFont</font>
 							<textcolor>SelectedColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[ListItem.Title]</label>
-							<visible>!String.IsEmpty(ListItem.Title)</visible>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</control>
 				</focusedlayout>
-				<content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$ESCINFO[ListItem.Artist] music video&amp;&amp;limit=20</content>
+				<content>plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] music video&amp;&amp;limit=20</content>
 			</control>
 			
 			<control type="textbox">
