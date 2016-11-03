@@ -1630,6 +1630,12 @@
 		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 	</variable>
 	
+	<variable name="PausedLabels">
+		<value condition="Player.Caching">$INFO[Player.CacheLevel,$LOCALIZE[10213] ,%]</value>
+		<value condition="Player.Paused">$LOCALIZE[112]</value>
+		<value>$LOCALIZE[31184]</value>
+	</variable>
+	
 	<variable name="FSInfoTitle">
 		<value condition="VideoPlayer.Content(LiveTV) + !IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E0,]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="VideoPlayer.Content(LiveTV) + !IntegerGreaterThan(VideoPlayer.Season,9)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - S0,]$INFO[VideoPlayer.Episode,E,]$INFO[VideoPlayer.Year, (,)]</value>

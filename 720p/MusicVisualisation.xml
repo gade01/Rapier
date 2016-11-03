@@ -35,6 +35,30 @@
 		
 		<control type="group">
 			<depth>DepthOSD-</depth>
+			<visible>[Player.Paused | [Player.Caching + IntegerGreaterThan(Player.CacheLevel,0)]] + Skin.HasSetting(ShowFullscreenMusicPaused)</visible>
+			<include>MediaViewOpenCloseAnim</include>
+			
+			<control type="image">
+				<include>ScreenSize</include>
+				<texture border="0,0,50,50">black.png</texture>
+				<animation effect="fade" condition="true" end="55">Conditional</animation>
+			</control>
+			
+			<control type="label">
+				<top>250</top>
+				<width>1280</width>
+				<font>PausedFont</font>
+				<label>[B]$VAR[PausedLabels][/B]</label>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<animation effect="fade" condition="true" end="50">Conditional</animation>
+				<include>MediaInfoOpenCloseAnim</include>
+				<visible>![Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog) | Window.IsActive(script-cu-lrclyrics-main.xml)]</visible>
+			</control>
+		</control>
+		
+		<control type="group">
+			<depth>DepthOSD-</depth>
 			
 			<control type="group">
 				<description>cdart now Playing</description>
