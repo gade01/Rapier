@@ -285,6 +285,12 @@
 		<value condition="Player.Rewinding32x + !Player.Seeking">-32X</value>
 		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 	</variable>
+	
+	<variable name="PausedLabels">
+		<value condition="Player.Caching">$INFO[Player.CacheLevel,$LOCALIZE[10213] ,%]</value>
+		<value condition="Player.Paused">$LOCALIZE[112]</value>
+		<value>$LOCALIZE[31184]</value>
+	</variable>
 
 	<include name="ScreenSize">
 		<width>ScreenWidth</width>
