@@ -636,6 +636,29 @@
 		<value condition="Control.HasFocus(181) + !String.IsEmpty(Container(181).ListItem.Property(Fanart))">$INFO[Container(181).ListItem.Property(Fanart)]</value>
 	</variable>
 	
+	<variable name="GlobalSearchClearlogo">
+		<value condition="Control.HasFocus(111) + !String.IsEmpty(Container(111).ListItem.Property(art(clearlogo)))">$INFO[Container(111).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(211) + !String.IsEmpty(Container(211).ListItem.Property(art(clearlogo)))">$INFO[Container(211).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(231) + !String.IsEmpty(Container(231).ListItem.Property(art(clearlogo)))">$INFO[Container(231).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(121) + !String.IsEmpty(Container(121).ListItem.Property(art(clearlogo)))">$INFO[Container(121).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(131) + !String.IsEmpty(Container(131).ListItem.Property(art(clearlogo)))">$INFO[Container(131).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(141) + !String.IsEmpty(Container(141).ListItem.Property(art(clearlogo)))">$INFO[Container(141).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(151) + !String.IsEmpty(Container(151).ListItem.Property(art(clearlogo)))">$INFO[Container(151).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(151) + String.IsEmpty(Container(151).ListItem.Property(art(clearlogo))) + !String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(151).ListItem.Property(Artist),,/logo.png]</value>
+		<value condition="Control.HasFocus(161) + !String.IsEmpty(Container(161).ListItem.Property(art(clearlogo)))">$INFO[Container(161).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(161) + String.IsEmpty(Container(161).ListItem.Property(art(clearlogo))) + !String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(161).ListItem.Label,,/logo.png]</value>
+		<value condition="Control.HasFocus(171) + !String.IsEmpty(Container(171).ListItem.Property(art(clearlogo)))">$INFO[Container(171).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(171) + String.IsEmpty(Container(171).ListItem.Property(art(clearlogo))) + !String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(171).ListItem.Property(Artist),,/logo.png]</value>
+		<value condition="Control.HasFocus(181) + !String.IsEmpty(Container(181).ListItem.Property(art(clearlogo)))">$INFO[Container(181).ListItem.Property(art(clearlogo))]</value>
+		<value condition="Control.HasFocus(181) + String.IsEmpty(Container(181).ListItem.Property(art(clearlogo))) + !String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(181).ListItem.Property(Artist),,/logo.png]</value>
+		<value condition="Control.HasFocus(221) + !String.IsEmpty(Container(221).ListItem.Property(art(clearlogo)))">$INFO[Container(221).ListItem.Property(art(clearlogo))]</value>
+	</variable>
+	
+	<variable name="GlobalSearchPosterThumb">
+		<value condition="!String.IsEmpty(ListItem.Property(art(poster)))">$INFO[ListItem.Property(art(poster))]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	
 	<include name="GlobalSearchVideoSourceMediaFlags">
 		<control type="image" id="600">
 			<description>Blu-ray</description>
