@@ -212,8 +212,9 @@
 			<width>24</width>
 			<height>24</height>
 			<texture background="true">OverlayWatched.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+			<aspectratio>keep</aspectratio>
+			<visible>!Integer.IsEqual(ListItem.PlayCount,0)</visible>
+			<include>ListViewOverlayFadeAnim</include>
 		</control>
 	</include>
 
