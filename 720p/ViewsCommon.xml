@@ -80,7 +80,7 @@
 						<top>5</top>
 						<width>192</width>
 						<height>153</height>
-						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonContainerVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>Window.IsActive(Videos) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
@@ -91,7 +91,7 @@
 						<top>5</top>
 						<width>192</width>
 						<height>153</height>
-						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
@@ -210,7 +210,7 @@
 						<top>5</top>
 						<width>192</width>
 						<height>153</height>
-						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
+						<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonContainerVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>Window.IsActive(Videos) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
@@ -221,7 +221,7 @@
 						<top>5</top>
 						<width>192</width>
 						<height>153</height>
-						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
+						<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
@@ -1988,7 +1988,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
+				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonContainerVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Window.IsActive(Videos) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
@@ -1998,7 +1998,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
+				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
 			</control>
@@ -2804,7 +2804,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonVar]</texture>
+				<texture background="true" fallback="special://skin/extras/moviegenres/default.png">$VAR[MovieGenreIconsAddonContainerVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 				<visible>Window.IsActive(Videos) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
@@ -2815,7 +2815,7 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonVar]</texture>
+				<texture background="true" fallback="special://skin/extras/musicgenres/default.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 				<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder</visible>
