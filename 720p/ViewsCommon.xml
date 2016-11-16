@@ -94,7 +94,7 @@
 						<texture background="true" fallback="DefaultAudio.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
+						<visible>[String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/)] + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -224,7 +224,7 @@
 						<texture background="true" fallback="DefaultAudio.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 						<bordersize>6</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
+						<visible>[String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/)] + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -425,7 +425,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
+						<visible>[String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/)] + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
 					</control>
 					
 					<control type="image">
@@ -466,7 +466,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>NotificationsOpenCloseAnim</include>
-						<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
+						<visible>[String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/)] + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
 					</control>
 					
 					<control type="image">
@@ -2000,7 +2000,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true" fallback="DefaultAudio.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
+				<visible>[String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/)] + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
 			</control>
 			<control type="image">
 				<description>Countries Cover</description>
@@ -2818,7 +2818,7 @@
 				<texture background="true" fallback="DefaultAudio.png">$VAR[MusicGenreIconsAddonContainerVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-				<visible>Window.IsActive(Music) + Container.Content(Genres) + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
+				<visible>[String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/genres/)] + String.IsEmpty(ListItem.Thumb) + !ListItem.IsParentFolder + !String.IsEmpty(Skin.String(MusicGenreIconsAddon.path))</visible>
 			</control>
 			<control type="image">
 				<description>Countries Cover</description>
