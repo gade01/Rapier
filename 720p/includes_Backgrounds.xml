@@ -110,8 +110,8 @@
 	</variable>
 	
 	<variable name="BackgroundGenreFanartVar">
+		<value condition="String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | Window.IsActive(Music)">$INFO[Skin.String(MusicGenreFanartAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
 		<value condition="Window.IsActive(Videos)">$INFO[Skin.String(MovieGenreFanartAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
-		<value condition="Window.IsActive(Music)">$INFO[Skin.String(MusicGenreFanartAddon.path)]$INFO[ListItem.Label,,.jpg]</value>
 	</variable>
 	
 	<include name="BrightnessAnimations">
