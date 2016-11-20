@@ -1238,11 +1238,15 @@
 	</variable>
 	
 	<variable name="ExtendedInfoWatchedPartial">
-		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),20)">watched/watched-10pct.png</value>
-		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),40)">watched/watched-30pct.png</value>
-		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),60)">watched/watched-50pct.png</value>
-		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),80)">watched/watched-70pct.png</value>
-		<value condition="Integer.IsGreater(Window.Property(PercentPlayed),80)">watched/watched-90pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),15)">watched/watched-10pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),25)">watched/watched-20pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),35)">watched/watched-30pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),45)">watched/watched-40pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),55)">watched/watched-50pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),65)">watched/watched-60pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),75)">watched/watched-70pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Window.Property(PercentPlayed),85)">watched/watched-80pct.png</value>
+		<value condition="Integer.IsGreater(Window.Property(PercentPlayed),85)">watched/watched-90pct.png</value>
 	</variable>
 	
 	<variable name="ExtendedInfoContainer901Label">
