@@ -1799,6 +1799,18 @@
 			<control type="image" id="115">
 				<include>MenuBarSeparator</include>
 			</control>
+			<control type="button" id="126">
+				<description>Play</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[208][/UPPERCASE]</label>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,song)">PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
+				<visible>String.IsEqual(ListItem.DBTYPE,song) | String.IsEqual(ListItem.DBTYPE,album)</visible>
+			</control>
+			<control type="image" id="127">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(126)</visible>
+			</control>
 			<control type="togglebutton" id="116">
 				<description>Tracks / Review</description>
 				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
