@@ -1557,7 +1557,7 @@
 		<value condition="VideoPlayer.Content(Episodes) + !IntegerGreaterThan(VideoPlayer.Season,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S0,]$INFO[VideoPlayer.Episode,E,)]</value> 
 		<value condition="VideoPlayer.Content(Episodes) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E0,)]</value> 
 		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, (S,]$INFO[VideoPlayer.Episode,E,)]</value>
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,  -  ]</value>
+		<value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelNumber]$INFO[VideoPlayer.ChannelName,.  ]</value>
 	</variable>
 	
 	<variable name="FSInfoLabel2">
