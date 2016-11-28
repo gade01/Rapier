@@ -1823,7 +1823,7 @@
 				<visible>Control.IsVisible(126)</visible>
 			</control>
 			<control type="togglebutton" id="116">
-				<description>Tracks / Review</description>
+				<description>Tracks / Review / Comment</description>
 				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
 				<alttexturenofocus />
 				<include>MenuBarSettingsBtn</include>
@@ -1831,16 +1831,7 @@
 				<label>[UPPERCASE]$VAR[MusicInfoTextboxButtonLabel1][/UPPERCASE]</label>
 				<altlabel>[UPPERCASE]$VAR[MusicInfoTextboxButtonLabel2][/UPPERCASE]</altlabel>
 				<usealttexture>Skin.HasSetting(MusicInfoTracksReviewToggle)</usealttexture>
-				<onclick>Skin.ToggleSetting(MusicInfoTracksReviewToggle)</onclick>
-				<visible>!String.IsEqual(ListItem.DBTYPE,song)</visible>
-			</control>
-			<control type="button" id="125">
-				<description>Comment</description>
-				<include>MenuBarSettingsBtn</include>
-				<onfocus condition="!String.IsEmpty(Skin.String(MusicInfoMenubar))">Skin.Reset(MusicInfoMenubar)</onfocus>
-				<label>[UPPERCASE]$LOCALIZE[569][/UPPERCASE]</label>
-				<onclick>noop</onclick>
-				<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
+				<onclick condition="!Integer.IsEqual(Container(50).NumItems,0)">Skin.ToggleSetting(MusicInfoTracksReviewToggle)</onclick>
 			</control>
 			<control type="image" id="117">
 				<include>MenuBarSeparator</include>
