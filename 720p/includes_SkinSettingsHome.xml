@@ -478,6 +478,13 @@
 					<onclick>Skin.ToggleSetting(HideNextAiredWidget)</onclick>
 					<visible>System.HasAddon(script.tv.show.next.aired)</visible>
 				</control>
+				<control type="radiobutton" id="2357">
+					<description>Hide Videos Widget</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31181]</label>
+					<selected>Skin.HasSetting(HideVideosHomeWidget)</selected>
+					<onclick>Skin.ToggleSetting(HideVideosHomeWidget)</onclick>
+				</control>
 				<control type="radiobutton" id="2350">
 					<description>Hide Add-ons Widget</description>
 					<include>SettingsContentRadioBtn</include>
