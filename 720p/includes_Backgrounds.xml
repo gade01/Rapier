@@ -491,6 +491,7 @@
 			<control type="visualisation" id="9010">
 				<description>Visualization</description>
 				<include>BackgroundSize</include>
+				<visible>!SlideShow.IsActive</visible>
 				<visible>[!Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + ![String.IsEqual(Visualisation.Name,spectrum) | String.IsEqual(Visualisation.Name,waveform)]</visible>
 			</control>
 			
@@ -503,6 +504,7 @@
 			<control type="visualisation">
 				<description>Visualization</description>
 				<include>BackgroundSize</include>
+				<visible>!SlideShow.IsActive</visible>
 				<visible>[!Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + [String.IsEqual(Visualisation.Name,spectrum) | String.IsEqual(Visualisation.Name,waveform)]</visible>
 			</control>
 		</control>
@@ -516,6 +518,7 @@
 			<control type="videowindow">
 				<description>Video</description>
 				<include>BackgroundSize</include>
+				<visible>!SlideShow.IsActive</visible>
 			</control>
 
 			<include condition="![Window.IsActive(Home) | Window.IsActive(TVGuide)]">MediaPlayingVizDim</include>
