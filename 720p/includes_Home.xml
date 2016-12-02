@@ -2929,15 +2929,13 @@
 	<include name="MusicPlayingProgressBar">
 		<control type="group">
 			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)</visible>			
-			<animation effect="fade" start="100" end="25" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>			
+			<animation effect="fade" start="100" end="35" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>			
 			<control type="progress">
 				<description>Progressbar</description>
 				<top>6</top>
 				<width>1280</width>
 				<height>108</height>
 				<info>Player.Progress</info>
-				<texturebg colordiffuse="00FFFFFF">gui/progress-bg.png</texturebg>
-				<midtexture border="0,0,0,0">gui/progress.png</midtexture>
 			</control>	
 		</control>
 		<control type="group">
