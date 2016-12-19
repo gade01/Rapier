@@ -1756,9 +1756,9 @@
 				<visible>!String.IsEmpty(ListItem.Trailer) + Skin.HasSetting(PlayTrailerWindowed)</visible>
 			</control>
 			<control type="button" id="211">
-				<description>Play Trailer</description>
+				<description>Search Trailer</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
+				<label>[UPPERCASE]$LOCALIZE[31019][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
 				<onclick condition="System.HasAddon(script.extendedinfo) + ![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onclick>
 				<onclick condition="System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onclick>

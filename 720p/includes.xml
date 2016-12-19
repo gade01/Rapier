@@ -263,6 +263,11 @@
 		<value>$INFO[Container(9000).ListItem.Label2]</value>
 	</variable>
 	
+	<variable name="TrailerButtonLabelVar">
+		<value condition="!String.IsEmpty(ListItem.Trailer)">$LOCALIZE[20410]</value>
+		<value>$LOCALIZE[31019]</value>
+	</variable>
+	
 	<include name="ScreenSize">
 		<width>ScreenWidth</width>
 		<height>ScreenHeight</height>
