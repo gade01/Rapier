@@ -208,6 +208,14 @@
 					<visible>Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)</visible>
 					<enable>!Skin.String(LowCPUPowerMode,Full)</enable>
 				</control>
+				<control type="radiobutton" id="3026">
+					<description>Enable Video Lyrics</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31049]</label>
+					<selected>Skin.HasSetting(EnableVideoLyrics)</selected>
+					<onclick condition="System.HasAddon(script.cu.lrclyrics)">Skin.ToggleSetting(EnableVideoLyrics)</onclick>
+					<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
+				</control>
 				<control type="button" id="3041">
 					<description>Fullscreen Music</description>
 					<include>SettingsHeaderBtn</include>
