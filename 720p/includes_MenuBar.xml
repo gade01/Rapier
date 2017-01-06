@@ -678,9 +678,17 @@
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				<visible>Container.Content(Addons)</visible>
 			</control>
+			<control type="button" id="124">
+				<description>Add-on Settings</description>
+				<include>MenuBarBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[10140][/UPPERCASE]</label>
+				<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick> 
+				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
+				<visible>!String.IsEmpty(Container.PluginName)</visible>
+			</control>
 			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
-				<visible>Control.IsVisible(122)</visible>
+				<visible>Control.IsVisible(122) | Control.IsVisible(124)</visible>
 			</control>
 		</control>		
 	</include>
