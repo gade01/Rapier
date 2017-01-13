@@ -10,11 +10,11 @@
 			<include condition="[[!String.IsEmpty(Skin.String(CustomTVShowsBGPath)) + [Skin.String(CustomTVShowsBGType,2) | Skin.String(CustomTVShowsBGType,3)]] 
 			| Skin.String(CustomTVShowsBGType,4)] + Skin.HasSetting(ApplyAllTVShowsCustomBG)">BackgroundTVShows</include>
 			<control type="group">
-				<visible>!String.IsEmpty(Window(Home).Property(TVGuide.BackgroundFanart)) + [Control.HasFocus(200) | Control.HasFocus(201) | Control.HasFocus(202) | Control.HasFocus(203) | Control.HasFocus(204) | Control.HasFocus(205) | Control.HasFocus(206)]</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(TVGuide.BackgroundFanart)) + !String.IsEmpty(Container.ListItem.Property(Fanart))</visible>
 				<animation effect="fade" time="600">VisibleChange</animation>
 				<control type="image">
 					<include>BackgroundSize</include>
-					<texture background="true">$VAR[NextAiredFanart]</texture>
+					<texture background="true">$INFO[Container.ListItem.Property(Fanart)]</texture>
 					<aspectratio>scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include condition="Skin.HasSetting(AnimateFanart)">BackgroundAnim</include>
@@ -106,7 +106,6 @@
 				<description>Info Area</description>
 				<left>901</left>
 				<top>115</top>
-				<include>ControlsOpenCloseAnim</include>
 				
 				<control type="image">
 					<description>Content Background</description>
@@ -118,79 +117,73 @@
 					<include>ListInfoViewContentBackgroundFadeAnim</include>
 				</control>
 				
-				<control type="image">
-					<description>Title Background</description>
-					<width>340</width>
-					<height>55</height>
-					<texture border="4">panels/panel3.png</texture>
-					<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				</control>
-				
-				<control type="image">
-					<description>Info Background</description>
-					<top>256</top>
-					<width>340</width>
-					<height>266</height>
-					<texture border="4">panels/panel3.png</texture>
-					<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-				</control>
-
-				<control type="image">
-					<top>262</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>294</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>326</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>358</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>390</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>422</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>454</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-				<control type="image">
-					<top>486</top>
-					<left>2</left>
-					<include>NextAiredInfoImage</include>
-				</control>
-
 				<control type="group">
-					<visible>[Control.HasFocus(200) + !String.IsEmpty(Container(200).ListItem.Label)]
-					| [Control.HasFocus(201) + !String.IsEmpty(Container(201).ListItem.Label)]
-					| [Control.HasFocus(202) + !String.IsEmpty(Container(202).ListItem.Label)]
-					| [Control.HasFocus(203) + !String.IsEmpty(Container(203).ListItem.Label)]
-					| [Control.HasFocus(204) + !String.IsEmpty(Container(204).ListItem.Label)]
-					| [Control.HasFocus(205) + !String.IsEmpty(Container(205).ListItem.Label)]
-					| [Control.HasFocus(206) + !String.IsEmpty(Container(206).ListItem.Label)]</visible>
+					<visible>!String.IsEmpty(Container.ListItem.Label)</visible>
 					<include>ControlsOpenCloseAnim</include>
+				
+					<control type="image">
+						<description>Title Background</description>
+						<width>340</width>
+						<height>55</height>
+						<texture border="4">panels/panel3.png</texture>
+						<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
+					</control>
+					
+					<control type="image">
+						<description>Info Background</description>
+						<top>256</top>
+						<width>340</width>
+						<height>266</height>
+						<texture border="4">panels/panel3.png</texture>
+						<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
+					</control>
+
+					<control type="image">
+						<top>262</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>294</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>326</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>358</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>390</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>422</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>454</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
+					<control type="image">
+						<top>486</top>
+						<left>2</left>
+						<include>NextAiredInfoImage</include>
+					</control>
 
 					<control type="label">
 						<description>Title</description>
 						<include>NextAiredTitleLabel</include>
-						<label>$VAR[NextAiredTitle]</label>
-						<visible>![String.IsEmpty(Container(200).ListItem.Property(Art(clearlogo))) | String.IsEmpty(Container(201).ListItem.Property(Art(clearlogo))) | String.IsEmpty(Container(202).ListItem.Property(Art(clearlogo))) | String.IsEmpty(Container(203).ListItem.Property(Art(clearlogo))) | String.IsEmpty(Container(204).ListItem.Property(Art(clearlogo))) | String.IsEmpty(Container(205).ListItem.Property(Art(clearlogo))) | String.IsEmpty(Container(206).ListItem.Property(Art(clearlogo)))]</visible>
+						<label>$INFO[Container.ListItem.Label]</label>
+						<visible>String.IsEmpty(Container.ListItem.Property(Art(clearlogo)))</visible>
 					</control>
 					
 					<control type="image">
@@ -198,9 +191,10 @@
 						<top>1</top>
 						<width>340</width>
 						<height>53</height>
-						<texture background="true">$VAR[NextAiredClearLogo]</texture>			
+						<texture background="true">$INFO[Container.ListItem.Property(Art(clearlogo))]</texture>			
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<fadetime>FanartCrossfadeTime</fadetime>
+						<visible>!String.IsEmpty(Container.ListItem.Property(Art(clearlogo)))</visible>
 					</control>
 					
 					<control type="image">
@@ -208,9 +202,10 @@
 						<top>60</top>
 						<width>340</width>
 						<height>191</height>
-						<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$VAR[NextAiredFanart]</texture>			
+						<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[Container.ListItem.Property(Fanart)]</texture>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 						<fadetime>FanartCrossfadeTime</fadetime>
+						<visible>!String.IsEmpty(Container.ListItem.Property(Fanart))</visible>
 					</control>
 
 					<include content="NextAiredInfoGrouplist">
@@ -218,7 +213,7 @@
 						<param name="top" value="262" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[369]:" />
-						<param name="info" value="$VAR[NextAiredNextTitle]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(NextTitle)]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -226,7 +221,7 @@
 						<param name="top" value="294" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[20359]:" />
-						<param name="info" value="$VAR[NextAiredNextNumber]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(NextSeasonNumber),S,]$INFO[Container.ListItem.Property(NextEpisodeNumber),E,]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -234,7 +229,7 @@
 						<param name="top" value="326" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[2050]:" />
-						<param name="info" value="$VAR[NextAiredRuntime]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(Runtime),, $LOCALIZE[12391]]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -242,7 +237,7 @@
 						<param name="top" value="358" />
 						<param name="labelwidth" value="150" />
 						<param name="label" value="$LOCALIZE[31966]:" />
-						<param name="info" value="$VAR[NextAiredLatestEpisode]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(LatestSeasonNumber),S,]$INFO[Container.ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container.ListItem.Property(LatestDate), (,)]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -250,7 +245,7 @@
 						<param name="top" value="390" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[126]:" />
-						<param name="info" value="$VAR[NextAiredStatus]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(Status)]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -258,7 +253,7 @@
 						<param name="top" value="422" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[515]:" />
-						<param name="info" value="$VAR[NextAiredGenre]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(Genre)]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -266,7 +261,7 @@
 						<param name="top" value="454" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[705]:" />
-						<param name="info" value="$VAR[NextAiredNetwork]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(Network)]" />
 					</include>
 					
 					<include content="NextAiredInfoGrouplist">
@@ -274,7 +269,7 @@
 						<param name="top" value="486" />
 						<param name="labelwidth" value="110" />
 						<param name="label" value="$LOCALIZE[574]:" />
-						<param name="info" value="$VAR[NextAiredCountry]" />
+						<param name="info" value="$INFO[Container.ListItem.Property(Country)]" />
 					</include>
 				</control>
 			</control>

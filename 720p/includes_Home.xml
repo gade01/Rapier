@@ -4612,21 +4612,10 @@
 
 	<include name="HomePanelFanart">
 		<control type="group">
-			<visible>[!String.IsEmpty(Container(6882).ListItem.Thumb) + Control.HasFocus(6882)] |
-			[!String.IsEmpty(Container(6883).ListItem.Thumb) + Control.HasFocus(6883)] |
-			[!String.IsEmpty(Container(6888).ListItem.Art(fanart)) + Control.HasFocus(6888)] |
-			[!String.IsEmpty(Container(6889).ListItem.Art(tvshow.fanart)) + Control.HasFocus(6889)] |
-			[!String.IsEmpty(Container(6890).ListItem.Art(fanart)) + Control.HasFocus(6890)] |
-			[!String.IsEmpty(Container(6891).ListItem.Art(fanart)) + Control.HasFocus(6891)] |
-			[!String.IsEmpty(Container(6892).ListItem.Art(tvshow.fanart)) + Control.HasFocus(6892)] |
-			[!String.IsEmpty(Container(6893).ListItem.Art(fanart)) + Control.HasFocus(6893)] |
-			[!String.IsEmpty(Container(6928).ListItem.Art(fanart)) + Control.HasFocus(6928)] |
-			[!String.IsEmpty(Container(6929).ListItem.Art(fanart)) + Control.HasFocus(6929)] |
-			[!String.IsEmpty(Container(6875).ListItem.Art(fanart)) + Control.HasFocus(6875)] |
-			[!String.IsEmpty(Container(6886).ListItem.Art(fanart)) + Control.HasFocus(6886)] |
-			[!String.IsEmpty(Container(6878).ListItem.Art(fanart)) + Control.HasFocus(6878)] |
-			[!String.IsEmpty(Container(6880).ListItem.Art(fanart)) + Control.HasFocus(6880)] |
-			[!String.IsEmpty(Container(6881).ListItem.Art(fanart)) + Control.HasFocus(6881)]</visible>
+			<visible>[!String.IsEmpty(Container.ListItem.Thumb) + [Control.HasFocus(6882) | Control.HasFocus(6883)]] |
+			[!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]] |
+			[!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]] |
+			[!String.IsEmpty(Container.ListItem.ActualIcon) + Control.HasFocus(6926)]</visible>
 			<depth>DepthBackground</depth>
 			<include>RecentlyAddedFanartOpenCloseAnim</include>
 
@@ -4645,42 +4634,11 @@
 	</include>
 
 	<variable name="HomePanelFanart">
-		<value condition="!String.IsEmpty(Container(6882).ListItem.Thumb) + Control.HasFocus(6882)">$INFO[Container(6882).ListItem.Thumb]</value>
-		<value condition="!String.IsEmpty(Container(6883).ListItem.Thumb) + Control.HasFocus(6883)">$INFO[Container(6883).ListItem.Thumb]</value>
-		<value condition="!String.IsEmpty(Container(6888).ListItem.Art(fanart)) + Control.HasFocus(6888)">$INFO[Container(6888).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6889).ListItem.Art(tvshow.fanart)) + Control.HasFocus(6889)">$INFO[Container(6889).ListItem.Art(tvshow.fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6890).ListItem.Art(fanart)) + Control.HasFocus(6890)">$INFO[Container(6890).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6891).ListItem.Art(fanart)) + Control.HasFocus(6891)">$INFO[Container(6891).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6892).ListItem.Art(tvshow.fanart)) + Control.HasFocus(6892)">$INFO[Container(6892).ListItem.Art(tvshow.fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6893).ListItem.Art(fanart)) + Control.HasFocus(6893)">$INFO[Container(6893).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6928).ListItem.Art(fanart)) + Control.HasFocus(6928)">$INFO[Container(6928).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6929).ListItem.Art(fanart)) + Control.HasFocus(6929)">$INFO[Container(6929).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6875).ListItem.Art(fanart)) + Control.HasFocus(6875)">$INFO[Container(6875).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6886).ListItem.Art(fanart)) + Control.HasFocus(6886)">$INFO[Container(6886).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6878).ListItem.Art(fanart)) + Control.HasFocus(6878)">$INFO[Container(6878).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6880).ListItem.Art(fanart)) + Control.HasFocus(6880)">$INFO[Container(6880).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(6881).ListItem.Art(fanart)) + Control.HasFocus(6881)">$INFO[Container(6881).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.Thumb) + [Control.HasFocus(6882) | Control.HasFocus(6883)]">$INFO[Container.ListItem.Thumb]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]">$INFO[Container.ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]">$INFO[Container.ListItem.Art(tvshow.fanart)]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.ActualIcon) + Control.HasFocus(6926)">$INFO[Container.ListItem.ActualIcon]</value>
 	</variable>
-	
-	<include name="HomePanelFanartNextAired">
-		<control type="group">
-			<visible>!String.IsEmpty(Container(6926).ListItem.ActualIcon) + Control.HasFocus(6926)</visible>
-			<depth>DepthBackground</depth>
-			<include>RecentlyAddedFanartOpenCloseAnim</include>
-
-			<control type="multiimage">
-				<description>Fanart</description>
-				<include>BackgroundSize</include>
-				<imagepath background="true">$INFO[Container(6926).ListItem.ActualIcon]</imagepath>
-				<aspectratio aligny="top">scale</aspectratio>
-				<timeperimage>10000</timeperimage>
-				<fadetime>BackgroundCrossfadeTime</fadetime>
-				<randomize>true</randomize>
-				<animation effect="fade" start="0" end="100" time="600">VisibleChange</animation>
-				<include condition="Skin.HasSetting(AnimateBackground)">BackgroundAnim</include>
-			</control>
-		</control>
-	</include>
 
 	<include name="RecentlyAddedPanel">
 		<control type="group">

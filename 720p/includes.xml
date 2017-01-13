@@ -769,23 +769,14 @@
 	<variable name="SortLetterNotificationVar">
 		<value condition="Control.HasFocus(584)">$INFO[Container(584).ListItem.SortLetter]</value>
 		<value condition="Control.HasFocus(120)">$INFO[Container(120).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(221)">$INFO[Container(221).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(211)">$INFO[Container(211).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(111)">$INFO[Container(111).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(121)">$INFO[Container(121).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(131)">$INFO[Container(131).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(141)">$INFO[Container(141).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(151)">$INFO[Container(151).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(161)">$INFO[Container(161).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(171)">$INFO[Container(171).ListItem.SortLetter]</value>
-		<value condition="Control.HasFocus(181)">$INFO[Container(181).ListItem.SortLetter]</value>
 		<value condition="Control.HasFocus(145)">$INFO[Container(145).ListItem.SortLetter]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.SortLetter)">$INFO[Container.ListItem.SortLetter]</value>
 		<value>$INFO[ListItem.SortLetter]</value>
 	</variable>
 
 	<include name="SortLetterNotification">
 		<control type="group">
-			<visible>Container.Scrolling | Container(584).Scrolling | [Window.IsActive(script-globalsearch-main.xml) + [Container(221).Scrolling | Container(111).Scrolling | Container(211).Scrolling | Container(121).Scrolling | Container(131).Scrolling | Container(141).Scrolling | Container(151).Scrolling | Container(161).Scrolling | Container(171).Scrolling | Container(181).Scrolling]]</visible>
+			<visible>Container.Scrolling | Container(584).Scrolling</visible>
 		
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="300" delay="100"/>

@@ -698,9 +698,10 @@
 			<control type="image">
 				<description>Fanart Background</description>
 				<include>BackgroundSize</include>
-				<texture background="true">$VAR[GlobalSearchFanart]</texture>
+				<texture background="true">$INFO[Container.ListItem.Property(Fanart)]</texture>
 				<aspectratio>scale</aspectratio>
 				<fadetime>BackgroundCrossfadeTime</fadetime>
+				<visible>!String.IsEmpty(Container.ListItem.Property(Fanart))</visible>
 			</control>
 
 			<control type="image">
