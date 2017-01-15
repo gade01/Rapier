@@ -35,7 +35,7 @@
 			<ondown condition="Control.IsVisible(6930)">6930</ondown>
 			<ondown condition="Container(850).HasFocus(3) + Control.IsVisible(6928)">6928</ondown>
 			<ondown condition="Container(850).HasFocus(4) + Control.IsVisible(6927)">6926</ondown>
-			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</ondown>
+			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</ondown>
 			<ondown condition="Control.IsVisible(110)">110</ondown>
 			<ondown>850</ondown>			
 			<onright condition="Container(850).HasFocus(50) + [Control.IsVisible(6887) | Control.IsVisible(6886)]">6885</onright>
@@ -63,7 +63,8 @@
 			<onright condition="Container(850).HasFocus(22) + Control.IsVisible(6920)">6920</onright>
 			<onright condition="Container(850).HasFocus(23) + Control.IsVisible(6922)">6922</onright>
 			<onright condition="Container(850).HasFocus(24) + Control.IsVisible(6924)">6924</onright>
-			<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onright>
+			<onright condition="Container(850).HasFocus(26) + Control.IsVisible(6870)">6870</onright>
+			<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onright>
 			<onright condition="Control.IsVisible(110)">110</onright>
 			<onright>850</onright>
 			<width>78</width>
@@ -224,6 +225,10 @@
 		<thumb>$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</thumb>
 	</include>
 
+	<include name="HomeGamesCustomBGPath">
+		<thumb>$INFO[Skin.String(CustomGamesBGPath)]</thumb>
+	</include>
+	
 	<include name="HomeGeneralCustomBGPath">
 		<thumb>$INFO[Skin.String(CustomGeneralBGPath)]</thumb>
 	</include>
@@ -1020,7 +1025,7 @@
 				<orientation>horizontal</orientation>
 				<preloaditems>2</preloaditems>
 				<onup condition="Control.IsVisible(110)">110</onup>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Container(850).HasFocus(50) + [Control.IsVisible(6887) | Control.IsVisible(6886)]">6885</onup>
 				<onup condition="Container(850).HasFocus(52) + [Control.IsVisible(6876) | Control.IsVisible(6875)]">6877</onup>
 				<onup condition="Container(850).HasFocus(2) + Control.IsVisible(6873)">6873</onup>
@@ -1046,6 +1051,7 @@
 				<onup condition="Container(850).HasFocus(22) + Control.IsVisible(6920)">6920</onup>
 				<onup condition="Container(850).HasFocus(23) + Control.IsVisible(6922)">6922</onup>
 				<onup condition="Container(850).HasFocus(24) + Control.IsVisible(6924)">6924</onup>
+				<onup condition="Container(850).HasFocus(26) + Control.IsVisible(6870)">6870</onup>
 				<onup>555</onup>
 				<ondown>noop</ondown>
 				<include>HomeMenuOpenCloseAnim</include>	
@@ -1130,6 +1136,14 @@
 						<include condition="Skin.String(CustomAddonsBGType,2) | Skin.String(CustomAddonsBGType,3)">HomeAddonsCustomBGPath</include>
 						<onclick>ActivateWindow(AddonBrowser)</onclick>	
 						<visible>!Skin.HasSetting(HideAddonsCategory)</visible>
+					</item>
+					<item id="26">
+						<description>Games Category</description>
+						<label>games</label>
+						<icon>homecategories/$INFO[System.Language]/games-text-nofocus.png</icon>
+						<include condition="Skin.String(CustomGamesBGType,2) | Skin.String(CustomGamesBGType,3)">HomeGamesCustomBGPath</include>
+						<onclick>ActivateWindow(games,Files,return)</onclick>	
+						<visible>!Skin.HasSetting(HideGamesCategory)</visible>
 					</item>
 					<item id="6">
 						<description>Pictures Category</description>
@@ -1281,6 +1295,15 @@
 				<texture fallback="home-add-ons-icon.png">$INFO[Skin.String(AddonsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Container(850).HasFocus(5) + String.IsEqual(Container(546).NumItems,0)</visible>
+				<include>HomeMenuIconAnim</include>
+			</control>
+			
+			<control type="image">
+				<description>Games Icon</description>
+				<include>HomeMenuIconDim</include>
+				<texture fallback="home-games-icon.png">$INFO[Skin.String(GamesCategoryIconPath)]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Container(850).HasFocus(26) + String.IsEqual(Container(548).NumItems,0)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1563,6 +1586,17 @@
 					<param name="AddonType" value="General" />
 				</include>
 			</control>
+			
+			<control type="list" id="548">
+				<onup condition="Control.IsVisible(6870)">6870</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
+				<include content="HomeAddonShortcutsLayout">
+					<param name="id" value="548" />
+					<param name="Container850Position" value="26" />
+					<param name="AddonType" value="Games" />
+				</include>
+			</control>
 		</control>
 	</include>
 	
@@ -1645,7 +1679,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6890)">6890</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -1756,7 +1790,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6873)">6873</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -1879,7 +1913,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6888)">6888</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -1989,7 +2023,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6889)">6889</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2311,7 +2345,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6880)">6880</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2413,13 +2447,100 @@
 					</item>
 				</content>						
 			</control>
+			
+			<control type="list" id="110">
+				<description>Games Menu Bar</description>
+				<left>10</left>
+				<width>1260</width>
+				<height>34</height>
+				<onup condition="Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(6870)">6870</onup>
+				<onup condition="Control.IsVisible(6930)">6931</onup>
+				<onup>555</onup>
+				<ondown>850</ondown>
+				<orientation>horizontal</orientation>
+				<visible>Container(850).HasFocus(26)</visible>
+				<include>HomeSubMenuItemOpenCloseAnim</include>
+				<include>HomeSubMenuItemsCenterAlignAnim</include>
+				<include>HomeSubMenuItemLayout</include>
+				<content>
+					<item id="1">
+						<description>Add-ons</description>
+						<label>$LOCALIZE[24001]</label>
+						<onclick condition="!System.Platform.Android">ActivateWindow(Games,Addons,Return)</onclick>
+						<onclick condition="System.Platform.Android">ActivateWindow(Games,AndroidApps,Return)</onclick>
+						<visible>!Skin.HasSetting(EditGamesSubMenuBtn1)</visible>
+					</item>
+					<item id="1">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn1Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn1Type,Favourite) | Skin.String(GamesSubMenuBtn1Type,)]">$INFO[Skin.String(GamesSubMenuBtn1Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn1Type,Favourite) | Skin.String(GamesSubMenuBtn1Type,)">$INFO[Skin.String(GamesSubMenuFavourite.1.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn1) + !String.IsEmpty(Skin.String(GamesSubMenuBtn1Label))</visible>
+					</item>
+					<item id="2">
+						<description>Add-on Browser</description>
+						<label>$LOCALIZE[10040]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/category.gameaddons/,return)</onclick>
+						<visible>!Skin.HasSetting(EditGamesSubMenuBtn2)</visible>
+					</item>
+					<item id="2">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn2Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn2Type,Favourite) | Skin.String(GamesSubMenuBtn2Type,)]">$INFO[Skin.String(GamesSubMenuBtn2Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn2Type,Favourite) | Skin.String(GamesSubMenuBtn2Type,)">$INFO[Skin.String(GamesSubMenuFavourite.2.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn2) + !String.IsEmpty(Skin.String(GamesSubMenuBtn2Label))</visible>
+					</item>
+					<item id="3">
+						<description>Install Add-ons</description>
+						<label>$LOCALIZE[31125]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://all/category.gameaddons/,return)</onclick>
+						<visible>!Skin.HasSetting(EditGamesSubMenuBtn3)</visible>
+					</item>
+					<item id="3">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn3Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn3Type,Favourite) | Skin.String(GamesSubMenuBtn3Type,)]">$INFO[Skin.String(GamesSubMenuBtn3Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn3Type,Favourite) | Skin.String(GamesSubMenuBtn3Type,)">$INFO[Skin.String(GamesSubMenuFavourite.3.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn3) + !String.IsEmpty(Skin.String(GamesSubMenuBtn3Label))</visible>
+					</item>
+					<item id="4">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn4Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn4Type,Favourite) | Skin.String(GamesSubMenuBtn4Type,)]">$INFO[Skin.String(GamesSubMenuBtn4Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn4Type,Favourite) | Skin.String(GamesSubMenuBtn4Type,)">$INFO[Skin.String(GamesSubMenuFavourite.4.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn4) + !String.IsEmpty(Skin.String(GamesSubMenuBtn4Label))</visible>
+					</item>
+					<item id="5">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn5Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn5Type,Favourite) | Skin.String(GamesSubMenuBtn5Type,)]">$INFO[Skin.String(GamesSubMenuBtn5Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn5Type,Favourite) | Skin.String(GamesSubMenuBtn5Type,)">$INFO[Skin.String(GamesSubMenuFavourite.5.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn5) + !String.IsEmpty(Skin.String(GamesSubMenuBtn5Label))</visible>
+					</item>
+					<item id="6">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn6Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn6Type,Favourite) | Skin.String(GamesSubMenuBtn6Type,)]">$INFO[Skin.String(GamesSubMenuBtn6Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn6Type,Favourite) | Skin.String(GamesSubMenuBtn6Type,)">$INFO[Skin.String(GamesSubMenuFavourite.6.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn6) + !String.IsEmpty(Skin.String(GamesSubMenuBtn6Label))</visible>
+					</item>
+					<item id="7">
+						<description>Custom Button</description>
+						<label>$INFO[Skin.String(GamesSubMenuBtn7Label)]</label>
+						<onclick condition="![Skin.String(GamesSubMenuBtn7Type,Favourite) | Skin.String(GamesSubMenuBtn7Type,)]">$INFO[Skin.String(GamesSubMenuBtn7Param)]</onclick>
+						<onclick condition="Skin.String(GamesSubMenuBtn7Type,Favourite) | Skin.String(GamesSubMenuBtn7Type,)">$INFO[Skin.String(GamesSubMenuFavourite.7.Path)]</onclick>
+						<visible>Skin.HasSetting(EditGamesSubMenuBtn7) + !String.IsEmpty(Skin.String(GamesSubMenuBtn7Label))</visible>
+					</item>
+				</content>						
+			</control>
 
 			<control type="list" id="110">
 				<description>Pictures Menu Bar</description>
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6883)">6883</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2445,11 +2566,23 @@
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn1) + !String.IsEmpty(Skin.String(PicturesSubMenuBtn1Label))</visible>
 					</item>
 					<item id="2">
+						<description>Add-on Browser</description>
+						<label>$LOCALIZE[10040]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://user/xbmc.addon.image/,return)</onclick>
+						<visible>!Skin.HasSetting(EditPicturesSubMenuBtn2)</visible>
+					</item>
+					<item id="2">
 						<description>Custom Button</description>
 						<label>$INFO[Skin.String(PicturesSubMenuBtn2Label)]</label>
 						<onclick condition="![Skin.String(PicturesSubMenuBtn2Type,Favourite) | Skin.String(PicturesSubMenuBtn2Type,)]">$INFO[Skin.String(PicturesSubMenuBtn2Param)]</onclick>
 						<onclick condition="Skin.String(PicturesSubMenuBtn2Type,Favourite) | Skin.String(PicturesSubMenuBtn2Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.2.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn2) + !String.IsEmpty(Skin.String(PicturesSubMenuBtn2Label))</visible>
+					</item>
+					<item id="3">
+						<description>Install Add-ons</description>
+						<label>$LOCALIZE[31125]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://all/xbmc.addon.image/,return)</onclick>
+						<visible>!Skin.HasSetting(EditPicturesSubMenuBtn3)</visible>
 					</item>
 					<item id="3">
 						<description>Custom Button</description>
@@ -2676,7 +2809,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onup>
+				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
 				<onup condition="Control.IsVisible(6878)">6878</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -3939,13 +4072,13 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<onup>6930</onup>
-						<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onleft>
+						<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onleft>
 						<onleft condition="Control.IsVisible(110)">110</onleft>
 						<onleft>850</onleft>
-						<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</onright>
+						<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onright>
 						<onright condition="Control.IsVisible(110)">110</onright>
 						<onright>850</onright>
-						<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547)">556</ondown>
+						<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</ondown>
 						<ondown condition="Control.IsVisible(110)">110</ondown>
 						<ondown>850</ondown>
 						<usecontrolcoords>true</usecontrolcoords>
@@ -4613,7 +4746,7 @@
 	<include name="HomePanelFanart">
 		<control type="group">
 			<visible>[!String.IsEmpty(Container.ListItem.Thumb) + [Control.HasFocus(6882) | Control.HasFocus(6883)]] |
-			[!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]] |
+			[!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6870) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]] |
 			[!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]] |
 			[!String.IsEmpty(Container.ListItem.ActualIcon) + Control.HasFocus(6926)]</visible>
 			<depth>DepthBackground</depth>
@@ -4635,7 +4768,7 @@
 
 	<variable name="HomePanelFanart">
 		<value condition="!String.IsEmpty(Container.ListItem.Thumb) + [Control.HasFocus(6882) | Control.HasFocus(6883)]">$INFO[Container.ListItem.Thumb]</value>
-		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]">$INFO[Container.ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6870) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]">$INFO[Container.ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]">$INFO[Container.ListItem.Art(tvshow.fanart)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.ActualIcon) + Control.HasFocus(6926)">$INFO[Container.ListItem.ActualIcon]</value>
 	</variable>
@@ -7308,6 +7441,209 @@
 							</control>
 						</focusedlayout>
 						<content target="music">addons://sources/audio/</content>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	
+	<include name="GamesWidget">
+		<control type="group">
+			<visible>Container(850).HasFocus(26)</visible>
+			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
+			<include>HomeRightPanelOpenCloseAnim</include>
+			
+			<control type="group">
+				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6870).NumItems,0)">
+					<effect type="fade" end="100" time="250"/>
+					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
+				</animation>
+				
+				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6870).NumItems,0)">
+					<effect type="fade" end="0" time="250"/>
+					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
+				</animation>
+
+				<control type="group">
+					<left>495r</left>
+					<top>105</top>
+
+					<control type="image">
+						<width>490</width>
+						<height>164</height>
+						<texture border="8">panels/panel.png</texture>
+						<visible>!Skin.HasSetting(ShowMoreGames)</visible>
+					</control>
+
+					<control type="image">
+						<width>490</width>
+						<height>260</height>
+						<texture border="8">panels/panel.png</texture>
+						<visible>Skin.HasSetting(ShowMoreGames)</visible>
+					</control>
+					
+					<control type="multiimage">
+						<description>Cover</description>
+						<left>341</left>
+						<top>15</top>
+						<width>134</width>
+						<height>134</height>
+						<imagepath diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[Container(6870).ListItem.Art(thumb)]</imagepath>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+					</control>
+
+					<control type="label">
+						<description>Title</description>
+						<left>15</left>
+						<top>9</top>
+						<width>338</width>
+						<font>PanelTitleFont</font>
+						<textcolor>MediaInfoTitleColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>[UPPERCASE]$LOCALIZE[35049][/UPPERCASE]</label>
+					</control>
+
+					<control type="list" id="6870">
+						<top>33</top>
+						<width>383</width>
+						<height>96</height>
+						<scrolltime>200</scrolltime>
+						<onup>555</onup>
+						<ondown>6870</ondown>
+						<onleft condition="Control.IsVisible(6930)">6930</onleft>
+						<onleft condition="Control.IsVisible(548)">548</onleft>
+						<onleft condition="Control.IsVisible(110)">110</onleft>
+						<onleft>850</onleft>
+						<onright>4829</onright>
+						<include>ContainerPosition1</include>
+						<visible>!Skin.HasSetting(ShowMoreGames) + [Integer.IsGreater(Container(6870).NumItems,0) | Container(6870).IsUpdating]</visible>
+						<itemlayout height="24">
+							<control type="label">
+								<width>309</width>
+								<include>CustomPanelItemlayoutLabel</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="image">
+								<left>10</left>
+								<width>319</width>
+								<height>24</height>
+								<texture border="4">views/list-focus.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<visible>Control.HasFocus(6870)</visible>
+								<animation type="Focus" condition="Container(6870).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+									<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+									<effect type="slide" start="0,-24" time="150" tween="quadratic" easing="out"/>
+								</animation>
+								<animation type="Focus" condition="Container(6870).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+									<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+									<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
+								</animation>
+								<include>ListViewSelectFadeAnim</include>
+							</control>
+							<control type="label">
+								<width>309</width>
+								<include>CustomPanelFocusedlayoutLabel</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</focusedlayout>
+						<content target="games">addons://sources/game/</content>
+					</control>
+
+					<control type="list" id="6870">
+						<top>33</top>
+						<width>383</width>
+						<height>192</height>
+						<scrolltime>200</scrolltime>
+						<onup>555</onup>
+						<ondown>6870</ondown>
+						<onleft condition="Control.IsVisible(6930)">6930</onleft>
+						<onleft condition="Control.IsVisible(548)">548</onleft>
+						<onleft condition="Control.IsVisible(110)">110</onleft>
+						<onleft>850</onleft>
+						<onright>4829</onright>
+						<include>ContainerPosition1</include>
+						<visible>Skin.HasSetting(ShowMoreGames) + [Integer.IsGreater(Container(6870).NumItems,0) | Container(6870).IsUpdating]</visible>
+						<itemlayout height="24">
+							<control type="label">
+								<width>309</width>
+								<include>CustomPanelItemlayoutLabel</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="image">
+								<left>10</left>
+								<width>319</width>
+								<height>24</height>
+								<texture border="4">views/list-focus.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<visible>Control.HasFocus(6870)</visible>
+								<animation type="Focus" condition="Container(6870).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+									<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+									<effect type="slide" start="0,-24" time="150" tween="quadratic" easing="out"/>
+								</animation>
+								<animation type="Focus" condition="Container(6870).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+									<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
+									<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
+								</animation>
+								<include>ListViewSelectFadeAnim</include>
+							</control>
+							<control type="label">
+								<width>309</width>
+								<include>CustomPanelFocusedlayoutLabel</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</focusedlayout>
+						<content target="games">addons://sources/game/</content>
+					</control>
+
+					<control type="group">
+						<animation effect="slide" end="0,96" condition="Skin.HasSetting(ShowMoreGames)">Conditional</animation>
+
+						<control type="image">
+							<left>15</left>
+							<top>135</top>
+							<width>260</width>
+							<height>19</height>
+							<texture border="5">panels/panel-content-border2.png</texture>
+							<animation effect="fade" end="6" condition="true">Conditional</animation>
+						</control>
+
+						<control type="togglebutton" id="4829">
+							<left>15</left>
+							<top>135</top>
+							<width>24</width>
+							<height>19</height>
+							<texturefocus flipy="true">controls/arrow-scroll-up-focus3.png</texturefocus>
+							<texturenofocus flipy="true">controls/arrow-scroll-up-nofocus3.png</texturenofocus>
+							<alttexturefocus>controls/arrow-scroll-up-focus3.png</alttexturefocus>
+							<alttexturenofocus>controls/arrow-scroll-up-nofocus3.png</alttexturenofocus>
+							<usealttexture>Skin.HasSetting(ShowMoreGames)</usealttexture>
+							<onclick>Skin.ToggleSetting(ShowMoreGames)</onclick>
+							<onclick condition="!Skin.HasSetting(ShowMoreGames)">Control.SetFocus(6870,3)</onclick>
+							<onclick condition="!Skin.HasSetting(ShowMoreGames)">Control.SetFocus(4829)</onclick>
+							<onup>6870</onup>
+							<onleft>850</onleft>
+							<ondown condition="Control.IsVisible(448)">448</ondown>
+							<ondown condition="Control.IsVisible(150)">150</ondown>
+							<ondown condition="![Control.IsVisible(448) + Control.IsVisible(150)]">850</ondown>
+							<onright>850</onright>
+							<animation effect="fade" end="90" condition="true">Conditional</animation>
+						</control>
+
+						<control type="label">
+							<left>45</left>
+							<top>135</top>
+							<width>217</width>
+							<font>PanelStatsFont</font>
+							<textcolor>GreyColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[Container(6870).NumItems,, $LOCALIZE[24001]]</label>
+							<animation effect="fade" end="45" condition="true">Conditional</animation>
+						</control>
 					</control>
 				</control>
 			</control>

@@ -149,6 +149,12 @@
 							<icon>home-programs-icon.png</icon>
 							<onclick>noop</onclick>
 						</item>
+						<item id="15">
+							<description>Games</description>
+							<label>$LOCALIZE[15016]</label>
+							<icon>home-games-icon.png</icon>
+							<onclick>noop</onclick>
+						</item>
 						<item id="9">
 							<description>Pictures</description>
 							<label>$LOCALIZE[1]</label>
@@ -436,6 +442,20 @@
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],$INFO[Skin.String(DialogPresetsItemPath)])</onclick>
 							<visible>Container(450).HasFocus(1)</visible>
 						</item>
+						<item id="138">
+							<description>Add-on Browser</description>
+							<label>$LOCALIZE[10040]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://user/xbmc.addon.audio/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
+						</item>
+						<item id="139">
+							<description>Install Add-ons</description>
+							<label>$LOCALIZE[31125]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://all/xbmc.addon.audio/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
+						</item>
 
 						<item id="18">
 							<description>TV Channels</description>
@@ -605,6 +625,20 @@
 							<onclick>Skin.SetFile(DialogPresetsItem,.xsp,special://profile/playlists/video/)</onclick>
 							<onclick>ActivateWindow(1104)</onclick>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],$INFO[Skin.String(DialogPresetsItemPath)])</onclick>
+							<visible>Container(450).HasFocus(4)</visible>
+						</item>
+						<item id="140">
+							<description>Add-on Browser</description>
+							<label>$LOCALIZE[10040]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://user/xbmc.addon.video/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(4)</visible>
+						</item>
+						<item id="141">
+							<description>Install Add-ons</description>
+							<label>$LOCALIZE[31125]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://all/xbmc.addon.video/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(4)</visible>
 						</item>
 
@@ -844,7 +878,7 @@
 
 						<item id="59">
 							<description>Programs</description>
-							<label>$LOCALIZE[1214]</label>
+							<label>$LOCALIZE[0]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Programs))</onclick>
 							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(8)</visible>
@@ -881,10 +915,24 @@
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Programs,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
 							<visible>Container(450).HasFocus(8)</visible>
 						</item>
+						<item id="142">
+							<description>Add-on Browser</description>
+							<label>$LOCALIZE[10040]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://user/xbmc.addon.executable/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(4)</visible>
+						</item>
+						<item id="143">
+							<description>Install Add-ons</description>
+							<label>$LOCALIZE[31125]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://all/xbmc.addon.executable/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(4)</visible>
+						</item>
 
 						<item id="62">
 							<description>Pictures</description>
-							<label>$LOCALIZE[1214]</label>
+							<label>$LOCALIZE[1]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Pictures))</onclick>
 							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(9)</visible>
@@ -920,6 +968,74 @@
 							<onclick>Skin.SetPath(DialogPresetsItem)</onclick>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Pictures,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
 							<visible>Container(450).HasFocus(9)</visible>
+						</item>
+						<item id="144">
+							<description>Add-on Browser</description>
+							<label>$LOCALIZE[10040]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://user/xbmc.addon.image/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(9)</visible>
+						</item>
+						<item id="145">
+							<description>Install Add-ons</description>
+							<label>$LOCALIZE[31125]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://all/xbmc.addon.image/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(9)</visible>
+						</item>
+						
+						<item id="133">
+							<description>Games</description>
+							<label>$LOCALIZE[15016]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(games))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
+						</item>
+						<item id="134">
+							<description>Games (Root)</description>
+							<label>$LOCALIZE[1214] ($LOCALIZE[20108])</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(games,root))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
+						</item>
+						<item id="135">
+							<description>Games Add-ons</description>
+							<label>$LOCALIZE[24001]</label>
+							<onclick condition="!System.Platform.Android">Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Games,Addons,Return))</onclick>
+							<onclick condition="System.Platform.Android">Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Games,AndroidApps,Return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
+						</item>
+						<item id="136">
+							<description>Select Games Add-on</description>
+							<label>$LOCALIZE[31929]</label>
+							<onclick>Dialog.Close(1103)</onclick>
+							<onclick>Skin.SetAddon(DialogPresetsItem,xbmc.addon.executable)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RunAddon($INFO[Skin.String(DialogPresetsItem)]))</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
+						</item>
+						<item id="137">
+							<description>Select Games Path</description>
+							<label>$LOCALIZE[31978]</label>
+							<onclick>Skin.Reset(DialogPresetsItem)</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<onclick>Skin.SetPath(DialogPresetsItem)</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(Games,$INFO[Skin.String(DialogPresetsItem)],Return))</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
+						</item>
+						<item id="146">
+							<description>Add-on Browser</description>
+							<label>$LOCALIZE[10040]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://user/category.gameaddons/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
+						</item>
+						<item id="147">
+							<description>Install Add-ons</description>
+							<label>$LOCALIZE[31125]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://all/category.gameaddons/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(15)</visible>
 						</item>
 						
 						<item id="67">
@@ -996,6 +1112,20 @@
 							<description>Location 5</description>
 							<label>$LOCALIZE[31198] $NUMBER[5]</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],Weather.LocationSet(5))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(14)</visible>
+						</item>
+						<item id="148">
+							<description>Add-on Browser</description>
+							<label>$LOCALIZE[10040]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://user/xbmc.python.weather/,return))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(14)</visible>
+						</item>
+						<item id="149">
+							<description>Install Add-ons</description>
+							<label>$LOCALIZE[31125]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],ActivateWindow(addonbrowser,addons://all/xbmc.python.weather/,return))</onclick>
 							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(14)</visible>
 						</item>

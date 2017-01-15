@@ -671,12 +671,13 @@
 				<description>Get More Add-ons</description>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[21452][/UPPERCASE]</label>
-				<onclick condition="Window.IsActive(Music)">ActivateWindow(addonbrowser,addons://more/audio/,return)</onclick> 
-				<onclick condition="Window.IsActive(Pictures)">ActivateWindow(addonbrowser,addons://more/image/,return)</onclick> 
-				<onclick condition="Window.IsActive(Programs)">ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick> 
-				<onclick condition="Window.IsActive(Videos)">ActivateWindow(addonbrowser,addons://more/video/,return)</onclick> 
+				<onclick condition="Window.IsActive(Music)">ActivateWindow(addonbrowser,addons://all/xbmc.addon.audio/,return)</onclick>
+				<onclick condition="Window.IsActive(Pictures)">ActivateWindow(addonbrowser,addons://all/xbmc.addon.image/,return)</onclick>
+				<onclick condition="Window.IsActive(Programs)">ActivateWindow(addonbrowser,addons://all/xbmc.addon.executable/,return)</onclick>
+				<onclick condition="Window.IsActive(Games)">ActivateWindow(addonbrowser,addons://all/category.gameaddons/,return)</onclick>
+				<onclick condition="Window.IsActive(Videos)">ActivateWindow(addonbrowser,addons://all/xbmc.addon.video/,return)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Container.Content(Addons)</visible>
+				<visible>Container.Content(Addons) | Container.Content(Games)</visible>
 			</control>
 			<control type="button" id="124">
 				<description>Add-on Settings</description>
@@ -842,22 +843,13 @@
 			<control type="image" id="118">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="106">
-				<description>Services</description>
+			<control type="button" id="109">
+				<description>Games</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[14036][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(ServiceSettings)</onclick>	
+				<label>[UPPERCASE]$LOCALIZE[15016][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(GameSettings)</onclick>
 			</control>
 			<control type="image" id="121">
-				<include>MenuBarSeparator</include>
-			</control>
-			<control type="button" id="107">
-				<description>System</description>
-				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[13000][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(SystemSettings)</onclick>	
-			</control>
-			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
 			</control>
 			<control type="button" id="108">
@@ -866,14 +858,23 @@
 				<label>[UPPERCASE]$LOCALIZE[13200][/UPPERCASE]</label>
 				<onclick>ReplaceWindow(Profiles)</onclick>
 			</control>
+			<control type="image" id="122">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="106">
+				<description>Services</description>
+				<include>MenuBarSettingsBtn2</include>
+				<label>[UPPERCASE]$LOCALIZE[14036][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(ServiceSettings)</onclick>	
+			</control>
 			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="109">
-				<description>Add-ons</description>
+			<control type="button" id="107">
+				<description>System</description>
 				<include>MenuBarSettingsBtn2</include>
-				<label>[UPPERCASE]$LOCALIZE[24001][/UPPERCASE]</label>
-				<onclick>ReplaceWindow(AddonBrowser)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[13000][/UPPERCASE]</label>
+				<onclick>ReplaceWindow(SystemSettings)</onclick>	
 			</control>
 		</control>
 	</include>

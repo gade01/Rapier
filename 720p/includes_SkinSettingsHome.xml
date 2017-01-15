@@ -194,6 +194,16 @@
 					<onclick>Control.SetFocus(931)</onclick>
 					<visible>!Skin.HasSetting(HideAddonsCategory)</visible>
 				</control>
+				<control type="radiobutton" id="2051">
+					<description>Customize Games Sub Menus</description>
+					<include>SettingsContentExpandBtn</include>
+					<label>$LOCALIZE[15016]</label>
+					<selected>Skin.HasSetting(ExpandGamesSubMenuSettings)</selected>
+					<onclick>Skin.SetBool(ExpandGamesSubMenuSettings)</onclick>
+					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
+					<onclick>Control.SetFocus(931)</onclick>
+					<visible>!Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
 				<control type="radiobutton" id="2006">
 					<description>Customize Pictures Sub Menus</description>
 					<include>SettingsContentExpandBtn</include>
@@ -494,6 +504,13 @@
 					<label>$LOCALIZE[31711]</label>
 					<selected>Skin.HasSetting(HideAddonsWidget)</selected>
 					<onclick>Skin.ToggleSetting(HideAddonsWidget)</onclick>
+				</control>
+				<control type="radiobutton" id="2358">
+					<description>Hide Games Widget</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31709]</label>
+					<selected>Skin.HasSetting(HideGamesWidget)</selected>
+					<onclick>Skin.ToggleSetting(HideGamesWidget)</onclick>
 				</control>
 				<control type="radiobutton" id="2360">
 					<description>Hide Favourites Widget</description>
@@ -845,9 +862,59 @@
 				<control type="button" id="2107">
 					<description>Add-ons add-on 6</description>
 					<include>SettingsContentBtn</include>
-					<label>   $LOCALIZE[10001] $LOCALIZE[24000] 6[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(AddonsAddon6)), - ,][/COLOR]</label>
+					<label>   $LOCALIZE[24001] $LOCALIZE[24000] 6[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(AddonsAddon6)), - ,][/COLOR]</label>
 					<onclick>Skin.SetAddon(AddonsAddon6,xbmc.addon.executable)</onclick>
 					<visible>Skin.HasSetting(ExpandAddonsShortcuts) + !Skin.HasSetting(HideAddonsCategory)</visible>
+				</control>
+				<control type="radiobutton" id="2123">
+					<description>Expand Games add-on shortcuts</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[15016]</label>
+					<selected>Skin.HasSetting(ExpandGamesShortcuts)</selected>
+					<onclick>Skin.ToggleSetting(ExpandGamesShortcuts)</onclick>
+					<visible>!Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
+				<control type="button" id="2102">
+					<description>Games add-on 1</description>
+					<include>SettingsContentBtn</include>
+					<label>   $LOCALIZE[15016] $LOCALIZE[24000] 1[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(GamesAddon1)), - ,][/COLOR]</label>
+					<onclick>Skin.SetAddon(GamesAddon1,xbmc.addon.executable)</onclick>
+					<visible>Skin.HasSetting(ExpandGamesShortcuts) + !Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
+				<control type="button" id="2103">
+					<description>Games add-on 2</description>
+					<include>SettingsContentBtn</include>
+					<label>   $LOCALIZE[15016] $LOCALIZE[24000] 2[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(GamesAddon2)), - ,][/COLOR]</label>
+					<onclick>Skin.SetAddon(GamesAddon2,xbmc.addon.executable)</onclick>
+					<visible>Skin.HasSetting(ExpandGamesShortcuts) + !Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
+				<control type="button" id="2104">
+					<description>Games add-on 3</description>
+					<include>SettingsContentBtn</include>
+					<label>   $LOCALIZE[15016] $LOCALIZE[24000] 3[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(GamesAddon3)), - ,][/COLOR]</label>
+					<onclick>Skin.SetAddon(GamesAddon3,xbmc.addon.executable)</onclick>
+					<visible>Skin.HasSetting(ExpandGamesShortcuts) + !Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
+				<control type="button" id="2105">
+					<description>Games add-on 4</description>
+					<include>SettingsContentBtn</include>
+					<label>   $LOCALIZE[15016] $LOCALIZE[24000] 4[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(GamesAddon4)), - ,][/COLOR]</label>
+					<onclick>Skin.SetAddon(GamesAddon4,xbmc.addon.executable)</onclick>
+					<visible>Skin.HasSetting(ExpandGamesShortcuts) + !Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
+				<control type="button" id="2106">
+					<description>Games add-on 5</description>
+					<include>SettingsContentBtn</include>
+					<label>   $LOCALIZE[15016] $LOCALIZE[24000] 5[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(GamesAddon5)), - ,][/COLOR]</label>
+					<onclick>Skin.SetAddon(GamesAddon5,xbmc.addon.executable)</onclick>
+					<visible>Skin.HasSetting(ExpandGamesShortcuts) + !Skin.HasSetting(HideGamesCategory)</visible>
+				</control>
+				<control type="button" id="2107">
+					<description>Games add-on 6</description>
+					<include>SettingsContentBtn</include>
+					<label>   $LOCALIZE[15016] $LOCALIZE[24000] 6[COLOR=DefaultColor2]$INFO[system.addontitle(Skin.String(GamesAddon6)), - ,][/COLOR]</label>
+					<onclick>Skin.SetAddon(GamesAddon6,xbmc.addon.executable)</onclick>
+					<visible>Skin.HasSetting(ExpandGamesShortcuts) + !Skin.HasSetting(HideGamesCategory)</visible>
 				</control>
 				<control type="radiobutton" id="2120">
 					<description>Expand General add-on shortcuts</description>
@@ -958,19 +1025,19 @@
 						<selected>Skin.HasSetting(HideAddonsCategory)</selected>
 						<onclick>Skin.ToggleSetting(HideAddonsCategory)</onclick>
 					</control>
+					<control type="radiobutton" id="2313">
+						<description>Games</description>
+						<include>ExpandedSettingsRadioBtn</include>
+						<label>$LOCALIZE[15016]</label>
+						<selected>Skin.HasSetting(HideGamesCategory)</selected>
+						<onclick>Skin.ToggleSetting(HideGamesCategory)</onclick>
+					</control>
 					<control type="radiobutton" id="2306">
 						<description>Pictures</description>
 						<include>ExpandedSettingsRadioBtn</include>
 						<label>$LOCALIZE[1]</label>
 						<selected>Skin.HasSetting(HidePicturesCategory)</selected>
 						<onclick>Skin.ToggleSetting(HidePicturesCategory)</onclick>
-					</control>
-					<control type="radiobutton" id="2307">
-						<description>General</description>
-						<include>ExpandedSettingsRadioBtn</include>
-						<label>$LOCALIZE[128]</label>
-						<selected>Skin.HasSetting(HideGeneralCategory)</selected>
-						<onclick>Skin.ToggleSetting(HideGeneralCategory)</onclick>
 					</control>
 				</control>
 				
@@ -1008,6 +1075,13 @@
 						<selected>Skin.HasSetting(HidePVRRadioCategory)</selected>
 						<onclick>Skin.ToggleSetting(HidePVRRadioCategory)</onclick>
 						<visible>Pvr.HasRadioChannels</visible>
+					</control>
+					<control type="radiobutton" id="2307">
+						<description>General</description>
+						<include>ExpandedSettingsRadioBtn</include>
+						<label>$LOCALIZE[128]</label>
+						<selected>Skin.HasSetting(HideGeneralCategory)</selected>
+						<onclick>Skin.ToggleSetting(HideGeneralCategory)</onclick>
 					</control>
 					<control type="radiobutton" id="2311">
 						<description>Weather</description>
@@ -1115,33 +1189,40 @@
 						<onclick condition="![String.IsEmpty(Skin.String(AddonsAddon1)) + String.IsEmpty(Skin.String(AddonsAddon2)) + String.IsEmpty(Skin.String(AddonsAddon3)) + String.IsEmpty(Skin.String(AddonsAddon4)) + String.IsEmpty(Skin.String(AddonsAddon5)) + String.IsEmpty(Skin.String(AddonsAddon6))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31715],message=$LOCALIZE[31723])</onclick>
 					</control>
 					<control type="button" id="2308">
+						<description>Games</description>
+						<include>ExpandedSettingsListBtn</include>
+						<label>$LOCALIZE[15016] - [COLOR=DefaultColor2]$INFO[Skin.String(GamesCategoryIconPath)][/COLOR]</label>
+						<onclick>Skin.SetImage(GamesCategoryIconPath)</onclick>
+						<onclick condition="![String.IsEmpty(Skin.String(GamesAddon1)) + String.IsEmpty(Skin.String(GamesAddon2)) + String.IsEmpty(Skin.String(GamesAddon3)) + String.IsEmpty(Skin.String(GamesAddon4)) + String.IsEmpty(Skin.String(GamesAddon5)) + String.IsEmpty(Skin.String(GamesAddon6))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31715],message=$LOCALIZE[31723])</onclick>
+					</control>
+					<control type="button" id="2309">
 						<description>Pictures</description>
 						<include>ExpandedSettingsListBtn</include>
 						<label>$LOCALIZE[1] - [COLOR=DefaultColor2]$INFO[Skin.String(PicturesCategoryIconPath)][/COLOR]</label>
 						<onclick>Skin.SetImage(PicturesCategoryIconPath)</onclick>
 						<onclick condition="![String.IsEmpty(Skin.String(PicturesAddon1)) + String.IsEmpty(Skin.String(PicturesAddon2)) + String.IsEmpty(Skin.String(PicturesAddon3)) + String.IsEmpty(Skin.String(PicturesAddon4)) + String.IsEmpty(Skin.String(PicturesAddon5)) + String.IsEmpty(Skin.String(PicturesAddon6))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31715],message=$LOCALIZE[31723])</onclick>
 					</control>
-					<control type="button" id="2309">
+					<control type="button" id="2310">
 						<description>Weather</description>
 						<include>ExpandedSettingsListBtn</include>
 						<label>$LOCALIZE[8] - [COLOR=DefaultColor2]$INFO[Skin.String(WeatherCategoryIconPath)][/COLOR]</label>
 						<onclick>Skin.SetImage(WeatherCategoryIconPath)</onclick>
 						<enable>Skin.HasSetting(EnableWeatherCategory)</enable>
 					</control>
-					<control type="button" id="2310">
+					<control type="button" id="2311">
 						<description>General</description>
 						<include>ExpandedSettingsListBtn</include>
 						<label>$LOCALIZE[128] - [COLOR=DefaultColor2]$INFO[Skin.String(GeneralCategoryIconPath)][/COLOR]</label>
 						<onclick>Skin.SetImage(GeneralCategoryIconPath)</onclick>
 						<onclick condition="![String.IsEmpty(Skin.String(GeneralAddon1)) + String.IsEmpty(Skin.String(GeneralAddon2)) + String.IsEmpty(Skin.String(GeneralAddon3)) + String.IsEmpty(Skin.String(GeneralAddon4)) + String.IsEmpty(Skin.String(GeneralAddon5)) + String.IsEmpty(Skin.String(GeneralAddon6))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31715],message=$LOCALIZE[31723])</onclick>
 					</control>
-					<control type="button" id="2311">
+					<control type="button" id="2312">
 						<description>System</description>
 						<include>ExpandedSettingsListBtn</include>
 						<label>$LOCALIZE[13000] - [COLOR=DefaultColor2]$INFO[Skin.String(SystemCategoryIconPath)][/COLOR]</label>
 						<onclick>Skin.SetImage(SystemCategoryIconPath)</onclick>
 					</control>
-					<control type="button" id="2312">
+					<control type="button" id="2313">
 						<description>Power</description>
 						<include>ExpandedSettingsListBtn</include>
 						<label>$LOCALIZE[33060] - [COLOR=DefaultColor2]$INFO[Skin.String(PowerCategoryIconPath)][/COLOR]</label>
@@ -2731,7 +2812,7 @@
 					<description>Edit Button 1 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,1)</visible>
 					<include>SubMenuBtn1Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn1)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn1)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn1)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn1)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn1)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn1)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn1)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn1)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn1)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn1)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn1)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn1)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn1)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn1)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn1)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn1)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn1)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn1)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn1)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn1)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn1)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn1)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn1)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn1)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn1)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -2870,7 +2951,7 @@
 					<description>Edit Button 2 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,2)</visible>
 					<include>SubMenuBtn2Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn2)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn2)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn2)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn2)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn2)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn2)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn2)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn2)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn2)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn2)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn2)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn2)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn2)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn2)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn2)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn2)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn2)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn2)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn2)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn2)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn2)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn2)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn2)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn2)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn2)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -3009,7 +3090,7 @@
 					<description>Edit Button 3 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,3)</visible>
 					<include>SubMenuBtn3Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn3)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn3)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn3)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn3)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn3)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn3)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn3)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn3)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn3)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn3)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn3)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn3)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn3)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn3)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn3)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn3)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn3)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn3)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn3)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn3)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn3)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn3)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn3)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn3)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn3)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -3148,7 +3229,7 @@
 					<description>Edit Button 4 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,4)</visible>
 					<include>SubMenuBtn4Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn4)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn4)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn4)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn4)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn4)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn4)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn4)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn4)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn4)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn4)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn4)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn4)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn4)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn4)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn4)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn4)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn4)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn4)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn4)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn4)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn4)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn4)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn4)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn4)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn4)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -3287,7 +3368,7 @@
 					<description>Edit Button 5 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,5)</visible>
 					<include>SubMenuBtn5Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn5)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn5)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn5)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn5)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn5)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn5)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn5)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn5)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn5)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn5)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn5)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn5)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn5)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn5)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn5)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn5)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn5)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn5)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn5)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn5)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn5)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn5)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn5)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn5)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn5)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -3426,7 +3507,7 @@
 					<description>Edit Button 6 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,6)</visible>
 					<include>SubMenuBtn6Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn6)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn6)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn6)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn6)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn6)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn6)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn6)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn6)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn6)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn6)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn6)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn6)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn6)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn6)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn6)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn6)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn6)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn6)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn6)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn6)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn6)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn6)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn6)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn6)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn6)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -3565,7 +3646,7 @@
 					<description>Edit Button 7 Controls Area</description>
 					<visible>Skin.String(SelectedExpandedBtn,7)</visible>
 					<include>SubMenuBtn7Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn7)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn7)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn7)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn7)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn7)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn7)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn7)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn7)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn7)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn7)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn7)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn7)]">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn7)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn7)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn7)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn7)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn7)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn7)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn7)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn7)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn7)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn7)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn7)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn7)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn7)]">Conditional</animation>
 
 					<control type="button">
 						<description>Button Type Label</description>
@@ -5293,6 +5374,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[20342]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[20343]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[24001]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[15016]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[1]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[8]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$LOCALIZE[31704] - $LOCALIZE[128]</value>
@@ -5323,6 +5405,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Control.SetFocus(2003)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Control.SetFocus(2004)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Control.SetFocus(2005)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Control.SetFocus(2051)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Control.SetFocus(2006)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Control.SetFocus(2048)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Control.SetFocus(2007)</value>
@@ -5353,6 +5436,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(ExpandMoviesSubMenuSettings)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(ExpandTVShowsSubMenuSettings)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(ExpandAddonsSubMenuSettings)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(ExpandGamesSubMenuSettings)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(ExpandPicturesSubMenuSettings)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(ExpandWeatherSubMenuSettings)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(ExpandGeneralSubMenuSettings)</value>
@@ -5383,6 +5467,7 @@
 		| Skin.HasSetting(ExpandMoviesSubMenuSettings) 
 		| Skin.HasSetting(ExpandTVShowsSubMenuSettings) 
 		| Skin.HasSetting(ExpandAddonsSubMenuSettings) 
+		| Skin.HasSetting(ExpandGamesSubMenuSettings) 
 		| Skin.HasSetting(ExpandPicturesSubMenuSettings) 
 		| Skin.HasSetting(ExpandWeatherSubMenuSettings) 
 		| Skin.HasSetting(ExpandGeneralSubMenuSettings) 
@@ -5413,6 +5498,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn1Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn1Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn1Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn1Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn1Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn1Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn1Label)]</value>
@@ -5443,6 +5529,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn1Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn1Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn1Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn1Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn1Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn1Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn1Path)]</value>
@@ -5473,6 +5560,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn1Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn1Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn1Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn1Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn1Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn1Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn1Param)]</value>
@@ -5503,6 +5591,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.1.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.1.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.1.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.1.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.1.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.1.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.1.Path)]</value>
@@ -5533,6 +5622,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn1)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn1)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn1)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn1)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn1)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn1)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn1)</value>
@@ -5563,6 +5653,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.HasSetting(EditMoviesSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.HasSetting(EditTVShowsSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.HasSetting(EditAddonsSubMenu$PARAM[ButtonNumber])] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.HasSetting(EditGamesSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.HasSetting(EditPicturesSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.HasSetting(EditWeatherSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.HasSetting(EditGeneralSubMenu$PARAM[ButtonNumber])] 
@@ -5593,6 +5684,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.HasSetting(EditMoviesSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.HasSetting(EditTVShowsSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.HasSetting(EditAddonsSubMenu$PARAM[ButtonNumber])] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.HasSetting(EditGamesSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.HasSetting(EditPicturesSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.HasSetting(EditWeatherSubMenu$PARAM[ButtonNumber])] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.HasSetting(EditGeneralSubMenu$PARAM[ButtonNumber])] 
@@ -5623,6 +5715,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
@@ -5653,6 +5746,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Plugin)] 
@@ -5683,6 +5777,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + [Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,)]] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + [Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + [Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,)]] 
@@ -5713,6 +5808,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + [Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,)]] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + [Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,)]] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + [Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Favourite) | Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,)]] 
@@ -5743,6 +5839,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Preset)] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Preset)] 
@@ -5773,6 +5870,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Preset)] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Preset)] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Preset)] 
@@ -5803,6 +5901,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Script)] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Script)] 
@@ -5833,6 +5932,7 @@
 		| [Skin.HasSetting(ExpandMoviesSubMenuSettings) + Skin.String(MoviesSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + Skin.String(TVShowsSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandAddonsSubMenuSettings) + Skin.String(AddonsSubMenu$PARAM[ButtonNumber]Type,Script)] 
+		| [Skin.HasSetting(ExpandGamesSubMenuSettings) + Skin.String(GamesSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandPicturesSubMenuSettings) + Skin.String(PicturesSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandWeatherSubMenuSettings) + Skin.String(WeatherSubMenu$PARAM[ButtonNumber]Type,Script)] 
 		| [Skin.HasSetting(ExpandGeneralSubMenuSettings) + Skin.String(GeneralSubMenu$PARAM[ButtonNumber]Type,Script)] 
@@ -5928,6 +6028,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn1Type,Favourite) | Skin.String(TVShowsSubMenuBtn1Type,)]">Skin.Reset(TVShowsSubMenuFavourite.1.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn1Type,Favourite) | Skin.String(AddonsSubMenuBtn1Type,)]">Skin.Reset(AddonsSubMenuBtn1Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn1Type,Favourite) | Skin.String(AddonsSubMenuBtn1Type,)]">Skin.Reset(AddonsSubMenuFavourite.1.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn1Type,Favourite) | Skin.String(GamesSubMenuBtn1Type,)]">Skin.Reset(GamesSubMenuBtn1Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn1Type,Favourite) | Skin.String(GamesSubMenuBtn1Type,)]">Skin.Reset(GamesSubMenuFavourite.1.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn1Type,Favourite) | Skin.String(PicturesSubMenuBtn1Type,)]">Skin.Reset(PicturesSubMenuBtn1Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn1Type,Favourite) | Skin.String(PicturesSubMenuBtn1Type,)]">Skin.Reset(PicturesSubMenuFavourite.1.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn1Type,Favourite) | Skin.String(WeatherSubMenuBtn1Type,)]">Skin.Reset(WeatherSubMenuBtn1Path)</value>
@@ -5980,6 +6082,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn1Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn1Param)</value>
@@ -6010,6 +6113,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Type,Script)</value>
@@ -6040,6 +6144,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Type,Plugin)</value>
@@ -6070,6 +6175,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Type,Favourite)</value>
@@ -6100,6 +6206,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Type,Preset)</value>
@@ -6130,6 +6237,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Label)</value>
@@ -6160,6 +6268,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn1Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn1Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn1Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn1Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn1Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn1Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn1Path,xbmc.python.script)</value>
@@ -6190,6 +6299,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn1Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn1Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn1Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Param,RunScript($INFO[Skin.String(GamesSubMenuBtn1Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn1Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn1Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn1Path)]))</value>
@@ -6220,6 +6330,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn1Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn1Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn1Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn1Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn1Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn1Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn1Path,xbmc.python.pluginsource)</value>
@@ -6250,6 +6361,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn1Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn1Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn1Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn1Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn1Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn1Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn1Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn1Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn1Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn1Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn1Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn1Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn1Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn1Path)],Return))</value>
@@ -6280,6 +6392,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.1)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.1)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.1)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.1)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.1)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.1)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.1)</value>
@@ -6310,6 +6423,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn1Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn1Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn1Param)</value>
@@ -6340,6 +6454,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn2Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn2Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn2Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn2Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn2Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn2Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn2Label)]</value>
@@ -6370,6 +6485,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn2Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn2Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn2Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn2Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn2Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn2Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn2Path)]</value>
@@ -6400,6 +6516,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn2Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn2Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn2Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn2Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn2Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn2Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn2Param)]</value>
@@ -6430,6 +6547,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.2.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.2.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.2.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.2.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.2.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.2.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.2.Path)]</value>
@@ -6460,6 +6578,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn2)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn2)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn2)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn2)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn2)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn2)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn2)</value>
@@ -6555,6 +6674,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn2Type,Favourite) | Skin.String(TVShowsSubMenuBtn2Type,)]">Skin.Reset(TVShowsSubMenuFavourite.2.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn2Type,Favourite) | Skin.String(AddonsSubMenuBtn2Type,)]">Skin.Reset(AddonsSubMenuBtn2Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn2Type,Favourite) | Skin.String(AddonsSubMenuBtn2Type,)]">Skin.Reset(AddonsSubMenuFavourite.2.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn2Type,Favourite) | Skin.String(GamesSubMenuBtn2Type,)]">Skin.Reset(GamesSubMenuBtn2Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn2Type,Favourite) | Skin.String(GamesSubMenuBtn2Type,)]">Skin.Reset(GamesSubMenuFavourite.2.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn2Type,Favourite) | Skin.String(PicturesSubMenuBtn2Type,)]">Skin.Reset(PicturesSubMenuBtn2Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn2Type,Favourite) | Skin.String(PicturesSubMenuBtn2Type,)]">Skin.Reset(PicturesSubMenuFavourite.2.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn2Type,Favourite) | Skin.String(WeatherSubMenuBtn2Type,)]">Skin.Reset(WeatherSubMenuBtn2Path)</value>
@@ -6607,6 +6728,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn2Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn2Param)</value>
@@ -6637,6 +6759,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Type,Script)</value>
@@ -6667,6 +6790,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Type,Plugin)</value>
@@ -6697,6 +6821,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Type,Favourite)</value>
@@ -6727,6 +6852,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Type,Preset)</value>
@@ -6757,6 +6883,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Label)</value>
@@ -6787,6 +6914,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn2Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn2Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn2Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn2Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn2Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn2Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn2Path,xbmc.python.script)</value>
@@ -6817,6 +6945,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn2Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn2Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn2Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Param,RunScript($INFO[Skin.String(GamesSubMenuBtn2Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn2Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn2Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn2Path)]))</value>
@@ -6847,6 +6976,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn2Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn2Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn2Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn2Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn2Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn2Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn2Path,xbmc.python.pluginsource)</value>
@@ -6877,6 +7007,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn2Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn2Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn2Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn2Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn2Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn2Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn2Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn2Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn2Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn2Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn2Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn2Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn2Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn2Path)],Return))</value>
@@ -6907,6 +7038,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.2)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.2)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.2)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.2)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.2)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.2)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.2)</value>
@@ -6937,6 +7069,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn2Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn2Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn2Param)</value>
@@ -6967,6 +7100,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn3Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn3Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn3Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn3Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn3Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn3Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn3Label)]</value>
@@ -6997,6 +7131,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn3Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn3Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn3Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn3Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn3Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn3Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn3Path)]</value>
@@ -7027,6 +7162,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn3Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn3Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn3Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn3Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn3Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn3Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn3Param)]</value>
@@ -7057,6 +7193,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.3.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.3.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.3.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.3.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.3.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.3.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.3.Path)]</value>
@@ -7087,6 +7224,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn3)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn3)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn3)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn3)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn3)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn3)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn3)</value>
@@ -7182,6 +7320,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn3Type,Favourite) | Skin.String(TVShowsSubMenuBtn3Type,)]">Skin.Reset(TVShowsSubMenuFavourite.3.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn3Type,Favourite) | Skin.String(AddonsSubMenuBtn3Type,)]">Skin.Reset(AddonsSubMenuBtn3Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn3Type,Favourite) | Skin.String(AddonsSubMenuBtn3Type,)]">Skin.Reset(AddonsSubMenuFavourite.3.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn3Type,Favourite) | Skin.String(GamesSubMenuBtn3Type,)]">Skin.Reset(GamesSubMenuBtn3Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn3Type,Favourite) | Skin.String(GamesSubMenuBtn3Type,)]">Skin.Reset(GamesSubMenuFavourite.3.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn3Type,Favourite) | Skin.String(PicturesSubMenuBtn3Type,)]">Skin.Reset(PicturesSubMenuBtn3Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn3Type,Favourite) | Skin.String(PicturesSubMenuBtn3Type,)]">Skin.Reset(PicturesSubMenuFavourite.3.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn3Type,Favourite) | Skin.String(WeatherSubMenuBtn3Type,)]">Skin.Reset(WeatherSubMenuBtn3Path)</value>
@@ -7234,6 +7374,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn3Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn3Param)</value>
@@ -7264,6 +7405,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Type,Script)</value>
@@ -7294,6 +7436,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Type,Plugin)</value>
@@ -7324,6 +7467,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Type,Favourite)</value>
@@ -7354,6 +7498,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Type,Preset)</value>
@@ -7384,6 +7529,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Label)</value>
@@ -7414,6 +7560,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn3Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn3Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn3Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn3Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn3Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn3Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn3Path,xbmc.python.script)</value>
@@ -7444,6 +7591,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn3Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn3Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn3Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Param,RunScript($INFO[Skin.String(GamesSubMenuBtn3Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn3Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn3Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn3Path)]))</value>
@@ -7474,6 +7622,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn3Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn3Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn3Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn3Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn3Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn3Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn3Path,xbmc.python.pluginsource)</value>
@@ -7504,6 +7653,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn3Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn3Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn3Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn3Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn3Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn3Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn3Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn3Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn3Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn3Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn3Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn3Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn3Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn3Path)],Return))</value>
@@ -7534,6 +7684,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.3)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.3)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.3)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.3)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.3)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.3)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.3)</value>
@@ -7564,6 +7715,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn3Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn3Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn3Param)</value>
@@ -7594,6 +7746,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn4Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn4Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn4Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn4Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn4Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn4Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn4Label)]</value>
@@ -7624,6 +7777,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn4Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn4Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn4Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn4Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn4Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn4Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn4Path)]</value>
@@ -7654,6 +7808,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn4Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn4Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn4Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn4Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn4Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn4Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn4Param)]</value>
@@ -7684,6 +7839,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.4.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.4.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.4.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.4.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.4.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.4.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.4.Path)]</value>
@@ -7714,6 +7870,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn4)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn4)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn4)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn4)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn4)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn4)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn4)</value>
@@ -7809,6 +7966,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn4Type,Favourite) | Skin.String(TVShowsSubMenuBtn4Type,)]">Skin.Reset(TVShowsSubMenuFavourite.4.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn4Type,Favourite) | Skin.String(AddonsSubMenuBtn4Type,)]">Skin.Reset(AddonsSubMenuBtn4Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn4Type,Favourite) | Skin.String(AddonsSubMenuBtn4Type,)]">Skin.Reset(AddonsSubMenuFavourite.4.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn4Type,Favourite) | Skin.String(GamesSubMenuBtn4Type,)]">Skin.Reset(GamesSubMenuBtn4Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn4Type,Favourite) | Skin.String(GamesSubMenuBtn4Type,)]">Skin.Reset(GamesSubMenuFavourite.4.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn4Type,Favourite) | Skin.String(PicturesSubMenuBtn4Type,)]">Skin.Reset(PicturesSubMenuBtn4Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn4Type,Favourite) | Skin.String(PicturesSubMenuBtn4Type,)]">Skin.Reset(PicturesSubMenuFavourite.4.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn4Type,Favourite) | Skin.String(WeatherSubMenuBtn4Type,)]">Skin.Reset(WeatherSubMenuBtn4Path)</value>
@@ -7861,6 +8020,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn4Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn4Param)</value>
@@ -7891,6 +8051,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Type,Script)</value>
@@ -7921,6 +8082,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Type,Plugin)</value>
@@ -7951,6 +8113,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Type,Favourite)</value>
@@ -7981,6 +8144,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Type,Preset)</value>
@@ -8011,6 +8175,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Label)</value>
@@ -8041,6 +8206,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn4Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn4Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn4Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn4Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn4Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn4Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn4Path,xbmc.python.script)</value>
@@ -8071,6 +8237,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn4Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn4Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn4Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Param,RunScript($INFO[Skin.String(GamesSubMenuBtn4Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn4Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn4Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn4Path)]))</value>
@@ -8101,6 +8268,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn4Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn4Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn4Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn4Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn4Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn4Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn4Path,xbmc.python.pluginsource)</value>
@@ -8131,6 +8299,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn4Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn4Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn4Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn4Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn4Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn4Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn4Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn4Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn4Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn4Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn4Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn4Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn4Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn4Path)],Return))</value>
@@ -8161,6 +8330,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.4)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.4)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.4)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.4)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.4)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.4)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.4)</value>
@@ -8191,6 +8361,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn4Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn4Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn4Param)</value>
@@ -8221,6 +8392,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn5Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn5Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn5Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn5Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn5Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn5Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn5Label)]</value>
@@ -8251,6 +8423,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn5Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn5Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn5Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn5Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn5Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn5Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn5Path)]</value>
@@ -8281,6 +8454,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn5Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn5Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn5Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn5Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn5Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn5Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn5Param)]</value>
@@ -8311,6 +8485,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.5.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.5.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.5.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.5.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.5.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.5.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.5.Path)]</value>
@@ -8341,6 +8516,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn5)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn5)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn5)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn5)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn5)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn5)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn5)</value>
@@ -8436,6 +8612,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn5Type,Favourite) | Skin.String(TVShowsSubMenuBtn5Type,)]">Skin.Reset(TVShowsSubMenuFavourite.5.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn5Type,Favourite) | Skin.String(AddonsSubMenuBtn5Type,)]">Skin.Reset(AddonsSubMenuBtn5Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn5Type,Favourite) | Skin.String(AddonsSubMenuBtn5Type,)]">Skin.Reset(AddonsSubMenuFavourite.5.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn5Type,Favourite) | Skin.String(GamesSubMenuBtn5Type,)]">Skin.Reset(GamesSubMenuBtn5Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn5Type,Favourite) | Skin.String(GamesSubMenuBtn5Type,)]">Skin.Reset(GamesSubMenuFavourite.5.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn5Type,Favourite) | Skin.String(PicturesSubMenuBtn5Type,)]">Skin.Reset(PicturesSubMenuBtn5Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn5Type,Favourite) | Skin.String(PicturesSubMenuBtn5Type,)]">Skin.Reset(PicturesSubMenuFavourite.5.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn5Type,Favourite) | Skin.String(WeatherSubMenuBtn5Type,)]">Skin.Reset(WeatherSubMenuBtn5Path)</value>
@@ -8488,6 +8666,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn5Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn5Param)</value>
@@ -8518,6 +8697,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Type,Script)</value>
@@ -8548,6 +8728,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Type,Plugin)</value>
@@ -8578,6 +8759,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Type,Favourite)</value>
@@ -8608,6 +8790,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Type,Preset)</value>
@@ -8638,6 +8821,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Label)</value>
@@ -8668,6 +8852,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn5Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn5Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn5Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn5Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn5Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn5Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn5Path,xbmc.python.script)</value>
@@ -8698,6 +8883,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn5Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn5Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn5Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Param,RunScript($INFO[Skin.String(GamesSubMenuBtn5Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn5Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn5Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn5Path)]))</value>
@@ -8728,6 +8914,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn5Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn5Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn5Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn5Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn5Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn5Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn5Path,xbmc.python.pluginsource)</value>
@@ -8758,6 +8945,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn5Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn5Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn5Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn5Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn5Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn5Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn5Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn5Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn5Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn5Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn5Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn5Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn5Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn5Path)],Return))</value>
@@ -8788,6 +8976,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.5)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.5)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.5)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.5)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.5)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.5)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.5)</value>
@@ -8818,6 +9007,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn5Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn5Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn5Param)</value>
@@ -8848,6 +9038,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn6Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn6Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn6Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn6Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn6Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn6Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn6Label)]</value>
@@ -8878,6 +9069,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn6Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn6Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn6Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn6Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn6Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn6Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn6Path)]</value>
@@ -8908,6 +9100,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn6Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn6Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn6Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn6Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn6Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn6Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn6Param)]</value>
@@ -8938,6 +9131,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.6.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.6.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.6.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.6.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.6.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.6.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.6.Path)]</value>
@@ -8968,6 +9162,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn6)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn6)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn6)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn6)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn6)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn6)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn6)</value>
@@ -9063,6 +9258,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn6Type,Favourite) | Skin.String(TVShowsSubMenuBtn6Type,)]">Skin.Reset(TVShowsSubMenuFavourite.6.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn6Type,Favourite) | Skin.String(AddonsSubMenuBtn6Type,)]">Skin.Reset(AddonsSubMenuBtn6Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn6Type,Favourite) | Skin.String(AddonsSubMenuBtn6Type,)]">Skin.Reset(AddonsSubMenuFavourite.6.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn6Type,Favourite) | Skin.String(GamesSubMenuBtn6Type,)]">Skin.Reset(GamesSubMenuBtn6Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn6Type,Favourite) | Skin.String(GamesSubMenuBtn6Type,)]">Skin.Reset(GamesSubMenuFavourite.6.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn6Type,Favourite) | Skin.String(PicturesSubMenuBtn6Type,)]">Skin.Reset(PicturesSubMenuBtn6Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn6Type,Favourite) | Skin.String(PicturesSubMenuBtn6Type,)]">Skin.Reset(PicturesSubMenuFavourite.6.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn6Type,Favourite) | Skin.String(WeatherSubMenuBtn6Type,)]">Skin.Reset(WeatherSubMenuBtn6Path)</value>
@@ -9115,6 +9312,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn6Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn6Param)</value>
@@ -9145,6 +9343,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Type,Script)</value>
@@ -9175,6 +9374,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Type,Plugin)</value>
@@ -9205,6 +9405,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Type,Favourite)</value>
@@ -9235,6 +9436,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Type,Preset)</value>
@@ -9265,6 +9467,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Label)</value>
@@ -9295,6 +9498,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn6Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn6Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn6Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn6Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn6Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn6Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn6Path,xbmc.python.script)</value>
@@ -9325,6 +9529,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn6Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn6Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn6Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Param,RunScript($INFO[Skin.String(GamesSubMenuBtn6Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn6Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn6Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn6Path)]))</value>
@@ -9355,6 +9560,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn6Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn6Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn6Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn6Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn6Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn6Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn6Path,xbmc.python.pluginsource)</value>
@@ -9385,6 +9591,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn6Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn6Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn6Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn6Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn6Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn6Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn6Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn6Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn6Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn6Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn6Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn6Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn6Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn6Path)],Return))</value>
@@ -9415,6 +9622,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.6)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.6)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.6)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.6)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.6)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.6)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.6)</value>
@@ -9445,6 +9653,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn6Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn6Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn6Param)</value>
@@ -9475,6 +9684,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn7Label)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn7Label)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn7Label)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn7Label)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn7Label)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn7Label)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn7Label)]</value>
@@ -9505,6 +9715,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn7Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn7Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn7Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn7Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn7Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn7Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn7Path)]</value>
@@ -9535,6 +9746,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuBtn7Param)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuBtn7Param)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuBtn7Param)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuBtn7Param)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuBtn7Param)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuBtn7Param)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuBtn7Param)]</value>
@@ -9565,6 +9777,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">$INFO[Skin.String(MoviesSubMenuFavourite.7.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">$INFO[Skin.String(TVShowsSubMenuFavourite.7.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">$INFO[Skin.String(AddonsSubMenuFavourite.7.Path)]</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">$INFO[Skin.String(GamesSubMenuFavourite.7.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">$INFO[Skin.String(PicturesSubMenuFavourite.7.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">$INFO[Skin.String(WeatherSubMenuFavourite.7.Path)]</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">$INFO[Skin.String(GeneralSubMenuFavourite.7.Path)]</value>
@@ -9595,6 +9808,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.ToggleSetting(EditMoviesSubMenuBtn7)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.ToggleSetting(EditTVShowsSubMenuBtn7)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.ToggleSetting(EditAddonsSubMenuBtn7)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.ToggleSetting(EditGamesSubMenuBtn7)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.ToggleSetting(EditPicturesSubMenuBtn7)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.ToggleSetting(EditWeatherSubMenuBtn7)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.ToggleSetting(EditGeneralSubMenuBtn7)</value>
@@ -9690,6 +9904,8 @@
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings) + [Skin.String(TVShowsSubMenuBtn7Type,Favourite) | Skin.String(TVShowsSubMenuBtn7Type,)]">Skin.Reset(TVShowsSubMenuFavourite.7.Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + ![Skin.String(AddonsSubMenuBtn7Type,Favourite) | Skin.String(AddonsSubMenuBtn7Type,)]">Skin.Reset(AddonsSubMenuBtn7Path)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings) + [Skin.String(AddonsSubMenuBtn7Type,Favourite) | Skin.String(AddonsSubMenuBtn7Type,)]">Skin.Reset(AddonsSubMenuFavourite.7.Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + ![Skin.String(GamesSubMenuBtn7Type,Favourite) | Skin.String(GamesSubMenuBtn7Type,)]">Skin.Reset(GamesSubMenuBtn7Path)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings) + [Skin.String(GamesSubMenuBtn7Type,Favourite) | Skin.String(GamesSubMenuBtn7Type,)]">Skin.Reset(GamesSubMenuFavourite.7.Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + ![Skin.String(PicturesSubMenuBtn7Type,Favourite) | Skin.String(PicturesSubMenuBtn7Type,)]">Skin.Reset(PicturesSubMenuBtn7Path)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings) + [Skin.String(PicturesSubMenuBtn7Type,Favourite) | Skin.String(PicturesSubMenuBtn7Type,)]">Skin.Reset(PicturesSubMenuFavourite.7.Path)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings) + ![Skin.String(WeatherSubMenuBtn7Type,Favourite) | Skin.String(WeatherSubMenuBtn7Type,)]">Skin.Reset(WeatherSubMenuBtn7Path)</value>
@@ -9742,6 +9958,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.Reset(MoviesSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.Reset(TVShowsSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.Reset(AddonsSubMenuBtn7Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.Reset(GamesSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.Reset(PicturesSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.Reset(WeatherSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.Reset(GeneralSubMenuBtn7Param)</value>
@@ -9772,6 +9989,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Type,Script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Type,Script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Type,Script)</value>
@@ -9802,6 +10020,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Type,Plugin)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Type,Plugin)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Type,Plugin)</value>
@@ -9832,6 +10051,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Type,Favourite)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Type,Favourite)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Type,Favourite)</value>
@@ -9862,6 +10082,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Type,Preset)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Type,Preset)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Type,Preset)</value>
@@ -9892,6 +10113,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Label)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Label)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Label)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Label)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Label)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Label)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Label)</value>
@@ -9922,6 +10144,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn7Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn7Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn7Path,xbmc.python.script)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn7Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn7Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn7Path,xbmc.python.script)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn7Path,xbmc.python.script)</value>
@@ -9952,6 +10175,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Param,RunScript($INFO[Skin.String(MoviesSubMenuBtn7Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Param,RunScript($INFO[Skin.String(TVShowsSubMenuBtn7Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Param,RunScript($INFO[Skin.String(AddonsSubMenuBtn7Path)]))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Param,RunScript($INFO[Skin.String(GamesSubMenuBtn7Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Param,RunScript($INFO[Skin.String(PicturesSubMenuBtn7Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Param,RunScript($INFO[Skin.String(WeatherSubMenuBtn7Path)]))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Param,RunScript($INFO[Skin.String(GeneralSubMenuBtn7Path)]))</value>
@@ -9982,6 +10206,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetAddon(MoviesSubMenuBtn7Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetAddon(TVShowsSubMenuBtn7Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetAddon(AddonsSubMenuBtn7Path,xbmc.python.pluginsource)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetAddon(GamesSubMenuBtn7Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetAddon(PicturesSubMenuBtn7Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetAddon(WeatherSubMenuBtn7Path,xbmc.python.pluginsource)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetAddon(GeneralSubMenuBtn7Path,xbmc.python.pluginsource)</value>
@@ -10012,6 +10237,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(MoviesSubMenuBtn7Param,RunAddon($INFO[Skin.String(MoviesSubMenuBtn7Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(TVShowsSubMenuBtn7Param,RunAddon($INFO[Skin.String(TVShowsSubMenuBtn7Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(AddonsSubMenuBtn7Param,RunAddon($INFO[Skin.String(AddonsSubMenuBtn7Path)],Return))</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(GamesSubMenuBtn7Param,RunAddon($INFO[Skin.String(GamesSubMenuBtn7Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(PicturesSubMenuBtn7Param,RunAddon($INFO[Skin.String(PicturesSubMenuBtn7Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(WeatherSubMenuBtn7Param,RunAddon($INFO[Skin.String(WeatherSubMenuBtn7Path)],Return))</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(GeneralSubMenuBtn7Param,RunAddon($INFO[Skin.String(GeneralSubMenuBtn7Path)],Return))</value>
@@ -10042,6 +10268,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">RunScript(script.favourites,property=MoviesSubMenuFavourite.7)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">RunScript(script.favourites,property=TVShowsSubMenuFavourite.7)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">RunScript(script.favourites,property=AddonsSubMenuFavourite.7)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">RunScript(script.favourites,property=GamesSubMenuFavourite.7)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">RunScript(script.favourites,property=PicturesSubMenuFavourite.7)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">RunScript(script.favourites,property=WeatherSubMenuFavourite.7)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">RunScript(script.favourites,property=GeneralSubMenuFavourite.7)</value>
@@ -10072,6 +10299,7 @@
 		<value condition="Skin.HasSetting(ExpandMoviesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,MoviesSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandTVShowsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,TVShowsSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandAddonsSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,AddonsSubMenuBtn7Param)</value>
+		<value condition="Skin.HasSetting(ExpandGamesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GamesSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandPicturesSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,PicturesSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandWeatherSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,WeatherSubMenuBtn7Param)</value>
 		<value condition="Skin.HasSetting(ExpandGeneralSubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,GeneralSubMenuBtn7Param)</value>

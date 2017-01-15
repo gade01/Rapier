@@ -152,6 +152,15 @@
 					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
 					<onclick>Control.SetFocus(945)</onclick>
 				</control>
+				<control type="radiobutton" id="4016">
+					<description>Customize Games Background Settings</description>
+					<include>SettingsContentExpandBtn</include>
+					<label>$LOCALIZE[15016]</label>
+					<selected>Skin.HasSetting(ExpandCustomGamesBGSettings)</selected>
+					<onclick>Skin.SetBool(ExpandCustomGamesBGSettings)</onclick>
+					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
+					<onclick>Control.SetFocus(953)</onclick>
+				</control>
 				<control type="radiobutton" id="4006">
 					<description>Customize Pictures Background Settings</description>
 					<include>SettingsContentExpandBtn</include>
@@ -1404,6 +1413,126 @@
 					<onclick>Skin.Reset(ExpandCustomAddonsBGSettings)</onclick>
 					<onclick>Skin.Reset(ExpandedSettings)</onclick>
 					<onclick>Control.SetFocus(4005)</onclick>
+				</control>
+			</control>
+			
+			<control type="group" id="855">
+				<description>Expanded Games Background Area</description>
+				<visible>Skin.HasSetting(ExpandCustomGamesBGSettings)</visible>
+				<include>ExpandedSettingsOpenCloseAnim</include>
+
+				<control type="button">
+					<description>Title</description>
+					<include>SettingsHeaderBtn</include>
+					<label>$LOCALIZE[31604] - $LOCALIZE[15016]</label>
+				</control>
+				
+				<include>CustomImagePreviewBG</include>
+				
+				<control type="multiimage">
+					<include>CustomImagePreview</include>
+					<imagepath background="true" fallback="background-default.png">$INFO[Skin.String(CustomDefaultBGPath)]</imagepath>
+					<visible>Skin.String(CustomGamesBGType,1) | Skin.String(CustomGamesBGType,)</visible>
+					<include>CustomImagePreviewOpenCloseAnim</include>
+				</control>
+				
+				<control type="multiimage">
+					<include>CustomImagePreview</include>
+					<imagepath background="true" fallback=".">$INFO[Skin.String(CustomGamesBGPath)]</imagepath>
+					<visible>Skin.String(CustomGamesBGType,2) | Skin.String(CustomGamesBGType,3)</visible>
+					<include>CustomImagePreviewOpenCloseAnim</include>
+				</control>
+				
+				<control type="image">
+					<include>CustomImageDim</include>
+					<include>GamesBrightnessAnimations</include>
+					<visible>Control.HasFocus(4452)</visible>
+				</control>
+				
+				<control type="grouplist" id="953">		
+					<left>520</left>
+					<top>65</top>
+					<width>235</width>
+					<height>340</height>
+					<itemgap>15</itemgap>
+					<onup>4453</onup>
+					<ondown>4450</ondown>
+					<onleft>1935</onleft>
+					<control type="radiobutton" id="4350">
+						<description>Default</description>
+						<include>SettingsCustomBGRadioBtn</include>
+						<selected>Skin.String(CustomGamesBGType,1) | Skin.String(CustomGamesBGType,)</selected>
+						<onclick>Skin.SetString(CustomGamesBGType,1)</onclick>
+						<onclick>Skin.Reset(CustomGamesBGPath)</onclick>
+						<label>$LOCALIZE[31058]</label>
+					</control>
+					<control type="radiobutton" id="4351">
+						<description>Single Image</description>
+						<include>SettingsCustomBGRadioBtn</include>
+						<selected>Skin.String(CustomGamesBGType,2)</selected>
+						<onclick>Skin.SetString(CustomGamesBGType,2)</onclick>
+						<onclick>Skin.Reset(CustomGamesBGPath)</onclick>
+						<label>$LOCALIZE[31056]</label>
+					</control>
+					<control type="radiobutton" id="4352">
+						<description>Multi Image</description>
+						<include>SettingsCustomBGRadioBtn</include>
+						<selected>Skin.String(CustomGamesBGType,3)</selected>
+						<onclick>Skin.SetString(CustomGamesBGType,3)</onclick>
+						<onclick>Skin.Reset(CustomGamesBGPath)</onclick>
+						<label>$LOCALIZE[31057]</label>
+					</control>
+				</control>
+					
+				<control type="grouplist" id="915">
+					<top>379</top>
+					<itemgap>0</itemgap>
+					<onup>4352</onup>
+					<ondown>4350</ondown>
+					<onleft>1935</onleft>
+					<control type="button" id="4450">
+						<description>Single Image Path</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$INFO[Skin.String(CustomGamesBGPath)][/COLOR]</label>
+						<onclick>Skin.SetImage(CustomGamesBGPath)</onclick>
+						<visible>Skin.String(CustomGamesBGType,2)</visible>
+					</control>
+					<control type="button" id="4451">
+						<description>Multi Image Path</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$INFO[Skin.String(CustomGamesBGPath)][/COLOR]</label>
+						<onclick>Skin.SetPath(CustomGamesBGPath)</onclick>
+						<visible>Skin.String(CustomGamesBGType,3)</visible>
+					</control>
+					<control type="button" id="4452">
+						<description>Background Brightness</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[31060]: [COLOR DefaultColor2]$VAR[GamesBrightnessValueVar] %[/COLOR]</label>
+						<onclick>Skin.SetString(BrightnessVar,Games)</onclick>
+						<onclick>ActivateWindow(1108)</onclick>
+						<visible>Skin.String(CustomGamesBGType,2) | Skin.String(CustomGamesBGType,3)</visible>
+					</control>
+					<control type="togglebutton" id="4453">
+						<description>Apply To All Windows</description>
+						<include>SettingsContentToggleBtn</include>
+						<label>$LOCALIZE[31052]</label>
+						<altlabel>$LOCALIZE[31051]</altlabel>
+						<usealttexture>!Skin.HasSetting(ApplyAllGamesCustomBG)</usealttexture>
+						<onclick>Skin.ToggleSetting(ApplyAllGamesCustomBG)</onclick>
+						<visible>Skin.String(CustomGamesBGType,2) | Skin.String(CustomGamesBGType,3)</visible>
+					</control>
+				</control>
+				
+				<control type="button" id="1935">
+					<description>Back</description>
+					<include>SettingsBackBtn</include>
+					<onright>953</onright>
+					<onleft>Skin.Reset(ExpandCustomGamesBGSettings)</onleft>
+					<onleft>Skin.Reset(ExpandedSettings)</onleft>
+					<onleft>Control.SetFocus(4016)</onleft>
+					<onclick>Skin.Reset(ExpandCustomGamesBGSettings)</onclick>
+					<onclick>Skin.Reset(ExpandedSettings)</onclick>
+					<onclick>Control.SetFocus(4016)</onclick>
 				</control>
 			</control>
 			

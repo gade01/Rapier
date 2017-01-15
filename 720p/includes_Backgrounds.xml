@@ -94,6 +94,11 @@
 		<value>30</value>
 	</variable>
 	
+	<variable name="GamesBrightnessValueVar">
+		<value condition="!String.IsEmpty(Skin.String(GamesBrightnessValue))">$INFO[Skin.String(GamesBrightnessValue)]</value>
+		<value>30</value>
+	</variable>
+	
 	<variable name="PicturesBrightnessValueVar">
 		<value condition="!String.IsEmpty(Skin.String(PicturesBrightnessValue))">$INFO[Skin.String(PicturesBrightnessValue)]</value>
 		<value>30</value>
@@ -187,6 +192,12 @@
 	<include name="AddonsBrightnessAnimations">
 		<include content="BrightnessAnimations">
 			<param name="type" value="AddonsBrightnessValue" />
+		</include>
+	</include>
+	
+	<include name="GamesBrightnessAnimations">
+		<include content="BrightnessAnimations">
+			<param name="type" value="GamesBrightnessValue" />
 		</include>
 	</include>
 	
@@ -395,6 +406,25 @@
 		</control>
 	</include>
 
+	<include name="BackgroundGames">	
+		<control type="group">
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
+
+			<control type="multiimage">
+				<description>Custom Background</description>
+				<include>BackgroundSize</include>
+				<imagepath>$INFO[Skin.String(CustomGamesBGPath)]</imagepath>
+				<aspectratio>scale</aspectratio>
+				<timeperimage>10000</timeperimage>
+				<fadetime>BackgroundCrossfadeTime</fadetime>
+				<randomize>true</randomize>
+				<include condition="Skin.HasSetting(AnimateBackground)">BackgroundAnim</include>
+			</control>
+
+			<include>GamesBackgroundDim</include>
+		</control>
+	</include>
+	
 	<include name="BackgroundPictures">		
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
@@ -828,6 +858,13 @@
 		<control type="image">
 			<include>BackgroundDim</include>
 			<include>AddonsBrightnessAnimations</include>
+		</control>
+	</include>
+	
+	<include name="GamesBackgroundDim">
+		<control type="image">
+			<include>BackgroundDim</include>
+			<include>GamesBrightnessAnimations</include>
 		</control>
 	</include>
 

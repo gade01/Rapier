@@ -22,7 +22,7 @@
 				<onleft>850</onleft>
 				<onright>150</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
-				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons)]</visible>
+				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games)]</visible>
 				<itemlayout height="185" width="203" condition="Container.Content(Countries)">
 					<control type="image">
 						<description>Cover Case</description>
@@ -1908,7 +1908,7 @@
 				<visible>!String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
 			</control>
 		</itemlayout>
-		<itemlayout condition="Container.Content(Addons)" height="74">
+		<itemlayout condition="Container.Content(Addons) | Container.Content(Games)" height="74">
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2728,7 +2728,7 @@
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(Addons)" height="74">
+		<focusedlayout condition="Container.Content(Addons) | Container.Content(Games)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -4810,7 +4810,7 @@
 			<ondown>63</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Window.IsActive(MusicPlaylist)</visible>
+			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist)</visible>
 			<itemlayout height="270" width="249">	
 				<control type="image">
 					<description>Cover Case</description>
@@ -4889,7 +4889,7 @@
 			<ondown>63</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Window.IsActive(MusicPlaylist)</visible>
+			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist)</visible>
 			<itemlayout height="177" width="177">	
 				<control type="image">
 					<description>Cover Case</description>

@@ -84,12 +84,12 @@
 				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="1003">
-				<description>Thumbnail Hide Label (Music) (Addons)</description>
+				<description>Thumbnail Hide Label (Music) (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideAlbumThumbsLabel)</selected>
 				<onclick>Skin.ToggleSetting(HideAlbumThumbsLabel)</onclick>
-				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists) | Container.Content(Addons)]</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists) | Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3089">
 				<description>Thumbnail Show Year (Movies) (TVShows) (Seasons)</description>
@@ -231,12 +231,12 @@
 				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			</control>
 			<control type="radiobutton" id="3002">
-				<description>Thumbnail Show Fanart (Addons)</description>
+				<description>Thumbnail Show Fanart (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowAddonsThumbnailFanart)</selected>
 				<onclick>Skin.ToggleSetting(ShowAddonsThumbnailFanart)</onclick>	
-				<visible>Skin.String(CurrentViewMode,63) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3041">
 				<description>List Extra Thumbs (Movies) (Episodes)</description>
@@ -313,12 +313,12 @@
 				<visible>Skin.String(CurrentViewMode,52) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 			</control>
 			<control type="radiobutton" id="3003">
-				<description>List Hide Fanart (Addons)</description>
+				<description>List Hide Fanart (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideAddonsListFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideAddonsListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,52) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,52) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="1095">
 				<description>Wide List Hide Description (Music)</description>
@@ -425,12 +425,12 @@
 				<visible>Skin.String(CurrentViewMode,74) + Container.Content(Episodes)</visible>
 			</control>
 			<control type="radiobutton" id="3004">
-				<description>Wide List Hide Fanart (Addons)</description>
+				<description>Wide List Hide Fanart (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideAddonsWideListFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideAddonsWideListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,90) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,90) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="1011">
 				<description>List Info Hide Fanart (Music)</description>
@@ -465,12 +465,12 @@
 				<visible>Skin.String(CurrentViewMode,73) + Container.Content(Episodes)</visible>
 			</control>
 			<control type="radiobutton" id="3005">
-				<description>List Info Hide Fanart (Addons)</description>
+				<description>List Info Hide Fanart (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideAddonsListInfoFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideAddonsListInfoFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,91) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,91) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="4023">
 				<description>List Info Hide Fanart (Programs)</description>
@@ -770,12 +770,12 @@
 				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,577)</visible>
 			</control>
 			<control type="radiobutton" id="3011">
-				<description>Wrap List Info Hide Fanart (Addons)</description>
+				<description>Wrap List Info Hide Fanart (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideAddonsWrapListInfoFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideAddonsWrapListInfoFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,93) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,93) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="4084">
 				<description>Wrap List Info Hide Fanart (Programs)</description>
@@ -1346,7 +1346,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>!Skin.HasSetting(ShowThumbnailViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(ShowThumbnailViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,63) + [Window.IsActive(Music) | Container.Content(Addons)]</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Window.IsActive(Music) | Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="2062">
 				<description>Thumbnail Hide Scrollbar</description>
@@ -2075,7 +2075,7 @@
 				<visible>Skin.String(CurrentViewMode,68) + Container.Content(Episodes)</visible>
 			</control>
 			<control type="radiobutton" id="3008">
-				<description>List Info 2 Use Style 1 (Addons)</description>
+				<description>List Info 2 Use Style 1 (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31418]</label>
 				<selected>Skin.String(AddonsListInfo2Style,1)</selected>
@@ -2083,10 +2083,10 @@
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
 				<onclick>Container.SetViewMode(92)</onclick>
-				<visible>Skin.String(CurrentViewMode,92) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,92) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3009">
-				<description>List Info 2 Use Style 2 (Addons)</description>
+				<description>List Info 2 Use Style 2 (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31417]</label>
 				<selected>Skin.String(AddonsListInfo2Style,2) | Skin.String(AddonsListInfo2Style,)</selected>
@@ -2094,27 +2094,27 @@
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
 				<onclick>Container.SetViewMode(92)</onclick>
-				<visible>Skin.String(CurrentViewMode,92) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,92) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3012">
-				<description>Wrap List Info Use Style 1 (Addons)</description>
+				<description>Wrap List Info Use Style 1 (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31418]</label>
 				<selected>Skin.String(AddonsWrapInfoStyle,1) | Skin.String(AddonsWrapInfoStyle,)</selected>
 				<onclick>Skin.SetString(AddonsWrapInfoStyle,1)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,93) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,93) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3013">
-				<description>Wrap List Info Use Style 2 (Addons)</description>
+				<description>Wrap List Info Use Style 2 (Addons) (Games)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31413]</label>
 				<selected>Skin.String(AddonsWrapInfoStyle,2)</selected>
 				<onclick>Skin.SetString(AddonsWrapInfoStyle,2)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,93) + Container.Content(Addons)</visible>
+				<visible>Skin.String(CurrentViewMode,93) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="4087">
 				<description>Wrap List Info Use Style 1 (Programs)</description>
