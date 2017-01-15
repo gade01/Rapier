@@ -413,8 +413,7 @@
 	</include>
 
 	<include name="LiveTVColumnInfoArea">
-		<!-- EPGTimelineView, LiveTVGuideNowNextView, LiveTVGuideChannelView,
-			 LiveTVSearchView, LiveTVTimersView -->
+		<!-- EPGTimelineView, LiveTVSearchView, LiveTVTimersView -->
 		<control type="group">
 			<left>40</left>
 			<top>510</top>
@@ -657,7 +656,7 @@
 	</include>
 
 	<include name="LiveTVColumnHeaderArea">
-		<!-- LiveTVGuideChannelView, LiveTVSearchView, LiveTVTimersView -->
+		<!-- LiveTVSearchView, LiveTVTimersView -->
 		<control type="group">
 			<description>Channel Area</description>
 			<control type="image">
@@ -738,90 +737,8 @@
 		</control>
 	</include>
 
-	<include name="LiveTVColumnHeaderArea2">
-		<!-- LiveTVGuideNowNextView -->
-		<control type="group">
-			<description>Channel Area</description>
-			<control type="image">
-				<width>215</width>
-				<height>30</height>
-				<texture border="8">pvr/column-left.png</texture>
-				<colordiffuse>LiveTVColumnColor</colordiffuse>
-				<include>LiveTVColumnFadeAnim</include>
-			</control>
-			<control type="label">
-				<left>10</left>
-				<width>215</width>
-				<height>30</height>
-				<include>LiveTVColumnHeaderLabel</include>
-				<label>$LOCALIZE[19148]</label>
-			</control>
-		</control>
-
-		<control type="group">
-			<description>Title Area</description>
-			<left>220</left>
-			<control type="image">
-				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth2</include>
-				<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth2</include>
-				<height>30</height>
-				<texture border="8">pvr/column.png</texture>
-				<colordiffuse>LiveTVColumnColor</colordiffuse>
-				<include>LiveTVColumnFadeAnim</include>
-			</control>
-			<control type="label">
-				<left>10</left>
-				<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth2</include>
-				<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth2</include>
-				<height>30</height>
-				<include>LiveTVColumnHeaderLabel</include>
-				<label>$LOCALIZE[369]</label>
-			</control>
-		</control>
-
-		<control type="group">
-			<description>Time Area</description>
-			<left>924</left>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<control type="image">
-				<width>136</width>
-				<height>30</height>
-				<texture border="8">pvr/column.png</texture>
-				<colordiffuse>LiveTVColumnColor</colordiffuse>
-				<include>LiveTVColumnFadeAnim</include>
-			</control>
-			<control type="label">
-				<width>136</width>
-				<height>30</height>
-				<align>center</align>
-				<include>LiveTVColumnHeaderLabel</include>
-				<label>$LOCALIZE[555]</label>
-			</control>
-		</control>
-
-		<control type="group">
-			<description>Duration Area</description>
-			<left>1064</left>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<control type="image">
-				<width>136</width>
-				<height>30</height>
-				<texture border="8" flipx="true">pvr/column-left.png</texture>
-				<colordiffuse>LiveTVColumnColor</colordiffuse>
-				<include>LiveTVColumnFadeAnim</include>
-			</control>
-			<control type="label">
-				<width>136</width>
-				<height>30</height>
-				<align>center</align>
-				<include>LiveTVColumnHeaderLabel</include>
-				<label>$LOCALIZE[180]</label>
-			</control>
-		</control>
-	</include>
-
 	<include name="LiveTVColumnLayoutArea">
-		<!-- LiveTVGuideChannelView, LiveTVSearchView -->
+		<!-- LiveTVSearchView -->
 		<control type="image">
 			<description>Status Icon</description>
 			<left>808</left>
@@ -905,95 +822,6 @@
 			<align>center</align>
 			<include>LiveTVColumnItemLabel</include>
 			<label>$INFO[ListItem.StartDate]</label>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-		</control>
-	</include>
-
-	<include name="LiveTVColumnLayoutArea2">
-		<!-- LiveTVGuideNowNextView -->
-		<control type="image">
-			<description>Status Icon</description>
-			<left>888</left>
-			<top>8</top>
-			<width>22</width>
-			<height>22</height>
-			<texture>$VAR[PVRStatusIcon]</texture>
-			<colordiffuse>WhiteColor</colordiffuse>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-			<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording</visible>
-		</control>
-
-		<control type="label">
-			<description>Channel Number</description>
-			<left>15</left>
-			<width>215</width>
-			<height>38</height>
-			<include>LiveTVColumnNumberLabel</include>
-			<label>$INFO[ListItem.ChannelNumber]</label>
-		</control>
-
-		<control type="label">
-			<description>Channel Name</description>
-			<left>50</left>
-			<width>158</width>
-			<height>38</height>
-			<include>LiveTVColumnChannelLabel</include>
-			<label>$INFO[ListItem.ChannelName]</label>
-			<visible>![Skin.HasSetting(ShowPVRGuideChannelIcons) + !String.IsEmpty(ListItem.Icon)]</visible>
-		</control>
-		
-		<control type="image">
-			<description>Channel Icon</description>
-			<left>49</left>
-			<width>169</width>
-			<height>38</height>
-			<aspectratio aligny="center" align="left">keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<bordersize>2</bordersize>
-			<visible>Skin.HasSetting(ShowPVRGuideChannelIcons) + !String.IsEmpty(ListItem.Icon)</visible>
-		</control>
-
-		<control type="label">
-			<description>Title</description>
-			<left>230</left>
-			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth3</include>
-			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth3</include>
-			<height>38</height>
-			<include>LiveTVColumnItemLabel</include>
-			<label>$INFO[ListItem.Title]</label>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
-		</control>
-		
-		<control type="label">
-			<description>Title</description>
-			<left>230</left>
-			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth3</include>
-			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth3</include>
-			<height>38</height>
-			<include>LiveTVColumnItemLabel</include>
-			<label>$INFO[ListItem.Label]</label>
-			<visible>String.IsEmpty(ListItem.Title)</visible>
-		</control>
-
-		<control type="label">
-			<description>Time</description>
-			<left>929</left>
-			<width>126</width>
-			<height>38</height>
-			<align>center</align>
-			<include>LiveTVColumnItemLabel</include>
-			<label>$INFO[ListItem.StartTime]</label>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-		</control>
-
-		<control type="label">
-			<description>Duration</description>
-			<left>1069</left>
-			<width>126</width>
-			<height>38</height>
-			<align>center</align>
-			<include>LiveTVColumnItemLabel</include>
-			<label>$INFO[ListItem.Duration]</label>
 			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
 		</control>
 	</include>
@@ -1082,7 +910,7 @@
 	</include>
 
 	<include name="LiveTVColumnItemLayout">
-		<!-- LiveTVGuideChannelView, LiveTVSearchView, LiveTVTimersView -->
+		<!-- LiveTVSearchView, LiveTVTimersView -->
 		<control type="image">
 			<width>215</width>
 			<height>38</height>
@@ -1114,46 +942,6 @@
 		<control type="image">
 			<left>1024</left>
 			<width>176</width>
-			<height>38</height>
-			<texture border="8" flipx="true">pvr/column-left.png</texture>
-			<colordiffuse>LiveTVColumnColor2</colordiffuse>
-			<include>LiveTVColumnFadeAnim</include>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-		</control>
-	</include>
-
-	<include name="LiveTVColumnItemLayout2">
-		<control type="image">
-			<width>215</width>
-			<height>38</height>
-			<texture border="8">pvr/column-left.png</texture>
-			<colordiffuse>LiveTVColumnColor</colordiffuse>
-			<include>LiveTVColumnFadeAnim</include>
-		</control>
-
-		<control type="image">
-			<left>220</left>
-			<include condition="String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideNormalWidth2</include>
-			<include condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">TVGuideFullscreenWidth2</include>
-			<height>38</height>
-			<texture border="8">pvr/column.png</texture>
-			<colordiffuse>LiveTVColumnColor2</colordiffuse>
-			<include>LiveTVColumnFadeAnim</include>
-		</control>
-
-		<control type="image">
-			<left>924</left>
-			<width>136</width>
-			<height>38</height>
-			<texture border="8">pvr/column.png</texture>
-			<colordiffuse>LiveTVColumnColor2</colordiffuse>
-			<include>LiveTVColumnFadeAnim</include>
-			<animation effect="slide" end="-271,0" condition="!String.IsEmpty(Window(home).Property(TVGuideFullscreen))">Conditional</animation>
-		</control>
-
-		<control type="image">
-			<left>1064</left>
-			<width>136</width>
 			<height>38</height>
 			<texture border="8" flipx="true">pvr/column-left.png</texture>
 			<colordiffuse>LiveTVColumnColor2</colordiffuse>
