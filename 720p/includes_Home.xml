@@ -4619,6 +4619,7 @@
 			[!String.IsEmpty(Container(6890).ListItem.Art(fanart)) + Control.HasFocus(6890)] |
 			[!String.IsEmpty(Container(6891).ListItem.Art(fanart)) + Control.HasFocus(6891)] |
 			[!String.IsEmpty(Container(6892).ListItem.Art(tvshow.fanart)) + Control.HasFocus(6892)] |
+			[!String.IsEmpty(Container(6926).ListItem.ActualIcon) + Control.HasFocus(6926)] |
 			[!String.IsEmpty(Container(6893).ListItem.Art(fanart)) + Control.HasFocus(6893)] |
 			[!String.IsEmpty(Container(6928).ListItem.Art(fanart)) + Control.HasFocus(6928)] |
 			[!String.IsEmpty(Container(6929).ListItem.Art(fanart)) + Control.HasFocus(6929)] |
@@ -4660,27 +4661,8 @@
 		<value condition="!String.IsEmpty(Container(6878).ListItem.Art(fanart)) + Control.HasFocus(6878)">$INFO[Container(6878).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(6880).ListItem.Art(fanart)) + Control.HasFocus(6880)">$INFO[Container(6880).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(6881).ListItem.Art(fanart)) + Control.HasFocus(6881)">$INFO[Container(6881).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(6926).ListItem.ActualIcon) + Control.HasFocus(6926)">$INFO[Container(6926).ListItem.ActualIcon]</value>
 	</variable>
-	
-	<include name="HomePanelFanartNextAired">
-		<control type="group">
-			<visible>!String.IsEmpty(Container(6926).ListItem.ActualIcon) + Control.HasFocus(6926)</visible>
-			<depth>DepthBackground</depth>
-			<include>RecentlyAddedFanartOpenCloseAnim</include>
-
-			<control type="multiimage">
-				<description>Fanart</description>
-				<include>BackgroundSize</include>
-				<imagepath background="true">$INFO[Container(6926).ListItem.ActualIcon]</imagepath>
-				<aspectratio aligny="top">scale</aspectratio>
-				<timeperimage>10000</timeperimage>
-				<fadetime>BackgroundCrossfadeTime</fadetime>
-				<randomize>true</randomize>
-				<animation effect="fade" start="0" end="100" time="600">VisibleChange</animation>
-				<include condition="Skin.HasSetting(AnimateBackground)">BackgroundAnim</include>
-			</control>
-		</control>
-	</include>
 
 	<include name="RecentlyAddedPanel">
 		<control type="group">
