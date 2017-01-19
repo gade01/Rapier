@@ -2,7 +2,6 @@
 <includes>
 	<variable name="FanartImageVar">
 		<value condition="!String.IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(581).ListItem.Property(Fanart)) + [Control.HasFocus(581) | Control.HasFocus(907)]">$INFO[Container(581).ListItem.Property(Fanart)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
 	
@@ -541,7 +540,6 @@
 				| [Control.IsVisible(97) + !Skin.HasSetting(HideMoviesThumbsInfoFanart)]
 				| [Control.IsVisible(75) + !Skin.HasSetting(HideMoviesWideListFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(HideVideoPlaylistFanart)]
-				| [Control.IsVisible(582) + !Skin.HasSetting(HideMoviesRecommendedFanart)]
 				| [Control.IsVisible(583) + !Skin.HasSetting(HideMoviesFanartFanart)]
 				| [Control.IsVisible(585) + !Skin.HasSetting(HideMoviesExtendedListFanart)]
 				| [Control.IsVisible(588) + !Skin.HasSetting(HideMovies3DWrapFanart)]
@@ -717,7 +715,7 @@
 			<aspectratio>scale</aspectratio>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include condition="Skin.HasSetting(AnimateFanart)">BackgroundAnim</include>
-			<visible>!String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(Container(584).ListItem.Art(fanart)) | !String.IsEmpty(Container(581).ListItem.Property(Fanart))</visible>
+			<visible>!String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(Container(584).ListItem.Art(fanart))</visible>
 		</control>
 	</include>
 
