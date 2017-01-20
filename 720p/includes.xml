@@ -1669,10 +1669,16 @@
 	</variable>
 	
 	<variable name="PausedLabels">
+		<value condition="!String.IsEmpty(PVR.ChannelNumberInput)">$INFO[PVR.ChannelNumberInput]</value>
 		<value condition="!String.IsEmpty(Player.SeekNumeric)">$INFO[Player.SeekNumeric(hh:mm:ss)]</value>
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,$LOCALIZE[10213] ,%]</value>
 		<value condition="Player.Paused">$LOCALIZE[112]</value>
 		<value>$LOCALIZE[31184]</value>
+	</variable>
+	
+	<variable name="PausedLabels2">
+		<value condition="!String.IsEmpty(PVR.ChannelNumberInput)">$INFO[PVR.ChannelNumberInput]</value>
+		<value condition="!String.IsEmpty(Player.SeekNumeric)">$INFO[Player.SeekNumeric(hh:mm:ss)]</value>
 	</variable>
 	
 	<variable name="FSInfoTitle">
