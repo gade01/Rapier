@@ -4,7 +4,7 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="468" y="89">true</origin>
+		<origin x="468" y="70">true</origin>
 	</coordinates>
 	
 	<controls>
@@ -21,7 +21,7 @@
 				</control>
 				<control type="image">
 					<width>344</width>
-					<height>479</height>
+					<height>516</height>
 					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
 				</control>
 				<control type="image">
@@ -592,6 +592,49 @@
 					<onclick>Dialog.Close(1130)</onclick>
 				</control>
 				<control type="button" id="113">
+					<description>Games</description>
+					<include>ContextMenuBtn</include>
+					<label>$LOCALIZE[15016]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom1PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom2PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom3PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom4PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom5PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom6PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom7PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom8PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom9PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom10PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom11PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom12PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(Custom13PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(Custom14PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,14)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,14)</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click7]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click8Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click9Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click9Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click9Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click9Top]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn1Click9Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn2Click9Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn3Click9Bottom]</onclick>
+					<onclick>$VAR[AddMoreCategoryBtn4Click9Bottom]</onclick>
+					<include>CustomPanelClearScripts</include>
+					<onclick>Dialog.Close(1130)</onclick>
+				</control>
+				<control type="button" id="114">
 					<description>Custom</description>
 					<include>ContextMenuBtn</include>
 					<label>$LOCALIZE[636]</label>
