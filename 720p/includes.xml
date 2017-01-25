@@ -226,9 +226,9 @@
 		<value condition="Control.HasFocus(7006)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31442]</value>
 		<value condition="Control.HasFocus(7007)">$LOCALIZE[31443]</value>
 		<value condition="Control.HasFocus(7009)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31444]</value>
-		<value condition="Control.HasFocus(7010)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31445]</value>
+		<value condition="Control.HasFocus(7010)">$LOCALIZE[31445]</value>
 		<value condition="Control.HasFocus(7011)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31446]</value>
-		<value condition="Control.HasFocus(7012)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31447]</value>
+		<value condition="Control.HasFocus(7012)">$LOCALIZE[31447]</value>
 		<value condition="Control.HasFocus(7013)">$LOCALIZE[31448]</value>
 		<value condition="Control.HasFocus(7022)">$LOCALIZE[31449]</value>
 		<value condition="Control.HasFocus(7024)">$LOCALIZE[31450]</value>
@@ -641,6 +641,20 @@
 		<texturenofocus border="5">controls/button-nofocus.png</texturenofocus>
 		<alttexturefocus border="5">controls/button-focus.png</alttexturefocus>
 		<alttexturenofocus border="5">controls/button-nofocus.png</alttexturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</include>
+	
+	<include name="ExpandedSettingsBtn">
+		<width>279</width>
+		<height>35</height>
+		<font>SettingsContentFont</font>
+		<textcolor>SettingsContentColor</textcolor>
+		<shadowcolor>ShadowColor</shadowcolor>
+		<align>left</align>
+		<textoffsetx>10</textoffsetx>
+		<textwidth>259</textwidth>
+		<texturefocus border="5">controls/button-focus.png</texturefocus>
+		<texturenofocus border="5">controls/button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 
@@ -1772,6 +1786,10 @@
 	<variable name="VideoPlayerEpisodeVal">
 		<value condition="Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Episode,E0]</value>
 		<value>$INFO[VideoPlayer.Episode,E]</value>
+	</variable>
+	
+	<variable name="SubtitleDelayLabel">
+		<value condition="!String.IsEqual(Player.SubtitleDelay,0.000 s)">$INFO[Player.SubtitleDelay]</value>
 	</variable>
 	
 	<variable name="PVRChannelManagerHeader">
