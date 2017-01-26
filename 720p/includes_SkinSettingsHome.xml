@@ -1039,7 +1039,7 @@
 						<label>$LOCALIZE[24001]</label>
 						<selected>Skin.HasSetting(HideAddonsCategory)</selected>
 						<onclick>Skin.ToggleSetting(HideAddonsCategory)</onclick>
-						<onclick condition="Skin.HasSetting(HideGamesCategory) + !String.IsEmpty(Skin.String(ReorderCategories1))">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[24001],message=$LOCALIZE[31173])</onclick>
+						<onclick condition="Skin.HasSetting(HideAddonsCategory) + !String.IsEmpty(Skin.String(ReorderCategories1))">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[24001],message=$LOCALIZE[31173])</onclick>
 					</control>
 					<control type="radiobutton" id="2313">
 						<description>Games</description>
