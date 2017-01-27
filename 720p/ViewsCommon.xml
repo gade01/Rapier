@@ -10386,7 +10386,7 @@
 				<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(583)">Conditional</animation>
 				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
-				<itemlayout width="560" height="400">			
+				<itemlayout height="400">			
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title) + [[!Skin.HasSetting(HideMoviesFanartMediaInfo) + [Container.Content(Movies) | Container.Content(Sets)]] | [!Skin.HasSetting(HideTVShowsFanartMediaInfo) + Container.Content(TVShows)]]</visible>
 						<left>24</left>
@@ -10400,7 +10400,7 @@
 						</control>
 					</control>			
 				</itemlayout>		
-				<focusedlayout width="560" height="400">
+				<focusedlayout height="400">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title) + [[!Skin.HasSetting(HideMoviesFanartMediaInfo) + [Container.Content(Movies) | Container.Content(Sets)]] | [!Skin.HasSetting(HideTVShowsFanartMediaInfo) + Container.Content(TVShows)]]</visible>
 						<left>24</left>

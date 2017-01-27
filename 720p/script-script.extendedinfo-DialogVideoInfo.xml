@@ -279,7 +279,7 @@
 						<onright condition="Skin.String(ExtendedVideoInfo,14)">650</onright>
 						<onright condition="Skin.String(ExtendedVideoInfo,16)">1050</onright>
 						<onright condition="[String.IsEmpty(Skin.String(ExtendedVideoInfo)) | Skin.String(ExtendedVideoInfo,17)] + Control.IsVisible(61)">61</onright>
-						<itemlayout width="720" height="29">
+						<itemlayout height="29">
 							<control type="image">
 								<top>27</top>
 								<left>5</left>
@@ -316,7 +316,7 @@
 								<label fallback="31000">$INFO[ListItem.Label2]</label>
 							</control>
 						</itemlayout>	
-						<focusedlayout width="720" height="29">
+						<focusedlayout height="29">
 							<control type="image">
 								<top>27</top>
 								<left>5</left>
@@ -534,7 +534,7 @@
 						<height>205</height>
 						<onup>901</onup>
 						<orientation>horizontal</orientation>
-						<itemlayout height="205" width="143">		
+						<itemlayout width="143">		
 							<control type="image">
 								<width>140</width>
 								<height>174</height>
@@ -587,7 +587,7 @@
 								<label>$INFO[ListItem.Property(character),$LOCALIZE[20347] ,]</label>
 							</control>
 						</itemlayout>				
-						<focusedlayout height="205" width="143">
+						<focusedlayout width="143">
 							<control type="group">
 								<include>ListViewCoverFocusAnim</include>
 								<control type="image">
@@ -674,7 +674,7 @@
 						<height>205</height>
 						<onup>901</onup>
 						<orientation>horizontal</orientation>
-						<itemlayout height="205" width="143">		
+						<itemlayout width="143">		
 							<control type="image">
 								<width>140</width>
 								<height>174</height>
@@ -728,7 +728,7 @@
 								<!--<label>$INFO[ListItem.Property(department)]</label>-->
 							</control>
 						</itemlayout>
-						<focusedlayout height="205" width="143">
+						<focusedlayout width="143">
 							<control type="group">
 								<include>ListViewCoverFocusAnim</include>
 								<control type="image">
@@ -833,7 +833,7 @@
 						<onleft>987</onleft>
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<pagecontrol>61</pagecontrol>
-						<itemlayout width="443" height="30">
+						<itemlayout height="30">
 							<control type="image">
 								<top>28</top>
 								<left>5</left>
@@ -883,7 +883,7 @@
 								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 						</itemlayout>	
-						<focusedlayout width="443" height="30">
+						<focusedlayout height="30">
 							<control type="image">
 								<top>28</top>
 								<left>5</left>
@@ -1021,7 +1021,7 @@
 						<onleft>987</onleft>
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<pagecontrol>61</pagecontrol>
-						<itemlayout width="482" height="30">
+						<itemlayout height="30">
 							<control type="image">
 								<top>28</top>
 								<left>5</left>
@@ -1052,7 +1052,7 @@
 								<visible>!String.IsEmpty(ListItem.Property(account))</visible>
 							</control>
 						</itemlayout>	
-						<focusedlayout width="482" height="30">
+						<focusedlayout height="30">
 							<control type="image">
 								<top>28</top>
 								<left>5</left>
@@ -1496,7 +1496,7 @@
 						<height>205</height>
 						<onup>901</onup>
 						<orientation>horizontal</orientation>
-						<itemlayout height="205" width="179">
+						<itemlayout width="179">
 							<control type="image">
 								<width>176</width>
 								<height>204</height>
@@ -1530,7 +1530,7 @@
 								<visible>!String.IsEmpty(ListItem.Label)</visible>
 							</control>
 						</itemlayout>
-						<focusedlayout height="205" width="179">
+						<focusedlayout width="179">
 							<control type="group">
 								<include>ListViewCoverFocusAnim</include>
 								<control type="image">
@@ -1595,7 +1595,7 @@
 						<height>205</height>
 						<onup>901</onup>
 						<orientation>horizontal</orientation>
-						<itemlayout height="205" width="179">
+						<itemlayout width="179">
 							<control type="image">
 								<width>176</width>
 								<height>204</height>
@@ -1629,7 +1629,7 @@
 								<visible>!String.IsEmpty(ListItem.Label)</visible>
 							</control>
 						</itemlayout>
-						<focusedlayout height="205" width="179">
+						<focusedlayout width="179">
 							<control type="group">
 								<include>ListViewCoverFocusAnim</include>
 								<control type="image">
@@ -1849,7 +1849,7 @@
 						<onleft>987</onleft>
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<pagecontrol>61</pagecontrol>
-						<itemlayout width="443" height="30">
+						<itemlayout height="30">
 							<control type="image">
 								<top>28</top>
 								<left>5</left>
@@ -1899,7 +1899,7 @@
 								<visible>!String.IsEmpty(ListItem.dbid)</visible>
 							</control>
 						</itemlayout>	
-						<focusedlayout width="443" height="30">
+						<focusedlayout height="30">
 							<control type="image">
 								<top>28</top>
 								<left>5</left>
@@ -2020,7 +2020,7 @@
 						<height>109</height>
 						<onup>901</onup>
 						<orientation>horizontal</orientation>
-						<itemlayout height="109" width="102">	
+						<itemlayout width="102">	
 							<control type="image">
 								<width>99</width>
 								<height>107</height>
@@ -2044,7 +2044,7 @@
 								<label>$INFO[ListItem.Premiered][CR][B]$INFO[ListItem.Property(certification)][/B]</label>
 							</control>
 						</itemlayout>				
-						<focusedlayout height="109" width="102">
+						<focusedlayout width="102">
 							<control type="group">
 								<include>ListViewCoverFocusAnim</include>						
 								<control type="image">
