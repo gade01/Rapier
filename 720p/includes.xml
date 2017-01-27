@@ -1529,6 +1529,13 @@
 	<!-- END DialogMusicInfo.xml -->
 	
 	<!-- Skin Settings -->
+	<variable name="MusicBackgroundLabel">
+		<value condition="Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)">$LOCALIZE[31171]</value>
+		<value condition="!Skin.HasSetting(UseFanartForMusicPlayingBG)">$LOCALIZE[31170]</value>
+		<value condition="Skin.HasSetting(UseFanartForMusicPlayingBG)">$LOCALIZE[31169]</value>
+		<value>$LOCALIZE[31438]</value>
+	</variable>
+	
 	<variable name="StatusUISoundsVar">
 		<value condition="System.HasAddon(resource.uisounds.rapier)">$INFO[System.AddonVersion(resource.uisounds.rapier)] $LOCALIZE[31437]</value>
 		<value>$LOCALIZE[31438]</value>
