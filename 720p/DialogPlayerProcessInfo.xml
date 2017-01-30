@@ -200,6 +200,26 @@
 					</control>
 				</control>
 				<control type="group">
+					<visible>!String.IsEmpty(VideoPlayer.VideoBitrate)</visible>
+					<height>20</height>
+					<control type="label">
+						<width>165</width>
+						<font>FullMediaInfoTaglineFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$LOCALIZE[623]:</label>
+					</control>
+					<control type="label">
+						<left>170</left>
+						<width>400</width>
+						<font>FullMediaInfoTaglineFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[VideoPlayer.VideoBitrate,, kb/s]</label>
+					</control>
+				</control>
+				<control type="group">
+					<visible>String.IsEmpty(VideoPlayer.VideoBitrate)</visible>
 					<height>20</height>
 					<control type="label">
 						<width>165</width>
@@ -303,6 +323,25 @@
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[Player.Process(audiobitspersample),, Bit]</label>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(VideoPlayer.AudioBitrate)</visible>
+					<height>20</height>
+					<control type="label">
+						<width>165</width>
+						<font>FullMediaInfoTaglineFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$LOCALIZE[623]:</label>
+					</control>
+					<control type="label">
+						<left>170</left>
+						<width>400</width>
+						<font>FullMediaInfoTaglineFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[VideoPlayer.AudioBitrate,, kb/s]</label>
 					</control>
 				</control>
 			</control>
