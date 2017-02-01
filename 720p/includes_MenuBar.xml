@@ -2083,6 +2083,22 @@
 				<include>MenuBarSeparator</include>
 				<visible>![String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0)]</visible>
 			</control>
+			<!--
+			<control type="button" id="123">
+				<description>Changelog</description>
+				<width>179</width>
+				<textwidth>165</textwidth>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[24036][/UPPERCASE]</label>
+				<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[24036],message=$INFO[ListItem.Property(Addon.Changelog)])</onclick>
+				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+				<visible>!Control.IsVisible(122) + !String.IsEmpty(ListItem.Property(Addon.Changelog))</visible>
+			</control>
+			<control type="image" id="124">
+				<include>MenuBarSeparator</include>
+				<visible>!Control.IsVisible(122) + !String.IsEmpty(ListItem.Property(Addon.Changelog))</visible>
+			</control>
+			-->
 		</control>		
 	</include>
 	
