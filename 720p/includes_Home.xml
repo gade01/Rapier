@@ -606,7 +606,7 @@
 			<label>add-ons</label>
 			<icon>homecategories/$INFO[System.Language]/add-ons-text-nofocus.png</icon>
 			<include condition="Skin.String(CustomAddonsBGType,2) | Skin.String(CustomAddonsBGType,3)">HomeAddonsCustomBGPath</include>
-			<onclick>ActivateWindow(AddonBrowser)</onclick>	
+			<onclick>ActivateWindow(1116)</onclick>
 		</item>
 	</include>
 		
@@ -2157,7 +2157,7 @@
 					<item id="1">
 						<description>Genres</description>
 						<label>$LOCALIZE[135]</label>
-						<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,Return)</onclick>
+						<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,Return)</onclick>
 						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn1)</visible>
 					</item>
 					<item id="1">

@@ -21,6 +21,7 @@
 			<onleft>Dialog.Close(1113)</onleft>
 			<onright>Dialog.Close(1113)</onright>
 			<include>MenuOpenCloseAnim</include>
+			<animation effect="slide" end="-203,0" condition="Window.IsActive(1116)">Conditional</animation>
 			<control type="image" id="780">
 				<include>DropDownMenuTopBorder</include>
 			</control>
@@ -366,7 +367,8 @@
 				| [[Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588)] + [Container.Content(TVShows) | Container.Content(Seasons)]]
 				| [[Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,68) | Skin.String(CurrentViewMode,94)] + Container.Content(Episodes)]
 				| [[Skin.String(CurrentViewMode,590) | Skin.String(CurrentViewMode,591) | Skin.String(CurrentViewMode,592) | Skin.String(CurrentViewMode,593) | Skin.String(CurrentViewMode,594) | Skin.String(CurrentViewMode,595) | Skin.String(CurrentViewMode,596) | Skin.String(CurrentViewMode,597) | Skin.String(CurrentViewMode,598)] + String.Contains(Container.FolderPath,plugin://plugin.program)]
-				| [Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://movies/) | String.Contains(Container.FolderPath,videodb://tvshows/) | String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)]]</visible>
+				| [Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://movies/) | String.Contains(Container.FolderPath,videodb://tvshows/) | String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)]]
+				| Window.IsActive(1116)</visible>
 			</control>
 			<control type="radiobutton" id="2089">
 				<description>Wide List Hide Overlay (Movies)</description>
@@ -906,6 +908,14 @@
 				<selected>Skin.HasSetting(HideTVShowsFanartFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideTVShowsFanartFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,583) + Container.Content(TVShows)</visible>
+			</control>
+			<control type="radiobutton" id="4125">
+				<description>My Addons Hide Fanart</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
+				<selected>Skin.HasSetting(HideMyAddonsFanart)</selected>
+				<onclick>Skin.ToggleSetting(HideMyAddonsFanart)</onclick>
+				<visible>Window.IsActive(1116)</visible>
 			</control>
 			<control type="radiobutton" id="2069">
 				<description>Wall Do Not Dim Cover (Movies)</description>
@@ -1501,6 +1511,14 @@
 				<selected>Skin.HasSetting(HidePlaylistViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HidePlaylistViewScrollbar)</onclick>
 				<visible>Skin.String(CurrentViewMode,580)</visible>
+			</control>
+			<control type="radiobutton" id="4126">
+				<description>My Addons Hide Scrollbar</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31025]</label>
+				<selected>Skin.HasSetting(HideMyAddonsScrollbar)</selected>
+				<onclick>Skin.ToggleSetting(HideMyAddonsScrollbar)</onclick>
+				<visible>Window.IsActive(1116)</visible>
 			</control>
 			<control type="radiobutton" id="2057">
 				<description>List Info 2 Hide Overlay (Music Videos)</description>
