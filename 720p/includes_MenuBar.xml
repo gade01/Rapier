@@ -1731,6 +1731,7 @@
 				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
 				<onclick>Dialog.Close(movieinformation)</onclick>
 				<onclick condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,musicvideo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,video)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label])</onclick>
 				<onclick condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,episode)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label])</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 				<visible>String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,video)</visible>
