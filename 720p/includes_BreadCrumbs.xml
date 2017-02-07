@@ -871,7 +871,7 @@
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]?[/UPPERCASE]</label>
 				<visible>!String.IsEqual(ListItem.DBTYPE,movie) + !String.IsEqual(ListItem.DBTYPE,tvshow) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.DBTYPE,song)
-				+ !String.IsEqual(ListItem.DBTYPE,musicvideo) + !String.IsEqual(ListItem.DBTYPE,album) + !String.IsEqual(ListItem.DBTYPE,artist) + !Container.Content(Directors) + !Container.Content(Actors)
+				+ !String.IsEqual(ListItem.DBTYPE,musicvideo) + !String.IsEqual(ListItem.DBTYPE,video) + !String.IsEqual(ListItem.DBTYPE,album) + !String.IsEqual(ListItem.DBTYPE,artist) + !Container.Content(Directors) + !Container.Content(Actors)
 				+ !Window.IsActive(AddonInformation) + !String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
@@ -901,6 +901,13 @@
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$LOCALIZE[20391][/UPPERCASE]</label>
 				<visible>String.IsEqual(ListItem.DBTYPE,musicvideo)</visible>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+			<control type="label" id="5513">
+				<description>Video</description>
+				<include>BreadCrumbLabel</include>
+				<label>[UPPERCASE]$LOCALIZE[157][/UPPERCASE]</label>
+				<visible>String.IsEqual(ListItem.DBTYPE,video)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
 			</control>
 			<control type="label" id="5506">
