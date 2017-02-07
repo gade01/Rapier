@@ -1,6 +1,7 @@
 <p align="center">
-<img src="http://christiangade.com/xtra/rapier.png" width="350" align="middle">
+<img src="http://inlinestudio.dk/xtra/kodi/logo-crop.png" width="400" align="middle">
 </p>
+
 ## ABOUT RAPIER 11.x FOR KODI 18 LEIA
 The goal is to provide a simple to use but clean and elegant interface that focuses on efficiency when browsing your media. 
 Important considerations are put on usability, performance, and providing the user with flexibility when it comes to customization.   
