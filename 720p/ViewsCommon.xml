@@ -5665,7 +5665,7 @@
 					<align>center</align>
 					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
-					<fadetime>400</fadetime>
+					<fadetime>IconCrossfadeTime</fadetime>
 					<visible>!String.IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableMoviesClearLogo)</visible>
 				</control>
 				
@@ -10290,7 +10290,7 @@
 					<height>45</height>
 					<texture background="true">$INFO[Container(584).ListItem.Art(clearlogo)]</texture>
 					<aspectratio>keep</aspectratio>
-					<fadetime>400</fadetime>
+					<fadetime>IconCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
 					<visible>!ListItem.IsParentFolder + !String.IsEmpty(Container(584).ListItem.Art(clearlogo)) + [[String.Contains(Container.FolderPath,videodb://movies/) + !Skin.HasSetting(DisableMoviesClearLogo)] | [String.Contains(Container.FolderPath,videodb://tvshows/) + !Skin.HasSetting(DisableTVShowsLogo)]]</visible>
@@ -10302,7 +10302,7 @@
 					<height>45</height>
 					<texture fallback="empty.png" background="true">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</texture>
 					<aspectratio>keep</aspectratio>
-					<fadetime>400</fadetime>
+					<fadetime>IconCrossfadeTime</fadetime>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
 					<visible>!String.IsEmpty(Skin.String(MusicLibraryClearLogosPath)) + [[String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + !Skin.HasSetting(EnableMusicLibraryClearLogos)]</visible>
 				</control>
@@ -10526,7 +10526,7 @@
 						<bordertexture border="4">covers/3dwrap-poster-shadow.png</bordertexture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<bordersize>10</bordersize>
-						<fadetime>400</fadetime>
+						<fadetime>IconCrossfadeTime</fadetime>
 					</control>
 					<control type="image">
 						<description>Cover Overlay</description>
@@ -10543,7 +10543,7 @@
 						<height>300</height>
 						<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[PosterThumb]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<fadetime>400</fadetime>
+						<fadetime>IconCrossfadeTime</fadetime>
 					</control>
 					<control type="image">
 						<description>Cover Reflection Overlay</description>
