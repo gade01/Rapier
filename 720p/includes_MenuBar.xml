@@ -1660,7 +1660,6 @@
 				<description>CinemaVision</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$INFO[System.AddonTitle(script.cinemavision)][/UPPERCASE]</label>
-				<onclick condition="!System.HasAddon(script.cinemavision)">Playlist.Clear</onclick>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
 				<onclick>RunScript(script.cinemavision,experience)</onclick>
 				<visible>System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
