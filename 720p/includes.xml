@@ -65,6 +65,7 @@
 	<constant name="DepthHomeMenu">0.11</constant>
 	<constant name="DepthHomeMenuCategoryFocus">0.15</constant>
 	<constant name="DepthBackground">-0.80</constant>
+	<expression name="ExpSortMethods"> [String.IsEqual(Container.SortMethod,$LOCALIZE[515]) | String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[572]) | String.IsEqual(Container.SortMethod,$LOCALIZE[574]) | String.IsEqual(Container.SortMethod,$LOCALIZE[578])] </expression>
 	
 	<variable name="DurationMinutes">
 		<value condition="String.EndsWith(ListItem.Duration,1) | String.EndsWith(Window.Property(duration),1)">$NUMBER[1]</value>
@@ -853,7 +854,33 @@
 
 	<include name="SortLetterNotification">
 		<control type="group">
-			<visible>Container.Scrolling | Container(584).Scrolling | [Window.IsActive(script-globalsearch-main.xml) + [Container(221).Scrolling | Container(111).Scrolling | Container(211).Scrolling | Container(121).Scrolling | Container(131).Scrolling | Container(141).Scrolling | Container(151).Scrolling | Container(161).Scrolling | Container(171).Scrolling | Container(181).Scrolling]]</visible>
+			<visible>[Container.Scrolling + $EXP[ExpSortMethods]] | Container(584).Scrolling | [Window.IsActive(script-globalsearch-main.xml) + [Container(221).Scrolling | Container(111).Scrolling | Container(211).Scrolling | Container(121).Scrolling | Container(131).Scrolling | Container(141).Scrolling | Container(151).Scrolling | Container(161).Scrolling | Container(171).Scrolling | Container(181).Scrolling]]</visible>
+		
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="300" delay="100"/>
+				<effect type="slide" start="-60,0" time="400" tween="cubic" easing="out" delay="100"/>	
+			</animation>
+			
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="300" delay="1000"/>
+				<effect type="slide" end="-60,0" time="400" delay="1000" tween="cubic" easing="out"/>	
+			</animation>
+			
+			<control type="label">
+				<height>43</height>
+				<width>42</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>BreadCrumbFontBold</font>
+				<textcolor>BreadCrumbColor</textcolor>
+				<label>$VAR[SortLetterNotificationVar]</label>
+			</control>
+		</control>
+	</include>
+	
+	<include name="SortLetterNotification2">
+		<control type="group">
+			<visible>Container.Scrolling</visible>
 		
 			<animation type="Visible">
 				<effect type="fade" start="0" end="100" time="300" delay="100"/>
