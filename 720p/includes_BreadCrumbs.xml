@@ -741,14 +741,15 @@
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl2Anim</include>
+				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
 			<control type="label" id="29">
 				<include>BreadCrumbLabel</include>
 				<include>BreadCrumbSlideLvl3Anim</include>
+				<visible>!Window.IsActive(MyPVRGuide.xml)</visible>
 			</control>
 			<control type="image">
-				<visible>!String.IsEmpty(Control.GetLabel(29))</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(29)) + !Window.IsActive(MyPVRGuide.xml)</visible>
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>
