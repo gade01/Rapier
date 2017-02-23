@@ -1267,6 +1267,13 @@
 				<description>Channel Groups</description>
 				<include>MenuBarBigBtn</include>
 				<label />
+				<visible>!Window.IsActive(MyPVRRecordings.xml)</visible>
+			</control>
+			<control type="button" id="10">
+				<description>All Videos/Watched/Unwatched</description>
+				<include>MenuBarBigBtn</include>
+				<label>$LOCALIZE[20367]</label>
+				<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="image" id="101">
 				<include>MenuBarSeparator</include>
@@ -1297,11 +1304,11 @@
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
-				<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				<visible>Window.IsActive(MyPVRChannels.xml)</visible>
 			</control>
 			<control type="image" id="104">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				<visible>Window.IsActive(MyPVRChannels.xml)</visible>
 			</control>
 			<control type="radiobutton" id="5">
 				<description>Group recording items by folder structure</description>
@@ -1310,11 +1317,11 @@
 				<include>MenuBarRadioBtn</include>
 				<label>19270</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="image" id="105">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="radiobutton" id="6">
 				<description>Show hidden channels</description>
@@ -1323,7 +1330,7 @@
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19051][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				<visible>Window.IsActive(MyPVRChannels.xml)</visible>
 			</control>
 			<control type="radiobutton" id="7">
 				<description>Show deleted recordings</description>
@@ -1332,7 +1339,7 @@
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19184][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				<visible>!Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="radiobutton" id="8">
 				<description>Hide Disabled Timers</description>
@@ -1341,7 +1348,7 @@
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19077][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)</visible>
+				<visible>Window.IsActive(MyPVRTimers.xml)</visible>
 			</control>
 			<control type="image" id="106">
 				<include>MenuBarSeparator</include>
