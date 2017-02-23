@@ -1431,7 +1431,7 @@
 			<top>116</top>
 			<width>542</width>
 			<height>304</height>
-			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]extrafanart</imagepath>
+			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path,,extrafanart/]</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<timeperimage>10000</timeperimage>
 			<fadetime>FanartCrossfadeTime</fadetime>
@@ -1444,25 +1444,12 @@
 			<top>116</top>
 			<width>542</width>
 			<height>304</height>
-			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]../extrafanart</imagepath>
+			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<timeperimage>10000</timeperimage>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<randomize>true</randomize>
-			<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(EnableMoviesSmallExtraFanart)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + Skin.HasSetting(EnableTVShowsSmallExtraFanart)] | [Container.Content(Episodes) + Skin.HasSetting(EnableEpisodesSmallExtraFanart)]</visible>
-		</control>
-		
-		<control type="multiimage">
-			<left>40</left>
-			<top>116</top>
-			<width>542</width>
-			<height>304</height>
-			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]../../extrafanart</imagepath>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<timeperimage>10000</timeperimage>
-			<fadetime>FanartCrossfadeTime</fadetime>
-			<randomize>true</randomize>
-			<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(EnableMoviesSmallExtraFanart)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + Skin.HasSetting(EnableTVShowsSmallExtraFanart)] | [Container.Content(Episodes) + Skin.HasSetting(EnableEpisodesSmallExtraFanart)]</visible>
+			<visible>Container.Content(Episodes) + Skin.HasSetting(EnableEpisodesSmallExtraFanart)</visible>
 		</control>
 		
 		<control type="image">
@@ -1907,7 +1894,7 @@
 			<top>116</top>
 			<width>404</width>
 			<height>228</height>
-			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]extrafanart</imagepath>
+			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path,,extrafanart/]</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<timeperimage>10000</timeperimage>
 			<fadetime>FanartCrossfadeTime</fadetime>
@@ -1920,25 +1907,12 @@
 			<top>116</top>
 			<width>404</width>
 			<height>228</height>
-			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]../extrafanart</imagepath>
+			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
 			<aspectratio scalediffuse="false">scale</aspectratio>
 			<timeperimage>10000</timeperimage>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<randomize>true</randomize>
-			<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(EnableMoviesSmallExtraFanart)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + Skin.HasSetting(EnableTVShowsSmallExtraFanart)] | [Container.Content(Episodes) + Skin.HasSetting(EnableEpisodesSmallExtraFanart)]</visible>
-		</control>
-		
-		<control type="multiimage">
-			<left>40</left>
-			<top>116</top>
-			<width>404</width>
-			<height>228</height>
-			<imagepath background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Path]../../extrafanart</imagepath>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<timeperimage>10000</timeperimage>
-			<fadetime>FanartCrossfadeTime</fadetime>
-			<randomize>true</randomize>
-			<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(EnableMoviesSmallExtraFanart)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + Skin.HasSetting(EnableTVShowsSmallExtraFanart)] | [Container.Content(Episodes) + Skin.HasSetting(EnableEpisodesSmallExtraFanart)]</visible>
+			<visible>Container.Content(Episodes) + Skin.HasSetting(EnableEpisodesSmallExtraFanart)</visible>
 		</control>
 		
 		<control type="image">
