@@ -1377,9 +1377,10 @@
 				<description>Settings</description>
 				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick>ActivateWindow(PVRSettings)</onclick>
+				<onclick condition="Window.IsActive(MyPVRGuide.xml)">ActivateWindow(PVRSettings,epg)</onclick>
+				<onclick condition="!Window.IsActive(MyPVRGuide.xml)">ActivateWindow(PVRSettings)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>![Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)]</visible>
+				<visible>!Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="button" id="41">
 				<description>Settings</description>
@@ -1387,9 +1388,9 @@
 				<textwidth>134</textwidth>
 				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[10004][/UPPERCASE]</label>
-				<onclick>ActivateWindow(PVRSettings)</onclick>
+				<onclick>ActivateWindow(PVRSettings,pvrrecord)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="image" id="107">
 				<include>MenuBarSeparator</include>
