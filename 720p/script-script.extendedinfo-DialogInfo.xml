@@ -181,56 +181,56 @@
 								<description>Movies</description>
 								<label>$ADDON[script.extendedinfo 32011]</label>
 								<label2>$INFO[Window.Property(TotalMovies)]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(TotalMovies))</visible>
 							</item>
 							<item id="2">
 								<description>Movies</description>
 								<label>$ADDON[script.extendedinfo 32011]</label>
 								<label2>$INFO[Container(150).NumItems]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>String.IsEmpty(Window.Property(TotalMovies)) + !String.IsEqual(Container(150),NumItems,0)</visible>
 							</item>
 							<item id="3">
 								<description>In Database</description>
 								<label>$ADDON[script.extendedinfo 32021]</label>
 								<label2>$INFO[Window.Property(DBMovies)]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(DBMovies))</visible>
 							</item>
 							<item id="4">
 								<description>Birthday</description>
 								<label>$ADDON[script.extendedinfo 32012]</label>
 								<label2>$INFO[Window.Property(Birthday)]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(Birthday))</visible>
 							</item>
 							<item id="5">
 								<description>Age</description>
 								<label>$ADDON[script.extendedinfo 32020]</label>
 								<label2>$INFO[Window.Property(Age),, $LOCALIZE[652]]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(Age))</visible>
 							</item>
 							<item id="6">
 								<description>Place of Birth</description>
 								<label>$ADDON[script.extendedinfo 32014]</label>
 								<label2>$INFO[Window.Property(PlaceOfBirth)]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(PlaceOfBirth))</visible>
 							</item>
 							<item id="7">
 								<description>Homepage</description>
 								<label>$ADDON[script.extendedinfo 32017]</label>
 								<label2>$INFO[Window.Property(Homepage)]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(Homepage))</visible>
 							</item>
 							<item id="8">
 								<description>Death Day</description>
 								<label>$ADDON[script.extendedinfo 32013]</label>
 								<label2>$INFO[Window.Property(Deathday)]</label2>
-								<onclick>noop</onclick>
+								<onclick />
 								<visible>!String.IsEmpty(Window.Property(Deathday))</visible>
 							</item>
 						</content>
