@@ -5795,7 +5795,7 @@
 							<label>$VAR[SeasonEpisodesNumberVar]: $INFO[ListItem.TVShowTitle]</label>
 						</control>
 					</focusedlayout>
-					<content target="video">plugin://script.skin.helper.service/?action=nextepisodes&amp;limit=20&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
+					<content target="video">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;limit=20&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
 				</control>
 			</control>
 		</control>
@@ -7648,7 +7648,7 @@
 							<label>$INFO[ListItem.TVShowTitle]$INFO[ListItem.Season,  &#x2022;  $LOCALIZE[20373] ,]$INFO[ListItem.Episode,  &#x2022;  $LOCALIZE[20359] ,]$INFO[ListItem.Year]$VAR[MovieDuration,  &#x2022;  , $LOCALIZE[12391]]$INFO[ListItem.Property(TotalSeasons),  &#x2022;  , $LOCALIZE[33054]]$INFO[ListItem.Property(TotalEpisodes),  &#x2022;  , $LOCALIZE[20360]]</label>
 						</control>
 					</focusedlayout>
-					<content>plugin://script.skin.helper.service/?action=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content> 
+					<content>plugin://script.skin.helper.widgets/?mediatype=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content> 
 				</control>
 			</control>
 		</control>
