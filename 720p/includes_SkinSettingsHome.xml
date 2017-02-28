@@ -1019,7 +1019,7 @@
 						<selected>Skin.HasSetting(HidePVRCategory)</selected>
 						<onclick>Skin.ToggleSetting(HidePVRCategory)</onclick>
 						<onclick condition="Skin.HasSetting(HidePVRCategory) + !String.IsEmpty(Skin.String(ReorderCategories1))">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[19020],message=$LOCALIZE[31173])</onclick>
-						<visible>Pvr.HasTVChannels</visible>
+						<visible>Pvr.HasPVRAddon</visible>
 					</control>
 					<control type="radiobutton" id="2310">
 						<description>PVR Radio</description>
@@ -1028,7 +1028,7 @@
 						<selected>Skin.HasSetting(HidePVRRadioCategory)</selected>
 						<onclick>Skin.ToggleSetting(HidePVRRadioCategory)</onclick>
 						<onclick condition="Skin.HasSetting(HidePVRRadioCategory) + !String.IsEmpty(Skin.String(ReorderCategories1))">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[19021],message=$LOCALIZE[31173])</onclick>
-						<visible>Pvr.HasRadioChannels</visible>
+						<visible>Pvr.HasPVRAddon</visible>
 					</control>
 					<control type="radiobutton" id="2311">
 						<description>Weather</description>
