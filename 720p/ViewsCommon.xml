@@ -638,7 +638,7 @@
 				<height>24</height>
 				<texture background="true" fallback="DefaultFile.png.png">$INFO[ListItem.ActualIcon].png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>String.IsEmpty(ListItem.Title)</visible>
+				<visible>ListItem.IsParentFolder | ListItem.IsFolder</visible>
 				<include>ListViewOverlayFadeAnim</include>
 			</control>
 			<control type="label">
@@ -667,7 +667,7 @@
 				| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]]</visible>
 			</control>
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 				<control type="image">
 					<description>Star Rating</description>
 					<left>610</left>
@@ -678,6 +678,7 @@
 					<aspectratio align="right">keep</aspectratio>
 					<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
 					| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]</visible>
+					<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="image">
@@ -688,7 +689,7 @@
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>	
 				<control type="image">
@@ -699,7 +700,7 @@
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
 				<control type="image">
@@ -810,7 +811,7 @@
 				<height>16</height>		
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 		</itemlayout>		
@@ -865,6 +866,7 @@
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>[[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
+				<visible>!String.IsEmpty(ListItem.Rating)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 			<control type="image">
@@ -915,7 +917,7 @@
 					<height>24</height>
 					<texture background="true" fallback="DefaultFile.png.png">$INFO[ListItem.ActualIcon].png</texture>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Title)</visible>
+					<visible>ListItem.IsParentFolder | ListItem.IsFolder</visible>
 				</control>
 				<control type="label">
 					<description>Label</description>
@@ -944,7 +946,7 @@
 					| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]]</visible>
 				</control>
 				<control type="group">
-					<visible>!String.IsEmpty(ListItem.Title)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 					<control type="image">
 						<description>Star Rating</description>
 						<left>610</left>
@@ -955,6 +957,7 @@
 						<aspectratio align="right">keep</aspectratio>
 						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
 						| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]</visible>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Quality</description>
@@ -964,7 +967,7 @@
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					</control>	
 					<control type="image">
 						<description>Quality</description>
@@ -974,7 +977,7 @@
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					</control>
 					<control type="image">
 						<description>Watched Partial</description>
@@ -1104,7 +1107,7 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 			</control>
 		</focusedlayout>		
@@ -1178,6 +1181,7 @@
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>[[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
+					<visible>!String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Overlay</description>
@@ -1245,7 +1249,7 @@
 				<label>$INFO[ListItem.Year]$INFO[ListItem.Director,  -  ,]</label>
 			</control>
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 				<control type="label">
 					<description>Rating</description>
 					<left>610</left>
@@ -1256,7 +1260,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Rating]</label>
 					<align>right</align>
-					<visible>Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+					<visible>Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>
@@ -1266,11 +1270,11 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="group">
-					<visible>!Skin.HasSetting(HideMoviesListOverlay)</visible>
+					<visible>!Skin.HasSetting(HideMoviesListOverlay) + !ListItem.IsFolder</visible>
 					<control type="image">
 						<description>Quality</description>
 						<left>686</left>
@@ -1316,8 +1320,9 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
+				<texture background="true" fallback="DefaultMusicVideos.png">$INFO[ListItem.Thumb]</texture>
 				<aspectratio>scale</aspectratio>
+				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
 				<description>Dim</description>
@@ -1360,7 +1365,7 @@
 				<label>$INFO[ListItem.Year]$INFO[ListItem.Artist,  -  ,]</label>
 			</control>
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 				<control type="label">
 					<description>Rating</description>
 					<left>610</left>
@@ -1371,6 +1376,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Rating]</label>
 					<align>right</align>
+					<visible>!String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>
@@ -1381,6 +1387,7 @@
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<include>StarRatingFadeAnim</include>
+					<visible>!String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Quality</description>
@@ -1390,7 +1397,7 @@
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
 				<control type="image">
@@ -1401,7 +1408,7 @@
 					<height>24</height>
 					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
 				<control type="image">
@@ -1477,7 +1484,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Rating]</label>
 				<align>right</align>
-				<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+				<visible>Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="image">
 				<description>Star Rating</description>
@@ -1487,7 +1494,7 @@
 				<height>16</height>		
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+				<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 			<control type="image">
@@ -1545,7 +1552,6 @@
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Label]</label>
-				<visible>String.IsEmpty(ListItem.Title)</visible>
 			</control>
 			<control type="label">
 				<description>Label2</description>
@@ -1558,17 +1564,7 @@
 				<label>$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode,  -  $LOCALIZE[20359] ,]</label>
 			</control>
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
-				<control type="label">
-					<description>Label</description>
-					<left>104</left>
-					<top>12</top>
-					<width>511</width>
-					<font>ListFont</font>
-					<textcolor>ListColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Title]</label>
-				</control>
+				<visible>!ListItem.IsParentFolder</visible>
 				<control type="label">
 					<description>Rating</description>
 					<left>610</left>
@@ -1579,7 +1575,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Rating]</label>
 					<align>right</align>
-					<visible>Skin.HasSetting(DoNotUseStarRatingEpisodes)</visible>
+					<visible>Skin.HasSetting(DoNotUseStarRatingEpisodes) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>
@@ -1589,11 +1585,11 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + !String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="group">
-					<visible>!Skin.HasSetting(HideEpisodesListOverlay)</visible>
+					<visible>!Skin.HasSetting(HideEpisodesListOverlay) + !ListItem.IsFolder</visible>
 					<control type="image">
 						<description>Quality</description>
 						<left>686</left>
@@ -1755,7 +1751,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Rating]</label>
 				<align>right</align>
-				<visible>Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+				<visible>Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="image">
 				<description>Star Rating</description>
@@ -1765,7 +1761,7 @@
 				<height>16</height>		
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<visible>!String.IsEmpty(ListItem.Album) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+				<visible>!Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 		</itemlayout>
@@ -1830,7 +1826,7 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Rating]</label>
 				<align>right</align>
-				<visible>Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+				<visible>Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="image">
 				<description>Star Rating</description>
@@ -1840,7 +1836,7 @@
 				<height>16</height>		
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+				<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 		</itemlayout>
@@ -2112,7 +2108,7 @@
 					<label>$INFO[ListItem.Year]$INFO[ListItem.Director,  -  ,]</label>
 				</control>
 				<control type="group">
-					<visible>!String.IsEmpty(ListItem.Title)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 					<control type="label">
 						<description>Rating</description>
 						<left>610</left>
@@ -2123,7 +2119,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[ListItem.Rating]</label>
 						<align>right</align>
-						<visible>Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+						<visible>Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
@@ -2133,10 +2129,10 @@
 						<height>16</height>		
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="group">
-						<visible>!Skin.HasSetting(HideMoviesListOverlay)</visible>
+						<visible>!Skin.HasSetting(HideMoviesListOverlay) + !ListItem.IsFolder</visible>
 						<control type="image">
 							<description>Quality</description>
 							<left>686</left>
@@ -2181,9 +2177,10 @@
 				<height>73</height>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>5</bordersize>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
+				<texture background="true" fallback="DefaultMusicVideos.png">$INFO[ListItem.Thumb]</texture>
 				<aspectratio>scale</aspectratio>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
 				<description>Default Cover</description>
@@ -2219,7 +2216,7 @@
 					<label>$INFO[ListItem.Year]$INFO[ListItem.Artist,  -  ,]</label>
 				</control>
 				<control type="group">
-					<visible>!String.IsEmpty(ListItem.Title)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 					<control type="label">
 						<description>Rating</description>
 						<left>610</left>
@@ -2230,6 +2227,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[ListItem.Rating]</label>
 						<align>right</align>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
@@ -2239,6 +2237,7 @@
 						<height>16</height>		
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Quality</description>
@@ -2248,7 +2247,7 @@
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					</control>
 					<control type="image">
 						<description>Quality</description>
@@ -2258,7 +2257,7 @@
 						<height>24</height>
 						<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					</control>
 					<control type="image">
 						<description>Watched Partial</description>
@@ -2329,7 +2328,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Rating]</label>
 					<align>right</align>
-					<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+					<visible>Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>
@@ -2339,7 +2338,7 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
+					<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				</control>
 				<control type="image">
 					<description>Overlay</description>
@@ -2389,7 +2388,6 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>true</scroll>
-					<visible>String.IsEmpty(ListItem.Title)</visible>
 				</control>
 				<control type="label">
 					<description>Label2</description>
@@ -2402,18 +2400,7 @@
 					<label>$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode,  -  $LOCALIZE[20359] ,]</label>
 				</control>
 				<control type="group">
-					<visible>!String.IsEmpty(ListItem.Title)</visible>
-					<control type="label">
-						<description>Label</description>
-						<left>104</left>
-						<top>12</top>
-						<width>511</width>
-						<font>ListFont</font>
-						<textcolor>SelectedColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Title]</label>
-						<scroll>true</scroll>
-					</control>
+					<visible>!ListItem.IsParentFolder</visible>
 					<control type="label">
 						<description>Rating</description>
 						<left>610</left>
@@ -2424,7 +2411,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[ListItem.Rating]</label>
 						<align>right</align>
-						<visible>Skin.HasSetting(DoNotUseStarRatingEpisodes)</visible>
+						<visible>Skin.HasSetting(DoNotUseStarRatingEpisodes) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
@@ -2434,10 +2421,10 @@
 						<height>16</height>		
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="group">
-						<visible>!Skin.HasSetting(HideEpisodesListOverlay)</visible>
+						<visible>!Skin.HasSetting(HideEpisodesListOverlay) + !ListItem.IsFolder</visible>
 						<control type="image">
 							<description>Quality</description>
 							<left>686</left>
@@ -2586,7 +2573,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Rating]</label>
 					<align>right</align>
-					<visible>Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+					<visible>Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>
@@ -2596,7 +2583,7 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!String.IsEmpty(ListItem.Album) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+					<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				</control>
 			</control>
 		</focusedlayout>
@@ -2655,7 +2642,7 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Rating]</label>
 					<align>right</align>
-					<visible>Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+					<visible>Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 				<control type="image">
 					<description>Star Rating</description>
@@ -2665,7 +2652,7 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
+					<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				</control>
 			</control>
 		</focusedlayout>
@@ -2991,6 +2978,7 @@
 							<texture background="true">$VAR[StarRating]</texture>
 							<aspectratio>keep</aspectratio>
 							<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(TVShows) + !Skin.HasSetting(DoNotUseStarRatingTVShows)]</visible>
+							<visible>!String.IsEmpty(ListItem.Rating)</visible>
 							<include>MediaFlagFadeAnim</include>
 						</control>
 					</control>
@@ -9985,7 +9973,7 @@
 						<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)]</visible>
 					</control>
 					<control type="group">
-						<visible>!String.IsEmpty(ListItem.Title) + [String.Contains(Container.FolderPath,videodb://movies/) | String.Contains(Container.FolderPath,videodb://musicvideos/)]</visible>
+						<visible>!ListItem.IsParentFolder + !ListItem.IsFolder</visible>
 						<control type="image">
 							<description>Quality</description>
 							<left>5</left>
@@ -10139,7 +10127,7 @@
 							<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)]</visible>
 						</control>
 						<control type="group">
-							<visible>!String.IsEmpty(ListItem.Title) + [String.Contains(Container.FolderPath,videodb://movies/) | String.Contains(Container.FolderPath,videodb://musicvideos/)]</visible>
+							<visible>!ListItem.IsParentFolder + !ListItem.IsFolder</visible>
 							<control type="image">
 								<description>Quality</description>
 								<left>5</left>

@@ -102,7 +102,7 @@
 							<height>16</height>		
 							<texture background="true">$VAR[StarRating]</texture>
 							<aspectratio align="left">keep</aspectratio>
-							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 							<include>StarRatingFadeAnim</include>
 						</control>
 						<control type="label">
@@ -303,7 +303,7 @@
 							<height>16</height>		
 							<texture background="true">$VAR[StarRating]</texture>
 							<aspectratio align="left">keep</aspectratio>
-							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 							<include>StarRatingFadeAnim</include>
 						</control>
 						<control type="label">
@@ -668,7 +668,7 @@
 							<height>16</height>		
 							<texture background="true">$VAR[StarRating]</texture>
 							<aspectratio align="right">keep</aspectratio>
-							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+							<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 							<include>StarRatingFadeAnim</include>
 						</control>
 						<control type="image">
@@ -778,7 +778,7 @@
 								<height>16</height>		
 								<texture background="true">$VAR[StarRating]</texture>
 								<aspectratio align="right">keep</aspectratio>
-								<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+								<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 								<include>StarRatingFadeAnim</include>
 							</control>
 							<control type="image">
@@ -998,7 +998,7 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="image">
@@ -1111,7 +1111,7 @@
 						<height>16</height>		
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Quality</description>
@@ -1229,7 +1229,7 @@
 					<height>16</height>		
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 				<control type="group">
@@ -1363,7 +1363,7 @@
 						<height>16</height>		
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="group">
 						<visible>!Skin.HasSetting(HideMoviesListInfo2Overlay)</visible>
@@ -1775,6 +1775,7 @@
 						<aspectratio>keep</aspectratio>
 						<animation effect="slide" end="0,8" time="100" condition="!String.IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableMoviesClearLogo)">Conditional</animation>
 						<include>MediaFlagFadeAnim</include>
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 				</control>
 			</control>	
@@ -2417,7 +2418,7 @@
 					<height>22</height>		
 					<texture>$VAR[StarRating]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 			</control>
@@ -2812,7 +2813,7 @@
 					<height>22</height>		
 					<texture>$VAR[StarRating]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 					<include>StarRatingFadeAnim</include>
 				</control>
 			</control>
@@ -3578,7 +3579,7 @@
 						<height>16</height>
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies)</visible>
+						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
 						<include>MediaFlagFadeAnim</include>
 					</control>
 				</control>
