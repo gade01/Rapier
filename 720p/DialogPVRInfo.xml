@@ -179,70 +179,70 @@
 						<description>Channel Name</description>
 						<label>$LOCALIZE[19148]</label>
 						<label2>$INFO[ListItem.ChannelName]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.ChannelName)</visible>
 					</item>
 					<item id="2">
 						<description>Season Number / Episode Number / Episode Name</description>
 						<label>$LOCALIZE[369]</label>
 						<label2>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.EpisodeName]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.EpisodeName)</visible>
 					</item>
 					<item id="3">
 						<description>Title</description>
 						<label>$LOCALIZE[369]</label>
 						<label2>$INFO[ListItem.Title]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Title) + String.IsEmpty(ListItem.EpisodeName)</visible>
 					</item>
 					<item id="4">
 						<description>Director</description>
 						<label>$LOCALIZE[20339]</label>
 						<label2>$INFO[ListItem.Director]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Director)</visible>
 					</item>
 					<item id="5">
 						<description>Writer</description>
 						<label>$LOCALIZE[20417]</label>
 						<label2>$INFO[ListItem.Writer]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Writer)</visible>
 					</item>
 					<item id="6">
 						<description>Start Date</description>
 						<label>$LOCALIZE[552]</label>
 						<label2>$INFO[ListItem.StartDate]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.StartDate)</visible>
 					</item>
 					<item id="7">
 						<description>Time</description>
 						<label>$LOCALIZE[555]</label>
 						<label2>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.EndTime)</visible>
 					</item>
 					<item id="8">
 						<description>Duration</description>
 						<label>$LOCALIZE[180]</label>
 						<label2>$INFO[ListItem.Duration]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					</item>
 					<item id="9">
 						<description>Rating</description>
 						<label>$LOCALIZE[563]</label>
 						<label2>$INFO[Window(Home).Property(SkinHelper.PVR.Rating)]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Rating)) + [String.IsEmpty(ListItem.Director) | String.IsEmpty(ListItem.Writer) | String.IsEmpty(ListItem.Premiered)]</visible>
 					</item>
 					<item id="10">
 						<description>Premiered</description>
 						<label>$LOCALIZE[31936]</label>
 						<label2>$INFO[ListItem.Premiered]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Premiered)</visible>
 					</item>
 				</content>

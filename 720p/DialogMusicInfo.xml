@@ -227,7 +227,7 @@
 						<description>Type</description>
 						<label>$LOCALIZE[564]</label>
 						<label2>$INFO[ListItem.Property(Album_Type)]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<!--<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=type&amp;type=Album)</onclick>-->
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Property(Album_Type))</visible>
 					</item>
@@ -251,7 +251,7 @@
 						<description>Songs</description>
 						<label>$LOCALIZE[134]</label>
 						<label2>$INFO[Window(home).Property(SkinHelper.Music.SongCount)]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(Window(home).Property(SkinHelper.Music.SongCount)) + System.HasAddon(script.skin.helper.service)</visible>
 					</item>
 					<item id="6">
@@ -321,7 +321,7 @@
 						<description>Formed / Born</description>
 						<label>$LOCALIZE[21893] / $LOCALIZE[21894]</label>
 						<label2>$LOCALIZE[31001]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + String.IsEmpty(ListItem.Property(Artist_Formed)) + String.IsEmpty(ListItem.Property(Artist_Born)) + !System.HasAddon(script.skin.helper.service)</visible>
 					</item>
 					<item id="15">
@@ -344,7 +344,7 @@
 						<description>Disbanded / Died</description>
 						<label>$LOCALIZE[21896] / $LOCALIZE[21897]</label>
 						<label2>$LOCALIZE[31001]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + String.IsEmpty(ListItem.Property(Artist_Disbanded)) + String.IsEmpty(ListItem.Property(Artist_Died)) + !System.HasAddon(script.skin.helper.service)</visible>
 					</item>
 					<item id="18">
@@ -359,7 +359,7 @@
 						<description>Albums</description>
 						<label>$LOCALIZE[132]</label>
 						<label2>$INFO[Window(home).Property(SkinHelper.Music.AlbumCount)]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + System.HasAddon(script.skin.helper.service) + !String.IsEmpty(Window(home).Property(SkinHelper.Music.AlbumCount))</visible>
 					</item>
 					<item id="20">
@@ -429,7 +429,7 @@
 						<description>Mood</description>
 						<label>$LOCALIZE[175]</label>
 						<label2>$INFO[ListItem.Mood]</label2>
-						<onclick />
+						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Mood)</visible>
 					</item>
 					<item id="29">

@@ -471,7 +471,7 @@
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Rating</description>
@@ -708,7 +708,7 @@
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Studio</description>
@@ -960,7 +960,7 @@
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Rating</description>
@@ -974,7 +974,7 @@
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<!--<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=firstaired&amp;type=Episode)</onclick>-->
 							</item>
 							<item id="8">
@@ -1173,7 +1173,7 @@
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[ListItem.Episode][COLOR=DisabledColor] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="2">
 								<description>Studio</description>
@@ -1187,13 +1187,13 @@
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="4">
 								<description>Next Aired Status</description>
 								<label>$LOCALIZE[126]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="5">
 								<description>First Aired</description>
@@ -1206,14 +1206,14 @@
 								<description>Next Aired Latest Episode</description>
 								<label>$LOCALIZE[31966]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
 							</item>
 							<item id="7">
 								<description>Next Aired Next Episode</description>
 								<label>$LOCALIZE[31967]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
 							<item id="8">
@@ -1407,7 +1407,7 @@
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[ListItem.Episode][COLOR=DisabledColor] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="2">
 								<description>Studio</description>
@@ -1421,13 +1421,13 @@
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="4">
 								<description>Next Aired Status</description>
 								<label>$LOCALIZE[126]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="5">
 								<description>First Aired</description>
@@ -1440,14 +1440,14 @@
 								<description>Next Aired Latest Episode</description>
 								<label>$LOCALIZE[31966]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
 							</item>
 							<item id="7">
 								<description>Next Aired Next Episode</description>
 								<label>$LOCALIZE[31967]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
 							<item id="8">
@@ -1636,7 +1636,7 @@
 								<description>Season</description>
 								<label>$LOCALIZE[20373]</label>
 								<label2>$INFO[ListItem.Season]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(ListItem.Season)</visible>
 							</item>
 							<item id="2">
