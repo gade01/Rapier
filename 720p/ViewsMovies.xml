@@ -545,7 +545,7 @@
 						<width min="0" max="110">auto</width>
 						<include>ListInfoViewCatValueLabel</include>
 						<scroll>true</scroll>
-						<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]</label>
+						<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]</label>
 						<visible>ListItem.IsCollection</visible>
 					</control>
 					<include>ListInfoViewDot</include>
@@ -887,11 +887,11 @@
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[342]" />
 					<param name="Grouplist1InfoWidth" value="310" />
-					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]" />
+					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]" />
 					<param name="Grouplist2LabelWidth" value="110" />
 					<param name="Grouplist2Label" value="$LOCALIZE[345]" />
 					<param name="Grouplist2InfoWidth" value="360" />
-					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]" />
+					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]" />
 					<param name="Grouplist3LabelWidth" value="110" />
 					<param name="Grouplist3Label" value="$LOCALIZE[563]" />
 					<param name="Grouplist3InfoWidth" value="110" />
@@ -1458,11 +1458,11 @@
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[20342]" />
 					<param name="Grouplist1InfoWidth" value="190" />
-					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]" />
+					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]" />
 					<param name="Grouplist2LabelWidth" value="110" />
 					<param name="Grouplist2Label" value="$LOCALIZE[345]" />
 					<param name="Grouplist2InfoWidth" value="220" />
-					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]" />
+					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]" />
 					<param name="Grouplist3LabelWidth" value="110" />
 					<param name="Grouplist3Label" value="$LOCALIZE[563]" />
 					<param name="Grouplist3InfoWidth" value="110" />
@@ -1719,11 +1719,11 @@
 					<param name="Grouplist1LabelWidth" value="110" />
 					<param name="Grouplist1Label" value="$LOCALIZE[20342]" />
 					<param name="Grouplist1InfoWidth" value="190" />
-					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]" />
+					<param name="Grouplist1Info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]" />
 					<param name="Grouplist2LabelWidth" value="110" />
 					<param name="Grouplist2Label" value="$LOCALIZE[345]" />
 					<param name="Grouplist2InfoWidth" value="220" />
-					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]" />
+					<param name="Grouplist2Info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]" />
 					<param name="Grouplist3LabelWidth" value="110" />
 					<param name="Grouplist3Label" value="$LOCALIZE[563]" />
 					<param name="Grouplist3InfoWidth" value="110" />
@@ -2239,7 +2239,7 @@
 				<textcolor>MediaInfoItemColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<include>WrapInfoViewCatLabel</include>
-				<label>$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Cast)]</label>
 				<autoscroll time="2000" delay="5900" repeat="10000">true</autoscroll>
 				<visible>Integer.IsGreater(Container(8000).NumItems,0)</visible>
 			</control>
@@ -2333,7 +2333,7 @@
 				<description>Movies Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]</label>
+				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -2346,7 +2346,7 @@
 				<description>Years Value</description>
 				<width min="0" max="437">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]</label>
+				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -2728,7 +2728,7 @@
 				<description>Movies Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Count)]</label>
+				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -2741,7 +2741,7 @@
 				<description>Years Value</description>
 				<width min="0" max="437">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]</label>
+				<label fallback="31001">$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]</label>
 			</control>
 			<include>WrapInfoViewDot</include>
 			<control type="label">
@@ -3472,7 +3472,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<include>ListInfoViewCatLabel</include>
-					<label>$INFO[Window(Home).Property(SkinHelper.MovieSet.Count),$LOCALIZE[20342]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$INFO[ListItem.Rating,$LOCALIZE[563]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$LOCALIZE[2050]: [COLOR=MediaInfoItemColor2]$VAR[MovieDuration][/COLOR]</label>
+					<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Count),$LOCALIZE[20342]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$INFO[ListItem.Rating,$LOCALIZE[563]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$LOCALIZE[2050]: [COLOR=MediaInfoItemColor2]$VAR[MovieDuration][/COLOR]</label>
 					<visible>ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
@@ -3485,7 +3485,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<include>ListInfoViewCatLabel</include>
-					<label>$INFO[Window(Home).Property(SkinHelper.MovieSet.Years),$LOCALIZE[345]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
+					<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Years),$LOCALIZE[345]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
 					<visible>ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				

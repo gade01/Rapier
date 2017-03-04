@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="LiveTVListInfoCoverImage">
-		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.FanArt))">$INFO[Window(Home).Property(SkinHelper.PVR.FanArt)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.FanArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArt)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(TVRecordings)] + !String.IsEmpty(Skin.String(TVMultiimagePath))">$INFO[Skin.String(TVMultiimagePath)]</value>
 		<value condition="Window.IsActive(TVChannels) | Window.IsActive(TVRecordings)">pvr\pvr-background.jpg</value>
@@ -10,29 +10,29 @@
 	</variable>
 
 	<variable name="LiveTVListInfoLabel1">
-		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$LOCALIZE[19031]:</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + [!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Rating)) | [String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Status)) + String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Studio))]]">$LOCALIZE[563]:</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Status))">$LOCALIZE[126]:</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Studio))">$LOCALIZE[572]:</value>
+		<value condition="Window.IsActive(MyPVRChannels.xml)">$LOCALIZE[19031]:</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + [!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating)) | [String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))]]">$LOCALIZE[563]:</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))">$LOCALIZE[126]:</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))">$LOCALIZE[572]:</value>
 	</variable>
 
 	<variable name="LiveTVListInfoLabel1Val">
-		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.NextTitle]</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Rating))">$INFO[Window(Home).Property(SkinHelper.PVR.Rating)]</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Status))">$INFO[Window(Home).Property(SkinHelper.PVR.Status)]</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Studio))">$INFO[Window(Home).Property(SkinHelper.PVR.Studio)]</value>
+		<value condition="Window.IsActive(MyPVRChannels.xml)">$INFO[ListItem.NextTitle]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating))">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating)]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))">$INFO[Window(Home).Property(SkinHelper.ListItem.Studio)]</value>
 	</variable>
 
 	<variable name="LiveTVListInfoItemLabel">
-		<value condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.ChannelName,.  ]</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
-		<value condition="[Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsActive(MyPVRChannels.xml)">$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.ChannelName,.  ]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]</value>
 	</variable>
 
 	<variable name="LiveTVListInfoItemLabel2">
-		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)] + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Title]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
-		<value condition="[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)] + String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Title]</value>
-		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$INFO[ListItem.StartDate]</value>
+		<value condition="Window.IsActive(MyPVRChannels.xml) + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Title]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
+		<value condition="Window.IsActive(MyPVRChannels.xml) + String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Title]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml)">$INFO[ListItem.StartDate]</value>
 	</variable>
 	
 	<variable name="LiveTVColumnInfoAreaThumb">
@@ -361,7 +361,7 @@
 			<height>73</height>
 			<texture border="4">views/list-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + Control.HasFocus(50)</visible>
+			<visible>[Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml)] + Control.HasFocus(50)</visible>
 			<include>ListViewSelectFadeAnim</include>
 			<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewScrollAnim</include>
 		</control>
@@ -371,7 +371,7 @@
 			<height>73</height>
 			<texture border="4">views/list-alt-focus.png</texture>
 			<aspectratio>stretch</aspectratio>
-			<visible>[Window.IsActive(TVChannels) | Window.IsActive(RadioChannels) | Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)] + !Control.HasFocus(50)</visible>
+			<visible>[Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml)] + !Control.HasFocus(50)</visible>
 			<include>ListViewSelectFadeAnim2</include>
 		</control>
 
