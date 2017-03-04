@@ -635,6 +635,20 @@
 			</control>
 			
 			<control type="group">
+				<visible>Container.Content(Videos)</visible>
+				<visible>Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml)
+				| [Control.IsVisible(50) + Skin.HasSetting(ShowVideosIconFanart)]
+				| [Control.IsVisible(52) + !Skin.HasSetting(HideVideosListFanart)]
+				| [Control.IsVisible(530) + !Skin.HasSetting(HideVideosListInfoFanart)]
+				| [Control.IsVisible(531) + !Skin.HasSetting(HideVideosListInfo2Fanart)]
+				| [Control.IsVisible(532) + !Skin.HasSetting(HideVideosThumbsInfoFanart)]
+				</visible>
+				<include>BackgroundVisibleAnim</include>
+				<include>FanartImage</include>
+				<include>FanartDim</include>
+			</control>
+			
+			<control type="group">
 				<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 				<visible>[Control.IsVisible(50) | Window.IsActive(DialogPVRInfo.xml)] + !Skin.HasSetting(HidePVRRecordingsFanart)</visible>
 				<include>BackgroundVisibleAnim</include>

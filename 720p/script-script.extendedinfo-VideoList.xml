@@ -591,7 +591,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[ListItem.Rating]</label>
 						<align>right</align>
-						<visible>Skin.HasSetting(DoNotUseStarRatingExtendedInfo)</visible>
+						<visible>Skin.HasSetting(DoNotUseStarRatingExtendedInfo) + !String.IsEmpty(ListItem.Rating)</visible>
 					</control>
 					<control type="image">
 						<description>Star Rating</description>
@@ -929,7 +929,7 @@
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$INFO[ListItem.Rating]</label>
 							<align>right</align>
-							<visible>Skin.HasSetting(DoNotUseStarRatingExtendedInfo)</visible>
+							<visible>Skin.HasSetting(DoNotUseStarRatingExtendedInfo) + !String.IsEmpty(ListItem.Rating)</visible>
 						</control>
 						<control type="image">
 							<description>Star Rating</description>

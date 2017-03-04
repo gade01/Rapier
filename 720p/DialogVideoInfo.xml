@@ -1643,7 +1643,7 @@
 								<description>Episode</description>
 								<label>$LOCALIZE[20359]</label>
 								<label2>$INFO[ListItem.Episode]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(ListItem.Episode)</visible>
 							</item>
 							<item id="3">
@@ -1667,7 +1667,7 @@
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Rating</description>
@@ -1687,14 +1687,14 @@
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(ListItem.Premiered)</visible>
 							</item>
 							<item id="9">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
-								<onclick />
+								<onclick>noop</onclick>
 								<visible>String.IsEmpty(ListItem.Premiered) + !String.IsEmpty(ListItem.Year)</visible>
 							</item>
 							<item id="10">

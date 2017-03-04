@@ -34,6 +34,7 @@
 	<include file="ViewsPlaylist.xml"/>
 	<include file="ViewsPrograms.xml"/>
 	<include file="ViewsTVShows.xml"/>
+	<include file="ViewsVideos.xml"/>
 	
 	<constant name="ScreenWidth">1280</constant>
 	<constant name="ScreenHeight">720</constant>
@@ -82,8 +83,8 @@
 	 
 	<variable name="MovieDuration">
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsLessOrEqual(ListItem.Duration,59) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
-		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsLessOrEqual(Window(home).Property(SkinHelper.MovieSet.Runtime),59) + !String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Runtime)]</value>
-		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsGreater(Window(home).Property(SkinHelper.MovieSet.Runtime),59) + !String.IsEmpty(Window(Home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Window(Home).Property(SkinHelper.MovieSet.Duration.Hours)]$LOCALIZE[31403]$INFO[Window(Home).Property(SkinHelper.MovieSet.Duration.Minutes)]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsLessOrEqual(Window(home).Property(SkinHelper.ListItem.Runtime),59) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Runtime))">$INFO[Window(Home).Property(SkinHelper.ListItem.Runtime)]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.Runtime),59) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Runtime))">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours)]$LOCALIZE[31403]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes)]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsLessOrEqual(Window.Property(duration),59) + !String.IsEmpty(Window.Property(duration))">$INFO[Window.Property(duration)]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [[Integer.IsLessOrEqual(ListItem.Duration,99) + String.StartsWith(ListItem.Duration,6)] | [Integer.IsLessOrEqual(Window.Property(duration),99) + String.StartsWith(Window.Property(duration),6)]]">$NUMBER[1]$LOCALIZE[31403]$NUMBER[0]$VAR[DurationMinutes]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [[Integer.IsLessOrEqual(ListItem.Duration,99) + String.StartsWith(ListItem.Duration,7)] | [Integer.IsLessOrEqual(Window.Property(duration),99) + String.StartsWith(Window.Property(duration),7)]]">$NUMBER[1]$LOCALIZE[31403]$NUMBER[1]$VAR[DurationMinutes]</value>
@@ -179,7 +180,7 @@
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [String.StartsWith(ListItem.Duration,97) | String.StartsWith(Window.Property(duration),97)]">$NUMBER[16]$LOCALIZE[31403]$NUMBER[1]$VAR[DurationMinutes]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [String.StartsWith(ListItem.Duration,98) | String.StartsWith(Window.Property(duration),98)]">$NUMBER[16]$LOCALIZE[31403]$NUMBER[2]$VAR[DurationMinutes]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [String.StartsWith(ListItem.Duration,99) | String.StartsWith(Window.Property(duration),99)]">$NUMBER[16]$LOCALIZE[31403]$NUMBER[3]$VAR[DurationMinutes]</value>
-		<value condition="!String.IsEmpty(Window(home).Property(SkinHelper.MovieSet.Runtime))">$INFO[Window(home).Property(SkinHelper.MovieSet.Runtime)]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Runtime))">$INFO[Window(home).Property(SkinHelper.ListItem.Runtime)]</value>
 		<value condition="!String.IsEmpty(Window.Property(duration))">$INFO[Window.Property(duration)]</value>
 		<value>$INFO[ListItem.Duration]</value>
 	</variable>
@@ -406,7 +407,7 @@
 		<width>30</width>
 		<height>30</height>
 		<aspectratio>stretch</aspectratio>
-		<animation effect="fade" end="60" condition="true">Conditional</animation>
+		<animation effect="fade" end="70" condition="true">Conditional</animation>
 	</include>
 	
 	<include name="NotifyPanelLabel">

@@ -51,7 +51,6 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<aligny>center</aligny>
-						<visible>String.IsEmpty(ListItem.Title)</visible>
 					</control>	
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
@@ -94,18 +93,6 @@
 							<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 							<include>CoverDimAnim</include>
 						</control>								
-						<control type="label">
-							<description>Label</description>
-							<left>229</left>
-							<top>-1</top>
-							<width>291</width>
-							<height>30</height>
-							<font>WideListFont</font>
-							<textcolor>ListColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[ListItem.Title]</label>
-							<aligny>center</aligny>
-						</control>
 						<control type="image">
 							<description>Star Rating</description>
 							<left>229</left>
@@ -261,7 +248,6 @@
 						<label>$INFO[ListItem.Label]</label>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
-						<visible>String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
@@ -294,19 +280,6 @@
 							<aspectratio>keep</aspectratio>
 							<visible>String.IsEmpty(ListItem.Thumb)</visible>
 							<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideListViewCoverFocusAnim</include>
-						</control>
-						<control type="label">
-							<description>Label</description>
-							<left>229</left>
-							<top>-1</top>
-							<width>291</width>
-							<height>30</height>
-							<font>WideListFont</font>
-							<textcolor>SelectedColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[ListItem.Title]</label>
-							<aligny>center</aligny>
-							<scroll>true</scroll>
 						</control>
 						<control type="image">
 							<description>Star Rating</description>
