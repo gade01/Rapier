@@ -62,7 +62,7 @@ Please make sure you have the following scripts installed when doing it manually
 script.favourites v5.0.2
 script.randomandlastitems v2.2.1  
 script.tv.show.next.aired v6.0.10  
-script.skin.helper.service v1.0.90
+script.skin.helper.service v1.1.3
 script.skin.helper.backgrounds v1.0.21  
 script.skin.helper.widgets v1.0.22
 script.image.resource.select 0.0.9  
