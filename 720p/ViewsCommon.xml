@@ -732,7 +732,7 @@
 				<height>24</height>
 				<texture background="true" fallback="DefaultFile.png.png">$INFO[ListItem.ActualIcon].png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>String.IsEmpty(ListItem.Title)</visible>
+				<visible>String.IsEmpty(ListItem.Title) + String.IsEmpty(ListItem.Size)</visible>
 				<include>ListViewOverlayFadeAnim</include>
 			</control>
 			<control type="label">
@@ -777,7 +777,41 @@
 				<aligny>center</aligny>
 				<texture background="true">$INFO[ListItem.Overlay]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + String.IsEmpty(ListItem.Size)</visible>
+			</control>
+			<control type="image">
+				<description>Quality</description>
+				<left>5</left>
+				<top>6</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)</visible>
+				<include>ListViewOverlayFadeAnim</include>
+			</control>	
+			<control type="image">
+				<description>Quality</description>
+				<left>5</left>
+				<top>6</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)</visible>
+				<include>ListViewOverlayFadeAnim</include>
+			</control>
+			<control type="image">
+				<description>Watched Partial</description>
+				<left>5</left>
+				<top>6</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$VAR[WatchedPartial]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>ListItem.IsResumable</visible>
+				<include>ListViewPartialWatchedOverlayFadeAnim</include>
+				<include>ListViewWatchedOverlayFadeAnim</include>
 			</control>
 			<control type="label">
 				<description>Label</description>
@@ -1028,7 +1062,7 @@
 					<height>24</height>
 					<texture background="true" fallback="DefaultFile.png.png">$INFO[ListItem.ActualIcon].png</texture>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Title)</visible>
+					<visible>String.IsEmpty(ListItem.Title) + String.IsEmpty(ListItem.Size)</visible>
 				</control>
 				<control type="label">
 					<description>Unwatched Episodes</description>
@@ -1072,7 +1106,39 @@
 					<aligny>center</aligny>
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + String.IsEmpty(ListItem.Size)</visible>
+				</control>
+				<control type="image">
+					<description>Quality</description>
+					<left>5</left>
+					<top>6</top>
+					<width>24</width>
+					<height>24</height>
+					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)</visible>
+				</control>	
+				<control type="image">
+					<description>Quality</description>
+					<left>5</left>
+					<top>6</top>
+					<width>24</width>
+					<height>24</height>
+					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)</visible>
+				</control>
+				<control type="image">
+					<description>Watched Partial</description>
+					<left>5</left>
+					<top>6</top>
+					<width>24</width>
+					<height>24</height>
+					<texture background="true">$VAR[WatchedPartial]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>ListItem.IsResumable</visible>
+					<include>ListViewPartialWatchedOverlayFadeAnim</include>
+					<include>ListViewWatchedOverlayFadeAnim</include>
 				</control>
 				<control type="label">
 					<description>Label</description>
