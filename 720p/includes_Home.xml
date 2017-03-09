@@ -1558,6 +1558,7 @@
 				<texture>$INFO[ListItem.Icon]</texture>
 				<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>8</bordersize>
+				<aspectratio>scale</aspectratio>
 			</control>
 			<control type="group">
 				<visible>Skin.HasSetting(EnableAddonShortcutTitles)</visible>
@@ -1586,6 +1587,7 @@
 				<texture>$INFO[ListItem.Icon]</texture>
 				<bordertexture border="12">covers/cover-case-nofocus.png</bordertexture>
 				<bordersize>8</bordersize>
+				<aspectratio>scale</aspectratio>
 				<visible>!Control.HasFocus($PARAM[id])</visible>
 			</control>
 			<control type="group">
@@ -1596,6 +1598,7 @@
 					<texture>$INFO[ListItem.Icon]</texture>
 					<bordertexture border="12">covers/cover-case-focus.png</bordertexture>
 					<bordersize>8</bordersize>
+					<aspectratio>scale</aspectratio>
 					<visible>Control.HasFocus($PARAM[id])</visible>
 				</control>
 				<control type="group">
