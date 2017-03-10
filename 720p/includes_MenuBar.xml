@@ -229,7 +229,7 @@
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultMenuBar</include>
-			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation)]</visible>
+			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(DialogMusicInfo.xml)]</visible>
 		</control>
 	</include>
 	
@@ -1187,10 +1187,10 @@
 			</control>
 			<control type="button" id="32">
 				<description>Channels</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19019][/UPPERCASE]</label>
-				<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
+				<onclick condition="Window.IsActive(MyPVRChannels.xml)">NextChannelGroup</onclick>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
 				<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
 			</control>
@@ -1199,10 +1199,10 @@
 			</control>
 			<control type="button" id="33">
 				<description>TV Guide</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn2</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn2</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[22020][/UPPERCASE]</label>
-				<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
+				<onclick condition="Window.IsActive(MyPVRGuide.xml)">NextChannelGroup</onclick>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
 				<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
 			</control>
@@ -1211,7 +1211,7 @@
 			</control>
 			<control type="button" id="36">
 				<description>Search</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[137][/UPPERCASE]</label>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
@@ -1222,7 +1222,7 @@
 			</control>
 			<control type="button" id="35">
 				<description>Timer Rules</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn2</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn2</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19138][/UPPERCASE]</label>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
@@ -1233,7 +1233,7 @@
 			</control>
 			<control type="button" id="40">
 				<description>Timers</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19040][/UPPERCASE]</label>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
@@ -1244,7 +1244,7 @@
 			</control>
 			<control type="button" id="34">
 				<description>Recordings</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn2</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn2</include>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19163][/UPPERCASE]</label>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
@@ -1255,10 +1255,10 @@
 			</control>
 			<control type="button" id="2">
 				<description>View As button</description>
-				<include condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">PVRMenuBarSlimBtn1</include>
+				<include condition="Window.IsActive(MyPVRGuide.xml)">PVRMenuBarSlimBtn1</include>
 				<include>MenuBarBtn</include>
 				<label />
-				<visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible>
+				<visible>Window.IsActive(MyPVRGuide.xml)</visible>
 			</control>
 			<control type="image" id="357">
 				<include>MenuBarSeparator</include>
