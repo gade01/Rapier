@@ -219,7 +219,7 @@
 			<include>MenuBarImage</include>
 			<include>MenuBarOpenCloseAnim</include>
 			<include>DefaultMenuBar</include>
-			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(musicinformation) | Window.IsActive(songinformation)]</visible>
+			<visible allowhiddenfocus="true">ControlGroup(505).HasFocus | ![Skin.HasSetting(HideMenuBar) | Window.IsActive(MovieInformation) | Window.IsActive(AddonInformation) | Window.IsActive(DialogMusicInfo.xml)]</visible>
 		</control>
 	</include>
 	
@@ -1180,7 +1180,7 @@
 				<description>Channels</description>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19019][/UPPERCASE]</label>
-				<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
+				<onclick condition="Window.IsActive(MyPVRChannels.xml)">NextChannelGroup</onclick>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
 				<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
 			</control>
@@ -1191,7 +1191,7 @@
 				<description>TV Guide</description>
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[22020][/UPPERCASE]</label>
-				<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
+				<onclick condition="Window.IsActive(MyPVRGuide.xml)">NextChannelGroup</onclick>
 				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
 				<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
 			</control>
