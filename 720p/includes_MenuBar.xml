@@ -1996,10 +1996,10 @@
 				<description>Trailer</description>
 				<include>MenuBarSettingsBtn</include>
 				<onclick condition="System.HasAddon(script.skin.helper.service)">Action(close)</onclick>
-				<onclick condition="System.HasAddon(script.skin.helper.service)">PlayMedia($INFO[Window(Home).Property(SkinHelper.PVR.Trailer)])</onclick>
+				<onclick condition="System.HasAddon(script.skin.helper.service)">PlayMedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)])</onclick>
 				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
 				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Trailer))</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Trailer))</visible>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
