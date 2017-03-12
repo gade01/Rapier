@@ -5239,6 +5239,59 @@
 		<animation effect="fade" end="85" condition="true">Conditional</animation>
 	</include>
 	
+	<include name="3DWrapGroup">
+		<control type="group">
+			<visible>$PARAM[visible]</visible>
+			<control type="image">
+				<include>3DWrapPosterCover</include>
+				<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster$PARAM[position]]</texture>
+			</control>
+			<control type="image">
+				<description>Cover Overlay</description>
+				<include>3DWrapPosterCoverOverlay</include>
+				<visible>!String.IsEmpty(ListItem($PARAM[position]).Thumb)</visible>
+			</control>
+			<control type="image">
+				<include>3DWrapPosterCoverReflection</include>
+				<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster$PARAM[position]]</texture>
+			</control>
+			<control type="image">
+				<description>Cover Reflection Overlay</description>
+				<include>3DWrapPosterCoverReflectionOverlay</include>
+				<visible>!String.IsEmpty(ListItem($PARAM[position]).Thumb)</visible>
+			</control>
+			<control type="image">
+				<description>Cover Icon</description>
+				<include>3DWrapPosterCoverIcon</include>
+				<texture background="true">$INFO[ListItem($PARAM[position]).ActualIcon]</texture>
+				<visible>String.IsEmpty(ListItem($PARAM[position]).Thumb)</visible>
+			</control>
+			<control type="image">
+				<info>ListItem($PARAM[position]).Overlay</info>
+				<include>3DWrapOverlayImage$PARAM[number]</include>
+			</control>
+			<control type="group">
+				<visible>!String.IsEqual(ListItem($PARAM[position]).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
+				<control type="image">
+					<include>3DWrapOverlayUnwatched$PARAM[number]</include>
+					<visible>!String.IsEmpty(ListItem($PARAM[position]).Property(UnWatchedEpisodes))</visible>
+				</control>
+				<control type="label">
+					<description>Unwatched Episodes</description>
+					<include>3DWrapUnwatchedEpisodes$PARAM[number]A</include>
+					<label>$INFO[ListItem($PARAM[position]).Property(UnWatchedEpisodes)]</label>
+					<visible>Integer.IsLessOrEqual(ListItem($PARAM[position]).Property(UnWatchedEpisodes),99)</visible>
+				</control>
+				<control type="label">
+					<description>Unwatched Episodes</description>
+					<include>3DWrapUnwatchedEpisodes$PARAM[number]B</include>
+					<label>$INFO[ListItem($PARAM[position]).Property(UnWatchedEpisodes)]</label>
+					<visible>Integer.IsGreater(ListItem($PARAM[position]).Property(UnWatchedEpisodes),99)</visible>
+				</control>		
+			</control>							
+		</control>
+	</include>
+	
 	<include name="3DWrapView">
 		<control type="group" id="500">	
 		    <defaultcontrol always="true">588</defaultcontrol>
@@ -5289,9 +5342,10 @@
 				<control type="group">
 					<visible>!String.IsEmpty(ListItem.Title)</visible>
 					<include>BackgroundVisibleAnim</include>
+					<left>6</left>
+					
 					<control type="image">
 						<description>Media Info Background Title / Clearlogo</description>
-						<left>6</left>
 						<top>6</top>
 						<width>590</width>
 						<height>65</height>
@@ -5301,7 +5355,6 @@
 					
 					<control type="image">
 						<description>Media Info Background</description>
-						<left>6</left>
 						<top>77</top>
 						<width>590</width>
 						<height>65</height>
@@ -5311,7 +5364,6 @@
 					
 					<control type="image">
 						<description>Media Info Background</description>
-						<left>6</left>
 						<top>148</top>
 						<width>590</width>
 						<height>65</height>
@@ -5322,7 +5374,6 @@
 					
 					<control type="image">
 						<description>Description Background</description>
-						<left>6</left>
 						<top>148</top>
 						<width>590</width>
 						<height>182</height>
@@ -5333,7 +5384,6 @@
 					
 					<control type="image">
 						<description>Description Background</description>
-						<left>6</left>
 						<top>219</top>
 						<width>590</width>
 						<height>111</height>
@@ -6021,380 +6071,65 @@
 						<visible>Container.OnNext</visible>
 						<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
 						<animation effect="rotatey" center="80" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,16)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-8]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-8).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-8]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-8).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-8).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-8).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-8).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-8).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-8).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-8).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-8).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-8).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-8).Property(UnWatchedEpisodes),99)</visible>
-								</control>		
-							</control>							
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,16)" />
+							<param name="position" value="-8" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>174</left>
 						<animation effect="rotatey" center="150" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,14)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-7).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-7).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-7).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-7).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-7).Property(UnWatchedEpisodes),99)</visible>
-								</control>		
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,14)" />
+							<param name="position" value="-7" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>244</left>
 						<animation effect="rotatey" center="220" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,12)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-6).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-6).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>				
-						</control>
-						<control type="group">
-							<visible>!String.IsEqual(ListItem(-6).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-							<control type="image">
-								<include>3DWrapOverlayUnwatched1</include>
-								<visible>!String.IsEmpty(ListItem(-6).Property(UnWatchedEpisodes))</visible>
-							</control>
-							<control type="label">
-								<description>Unwatched Episodes</description>
-								<include>3DWrapUnwatchedEpisodes1A</include>
-								<label>$INFO[ListItem(-6).Property(UnWatchedEpisodes)]</label>
-								<visible>Integer.IsLessOrEqual(ListItem(-6).Property(UnWatchedEpisodes),99)</visible>
-							</control>
-							<control type="label">
-								<description>Unwatched Episodes</description>
-								<include>3DWrapUnwatchedEpisodes1B</include>
-								<label>$INFO[ListItem(-6).Property(UnWatchedEpisodes)]</label>
-								<visible>Integer.IsGreater(ListItem(-6).Property(UnWatchedEpisodes),99)</visible>
-							</control>		
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,12)" />
+							<param name="position" value="-6" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>314</left>
 						<animation effect="rotatey" center="290" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,10)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-5).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-5).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-5).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-5).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-5).Property(UnWatchedEpisodes),99)</visible>
-								</control>		
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,10)" />
+							<param name="position" value="-5" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>384</left>
 						<animation effect="rotatey" center="360" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,8)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-4).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-4).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-4).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-4).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-4).Property(UnWatchedEpisodes),99)</visible>
-								</control>		
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,8)" />
+							<param name="position" value="-4" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>454</left>
 						<animation effect="rotatey" center="430" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,6)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-3).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-3).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-3).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-3).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-3).Property(UnWatchedEpisodes),99)</visible>
-								</control>		
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,6)" />
+							<param name="position" value="-3" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>524</left>
 						<animation effect="rotatey" center="500" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,4)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-2).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-2).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-2).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-2).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-2).Property(UnWatchedEpisodes),99)</visible>
-								</control>		
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,4)" />
+							<param name="position" value="-2" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					
 					<!-- image off screen to stop lag of fading new item -->
@@ -6412,380 +6147,65 @@
 						<visible>!Container.OnNext</visible>
 						<animation effect="fade" end="100" delay="0" time="250" reversible="false">Visible</animation>
 						<animation effect="rotatey" center="1270" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,13)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(7).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(7).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(7).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(7).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,13)" />
+							<param name="position" value="7" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>1177</left>
 						<animation effect="rotatey" center="1200" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,11)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(6).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(6).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(6).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(6).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(6).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(6).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(6).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(6).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,11)" />
+							<param name="position" value="6" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>1107</left>
 						<animation effect="rotatey" center="1130" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,9)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(5).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(5).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(5).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(5).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,9)" />
+							<param name="position" value="5" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>1037</left>
 						<animation effect="rotatey" center="1060" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,7)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(4).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(4).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(4).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(4).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,7)" />
+							<param name="position" value="4" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>967</left>
 						<animation effect="rotatey" center="990" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,5)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(3).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(3).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(3).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(3).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,5)" />
+							<param name="position" value="3" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>897</left>
 						<animation effect="rotatey" center="920" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,3)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(2).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(2).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(2).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(2).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,3)" />
+							<param name="position" value="2" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>827</left>
 						<animation effect="rotatey" center="850" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,1)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster1]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(1).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster1]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(1).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(1).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(1).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(1).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(1).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(1).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(1).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(1).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(1).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(1).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,1)" />
+							<param name="position" value="1" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					
 					<control type="group">
@@ -6850,56 +6270,11 @@
 							<left>717</left>
 							<visible>Container.OnNext</visible>
 							<animation effect="rotatey" center="694" end="-60" time="250" reversible="false" tween="quadratic" easing="out">Hidden</animation>
-							<control type="group">
-								<visible>Integer.IsGreater(Container.NumItems,2)</visible>
-								<control type="image">
-									<include>3DWrapPosterCover</include>
-									<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-1]</texture>
-								</control>
-								<control type="image">
-									<description>Cover Overlay</description>
-									<include>3DWrapPosterCoverOverlay</include>
-									<visible>!String.IsEmpty(ListItem(-1).Thumb)</visible>
-								</control>
-								<control type="image">
-									<include>3DWrapPosterCoverReflection</include>
-									<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-1]</texture>
-								</control>
-								<control type="image">
-									<description>Cover Reflection Overlay</description>
-									<include>3DWrapPosterCoverReflectionOverlay</include>
-									<visible>!String.IsEmpty(ListItem(-1).Thumb)</visible>
-								</control>
-								<control type="image">
-									<description>Cover Icon</description>
-									<include>3DWrapPosterCoverIcon</include>
-									<texture background="true">$INFO[ListItem(-1).ActualIcon]</texture>
-									<visible>String.IsEmpty(ListItem(-1).Thumb)</visible>
-								</control>
-								<control type="image">
-									<info>ListItem(-1).Overlay</info>
-									<include>3DWrapOverlayImage1</include>
-								</control>
-								<control type="group">
-									<visible>!String.IsEqual(ListItem(-1).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-									<control type="image">
-										<include>3DWrapOverlayUnwatched1</include>
-										<visible>!String.IsEmpty(ListItem(-1).Property(UnWatchedEpisodes))</visible>
-									</control>
-									<control type="label">
-										<description>Unwatched Episodes</description>
-										<include>3DWrapUnwatchedEpisodes1A</include>
-										<label>$INFO[ListItem(-1).Property(UnWatchedEpisodes)]</label>
-										<visible>Integer.IsLessOrEqual(ListItem(-1).Property(UnWatchedEpisodes),99)</visible>
-									</control>
-									<control type="label">
-										<description>Unwatched Episodes</description>
-										<include>3DWrapUnwatchedEpisodes1B</include>
-										<label>$INFO[ListItem(-1).Property(UnWatchedEpisodes)]</label>
-										<visible>Integer.IsGreater(ListItem(-1).Property(UnWatchedEpisodes),99)</visible>
-									</control>
-								</control>
-							</control>
+							<include content="3DWrapGroup">
+								<param name="visible" value="Integer.IsGreater(Container.NumItems,2)" />
+								<param name="position" value="-1" />
+								<param name="number" value="1" />
+							</include>
 						</control>
 					</control>
 				</control> 
@@ -6915,380 +6290,65 @@
 						<visible>Container.OnPrevious</visible>
 						<animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
 						<animation effect="rotatey" center="1200" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,15)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster8]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(8).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster8]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(8).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(8).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(8).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(8).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(8).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(8).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(8).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(8).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(8).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(8).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,15)" />
+							<param name="position" value="8" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>1107</left>
 						<animation effect="rotatey" center="1130" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,13)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(7).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(7).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(7).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(7).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,13)" />
+							<param name="position" value="7" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>1037</left>
 						<animation effect="rotatey" center="1060" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,11)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(6).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(6).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(6).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(6).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(6).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(6).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(6).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(6).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,11)" />
+							<param name="position" value="6" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>967</left>
 						<animation effect="rotatey" center="990" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,9)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(5).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(5).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(5).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(5).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,9)" />
+							<param name="position" value="5" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>897</left>
 						<animation effect="rotatey" center="920" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,7)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(4).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(4).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(4).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(4).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,7)" />
+							<param name="position" value="4" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>827</left>
 						<animation effect="rotatey" center="850" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,5)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(3).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(3).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(3).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(3).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,5)" />
+							<param name="position" value="3" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					<control type="group">
 						<left>757</left>
 						<animation effect="rotatey" center="780" start="60" end="60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,3)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(2).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(2).Overlay</info>
-								<include>3DWrapOverlayImage2</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(2).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched2</include>
-									<visible>!String.IsEmpty(ListItem(2).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2A</include>
-									<label>$INFO[ListItem(2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes2B</include>
-									<label>$INFO[ListItem(2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,3)" />
+							<param name="position" value="2" />
+							<param name="number" value="2" />
+						</include>
 					</control>
 					
 					<!-- image off screen to stop lag of fading new item -->
@@ -7306,380 +6366,65 @@
 						<visible>!Container.OnPrevious</visible>
 						<animation effect="fade" end="100" time="200" reversible="false">Visible</animation>
 						<animation effect="rotatey" center="10" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,14)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-7]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-7).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-7).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-7).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-7).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-7).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-7).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-7).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,14)" />
+							<param name="position" value="-7" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>104</left>
 						<animation effect="rotatey" center="80" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,12)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-6]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-6).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-6).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-6).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-6).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-6).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-6).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-6).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-6).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-6).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,12)" />
+							<param name="position" value="-6" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>174</left>
 						<animation effect="rotatey" center="150" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,10)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-5]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-5).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-5).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-5).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-5).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-5).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-5).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-5).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,10)" />
+							<param name="position" value="-5" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>244</left>
 						<animation effect="rotatey" center="220" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,8)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-4]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-4).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-4).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-4).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-4).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-4).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-4).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-4).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,8)" />
+							<param name="position" value="-4" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>314</left>
 						<animation effect="rotatey" center="290" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,6)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-3]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-3).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-3).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-3).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-3).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-3).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-3).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-3).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,6)" />
+							<param name="position" value="-3" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>384</left>
 						<animation effect="rotatey" center="360" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,4)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-2]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-2).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-2).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-2).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-2).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-2).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-2).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-2).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,4)" />
+							<param name="position" value="-2" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 					<control type="group">
 						<left>454</left>
 						<animation effect="rotatey" center="430" start="-60" end="-60" time="0" condition="true">Conditional</animation>
-						<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,2)</visible>
-							<control type="image">
-								<include>3DWrapPosterCover</include>
-								<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster-1]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Overlay</description>
-								<include>3DWrapPosterCoverOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-1).Thumb)</visible>
-							</control>
-							<control type="image">
-								<include>3DWrapPosterCoverReflection</include>
-								<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster-1]</texture>
-							</control>
-							<control type="image">
-								<description>Cover Reflection Overlay</description>
-								<include>3DWrapPosterCoverReflectionOverlay</include>
-								<visible>!String.IsEmpty(ListItem(-1).Thumb)</visible>
-							</control>
-							<control type="image">
-								<description>Cover Icon</description>
-								<include>3DWrapPosterCoverIcon</include>
-								<texture background="true">$INFO[ListItem(-1).ActualIcon]</texture>
-								<visible>String.IsEmpty(ListItem(-1).Thumb)</visible>
-							</control>
-							<control type="image">
-								<info>ListItem(-1).Overlay</info>
-								<include>3DWrapOverlayImage1</include>
-							</control>
-							<control type="group">
-								<visible>!String.IsEqual(ListItem(-1).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-								<control type="image">
-									<include>3DWrapOverlayUnwatched1</include>
-									<visible>!String.IsEmpty(ListItem(-1).Property(UnWatchedEpisodes))</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1A</include>
-									<label>$INFO[ListItem(-1).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsLessOrEqual(ListItem(-1).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-								<control type="label">
-									<description>Unwatched Episodes</description>
-									<include>3DWrapUnwatchedEpisodes1B</include>
-									<label>$INFO[ListItem(-1).Property(UnWatchedEpisodes)]</label>
-									<visible>Integer.IsGreater(ListItem(-1).Property(UnWatchedEpisodes),99)</visible>
-								</control>
-							</control>
-						</control>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,2)" />
+							<param name="position" value="-1" />
+							<param name="number" value="1" />
+						</include>
 					</control>
 
 					<control type="group">
@@ -7744,58 +6489,148 @@
 							<left>564</left>
 							<visible>Container.OnPrevious</visible>
 							<animation effect="rotatey" center="587" end="60" time="250" reversible="false" tween="quadratic" easing="out">Hidden</animation>
-							<control type="group">
-							<visible>Integer.IsGreater(Container.NumItems,1)</visible>
-								<control type="image">
-									<include>3DWrapPosterCover</include>
-									<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster1]</texture>
-								</control>
-								<control type="image">
-									<description>Cover Overlay</description>
-									<include>3DWrapPosterCoverOverlay</include>
-									<visible>!String.IsEmpty(ListItem(1).Thumb)</visible>
-								</control>
-								<control type="image">
-									<include>3DWrapPosterCoverReflection</include>
-									<texture background="true" flipy="true" diffuse="covers/3dwrap-poster-reflection.png">$VAR[3DWrapPoster1]</texture>
-								</control>
-								<control type="image">
-									<description>Cover Reflection Overlay</description>
-									<include>3DWrapPosterCoverReflectionOverlay</include>
-									<visible>!String.IsEmpty(ListItem(1).Thumb)</visible>
-								</control>
-								<control type="image">
-									<description>Cover Icon</description>
-									<include>3DWrapPosterCoverIcon</include>
-									<texture background="true">$INFO[ListItem(1).ActualIcon]</texture>
-									<visible>String.IsEmpty(ListItem(1).Thumb)</visible>
-								</control>
-								<control type="image">
-									<info>ListItem(1).Overlay</info>
-									<include>3DWrapOverlayImage2</include>
-								</control>
-								<control type="group">
-									<visible>!String.IsEqual(ListItem(1).Property(UnWatchedEpisodes),0) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShows3DWrapOverlay)</visible>
-									<control type="image">
-										<include>3DWrapOverlayUnwatched2</include>
-										<visible>!String.IsEmpty(ListItem(1).Property(UnWatchedEpisodes))</visible>
-									</control>
-									<control type="label">
-										<description>Unwatched Episodes</description>
-										<include>3DWrapUnwatchedEpisodes2A</include>
-										<label>$INFO[ListItem(1).Property(UnWatchedEpisodes)]</label>
-										<visible>Integer.IsLessOrEqual(ListItem(1).Property(UnWatchedEpisodes),99)</visible>
-									</control>
-									<control type="label">
-										<description>Unwatched Episodes</description>
-										<include>3DWrapUnwatchedEpisodes2B</include>
-										<label>$INFO[ListItem(1).Property(UnWatchedEpisodes)]</label>
-										<visible>Integer.IsGreater(ListItem(1).Property(UnWatchedEpisodes),99)</visible>
-									</control>
-								</control>
-							</control>
+							<include content="3DWrapGroup">
+								<param name="visible" value="Integer.IsGreater(Container.NumItems,1)" />
+								<param name="position" value="1" />
+								<param name="number" value="2" />
+							</include>
 						</control>
 					</control>
+				</control>
+				
+				<control type="group" id="5050">
+					<depth>Depth3DWrapPosters</depth>
+					<top>367</top>
+					<animation effect="fade" time="500">WindowOpen</animation>
+					<animation effect="fade" time="200">WindowClose</animation>
+					<visible>Control.IsVisible(588) + ![Control.IsVisible(5051) | Control.IsVisible(5052)]</visible>			
+					<camera x="640" y="540" />
+					<control type="group">
+						<left>104</left>
+						<animation effect="rotatey" center="80" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,14)" />
+							<param name="position" value="-7" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>174</left>
+						<animation effect="rotatey" center="150" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,12)" />
+							<param name="position" value="-6" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>244</left>
+						<animation effect="rotatey" center="220" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,10)" />
+							<param name="position" value="-5" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>314</left>
+						<animation effect="rotatey" center="290" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,8)" />
+							<param name="position" value="-4" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>384</left>
+						<animation effect="rotatey" center="360" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,6)" />
+							<param name="position" value="-3" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>454</left>
+						<animation effect="rotatey" center="430" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,4)" />
+							<param name="position" value="-2" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>524</left>
+						<animation effect="rotatey" center="500" start="-60" end="-60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,2)" />
+							<param name="position" value="-1" />
+							<param name="number" value="1" />
+						</include>
+					</control>
+					<control type="group">
+						<left>1177</left>
+						<animation effect="rotatey" center="1200" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,13)" />
+							<param name="position" value="7" />
+							<param name="number" value="2" />
+						</include>
+					</control>
+					<control type="group">
+						<left>1107</left>
+						<animation effect="rotatey" center="1130" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,11)" />
+							<param name="position" value="6" />
+							<param name="number" value="2" />
+						</include>
+					</control>
+					<control type="group">
+						<left>1037</left>
+						<animation effect="rotatey" center="1060" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,9)" />
+							<param name="position" value="5" />
+							<param name="number" value="2" />
+						</include>
+					</control>
+					<control type="group">
+						<left>967</left>
+						<animation effect="rotatey" center="990" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,7)" />
+							<param name="position" value="4" />
+							<param name="number" value="2" />
+						</include>
+					</control>
+					<control type="group">
+						<left>897</left>
+						<animation effect="rotatey" center="920" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,5)" />
+							<param name="position" value="3" />
+							<param name="number" value="2" />
+						</include>
+					</control>
+					<control type="group">
+						<left>827</left>
+						<animation effect="rotatey" center="850" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,3)" />
+							<param name="position" value="2" />
+							<param name="number" value="2" />
+						</include>
+					</control>
+					<control type="group">
+						<left>757</left>
+						<animation effect="rotatey" center="780" start="60" end="60" time="0" condition="true">Conditional</animation>
+						<include content="3DWrapGroup">
+							<param name="visible" value="Integer.IsGreater(Container.NumItems,1)" />
+							<param name="position" value="1" />
+							<param name="number" value="2" />
+						</include>
+					</control>			
 				</control>
 				
 				<control type="group" id="5050">
