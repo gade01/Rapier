@@ -4943,15 +4943,9 @@
 			<visible>Library.HasContent(Movies) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
-			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6888).NumItems,0)">
-				<effect type="fade" end="100" time="250"/>
-				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
-			
-			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6888).NumItems,0)">
-				<effect type="fade" end="0" time="250"/>
-				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
+			<include content="HomeWidgetRightAnim">
+				<param name="id" value="6888" />
+			</include>
 
 			<control type="group">
 				<left>495r</left>
@@ -5082,15 +5076,9 @@
 			<visible>Library.HasContent(TVShows) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
-			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6889).NumItems,0)">
-				<effect type="fade" end="100" time="250"/>
-				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
-			
-			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6889).NumItems,0)">
-				<effect type="fade" end="0" time="250"/>
-				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
+			<include content="HomeWidgetRightAnim">
+				<param name="id" value="6889" />
+			</include>
 
 			<control type="group">
 				<left>495r</left>
@@ -5221,15 +5209,9 @@
 			<visible>Library.HasContent(Music) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
-			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6890).NumItems,0)">
-				<effect type="fade" end="100" time="250"/>
-				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
-			
-			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6890).NumItems,0)">
-				<effect type="fade" end="0" time="250"/>
-				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
+			<include content="HomeWidgetRightAnim">
+				<param name="id" value="6890" />
+			</include>
 
 			<control type="group">
 				<left>495r</left>
@@ -5731,15 +5713,9 @@
 			<visible>Control.IsVisible(6891) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
-			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6891).NumItems,0)">
-				<effect type="fade" end="100" time="250"/>
-				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
-			
-			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6891).NumItems,0)">
-				<effect type="fade" end="0" time="250"/>
-				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
+			<include content="HomeWidgetRightAnim">
+				<param name="id" value="6891" />
+			</include>
 
 			<control type="group">
 				<left>495r</left>
@@ -5828,15 +5804,9 @@
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
-			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6892).NumItems,0)">
-				<effect type="fade" end="100" time="250"/>
-				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
-			
-			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6892).NumItems,0)">
-				<effect type="fade" end="0" time="250"/>
-				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
+			<include content="HomeWidgetRightAnim">
+				<param name="id" value="6892" />
+			</include>
 
 			<control type="group">
 				<left>495r</left>
@@ -5924,15 +5894,9 @@
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
-			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6893).NumItems,0)">
-				<effect type="fade" end="100" time="250"/>
-				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
-			
-			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6893).NumItems,0)">
-				<effect type="fade" end="0" time="250"/>
-				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-			</animation>
+			<include content="HomeWidgetRightAnim">
+				<param name="id" value="6893" />
+			</include>
 
 			<control type="group">
 				<left>495r</left>
@@ -6233,15 +6197,9 @@
 			<control type="group">
 				<visible>![Player.HasMedia + !Skin.HasSetting(HideNowPlayingHomePanel)]</visible>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6928).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6928).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetLeftAnim">
+					<param name="id" value="6928" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>
@@ -6326,15 +6284,9 @@
 				<visible>!Control.IsVisible(6930)</visible>
 				<top>175</top>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6929).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6929).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetLeftAnim">
+					<param name="id" value="6929" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>
@@ -6424,15 +6376,9 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
 			<control type="group">
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6873).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6873).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6873" />
+				</include>
 
 				<control type="group">
 					<left>495r</left>
@@ -6619,15 +6565,9 @@
 			</control>
 		
 			<control type="group">
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6874).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6874).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6874" />
+				</include>
 
 				<control type="group">
 					<left>495r</left>
@@ -6724,15 +6664,9 @@
 				<visible>Skin.String(PVRChannelsWidgetTV,) | Skin.String(PVRChannelsWidgetTV,tv)</visible>
 				<include>HomeRightPanelOpenCloseAnim</include>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6887).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6887).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6887" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>
@@ -6871,15 +6805,9 @@
 				<visible>Skin.String(PVRChannelsWidgetTV,recordings) | Integer.IsEqual(Container(6887).NumItems,0)</visible>
 				<include>HomeRightPanelOpenCloseAnim</include>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6886).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6886).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6886" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>
@@ -7026,15 +6954,9 @@
 				<visible>Skin.String(PVRChannelsWidgetRadio,) | Skin.String(PVRChannelsWidgetRadio,radio)</visible>
 				<include>HomeRightPanelOpenCloseAnim</include>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6876).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6876).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6876" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>
@@ -7173,15 +7095,9 @@
 				<visible>Skin.String(PVRChannelsWidgetRadio,recordings) | Integer.IsEqual(Container(6876).NumItems,0)</visible>
 				<include>HomeRightPanelOpenCloseAnim</include>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6875).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6875).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6875" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>
@@ -7325,15 +7241,9 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
 			<control type="group">
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6880).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6880).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6880" />
+				</include>
 
 				<control type="group">
 					<left>495r</left>
@@ -7518,15 +7428,9 @@
 			</control>
 			
 			<control type="group">
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6881).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6881).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6881" />
+				</include>
 
 				<control type="group">
 					<left>495r</left>
@@ -7618,15 +7522,9 @@
 			<include>HomeRightPanelOpenCloseAnim</include>
 			
 			<control type="group">
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6870).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6870).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6870" />
+				</include>
 
 				<control type="group">
 					<left>495r</left>
@@ -7833,15 +7731,9 @@
 			<control type="group" id="6879">
 				<include>HomeRightPanelOpenCloseAnim</include>
 				
-				<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container(6878).NumItems,0)">
-					<effect type="fade" end="100" time="250"/>
-					<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
-				
-				<animation type="Conditional" reversible="false" condition="String.IsEqual(Container(6878).NumItems,0)">
-					<effect type="fade" end="0" time="250"/>
-					<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
-				</animation>
+				<include content="HomeWidgetRightAnim">
+					<param name="id" value="6878" />
+				</include>
 				
 				<control type="image">
 					<width>490</width>

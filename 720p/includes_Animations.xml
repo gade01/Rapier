@@ -498,6 +498,30 @@
 		<animation effect="fade" start="0" end="100" time="600">VisibleChange</animation>
 	</include>
 	
+	<include name="HomeWidgetRightAnim">
+		<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="100" time="250"/>
+			<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+		
+		<animation type="Conditional" reversible="false" condition="String.IsEqual(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="0" time="250"/>
+			<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="HomeWidgetLeftAnim">
+		<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="100" time="250"/>
+			<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+		
+		<animation type="Conditional" reversible="false" condition="String.IsEqual(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="0" time="250"/>
+			<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+	</include>
+	
 	<!--//// MEDIA ////////////////////////////////////////////////////////////////////////////////////-->	
 
 	<include name="MenuOpenCloseAnim">
