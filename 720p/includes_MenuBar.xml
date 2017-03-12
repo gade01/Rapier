@@ -223,44 +223,55 @@
 		</control>
 	</include>
 	
+	<include name="MenuBarIconButtons">
+		<control type="grouplist" id="563">
+			<left>5</left>
+			<width>150</width>
+			<height>MenuBarHeight</height>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<onup>555</onup>
+			<ondown>$PARAM[ondown]</ondown>
+			<onleft>$PARAM[onleft]</onleft>
+			<onright>$PARAM[onright]</onright>
+			<control type="button" id="345">
+				<description>Shutdown</description>
+				<include>MenuBarIconBtn</include>
+				<texturefocus>gui/menu-bar-power-focus.png</texturefocus>
+				<texturenofocus>gui/menu-bar-power-nofocus.png</texturenofocus>
+				<onclick>ActivateWindow(ShutdownMenu)</onclick>
+			</control>
+			<control type="button" id="346">
+				<description>Favourites</description>
+				<include>MenuBarIconBtn</include>
+				<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
+				<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
+				<onclick>ActivateWindow(Favourites)</onclick>
+			</control>
+			<control type="togglebutton" id="347">
+				<description>Extra Options</description>
+				<include>MenuBarIconBtn</include>
+				<texturefocus>gui/menu-bar-options-focus.png</texturefocus>
+				<texturenofocus>gui/menu-bar-options-nofocus.png</texturenofocus>
+				<alttexturefocus>gui/menu-bar-options-focus2.png</alttexturefocus>
+				<alttexturenofocus>gui/menu-bar-options-nofocus2.png</alttexturenofocus>
+				<usealttexture>$PARAM[alttexture]</usealttexture>
+				<onclick>$PARAM[onclick]</onclick>
+				<enable>$PARAM[enable]</enable>
+			</control>
+		</control>
+	</include>
+	
 	<include name="DefaultMenuBar">
 		<control type="group" id="850">
-			<control type="grouplist" id="563">
-				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<width>150</width>
-				<height>MenuBarHeight</height>
-				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
-				<onup>555</onup>
-				<ondown>500</ondown>
-				<onleft>212</onleft>
-				<onright>212</onright>
-				<control type="button" id="345">
-					<description>Shutdown</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-power-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-power-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-				</control>
-				<control type="button" id="346">
-					<description>Favourites</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(Favourites)</onclick>
-				</control>
-				<control type="togglebutton" id="347">
-					<description>Extra Options</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-options-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-options-nofocus.png</texturenofocus>
-					<alttexturefocus>gui/menu-bar-options-focus2.png</alttexturefocus>
-					<alttexturenofocus>gui/menu-bar-options-nofocus2.png</alttexturenofocus>
-					<usealttexture>Skin.HasSetting(ShowMediaExtraOptions)</usealttexture>
-					<onclick>Skin.ToggleSetting(ShowMediaExtraOptions)</onclick>
-				</control>
-			</control>
+			<include content="MenuBarIconButtons">
+				<param name="ondown" value="500" />
+				<param name="onleft" value="212" />
+				<param name="onright" value="212" />
+				<param name="alttexture" value="Skin.HasSetting(ShowMediaExtraOptions)" />
+				<param name="onclick" value="Skin.ToggleSetting(ShowMediaExtraOptions)" />
+				<param name="enable" value="true" />
+			</include>
 
 			<control type="group">      				
 				<include>MenuBarOptions</include>
@@ -1107,43 +1118,15 @@
 	</include>
 
 	<include name="DefaultPVRMenuBar">
-		<control type="group" id="850">
-			<control type="grouplist" id="563">
-				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<width>150</width>
-				<height>MenuBarHeight</height>
-				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
-				<onup>555</onup>
-				<ondown>500</ondown>
-				<onleft>212</onleft>
-				<onright>212</onright>
-				<control type="button" id="345">
-					<description>Shutdown</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-power-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-power-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-				</control>
-				<control type="button" id="346">
-					<description>Favourites</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(Favourites)</onclick>
-				</control>
-				<control type="togglebutton" id="347">
-					<description>Extra Options</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-options-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-options-nofocus.png</texturenofocus>
-					<alttexturefocus>gui/menu-bar-options-focus2.png</alttexturefocus>
-					<alttexturenofocus>gui/menu-bar-options-nofocus2.png</alttexturenofocus>
-					<usealttexture>Skin.HasSetting(PVRMenuBarExtraOptions)</usealttexture>
-					<onclick>Skin.ToggleSetting(PVRMenuBarExtraOptions)</onclick>
-				</control>
-			</control>
+		<control type="group" id="850">			
+			<include content="MenuBarIconButtons">
+				<param name="ondown" value="500" />
+				<param name="onleft" value="212" />
+				<param name="onright" value="212" />
+				<param name="alttexture" value="Skin.HasSetting(PVRMenuBarExtraOptions)" />
+				<param name="onclick" value="Skin.ToggleSetting(PVRMenuBarExtraOptions)" />
+				<param name="enable" value="true" />
+			</include>
 
 			<control type="group">      				
 				<include>PVRMenuBarOptions</include>
@@ -1411,43 +1394,14 @@
 
 	<include name="DefaultEventLogMenuBar">
 		<control type="group" id="850">
-			<control type="grouplist" id="563">
-				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<width>150</width>
-				<height>MenuBarHeight</height>
-				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
-				<onup>555</onup>
-				<ondown>570</ondown>
-				<onleft>212</onleft>
-				<onright>212</onright>
-				<control type="button" id="345">
-					<description>Shutdown</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-power-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-power-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-				</control>
-				<control type="button" id="346">
-					<description>Favourites</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(Favourites)</onclick>
-				</control>
-				<control type="togglebutton" id="347">
-					<description>Extra Options</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-options-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-options-nofocus.png</texturenofocus>
-					<alttexturefocus>gui/menu-bar-options-focus2.png</alttexturefocus>
-					<alttexturenofocus>gui/menu-bar-options-nofocus2.png</alttexturenofocus>
-					<usealttexture>Skin.HasSetting(EventLogMenuBarExtraOptions)</usealttexture>
-					<onclick>noop</onclick>
-					<enable>false</enable>
-				</control>
-			</control>
+			<include content="MenuBarIconButtons">
+				<param name="ondown" value="570" />
+				<param name="onleft" value="212" />
+				<param name="onright" value="212" />
+				<param name="alttexture" value="Skin.HasSetting(EventLogMenuBarExtraOptions)" />
+				<param name="onclick" value="noop" />
+				<param name="enable" value="false" />
+			</include>
 
 			<control type="grouplist" id="212">
 				<left>99</left>
@@ -1536,40 +1490,14 @@
 
 	<include name="DefaultNextAiredMenuBar">
 		<control type="group" id="850">
-			<control type="grouplist" id="563">
-				<description>Menu Bar Icon Buttons</description>
-				<left>5</left>
-				<width>150</width>
-				<height>MenuBarHeight</height>
-				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
-				<onup>555</onup>
-				<ondown>500</ondown>
-				<onleft>216</onleft>
-				<onright>216</onright>
-				<control type="button" id="345">
-					<description>Shutdown</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-power-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-power-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-				</control>
-				<control type="button" id="346">
-					<description>Favourites</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(Favourites)</onclick>
-				</control>
-				<control type="togglebutton" id="347">
-					<description>Extra Options</description>
-					<include>MenuBarIconBtn</include>
-					<texturefocus>gui/menu-bar-options-focus.png</texturefocus>
-					<texturenofocus>gui/menu-bar-options-nofocus.png</texturenofocus>
-					<onclick>noop</onclick>
-					<enable>false</enable>
-				</control>
-			</control>
+			<include content="MenuBarIconButtons">
+				<param name="ondown" value="500" />
+				<param name="onleft" value="216" />
+				<param name="onright" value="216" />
+				<param name="alttexture" value="Skin.HasSetting(NextAiredMenuBarExtraOptions)" />
+				<param name="onclick" value="noop" />
+				<param name="enable" value="false" />
+			</include>
 
 			<control type="group">      				
 				<include>NextAiredMenuBarOptions</include>
@@ -1984,7 +1912,7 @@
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Trailer))</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Trailer))</visible>
 			</control>
 			<control type="button" id="122">
 				<description>Search Youtube</description>
