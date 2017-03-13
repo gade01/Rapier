@@ -152,7 +152,7 @@
 				<selected>!Skin.HasSetting(DoNotUseStarRatingMusic)</selected>
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingMusic)</onclick>
 				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,62) | Skin.String(CurrentViewMode,64) 
-				| Skin.String(CurrentViewMode,67) | Skin.String(CurrentViewMode,77)] + [Container.Content(Albums) | Container.Content(Singles) | Container.Content(Songs)]</visible>
+				| Skin.String(CurrentViewMode,67)] + [Container.Content(Albums) | Container.Content(Singles) | Container.Content(Songs)]</visible>
 			</control>
 			<control type="radiobutton" id="2073">
 				<description>Do Not Use Star Rating (Movies)</description>
@@ -163,7 +163,7 @@
 				<enable>![Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowDVDThumbsRating)]
 				+ ![Skin.String(CurrentViewMode,69) + !Skin.HasSetting(ShowMoviesWallRating)]</enable>
 				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,66) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,54)
-				| Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,75) | Skin.String(CurrentViewMode,69)] + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+				| Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,69)] + [Container.Content(Movies) | Container.Content(Sets)]</visible>
 			</control>
 			<control type="radiobutton" id="2074">
 				<description>Do Not Use Star Rating (TVShows)</description>
@@ -172,7 +172,7 @@
 				<selected>!Skin.HasSetting(DoNotUseStarRatingTVShows)</selected>
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingTVShows)</onclick>
 				<enable>![[Skin.String(CurrentViewMode,586) + !Skin.HasSetting(ShowTVShowsWallRating)] | [Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowDVDThumbsRating)]]</enable>
-				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,586)] + Container.Content(TVShows)</visible>
+				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,586)] + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="2076">
 				<description>Do Not Use Star Rating (Episodes) (Videos)</description>
@@ -181,7 +181,7 @@
 				<selected>[!Skin.HasSetting(DoNotUseStarRatingEpisodes) + Container.Content(Episodes)] | [!Skin.HasSetting(DoNotUseStarRatingVideos) + Container.Content(Videos)]</selected>
 				<onclick condition="Container.Content(Episodes)">Skin.ToggleSetting(DoNotUseStarRatingEpisodes)</onclick>
 				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(DoNotUseStarRatingVideos)</onclick>
-				<visible>[[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,68)] + Container.Content(Episodes)]
+				<visible>[[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,68)] + Container.Content(Episodes)]
 				| [[Skin.String(CurrentViewMode,530) | Skin.String(CurrentViewMode,531) | Skin.String(CurrentViewMode,532)] + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="2092">
@@ -332,14 +332,6 @@
 				<onclick>Skin.ToggleSetting(HideAddonsListFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
-			<control type="radiobutton" id="1095">
-				<description>Wide List Hide Description (Music)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31041]</label>
-				<selected>Skin.HasSetting(HideMusicWideListDescription)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicWideListDescription)</onclick>
-				<visible>Skin.String(CurrentViewMode,77) + Container.Content(Songs)</visible>
-			</control>
 			<control type="radiobutton" id="1036">
 				<description>List Info Hide Description (Music)</description>
 				<include>DropDownMenuRadioBtn</include>
@@ -362,8 +354,8 @@
 				<label>$LOCALIZE[31402]</label>
 				<selected>!Skin.HasSetting(DoNotAutoScrollPlot)</selected>
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollPlot)</onclick>
-				<enable>![[[[Skin.String(CurrentViewMode,77) + Skin.HasSetting(HideMusicWideListDescription)] | [Skin.String(CurrentViewMode,62) + Skin.HasSetting(HideMusicListInfoDescription)] | [Skin.String(CurrentViewMode,67) + Skin.HasSetting(HideMusicListInfo2Description)]] + Container.Content(Songs)] | [Skin.String(CurrentViewMode,64) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)]]</enable>
-				<visible>[[Skin.String(CurrentViewMode,77) | Skin.String(CurrentViewMode,62) | Skin.String(CurrentViewMode,67) | Skin.String(CurrentViewMode,72)] + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
+				<enable>![[[[Skin.String(CurrentViewMode,62) + Skin.HasSetting(HideMusicListInfoDescription)] | [Skin.String(CurrentViewMode,67) + Skin.HasSetting(HideMusicListInfo2Description)]] + Container.Content(Songs)] | [Skin.String(CurrentViewMode,64) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)]]</enable>
+				<visible>[[Skin.String(CurrentViewMode,62) | Skin.String(CurrentViewMode,67) | Skin.String(CurrentViewMode,72)] + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
 				| [[Skin.String(CurrentViewMode,96) | Skin.String(CurrentViewMode,599) | Skin.String(CurrentViewMode,64)] + Container.Content(Albums)]</visible>
 			</control>
 			<control type="radiobutton" id="2088">
@@ -373,78 +365,14 @@
 				<selected>!Skin.HasSetting(DoNotAutoScrollPlot)</selected>
 				<enable>![[[Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,577)] + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)] | [Skin.String(CurrentViewMode,596) + Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)] | [Skin.String(CurrentViewMode,597) + Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)] | [Skin.String(CurrentViewMode,598) + Skin.HasSetting(EnableProgramsWrapListInfo3CompactMode)]]</enable>
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollPlot)</onclick>
-				<visible>[Skin.String(CurrentViewMode,587) + Container.Content(musicvideos)] | [Skin.String(CurrentViewMode,75) + Container.Content(Movies)]
+				<visible>[Skin.String(CurrentViewMode,587) + Container.Content(musicvideos)]
 				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,66) | Skin.String(CurrentViewMode,95) | Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,588)] + [Container.Content(Movies) | Container.Content(Sets)]]
-				| [[Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588)] + [Container.Content(TVShows) | Container.Content(Seasons)]]
-				| [[Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,68) | Skin.String(CurrentViewMode,94)] + Container.Content(Episodes)]
+				| [[Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588)] + [Container.Content(TVShows) | Container.Content(Seasons)]]
+				| [[Skin.String(CurrentViewMode,73) | Skin.String(CurrentViewMode,68) | Skin.String(CurrentViewMode,94)] + Container.Content(Episodes)]
 				| [[Skin.String(CurrentViewMode,530) | Skin.String(CurrentViewMode,531) | Skin.String(CurrentViewMode,532)] + Container.Content(Videos)]
 				| [[Skin.String(CurrentViewMode,590) | Skin.String(CurrentViewMode,591) | Skin.String(CurrentViewMode,592) | Skin.String(CurrentViewMode,593) | Skin.String(CurrentViewMode,594) | Skin.String(CurrentViewMode,595) | Skin.String(CurrentViewMode,596) | Skin.String(CurrentViewMode,597) | Skin.String(CurrentViewMode,598)] + String.Contains(Container.FolderPath,plugin://plugin.program)]
 				| [Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://movies/) | String.Contains(Container.FolderPath,videodb://tvshows/) | String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)]]
 				| Window.IsActive(1116)</visible>
-			</control>
-			<control type="radiobutton" id="2089">
-				<description>Wide List Hide Overlay (Movies)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31046]</label>
-				<selected>Skin.HasSetting(HideMoviesWideListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesWideListOverlay)</onclick>	
-				<visible>Skin.String(CurrentViewMode,75) + Container.Content(Movies)</visible>
-			</control>
-			<control type="radiobutton" id="2093">
-				<description>Wide List Hide Overlay (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31046]</label>
-				<selected>Skin.HasSetting(HideTVShowsWideListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsWideListOverlay)</onclick>	
-				<visible>Skin.String(CurrentViewMode,76) + Container.Content(TVShows)</visible>
-			</control>
-			<control type="radiobutton" id="2085">
-				<description>Wide List Hide Overlay (Episodes)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31046]</label>
-				<selected>Skin.HasSetting(HideEpisodesWideListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideEpisodesWideListOverlay)</onclick>	
-				<visible>Skin.String(CurrentViewMode,74) + Container.Content(Episodes)</visible>
-			</control>
-			<control type="radiobutton" id="1097">
-				<description>Wide List Hide Fanart (Music)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
-				<selected>Skin.HasSetting(HideMusicWideListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicWideListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,77) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]</visible>
-			</control>
-			<control type="radiobutton" id="2090">
-				<description>Wide List Hide Fanart (Movies)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
-				<selected>Skin.HasSetting(HideMoviesWideListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesWideListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,75) + Container.Content(Movies)</visible>
-			</control>
-			<control type="radiobutton" id="2094">
-				<description>Wide List Hide Fanart (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
-				<selected>Skin.HasSetting(HideTVShowsWideListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsWideListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,76) + Container.Content(TVShows)</visible>
-			</control>
-			<control type="radiobutton" id="2084">
-				<description>Wide List Hide Fanart (Episodes)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
-				<selected>Skin.HasSetting(HideEpisodesWideListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideEpisodesWideListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,74) + Container.Content(Episodes)</visible>
-			</control>
-			<control type="radiobutton" id="3004">
-				<description>Wide List Hide Fanart (Addons) (Games)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
-				<selected>Skin.HasSetting(HideAddonsWideListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideAddonsWideListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,90) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="1011">
 				<description>List Info Hide Fanart (Music)</description>
@@ -1023,7 +951,6 @@
 				<include>ReloadSkinNotification</include>
 				<enable>![Skin.String(CurrentViewMode,52) + Skin.HasSetting(HideMoviesListFanart)]
 				+ ![Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowMoviesThumbnailFanart)]
-				+ ![Skin.String(CurrentViewMode,75) + Skin.HasSetting(HideMoviesWideListFanart)]
 				+ ![Skin.String(CurrentViewMode,58) + Skin.HasSetting(HideMoviesListInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,66) + Skin.HasSetting(HideMoviesListInfo2Fanart)]
 				+ ![Skin.String(CurrentViewMode,95) + Skin.HasSetting(HideMoviesListInfo3Fanart)]
@@ -1045,8 +972,6 @@
 				<enable>![Skin.String(CurrentViewMode,50) + !Skin.HasSetting(ShowTVShowsIconFanart)]
 				+ ![Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowTVShowsThumbnailFanart)]
 				+ ![Skin.String(CurrentViewMode,52) + Skin.HasSetting(HideTVShowsListFanart)]
-				+ ![Skin.String(CurrentViewMode,76) + Skin.HasSetting(HideTVShowsWideListFanart)]
-				+ ![Skin.String(CurrentViewMode,74) + Skin.HasSetting(HideEpisodesWideListFanart)]
 				+ ![Skin.String(CurrentViewMode,61) + Skin.HasSetting(HideTVShowsListInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,73) + Skin.HasSetting(HideEpisodesListInfoFanart)]
 				+ ![Skin.String(CurrentViewMode,65) + Skin.HasSetting(HideTVShowsListInfo2Fanart)]
@@ -1385,15 +1310,6 @@
 				<selected>Skin.HasSetting(HideListViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideListViewScrollbar)</onclick>
 				<visible>Skin.String(CurrentViewMode,52)</visible>
-			</control>
-			<control type="radiobutton" id="2098">
-				<description>Wide List Hide Scrollbar</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$VAR[ViewOptionsScrollbarLabel]</label>
-				<selected>Skin.HasSetting(HideWideListViewScrollbar)</selected>
-				<onclick>Skin.ToggleSetting(HideWideListViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,77) | Skin.String(CurrentViewMode,74) | Skin.String(CurrentViewMode,75) 
-				| Skin.String(CurrentViewMode,76) | Skin.String(CurrentViewMode,90)</visible>
 			</control>
 			<control type="radiobutton" id="3016">
 				<description>List Info Hide Scrollbar</description>
@@ -1736,28 +1652,6 @@
 				<include>ReloadSkinNotification</include>
 				<onclick>Container.SetViewMode(578)</onclick>
 				<visible>Skin.String(CurrentViewMode,578)</visible>
-			</control>
-			<control type="radiobutton" id="3096">
-				<description>Wide List Use Style 1 (TVShow)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31418]</label>
-				<selected>Skin.String(WideListTVShowStyle,1) | Skin.String(WideListTVShowStyle,)</selected>
-				<onclick>Skin.SetString(WideListTVShowStyle,1)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(76)</onclick>
-				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,76)</visible>
-			</control>
-			<control type="radiobutton" id="3097">
-				<description>Wide List Use Style 2 (TVShow)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31507]</label>
-				<selected>Skin.String(WideListTVShowStyle,2)</selected>
-				<onclick>Skin.SetString(WideListTVShowStyle,2)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(76)</onclick>
-				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,76)</visible>
 			</control>
 			<control type="radiobutton" id="3098">
 				<description>Thumbs Info Use Style 1 (TVShow)</description>

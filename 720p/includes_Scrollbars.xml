@@ -166,49 +166,6 @@
 		</control>
 	</include>
 	
-	<include name="WideListViewScrollbar">
-		<control type="group" id="150">
-			<control type="image">
-				<left>1232</left>
-				<top>91</top>
-				<width>14</width>
-				<height>536</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="group">
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideWideListViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-				
-				<control type="panel" id="960">
-					<visible>[Control.IsVisible(74) | Control.IsVisible(75) | Control.IsVisible(76) | Control.IsVisible(77) | Control.IsVisible(90)] + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
-					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
-					<include content="QuickJumpVerticalLayout">
-						<param name="left" value="1232" />
-						<param name="top" value="90" />
-						<param name="height" value="540" />
-						<param name="itemheight" value="20" />
-					</include>
-				</control>
-			
-				<control type="scrollbar" id="910">
-					<left>1232</left>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>500</onleft>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</onright>
-					<onright condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onright>
-					<onright condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onright>
-					<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
-					<visible>![Skin.HasSetting(EnableQuickJump) + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
-				</control>
-			</control>
-		</control>
-	</include>
-	
 	<include name="ThumbnailViewScrollbar">
 		<control type="group" id="150">
 			<animation effect="fade" start="100" end="0" time="150" condition="!Skin.HasSetting(ShowThumbnailViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>

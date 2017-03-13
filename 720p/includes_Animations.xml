@@ -665,11 +665,7 @@
 		<animation effect="zoom" start="135" end="100" center="86,8" time="150">UnFocus</animation>
 	</include>
 	
-	<!-- Views -->
-	<include name="WideListHeaderFadeAnim">
-		<animation effect="fade" end="60" condition="true">Conditional</animation>
-	</include>
-	
+	<!-- Views -->	
 	<include name="ListViewSelectFadeAnim">
 		<animation effect="fade" end="60" condition="true">Conditional</animation>
 	</include>
@@ -796,21 +792,10 @@
 		<animation effect="zoom" start="108" end="100" center="auto" time="100">UnFocus</animation>
 	</include>
 	
-	<include name="WideListViewFocusAnim">
-		<animation effect="fade" start="25" end="100" time="400" delay="100" reversible="false">Focus</animation>
-	</include>
-	
 	<include name="WideListViewCoverFocusAnim">
 		<animation type="Focus" reversible="false">
 			<effect type="fade" start="0" end="100" delay="100" time="100"/>
 			<effect type="zoom" start="80" end="100" time="300" delay="100" center="auto" easing="out" tween="back"/>
-		</animation>
-	</include>
-	
-	<include name="WideListViewBannerFocusAnim">
-		<animation type="Focus" reversible="false">
-			<effect type="fade" start="0" end="100" delay="100" time="100"/>
-			<effect type="zoom" start="90" end="100" time="300" delay="100" center="auto" easing="out" tween="back"/>
 		</animation>
 	</include>
 	

@@ -54,24 +54,6 @@
 				<onclick>Dialog.Close(1112)</onclick>
 			</control>
 
-			<control type="button" id="5">
-				<description>Wide List</description>
-				<include>DropDownMenuViewModeBtn</include>
-				<label>$LOCALIZE[31114]</label>
-				<onclick condition="Container.Content(Movies)">Container.SetViewMode(75)</onclick>				
-				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(76)</onclick>
-				<onclick condition="Container.Content(Episodes)">Container.SetViewMode(74)</onclick>
-				<onclick condition="Container.Content(Albums)">Container.SetViewMode(77)</onclick>
-				<onclick condition="Container.Content(Songs)">Container.SetViewMode(77)</onclick>
-				<onclick condition="Container.Content(Artists)">Container.SetViewMode(77)</onclick>
-				<onclick condition="Window.IsActive(MusicPlaylist)">Container.SetViewMode(77)</onclick>
-				<onclick condition="Container.Content(Addons)">Container.SetViewMode(90)</onclick>
-				<onclick>Dialog.Close(1112)</onclick>
-				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
-				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
-				| Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
-			</control>
-
 			<control type="button" id="6">
 				<description>List Media Info</description>
 				<include>DropDownMenuViewModeBtn</include>
@@ -281,15 +263,6 @@
 				<height>25</height>
 				<texture>gui/view-list.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
-			</control>
-			<control type="image">
-				<width>38</width>
-				<height>25</height>
-				<texture>gui/view-wide-list.png</texture>
-				<aspectratio align="left">stretch</aspectratio>
-				<visible>[Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)]]
-				| [Window.IsActive(Music) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]]
-				| Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
