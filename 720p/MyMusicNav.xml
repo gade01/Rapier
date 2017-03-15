@@ -28,15 +28,15 @@
 				<include>IconView</include> <!-- 50 -->
 				<include>ListView</include> <!-- 52 -->
 				<include>AlbumThumbsView</include> <!-- 63 -->
-				<include>MusicListInfoView</include> <!-- 62 -->
-				<include>MusicListInfoView2</include> <!-- 67 -->
-				<include>MusicListInfoView3</include> <!-- 96 -->
-				<include>MusicThumbsInfoView</include> <!-- 599 -->
-				<include>MusicWrapListInfoView</include> <!-- 64 -->
-				<include>MusicWallView</include> <!-- 70 -->
-				<include>AddonsListInfoView</include> <!-- 91 -->
-				<include>AddonsWrapListInfoView</include> <!-- 93 -->
-				<include>ExtendedListView</include> <!-- 585 -->
+				<include condition="!Skin.HasSetting(DisableMusicListInfoView)">MusicListInfoView</include> <!-- 62 -->
+				<include condition="!Skin.HasSetting(DisableMusicListInfoView2)">MusicListInfoView2</include> <!-- 67 -->
+				<include condition="!Skin.HasSetting(DisableMusicListInfoView2)">MusicListInfoView3</include> <!-- 96 -->
+				<include condition="!Skin.HasSetting(DisableMusicThumbsInfoView)">MusicThumbsInfoView</include> <!-- 599 -->
+				<include condition="!Skin.HasSetting(DisableMusicWrapListInfoView)">MusicWrapListInfoView</include> <!-- 64 -->
+				<include condition="!Skin.HasSetting(DisableMusicWallView)">MusicWallView</include> <!-- 70 -->
+				<include condition="!Skin.HasSetting(DisableAddonsListInfoView)">AddonsListInfoView</include> <!-- 91 -->
+				<include condition="!Skin.HasSetting(DisableAddonsWrapListInfoView)">AddonsWrapListInfoView</include> <!-- 93 -->
+				<include condition="!Skin.HasSetting(DisableExtendedListView)">ExtendedListView</include> <!-- 585 -->
 			</control>	
 			
 			<include>MediaMenuBar</include>

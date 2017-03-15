@@ -27,7 +27,7 @@
 			<include>IconView</include> <!-- 50 -->
 			<include>ListView</include> <!-- 52 -->
 			<include>AlbumThumbsView</include> <!-- 63 -->
-			<include>PlaylistView</include> <!-- 580 -->
+			<include condition="!Skin.HasSetting(DisablePlaylistView)">PlaylistView</include> <!-- 580 -->
 		</control>	
 		
 		<include>MediaMenuBar</include>

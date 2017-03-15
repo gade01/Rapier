@@ -23,10 +23,10 @@
 			<depth>DepthContent</depth>
 			<include>IconView</include> <!-- 50 -->
 			<include>ListView</include> <!-- 52 -->
-			<include>AddonsListInfoView</include> <!-- 91 -->
-			<include>AddonsWrapListInfoView</include> <!-- 93 -->
-			<include>PicturesListInfoView3</include> <!-- 578 -->
-			<include>PicturesThumbsInfoView</include> <!-- 579 -->
+			<include condition="!Skin.HasSetting(DisableAddonsListInfoView)">AddonsListInfoView</include> <!-- 91 -->
+			<include condition="!Skin.HasSetting(DisableAddonsWrapListInfoView)">AddonsWrapListInfoView</include> <!-- 93 -->
+			<include condition="!Skin.HasSetting(DisablePicturesListInfoView3)">PicturesListInfoView3</include> <!-- 578 -->
+			<include condition="!Skin.HasSetting(DisablePicturesThumbsInfoView)">PicturesThumbsInfoView</include> <!-- 579 -->
 		</control>
 		
 		<include>MediaMenuBar</include>

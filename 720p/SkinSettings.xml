@@ -97,6 +97,14 @@
 					<visible>ControlGroup(902).HasFocus | [Skin.String(SkinSettingsCategory,3) + [Control.HasFocus(993) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 				</control>
 				
+				<control type="button" id="7">
+					<description>Views</description>
+					<texturefocus />
+					<texturenofocus />
+					<onfocus>Control.SetFocus(7)</onfocus>
+					<visible>ControlGroup(910).HasFocus | [Skin.String(SkinSettingsCategory,11) + [Control.HasFocus(997) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
+				</control>
+				
 				<control type="button" id="10">
 					<description>Configure Menus</description>
 					<texturefocus />
@@ -200,6 +208,19 @@
 						<label>$LOCALIZE[31013]</label>
 						<visible>ControlGroup(902).HasFocus | [Skin.String(SkinSettingsCategory,3) + [Control.HasFocus(993) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
 					</control>
+					<control type="button" id="7">
+						<description>Views</description>
+						<include>SettingsCatBtn</include>
+						<label>$LOCALIZE[31096]</label>
+						<onfocus>Skin.SetString(SkinSettingsCategory,11)</onfocus>
+						<visible>![ControlGroup(910).HasFocus | [Skin.String(SkinSettingsCategory,11) + [Control.HasFocus(997) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]]</visible>
+					</control>
+					<control type="button" id="17">
+						<description>Views</description>
+						<include>SettingsInactiveCatBtn</include>
+						<label>$LOCALIZE[31096]</label>
+						<visible>ControlGroup(910).HasFocus | [Skin.String(SkinSettingsCategory,11) + [Control.HasFocus(997) | ControlGroup(850).HasFocus | Control.HasFocus(555)]]</visible>
+					</control>
 					<control type="button" id="10">
 						<description>Configure Menus</description>
 						<include>SettingsCatBtn</include>
@@ -287,6 +308,7 @@
 					<include>GeneralSkinSettings</include>
 					<include>HomeSkinSettings</include>
 					<include>MediaSkinSettings</include>
+					<include>ViewsSkinSettings</include>
 					<include>MenusSkinSettings</include>
 					<include>BackgroundsSkinSettings</include>
 					<include>WeatherSkinSettings</include>

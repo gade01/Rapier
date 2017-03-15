@@ -854,7 +854,7 @@
 				<onleft condition="Window.IsVisible(SkinSettings) | Window.IsVisible(Profiles)">851</onleft>
 				<onleft condition="!Window.IsVisible(SkinSettings) + !Window.IsVisible(Profiles)">5</onleft>
 				<visible>!Skin.HasSetting(ExpandedSettings) + ![[Window.IsVisible(Profiles) + Skin.String(ProfilesCategory,2)]
-				| [Window.IsVisible(SkinSettings) + [Skin.String(SkinSettingsCategory,1) | Skin.String(SkinSettingsCategory,2) | Skin.String(SkinSettingsCategory,3) | Skin.String(SkinSettingsCategory,4) |Skin.String(SkinSettingsCategory,5) | Skin.String(SkinSettingsCategory,9)]]]</visible>
+				| [Window.IsVisible(SkinSettings) + [Skin.String(SkinSettingsCategory,1) | Skin.String(SkinSettingsCategory,2) | Skin.String(SkinSettingsCategory,3) | Skin.String(SkinSettingsCategory,4) | Skin.String(SkinSettingsCategory,5) | Skin.String(SkinSettingsCategory,9) | Skin.String(SkinSettingsCategory,11)]]]</visible>
 			</control>
 			
 			<control type="scrollbar" id="990">
@@ -911,6 +911,14 @@
 				<height>500</height>
 				<onleft>908</onleft>
 				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,9)</visible>
+			</control>
+			
+			<control type="scrollbar" id="997">
+				<left>1262</left>
+				<top>110</top>
+				<height>500</height>
+				<onleft>910</onleft>
+				<visible>!Skin.HasSetting(ExpandedSettings) + Window.IsVisible(SkinSettings) + Skin.String(SkinSettingsCategory,11)</visible>
 			</control>
 		</control>
 

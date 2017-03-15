@@ -33,31 +33,31 @@
 				<include>IconView</include> <!-- 50 -->
 				<include>ListView</include> <!-- 52 -->
 				<include>DVDThumbsView</include> <!-- 54 -->
-				<include>MoviesWrapListInfoView</include> <!-- 53 -->
-				<include>MoviesListInfoView</include> <!-- 58 -->
-				<include>MoviesListInfoView2</include> <!-- 66 -->
-				<include>MoviesListInfoView3</include> <!-- 95 -->
-				<include>MoviesThumbsInfoView</include> <!-- 97 -->
-				<include>3DWrapView</include> <!-- 588 -->
-				<include>TVShowsListInfoView</include> <!-- 61 -->
-				<include>TVShowsListInfoView2</include> <!-- 65 -->
-				<include>TVShowsListInfoView3</include> <!-- 589 -->
-				<include>TVShowsThumbsInfoView</include> <!-- 100 -->
-				<include>TVShowsWrapListInfoView</include> <!-- 577 -->
-				<include>EpisodesListInfoView</include> <!-- 73 -->
-				<include>EpisodesListInfoView2</include> <!-- 68 -->
-				<include>EpisodesListInfoView3</include> <!-- 94 -->
-				<include>MusicVideosListInfoView2</include> <!-- 587 -->
-				<include>MoviesWallView</include> <!-- 69 -->
-				<include>TVShowsWallView</include> <!-- 586 -->
-				<include>ExtendedListView</include> <!-- 585 -->
-				<include>FanartView</include> <!-- 583 -->
+				<include condition="!Skin.HasSetting(DisableMoviesWrapListInfoView)">MoviesWrapListInfoView</include> <!-- 53 -->
+				<include condition="!Skin.HasSetting(DisableMoviesListInfoView)">MoviesListInfoView</include> <!-- 58 -->
+				<include condition="!Skin.HasSetting(DisableMoviesListInfoView2)">MoviesListInfoView2</include> <!-- 66 -->
+				<include condition="!Skin.HasSetting(DisableMoviesListInfoView3)">MoviesListInfoView3</include> <!-- 95 -->
+				<include condition="!Skin.HasSetting(DisableMoviesThumbsInfoView)">MoviesThumbsInfoView</include> <!-- 97 -->
+				<include condition="![[String.StartsWith(Container.FolderPath,videodb://movies/) + Skin.HasSetting(DisableMovies3DWrapView)] | [String.StartsWith(Container.FolderPath,videodb://tvshows/) + Skin.HasSetting(DisableTVShows3DWrapView)]]">3DWrapView</include> <!-- 588 -->
+				<include condition="!Skin.HasSetting(DisableTVShowsListInfoView)">TVShowsListInfoView</include> <!-- 61 -->
+				<include condition="!Skin.HasSetting(DisableTVShowsListInfoView2)">TVShowsListInfoView2</include> <!-- 65 -->
+				<include condition="!Skin.HasSetting(DisableTVShowsListInfoView3)">TVShowsListInfoView3</include> <!-- 589 -->
+				<include condition="!Skin.HasSetting(DisableTVShowsThumbsInfoView)">TVShowsThumbsInfoView</include> <!-- 100 -->
+				<include condition="!Skin.HasSetting(DisableTVShowsWrapListInfoView)">TVShowsWrapListInfoView</include> <!-- 577 -->
+				<include condition="!Skin.HasSetting(DisableEpisodesListInfoView)">EpisodesListInfoView</include> <!-- 73 -->
+				<include condition="!Skin.HasSetting(DisableEpisodesListInfoView2)">EpisodesListInfoView2</include> <!-- 68 -->
+				<include condition="!Skin.HasSetting(DisableEpisodesListInfoView3)">EpisodesListInfoView3</include> <!-- 94 -->
+				<include condition="!Skin.HasSetting(DisableMusicVideosListInfoView2)">MusicVideosListInfoView2</include> <!-- 587 -->
+				<include condition="!Skin.HasSetting(DisableMoviesWallView)">MoviesWallView</include> <!-- 69 -->
+				<include condition="!Skin.HasSetting(DisableTVShowsWallView)">TVShowsWallView</include> <!-- 586 -->
+				<include condition="!Skin.HasSetting(DisableExtendedListView)">ExtendedListView</include> <!-- 585 -->
+				<include condition="![[String.StartsWith(Container.FolderPath,videodb://movies/) + Skin.HasSetting(DisableMoviesFanartView)] | [String.StartsWith(Container.FolderPath,videodb://tvshows/) + Skin.HasSetting(DisableTVShowsFanartView)]]">FanartView</include> <!-- 583 -->
 				<include>AlbumThumbsView</include> <!-- 63 -->
-				<include>AddonsListInfoView</include> <!-- 91 -->
-				<include>AddonsWrapListInfoView</include> <!-- 93 -->
-				<include>VideosListInfoView</include> <!-- 530 -->
-				<include>VideosListInfoView2</include> <!-- 531 -->
-				<include>VideosThumbsInfoView</include> <!-- 532 -->
+				<include condition="!Skin.HasSetting(DisableAddonsListInfoView)">AddonsListInfoView</include> <!-- 91 -->
+				<include condition="!Skin.HasSetting(DisableAddonsWrapListInfoView)">AddonsWrapListInfoView</include> <!-- 93 -->
+				<include condition="!Skin.HasSetting(DisableVideosListInfoView)">VideosListInfoView</include> <!-- 530 -->
+				<include condition="!Skin.HasSetting(DisableVideosListInfoView2)">VideosListInfoView2</include> <!-- 531 -->
+				<include condition="!Skin.HasSetting(DisableVideosThumbsInfoView)">VideosThumbsInfoView</include> <!-- 532 -->
 			</control>
 			
 			<include>MediaMenuBar</include>
