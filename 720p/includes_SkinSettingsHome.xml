@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="CustomCategoryIconsPreview">
+		<value condition="ControlGroup(940).HasFocus(2401) + !String.IsEmpty(Skin.String(MusicCategoryIconPath))">$INFO[Skin.String(MusicCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2402) + !String.IsEmpty(Skin.String(PVRCategoryIconPath))">$INFO[Skin.String(PVRCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2403) + !String.IsEmpty(Skin.String(VideosCategoryIconPath))">$INFO[Skin.String(VideosCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2404) + !String.IsEmpty(Skin.String(MoviesCategoryIconPath))">$INFO[Skin.String(MoviesCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2405) + !String.IsEmpty(Skin.String(TVShowsCategoryIconPath))">$INFO[Skin.String(TVShowsCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2406) + !String.IsEmpty(Skin.String(ProgramsCategoryIconPath))">$INFO[Skin.String(ProgramsCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2407) + !String.IsEmpty(Skin.String(PicturesCategoryIconPath))">$INFO[Skin.String(PicturesCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2408) + !String.IsEmpty(Skin.String(WeatherCategoryIconPath))">$INFO[Skin.String(WeatherCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2409) + !String.IsEmpty(Skin.String(GeneralCategoryIconPath))">$INFO[Skin.String(GeneralCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2410) + !String.IsEmpty(Skin.String(SystemCategoryIconPath))">$INFO[Skin.String(SystemCategoryIconPath)]</value>
+		<value condition="ControlGroup(940).HasFocus(2411) + !String.IsEmpty(Skin.String(PowerCategoryIconPath))">$INFO[Skin.String(PowerCategoryIconPath)]</value>
+	</variable>
+	
 	<include name="HomeSkinSettings">
 		<control type="group">
 			<visible>Skin.String(SkinSettingsCategory,2)</visible>
@@ -1106,78 +1120,7 @@
 				<control type="image">
 					<top>65</top>
 					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(MusicCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2301)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(PVRCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2302)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(VideosCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2303)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(MoviesCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2304)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(TVShowsCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2305)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(ProgramsCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2306)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(PicturesCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2307)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(WeatherCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2308)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(GeneralCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2309)</visible>
-				</control>
-
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(SystemCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2310)</visible>
-				</control>
-				
-				<control type="image">
-					<top>65</top>
-					<include>ExpandedSettingsImagePreview</include>
-					<texture>$INFO[Skin.String(PowerCategoryIconPath)]</texture>
-					<visible>ControlGroup(940).HasFocus(2311)</visible>
+					<texture>$VAR[CustomCategoryIconsPreview]</texture>
 				</control>
 				
 				<control type="textbox">
