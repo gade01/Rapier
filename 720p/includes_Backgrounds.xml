@@ -545,7 +545,6 @@
 				| [Control.IsVisible(66) + !Skin.HasSetting(HideMoviesListInfo2Fanart)]
 				| [Control.IsVisible(95) + !Skin.HasSetting(HideMoviesListInfo3Fanart)]
 				| [Control.IsVisible(97) + !Skin.HasSetting(HideMoviesThumbsInfoFanart)]
-				| [Control.IsVisible(75) + !Skin.HasSetting(HideMoviesWideListFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(HideVideoPlaylistFanart)]
 				| [Control.IsVisible(583) + !Skin.HasSetting(HideMoviesFanartFanart)]
 				| [Control.IsVisible(585) + !Skin.HasSetting(HideMoviesExtendedListFanart)]
@@ -575,8 +574,7 @@
 				<visible>Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml)
 				| [Control.IsVisible(50) + Skin.HasSetting(ShowTVShowsIconFanart)]
 				| [Control.IsVisible(54) + Skin.HasSetting(ShowTVShowsThumbnailFanart)]
-				| [Control.IsVisible(52) + !Skin.HasSetting(HideTVShowsListFanart)] 
-				| [Control.IsVisible(76) + !Skin.HasSetting(HideTVShowsWideListFanart)]
+				| [Control.IsVisible(52) + !Skin.HasSetting(HideTVShowsListFanart)]
 				| [Control.IsVisible(61) + !Skin.HasSetting(HideTVShowsListInfoFanart)]
 				| [Control.IsVisible(65) + !Skin.HasSetting(HideTVShowsListInfo2Fanart)]
 				| [Control.IsVisible(100) + !Skin.HasSetting(HideTVShowsThumbsInfoFanart)]
@@ -588,7 +586,6 @@
 				| [Control.IsVisible(583) + !Skin.HasSetting(HideTVShowsFanartFanart)]
 				| [Control.IsVisible(585) + !Skin.HasSetting(HideTVShowsExtendedListFanart)]
 				| [Control.IsVisible(588) + !Skin.HasSetting(HideTVShows3DWrapFanart)]
-				| [Control.IsVisible(74) + !Skin.HasSetting(HideEpisodesWideListFanart)]
 				| [Control.IsVisible(589) + !Skin.HasSetting(HideTVShowsListInfo3Fanart)]</visible>
 				<control type="group">
 					<visible>Container.Content(TVShows) | Window.IsActive(script-videoextras-main.xml) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/)]]</visible>
@@ -644,7 +641,6 @@
 			| [[Control.IsVisible(67) | Control.IsVisible(72)] + !Skin.HasSetting(HideMusicListInfo2Fanart)]
 			| [Control.IsVisible(96) + !Skin.HasSetting(HideMusicListInfo3Fanart)]
 			| [Control.IsVisible(64) + !Skin.HasSetting(HideMusicWrapListInfoFanart)]
-			| [Control.IsVisible(77) + !Skin.HasSetting(HideMusicWideListFanart)]
 			| [Control.IsVisible(580) + !Skin.HasSetting(HideMusicPlaylistFanart)]
 			| [Control.IsVisible(585) + !Skin.HasSetting(HideMusicExtendedListFanart)]
 			| [Control.IsVisible(599) + !Skin.HasSetting(HideMusicThumbsInfoFanart)]</visible>
@@ -660,8 +656,7 @@
 			<visible>Container.Content(Addons) | Window.IsActive(1116)</visible>
 			<visible>Window.IsActive(AddonInformation)
 			| [Control.IsVisible(63) + Skin.HasSetting(ShowAddonsThumbnailFanart)]
-			| [Control.IsVisible(52) + !Skin.HasSetting(HideAddonsListFanart)] 
-			| [Control.IsVisible(90) + !Skin.HasSetting(HideAddonsWideListFanart)]
+			| [Control.IsVisible(52) + !Skin.HasSetting(HideAddonsListFanart)]
 			| [Control.IsVisible(91) + !Skin.HasSetting(HideAddonsListInfoFanart)]
 			| [Control.IsVisible(93) + !Skin.HasSetting(HideAddonsWrapListInfoFanart)]
 			| [Control.IsVisible(561) + !Skin.HasSetting(HideMyAddonsFanart)]

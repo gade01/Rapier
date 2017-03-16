@@ -498,6 +498,30 @@
 		<animation effect="fade" start="0" end="100" time="600">VisibleChange</animation>
 	</include>
 	
+	<include name="HomeWidgetRightAnim">
+		<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="100" time="250"/>
+			<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+		
+		<animation type="Conditional" reversible="false" condition="String.IsEqual(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="0" time="250"/>
+			<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+	</include>
+	
+	<include name="HomeWidgetLeftAnim">
+		<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="100" time="250"/>
+			<effect type="slide" start="-100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+		
+		<animation type="Conditional" reversible="false" condition="String.IsEqual(Container($PARAM[id]).NumItems,0)">
+			<effect type="fade" end="0" time="250"/>
+			<effect type="slide" end="-100,0" time="300" tween="circle" easing="out"/>
+		</animation>
+	</include>
+	
 	<!--//// MEDIA ////////////////////////////////////////////////////////////////////////////////////-->	
 
 	<include name="MenuOpenCloseAnim">
@@ -642,10 +666,6 @@
 	</include>
 	
 	<!-- Views -->
-	<include name="WideListHeaderFadeAnim">
-		<animation effect="fade" end="60" condition="true">Conditional</animation>
-	</include>
-	
 	<include name="ListViewSelectFadeAnim">
 		<animation effect="fade" end="60" condition="true">Conditional</animation>
 	</include>
@@ -772,21 +792,10 @@
 		<animation effect="zoom" start="108" end="100" center="auto" time="100">UnFocus</animation>
 	</include>
 	
-	<include name="WideListViewFocusAnim">
-		<animation effect="fade" start="25" end="100" time="400" delay="100" reversible="false">Focus</animation>
-	</include>
-	
 	<include name="WideListViewCoverFocusAnim">
 		<animation type="Focus" reversible="false">
 			<effect type="fade" start="0" end="100" delay="100" time="100"/>
 			<effect type="zoom" start="80" end="100" time="300" delay="100" center="auto" easing="out" tween="back"/>
-		</animation>
-	</include>
-	
-	<include name="WideListViewBannerFocusAnim">
-		<animation type="Focus" reversible="false">
-			<effect type="fade" start="0" end="100" delay="100" time="100"/>
-			<effect type="zoom" start="90" end="100" time="300" delay="100" center="auto" easing="out" tween="back"/>
 		</animation>
 	</include>
 	
