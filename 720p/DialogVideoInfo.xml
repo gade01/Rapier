@@ -458,20 +458,17 @@
 								<label>$LOCALIZE[572]</label>
 								<label2>$INFO[ListItem.Studio]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=Movie)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="4">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=year&amp;type=Movie)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="5">
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Rating</description>
@@ -487,7 +484,6 @@
 								<label>$LOCALIZE[20074]</label>
 								<label2>$INFO[ListItem.Mpaa]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=mpaa&amp;type=Movie)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="8">
 								<description>File Path</description>
@@ -687,7 +683,6 @@
 								<label>$LOCALIZE[558]</label>
 								<label2>$INFO[ListItem.Album]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=album&amp;type=MusicVideo)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="3">
 								<description>Director</description>
@@ -702,27 +697,23 @@
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=year&amp;type=MusicVideo)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="5">
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Studio</description>
 								<label>$LOCALIZE[572]</label>
 								<label2>$INFO[ListItem.Studio]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=MusicVideo)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="7">
 								<description>Playcount</description>
 								<label>$LOCALIZE[31201]</label>
 								<label2>$INFO[ListItem.PlayCount]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=playcount&amp;type=MusicVideo)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 								<visible>String.IsEmpty(ListItem.UserRating)</visible>
 							</item>						
 							<item id="8">
@@ -929,14 +920,12 @@
 								<label>$LOCALIZE[20373]</label>
 								<label2>$INFO[ListItem.Season]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=season&amp;type=Episode)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="2">
 								<description>Episode</description>
 								<label>$LOCALIZE[20359]</label>
 								<label2>$INFO[ListItem.Episode]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=episode&amp;type=Episode)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="3">
 								<description>Director</description>
@@ -960,7 +949,6 @@
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Rating</description>
@@ -974,7 +962,6 @@
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
-								<onclick>noop</onclick>
 								<!--<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=firstaired&amp;type=Episode)</onclick>-->
 							</item>
 							<item id="8">
@@ -1173,47 +1160,40 @@
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[ListItem.Episode][COLOR=DisabledColor] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="2">
 								<description>Studio</description>
 								<label>$LOCALIZE[572]</label>
 								<label2>$INFO[ListItem.Studio]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=TVShow)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 								<visible>String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
 							<item id="3">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="4">
 								<description>Next Aired Status</description>
 								<label>$LOCALIZE[126]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="5">
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=premiered&amp;type=TVShow)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="6">
 								<description>Next Aired Latest Episode</description>
 								<label>$LOCALIZE[31966]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
 							</item>
 							<item id="7">
 								<description>Next Aired Next Episode</description>
 								<label>$LOCALIZE[31967]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
 							<item id="8">
@@ -1407,47 +1387,40 @@
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[ListItem.Episode][COLOR=DisabledColor] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="2">
 								<description>Studio</description>
 								<label>$LOCALIZE[572]</label>
 								<label2>$INFO[ListItem.Studio]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=TVShow)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 								<visible>String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
 							<item id="3">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="4">
 								<description>Next Aired Status</description>
 								<label>$LOCALIZE[126]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="5">
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=premiered&amp;type=TVShow)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 							</item>
 							<item id="6">
 								<description>Next Aired Latest Episode</description>
 								<label>$LOCALIZE[31966]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
 							</item>
 							<item id="7">
 								<description>Next Aired Next Episode</description>
 								<label>$LOCALIZE[31967]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
 							<item id="8">
@@ -1636,14 +1609,12 @@
 								<description>Season</description>
 								<label>$LOCALIZE[20373]</label>
 								<label2>$INFO[ListItem.Season]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(ListItem.Season)</visible>
 							</item>
 							<item id="2">
 								<description>Episode</description>
 								<label>$LOCALIZE[20359]</label>
 								<label2>$INFO[ListItem.Episode]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(ListItem.Episode)</visible>
 							</item>
 							<item id="3">
@@ -1667,7 +1638,6 @@
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="6">
 								<description>Rating</description>
@@ -1687,14 +1657,12 @@
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(ListItem.Premiered)</visible>
 							</item>
 							<item id="9">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
-								<onclick>noop</onclick>
 								<visible>String.IsEmpty(ListItem.Premiered) + !String.IsEmpty(ListItem.Year)</visible>
 							</item>
 							<item id="10">

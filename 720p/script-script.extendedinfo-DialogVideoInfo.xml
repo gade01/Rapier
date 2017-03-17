@@ -391,21 +391,18 @@
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[Window.Property(TotalEpisodes)]</label2>
-								<onclick>noop</onclick>
 								<visible>String.IsEqual(Window.Property(type),tvshow)</visible>
 							</item>
 							<item id="5">
 								<description>Runtime</description>
 								<label>$LOCALIZE[2050]</label>
 								<label2>$VAR[MovieDuration]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEqual(Window.Property(duration),0)</visible>
 							</item>
 							<item id="6">
 								<description>Rating</description>
 								<label>$LOCALIZE[563]</label>
 								<label2>$INFO[Window.Property(Rating)]$INFO[Window.Property(Votes), (, $LOCALIZE[205])]$INFO[Window.Property(Top250),  &#x2022;  $LOCALIZE[31974] #,]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="7">
 								<description>MPAA Rating</description>
@@ -435,20 +432,17 @@
 								<description>Release Date</description>
 								<label fallback="172">$INFO[Window.Property(Status)]</label>
 								<label2>$INFO[Window.Property(Premiered)]</label2>
-								<onclick>noop</onclick>
 							</item>
 							<item id="11">
 								<description>Budget</description>
 								<label>$ADDON[script.extendedinfo 32109]</label>
 								<label2>$INFO[Window.Property(Budget),$]</label2>
-								<onclick>noop</onclick>
 								<visible>![String.IsEqual(Window.Property(type),tvshow) | String.IsEqual(Window.Property(type),season)] + !String.IsEmpty(Window.Property(Budget))</visible>
 							</item>
 							<item id="12">
 								<description>Revenue</description>
 								<label>$ADDON[script.extendedinfo 32108]</label>
 								<label2>$INFO[Window.Property(Revenue),$]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window.Property(Revenue))</visible>
 							</item>
 							<item id="13">
@@ -463,7 +457,6 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[21801]</label>
 								<label2>$INFO[Window.Property(FileNameAndPath)]</label2>
-								<onclick>noop</onclick>
 								<visible>!String.IsEmpty(Window.Property(FileNameAndPath))</visible>
 							</item>-->
 						</content>

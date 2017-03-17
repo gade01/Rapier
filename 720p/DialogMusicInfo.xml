@@ -227,7 +227,6 @@
 						<description>Type</description>
 						<label>$LOCALIZE[564]</label>
 						<label2>$INFO[ListItem.Property(Album_Type)]</label2>
-						<onclick>noop</onclick>
 						<!--<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=type&amp;type=Album)</onclick>-->
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Property(Album_Type))</visible>
 					</item>
@@ -236,7 +235,6 @@
 						<label>$LOCALIZE[21899]</label>
 						<label2>$INFO[ListItem.Property(Album_Label)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=albumlabel&amp;type=Album)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Property(Album_Label))</visible>
 					</item>
 					<item id="4">
@@ -244,14 +242,12 @@
 						<label>$LOCALIZE[345]</label>
 						<label2>$INFO[ListItem.Year]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=year&amp;type=Album)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Year)</visible>
 					</item>
 					<item id="5">
 						<description>Songs</description>
 						<label>$LOCALIZE[134]</label>
 						<label2>$INFO[Window(home).Property(SkinHelper.ListItem.SongCount)]</label2>
-						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.SongCount)) + System.HasAddon(script.skin.helper.service)</visible>
 					</item>
 					<item id="6">
@@ -259,7 +255,6 @@
 						<label>$LOCALIZE[175]</label>
 						<label2>$INFO[ListItem.Property(Album_Mood)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=album_mood&amp;type=Album)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Property(Album_Mood))</visible>
 					</item>
 					<item id="7">
@@ -267,7 +262,6 @@
 						<label>$LOCALIZE[176]</label>
 						<label2>$INFO[ListItem.Property(Album_Style)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=album_style&amp;type=Album)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Property(Album_Style))</visible>
 					</item>
 					<item id="8">
@@ -275,7 +269,6 @@
 						<label>$LOCALIZE[21895]</label>
 						<label2>$INFO[ListItem.Property(Album_Theme)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=themes&amp;type=Album)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Property(Album_Theme))</visible>
 					</item>
 					<item id="9">
@@ -283,7 +276,6 @@
 						<label>$LOCALIZE[563]</label>
 						<label2>$INFO[ListItem.RatingAndVotes]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=rating&amp;type=Album)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album) + !String.IsEmpty(ListItem.Rating)</visible>
 					</item>
 					<item id="10">
@@ -306,7 +298,6 @@
 						<label>$LOCALIZE[21893]</label>
 						<label2>$INFO[ListItem.Property(Artist_Born)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=born&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_Born))</visible>
 					</item>
 					<item id="13">
@@ -314,14 +305,12 @@
 						<label>$LOCALIZE[21894]</label>
 						<label2>$INFO[ListItem.Property(Artist_Formed)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=formed&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
 					</item>
 					<item id="14">
 						<description>Formed / Born</description>
 						<label>$LOCALIZE[21893] / $LOCALIZE[21894]</label>
 						<label2>$LOCALIZE[31001]</label2>
-						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + String.IsEmpty(ListItem.Property(Artist_Formed)) + String.IsEmpty(ListItem.Property(Artist_Born)) + !System.HasAddon(script.skin.helper.service)</visible>
 					</item>
 					<item id="15">
@@ -329,7 +318,6 @@
 						<label>$LOCALIZE[21897]</label>
 						<label2>$INFO[ListItem.Property(Artist_Died)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=died&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Property(Artist_Died)) + String.IsEqual(ListItem.DBTYPE,artist)</visible>
 					</item>
 					<item id="16">
@@ -337,14 +325,12 @@
 						<label>$LOCALIZE[21896]</label>
 						<label2>$INFO[ListItem.Property(Artist_Disbanded)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=disbanded&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
 					</item>
 					<item id="17">
 						<description>Disbanded / Died</description>
 						<label>$LOCALIZE[21896] / $LOCALIZE[21897]</label>
 						<label2>$LOCALIZE[31001]</label2>
-						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + String.IsEmpty(ListItem.Property(Artist_Disbanded)) + String.IsEmpty(ListItem.Property(Artist_Died)) + !System.HasAddon(script.skin.helper.service)</visible>
 					</item>
 					<item id="18">
@@ -352,14 +338,12 @@
 						<label>$LOCALIZE[21898]</label>
 						<label2>$INFO[ListItem.Property(Artist_YearsActive)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=yearsactive&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
 					</item>
 					<item id="19">
 						<description>Albums</description>
 						<label>$LOCALIZE[132]</label>
 						<label2>$INFO[Window(home).Property(SkinHelper.ListItem.AlbumCount)]</label2>
-						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + System.HasAddon(script.skin.helper.service) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.AlbumCount))</visible>
 					</item>
 					<item id="20">
@@ -367,7 +351,6 @@
 						<label>$LOCALIZE[175]</label>
 						<label2>$INFO[ListItem.Property(Artist_Mood)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=artist_mood&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_Mood))</visible>
 					</item>
 					<item id="21">
@@ -375,7 +358,6 @@
 						<label>$LOCALIZE[176]</label>
 						<label2>$INFO[ListItem.Property(Artist_Style)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=artist_style&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_Style))</visible>
 					</item>
 					<item id="22">
@@ -383,7 +365,6 @@
 						<label>$LOCALIZE[21892]</label>
 						<label2>$INFO[ListItem.Property(Artist_Instrument)]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=instruments&amp;type=Artist)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Property(Artist_Instruments))</visible>
 					</item>					
 					<item id="23">
@@ -391,7 +372,6 @@
 						<label>$LOCALIZE[515]</label>
 						<label2>$INFO[ListItem.Genre]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=genre&amp;type=Song)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Genre)</visible>
 					</item>
 					<item id="24">
@@ -399,7 +379,6 @@
 						<label>$LOCALIZE[558]</label>
 						<label2>$INFO[ListItem.Album]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=album&amp;type=Song)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Album)</visible>
 					</item>
 					<item id="25">
@@ -407,7 +386,6 @@
 						<label>$LOCALIZE[345]</label>
 						<label2>$INFO[ListItem.Year]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=year&amp;type=Song)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Year)</visible>
 					</item>
 					<item id="26">
@@ -415,7 +393,6 @@
 						<label>$LOCALIZE[38018]</label>
 						<label2>$INFO[ListItem.RatingAndVotes]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=Rating&amp;type=Song)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Rating)</visible>
 					</item>
 					<item id="27">
@@ -429,7 +406,6 @@
 						<description>Mood</description>
 						<label>$LOCALIZE[175]</label>
 						<label2>$INFO[ListItem.Mood]</label2>
-						<onclick>noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Mood)</visible>
 					</item>
 					<item id="29">
@@ -437,7 +413,6 @@
 						<label>$LOCALIZE[554]</label>
 						<label2>$INFO[ListItem.TrackNumber]</label2>
 						<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=Track&amp;type=Song)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor)">noop</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.TrackNumber)</visible>
 					</item>
 					<item id="30">
