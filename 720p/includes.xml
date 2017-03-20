@@ -2074,11 +2074,18 @@
 	<!-- END Music Visualization -->
 	
 	<!-- Custom Windows -->
+	<variable name="Window1117PosterThumb">
+		<value condition="!String.IsEmpty(Container(901).ListItem.Art(poster))">$INFO[Container(901).ListItem.Art(poster)]</value>
+		<value>$INFO[Container(901).ListItem.Thumb]</value>
+	</variable>
+	<!-- END Custom Windows -->
+	
+	<!-- Dialog Player Process Info -->
 	<variable name="videohwdecoder">
 		<value condition="Player.Process(videohwdecoder)">$LOCALIZE[31223]</value>
 		<value>$LOCALIZE[31224]</value>
 	</variable>
-	<!-- END Custom Windows -->
+	<!-- END Dialog Player Process Info -->
 	
 	<!-- PARAMS -->	
 	<include name="MenubarTopbar">

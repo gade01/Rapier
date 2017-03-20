@@ -100,6 +100,13 @@
 					<include>ContextMenuBtn</include>
 					<visible>!String.IsEmpty(ListItem.DBID) + ListItem.IsCollection + !Skin.HasSetting(ContextMenuMovieSetInformation)</visible>
 				</control>
+				<control type="button" id="2069">
+					<description>Single Movie Set Information</description>
+					<label>$LOCALIZE[31040]</label>
+					<onclick>ActivateWindow(1117)</onclick>
+					<include>ContextMenuBtn</include>
+					<visible>[!String.IsEmpty(ListItem.SetID) | String.IsEqual(ListItem.DBTYPE,set)] + !Skin.HasSetting(ContextMenuMovieSetInformation) + !ListItem.IsCollection</visible>
+				</control>
 				<control type="button" id="2065">
 					<description>CinemaVision</description>
 					<label>$INFO[System.AddonTitle(script.cinemavision)]</label>

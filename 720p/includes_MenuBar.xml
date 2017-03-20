@@ -1613,9 +1613,8 @@
 				<textwidth>105</textwidth>
 				<include>MenuBarArrowBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[31038][/UPPERCASE]</label>
-				<onclick condition="System.HasAddon(script.extendedinfo)">Skin.SetString(ExtendedInfoDialog,7)</onclick>
-				<onclick condition="System.HasAddon(script.extendedinfo)">ActivateWindow(1101)</onclick>
-				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<onclick>Skin.SetString(ExtendedInfoDialog,7)</onclick>
+				<onclick>ActivateWindow(1101)</onclick>
 				<visible>![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,video)]</visible>
 			</control>
 			<control type="button" id="215">
@@ -2601,6 +2600,78 @@
 				<include>MenuBarSeparator</include>
 			</control>
 			-->
+		</control>		
+	</include>
+	
+	<include name="SingleMovieSetInfoMenuBar">
+		<control type="grouplist" id="987">
+			<width>ScreenWidth</width>
+			<height>MenuBarHeight</height>
+			<itemgap>0</itemgap>
+			<align>center</align>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<onup>555</onup>
+			<ondown>901</ondown>
+			<include>MenuBarBtnOpenCloseAnim</include>
+			<control type="image" id="115">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="116">
+				<description>Back</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31937][/UPPERCASE]</label>
+				<onclick>Dialog.Close(1117)</onclick>
+				<oninfo>Dialog.Close(1117)</oninfo>
+			</control>
+			<control type="image" id="117">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="118">
+				<description>Play</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[208][/UPPERCASE]</label>
+				<onclick>Dialog.Close(1117)</onclick>
+				<onclick>PlayMedia($INFO[Container(901).ListItem.FileNameAndPath])</onclick>
+				<oninfo>Dialog.Close(1117)</oninfo>
+			</control>
+			<control type="image" id="119">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="120">
+				<description>Search Youtube</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
+				<onclick>Dialog.Close(1117)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,video)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(901).ListItem.Label])</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<oninfo>Dialog.Close(1117)</oninfo>
+			</control>
+			<control type="image" id="121">
+				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="122">
+				<description>Play Trailer</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
+				<onclick>Dialog.Close(1117)</onclick>
+				<onclick>PlayMedia($INFO[Container(901).ListItem.Trailer])</onclick>
+				<oninfo>Dialog.Close(1117)</oninfo>
+				<visible>!String.IsEmpty(Container(901).ListItem.Trailer)</visible>
+			</control>
+			<control type="button" id="123">
+				<description>Search Trailer</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[31019][/UPPERCASE]</label>
+				<onclick>Dialog.Close(1117)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(901).ListItem.Label] trailer)</onclick>
+				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+				<oninfo>Dialog.Close(1117)</oninfo>
+				<visible>String.IsEmpty(Container(901).ListItem.Trailer)</visible>
+			</control>
+			<control type="image" id="124">
+				<include>MenuBarSeparator</include>
+			</control>
 		</control>		
 	</include>
 </includes>
