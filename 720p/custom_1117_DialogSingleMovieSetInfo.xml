@@ -239,6 +239,19 @@
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>String.IsEqual(Container(901).ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
+					
+					<control type="image">
+						<description>Studio Logo</description>
+						<top>505</top>
+						<width>336</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<align>center</align>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$INFO[Container(901).ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
+						<include>MediaFlagFadeAnim</include>
+						<visible>!String.IsEmpty(Container(901).ListItem.Studio))</visible>
+					</control>
 				</control>	
 
 				<control type="group">
@@ -438,19 +451,6 @@
 					<height>2</height>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
 					<texture>views/videoinfo-separator.png</texture>
-				</control>
-				
-				<control type="image">
-					<description>Studio Logo</description>
-					<top>669</top>
-					<width>1280</width>
-					<height>65</height>
-					<aspectratio>keep</aspectratio>
-					<align>center</align>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture>$INFO[Container(901).ListItem.Studio),resource://resource.images.studios.white/,.png]</texture>
-					<include>MediaFlagFadeAnim</include>
-					<visible>!String.IsEmpty(Container(901).ListItem.Studio))</visible>
 				</control>
 				
 				<control type="spincontrol" id="61">
