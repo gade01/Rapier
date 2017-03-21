@@ -1898,6 +1898,11 @@
 		<value>$LOCALIZE[19199] • $LOCALIZE[19023]</value>
 	</variable>
 	
+	<variable name="PVRGroupManagerHeader">
+		<value condition="!String.IsEmpty(Window.Property(IsRadio))">$LOCALIZE[19048] • $LOCALIZE[19174]</value>
+		<value>$LOCALIZE[19048] • $LOCALIZE[19173]</value>
+	</variable>
+	
 	<include name="FSMediaInfoPanel">
 		<control type="group" id="1">
 			<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio]</visible>
