@@ -41,7 +41,7 @@
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[14022]</label>
+					<label>$LOCALIZE[14022] ($LOCALIZE[571])</label>
 					<onclick condition="Skin.String(CategoryActionsDialog,Music)">Skin.SetString(MusicCategoryActionLabel,$LOCALIZE[14022])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,Music)">Skin.SetString(MusicCategoryAction,ActivateWindow(Music,Return))</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,Videos)">Skin.SetString(VideosCategoryActionLabel,$LOCALIZE[14022])</onclick>
@@ -59,12 +59,21 @@
 					<onclick condition="Skin.String(CategoryActionsDialog,Music)">Skin.SetString(MusicCategoryAction,ActivateWindow(Music,sources://music/,Return))</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,Videos)">Skin.SetString(VideosCategoryActionLabel,$LOCALIZE[744])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,Videos)">Skin.SetString(VideosCategoryAction,ActivateWindow(Videos,Files,Return))</onclick>
-					<onclick condition="Skin.String(CategoryActionsDialog,Games)">Skin.SetString(GamesCategoryActionLabel,$LOCALIZE[744])</onclick>
-					<onclick condition="Skin.String(CategoryActionsDialog,Games)">Skin.SetString(GamesCategoryAction,ActivateWindow(Games,Files,Return))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
-					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos) | Skin.String(CategoryActionsDialog,Games)</visible>
+					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos)</visible>
 				</control>
 				<control type="button" id="103">
+					<description>Files</description>
+					<width>330</width>
+					<textwidth>310</textwidth>
+					<include>ContextMenuBtn</include>
+					<label>$LOCALIZE[744] ($LOCALIZE[571])</label>
+					<onclick>Skin.SetString(GamesCategoryActionLabel,$LOCALIZE[744])</onclick>
+					<onclick>Skin.SetString(GamesCategoryAction,ActivateWindow(Games,Files,Return))</onclick>
+					<onclick>Dialog.Close(1118)</onclick>
+					<visible>Skin.String(CategoryActionsDialog,Games)</visible>
+				</control>
+				<control type="button" id="104">
 					<description>Library Nodes: Files</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -77,33 +86,33 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos)</visible>
 				</control>
-				<control type="button" id="104">
+				<control type="button" id="105">
 					<description>Titles</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[10024]</label>
-					<onclick condition="Skin.String(CategoryActionsDialog,Movies)">Skin.SetString(MoviesCategoryActionLabel,$LOCALIZE[10024])</onclick>
+					<label>$LOCALIZE[369] ($LOCALIZE[571])</label>
+					<onclick condition="Skin.String(CategoryActionsDialog,Movies)">Skin.SetString(MoviesCategoryActionLabel,$LOCALIZE[369])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,Movies)">Skin.SetString(MoviesCategoryAction,ActivateWindow(Videos,videodb://movies/titles/,Return))</onclick>
-					<onclick condition="Skin.String(CategoryActionsDialog,TVShows)">Skin.SetString(TVShowsCategoryActionLabel,$LOCALIZE[10024])</onclick>
+					<onclick condition="Skin.String(CategoryActionsDialog,TVShows)">Skin.SetString(TVShowsCategoryActionLabel,$LOCALIZE[369])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,TVShows)">Skin.SetString(TVShowsCategoryAction,ActivateWindow(Videos,videodb://tvshows/titles/,Return))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="105">
+				<control type="button" id="106">
 					<description>Library Nodes: Titles</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[31164]: $LOCALIZE[10024]</label>
-					<onclick condition="Skin.String(CategoryActionsDialog,Movies)">Skin.SetString(MoviesCategoryActionLabel,$LOCALIZE[31164]: $LOCALIZE[10024])</onclick>
+					<label>$LOCALIZE[31164]: $LOCALIZE[369]</label>
+					<onclick condition="Skin.String(CategoryActionsDialog,Movies)">Skin.SetString(MoviesCategoryActionLabel,$LOCALIZE[31164]: $LOCALIZE[369])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,Movies)">Skin.SetString(MoviesCategoryAction,ActivateWindow(Videos,library://video/movies/titles.xml,Return))</onclick>
-					<onclick condition="Skin.String(CategoryActionsDialog,TVShows)">Skin.SetString(TVShowsCategoryActionLabel,$LOCALIZE[31164]: $LOCALIZE[10024])</onclick>
+					<onclick condition="Skin.String(CategoryActionsDialog,TVShows)">Skin.SetString(TVShowsCategoryActionLabel,$LOCALIZE[31164]: $LOCALIZE[369])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,TVShows)">Skin.SetString(TVShowsCategoryAction,ActivateWindow(Videos,library://video/tvshows/titles.xml,Return))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="106">
+				<control type="button" id="107">
 					<description>Genres</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -118,7 +127,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="107">
+				<control type="button" id="108">
 					<description>Library Nodes: Genres</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -133,7 +142,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="108">
+				<control type="button" id="109">
 					<description>Year</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -148,7 +157,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="109">
+				<control type="button" id="110">
 					<description>Library Nodes: Year</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -163,7 +172,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="110">
+				<control type="button" id="111">
 					<description>Actors</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -176,7 +185,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="111">
+				<control type="button" id="112">
 					<description>Library Nodes: Actors</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -189,7 +198,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="112">
+				<control type="button" id="113">
 					<description>Directors</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -200,7 +209,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="113">
+				<control type="button" id="114">
 					<description>Library Nodes: Directors</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -211,7 +220,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="114">
+				<control type="button" id="115">
 					<description>Studios</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -224,7 +233,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="115">
+				<control type="button" id="116">
 					<description>Library Nodes: Studios</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -237,7 +246,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="116">
+				<control type="button" id="117">
 					<description>Countries</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -248,7 +257,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="117">
+				<control type="button" id="118">
 					<description>Library Nodes: Countries</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -259,7 +268,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="118">
+				<control type="button" id="119">
 					<description>Top 250</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -270,7 +279,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="119">
+				<control type="button" id="120">
 					<description>Sets</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -281,7 +290,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="120">
+				<control type="button" id="121">
 					<description>Library Nodes: Sets</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -292,7 +301,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="121">
+				<control type="button" id="122">
 					<description>Tags</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -305,7 +314,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="122">
+				<control type="button" id="123">
 					<description>Library Nodes: Tags</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -318,7 +327,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies) | Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="123">
+				<control type="button" id="124">
 					<description>Recently Added Movies</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -329,7 +338,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="124">
+				<control type="button" id="125">
 					<description>Library Nodes: Recently Added Movies</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -340,7 +349,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="125">
+				<control type="button" id="126">
 					<description>In Progress Movies</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -351,7 +360,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="126">
+				<control type="button" id="127">
 					<description>Unwatched Movies</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -362,7 +371,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Movies)</visible>
 				</control>
-				<control type="button" id="127">
+				<control type="button" id="128">
 					<description>Recently Added Episodes</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -373,7 +382,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="128">
+				<control type="button" id="129">
 					<description>Library Nodes: Recently Added Episodes</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -384,7 +393,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="129">
+				<control type="button" id="130">
 					<description>In Progress TV Shows</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -395,7 +404,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="130">
+				<control type="button" id="131">
 					<description>Library Nodes: In Progress TV Shows</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -406,7 +415,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,TVShows)</visible>
 				</control>
-				<control type="button" id="131">
+				<control type="button" id="132">
 					<description>Artists</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -417,7 +426,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="132">
+				<control type="button" id="133">
 					<description>Library Nodes: Artists</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -428,7 +437,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="133">
+				<control type="button" id="134">
 					<description>Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -439,7 +448,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="134">
+				<control type="button" id="135">
 					<description>Library Nodes: Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -450,7 +459,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="135">
+				<control type="button" id="136">
 					<description>Songs</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -461,7 +470,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="136">
+				<control type="button" id="137">
 					<description>Library Nodes: Songs</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -472,7 +481,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="137">
+				<control type="button" id="138">
 					<description>Singles</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -483,7 +492,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="138">
+				<control type="button" id="139">
 					<description>Library Nodes: Singles</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -494,7 +503,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="139">
+				<control type="button" id="140">
 					<description>Top 100</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -505,7 +514,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="140">
+				<control type="button" id="141">
 					<description>Top 100 Songs</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -516,7 +525,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="141">
+				<control type="button" id="142">
 					<description>Library Nodes: Top 100 Songs</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -527,7 +536,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="142">
+				<control type="button" id="143">
 					<description>Top 100 Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -538,7 +547,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="143">
+				<control type="button" id="144">
 					<description>Library Nodes: Top 100 Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -549,7 +558,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="144">
+				<control type="button" id="145">
 					<description>Recently Added Songs</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -560,7 +569,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="145">
+				<control type="button" id="146">
 					<description>Recently Added Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -571,7 +580,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="146">
+				<control type="button" id="147">
 					<description>Library Nodes: Recently Added Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -582,7 +591,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="147">
+				<control type="button" id="148">
 					<description>Recently Played Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -593,7 +602,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="148">
+				<control type="button" id="149">
 					<description>Library Nodes: Recently Played Albums</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -604,7 +613,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music)</visible>
 				</control>
-				<control type="button" id="149">
+				<control type="button" id="150">
 					<description>Playlists</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -617,7 +626,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos)</visible>
 				</control>
-				<control type="button" id="150">
+				<control type="button" id="151">
 					<description>Library Nodes: Playlists</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -630,18 +639,18 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos)</visible>
 				</control>
-				<control type="button" id="151">
+				<control type="button" id="152">
 					<description>My Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[24998]</label>
+					<label>$LOCALIZE[24998] ($LOCALIZE[571])</label>
 					<onclick>Skin.SetString(AddonsCategoryActionLabel,$LOCALIZE[24998])</onclick>
 					<onclick>Skin.SetString(AddonsCategoryAction,ActivateWindow(1116))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="152">
+				<control type="button" id="153">
 					<description>Add-on Browser</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -652,7 +661,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="153">
+				<control type="button" id="154">
 					<description>Video Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -664,7 +673,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="154">
+				<control type="button" id="155">
 					<description>Music Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -676,7 +685,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="155">
+				<control type="button" id="156">
 					<description>Picture Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -688,7 +697,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="156">
+				<control type="button" id="157">
 					<description>Program Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -700,7 +709,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="157">
+				<control type="button" id="158">
 					<description>Game Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -712,7 +721,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="158">
+				<control type="button" id="159">
 					<description>Programs</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -723,18 +732,18 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons)</visible>
 				</control>
-				<control type="button" id="159">
+				<control type="button" id="160">
 					<description>Pictures</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[1]</label>
+					<label>$LOCALIZE[1] ($LOCALIZE[571])</label>
 					<onclick>Skin.SetString(PicturesCategoryActionLabel,$LOCALIZE[1])</onclick>
 					<onclick>Skin.SetString(PicturesCategoryAction,ActivateWindow(Pictures,Return))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Pictures)</visible>
 				</control>
-				<control type="button" id="160">
+				<control type="button" id="161">
 					<description>Root</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -749,7 +758,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Addons) | Skin.String(CategoryActionsDialog,Pictures) | Skin.String(CategoryActionsDialog,Games)</visible>
 				</control>
-				<control type="button" id="161">
+				<control type="button" id="162">
 					<description>Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -770,7 +779,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos) | Skin.String(CategoryActionsDialog,Pictures) | Skin.String(CategoryActionsDialog,Games)</visible>
 				</control>
-				<control type="button" id="162">
+				<control type="button" id="163">
 					<description>Library Nodes: Add-ons</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -783,12 +792,12 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Music) | Skin.String(CategoryActionsDialog,Videos)</visible>
 				</control>
-				<control type="button" id="163">
+				<control type="button" id="164">
 					<description>Channels</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[14301]</label>
+					<label>$LOCALIZE[14301] ($LOCALIZE[571])</label>
 					<onclick condition="Skin.String(CategoryActionsDialog,PVR)">Skin.SetString(PVRCategoryActionLabel,$LOCALIZE[14301])</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,PVR)">Skin.SetString(PVRCategoryAction,ActivateWindow(TVChannels))</onclick>
 					<onclick condition="Skin.String(CategoryActionsDialog,PVRRadio)">Skin.SetString(PVRRadioCategoryActionLabel,$LOCALIZE[14301])</onclick>
@@ -796,7 +805,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,PVR) | Skin.String(CategoryActionsDialog,PVRRadio)</visible>
 				</control>
-				<control type="button" id="164">
+				<control type="button" id="165">
 					<description>Guide</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -809,7 +818,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,PVR) | Skin.String(CategoryActionsDialog,PVRRadio)</visible>
 				</control>
-				<control type="button" id="165">
+				<control type="button" id="166">
 					<description>Search</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -822,7 +831,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,PVR) | Skin.String(CategoryActionsDialog,PVRRadio)</visible>
 				</control>
-				<control type="button" id="166">
+				<control type="button" id="167">
 					<description>Recordings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -835,7 +844,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,PVR) | Skin.String(CategoryActionsDialog,PVRRadio)</visible>
 				</control>
-				<control type="button" id="167">
+				<control type="button" id="168">
 					<description>Timers</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -848,7 +857,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,PVR) | Skin.String(CategoryActionsDialog,PVRRadio)</visible>
 				</control>
-				<control type="button" id="168">
+				<control type="button" id="169">
 					<description>Timer Rules</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -861,18 +870,18 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,PVR) | Skin.String(CategoryActionsDialog,PVRRadio)</visible>
 				</control>
-				<control type="button" id="169">
+				<control type="button" id="170">
 					<description>Weather</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[8]</label>
+					<label>$LOCALIZE[8] ($LOCALIZE[571])</label>
 					<onclick>Skin.SetString(WeatherCategoryActionLabel,$LOCALIZE[8])</onclick>
 					<onclick>Skin.SetString(WeatherCategoryAction,ActivateWindow(Weather,Return))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Weather)</visible>
 				</control>
-				<control type="button" id="170">
+				<control type="button" id="171">
 					<description>Next Location</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -883,7 +892,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Weather)</visible>
 				</control>
-				<control type="button" id="171">
+				<control type="button" id="172">
 					<description>Previous Location</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -894,18 +903,18 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Weather)</visible>
 				</control>
-				<control type="button" id="172">
+				<control type="button" id="173">
 					<description>File Manager</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[10003]</label>
+					<label>$LOCALIZE[10003] ($LOCALIZE[571])</label>
 					<onclick>Skin.SetString(GeneralCategoryActionLabel,$LOCALIZE[10003])</onclick>
 					<onclick>Skin.SetString(GeneralCategoryAction,ActivateWindow(Filemanager))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,General)</visible>
 				</control>
-				<control type="button" id="173">
+				<control type="button" id="174">
 					<description>Favourites</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -916,7 +925,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,General)</visible>
 				</control>
-				<control type="button" id="174">
+				<control type="button" id="175">
 					<description>Search</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -927,18 +936,18 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,General)</visible>
 				</control>
-				<control type="button" id="175">
+				<control type="button" id="176">
 					<description>Interface Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[14207]</label>
+					<label>$LOCALIZE[14207] ($LOCALIZE[571])</label>
 					<onclick>Skin.SetString(SystemCategoryActionLabel,$LOCALIZE[14207])</onclick>
 					<onclick>Skin.SetString(SystemCategoryAction,ActivateWindow(InterfaceSettings))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="176">
+				<control type="button" id="177">
 					<description>Skin Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -949,7 +958,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="177">
+				<control type="button" id="178">
 					<description>Player Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -960,7 +969,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="178">
+				<control type="button" id="179">
 					<description>Media Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -971,7 +980,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="179">
+				<control type="button" id="180">
 					<description>PVR Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -982,7 +991,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="180">
+				<control type="button" id="181">
 					<description>Game Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -993,7 +1002,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="181">
+				<control type="button" id="182">
 					<description>Profiles Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1004,7 +1013,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="182">
+				<control type="button" id="183">
 					<description>Services Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1015,7 +1024,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="183">
+				<control type="button" id="184">
 					<description>System Settings</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1026,7 +1035,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System)</visible>
 				</control>
-				<control type="button" id="184">
+				<control type="button" id="185">
 					<description>System Info</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1039,7 +1048,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System) | Skin.String(CategoryActionsDialog,General)</visible>
 				</control>
-				<control type="button" id="185">
+				<control type="button" id="186">
 					<description>Event Log</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1052,18 +1061,18 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,System) | Skin.String(CategoryActionsDialog,General)</visible>
 				</control>
-				<control type="button" id="186">
+				<control type="button" id="187">
 					<description>Shutdown Menu</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
 					<include>ContextMenuBtn</include>
-					<label>$LOCALIZE[31504]</label>
+					<label>$LOCALIZE[31504] ($LOCALIZE[571])</label>
 					<onclick>Skin.SetString(PowerCategoryActionLabel,$LOCALIZE[31504])</onclick>
 					<onclick>Skin.SetString(PowerCategoryAction,ActivateWindow(ShutdownMenu))</onclick>
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Power)</visible>
 				</control>
-				<control type="button" id="187">
+				<control type="button" id="188">
 					<description>Quit Kodi</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1074,7 +1083,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Power)</visible>
 				</control>
-				<control type="button" id="188">
+				<control type="button" id="189">
 					<description>Restart Kodi</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1085,7 +1094,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Power)</visible>
 				</control>
-				<control type="button" id="189">
+				<control type="button" id="190">
 					<description>Shutdown</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1096,7 +1105,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Power)</visible>
 				</control>
-				<control type="button" id="190">
+				<control type="button" id="191">
 					<description>Suspend</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1107,7 +1116,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Power)</visible>
 				</control>
-				<control type="button" id="191">
+				<control type="button" id="192">
 					<description>Hibernate</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
@@ -1118,7 +1127,7 @@
 					<onclick>Dialog.Close(1118)</onclick>
 					<visible>Skin.String(CategoryActionsDialog,Power)</visible>
 				</control>
-				<control type="button" id="192">
+				<control type="button" id="193">
 					<description>Reboot</description>
 					<width>330</width>
 					<textwidth>310</textwidth>
