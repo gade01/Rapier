@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="MusicCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(MusicCategoryActionLabel))">$INFO[Skin.String(MusicCategoryActionLabel)]</value>
+		<value>$LOCALIZE[14022]</value>
+	</variable>
+	
+	<variable name="PVRCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(PVRCategoryActionLabel))">$INFO[Skin.String(PVRCategoryActionLabel)]</value>
+		<value>$LOCALIZE[14301]</value>
+	</variable>
+	
+	<variable name="PVRRadioCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(PVRRadioCategoryActionLabel))">$INFO[Skin.String(PVRRadioCategoryActionLabel)]</value>
+		<value>$LOCALIZE[14301]</value>
+	</variable>
+	
+	<variable name="VideosCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(VideosCategoryActionLabel))">$INFO[Skin.String(VideosCategoryActionLabel)]</value>
+		<value>$LOCALIZE[14022]</value>
+	</variable>
+	
+	<variable name="MoviesCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(MoviesCategoryActionLabel))">$INFO[Skin.String(MoviesCategoryActionLabel)]</value>
+		<value>$LOCALIZE[10024]</value>
+	</variable>
+	
+	<variable name="TVShowsCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(TVShowsCategoryActionLabel))">$INFO[Skin.String(TVShowsCategoryActionLabel)]</value>
+		<value>$LOCALIZE[10024]</value>
+	</variable>
+	
+	<variable name="AddonsCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(AddonsCategoryActionLabel))">$INFO[Skin.String(AddonsCategoryActionLabel)]</value>
+		<value>$LOCALIZE[24998]</value>
+	</variable>
+	
+	<variable name="GamesCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(GamesCategoryActionLabel))">$INFO[Skin.String(GamesCategoryActionLabel)]</value>
+		<value>$LOCALIZE[744]</value>
+	</variable>
+	
+	<variable name="PicturesCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(PicturesCategoryActionLabel))">$INFO[Skin.String(PicturesCategoryActionLabel)]</value>
+		<value>$LOCALIZE[1]</value>
+	</variable>
+	
+	<variable name="WeatherCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(WeatherCategoryActionLabel))">$INFO[Skin.String(WeatherCategoryActionLabel)]</value>
+		<value>$LOCALIZE[8]</value>
+	</variable>
+	
+	<variable name="GeneralCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(GeneralCategoryActionLabel))">$INFO[Skin.String(GeneralCategoryActionLabel)]</value>
+		<value>$LOCALIZE[7]</value>
+	</variable>
+	
+	<variable name="SystemCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(SystemCategoryActionLabel))">$INFO[Skin.String(SystemCategoryActionLabel)]</value>
+		<value>$LOCALIZE[14207]</value>
+	</variable>
+	
+	<variable name="PowerCategoryActionLabel">
+		<value condition="!String.IsEmpty(Skin.String(PowerCategoryActionLabel))">$INFO[Skin.String(PowerCategoryActionLabel)]</value>
+		<value>$LOCALIZE[31504]</value>
+	</variable>
+	
 	<variable name="CustomCategoryIconsPreview">
 		<value condition="ControlGroup(940).HasFocus(2401) + !String.IsEmpty(Skin.String(MusicCategoryIconPath))">$INFO[Skin.String(MusicCategoryIconPath)]</value>
 		<value condition="ControlGroup(940).HasFocus(2402) + !String.IsEmpty(Skin.String(PVRCategoryIconPath))">$INFO[Skin.String(PVRCategoryIconPath)]</value>
@@ -64,41 +129,14 @@
 					<usealttexture>Skin.HasSetting(ToggleCategoryColors)</usealttexture>
 					<onclick>Skin.ToggleSetting(ToggleCategoryColors)</onclick>
 				</control>
-				<control type="togglebutton" id="2021">
-					<description>Redirect Music Category To Files</description>
-					<include>SettingsContentToggleBtn</include>
-					<label>$LOCALIZE[31717]</label>
-					<altlabel>$LOCALIZE[31716]</altlabel>
-					<usealttexture>Skin.HasSetting(RedirectMusicCategoryFiles)</usealttexture>
-					<onclick>Skin.ToggleSetting(RedirectMusicCategoryFiles)</onclick>
-					<visible>!Skin.HasSetting(HideMusicCategory)</visible>
-				</control>
-				<control type="togglebutton" id="2042">
-					<description>Redirect Videos Category To Library</description>
-					<include>SettingsContentToggleBtn</include>
-					<label>$LOCALIZE[31718]</label>
-					<altlabel>$LOCALIZE[31719]</altlabel>
-					<usealttexture>Skin.HasSetting(RedirectVideosCategoryLibrary)</usealttexture>
-					<onclick>Skin.ToggleSetting(RedirectVideosCategoryLibrary)</onclick>
-					<visible>!Skin.HasSetting(HideVideosCategory)</visible>
-				</control>
-				<control type="togglebutton" id="2043">
-					<description>Redirect TV Category To EPG</description>
-					<include>SettingsContentToggleBtn</include>
-					<label>$LOCALIZE[31721]</label>
-					<altlabel>$LOCALIZE[31722]</altlabel>
-					<usealttexture>Skin.HasSetting(RedirectPVRCategoryEPG)</usealttexture>
-					<onclick>Skin.ToggleSetting(RedirectPVRCategoryEPG)</onclick>
-					<visible>Pvr.HasTVChannels + !Skin.HasSetting(HidePVRCategory)</visible>
-				</control>
-				<control type="togglebutton" id="2049">
-					<description>Redirect Radio Category To EPG</description>
-					<include>SettingsContentToggleBtn</include>
-					<label>$LOCALIZE[31726]</label>
-					<altlabel>$LOCALIZE[31727]</altlabel>
-					<usealttexture>Skin.HasSetting(RedirectPVRRadioCategoryEPG)</usealttexture>
-					<onclick>Skin.ToggleSetting(RedirectPVRRadioCategoryEPG)</onclick>
-					<visible>Pvr.HasRadioChannels + !Skin.HasSetting(HidePVRRadioCategory)</visible>
+				<control type="radiobutton" id="2021">
+					<description>Change Category Actions</description>
+					<include>SettingsContentExpandBtn</include>
+					<label>$LOCALIZE[31165]</label>
+					<selected>Skin.HasSetting(ExpandChangeCategoryActionsSettings)</selected>
+					<onclick>Skin.SetBool(ExpandChangeCategoryActionsSettings)</onclick>
+					<onclick>Skin.SetBool(ExpandedSettings)</onclick>
+					<onclick>Control.SetFocus(960)</onclick>
 				</control>
 				<control type="radiobutton" id="2009">
 					<description>Hide Categories</description>
@@ -1149,6 +1187,160 @@
 					<onclick>Skin.Reset(ExpandCategoryToggleSettings)</onclick>
 					<onclick>Skin.Reset(ExpandedSettings)</onclick>
 					<onclick>Control.SetFocus(2009)</onclick>
+				</control>
+			</control>
+			
+			<control type="group" id="855">
+				<description>Expanded Change Category Actions Area</description>
+				<visible>Skin.HasSetting(ExpandChangeCategoryActionsSettings)</visible>
+				<include>ExpandedSettingsOpenCloseAnim</include>
+
+				<control type="button">
+					<description>Title</description>
+					<include>SettingsHeaderBtn</include>
+					<label>$LOCALIZE[31165]</label>
+				</control>
+
+				<control type="grouplist" id="960">
+					<description>Change Category Actions Area</description>
+					<top>65</top>
+					<width>755</width>
+					<height>450</height>
+					<itemgap>0</itemgap>
+					<onup>960</onup>
+					<ondown>960</ondown>
+					<onleft>1960</onleft>
+					<onright>996</onright>
+					<pagecontrol>996</pagecontrol>
+					<include>ControlsOpenCloseAnim</include>
+					<control type="button" id="2501">
+						<description>Music</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[2] - [COLOR=DefaultColor2]$VAR[MusicCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Music)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<enable>Library.HasContent(Music)</enable>
+						<visible>!Skin.HasSetting(HideMusicCategory)</visible>
+					</control>
+					<control type="button" id="2502">
+						<description>PVR TV</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[19020] - [COLOR=DefaultColor2]$VAR[PVRCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,PVR)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>Pvr.HasTVChannels + !Skin.HasSetting(HidePVRCategory)</visible>
+					</control>
+					<control type="button" id="2503">
+						<description>PVR Radio</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[29021] - [COLOR=DefaultColor2]$VAR[PVRRadioCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,PVRRadio)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>Pvr.HasRadioChannels + !Skin.HasSetting(HidePVRRadioCategory)</visible>
+					</control>
+					<control type="button" id="2504">
+						<description>Videos</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[3] - [COLOR=DefaultColor2]$VAR[VideosCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Videos)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>!Skin.HasSetting(HideVideosCategory)</visible>
+					</control>
+					<control type="button" id="2505">
+						<description>Movies</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[20342] - [COLOR=DefaultColor2]$VAR[MoviesCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Movies)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<enable>Library.HasContent(Movies)</enable>
+						<visible>!Skin.HasSetting(HideMoviesCategory)</visible>
+					</control>
+					<control type="button" id="2506">
+						<description>TV Shows</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[20343] - [COLOR=DefaultColor2]$VAR[TVShowsCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,TVShows)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<enable>Library.HasContent(TVShows)</enable>
+						<visible>!Skin.HasSetting(HideTVShowsCategory)</visible>
+					</control>
+					<control type="button" id="2507">
+						<description>Add-ons</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[24001] - [COLOR=DefaultColor2]$VAR[AddonsCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Addons)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>!Skin.HasSetting(HideAddonsCategory)</visible>
+					</control>
+					<control type="button" id="2508">
+						<description>Games</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[15016] - [COLOR=DefaultColor2]$VAR[GamesCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Games)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>!Skin.HasSetting(HideGamesCategory)</visible>
+					</control>
+					<control type="button" id="2509">
+						<description>Pictures</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[1] - [COLOR=DefaultColor2]$VAR[PicturesCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Pictures)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>!Skin.HasSetting(HidePicturesCategory)</visible>
+					</control>
+					<control type="button" id="2510">
+						<description>Weather</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[8] - [COLOR=DefaultColor2]$VAR[WeatherCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Weather)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>Skin.HasSetting(EnableWeatherCategory)</visible>
+					</control>
+					<control type="button" id="2511">
+						<description>General</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[128] - [COLOR=DefaultColor2]$VAR[GeneralCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,General)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>!Skin.HasSetting(HideGeneralCategory)</visible>
+					</control>
+					<control type="button" id="2512">
+						<description>System</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[13000] - [COLOR=DefaultColor2]$VAR[SystemCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,System)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>
+						<visible>!Skin.HasSetting(HideSystemCategory)</visible>
+					</control>
+					<control type="button" id="2513">
+						<description>Power</description>
+						<include>SettingsContentBtn</include>
+						<label>$LOCALIZE[33060] - [COLOR=DefaultColor2]$VAR[PowerCategoryActionLabel][/COLOR]</label>
+						<onclick>Skin.SetString(CategoryActionsDialog,Power)</onclick>
+						<onclick>ActivateWindow(1118)</onclick>>
+						<ondown>2301</ondown>
+						<visible>!Skin.HasSetting(HidePowerCategory)</visible>
+					</control>
+				</control>
+
+				<control type="button" id="1960">
+					<description>Back</description>
+					<include>SettingsBackBtn</include>
+					<onright>960</onright>
+					<onleft>Skin.Reset(ExpandChangeCategoryActionsSettings)</onleft>
+					<onleft>Skin.Reset(ExpandedSettings)</onleft>
+					<onleft>Control.SetFocus(2021)</onleft>
+					<onclick>Skin.Reset(ExpandChangeCategoryActionsSettings)</onclick>
+					<onclick>Skin.Reset(ExpandedSettings)</onclick>
+					<onclick>Control.SetFocus(2021)</onclick>
+				</control>
+				
+				<control type="scrollbar" id="996">
+					<left>862</left>
+					<top>49</top>
+					<height>466</height>
+					<onleft>960</onleft>
+					<visible>Container(960).HasNext | Container(960).HasPrevious</visible>
 				</control>
 			</control>
 			
@@ -10766,4 +10958,4 @@
 		<value condition="Skin.HasSetting(ExpandCustom16SubMenuSettings)">Skin.SetString(CustomBtnPresetsParam,Custom16SubMenuBtn7Param)</value>
 	</variable>
 	<!--//// END EXPANDED SUB MENUS VARIABLES ///////////////////////////////////////////////////-->
-</includes>
+</includes>

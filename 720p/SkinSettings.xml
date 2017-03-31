@@ -6,6 +6,7 @@
 	<onunload condition="Skin.HasSetting(ExpandReorderCategoryToggleSettings) + !String.IsEmpty(Skin.String(ReorderCategories1)) + Integer.IsGreater(Container(946).NumItems,0)">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31177],message=$LOCALIZE[31174])</onunload>
 	<!-- Home -->
 	<onunload>Skin.Reset(ExpandCategoryToggleSettings)</onunload>
+	<onunload>Skin.Reset(ExpandChangeCategoryActionsSettings)</onunload>
 	<onunload>Skin.Reset(ExpandReorderCategoryToggleSettings)</onunload>
 	<onunload>Skin.Reset(ExpandAddMoreCategorySettings)</onunload>
 	<onunload>Skin.Reset(ExpandAddMoreCategorySettings2)</onunload>
