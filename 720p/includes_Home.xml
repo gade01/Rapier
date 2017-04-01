@@ -592,7 +592,7 @@
 			<label>movies</label>
 			<icon>homecategories/$INFO[System.Language]/movies-text-nofocus.png</icon>
 			<thumb>$VAR[CustomMoviesBGVar]</thumb>
-			<onclick condition="Library.HasContent(Movies)">$VAR[MoviesCategoryAction]</onclick>  
+			<onclick condition="Library.HasContent(Movies)">$VAR[MoviesCategoryAction]</onclick>
 			<onclick condition="!Library.HasContent(Movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
 			<onclick condition="!Library.HasContent(Movies)">Notification($LOCALIZE[342],$LOCALIZE[31296],9000)</onclick>
 		</item>
