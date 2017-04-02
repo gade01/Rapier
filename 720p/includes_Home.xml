@@ -28,7 +28,7 @@
 		<onback>PageUp</onback>
 	</include>
 	
-	<include name="KodiLogo">			
+	<include name="KodiLogo">
 		<control type="button" id="555">
 			<left>9</left>
 			<top>9</top>
@@ -37,7 +37,7 @@
 			<ondown condition="Container(850).HasFocus(4) + Control.IsVisible(6927)">6926</ondown>
 			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</ondown>
 			<ondown condition="Control.IsVisible(110)">110</ondown>
-			<ondown>850</ondown>			
+			<ondown>850</ondown>
 			<onright condition="Container(850).HasFocus(50) + [Control.IsVisible(6887) | Control.IsVisible(6886)]">6885</onright>
 			<onright condition="Container(850).HasFocus(52) + [Control.IsVisible(6876) | Control.IsVisible(6875)]">6877</onright>
 			<onright condition="Container(850).HasFocus(2) + Control.IsVisible(6873)">6873</onright>
@@ -70,7 +70,7 @@
 			<width>78</width>
 			<height>24</height>
 			<hitrect x="-20" y="-20" w="118" h="64"/>
-			<animation effect="fade" end="80" condition="true">Conditional</animation>			
+			<animation effect="fade" end="80" condition="true">Conditional</animation>
 			<font />
 			<texturefocus border="0">kodi-logo-blue.png</texturefocus>
 			<texturenofocus border="0">kodi-logo.png</texturenofocus>
@@ -104,12 +104,12 @@
 			<height>112</height>
 			<texture>gui/bottom-bar-overlay.png</texture>
 			<animation effect="fade" end="68" condition="true">Conditional</animation>
-		</control>	
+		</control>
 	</include>
 
-	<include name="HomeMenuIconDim">	
+	<include name="HomeMenuIconDim">
 		<width>200</width>
-		<height>200</height>			
+		<height>200</height>
 	</include>
 
 	<include name="HomeNavButtons">
@@ -157,7 +157,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-			</control>		
+			</control>
 		</itemlayout>
 		<focusedlayout width="180">
 			<control type="label">
@@ -181,7 +181,7 @@
 				<aligny>center</aligny>
 				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 				<visible>!Control.HasFocus(110)</visible>
-			</control>							
+			</control>
 		</focusedlayout>
 	</include>
 
@@ -543,7 +543,7 @@
 		<item id="50">
 			<description>PVR TV Category</description>
 			<label>pvr</label>
-			<icon>homecategories/$INFO[System.Language]/pvr-text-nofocus.png</icon>			
+			<icon>homecategories/$INFO[System.Language]/pvr-text-nofocus.png</icon>
 			<include condition="Skin.String(CustomPVRBGType,2) | Skin.String(CustomPVRBGType,3)">HomePVRCustomBGPath</include>
 			<include condition="Skin.String(CustomPVRBGType,4)">HomePVRFanartBGPath</include>
 			<onclick>$VAR[TVCategoryAction]</onclick>
@@ -559,7 +559,7 @@
 		<item id="52">
 			<description>PVR Radio Category</description>
 			<label>radio</label>
-			<icon>homecategories/$INFO[System.Language]/radio-text-nofocus.png</icon>			
+			<icon>homecategories/$INFO[System.Language]/radio-text-nofocus.png</icon>
 			<include condition="Skin.String(CustomPVRRadioBGType,2) | Skin.String(CustomPVRRadioBGType,3)">HomePVRRadioCustomBGPath</include>
 			<include condition="Skin.String(CustomPVRRadioBGType,4)">HomePVRFanartBGPath</include>
 			<onclick>$VAR[RadioCategoryAction]</onclick>
@@ -1044,7 +1044,7 @@
 		<left>490</left>
 		<top>30</top>
 		<width>300</width>
-		<height>86</height>	
+		<height>86</height>
 		<aspectratio>keep</aspectratio>
 		<include condition="Skin.HasSetting(ToggleCategoryColors)">ColoredCategoryFocusImage</include>
 		<include condition="!Skin.HasSetting(ShowHomeNavButtons)">HomeMenuCategoryFocusAnim</include>
@@ -1053,129 +1053,129 @@
 	</include>
 
 	<include name="HomeCustomCategoryFocus1">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom1-text-focus.png">$INFO[Skin.String(Custom1FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom1-text-focus.png">$INFO[Skin.String(Custom1FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(7)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus2">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom2-text-focus.png">$INFO[Skin.String(Custom2FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom2-text-focus.png">$INFO[Skin.String(Custom2FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(8)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus3">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom3-text-focus.png">$INFO[Skin.String(Custom3FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom3-text-focus.png">$INFO[Skin.String(Custom3FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(9)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus4">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom4-text-focus.png">$INFO[Skin.String(Custom4FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom4-text-focus.png">$INFO[Skin.String(Custom4FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(10)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus5">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom5-text-focus.png">$INFO[Skin.String(Custom5FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom5-text-focus.png">$INFO[Skin.String(Custom5FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(11)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus6">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom6-text-focus.png">$INFO[Skin.String(Custom6FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom6-text-focus.png">$INFO[Skin.String(Custom6FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(12)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus7">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom7-text-focus.png">$INFO[Skin.String(Custom7FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom7-text-focus.png">$INFO[Skin.String(Custom7FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(13)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus8">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom8-text-focus.png">$INFO[Skin.String(Custom8FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom8-text-focus.png">$INFO[Skin.String(Custom8FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(14)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus9">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom9-text-focus.png">$INFO[Skin.String(Custom9FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom9-text-focus.png">$INFO[Skin.String(Custom9FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(17)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus10">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom10-text-focus.png">$INFO[Skin.String(Custom10FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom10-text-focus.png">$INFO[Skin.String(Custom10FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(18)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus11">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom11-text-focus.png">$INFO[Skin.String(Custom11FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom11-text-focus.png">$INFO[Skin.String(Custom11FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(19)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus12">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom12-text-focus.png">$INFO[Skin.String(Custom12FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom12-text-focus.png">$INFO[Skin.String(Custom12FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(20)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus13">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom13-text-focus.png">$INFO[Skin.String(Custom13FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom13-text-focus.png">$INFO[Skin.String(Custom13FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(21)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus14">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom14-text-focus.png">$INFO[Skin.String(Custom14FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom14-text-focus.png">$INFO[Skin.String(Custom14FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(22)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus15">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom15-text-focus.png">$INFO[Skin.String(Custom15FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom15-text-focus.png">$INFO[Skin.String(Custom15FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(23)</visible>
 		</control>
 	</include>
 
 	<include name="HomeCustomCategoryFocus16">
-		<control type="image">	
+		<control type="image">
 			<include>HomeCategoryFocusImage</include>
-			<texture fallback="homecategories/custom16-text-focus.png">$INFO[Skin.String(Custom16FocusImagePath)]</texture>			
+			<texture fallback="homecategories/custom16-text-focus.png">$INFO[Skin.String(Custom16FocusImagePath)]</texture>
 			<visible>Container(850).HasFocus(24)</visible>
 		</control>
 	</include>
@@ -1340,7 +1340,7 @@
 		</control>
 	</include>
 
-	<include name="HomeMenu">		
+	<include name="HomeMenu">
 		<control type="group">
 		<visible>![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
 			<control type="wraplist" id="850">
@@ -1384,7 +1384,7 @@
 				<onup condition="Container(850).HasFocus(26) + Control.IsVisible(6870)">6870</onup>
 				<onup>555</onup>
 				<ondown>noop</ondown>
-				<include>HomeMenuOpenCloseAnim</include>	
+				<include>HomeMenuOpenCloseAnim</include>
 				<include>HomeMenuFocusAnim</include>
 				<itemlayout width="340">
 					<control type="image">
@@ -1397,13 +1397,13 @@
 						<animation effect="fade" start="100" end="30" time="650" condition="true">Conditional</animation>
 						<animation effect="fade" start="100" end="30" time="650" condition="Window.IsActive(1103) | Window.IsActive(3011) | Window.IsActive(1106)">Conditional</animation>
 					</control>
-				</itemlayout>	
+				</itemlayout>
 				<focusedlayout width="340">
-				</focusedlayout>	
+				</focusedlayout>
 				<content>
 					<include condition="String.IsEmpty(Skin.String(ReorderCategories1))">HomeMenuContent</include>
 					<include condition="!String.IsEmpty(Skin.String(ReorderCategories1))">HomeMenuReorderedContent</include>
-				</content>					
+				</content>
 			</control>
 			
 			<control type="group">
@@ -1436,9 +1436,9 @@
 	</include>
 
 	<include name="HomeCategoryIcons">
-		<control type="group">		
+		<control type="group">
 			<left>540</left>
-			<top>367</top>		
+			<top>367</top>
 			<visible>!Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
 			
 			<control type="image">
@@ -1677,7 +1677,7 @@
 					</control>
 				</control>
 			</control>
-		</focusedlayout>			
+		</focusedlayout>
 		<content>
 			<item>
 				<onclick>RunAddon($INFO[Skin.String($PARAM[AddonType]Addon1)])</onclick>
@@ -1714,7 +1714,7 @@
 				<icon>$INFO[system.addonicon(Skin.String($PARAM[AddonType]Addon6))]</icon>
 				<label>$INFO[system.addontitle(Skin.String($PARAM[AddonType]Addon6))]</label>
 				<visible>!String.IsEmpty(Skin.String($PARAM[AddonType]Addon6))</visible>
-			</item>	
+			</item>
 		</content>
 	</include>
 	
@@ -1873,7 +1873,7 @@
 					<onclick condition="Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Type,Favourite) | Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Type,)">$INFO[Skin.String($PARAM[CustomCategoryNumber]SubMenuFavourite.7.Path)]</onclick>
 					<visible>Skin.HasSetting(Edit$PARAM[CustomCategoryNumber]SubMenuBtn7) + !String.IsEmpty(Skin.String($PARAM[CustomCategoryNumber]SubMenuBtn7Label))</visible>
 				</item>
-			</content>						
+			</content>
 		</control>
 	</include>
 
@@ -1893,7 +1893,7 @@
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<ondown>850</ondown>
-				<orientation>horizontal</orientation>		
+				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(1) + Library.HasContent(Music)</visible>
 				<include>HomeSubMenuItemOpenCloseAnim</include>
 				<include>HomeSubMenuItemsCenterAlignAnim</include>
@@ -1915,7 +1915,7 @@
 					<item id="2">
 						<description>Albums</description>
 						<label>$LOCALIZE[132]</label>
-						<onclick>ActivateWindow(Music,musicdb://albums/,Return)</onclick>	
+						<onclick>ActivateWindow(Music,musicdb://albums/,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMusicSubMenuBtn2)</visible>
 					</item>
 					<item id="2">
@@ -1991,7 +1991,7 @@
 						<onclick condition="Skin.String(MusicSubMenuBtn7Type,Favourite) | Skin.String(MusicSubMenuBtn7Type,)">$INFO[Skin.String(MusicSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMusicSubMenuBtn7) + !String.IsEmpty(Skin.String(MusicSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -2114,7 +2114,7 @@
 						<onclick condition="Skin.String(VideosSubMenuBtn7Type,Favourite) | Skin.String(VideosSubMenuBtn7Type,)">$INFO[Skin.String(VideosSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditVideosSubMenuBtn7) + !String.IsEmpty(Skin.String(VideosSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -2188,7 +2188,7 @@
 					<item id="5">
 						<description>Studios</description>
 						<label>$LOCALIZE[20388]</label>
-						<onclick>ActivateWindow(Videos,videodb://movies/studios/,Return)</onclick>	
+						<onclick>ActivateWindow(Videos,videodb://movies/studios/,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMoviesSubMenuBtn5)</visible>
 					</item>
 					<item id="5">
@@ -2201,7 +2201,7 @@
 					<item id="6">
 						<description>Countries</description>
 						<label>$LOCALIZE[20451]</label>
-						<onclick>ActivateWindow(Videos,videodb://movies/countries/,Return)</onclick>	
+						<onclick>ActivateWindow(Videos,videodb://movies/countries/,Return)</onclick>
 						<visible>!Skin.HasSetting(EditMoviesSubMenuBtn6)</visible>
 					</item>
 					<item id="6">
@@ -2224,7 +2224,7 @@
 						<onclick condition="Skin.String(MoviesSubMenuBtn7Type,Favourite) | Skin.String(MoviesSubMenuBtn7Type,)">$INFO[Skin.String(MoviesSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditMoviesSubMenuBtn7) + !String.IsEmpty(Skin.String(MoviesSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -2334,7 +2334,7 @@
 						<onclick condition="Skin.String(TVShowsSubMenuBtn7Type,Favourite) | Skin.String(TVShowsSubMenuBtn7Type,)">$INFO[Skin.String(TVShowsSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditTVShowsSubMenuBtn7) + !String.IsEmpty(Skin.String(TVShowsSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -2443,7 +2443,7 @@
 						<onclick condition="Skin.String(PVRSubMenuBtn7Type,Favourite) | Skin.String(PVRSubMenuBtn7Type,)">$INFO[Skin.String(PVRSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRSubMenuBtn7) + !String.IsEmpty(Skin.String(PVRSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 			
 			<control type="list" id="110">
@@ -2546,7 +2546,7 @@
 						<onclick condition="Skin.String(PVRRadioSubMenuBtn7Type,Favourite) | Skin.String(PVRRadioSubMenuBtn7Type,)">$INFO[Skin.String(PVRRadioSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPVRRadioSubMenuBtn7) + !String.IsEmpty(Skin.String(PVRRadioSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -2654,7 +2654,7 @@
 						<onclick condition="Skin.String(AddonsSubMenuBtn7Type,Favourite) | Skin.String(AddonsSubMenuBtn7Type,)">$INFO[Skin.String(AddonsSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditAddonsSubMenuBtn7) + !String.IsEmpty(Skin.String(AddonsSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 			
 			<control type="list" id="110">
@@ -2741,7 +2741,7 @@
 						<onclick condition="Skin.String(GamesSubMenuBtn7Type,Favourite) | Skin.String(GamesSubMenuBtn7Type,)">$INFO[Skin.String(GamesSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditGamesSubMenuBtn7) + !String.IsEmpty(Skin.String(GamesSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -2828,7 +2828,7 @@
 						<onclick condition="Skin.String(PicturesSubMenuBtn7Type,Favourite) | Skin.String(PicturesSubMenuBtn7Type,)">$INFO[Skin.String(PicturesSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditPicturesSubMenuBtn7) + !String.IsEmpty(Skin.String(PicturesSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 			
 			<control type="list" id="110">
@@ -2839,7 +2839,7 @@
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
 				<ondown>850</ondown>
-				<orientation>horizontal</orientation>		
+				<orientation>horizontal</orientation>
 				<visible>Container(850).HasFocus(51)</visible>
 				<include>HomeSubMenuItemOpenCloseAnim</include>
 				<include>HomeSubMenuItemsCenterAlignAnim</include>
@@ -2906,7 +2906,7 @@
 						<onclick condition="Skin.String(WeatherSubMenuBtn7Type,Favourite) | Skin.String(WeatherSubMenuBtn7Type,)">$INFO[Skin.String(WeatherSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditWeatherSubMenuBtn7) + !String.IsEmpty(Skin.String(WeatherSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<include content="HomeCustomCategorySubMenu">
@@ -3003,7 +3003,7 @@
 				<param name="onup" value="6924" />
 				<param name="Container850Position" value="24" />
 				<param name="CustomCategoryNumber" value="Custom16" />
-			</include>	
+			</include>
 		</control>
 	</include>
 
@@ -3102,7 +3102,7 @@
 						<onclick condition="Skin.String(GeneralSubMenuBtn7Type,Favourite) | Skin.String(GeneralSubMenuBtn7Type,)">$INFO[Skin.String(GeneralSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditGeneralSubMenuBtn7) + !String.IsEmpty(Skin.String(GeneralSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 
 			<control type="list" id="110">
@@ -3122,7 +3122,7 @@
 					<item id="1">
 						<description>Power</description>
 						<label>$LOCALIZE[33060]</label>
-						<onclick>ActivateWindow(ShutdownMenu)</onclick>		
+						<onclick>ActivateWindow(ShutdownMenu)</onclick>
 						<visible>Skin.HasSetting(HidePowerCategory) + !Skin.HasSetting(EditSystemSubMenuBtn1)</visible>
 					</item>
 					<item id="1">
@@ -3217,7 +3217,7 @@
 						<onclick condition="Skin.String(SystemSubMenuBtn7Type,Favourite) | Skin.String(SystemSubMenuBtn7Type,)">$INFO[Skin.String(SystemSubMenuFavourite.7.Path)]</onclick>
 						<visible>Skin.HasSetting(EditSystemSubMenuBtn7) + !String.IsEmpty(Skin.String(SystemSubMenuBtn7Label))</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 			
 			<control type="list" id="110">
@@ -3242,7 +3242,7 @@
 					<item id="2">
 						<description>Restart Kodi</description>
 						<label>$LOCALIZE[31706]</label>
-						<onclick>RestartApp()</onclick>		
+						<onclick>RestartApp()</onclick>
 					</item>
 					<item id="3">
 						<description>Shutdown</description>
@@ -3261,39 +3261,39 @@
 						<description>Suspend</description>
 						<label>$LOCALIZE[13011]</label>
 						<onclick>Suspend()</onclick>
-						<visible>System.CanSuspend</visible>	
+						<visible>System.CanSuspend</visible>
 					</item>
 					<item id="6">
 						<description>Hibernate</description>
 						<label>$LOCALIZE[13010]</label>
 						<onclick>Hibernate()</onclick>
-						<visible>System.CanHibernate</visible>		
+						<visible>System.CanHibernate</visible>
 					</item>
 					<item id="7">
 						<description>Reboot</description>
 						<label>$LOCALIZE[13013]</label>
 						<onclick>Reset()</onclick>
-						<visible>System.CanReboot</visible>	
+						<visible>System.CanReboot</visible>
 					</item>
-				</content>						
+				</content>
 			</control>
 		</control>
 	</include>
 	
 	<include name="MusicPlayingProgressBar">
 		<control type="group">
-			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)</visible>			
-			<animation effect="fade" start="100" end="35" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>			
+			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)</visible>
+			<animation effect="fade" start="100" end="35" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>
 			<control type="progress">
 				<description>Progressbar</description>
 				<top>6</top>
 				<width>ScreenWidth</width>
 				<height>108</height>
 				<info>Player.Progress</info>
-			</control>	
+			</control>
 		</control>
 		<control type="group">
-			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)</visible>			
+			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)</visible>
 			<animation effect="fade" start="100" end="85" time="750" condition="Player.HasAudio + System.IdleTime(5)">Conditional</animation>
 			<control type="label">
 				<description>Elapsed/Duration Time</description>
@@ -3313,11 +3313,11 @@
 			<visible>Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar) + !Control.IsVisible(6930)</visible>
 			<animation type="Visible" reversible="false">
 				<effect type="fade" time="400" delay="300"/>
-				<effect type="slide" start="0,25" time="400" tween="cubic" easing="out" delay="300"/>	
-			</animation>			
+				<effect type="slide" start="0,25" time="400" tween="cubic" easing="out" delay="300"/>
+			</animation>
 			<animation type="Hidden" reversible="false">
 				<effect type="fade" time="300"/>
-				<effect type="slide" end="0,25" time="400" tween="cubic" easing="out" delay="100"/>	
+				<effect type="slide" end="0,25" time="400" tween="cubic" easing="out" delay="100"/>
 			</animation>
 			
 			<control type="image">
@@ -3386,7 +3386,7 @@
 					<texturenofocus>osd/osd-forward-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Forward)</onclick>
 					<pulseonselect>false</pulseonselect>
-				</control>		
+				</control>
 				<control type="button" id="206">
 					<description>Skip Next</description>
 					<width>38</width>
@@ -3676,7 +3676,7 @@
 		<control type="group">
 			<visible>Player.HasMedia</visible>
 
-			<control type="group">	
+			<control type="group">
 				<left>5</left>
 				<top>105</top>
 				<visible>Player.HasVideo + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
@@ -3877,7 +3877,7 @@
 							<aligny>center</aligny>
 							<label>[COLOR=GreyColor]$INFO[Player.Time][/COLOR] / $INFO[Player.Duration]</label>
 							<visible>!Player.Seeking</visible>
-						</control>	
+						</control>
 						<control type="label">
 							<description>Show/Year</description>
 							<top>9</top>
@@ -4344,7 +4344,7 @@
 							<onclick>PlayerControl(Forward)</onclick>
 							<pulseonselect>false</pulseonselect>
 							<animation effect="zoom" end="115" center="auto" time="100">Focus</animation>
-						</control>		
+						</control>
 						<control type="button" id="206">
 							<description>Skip Next</description>
 							<width>38</width>
@@ -4485,7 +4485,7 @@
 	</include>
 	
 	<include name="NextAiredWidget">
-		<control type="group">	
+		<control type="group">
 			<left>5</left>
 			<top>280</top>
 			<visible>Container(850).HasFocus(4) + Integer.IsGreater(Window(Home).Property(NextAired.TodayTotal),0) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + !Control.IsVisible(6930)</visible>
@@ -4616,7 +4616,7 @@
 	</include>
 	
 	<include name="NextAiredUpcomingWidget">
-		<control type="group" id="6927">	
+		<control type="group" id="6927">
 			<left>5</left>
 			<top>105</top>
 			<visible>String.Contains(Window(Home).Property(NextAired.ShowAllTVShows),true) + Container(850).HasFocus(4) + !String.IsEmpty(Window(Home).Property(NextAired.1.Label)) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasMedia + !Skin.HasSetting(HideNowPlayingHomePanel) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
@@ -4713,7 +4713,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.1.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.1.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.1.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.1.Label)) + ![String.Contains(Window(Home).Property(NextAired.1.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.1.Label)) + ![String.Contains(Window(Home).Property(NextAired.1.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="2">
 						<label>$INFO[Window(Home).Property(NextAired.2.NextDate),,: ]$INFO[Window.Property(NextAired.2.Label)]$INFO[Window.Property(NextAired.2.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.2.NextEpisodeNumber),E,)]</label>
@@ -4721,7 +4721,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.2.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.2.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.2.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.2.Label)) + ![String.Contains(Window(Home).Property(NextAired.2.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.2.Label)) + ![String.Contains(Window(Home).Property(NextAired.2.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="3">
 						<label>$INFO[Window(Home).Property(NextAired.3.NextDate),,: ]$INFO[Window.Property(NextAired.3.Label)]$INFO[Window.Property(NextAired.3.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.3.NextEpisodeNumber),E,)]</label>
@@ -4729,7 +4729,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.3.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.3.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.3.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.3.Label)) + ![String.Contains(Window(Home).Property(NextAired.3.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.3.Label)) + ![String.Contains(Window(Home).Property(NextAired.3.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="4">
 						<label>$INFO[Window(Home).Property(NextAired.4.NextDate),,: ]$INFO[Window.Property(NextAired.4.Label)]$INFO[Window.Property(NextAired.4.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.4.NextEpisodeNumber),E,)]</label>
@@ -4737,7 +4737,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.4.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.4.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.4.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.4.Label)) + ![String.Contains(Window(Home).Property(NextAired.4.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.4.Label)) + ![String.Contains(Window(Home).Property(NextAired.4.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="5">
 						<label>$INFO[Window(Home).Property(NextAired.5.NextDate),,: ]$INFO[Window.Property(NextAired.5.Label)]$INFO[Window.Property(NextAired.5.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.5.NextEpisodeNumber),E,)]</label>
@@ -4745,7 +4745,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.5.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.5.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.5.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.5.Label)) + ![String.Contains(Window(Home).Property(NextAired.5.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.5.Label)) + ![String.Contains(Window(Home).Property(NextAired.5.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="6">
 						<label>$INFO[Window(Home).Property(NextAired.6.NextDate),,: ]$INFO[Window.Property(NextAired.6.Label)]$INFO[Window.Property(NextAired.6.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.6.NextEpisodeNumber),E,)]</label>
@@ -4753,7 +4753,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.6.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.6.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.6.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.6.Label)) + ![String.Contains(Window(Home).Property(NextAired.6.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.6.Label)) + ![String.Contains(Window(Home).Property(NextAired.6.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="7">
 						<label>$INFO[Window(Home).Property(NextAired.7.NextDate),,: ]$INFO[Window.Property(NextAired.7.Label)]$INFO[Window.Property(NextAired.7.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.7.NextEpisodeNumber),E,)]</label>
@@ -4761,7 +4761,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.7.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.7.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.7.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.7.Label)) + ![String.Contains(Window(Home).Property(NextAired.7.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.7.Label)) + ![String.Contains(Window(Home).Property(NextAired.7.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="8">
 						<label>$INFO[Window(Home).Property(NextAired.8.NextDate),,: ]$INFO[Window.Property(NextAired.8.Label)]$INFO[Window.Property(NextAired.8.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.8.NextEpisodeNumber),E,)]</label>
@@ -4769,7 +4769,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.8.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.8.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.8.Label)) + ![String.Contains(Window(Home).Property(NextAired.8.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.8.Label)) + ![String.Contains(Window(Home).Property(NextAired.8.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="9">
 						<label>$INFO[Window(Home).Property(NextAired.9.NextDate),,: ]$INFO[Window.Property(NextAired.9.Label)]$INFO[Window.Property(NextAired.9.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.9.NextEpisodeNumber),E,)]</label>
@@ -4777,7 +4777,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.9.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.9.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.9.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.9.Label)) + ![String.Contains(Window(Home).Property(NextAired.9.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.9.Label)) + ![String.Contains(Window(Home).Property(NextAired.9.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="10">
 						<label>$INFO[Window(Home).Property(NextAired.10.NextDate),,: ]$INFO[Window.Property(NextAired.10.Label)]$INFO[Window.Property(NextAired.10.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.10.NextEpisodeNumber),E,)]</label>
@@ -4785,7 +4785,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.10.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.10.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.10.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.10.Label)) + ![String.Contains(Window(Home).Property(NextAired.10.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.10.Label)) + ![String.Contains(Window(Home).Property(NextAired.10.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="11">
 						<label>$INFO[Window(Home).Property(NextAired.11.NextDate),,: ]$INFO[Window.Property(NextAired.11.Label)]$INFO[Window.Property(NextAired.11.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.11.NextEpisodeNumber),E,)]</label>
@@ -4793,7 +4793,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.11.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.11.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.11.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.11.Label)) + ![String.Contains(Window(Home).Property(NextAired.11.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.11.Label)) + ![String.Contains(Window(Home).Property(NextAired.11.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="12">
 						<label>$INFO[Window(Home).Property(NextAired.12.NextDate),,: ]$INFO[Window.Property(NextAired.12.Label)]$INFO[Window.Property(NextAired.12.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.12.NextEpisodeNumber),E,)]</label>
@@ -4801,7 +4801,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.12.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.12.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.12.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.12.Label)) + ![String.Contains(Window(Home).Property(NextAired.12.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.12.Label)) + ![String.Contains(Window(Home).Property(NextAired.12.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="13">
 						<label>$INFO[Window(Home).Property(NextAired.13.NextDate),,: ]$INFO[Window.Property(NextAired.13.Label)]$INFO[Window.Property(NextAired.13.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.13.NextEpisodeNumber),E,)]</label>
@@ -4809,7 +4809,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.13.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.13.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.13.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.13.Label)) + ![String.Contains(Window(Home).Property(NextAired.13.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.13.Label)) + ![String.Contains(Window(Home).Property(NextAired.13.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="14">
 						<label>$INFO[Window(Home).Property(NextAired.14.NextDate),,: ]$INFO[Window.Property(NextAired.14.Label)]$INFO[Window.Property(NextAired.14.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.14.NextEpisodeNumber),E,)]</label>
@@ -4817,7 +4817,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.14.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.14.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.14.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.14.Label)) + ![String.Contains(Window(Home).Property(NextAired.14.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.14.Label)) + ![String.Contains(Window(Home).Property(NextAired.14.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="15">
 						<label>$INFO[Window(Home).Property(NextAired.15.NextDate),,: ]$INFO[Window.Property(NextAired.15.Label)]$INFO[Window.Property(NextAired.15.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.15.NextEpisodeNumber),E,)]</label>
@@ -4825,7 +4825,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.15.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.15.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.15.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.15.Label)) + ![String.Contains(Window(Home).Property(NextAired.15.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.15.Label)) + ![String.Contains(Window(Home).Property(NextAired.15.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="16">
 						<label>$INFO[Window(Home).Property(NextAired.16.NextDate),,: ]$INFO[Window.Property(NextAired.16.Label)]$INFO[Window.Property(NextAired.16.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.16.NextEpisodeNumber),E,)]</label>
@@ -4833,7 +4833,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.16.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.16.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.16.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.16.Label)) + ![String.Contains(Window(Home).Property(NextAired.16.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.16.Label)) + ![String.Contains(Window(Home).Property(NextAired.16.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="17">
 						<label>$INFO[Window(Home).Property(NextAired.17.NextDate),,: ]$INFO[Window.Property(NextAired.17.Label)]$INFO[Window.Property(NextAired.17.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.17.NextEpisodeNumber),E,)]</label>
@@ -4841,7 +4841,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.17.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.17.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.17.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.17.Label)) + ![String.Contains(Window(Home).Property(NextAired.17.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.17.Label)) + ![String.Contains(Window(Home).Property(NextAired.17.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="18">
 						<label>$INFO[Window(Home).Property(NextAired.18.NextDate),,: ]$INFO[Window.Property(NextAired.18.Label)]$INFO[Window.Property(NextAired.18.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.18.NextEpisodeNumber),E,)]</label>
@@ -4849,7 +4849,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.18.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.18.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.18.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.18.Label)) + ![String.Contains(Window(Home).Property(NextAired.18.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.18.Label)) + ![String.Contains(Window(Home).Property(NextAired.18.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="19">
 						<label>$INFO[Window(Home).Property(NextAired.19.NextDate),,: ]$INFO[Window.Property(NextAired.19.Label)]$INFO[Window.Property(NextAired.19.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.19.NextEpisodeNumber),E,)]</label>
@@ -4857,7 +4857,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.19.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.19.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.19.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.19.Label)) + ![String.Contains(Window(Home).Property(NextAired.19.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.19.Label)) + ![String.Contains(Window(Home).Property(NextAired.19.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="20">
 						<label>$INFO[Window(Home).Property(NextAired.20.NextDate),,: ]$INFO[Window.Property(NextAired.20.Label)]$INFO[Window.Property(NextAired.20.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.20.NextEpisodeNumber),E,)]</label>
@@ -4865,7 +4865,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.20.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.20.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.20.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.20.Label)) + ![String.Contains(Window(Home).Property(NextAired.20.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.20.Label)) + ![String.Contains(Window(Home).Property(NextAired.20.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="21">
 						<label>$INFO[Window(Home).Property(NextAired.21.NextDate),,: ]$INFO[Window.Property(NextAired.21.Label)]$INFO[Window.Property(NextAired.21.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.21.NextEpisodeNumber),E,)]</label>
@@ -4873,7 +4873,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.21.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.21.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.21.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.21.Label)) + ![String.Contains(Window(Home).Property(NextAired.21.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.21.Label)) + ![String.Contains(Window(Home).Property(NextAired.21.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="22">
 						<label>$INFO[Window(Home).Property(NextAired.22.NextDate),,: ]$INFO[Window.Property(NextAired.22.Label)]$INFO[Window.Property(NextAired.22.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.22.NextEpisodeNumber),E,)]</label>
@@ -4881,7 +4881,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.22.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.22.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.22.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.22.Label)) + ![String.Contains(Window(Home).Property(NextAired.22.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.22.Label)) + ![String.Contains(Window(Home).Property(NextAired.22.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="23">
 						<label>$INFO[Window(Home).Property(NextAired.23.NextDate),,: ]$INFO[Window.Property(NextAired.23.Label)]$INFO[Window.Property(NextAired.23.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.23.NextEpisodeNumber),E,)]</label>
@@ -4889,7 +4889,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.23.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.23.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.23.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.23.Label)) + ![String.Contains(Window(Home).Property(NextAired.23.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.23.Label)) + ![String.Contains(Window(Home).Property(NextAired.23.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="24">
 						<label>$INFO[Window(Home).Property(NextAired.24.NextDate),,: ]$INFO[Window.Property(NextAired.24.Label)]$INFO[Window.Property(NextAired.24.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.24.NextEpisodeNumber),E,)]</label>
@@ -4897,7 +4897,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.24.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.24.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.24.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.24.Label)) + ![String.Contains(Window(Home).Property(NextAired.24.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.24.Label)) + ![String.Contains(Window(Home).Property(NextAired.24.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="25">
 						<label>$INFO[Window(Home).Property(NextAired.25.NextDate),,: ]$INFO[Window.Property(NextAired.25.Label)]$INFO[Window.Property(NextAired.25.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.25.NextEpisodeNumber),E,)]</label>
@@ -4905,7 +4905,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.25.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.25.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.25.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.25.Label)) + ![String.Contains(Window(Home).Property(NextAired.25.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.25.Label)) + ![String.Contains(Window(Home).Property(NextAired.25.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="26">
 						<label>$INFO[Window(Home).Property(NextAired.26.NextDate),,: ]$INFO[Window.Property(NextAired.26.Label)]$INFO[Window.Property(NextAired.26.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.26.NextEpisodeNumber),E,)]</label>
@@ -4913,7 +4913,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.26.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.26.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.26.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.26.Label)) + ![String.Contains(Window(Home).Property(NextAired.26.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.26.Label)) + ![String.Contains(Window(Home).Property(NextAired.26.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="27">
 						<label>$INFO[Window(Home).Property(NextAired.27.NextDate),,: ]$INFO[Window.Property(NextAired.27.Label)]$INFO[Window.Property(NextAired.27.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.27.NextEpisodeNumber),E,)]</label>
@@ -4921,7 +4921,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.27.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.27.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.27.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.27.Label)) + ![String.Contains(Window(Home).Property(NextAired.27.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.27.Label)) + ![String.Contains(Window(Home).Property(NextAired.27.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="28">
 						<label>$INFO[Window(Home).Property(NextAired.28.NextDate),,: ]$INFO[Window.Property(NextAired.28.Label)]$INFO[Window.Property(NextAired.28.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.28.NextEpisodeNumber),E,)]</label>
@@ -4929,7 +4929,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.28.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.28.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.28.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.28.Label)) + ![String.Contains(Window(Home).Property(NextAired.28.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.28.Label)) + ![String.Contains(Window(Home).Property(NextAired.28.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="29">
 						<label>$INFO[Window(Home).Property(NextAired.29.NextDate),,: ]$INFO[Window.Property(NextAired.29.Label)]$INFO[Window.Property(NextAired.29.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.29.NextEpisodeNumber),E,)]</label>
@@ -4937,7 +4937,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.29.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.29.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.29.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.29.Label)) + ![String.Contains(Window(Home).Property(NextAired.29.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.29.Label)) + ![String.Contains(Window(Home).Property(NextAired.29.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 					<item id="30">
 						<label>$INFO[Window(Home).Property(NextAired.30.NextDate),,: ]$INFO[Window.Property(NextAired.30.Label)]$INFO[Window.Property(NextAired.30.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.30.NextEpisodeNumber),E,)]</label>
@@ -4945,7 +4945,7 @@
 						<thumb>$INFO[Window(Home).Property(NextAired.30.Art(poster))]</thumb>
 						<icon>$INFO[Window(Home).Property(NextAired.30.Art(fanart))]</icon>
 						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.30.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.30.Label)) + ![String.Contains(Window(Home).Property(NextAired.30.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>	
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.30.Label)) + ![String.Contains(Window(Home).Property(NextAired.30.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 					</item>
 				</content>
 			</control>
@@ -6109,121 +6109,121 @@
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.1.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.1.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.1.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.1.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.1.Name))</visible>
 						</item>
 						<item id="2">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.2.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.2.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.2.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.2.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.2.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.2.Name))</visible>
 						</item>
 						<item id="3">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.3.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.3.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.3.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.3.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.3.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.3.Name))</visible>
 						</item>
 						<item id="4">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.4.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.4.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.4.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.4.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.4.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.4.Name))</visible>
 						</item>
 						<item id="5">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.5.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.5.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.5.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.5.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.5.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.5.Name))</visible>
 						</item>
 						<item id="6">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.6.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.6.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.6.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.6.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.6.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.6.Name))</visible>
 						</item>
 						<item id="7">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.7.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.7.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.7.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.7.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.7.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.7.Name))</visible>
 						</item>
 						<item id="8">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.8.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.8.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.8.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.8.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.8.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.8.Name))</visible>
 						</item>
 						<item id="9">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.9.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.9.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.9.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.9.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.9.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.9.Name))</visible>
 						</item>
 						<item id="10">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.10.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.10.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.10.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.10.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.10.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.10.Name))</visible>
 						</item>
 						<item id="11">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.11.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.11.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.11.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.11.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.11.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.11.Name))</visible>
 						</item>
 						<item id="12">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.12.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.12.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.12.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.12.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.12.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.12.Name))</visible>
 						</item>
 						<item id="13">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.13.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.13.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.13.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.13.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.13.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.13.Name))</visible>
 						</item>
 						<item id="14">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.14.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.14.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.14.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.14.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.14.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.14.Name))</visible>
 						</item>
 						<item id="15">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.15.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.15.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.15.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.15.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.15.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.15.Name))</visible>
 						</item>
 						<item id="16">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.16.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.16.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.16.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.16.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.16.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.16.Name))</visible>
 						</item>
 						<item id="17">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.17.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.17.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.17.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.17.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.17.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.17.Name))</visible>
 						</item>
 						<item id="18">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.18.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.18.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.18.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.18.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.18.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.18.Name))</visible>
 						</item>
 						<item id="19">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.19.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.19.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.19.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.19.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.19.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.19.Name))</visible>
 						</item>
 						<item id="20">
 							<label>$INFO[Window(Home).Property(MyPicsDBRandom.20.Name)]$INFO[Window(Home).Property(MyPicsDBRandom.20.Date), (,)]</label>
 							<thumb>$INFO[Window(Home).Property(MyPicsDBRandom.20.Path)]</thumb>
 							<onclick>ShowPicture($INFO[Window(Home).Property(MyPicsDBRandom.20.Path)])</onclick>
-							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.20.Name))</visible>	
+							<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBRandom.20.Name))</visible>
 						</item>
 					</content>
 				</control>
@@ -6232,7 +6232,7 @@
 	</include>
 	
 	<include name="InCinemasWidget">
-		<control type="group">	
+		<control type="group">
 			<visible>Container(850).HasFocus(3)</visible>
 			<visible>Library.HasContent(Movies) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<left>5</left>
@@ -8411,7 +8411,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[PVR.TVNextRecordingChannel]</label>
 						<scroll>true</scroll>
-					</control>			
+					</control>
 				</control>
 			</control>
 
@@ -8489,9 +8489,9 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[PVR.TVNowRecordingChannel]</label>
 						<scroll>true</scroll>
-					</control>			
+					</control>
 				</control>
-			</control>	
+			</control>
 		</control>
 		
 		<control type="group">
@@ -8576,7 +8576,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[PVR.RadioNextRecordingChannel]</label>
 						<scroll>true</scroll>
-					</control>			
+					</control>
 				</control>
 			</control>
 
@@ -8654,9 +8654,9 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$INFO[PVR.RadioNowRecordingChannel]</label>
 						<scroll>true</scroll>
-					</control>			
+					</control>
 				</control>
-			</control>	
+			</control>
 		</control>
 	</include>
 

@@ -206,7 +206,7 @@
 		<value condition="Skin.String(CustomWeatherBGType,5) + !Skin.HasSetting(CustomWeatherBGPath.multi)">$INFO[Skin.String(CustomWeatherBGPath.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
 	</variable>
 	
-	<include name="BackgroundWeather">		
+	<include name="BackgroundWeather">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -228,7 +228,7 @@
 		</control>
 	</include>
 	
-	<include name="BackgroundDefault">		
+	<include name="BackgroundDefault">
 		<control type="group">
 			<control type="multiimage">
 				<include>BackgroundSize</include>
@@ -276,7 +276,7 @@
 		<value condition="Skin.String(CustomMusicBGType,4) + Skin.String(CustomMusicFanartBGType,recent)">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
 	</variable>
 
-	<include name="BackgroundMusic">	
+	<include name="BackgroundMusic">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -329,7 +329,7 @@
 		<value condition="Skin.String(CustomMoviesBGType,4) + Skin.String(CustomMoviesFanartBGType,unwatched)">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</value>
 	</variable>
 
-	<include name="BackgroundMovies">		
+	<include name="BackgroundMovies">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(script-videoextras-main.xml)</visible>
@@ -356,7 +356,7 @@
 		<value condition="Skin.String(CustomTVShowsBGType,4) + Skin.String(CustomTVShowsFanartBGType,inprogress)">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</value>
 	</variable>
 
-	<include name="BackgroundTVShows">		
+	<include name="BackgroundTVShows">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
 			<visible>Container.Content(TVShows) | Container.Content(Episodes) | Window.IsActive(script-videoextras-main.xml)</visible>
@@ -376,7 +376,7 @@
 		</control>
 	</include>
 
-	<include name="BackgroundPrograms">	
+	<include name="BackgroundPrograms">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -398,7 +398,7 @@
 		</control>
 	</include>
 
-	<include name="BackgroundGames">	
+	<include name="BackgroundGames">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -425,7 +425,7 @@
 		<value condition="System.HasAddon(plugin.image.mypicsdb) + [Skin.String(CustomPicturesBGType,4) | Skin.String(CustomPicturesBGType,5)]">$INFO[Control.GetLabel(4165)]</value>
 	</variable>
 	
-	<include name="BackgroundPictures">		
+	<include name="BackgroundPictures">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -447,7 +447,7 @@
 		</control>
 	</include>
 
-	<include name="BackgroundSystem">	
+	<include name="BackgroundSystem">
 		<control type="group">
 			<control type="multiimage">
 				<description>Custom Background</description>
@@ -472,7 +472,7 @@
 		<value condition="Skin.String(CustomPVRBGType,4)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
 	</variable>
 	
-	<include name="BackgroundPVR">		
+	<include name="BackgroundPVR">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -499,7 +499,7 @@
 		<value condition="Skin.String(CustomPVRRadioBGType,4)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
 	</variable>
 	
-	<include name="BackgroundPVRRadio">		
+	<include name="BackgroundPVRRadio">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
@@ -625,7 +625,7 @@
 					<include>BackgroundVisibleAnim</include>
 					<include>FanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage</include>
-					<include>FanartDim</include>		
+					<include>FanartDim</include>
 				</control>
 				<control type="group">
 					<visible>Container.Content(Episodes) | Container.Content(Seasons) | Window.IsActive(VideoPlaylist) | Window.IsActive(script-videoextras-main.xml)</visible>
@@ -713,7 +713,7 @@
 			| [Control.IsVisible(595) + !Skin.HasSetting(HideProgramsThumbsInfo3Fanart)]
 			| [Control.IsVisible(596) + !Skin.HasSetting(HideProgramsWrapListInfoFanart)]
 			| [Control.IsVisible(597) + !Skin.HasSetting(HideProgramsWrapListInfo2Fanart)]
-			| [Control.IsVisible(598) + !Skin.HasSetting(HideProgramsWrapListInfo3Fanart)]</visible>			
+			| [Control.IsVisible(598) + !Skin.HasSetting(HideProgramsWrapListInfo3Fanart)]</visible>
 			<include>BackgroundVisibleAnim</include>
 			<include>FanartImage</include>
 			<include>FanartDim</include>
@@ -728,7 +728,7 @@
 	<include name="BackgroundGenreFanart">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
-			<visible>![Control.HasFocus(151) | Control.HasFocus(584) | ListItem.IsParentFolder]</visible>			
+			<visible>![Control.HasFocus(151) | Control.HasFocus(584) | ListItem.IsParentFolder]</visible>
 			<include>BackgroundVisibleAnim</include>
 			<control type="image">
 				<include>BackgroundSize</include>
@@ -741,7 +741,7 @@
 		</control>
 	</include>
 	
-	<include name="BackgroundGlobalSearch">	
+	<include name="BackgroundGlobalSearch">
 		<control type="group">
 			<control type="image">
 				<description>Fanart Background</description>

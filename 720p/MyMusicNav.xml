@@ -5,7 +5,7 @@
 	<views>50,52,63,62,67,96,599,64,70,91,93,585</views>
 	<onload>Skin.Reset(ShowMediaExtraOptions)</onload>
 	
-	<controls>	
+	<controls>
 		<control type="group">
 			<depth>DepthBackground</depth>
 			<include>BackgroundDefault</include>
@@ -16,7 +16,7 @@
 			<include condition="String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Skin.String(MusicGenreFanartAddon.name))">BackgroundGenreFanart</include>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
 			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
-			<include>BackgroundOpenCloseAnim</include>	
+			<include>BackgroundOpenCloseAnim</include>
 		</control>
 		
 		<control type="group">
@@ -37,7 +37,7 @@
 				<include condition="!Skin.HasSetting(DisableAddonsListInfoView)">AddonsListInfoView</include> <!-- 91 -->
 				<include condition="!Skin.HasSetting(DisableAddonsWrapListInfoView)">AddonsWrapListInfoView</include> <!-- 93 -->
 				<include condition="!Skin.HasSetting(DisableExtendedListView)">ExtendedListView</include> <!-- 585 -->
-			</control>	
+			</control>
 			
 			<include>MediaMenuBar</include>
 			
@@ -52,5 +52,5 @@
 				<include>SortLetterNotification</include>
 			</control>
 		</control>
-	</controls>	
+	</controls>
 </window>

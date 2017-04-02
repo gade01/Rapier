@@ -2,9 +2,9 @@
 <includes>
 	<!--//// START ICON VIEW //////////////////////////////////////////////////////////////////////////-->
 	<include name="IconView">
-		<control type="group" id="500">	
+		<control type="group" id="500">
 		    <defaultcontrol always="true">50</defaultcontrol>
-			<visible>Control.IsVisible(50)</visible>	
+			<visible>Control.IsVisible(50)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>IconViewScrollbar</include>
 			
@@ -14,7 +14,7 @@
 				<top>85</top>
 				<width>1218</width>
 				<height>555</height>
-				<pagecontrol>901</pagecontrol>	
+				<pagecontrol>901</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine" easing="inout">404</scrolltime>
 				<onup>50</onup>
@@ -285,7 +285,7 @@
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include condition="!Skin.HasSetting(DisableTVShowsLogo)">InfoPaneClearLogo</include>
@@ -296,7 +296,7 @@
 			</control>
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+		</control>
 	</include>
 	<!--//// END ICON VIEW ////////////////////////////////////////////////////////////////////////////-->
 	
@@ -313,7 +313,7 @@
 		<control type="group" id="500">
 			<defaultcontrol always="true">52</defaultcontrol>
 			<visible>Control.IsVisible(52)</visible>
-			<include>MediaViewOpenCloseAnim</include>	
+			<include>MediaViewOpenCloseAnim</include>
 			
 			<control type="image">
 				<left>30</left>
@@ -444,7 +444,7 @@
 					<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 					<bordersize>14</bordersize>
 					<aspectratio>scale</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>	
+					<fadetime>IconCrossfadeTime</fadetime>
 					<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
 				</control>
 				
@@ -489,14 +489,14 @@
 				<control type="image">
 					<width>320</width>
 					<height>158</height>
-					<texture background="true">$INFO[ListItem.Path]extrathumbs/thumb3.jpg</texture>	
+					<texture background="true">$INFO[ListItem.Path]extrathumbs/thumb3.jpg</texture>
 					<bordertexture border="11">covers/cover-case-curved-big-focus.png</bordertexture>
 					<bordersize>14</bordersize>
 					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			
-			<control type="list" id="52">	
+			<control type="list" id="52">
 				<viewtype label="31105">list</viewtype>
 				<left>40</left>
 				<top>110</top>
@@ -521,7 +521,7 @@
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include condition="!Skin.HasSetting(DisableTVShowsLogo)">InfoPaneClearLogo</include>
@@ -539,7 +539,7 @@
 		<itemlayout height="37" condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist)">
 			<control type="image">
 				<width>720</width>
-				<height>37</height>	
+				<height>37</height>
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -562,7 +562,7 @@
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>				
+				<aligny>center</aligny>
 				<info>ListItem.Label</info>
 			</control>
 			<control type="label">
@@ -574,7 +574,7 @@
 				<textcolor>ListColor3</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>right</align>
-				<aligny>center</aligny>				
+				<aligny>center</aligny>
 				<info>ListItem.Label2</info>
 				<visible>![[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
 				| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]]</visible>
@@ -586,7 +586,7 @@
 					<left>610</left>
 					<top>10</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
@@ -604,7 +604,7 @@
 					<aspectratio>keep</aspectratio>
 					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
 					<include>ListViewOverlayFadeAnim</include>
-				</control>	
+				</control>
 				<control type="image">
 					<description>Quality</description>
 					<left>5</left>
@@ -633,7 +633,7 @@
 		<itemlayout height="37" condition="Container.Content(TVShows) | Container.Content(Seasons)">
 			<control type="image">
 				<width>720</width>
-				<height>37</height>	
+				<height>37</height>
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -702,7 +702,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)</visible>
 				<include>ListViewOverlayFadeAnim</include>
-			</control>	
+			</control>
 			<control type="image">
 				<description>Quality</description>
 				<left>5</left>
@@ -734,7 +734,7 @@
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>				
+				<aligny>center</aligny>
 				<info>ListItem.Label</info>
 			</control>
 			<control type="label">
@@ -746,8 +746,8 @@
 				<textcolor>ListColor3</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>right</align>
-				<aligny>center</aligny>				
-				<info>ListItem.Label2</info>		
+				<aligny>center</aligny>
+				<info>ListItem.Label2</info>
 				<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 			</control>
 			<control type="image">
@@ -755,17 +755,17 @@
 				<left>610</left>
 				<top>10</top>
 				<width>100</width>
-				<height>16</height>		
+				<height>16</height>
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
-		</itemlayout>		
+		</itemlayout>
 		<itemlayout height="37">
 			<control type="image">
 				<width>720</width>
-				<height>37</height>	
+				<height>37</height>
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -788,7 +788,7 @@
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>				
+				<aligny>center</aligny>
 				<info>ListItem.Label</info>
 			</control>
 			<control type="label">
@@ -800,7 +800,7 @@
 				<textcolor>ListColor3</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>right</align>
-				<aligny>center</aligny>				
+				<aligny>center</aligny>
 				<info>ListItem.Label2</info>
 				<visible>![[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
 			</control>
@@ -809,7 +809,7 @@
 				<left>610</left>
 				<top>10</top>
 				<width>100</width>
-				<height>16</height>		
+				<height>16</height>
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>[[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
@@ -826,20 +826,20 @@
 				<aspectratio>keep</aspectratio>
 				<include>ListViewOverlayFadeAnim</include>
 			</control>
-		</itemlayout>		
+		</itemlayout>
 	</include>
 
 	<include name="CommonListFocusedLayout">
-		<focusedlayout height="37" condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist)">	
+		<focusedlayout height="37" condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist)">
 			<control type="image">
 				<width>720</width>
-				<height>37</height>	
+				<height>37</height>
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
 				<width>720</width>
-				<height>36</height>	
+				<height>36</height>
 				<texture border="4">views/list-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(52)</visible>
@@ -848,7 +848,7 @@
 			</control>
 			<control type="image">
 				<width>720</width>
-				<height>36</height>	
+				<height>36</height>
 				<texture border="4">views/list-alt-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>!Control.HasFocus(52)</visible>
@@ -887,7 +887,7 @@
 					<textcolor>ListColor3</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>right</align>
-					<aligny>center</aligny>				
+					<aligny>center</aligny>
 					<info>ListItem.Label2</info>
 					<visible>![[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
 					| [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]]</visible>
@@ -899,7 +899,7 @@
 						<left>610</left>
 						<top>10</top>
 						<width>100</width>
-						<height>16</height>		
+						<height>16</height>
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
 						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)]
@@ -915,7 +915,7 @@
 						<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder</visible>
-					</control>	
+					</control>
 					<control type="image">
 						<description>Quality</description>
 						<left>5</left>
@@ -937,20 +937,20 @@
 						<visible>ListItem.IsResumable</visible>
 						<include>ListViewPartialWatchedOverlayFadeAnim</include>
 						<include>ListViewWatchedOverlayFadeAnim</include>
-					</control>	
+					</control>
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout height="37" condition="Container.Content(TVShows) | Container.Content(Seasons)">	
+		<focusedlayout height="37" condition="Container.Content(TVShows) | Container.Content(Seasons)">
 			<control type="image">
 				<width>720</width>
-				<height>37</height>	
+				<height>37</height>
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
 				<width>720</width>
-				<height>36</height>	
+				<height>36</height>
 				<texture border="4">views/list-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(52)</visible>
@@ -959,7 +959,7 @@
 			</control>
 			<control type="image">
 				<width>720</width>
-				<height>36</height>	
+				<height>36</height>
 				<texture border="4">views/list-alt-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>!Control.HasFocus(52)</visible>
@@ -1030,7 +1030,7 @@
 					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)</visible>
-				</control>	
+				</control>
 				<control type="image">
 					<description>Quality</description>
 					<left>5</left>
@@ -1074,7 +1074,7 @@
 					<textcolor>ListColor3</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>right</align>
-					<aligny>center</aligny>				
+					<aligny>center</aligny>
 					<info>ListItem.Label2</info>
 					<visible>Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
 				</control>
@@ -1083,23 +1083,23 @@
 					<left>610</left>
 					<top>10</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
 				</control>
 			</control>
-		</focusedlayout>		
-		<focusedlayout height="37">	
+		</focusedlayout>
+		<focusedlayout height="37">
 			<control type="image">
 				<width>720</width>
-				<height>37</height>	
+				<height>37</height>
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
 				<width>720</width>
-				<height>36</height>	
+				<height>36</height>
 				<texture border="4">views/list-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(52)</visible>
@@ -1108,7 +1108,7 @@
 			</control>
 			<control type="image">
 				<width>720</width>
-				<height>36</height>	
+				<height>36</height>
 				<texture border="4">views/list-alt-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>!Control.HasFocus(52)</visible>
@@ -1147,7 +1147,7 @@
 					<textcolor>ListColor3</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<align>right</align>
-					<aligny>center</aligny>				
+					<aligny>center</aligny>
 					<info>ListItem.Label2</info>
 					<visible>![[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
 				</control>
@@ -1156,7 +1156,7 @@
 					<left>610</left>
 					<top>10</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>[[Container.Content(Albums) | Container.Content(Songs)] + !Skin.HasSetting(DoNotUseStarRatingMusic)]</visible>
@@ -1172,7 +1172,7 @@
 					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
-		</focusedlayout>		
+		</focusedlayout>
 	</include>
 	
 	<include name="CommonListTallStyleItemLayout">
@@ -1246,7 +1246,7 @@
 					<left>610</left>
 					<top>16</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
@@ -1322,7 +1322,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>								
+			</control>
 			<control type="label">
 				<description>Label</description>
 				<left>80</left>
@@ -1362,7 +1362,7 @@
 					<left>610</left>
 					<top>16</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<include>StarRatingFadeAnim</include>
@@ -1432,7 +1432,7 @@
 				<texture background="true">dim.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<include>CoverDimAnim</include>
-			</control>						
+			</control>
 			<control type="label">
 				<description>Label</description>
 				<left>60</left>
@@ -1441,7 +1441,7 @@
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Label]</label>	
+				<label>$INFO[ListItem.Label]</label>
 			</control>
 			<control type="label">
 				<description>Label2</description>
@@ -1470,7 +1470,7 @@
 				<left>610</left>
 				<top>16</top>
 				<width>100</width>
-				<height>16</height>		
+				<height>16</height>
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingTVShows)</visible>
@@ -1521,7 +1521,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>								
+			</control>
 			<control type="label">
 				<description>Label</description>
 				<left>104</left>
@@ -1561,7 +1561,7 @@
 					<left>610</left>
 					<top>16</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + !String.IsEmpty(ListItem.Rating)</visible>
@@ -1636,7 +1636,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="60" condition="true">Conditional</animation>
-			</control>								
+			</control>
 			<control type="label">
 				<description>Label</description>
 				<left>60</left>
@@ -1669,7 +1669,7 @@
 				<include>ListViewOverlayFadeAnim</include>
 			</control>
 		</itemlayout>
-		<itemlayout condition="Container.Content(Albums)" height="74">	
+		<itemlayout condition="Container.Content(Albums)" height="74">
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -1737,7 +1737,7 @@
 				<left>610</left>
 				<top>16</top>
 				<width>100</width>
-				<height>16</height>		
+				<height>16</height>
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
@@ -1812,14 +1812,14 @@
 				<left>610</left>
 				<top>16</top>
 				<width>100</width>
-				<height>16</height>		
+				<height>16</height>
 				<texture background="true">$VAR[StarRating]</texture>
 				<aspectratio align="right">keep</aspectratio>
 				<visible>!Skin.HasSetting(DoNotUseStarRatingMusic) + !String.IsEmpty(ListItem.Rating)</visible>
 				<include>StarRatingFadeAnim</include>
 			</control>
 		</itemlayout>
-		<itemlayout condition="Container.Content(Artists)" height="74">	
+		<itemlayout condition="Container.Content(Artists)" height="74">
 			<include>ListTallStyleNoFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -1913,7 +1913,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>	
+			</control>
 			<control type="label">
 				<description>Label</description>
 				<left>80</left>
@@ -2006,7 +2006,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
-			</control>								
+			</control>
 			<control type="label">
 				<description>Label</description>
 				<left>80</left>
@@ -2040,8 +2040,8 @@
 		</itemlayout>
 	</include>
 	
-	<include name="CommonListTallStyleFocusedLayout">	
-		<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="74">	
+	<include name="CommonListTallStyleFocusedLayout">
+		<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2062,7 +2062,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-			</control>	
+			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
 				<control type="label">
@@ -2105,7 +2105,7 @@
 						<left>610</left>
 						<top>16</top>
 						<width>100</width>
-						<height>16</height>		
+						<height>16</height>
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
 						<visible>!Skin.HasSetting(DoNotUseStarRatingMovies) + !String.IsEmpty(ListItem.Rating)</visible>
@@ -2148,7 +2148,7 @@
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(MusicVideos)" height="74">	
+		<focusedlayout condition="Container.Content(MusicVideos)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2170,7 +2170,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-			</control>	
+			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
 				<control type="label">
@@ -2213,7 +2213,7 @@
 						<left>610</left>
 						<top>16</top>
 						<width>100</width>
-						<height>16</height>		
+						<height>16</height>
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
 						<visible>!String.IsEmpty(ListItem.Rating)</visible>
@@ -2253,7 +2253,7 @@
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(TVShows)" height="74">	
+		<focusedlayout condition="Container.Content(TVShows)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Default Cover</description>
@@ -2294,7 +2294,7 @@
 					<width>555</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>	
+					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Year]$INFO[ListItem.Episode,  -  , $LOCALIZE[20360]]</label>
 				</control>
 				<control type="label">
@@ -2314,7 +2314,7 @@
 					<left>610</left>
 					<top>16</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!Skin.HasSetting(DoNotUseStarRatingTVShows) + !String.IsEmpty(ListItem.Rating)</visible>
@@ -2328,10 +2328,10 @@
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!Skin.HasSetting(HideTVShowsListOverlay)</visible>
-				</control>	
+				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(Episodes)" height="74">	
+		<focusedlayout condition="Container.Content(Episodes)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2354,7 +2354,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-			</control>	
+			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
 				<control type="label">
@@ -2397,7 +2397,7 @@
 						<left>610</left>
 						<top>16</top>
 						<width>100</width>
-						<height>16</height>		
+						<height>16</height>
 						<texture background="true">$VAR[StarRating]</texture>
 						<aspectratio align="right">keep</aspectratio>
 						<visible>!Skin.HasSetting(DoNotUseStarRatingEpisodes) + !String.IsEmpty(ListItem.Rating)</visible>
@@ -2440,7 +2440,7 @@
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(Seasons)" height="74">	
+		<focusedlayout condition="Container.Content(Seasons)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2461,7 +2461,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-			</control>	
+			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
 				<control type="label">
@@ -2497,7 +2497,7 @@
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(Albums)" height="74">	
+		<focusedlayout condition="Container.Content(Albums)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2559,7 +2559,7 @@
 					<left>610</left>
 					<top>16</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
@@ -2628,14 +2628,14 @@
 					<left>610</left>
 					<top>16</top>
 					<width>100</width>
-					<height>16</height>		
+					<height>16</height>
 					<texture background="true">$VAR[StarRating]</texture>
 					<aspectratio align="right">keep</aspectratio>
 					<visible>!String.IsEmpty(ListItem.Rating) + !Skin.HasSetting(DoNotUseStarRatingMusic)</visible>
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="Container.Content(Artists)" height="74">	
+		<focusedlayout condition="Container.Content(Artists)" height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2717,7 +2717,7 @@
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 			</control>
 			<control type="group">
-				<include>ListViewFocusAnim</include>	
+				<include>ListViewFocusAnim</include>
 				<control type="label">
 					<description>Label</description>
 					<left>80</left>
@@ -2752,7 +2752,7 @@
 				</control>
 			</control>
 		</focusedlayout>
-		<focusedlayout height="74">	
+		<focusedlayout height="74">
 			<include>ListTallStyleFocus</include>
 			<control type="image">
 				<description>Cover</description>
@@ -2806,7 +2806,7 @@
 				<aspectratio>keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]</visible>
 				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-			</control>	
+			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
 				<control type="label">
@@ -2840,13 +2840,13 @@
 				<texture background="true">$INFO[ListItem.Overlay]</texture>
 				<aspectratio align="right">keep</aspectratio>
 			</control>
-		</focusedlayout>			
+		</focusedlayout>
 	</include>
 	
 	<include name="ListTallStyleFocus">
 		<control type="image">
 			<width>720</width>
-			<height>74</height>	
+			<height>74</height>
 			<texture border="0,0,10,2">views/list-separator.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
@@ -2886,8 +2886,8 @@
 		<value>$INFO[ListItem.Year]</value>
 	</variable>
 	
-	<include name="DVDThumbsView">	
-		<control type="group" id="500">	
+	<include name="DVDThumbsView">
+		<control type="group" id="500">
 	        <defaultcontrol always="true">54</defaultcontrol>
 			<visible>Control.IsVisible(54)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -2901,7 +2901,7 @@
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -2979,10 +2979,10 @@
 						</control>
 					</control>
 				</control>
-			</control>	
+			</control>
 			
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+		</control>
 	</include>
 	
 	<include name="CommonDVDThumbsStyle1Height1">
@@ -3011,7 +3011,7 @@
 			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<animation effect="slide" end="24,-9" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
-			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="270" width="208">	
+			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="270" width="208">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -3048,7 +3048,7 @@
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-				</control>		
+				</control>
 				<control type="image">
 					<description>Unwatched Overlay</description>
 					<left>148</left>
@@ -3090,7 +3090,7 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<width>590</width>
-					<height>127</height>	
+					<height>127</height>
 					<texture border="7">covers/cover-case-nofocus.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="60" condition="true">Conditional</animation>
@@ -3112,7 +3112,7 @@
 					<font>WideListFont</font>
 					<textcolor>ListColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>	
+					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
 					<visible>!String.IsEmpty(ListItem.Title)</visible>
 				</control>
 				<control type="image">
@@ -3172,7 +3172,7 @@
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
 			</itemlayout>
-			<itemlayout condition="!Container.Content(TVShows)" height="270" width="208">	
+			<itemlayout condition="!Container.Content(TVShows)" height="270" width="208">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -3222,7 +3222,7 @@
 					<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="270" width="208">	
+			<focusedlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="270" width="208">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -3241,7 +3241,7 @@
 						<bordersize>25</bordersize>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
-					</control>	
+					</control>
 					<control type="image">
 						<description>Cover</description>
 						<left>11</left>
@@ -3250,7 +3250,7 @@
 						<bordersize>14</bordersize>
 						<texture background="true">$VAR[TVShowsThumbTexture]</texture>
 						<aspectratio>scale</aspectratio>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>148</left>
@@ -3260,7 +3260,7 @@
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Unwatched Overlay</description>
 						<left>148</left>
@@ -3297,7 +3297,7 @@
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
-				</control>	
+				</control>
 			</focusedlayout>
 			<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)" height="137" width="600">
 				<control type="group">
@@ -3306,7 +3306,7 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<width>590</width>
-						<height>127</height>	
+						<height>127</height>
 						<texture border="7">covers/cover-case-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
@@ -3387,7 +3387,7 @@
 					</control>
 				</control>
 			</focusedlayout>
-			<focusedlayout condition="!Container.Content(TVShows)" height="270" width="208">	
+			<focusedlayout condition="!Container.Content(TVShows)" height="270" width="208">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -3416,7 +3416,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>149</left>
@@ -3436,9 +3436,9 @@
 						<texture background="true">$VAR[WatchedPartial]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
-					</control>	
-				</control>	
-			</focusedlayout>			
+					</control>
+				</control>
+			</focusedlayout>
 		</control>
 	</include>
 	
@@ -3468,7 +3468,7 @@
 			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<animation effect="slide" end="15,5" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
-			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="179" width="138">	
+			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="179" width="138">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>15</left>
@@ -3511,7 +3511,7 @@
 				<control type="image">
 					<description>Cover Case</description>
 					<width>396</width>
-					<height>93</height>	
+					<height>93</height>
 					<texture border="7">covers/cover-case-nofocus.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="60" condition="true">Conditional</animation>
@@ -3556,7 +3556,7 @@
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>
-			<itemlayout condition="!Container.Content(TVShows)" height="179" width="138">	
+			<itemlayout condition="!Container.Content(TVShows)" height="179" width="138">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>15</left>
@@ -3605,8 +3605,8 @@
 					<aspectratio>keep</aspectratio>
 					<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
-			</itemlayout>			
-			<focusedlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="179" width="138">	
+			</itemlayout>
+			<focusedlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="179" width="138">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim2</include>
 					<control type="image">
@@ -3625,7 +3625,7 @@
 						<bordersize>17</bordersize>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
-					</control>	
+					</control>
 					<control type="image">
 						<description>Cover</description>
 						<left>15</left>
@@ -3634,7 +3634,7 @@
 						<bordersize>12</bordersize>
 						<texture background="true">$VAR[TVShowsThumbTexture]</texture>
 						<aspectratio>scale</aspectratio>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>100</left>
@@ -3645,7 +3645,7 @@
 						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
 					</control>
-				</control>	
+				</control>
 			</focusedlayout>
 			<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)" height="104" width="407">
 				<control type="group">
@@ -3654,7 +3654,7 @@
 					<control type="image">
 						<description>Cover Case</description>
 						<width>396</width>
-						<height>93</height>	
+						<height>93</height>
 						<texture border="7">covers/cover-case-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
@@ -3698,7 +3698,7 @@
 					</control>
 				</control>
 			</focusedlayout>
-			<focusedlayout height="179" width="138">	
+			<focusedlayout height="179" width="138">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim2</include>
 					<control type="image">
@@ -3727,7 +3727,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>100</left>
@@ -3748,7 +3748,7 @@
 						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 					</control>
-				</control>	
+				</control>
 			</focusedlayout>
 		</control>
 	</include>
@@ -3769,7 +3769,7 @@
 			<onright>150</onright>
 			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
-			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="132" width="308">	
+			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="132" width="308">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -3808,7 +3808,7 @@
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-				</control>		
+				</control>
 				<control type="image">
 					<description>Unwatched Overlay</description>
 					<left>257</left>
@@ -3846,8 +3846,8 @@
 					<animation effect="fade" end="85" condition="true">Conditional</animation>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
-			</itemlayout>		
-			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="132" width="308">	
+			</itemlayout>
+			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="132" width="308">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -3898,7 +3898,7 @@
 					<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="132" width="308">	
+			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="132" width="308">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -3918,7 +3918,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
-					</control>	
+					</control>
 					<control type="image">
 						<description>Cover</description>
 						<left>11</left>
@@ -3928,7 +3928,7 @@
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>257</left>
@@ -3938,7 +3938,7 @@
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Unwatched Overlay</description>
 						<left>257</left>
@@ -3975,9 +3975,9 @@
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
-				</control>	
-			</focusedlayout>																	
-			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="132" width="308">	
+				</control>
+			</focusedlayout>
+			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="132" width="308">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -4007,7 +4007,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>259</left>
@@ -4027,9 +4027,9 @@
 						<texture background="true">$VAR[WatchedPartial]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
-					</control>	
-				</control>	
-			</focusedlayout>			
+					</control>
+				</control>
+			</focusedlayout>
 		</control>
 	</include>
 	
@@ -4049,7 +4049,7 @@
 			<onright>150</onright>
 			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
-			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="180" width="306">	
+			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="180" width="306">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -4098,7 +4098,7 @@
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-				</control>		
+				</control>
 				<control type="image">
 					<description>Unwatched Overlay</description>
 					<left>257</left>
@@ -4136,8 +4136,8 @@
 					<animation effect="fade" end="85" condition="true">Conditional</animation>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
-			</itemlayout>		
-			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="180" width="306">	
+			</itemlayout>
+			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="180" width="306">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -4198,7 +4198,7 @@
 					<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="180" width="306">	
+			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="180" width="306">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -4218,7 +4218,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
-					</control>	
+					</control>
 					<control type="image">
 						<description>Cover Fallback</description>
 						<left>11</left>
@@ -4248,7 +4248,7 @@
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Unwatched Overlay</description>
 						<left>257</left>
@@ -4285,9 +4285,9 @@
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
-				</control>	
-			</focusedlayout>																	
-			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="180" width="306">	
+				</control>
+			</focusedlayout>
+			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="180" width="306">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -4327,7 +4327,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>259</left>
@@ -4347,9 +4347,9 @@
 						<texture background="true">$VAR[WatchedPartial]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
-					</control>	
-				</control>	
-			</focusedlayout>			
+					</control>
+				</control>
+			</focusedlayout>
 		</control>
 	</include>
 	
@@ -4369,7 +4369,7 @@
 			<onright>150</onright>
 			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
-			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="182" width="304">	
+			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="182" width="304">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -4428,7 +4428,7 @@
 					<texture background="true">$INFO[ListItem.Overlay]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-				</control>		
+				</control>
 				<control type="image">
 					<description>Unwatched Overlay</description>
 					<left>253</left>
@@ -4466,8 +4466,8 @@
 					<animation effect="fade" end="85" condition="true">Conditional</animation>
 					<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 				</control>
-			</itemlayout>		
-			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="182" width="304">	
+			</itemlayout>
+			<itemlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="182" width="304">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>11</left>
@@ -4538,7 +4538,7 @@
 					<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="182" width="304">	
+			<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="182" width="304">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -4598,7 +4598,7 @@
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay)</visible>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Unwatched Overlay</description>
 						<left>253</left>
@@ -4635,9 +4635,9 @@
 						<animation effect="fade" end="85" condition="true">Conditional</animation>
 						<visible>!Skin.HasSetting(HideTVShowsThumbnailOverlay) + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
 					</control>
-				</control>	
-			</focusedlayout>																	
-			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="182" width="304">	
+				</control>
+			</focusedlayout>
+			<focusedlayout condition="Container.Content(Movies) | Container.Content(Sets)" height="182" width="304">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim</include>
 					<control type="image">
@@ -4687,7 +4687,7 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(fanart))</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Overlay</description>
 						<left>255</left>
@@ -4707,9 +4707,9 @@
 						<texture background="true">$VAR[WatchedPartial]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideMoviesThumbnailOverlay)</visible>
-					</control>	
-				</control>	
-			</focusedlayout>			
+					</control>
+				</control>
+			</focusedlayout>
 		</control>
 	</include>
 	<!--//// END DVD THUMBS VIEW //////////////////////////////////////////////////////////////////////-->
@@ -4726,19 +4726,19 @@
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	
-	<include name="AlbumThumbsView">	
-		<control type="group" id="500">	
+	<include name="AlbumThumbsView">
+		<control type="group" id="500">
 	        <defaultcontrol always="true">63</defaultcontrol>
 			<visible>Control.IsVisible(63)</visible>
 			<include>MediaViewOpenCloseAnim</include>
-			<include>ThumbnailViewScrollbar</include>		
+			<include>ThumbnailViewScrollbar</include>
 			
 			<include condition="Skin.String(CommonAlbumThumbsStyle,1) | Skin.String(CommonAlbumThumbsStyle,)">CommonAlbumThumbsStyle1</include>
 			<include condition="Skin.String(CommonAlbumThumbsStyle,2)">CommonAlbumThumbsStyle2</include>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<!--<include condition="!Skin.HasSetting(EnableMusicLibraryClearLogos)">InfoPaneClearLogoMusic</include>-->
@@ -4757,10 +4757,10 @@
 						<label>$VAR[AlbumThumbsLabel2]</label>
 					</control>
 				</control>
-			</control>	
+			</control>
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+		</control>
 	</include>
 	
 	<include name="CommonAlbumThumbsStyle1">
@@ -4778,7 +4778,7 @@
 			<onleft>850</onleft>
 			<onright>150</onright>
 			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist)</visible>
-			<itemlayout height="270" width="249">	
+			<itemlayout height="270" width="249">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>10</left>
@@ -4795,7 +4795,7 @@
 					<bordersize>14</bordersize>
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<aspectratio>stretch</aspectratio>
-				</control>										
+				</control>
 				<control type="image">
 					<description>Default Cover</description>
 					<left>10</left>
@@ -4805,9 +4805,9 @@
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					<animation effect="fade" end="40" condition="true">Conditional</animation>	
+					<animation effect="fade" end="40" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>															
+			</itemlayout>
 			<focusedlayout height="270" width="249">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim3</include>
@@ -4838,7 +4838,7 @@
 						<visible>String.IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</control>
-			</focusedlayout>			
+			</focusedlayout>
 		</control>
 	</include>
 	
@@ -4857,7 +4857,7 @@
 			<onleft>850</onleft>
 			<onright>150</onright>
 			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist)</visible>
-			<itemlayout height="177" width="177">	
+			<itemlayout height="177" width="177">
 				<control type="image">
 					<description>Cover Case</description>
 					<left>5</left>
@@ -4874,7 +4874,7 @@
 					<bordersize>12</bordersize>
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<aspectratio>stretch</aspectratio>
-				</control>										
+				</control>
 				<control type="image">
 					<description>Default Cover</description>
 					<left>5</left>
@@ -4886,8 +4886,8 @@
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
 					<animation effect="fade" end="40" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>															
-			<focusedlayout height="177" width="177">					
+			</itemlayout>
+			<focusedlayout height="177" width="177">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim2</include>
 					<control type="image">
@@ -4917,7 +4917,7 @@
 						<visible>String.IsEmpty(ListItem.Thumb)</visible>
 					</control>
 				</control>
-			</focusedlayout>			
+			</focusedlayout>
 		</control>
 	</include>
 	<!--//// START ALBUM THUMBS VIEW //////////////////////////////////////////////////////////////////-->
@@ -5200,13 +5200,13 @@
 					<include>3DWrapUnwatchedEpisodes$PARAM[number]B</include>
 					<label>$INFO[ListItem($PARAM[position]).Property(UnWatchedEpisodes)]</label>
 					<visible>Integer.IsGreater(ListItem($PARAM[position]).Property(UnWatchedEpisodes),99)</visible>
-				</control>		
-			</control>							
+				</control>
+			</control>
 		</control>
 	</include>
 	
 	<include name="3DWrapView">
-		<control type="group" id="500">	
+		<control type="group" id="500">
 		    <defaultcontrol always="true">588</defaultcontrol>
 			<visible>Control.IsVisible(588)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -5312,14 +5312,14 @@
 				<left>10</left>
 				<top>442</top>
 				<width>1260</width>
-				<height>300</height>	
+				<height>300</height>
 				<onleft>588</onleft>
 				<onright>588</onright>
 				<onup>850</onup>
 				<ondown>150</ondown>
 				<pagecontrol>929</pagecontrol>
 				<orientation>horizontal</orientation>
-				<focusposition>4</focusposition>	
+				<focusposition>4</focusposition>
 				<scrolltime>250</scrolltime>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
 				<itemlayout width="136">
@@ -5442,7 +5442,7 @@
 							</control>
 						</control>
 					</control>
-				</itemlayout>	
+				</itemlayout>
 				<focusedlayout width="180">
 					<control type="group">
 						<visible>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(3DWrapMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(3DWrapTVShowsStyle,2)]</visible>
@@ -5563,7 +5563,7 @@
 							</control>
 						</control>
 					</control>
-				</focusedlayout>					
+				</focusedlayout>
 			</control>
 		
 			<control type="image">
@@ -5642,7 +5642,7 @@
 				<visible>![[Container.Content(TVShows) + Skin.HasSetting(HideTVShowsGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 			</control>
 
-			<control type="group">				
+			<control type="group">
 				<description>Info Dialog Box Area</description>
 				<left>50</left>
 				<visible>!Container.OnNext + !Container.OnPrevious + !String.IsEmpty(ListItem.Title)</visible>
@@ -6130,7 +6130,7 @@
 							<animation effect="rotatey" center="780" end="-30" time="250" reversible="false" tween="quadratic" easing="in">Hidden</animation>
 							<animation effect="rotatey" center="780" start="60" end="60" time="0" condition="true">Conditional</animation>
 							<control type="group">
-								<control type="image">							
+								<control type="image">
 									<include>3DWrapPosterCover</include>
 									<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster0]</texture>
 								</control>
@@ -6351,7 +6351,7 @@
 							<control type="group">
 								<control type="image">
 									<include>3DWrapPosterCover</include>
-									<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster0]</texture>						
+									<texture background="true" diffuse="covers/3dwrap-poster-diffuse.png">$VAR[3DWrapPoster0]</texture>
 								</control>
 								<control type="image">
 									<description>Cover Overlay</description>
@@ -6416,7 +6416,7 @@
 					<top>367</top>
 					<animation effect="fade" time="500">WindowOpen</animation>
 					<animation effect="fade" time="200">WindowClose</animation>
-					<visible>Control.IsVisible(588) + ![Control.IsVisible(5051) | Control.IsVisible(5052)]</visible>			
+					<visible>Control.IsVisible(588) + ![Control.IsVisible(5051) | Control.IsVisible(5052)]</visible>
 					<camera x="640" y="540" />
 					<control type="group">
 						<left>104</left>
@@ -6543,8 +6543,8 @@
 							<param name="position" value="1" />
 							<param name="number" value="2" />
 						</include>
-					</control>			
-				</control>		
+					</control>
+				</control>
 				
 				<control type="group">
 					<visible>Control.IsVisible(588) + ![Control.IsVisible(5051) | Control.IsVisible(5052)]</visible>
@@ -6649,7 +6649,7 @@
 							</control>
 						</control>
 					</control>
-				</control>		
+				</control>
 			</control>
 			
 			<control type="group">
@@ -7031,8 +7031,8 @@
          <value>$INFO[Container(584).ListItem.Duration]</value>
      </variable>
 	
-	<include name="ExtendedListView">	
-		<control type="group" id="500">	
+	<include name="ExtendedListView">
+		<control type="group" id="500">
 	        <defaultcontrol always="true">585</defaultcontrol>
 			<visible>Control.IsVisible(585)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -7802,7 +7802,7 @@
 				</control>
 			</control>
 			
-			<control type="list" id="585">	
+			<control type="list" id="585">
 				<viewtype label="31122">list</viewtype>
 				<left>53</left>
 				<top>110</top>
@@ -7822,7 +7822,7 @@
 				<itemlayout height="37">
 					<control type="image">
 						<width>354</width>
-						<height>37</height>	
+						<height>37</height>
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
@@ -7856,20 +7856,20 @@
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<aligny>center</aligny>				
+						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
-				</itemlayout>		
-				<focusedlayout height="37">	
+				</itemlayout>
+				<focusedlayout height="37">
 					<control type="image">
 						<width>354</width>
-						<height>37</height>	
+						<height>37</height>
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<width>354</width>
-						<height>36</height>	
+						<height>36</height>
 						<texture border="4">views/list-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>Control.HasFocus(585)</visible>
@@ -7878,7 +7878,7 @@
 					</control>
 					<control type="image">
 						<width>354</width>
-						<height>36</height>	
+						<height>36</height>
 						<texture border="4">views/list-alt-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>!Control.HasFocus(585)</visible>
@@ -7919,7 +7919,7 @@
 							<scroll>true</scroll>
 						</control>
 					</control>
-				</focusedlayout>		
+				</focusedlayout>
 			</control>
 			
 			<control type="group" id="152">
@@ -7982,7 +7982,7 @@
 				<itemlayout height="37">
 					<control type="image">
 						<width>354</width>
-						<height>37</height>	
+						<height>37</height>
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
@@ -8005,7 +8005,7 @@
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<aligny>center</aligny>				
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Label]</label>
 						<visible>String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)</visible>
 					</control>
@@ -8017,7 +8017,7 @@
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<aligny>center</aligny>				
+						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)]</visible>
 					</control>
@@ -8033,7 +8033,7 @@
 							<aspectratio>keep</aspectratio>
 							<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							<include>ListViewOverlayFadeAnim</include>
-						</control>	
+						</control>
 						<control type="image">
 							<description>Quality</description>
 							<left>5</left>
@@ -8105,17 +8105,17 @@
 							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</control>
-				</itemlayout>		
-				<focusedlayout height="37">	
+				</itemlayout>
+				<focusedlayout height="37">
 					<control type="image">
 						<width>354</width>
-						<height>37</height>	
+						<height>37</height>
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<width>354</width>
-						<height>36</height>	
+						<height>36</height>
 						<texture border="4">views/list-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>Control.HasFocus(584)</visible>
@@ -8131,7 +8131,7 @@
 					</control>
 					<control type="image">
 						<width>354</width>
-						<height>36</height>	
+						<height>36</height>
 						<texture border="4">views/list-alt-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>!Control.HasFocus(584)</visible>
@@ -8186,7 +8186,7 @@
 								<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 								<aspectratio>keep</aspectratio>
 								<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-							</control>	
+							</control>
 							<control type="image">
 								<description>Quality</description>
 								<left>5</left>
@@ -8292,7 +8292,7 @@
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<control type="image">
 					<left>582</left>
@@ -8330,10 +8330,10 @@
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
 				<include>BottomPaneOpenCloseAnim</include>
-			</control>	
+			</control>
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+		</control>
 	</include>
 	<!--//// END EXTENDED LIST VIEW /////////////////////////////////////////////////////////////////////-->
 	
@@ -8359,14 +8359,14 @@
 		<align>right</align>
 	</include>
 	
-	<include name="FanartView">	
-		<control type="group" id="500">	
+	<include name="FanartView">
+		<control type="group" id="500">
 	        <defaultcontrol always="true">583</defaultcontrol>
 			<visible>Control.IsVisible(583)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			
 			<control type="group">
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<include>InfoPaneImage</include>
 			</control>
 			
@@ -8380,7 +8380,7 @@
 				<animation effect="fade" end="22" condition="true">Conditional</animation>
 			</control>
 			
-			<control type="panel" id="583">	
+			<control type="panel" id="583">
 				<viewtype label="20445">icon</viewtype>
 				<left>741</left>
 				<top>430</top>
@@ -8397,7 +8397,7 @@
 				<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(583)">Conditional</animation>
 				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
-				<itemlayout height="400">			
+				<itemlayout height="400">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title) + [[!Skin.HasSetting(HideMoviesFanartMediaInfo) + [Container.Content(Movies) | Container.Content(Sets)]] | [!Skin.HasSetting(HideTVShowsFanartMediaInfo) + Container.Content(TVShows)]]</visible>
 						<left>24</left>
@@ -8409,8 +8409,8 @@
 							<width>482</width>
 							<scroll>false</scroll>
 						</control>
-					</control>			
-				</itemlayout>		
+					</control>
+				</itemlayout>
 				<focusedlayout height="400">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title) + [[!Skin.HasSetting(HideMoviesFanartMediaInfo) + [Container.Content(Movies) | Container.Content(Sets)]] | [!Skin.HasSetting(HideTVShowsFanartMediaInfo) + Container.Content(TVShows)]]</visible>
@@ -8424,7 +8424,7 @@
 							<scroll>true</scroll>
 						</control>
 					</control>
-				</focusedlayout>		
+				</focusedlayout>
 			</control>
 			
 			<control type="group">
@@ -8586,7 +8586,7 @@
 					<aspectratio>keep</aspectratio>
 					<include>BackgroundVisibleAnim</include>
 					<visible>[Container.Content(Movies) | Container.Content(Sets)] + ListItem.IsResumable + !Skin.HasSetting(HideMoviesFanartOverlay)</visible>
-				</control>				
+				</control>
 				<control type="group">
 					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes)) + Container.Content(TVShows) + !Skin.HasSetting(HideTVShowsFanartOverlay)</visible>
 					<control type="image">
@@ -8716,10 +8716,10 @@
 				</control>
 				<include condition="String.Contains(Container.FolderPath,videodb://tvshows/)">VideoDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
-			</control>	
+			</control>
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>		
+		</control>
 	</include>
 	<!--//// END FANART VIEW /////////////////////////////////////////////////////////////////////-->
 </includes>

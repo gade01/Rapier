@@ -43,8 +43,8 @@
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[172]</label>
 				<onclick>Dialog.Close(1101)</onclick>
-				<onclick condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">SendClick(3011,5003)</onclick>				
-				<onclick condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">SendClick(3000,5002)</onclick>				
+				<onclick condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">SendClick(3011,5003)</onclick>
+				<onclick condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">SendClick(3000,5002)</onclick>
 			</control>
 			<control type="button" id="743">
 				<description>Runtime</description>
@@ -231,7 +231,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(ShowExtendedInfoYoutubeFanart)</selected>
-				<onclick>Skin.ToggleSetting(ShowExtendedInfoYoutubeFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowExtendedInfoYoutubeFanart)</onclick>
 				<visible>Window.IsActive(script-script.extendedinfo-YoutubeList.xml)</visible>
 			</control>
 			<control type="radiobutton" id="765">
@@ -538,5 +538,5 @@
 				<include>DropDownMenuBottomBorder</include>
 			</control>
 		</control>
-	</controls>	
+	</controls>
 </window>

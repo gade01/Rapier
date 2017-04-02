@@ -75,7 +75,7 @@
 		<value condition="Window.IsVisible(GameSettings)">$LOCALIZE[15016]</value>
 	</variable>
 	
-	<include name="BreadCrumbHomeIcon">	
+	<include name="BreadCrumbHomeIcon">
 		<top>12</top>
 		<width>20</width>
 		<height>20</height>
@@ -90,15 +90,15 @@
 		<onclick>ActivateWindow(Home)</onclick>
 		<animation type="Conditional" condition="![[Container.Scrolling + $EXP[ExpSortMethods]] | Container(584).Scrolling | !String.IsEmpty(PVR.ChannelNumberInput)]">
 			<effect type="fade" start="0" end="100" time="300" delay="1100"/>
-			<effect type="slide" start="-60,0" time="400" tween="cubic" easing="out" delay="1100"/>	
-		</animation>		
+			<effect type="slide" start="-60,0" time="400" tween="cubic" easing="out" delay="1100"/>
+		</animation>
 		<animation type="Conditional" condition="[Container.Scrolling + $EXP[ExpSortMethods]] | Container(584).Scrolling | !String.IsEmpty(PVR.ChannelNumberInput)">
 			<effect type="fade" start="100" end="0" time="300"/>
-			<effect type="slide" end="-60,0" time="400" tween="cubic" easing="out"/>	
+			<effect type="slide" end="-60,0" time="400" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	
-	<include name="BreadCrumbHomeIcon2">	
+	<include name="BreadCrumbHomeIcon2">
 		<top>12</top>
 		<width>20</width>
 		<height>20</height>
@@ -111,11 +111,11 @@
 		<onclick>ActivateWindow(Home)</onclick>
 		<animation type="Conditional" condition="!Container.Scrolling">
 			<effect type="fade" start="0" end="100" time="300" delay="1100"/>
-			<effect type="slide" start="-60,0" time="400" tween="cubic" easing="out" delay="1100"/>	
-		</animation>		
+			<effect type="slide" start="-60,0" time="400" tween="cubic" easing="out" delay="1100"/>
+		</animation>
 		<animation type="Conditional" condition="Container.Scrolling">
 			<effect type="fade" start="100" end="0" time="300"/>
-			<effect type="slide" end="-60,0" time="400" tween="cubic" easing="out"/>	
+			<effect type="slide" end="-60,0" time="400" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	
@@ -137,7 +137,7 @@
 		<scroll>false</scroll>
 	</include>
 	
-	<include name="BreadCrumbVideoLibrary">	
+	<include name="BreadCrumbVideoLibrary">
 		<control type="grouplist">
 			<left>10</left>
 			<top>StatusBartop</top>
@@ -161,21 +161,21 @@
 				<label>[UPPERCASE]$LOCALIZE[3][/UPPERCASE]</label>
 				<visible>[String.IsEqual(Container.FolderPath,sources://video/) | String.IsEmpty(Container.FolderPath) | Container.Content(Addons) | String.Contains(Container.FolderPath,plugin:) | String.IsEqual(Container.FolderPath,special://videoplaylists/)] + !String.StartsWith(Container.FolderPath,special://skin/extras/playlists/)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>		
+			</control>
 			<control type="label" id="5502">
 				<description>Movies</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$LOCALIZE[20342][/UPPERCASE]</label>
 				<visible>String.Contains(Container.FolderPath,/movies/)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>			
+			</control>
 			<control type="label" id="5503">
 				<description>TV Shows</description>
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$VAR[TVShowsBreadCrumbsLabel][/UPPERCASE]</label>
 				<visible>String.Contains(Container.FolderPath,/tvshows/) | String.Contains(Container.FolderPath,videodb://inprogresstvshows/)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>		
+			</control>
 			<control type="label" id="5504">
 				<description>Music Videos</description>
 				<include>BreadCrumbLabel</include>
@@ -319,7 +319,7 @@
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>		
+			</control>
 			<control type="label" id="5501">
 				<description>Music</description>
 				<include>BreadCrumbLabel</include>
@@ -378,11 +378,11 @@
 				<include>BreadCrumbSeparator</include>
 				<visible>Control.IsVisible(5526)</visible>
 				<include>BreadCrumbSlideLvl4Anim</include>
-			</control>	
-		</control>	
+			</control>
+		</control>
 	</include>
 	
-	<include name="BreadCrumbMusicPlaylist">	
+	<include name="BreadCrumbMusicPlaylist">
 		<control type="grouplist">
 			<left>10</left>
 			<top>StatusBartop</top>
@@ -453,9 +453,9 @@
 			<control type="label" id="5502">
 				<description>Playlist Editor</description>
 				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</label>	
+				<label>[UPPERCASE]$LOCALIZE[10503][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl3Anim</include>
-			</control>	
+			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl3Anim</include>
@@ -524,7 +524,7 @@
 		</control>
 	</include>
 	
-	<include name="BreadCrumbPrograms">		
+	<include name="BreadCrumbPrograms">
 		<control type="grouplist">
 			<left>10</left>
 			<top>StatusBartop</top>
@@ -582,10 +582,10 @@
 				<visible>Control.IsVisible(5504)</visible>
 				<include>BreadCrumbSlideLvl4Anim</include>
 			</control>
-		</control>	
+		</control>
 	</include>
 	
-	<include name="BreadCrumbGames">		
+	<include name="BreadCrumbGames">
 		<control type="grouplist">
 			<left>10</left>
 			<top>StatusBartop</top>
@@ -643,7 +643,7 @@
 				<visible>Control.IsVisible(5504)</visible>
 				<include>BreadCrumbSlideLvl4Anim</include>
 			</control>
-		</control>	
+		</control>
 	</include>
 	
 	<include name="BreadCrumbAddons">
@@ -1221,7 +1221,7 @@
 				<label>[UPPERCASE]$LOCALIZE[20342][/UPPERCASE]</label>
 				<visible>String.IsEmpty(ListItem.TvShowTitle)</visible>
 				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>			
+			</control>
 			<control type="label">
 				<description>TV Shows</description>
 				<include>BreadCrumbLabel</include>
@@ -1257,7 +1257,7 @@
 		</control>
 	</include>
 	
-	<include name="BreadCrumbMovieSetInfo">	
+	<include name="BreadCrumbMovieSetInfo">
 		<control type="grouplist">
 			<left>10</left>
 			<top>StatusBartop</top>
@@ -1348,7 +1348,7 @@
 		</control>
 	</include>
 	
-	<include name="BreadCrumbExtendedInfoVideoList">	
+	<include name="BreadCrumbExtendedInfoVideoList">
 		<control type="grouplist">
 			<left>10</left>
 			<top>StatusBartop</top>

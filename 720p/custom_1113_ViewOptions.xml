@@ -41,7 +41,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideEpisodesIconOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideEpisodesIconOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideEpisodesIconOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,50)</visible>
 			</control>
 			<control type="radiobutton" id="3000">
@@ -57,7 +57,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowMusicIconFanart)</selected>
-				<onclick>Skin.ToggleSetting(ShowMusicIconFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowMusicIconFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,50) + Container.Content(Artists)</visible>
 			</control>
 			<control type="radiobutton" id="5002">
@@ -65,8 +65,8 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>[!Skin.HasSetting(ShowTVShowsIconFanart) + Container.Content(Episodes)] | [!Skin.HasSetting(ShowVideosIconFanart) + Container.Content(Videos)]</selected>
-				<onclick condition="Container.Content(Episodes)">Skin.ToggleSetting(ShowTVShowsIconFanart)</onclick>	
-				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(ShowVideosIconFanart)</onclick>	
+				<onclick condition="Container.Content(Episodes)">Skin.ToggleSetting(ShowTVShowsIconFanart)</onclick>
+				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(ShowVideosIconFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,50) + [Container.Content(Episodes) | Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="5003">
@@ -74,7 +74,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowMusicVideosIconFanart)</selected>
-				<onclick>Skin.ToggleSetting(ShowMusicVideosIconFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowMusicVideosIconFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,50) + Container.Content(MusicVideos)</visible>
 			</control>
 			<control type="radiobutton" id="3034">
@@ -82,7 +82,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideDVDThumbsLabel)</selected>
-				<onclick>Skin.ToggleSetting(HideDVDThumbsLabel)</onclick>	
+				<onclick>Skin.ToggleSetting(HideDVDThumbsLabel)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="1003">
@@ -98,7 +98,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31123]</label>
 				<selected>Skin.HasSetting(ShowDVDThumbsYear)</selected>
-				<onclick>Skin.ToggleSetting(ShowDVDThumbsYear)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowDVDThumbsYear)</onclick>
 				<onclick>Skin.Reset(ShowDVDThumbsRating)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			</control>
@@ -126,7 +126,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31424]</label>
 				<selected>!Skin.HasSetting(DoNotDimMusicWallCover)</selected>
-				<onclick>Skin.ToggleSetting(DoNotDimMusicWallCover)</onclick>	
+				<onclick>Skin.ToggleSetting(DoNotDimMusicWallCover)</onclick>
 				<visible>Skin.String(CurrentViewMode,70) + Container.Content(Albums)</visible>
 			</control>
 			<control type="radiobutton" id="3083">
@@ -134,7 +134,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31047]</label>
 				<selected>Skin.HasSetting(ShowMoviesWallRating)</selected>
-				<onclick>Skin.ToggleSetting(ShowMoviesWallRating)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowMoviesWallRating)</onclick>
 				<visible>Skin.String(CurrentViewMode,69) + Container.Content(Movies)</visible>
 			</control>
 			<control type="radiobutton" id="3079">
@@ -142,7 +142,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31047]</label>
 				<selected>Skin.HasSetting(ShowTVShowsWallRating)</selected>
-				<onclick>Skin.ToggleSetting(ShowTVShowsWallRating)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowTVShowsWallRating)</onclick>
 				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="1035">
@@ -199,7 +199,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideMoviesThumbnailOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesThumbnailOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMoviesThumbnailOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + Container.Content(Movies)</visible>
 			</control>
 			<control type="radiobutton" id="3090">
@@ -207,7 +207,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideTVShowsThumbnailOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsThumbnailOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideTVShowsThumbnailOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="1041">
@@ -223,7 +223,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowMoviesThumbnailFanart)</selected>
-				<onclick>Skin.ToggleSetting(ShowMoviesThumbnailFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowMoviesThumbnailFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + Container.Content(Movies)</visible>
 			</control>
 			<control type="radiobutton" id="3054">
@@ -231,7 +231,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowTVShowsThumbnailFanart)</selected>
-				<onclick>Skin.ToggleSetting(ShowTVShowsThumbnailFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowTVShowsThumbnailFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,54) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			</control>
 			<control type="radiobutton" id="3002">
@@ -239,7 +239,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>!Skin.HasSetting(ShowAddonsThumbnailFanart)</selected>
-				<onclick>Skin.ToggleSetting(ShowAddonsThumbnailFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(ShowAddonsThumbnailFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3041">
@@ -257,7 +257,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideMoviesListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesListOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMoviesListOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + Window.IsActive(Videos) + [Container.Content(Movies) | Container.Content(Sets)] + !Skin.String(CommonListStyle,1)</visible>
 			</control>
 			<control type="radiobutton" id="3056">
@@ -265,7 +265,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideTVShowsListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsListOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideTVShowsListOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + Window.IsActive(Videos) + Container.Content(TVShows) + !Skin.String(CommonListStyle,1)</visible>
 			</control>
 			<control type="radiobutton" id="3057">
@@ -273,7 +273,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideEpisodesListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideEpisodesListOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideEpisodesListOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + Window.IsActive(Videos) + Container.Content(Episodes) + !Skin.String(CommonListStyle,1)</visible>
 			</control>
 			<control type="radiobutton" id="3058">
@@ -281,7 +281,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideSeasonsListOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideSeasonsListOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideSeasonsListOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + Window.IsActive(Videos) + Container.Content(Seasons) + !Skin.String(CommonListStyle,1)</visible>
 			</control>
 			<control type="radiobutton" id="1005">
@@ -297,7 +297,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideMoviesListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesListFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMoviesListFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
 			</control>
 			<control type="radiobutton" id="2006">
@@ -305,7 +305,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideMusicVideosListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicVideosListFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMusicVideosListFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + Container.Content(MusicVideos)</visible>
 			</control>
 			<control type="radiobutton" id="2037">
@@ -313,7 +313,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideTVShowsListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsListFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(HideTVShowsListFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 			</control>
 			<control type="radiobutton" id="2038">
@@ -321,7 +321,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideVideosListFanart)</selected>
-				<onclick>Skin.ToggleSetting(HideVideosListFanart)</onclick>	
+				<onclick>Skin.ToggleSetting(HideVideosListFanart)</onclick>
 				<visible>Skin.String(CurrentViewMode,52) + Container.Content(Videos)</visible>
 			</control>
 			<control type="radiobutton" id="3003">
@@ -428,7 +428,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideMoviesListInfo2Overlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesListInfo2Overlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMoviesListInfo2Overlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,66) + [Container.Content(Movies) | Container.Content(Sets)] + !Skin.String(MoviesListInfo2Style,1)</visible>
 			</control>
 			<control type="radiobutton" id="2079">
@@ -436,7 +436,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideTVShowsListInfo2Overlay)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsListInfo2Overlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideTVShowsListInfo2Overlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,65) + [Container.Content(TVShows) | Container.Content(Seasons)] + !Skin.String(TVShowsListInfo2Style,1)</visible>
 			</control>
 			<control type="radiobutton" id="2055">
@@ -444,8 +444,8 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>[Skin.HasSetting(HideEpisodesListInfo2Overlay) + Container.Content(Episodes)] | [Skin.HasSetting(HideVideosListInfo2Overlay) + Container.Content(Videos)]</selected>
-				<onclick condition="Container.Content(Episodes)">Skin.ToggleSetting(HideEpisodesListInfo2Overlay)</onclick>	
-				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosListInfo2Overlay)</onclick>	
+				<onclick condition="Container.Content(Episodes)">Skin.ToggleSetting(HideEpisodesListInfo2Overlay)</onclick>
+				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosListInfo2Overlay)</onclick>
 				<visible>[Skin.String(CurrentViewMode,68) + Container.Content(Episodes) + !Skin.String(EpisodesListInfo2Style,1)] | [Skin.String(CurrentViewMode,531) + Container.Content(Videos) + !Skin.String(VideosListInfo2Style,1)]</visible>
 			</control>
 			<control type="radiobutton" id="1038">
@@ -543,7 +543,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideMusicThumbsInfoLabel)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicThumbsInfoLabel)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMusicThumbsInfoLabel)</onclick>
 				<visible>Skin.String(CurrentViewMode,599) + Container.Content(Albums)</visible>
 			</control>
 			<control type="radiobutton" id="3085">
@@ -551,8 +551,8 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>[Skin.HasSetting(HideMoviesThumbsInfoLabel) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.HasSetting(HideVideosThumbsInfoLabel) + Container.Content(Videos)]</selected>
-				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.ToggleSetting(HideMoviesThumbsInfoLabel)</onclick>	
-				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoLabel)</onclick>	
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.ToggleSetting(HideMoviesThumbsInfoLabel)</onclick>
+				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoLabel)</onclick>
 				<visible>[Skin.String(CurrentViewMode,97) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="4051">
@@ -560,7 +560,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideProgramsThumbsInfoLabel)</selected>
-				<onclick>Skin.ToggleSetting(HideProgramsThumbsInfoLabel)</onclick>	
+				<onclick>Skin.ToggleSetting(HideProgramsThumbsInfoLabel)</onclick>
 				<visible>Skin.String(CurrentViewMode,593) + String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="radiobutton" id="3069">
@@ -568,7 +568,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideMoviesThumbsInfoOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesThumbsInfoOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMoviesThumbsInfoOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,97) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
 			</control>
 			<control type="radiobutton" id="3077">
@@ -576,8 +576,8 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>[Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + Container.Content(TVShows)] | [Skin.HasSetting(HideVideosThumbsInfoOverlay) + Container.Content(Videos)]</selected>
-				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsThumbsInfoOverlay)</onclick>	
-				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoOverlay)</onclick>	
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsThumbsInfoOverlay)</onclick>
+				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoOverlay)</onclick>
 				<visible>[Skin.String(CurrentViewMode,100) + Container.Content(TVShows)] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="3074">
@@ -618,7 +618,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideProgramsThumbsInfo2Label)</selected>
-				<onclick>Skin.ToggleSetting(HideProgramsThumbsInfo2Label)</onclick>	
+				<onclick>Skin.ToggleSetting(HideProgramsThumbsInfo2Label)</onclick>
 				<visible>Skin.String(CurrentViewMode,594) + String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="radiobutton" id="4064">
@@ -634,7 +634,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideProgramsThumbsInfo3Label)</selected>
-				<onclick>Skin.ToggleSetting(HideProgramsThumbsInfo3Label)</onclick>	
+				<onclick>Skin.ToggleSetting(HideProgramsThumbsInfo3Label)</onclick>
 				<visible>Skin.String(CurrentViewMode,595) + String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="radiobutton" id="4074">
@@ -868,7 +868,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31424]</label>
 				<selected>!Skin.HasSetting(DoNotDimMoviesWallCover)</selected>
-				<onclick>Skin.ToggleSetting(DoNotDimMoviesWallCover)</onclick>	
+				<onclick>Skin.ToggleSetting(DoNotDimMoviesWallCover)</onclick>
 				<visible>Skin.String(CurrentViewMode,69) + Container.Content(Movies)</visible>
 			</control>
 			<control type="radiobutton" id="2070">
@@ -876,7 +876,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31424]</label>
 				<selected>!Skin.HasSetting(DoNotDimTVShowsWallCover)</selected>
-				<onclick>Skin.ToggleSetting(DoNotDimTVShowsWallCover)</onclick>	
+				<onclick>Skin.ToggleSetting(DoNotDimTVShowsWallCover)</onclick>
 				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="3081">
@@ -884,7 +884,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideMoviesWallOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesWallOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMoviesWallOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,69) + Container.Content(Movies)</visible>
 			</control>
 			<control type="radiobutton" id="3086">
@@ -892,7 +892,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideTVShowsWallOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsWallOverlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideTVShowsWallOverlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="3021">
@@ -1470,7 +1470,7 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
 				<selected>Skin.HasSetting(HideMusicVideosListInfo2Overlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicVideosListInfo2Overlay)</onclick>	
+				<onclick>Skin.ToggleSetting(HideMusicVideosListInfo2Overlay)</onclick>
 				<visible>Skin.String(CurrentViewMode,587) + Container.Content(musicvideos) + !Skin.String(MusicVideosListInfo2Style,1)</visible>
 			</control>
 			<control type="radiobutton" id="2058">

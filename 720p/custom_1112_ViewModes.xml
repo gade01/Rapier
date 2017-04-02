@@ -273,7 +273,7 @@
 				<visible>[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DisableMoviesListInfoView)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + !Skin.HasSetting(DisableTVShowsListInfoView)]
 				| [Container.Content(Episodes) + !Skin.HasSetting(DisableEpisodesListInfoView)] | [Container.Content(Videos) + !Skin.HasSetting(DisableVideosListInfoView)]
 				| [[Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)] + !Skin.HasSetting(DisableMusicListInfoView)] | [Container.Content(Addons) + !Skin.HasSetting(DisableAddonsListInfoView)]</visible>
-			</control>			
+			</control>
 			<control type="image">
 				<width>38</width>
 				<height>25</height>
@@ -379,5 +379,5 @@
 				<visible>[Window.IsActive(VideoPlaylist) | Window.IsActive(MusicPlaylist)] + !Skin.HasSetting(DisablePlaylistView)</visible>
 			</control>
 		</control>
-	</controls>	
+	</controls>
 </window>

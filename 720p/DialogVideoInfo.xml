@@ -20,7 +20,7 @@
 			<control type="group">
 				<depth>DepthContent</depth>
 			
-				<control type="group">		
+				<control type="group">
 					<left>100</left>
 					<top>143</top>
 					
@@ -165,7 +165,7 @@
 						<animation effect="slide" end="40,-191" condition="String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)">Conditional</animation>
 						<animation effect="slide" end="647,-365" condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) + ![Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)]</visible>
-					</control>			
+					</control>
 					<control type="label">
 						<description>Unwatched Episodes Label</description>
 						<top>452</top>
@@ -208,7 +208,7 @@
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<animation effect="slide" end="647,-365" condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 						<visible>![Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)] + !String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes)) + String.IsEqual(ListItem.DBTYPE,tvshow)</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Watched Partial</description>
 						<top>452</top>
@@ -221,7 +221,7 @@
 						<animation effect="slide" end="40,-191" condition="String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)">Conditional</animation>
 						<visible>![Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)] + ListItem.IsResumable + !String.IsEqual(ListItem.Overlay,OverlayWatched.png) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]</visible>
 					</control>
-				</control>	
+				</control>
 
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBTYPE,movie)</visible>
@@ -386,7 +386,7 @@
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label fallback="31000">$INFO[ListItem.Label2]</label>
 							</control>
-						</itemlayout>	
+						</itemlayout>
 						<focusedlayout height="29">
 							<control type="image">
 								<top>27</top>
@@ -406,7 +406,7 @@
 							</control>
 							<control type="image">
 								<width>720</width>
-								<height>29</height>	
+								<height>29</height>
 								<texture border="4">views/list-focus.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<visible>Control.HasFocus(901)</visible>
@@ -529,7 +529,7 @@
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBTYPE,musicvideo)</visible>
 					
-					<control type="group">	
+					<control type="group">
 						<left>510</left>
 						<top>99</top>
 
@@ -619,7 +619,7 @@
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label fallback="31000">$INFO[ListItem.Label2]</label>
 							</control>
-						</itemlayout>	
+						</itemlayout>
 						<focusedlayout height="29">
 							<control type="image">
 								<top>27</top>
@@ -639,7 +639,7 @@
 							</control>
 							<control type="image">
 								<width>720</width>
-								<height>29</height>	
+								<height>29</height>
 								<texture border="4">views/list-focus.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<visible>Control.HasFocus(901)</visible>
@@ -715,7 +715,7 @@
 								<label2>$INFO[ListItem.PlayCount]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=playcount&amp;type=MusicVideo)</onclick>
 								<visible>String.IsEmpty(ListItem.UserRating)</visible>
-							</item>						
+							</item>
 							<item id="8">
 								<description>User Rating</description>
 								<label>$LOCALIZE[38018]</label>
@@ -765,7 +765,7 @@
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBTYPE,episode)</visible>
 					
-					<control type="group">	
+					<control type="group">
 						<left>510</left>
 						<top>99</top>
 						
@@ -866,7 +866,7 @@
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label fallback="31000">$INFO[ListItem.Label2]</label>
 							</control>
-						</itemlayout>	
+						</itemlayout>
 						<focusedlayout height="29">
 							<control type="image">
 								<top>27</top>
@@ -886,7 +886,7 @@
 							</control>
 							<control type="image">
 								<width>720</width>
-								<height>29</height>	
+								<height>29</height>
 								<texture border="4">views/list-focus.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<visible>Control.HasFocus(901)</visible>
@@ -1006,7 +1006,7 @@
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)</visible>
 					
-					<control type="group">	
+					<control type="group">
 						<left>100</left>
 						<top>283</top>
 						
@@ -1107,7 +1107,7 @@
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label fallback="31000">$INFO[ListItem.Label2]</label>
 							</control>
-						</itemlayout>	
+						</itemlayout>
 						<focusedlayout height="29">
 							<control type="image">
 								<top>27</top>
@@ -1127,7 +1127,7 @@
 							</control>
 							<control type="image">
 								<width>532</width>
-								<height>29</height>	
+								<height>29</height>
 								<texture border="4">views/list-focus.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<visible>Control.HasFocus(901)</visible>
@@ -1232,7 +1232,7 @@
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)</visible>
 					
-					<control type="group">	
+					<control type="group">
 						<left>470</left>
 						<top>99</top>
 						
@@ -1334,7 +1334,7 @@
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label fallback="31000">$INFO[ListItem.Label2]</label>
 							</control>
-						</itemlayout>	
+						</itemlayout>
 						<focusedlayout height="29">
 							<control type="image">
 								<top>27</top>
@@ -1354,7 +1354,7 @@
 							</control>
 							<control type="image">
 								<width>720</width>
-								<height>29</height>	
+								<height>29</height>
 								<texture border="4">views/list-focus.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<visible>Control.HasFocus(901)</visible>
@@ -1456,7 +1456,7 @@
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBTYPE,video)</visible>
 					
-					<control type="group">	
+					<control type="group">
 						<left>510</left>
 						<top>99</top>
 						
@@ -1556,7 +1556,7 @@
 								<shadowcolor>ShadowColor</shadowcolor>
 								<label>$INFO[ListItem.Label2]</label>
 							</control>
-						</itemlayout>	
+						</itemlayout>
 						<focusedlayout width="720" height="29">
 							<control type="image">
 								<top>27</top>
@@ -1576,7 +1576,7 @@
 							</control>
 							<control type="image">
 								<width>720</width>
-								<height>29</height>	
+								<height>29</height>
 								<texture border="4">views/list-focus.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<visible>Control.HasFocus(901)</visible>
@@ -1764,9 +1764,9 @@
 						<scrolltime>200</scrolltime>
 						<pagecontrol>61</pagecontrol>
 						<onleft>901</onleft>
-						<ondown condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>	
-						<ondown condition="System.HasAddon(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,actor)</ondown>	
-						<ondown condition="!System.HasAddon(script.extendedinfo)">61</ondown>	
+						<ondown condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
+						<ondown condition="System.HasAddon(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,actor)</ondown>
+						<ondown condition="!System.HasAddon(script.extendedinfo)">61</ondown>
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>!Control.HasFocus(15) + String.IsEmpty(Skin.String(VideoInfoMenubar))</visible>
@@ -1837,5 +1837,5 @@
 				<param name="Breadcrumbs" value="BreadCrumbMediaInfo" />
 			</include>
 		</control>
-	</controls>	
+	</controls>
 </window>

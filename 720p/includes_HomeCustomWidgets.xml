@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="CustomPanelClearScripts">
-		<onclick>ClearProperty(Custom1PanelRecent.1.Title,Home)</onclick>		
-		<onclick>ClearProperty(Custom1PanelRandom.1.Title,Home)</onclick>	
+		<onclick>ClearProperty(Custom1PanelRecent.1.Title,Home)</onclick>
+		<onclick>ClearProperty(Custom1PanelRandom.1.Title,Home)</onclick>
 		<onclick>ClearProperty(Custom2PanelRecent.1.Title,Home)</onclick>
 		<onclick>ClearProperty(Custom2PanelRandom.1.Title,Home)</onclick>
 		<onclick>ClearProperty(Custom3PanelRecent.1.Title,Home)</onclick>
@@ -338,7 +338,7 @@
 			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container($PARAM[ContainerIDTop]).NumItems,0)">
 				<effect type="fade" end="100" time="250"/>
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>			
+			</animation>
 			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container($PARAM[ContainerIDTop]).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
@@ -532,7 +532,7 @@
 			<animation type="Conditional" reversible="false" condition="Integer.IsGreater(Container($PARAM[ContainerIDBottom]).NumItems,0)">
 				<effect type="fade" end="100" time="250"/>
 				<effect type="slide" start="100,0" time="300" tween="circle" easing="out"/>
-			</animation>			
+			</animation>
 			<animation type="Conditional" reversible="false" condition="String.IsEqual(Container($PARAM[ContainerIDBottom]).NumItems,0)">
 				<effect type="fade" end="0" time="250"/>
 				<effect type="slide" end="100,0" time="300" tween="circle" easing="out"/>
@@ -1608,7 +1608,7 @@
 			<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
 			<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
 		</animation>
-		<include>ListViewSelectFadeAnim</include>	
+		<include>ListViewSelectFadeAnim</include>
 	</include>
 	
 	<include name="CustomPanelRandomFocusedlayoutImage">
@@ -1625,7 +1625,7 @@
 			<effect type="Fade" start="40" end="100" time="400" tween="back" easing="in"/>
 			<effect type="slide" start="0,24" time="150" tween="quadratic" easing="out"/>
 		</animation>
-		<include>ListViewSelectFadeAnim</include>	
+		<include>ListViewSelectFadeAnim</include>
 	</include>
 
 	<include name="CustomPanelRecentStraitLayout">
@@ -1642,7 +1642,7 @@
 		<focusedlayout height="24">
 			<control type="image">
 				<width>355</width>
-				<include>CustomPanelRecentFocusedlayoutImage</include>	
+				<include>CustomPanelRecentFocusedlayoutImage</include>
 			</control>
 			<control type="label">
 				<width>345</width>
@@ -1691,7 +1691,7 @@
 		<focusedlayout height="24">
 			<control type="image">
 				<width>319</width>
-				<include>CustomPanelRecentFocusedlayoutImage</include>		
+				<include>CustomPanelRecentFocusedlayoutImage</include>
 			</control>
 			<control type="label">
 				<width>309</width>
@@ -2551,7 +2551,7 @@
 				<thumb>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Art(thumb))]</thumb>
 				<icon>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Art(fanart))]</icon>
 				<onclick>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Play)]</onclick>
-				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Title))</visible>	
+				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Title))</visible>
 			</item>
 		</content>
 	</include>
@@ -2636,7 +2636,7 @@
 				<thumb>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Art(thumb))]</thumb>
 				<icon>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Art(tvshow.fanart))]</icon>
 				<onclick>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Play)]</onclick>
-				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Title))</visible>	
+				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Title))</visible>
 			</item>
 		</content>
 	</include>
@@ -2711,7 +2711,7 @@
 				<thumb>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Art(thumb))]</thumb>
 				<icon>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Art(fanart))]</icon>
 				<onclick>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Play)]</onclick>
-				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Title))</visible>	
+				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Recent.10.Title))</visible>
 			</item>
 		</content>
 	</include>
@@ -2797,7 +2797,7 @@
 				<thumb>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Art(thumb))]</thumb>
 				<icon>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Art(fanart))]</icon>
 				<onclick>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Play)]</onclick>
-				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Title))</visible>	
+				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Title))</visible>
 			</item>
 		</content>
 	</include>
@@ -2882,7 +2882,7 @@
 				<thumb>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Art(thumb))]</thumb>
 				<icon>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Art(tvshow.fanart))]</icon>
 				<onclick>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Play)]</onclick>
-				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Title))</visible>	
+				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Title))</visible>
 			</item>
 		</content>
 	</include>
@@ -2957,7 +2957,7 @@
 				<thumb>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Art(thumb))]</thumb>
 				<icon>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Art(fanart))]</icon>
 				<onclick>$INFO[Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Play)]</onclick>
-				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Title))</visible>	
+				<visible>!String.IsEmpty(Window(Home).Property($PARAM[CustomPanelNumber]Random.10.Title))</visible>
 			</item>
 		</content>
 	</include>
