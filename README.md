@@ -34,7 +34,7 @@ After this, you will automatically receive the latest development versions direc
 
 [Kodi Wiki](http://kodi.wiki/view/Add-on:Rapier)
 
-### [SCREENSHOTS](http://kodi.wiki/view/Add-on:Rapier#Screenshots)
+### [Screenshots](http://kodi.wiki/view/Add-on:Rapier#Screenshots)
 
 ### DONATIONS:
 If you like Rapier and want to buy me a coffee or beer, feel free to donate. Greatly appreciated!
