@@ -43,12 +43,12 @@
 				<onleft>9002</onleft>
 				<onright condition="Control.IsVisible(9001)">9001</onright>
 				<onright condition="!Control.IsVisible(9001)">9002</onright>
-				<itemlayout height="37" width="360">		
+				<itemlayout height="37" width="360">
 					<control type="image">
 						<width>360</width>
 						<height>35</height>
 						<texture border="5">controls/button-nofocus.png</texture>
-					</control>					
+					</control>
 					<control type="label">
 						<left>8</left>
 						<width>344</width>
@@ -57,8 +57,8 @@
 						<textcolor>ButtonColor</textcolor>
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
-					</control>				
-				</itemlayout>				
+					</control>
+				</itemlayout>
 				<focusedlayout height="37" width="360">
 					<control type="image">
 						<width>360</width>
@@ -72,12 +72,12 @@
 						<animation type="Focus" condition="Container(9000).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 							<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 							<effect type="slide" start="0,-35" time="200" tween="sine" easing="out"/>
-						</animation>						
+						</animation>
 						<animation type="Focus" condition="Container(9000).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 							<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 							<effect type="slide" start="0,35" time="200" tween="sine" easing="out"/>
 						</animation>
-					</control>					
+					</control>
 					<control type="label">
 						<left>8</left>
 						<width>344</width>
@@ -109,7 +109,7 @@
 						<animation type="Focus" condition="Container(9000).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 							<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 							<effect type="slide" start="0,-35" time="200" tween="sine" easing="out"/>
-						</animation>						
+						</animation>
 						<animation type="Focus" condition="Container(9000).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
 							<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
 							<effect type="slide" start="0,35" time="200" tween="sine" easing="out"/>

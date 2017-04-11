@@ -2,7 +2,7 @@
 <includes>
 	<!--//// START LIST INFO VIEW /////////////////////////////////////////////////////////////////////-->
 	<include name="AddonsListInfoView">
-		<control type="group" id="500">			    
+		<control type="group" id="500">
 			<defaultcontrol always="true">91</defaultcontrol>
 			<visible>Control.IsVisible(91)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -29,7 +29,7 @@
 					<width>250</width>
 					<height>250</height>
 					<texture background="true">DefaultAddon.png</texture>
-					<bordersize>40</bordersize>	
+					<bordersize>40</bordersize>
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
@@ -129,7 +129,7 @@
 				</control>
 			</control>
 
-			<control type="list" id="91">	
+			<control type="list" id="91">
 				<viewtype label="31111">list</viewtype>
 				<left>720</left>
 				<top>332</top>
@@ -146,7 +146,7 @@
 				<itemlayout height="37">
 					<control type="image">
 						<width>505</width>
-						<height>37</height>	
+						<height>37</height>
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
@@ -168,7 +168,7 @@
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<aligny>center</aligny>				
+						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
@@ -180,20 +180,20 @@
 						<textcolor>MediaInfoTitleColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<align>right</align>
-						<aligny>center</aligny>				
+						<aligny>center</aligny>
 						<info>ListItem.Label2</info>
 					</control>
-				</itemlayout>		
-				<focusedlayout height="37">	
+				</itemlayout>
+				<focusedlayout height="37">
 					<control type="image">
 						<width>505</width>
-						<height>37</height>	
+						<height>37</height>
 						<texture border="0,0,10,2">views/list-separator.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<width>505</width>
-						<height>36</height>	
+						<height>36</height>
 						<texture border="4">views/list-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>Control.HasFocus(91)</visible>
@@ -202,7 +202,7 @@
 					</control>
 					<control type="image">
 						<width>505</width>
-						<height>36</height>	
+						<height>36</height>
 						<texture border="4">views/list-alt-focus.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>!Control.HasFocus(91)</visible>
@@ -241,31 +241,31 @@
 							<textcolor>MediaInfoTitleColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<align>right</align>
-							<aligny>center</aligny>				
+							<aligny>center</aligny>
 							<info>ListItem.Label2</info>
 						</control>
 					</control>
-				</focusedlayout>		
-			</control>	
+				</focusedlayout>
+			</control>
 
 			<include>ListInfoViewScrollbar</include>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
 			</control>
 			
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>	
+		</control>
 	</include>
 	<!--//// END LIST INFO VIEW ///////////////////////////////////////////////////////////////////////-->
 	
 	<!--//// START WRAP LIST INFO VIEW ////////////////////////////////////////////////////////////////-->
 	<include name="AddonsWrapListInfoView">
-		<control type="group" id="500">	
+		<control type="group" id="500">
 		    <defaultcontrol always="true">93</defaultcontrol>
 			<visible>Control.IsVisible(93)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -273,16 +273,16 @@
 			<control type="group" id="254">
 				<animation effect="slide" end="0,120" time="500" condition="Skin.HasSetting(HideAddonsWrapListMediaInfo)">Conditional</animation>
 				<include condition="Skin.String(AddonsWrapInfoStyle,1) | Skin.String(AddonsWrapInfoStyle,)">AddonsWrapInfoStyle1</include>
-				<include condition="Skin.String(AddonsWrapInfoStyle,2)">AddonsWrapInfoStyle2</include>	
+				<include condition="Skin.String(AddonsWrapInfoStyle,2)">AddonsWrapInfoStyle2</include>
 			</control>
 			
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>	
+				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
-			</control>	
+			</control>
 			
 			<include>ViewsDialogPopUpScreenDim</include>
 		</control>
@@ -295,7 +295,7 @@
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
-		</control>	
+		</control>
 		
 		<control type="image">
 			<description>Background Glow</description>
@@ -322,7 +322,7 @@
 		<control type="image">
 			<top>270</top>
 			<width>ScreenWidth</width>
-			<height>131</height>	
+			<height>131</height>
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
@@ -490,7 +490,7 @@
 					<bordersize>9</bordersize>
 					<aspectratio>stretch</aspectratio>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>		
+				</control>
 				<control type="image">
 					<description>Default Cover</description>
 					<width>155</width>
@@ -500,7 +500,7 @@
 					<aspectratio>keep</aspectratio>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
-				</control>	
+				</control>
 				<control type="image">
 					<description>Reflection</description>
 					<left>4</left>
@@ -513,7 +513,7 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>    
+			</itemlayout>
 			<focusedlayout width="150">
 				<control type="group">
 					<depth>DepthContent+</depth>
@@ -542,7 +542,7 @@
 						<bordersize>10</bordersize>
 						<aspectratio>stretch</aspectratio>
 						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>		
+					</control>
 					<control type="image">
 						<description>Default Cover</description>
 						<width>155</width>
@@ -565,7 +565,7 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 					</control>
 				</control>
-			</focusedlayout>                    
+			</focusedlayout>
 		</control>
 		
 		<control type="group">
@@ -608,7 +608,7 @@
 		<control type="image">
 			<top>209</top>
 			<width>ScreenWidth</width>
-			<height>167</height>	
+			<height>167</height>
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
@@ -631,7 +631,7 @@
 			<top>242</top>
 			<width>ScreenWidth</width>
 			<height>2</height>
-			<texture>panels/panel-separator.png</texture>				
+			<texture>panels/panel-separator.png</texture>
 		</control>
 		
 		<control type="grouplist">
@@ -742,7 +742,7 @@
 					<height>214</height>
 					<texture border="7">covers/cover-case-nofocus.png</texture>
 					<aspectratio>stretch</aspectratio>
-				</control>				
+				</control>
 				<control type="image">
 					<description>Cover</description>
 					<width>214</width>
@@ -750,7 +750,7 @@
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<bordersize>12</bordersize>
 					<aspectratio>stretch</aspectratio>
-				</control>			
+				</control>
 				<control type="image">
 					<description>Default Cover Background</description>
 					<width>214</width>
@@ -759,7 +759,7 @@
 					<bordersize>12</bordersize>
 					<aspectratio>stretch</aspectratio>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>				
+				</control>
 				<control type="image">
 					<description>Default Cover</description>
 					<width>214</width>
@@ -769,7 +769,7 @@
 					<aspectratio>keep</aspectratio>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>			
+				</control>
 				<control type="image">
 					<description>Reflection</description>
 					<left>4</left>
@@ -782,7 +782,7 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>    
+			</itemlayout>
 			<focusedlayout width="214">
 				<control type="group">
 					<depth>DepthContent+</depth>
@@ -802,7 +802,7 @@
 						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<bordersize>12</bordersize>
 						<aspectratio>stretch</aspectratio>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Default Cover Background</description>
 						<width>214</width>
@@ -820,7 +820,7 @@
 						<bordersize>30</bordersize>
 						<aspectratio>keep</aspectratio>
 						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>			
+					</control>
 					<control type="image">
 						<description>Reflection</description>
 						<left>4</left>
@@ -834,7 +834,7 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 					</control>
 				</control>
-			</focusedlayout>                    
+			</focusedlayout>
 		</control>
 		
 		<control type="group">
