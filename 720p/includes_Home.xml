@@ -114,7 +114,7 @@
 
 	<include name="HomeNavButtons">
 		<control type="group">
-			<visible>![Player.HasAudio + System.IdleTime(5)]</visible>
+			<visible>![Player.HasAudio + Skin.HasSetting(EnableMusicPlayingHomeProgressBar) + System.IdleTime(5)]</visible>
 			
 			<control type="button" id="101">
 				<description>Navigation Move Left</description>
