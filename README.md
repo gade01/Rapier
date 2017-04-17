@@ -68,9 +68,6 @@ script.image.resource.select 0.0.9
 resource.uisounds.rapier 1.0.1  
 resource.images.studios.white 0.0.2  
 
-Rapier uses text images for the home menu categories. More categories can be found in skin.rapier->extras folder when customizing the home menu.   
-[Additional home category images can be requested at the forum](http://forum.kodi.tv/showthread.php?tid=101862)
-
 ## LICENSE
 This software is licensed under a [Attribution-NonCommercial-ShareAlike 3.0 Unported license](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
