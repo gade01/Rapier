@@ -1299,7 +1299,7 @@
 				<item id="2">
 					<description>Videos Category</description>
 					<label>$LOCALIZE[3]</label>
-					<label2>-</label2>
+					<label2>$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[20342]]$INFO[Window(Home).Property(TVShows.Count),  &#x2022;  , $LOCALIZE[20343]]</label2>
 					<thumb>$VAR[CustomVideosBGVar]</thumb>
 					<include condition="!Skin.HasSetting(RedirectVideosCategoryLibrary)">RedirectVideosCategoryFiles</include>
 					<include condition="Skin.HasSetting(RedirectVideosCategoryLibrary)">RedirectVideosCategoryLibrary</include>
