@@ -81,6 +81,149 @@
 		<value condition="ControlGroup(940).HasFocus(2413) + !String.IsEmpty(Skin.String(PowerCategoryIconPath))">$INFO[Skin.String(PowerCategoryIconPath)]</value>
 	</variable>
 	
+	<include name="EditSubmenuButtonArea">
+		<control type="group" id="920">
+			<visible>Skin.String(SelectedExpandedBtn,$PARAM[number])</visible>
+			<include>SubMenuBtn$PARAM[number]Enabled</include>
+			<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn$PARAM[number])] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn$PARAM[number])]">Conditional</animation>
+
+			<control type="button">
+				<description>Button Type Label</description>
+				<left>215</left>
+				<top>65</top>
+				<include>ExpandedSettingsHeaderBtn</include>
+				<label>$LOCALIZE[31095]</label>
+			</control>
+
+			<control type="button">
+				<description>Button Properties Label</description>
+				<left>215</left>
+				<top>260</top>
+				<include>ExpandedSettingsHeaderBtn</include>
+				<label>$LOCALIZE[31098]</label>
+			</control>
+
+			<control type="grouplist" id="921">
+				<description>Button Type Area</description>
+				<left>215</left>
+				<top>130</top>
+				<width>540</width>
+				<height>500</height>
+				<itemgap>9</itemgap>
+				<orientation>horizontal</orientation>
+				<onleft>$PARAM[onleft]</onleft>
+				<onright>noop</onright>
+				<onup condition="Control.IsVisible(2734)">2734</onup>
+				<onup condition="Control.IsVisible(2733)">2733</onup>
+				<onup condition="Control.IsVisible(2732)">2732</onup>
+				<onup condition="Control.IsVisible(2731)">2731</onup>
+				<control type="radiobutton" id="2722">
+					<description>Favourite Type</description>
+					<include>ExpandedSettingsGroupRadioBtn</include>
+					<label>$LOCALIZE[31603]</label>
+					<include>SubMenuBtn1FavouriteSelected</include>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick2]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick5]</onclick>
+					<ondown>2720</ondown>
+				</control>
+				<control type="radiobutton" id="2723">
+					<description>Preset Type</description>
+					<include>ExpandedSettingsGroupRadioBtn</include>
+					<label>$LOCALIZE[31605]</label>
+					<include>SubMenuBtn$PARAM[number]PresetSelected</include>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick2]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick6]</onclick>
+					<ondown>2721</ondown>
+				</control>
+			</control>
+
+			<control type="grouplist" id="922">
+				<description>Button Type Area</description>
+				<left>215</left>
+				<top>195</top>
+				<width>540</width>
+				<height>500</height>
+				<itemgap>9</itemgap>
+				<orientation>horizontal</orientation>
+				<ondown>2730</ondown>
+				<onleft>$PARAM[onleft]</onleft>
+				<onright>noop</onright>
+				<control type="radiobutton" id="2720">
+					<description>Script Type</description>
+					<include>ExpandedSettingsGroupRadioBtn</include>
+					<label>$LOCALIZE[24009]</label>
+					<include>SubMenuBtn$PARAM[number]ScriptSelected</include>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick2]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick3]</onclick>
+					<onup>2722</onup>
+				</control>
+				<control type="radiobutton" id="2721">
+					<description>Plugin Type</description>
+					<include>ExpandedSettingsGroupRadioBtn</include>
+					<label>$LOCALIZE[24000]</label>
+					<include>SubMenuBtn$PARAM[number]PluginSelected</include>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick2]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick4]</onclick>
+					<onup>2723</onup>
+				</control>
+			</control>
+
+			<control type="grouplist" id="927">
+				<description>Button Properties Area</description>
+				<left>215</left>
+				<top>310</top>
+				<width>540</width>
+				<height>500</height>
+				<itemgap>0</itemgap>
+				<onup>922</onup>
+				<ondown>921</ondown>
+				<onleft>$PARAM[onleft]</onleft>
+				<onright>noop</onright>
+				<control type="button" id="2730">
+					<description>Button Label</description>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn$PARAM[number]Label][/COLOR]</label>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick]</onclick>
+				</control>
+				<control type="button" id="2731">
+					<description>Script Path</description>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn$PARAM[number]Path][/COLOR]</label>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick2]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick3]</onclick>
+					<include>SubMenuBtn$PARAM[number]ScriptVisible</include>
+				</control>
+				<control type="button" id="2732">
+					<description>Plugin Path</description>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn$PARAM[number]Path][/COLOR]</label>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick4]</onclick>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick5]</onclick>
+					<include>SubMenuBtn$PARAM[number]PluginVisible</include>
+				</control>
+				<control type="button" id="2733">
+					<description>Favourite Path</description>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn$PARAM[number]Favourite][/COLOR]</label>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick6]</onclick>
+					<include>SubMenuBtn$PARAM[number]FavouriteVisible</include>
+				</control>
+				<control type="button" id="2734">
+					<description>Preset Path</description>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn$PARAM[number]Param][/COLOR]</label>
+					<onclick>$VAR[SubMenuBtn$PARAM[number]PropertiesClick7]</onclick>
+					<onclick>ActivateWindow(1103)</onclick>
+					<include>SubMenuBtn$PARAM[number]PresetVisible</include>
+				</control>
+			</control>
+		</control>
+	</include>
+	
 	<include name="HomeSkinSettings">
 		<control type="group">
 			<visible>Skin.String(SkinSettingsCategory,2)</visible>
@@ -1489,14 +1632,14 @@
 					<onleft>1942</onleft>
 					<onright>2943</onright>
 					<include>ControlsOpenCloseAnim</include>
-					<control type="button" id="2301">
+					<control type="button" id="2601">
 						<description>Category 1</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[1]$INFO[Skin.String(ReorderCategories1),:  [COLOR=DefaultColor2],[/COLOR]]</label>
 						<onclick>Skin.SetString(ReorderCategoriesParam,ReorderCategories1)</onclick>
 						<onclick>ActivateWindow(1115)</onclick>
 					</control>
-					<control type="button" id="2302">
+					<control type="button" id="2602">
 						<description>Category 2</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[2]$INFO[Skin.String(ReorderCategories2),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1504,7 +1647,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories1))</enable>
 					</control>
-					<control type="button" id="2303">
+					<control type="button" id="2603">
 						<description>Category 3</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[3]$INFO[Skin.String(ReorderCategories3),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1512,7 +1655,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories2))</enable>
 					</control>
-					<control type="button" id="2304">
+					<control type="button" id="2604">
 						<description>Category 4</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[4]$INFO[Skin.String(ReorderCategories4),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1520,7 +1663,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories3))</enable>
 					</control>
-					<control type="button" id="2305">
+					<control type="button" id="2605">
 						<description>Category 5</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[5]$INFO[Skin.String(ReorderCategories5),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1528,7 +1671,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories4))</enable>
 					</control>
-					<control type="button" id="2306">
+					<control type="button" id="2606">
 						<description>Category 6</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[6]$INFO[Skin.String(ReorderCategories6),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1536,7 +1679,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories5))</enable>
 					</control>
-					<control type="button" id="2307">
+					<control type="button" id="2607">
 						<description>Category 7</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[7]$INFO[Skin.String(ReorderCategories7),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1544,7 +1687,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories6))</enable>
 					</control>
-					<control type="button" id="2308">
+					<control type="button" id="2608">
 						<description>Category 8</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[8]$INFO[Skin.String(ReorderCategories8),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1552,7 +1695,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories7))</enable>
 					</control>
-					<control type="button" id="2309">
+					<control type="button" id="2609">
 						<description>Category 9</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[9]$INFO[Skin.String(ReorderCategories9),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1560,7 +1703,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories8))</enable>
 					</control>
-					<control type="button" id="2310">
+					<control type="button" id="2610">
 						<description>Category 10</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[10]$INFO[Skin.String(ReorderCategories10),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1581,7 +1724,7 @@
 					<onleft>2942</onleft>
 					<onright>2944</onright>
 					<include>ControlsOpenCloseAnim</include>
-					<control type="button" id="2311">
+					<control type="button" id="2611">
 						<description>Category 11</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[11]$INFO[Skin.String(ReorderCategories11),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1589,7 +1732,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories10))</enable>
 					</control>
-					<control type="button" id="2312">
+					<control type="button" id="2612">
 						<description>Category 12</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[12]$INFO[Skin.String(ReorderCategories12),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1597,7 +1740,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories11))</enable>
 					</control>
-					<control type="button" id="2313">
+					<control type="button" id="2613">
 						<description>Category 13</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[13]$INFO[Skin.String(ReorderCategories13),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1605,7 +1748,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories12))</enable>
 					</control>
-					<control type="button" id="2314">
+					<control type="button" id="2614">
 						<description>Category 14</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[14]$INFO[Skin.String(ReorderCategories14),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1613,7 +1756,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories13))</enable>
 					</control>
-					<control type="button" id="2315">
+					<control type="button" id="2615">
 						<description>Category 15</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[15]$INFO[Skin.String(ReorderCategories15),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1621,7 +1764,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories14))</enable>
 					</control>
-					<control type="button" id="2316">
+					<control type="button" id="2616">
 						<description>Category 16</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[16]$INFO[Skin.String(ReorderCategories16),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1629,7 +1772,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories15))</enable>
 					</control>
-					<control type="button" id="2317">
+					<control type="button" id="2617">
 						<description>Category 17</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[17]$INFO[Skin.String(ReorderCategories17),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1637,7 +1780,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories16))</enable>
 					</control>
-					<control type="button" id="2318">
+					<control type="button" id="2618">
 						<description>Category 18</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[18]$INFO[Skin.String(ReorderCategories18),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1645,7 +1788,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories17))</enable>
 					</control>
-					<control type="button" id="2319">
+					<control type="button" id="2619">
 						<description>Category 19</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[19]$INFO[Skin.String(ReorderCategories19),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1653,7 +1796,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories18))</enable>
 					</control>
-					<control type="button" id="2320">
+					<control type="button" id="2620">
 						<description>Category 20</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[20]$INFO[Skin.String(ReorderCategories20),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1674,7 +1817,7 @@
 					<onleft>2943</onleft>
 					<onright>noop</onright>
 					<include>ControlsOpenCloseAnim</include>
-					<control type="button" id="2321">
+					<control type="button" id="2621">
 						<description>Category 21</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[21]$INFO[Skin.String(ReorderCategories21),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1682,7 +1825,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories20))</enable>
 					</control>
-					<control type="button" id="2322">
+					<control type="button" id="2622">
 						<description>Category 22</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[22]$INFO[Skin.String(ReorderCategories22),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1690,7 +1833,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories21))</enable>
 					</control>
-					<control type="button" id="2323">
+					<control type="button" id="2623">
 						<description>Category 23</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[23]$INFO[Skin.String(ReorderCategories23),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1698,7 +1841,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories22))</enable>
 					</control>
-					<control type="button" id="2324">
+					<control type="button" id="2624">
 						<description>Category 24</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[24]$INFO[Skin.String(ReorderCategories24),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1706,7 +1849,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories23))</enable>
 					</control>
-					<control type="button" id="2325">
+					<control type="button" id="2625">
 						<description>Category 25</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[25]$INFO[Skin.String(ReorderCategories25),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1714,7 +1857,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategorie24))</enable>
 					</control>
-					<control type="button" id="2326">
+					<control type="button" id="2626">
 						<description>Category 26</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[26]$INFO[Skin.String(ReorderCategories26),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1722,7 +1865,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories25))</enable>
 					</control>
-					<control type="button" id="2327">
+					<control type="button" id="2627">
 						<description>Category 27</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[27]$INFO[Skin.String(ReorderCategories27),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1730,7 +1873,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories26))</enable>
 					</control>
-					<control type="button" id="2328">
+					<control type="button" id="2628">
 						<description>Category 28</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[28]$INFO[Skin.String(ReorderCategories28),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -1738,7 +1881,7 @@
 						<onclick>ActivateWindow(1115)</onclick>
 						<enable>!String.IsEmpty(Skin.String(ReorderCategories27))</enable>
 					</control>
-					<control type="button" id="2329">
+					<control type="button" id="2629">
 						<description>Category 29</description>
 						<include>ExpandedSettingsBtn</include>
 						<label>$LOCALIZE[21866] $NUMBER[29]$INFO[Skin.String(ReorderCategories29),:  [COLOR=DefaultColor2],[/COLOR]]</label>
@@ -3258,978 +3401,40 @@
 					</control>
 				</control>
 
-				<control type="group" id="920">
-					<description>Edit Button 1 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,1)</visible>
-					<include>SubMenuBtn1Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn1)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn1)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn1)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn1)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn1)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn1)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn1)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn1)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn1)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn1)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn1)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn1)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn1)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn1)]">Conditional</animation>
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="1" />
+					<param name="onleft" value="2301" />
+				</include>
 
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="2" />
+					<param name="onleft" value="2302" />
+				</include>
 
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onleft>2301</onleft>
-						<onright>noop</onright>
-						<onup>2334</onup>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn1FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn1TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn1PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn1TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2301</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn1ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn1TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn1PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn1TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn1TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2301</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn1Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn1Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick3]</onclick>
-							<include>SubMenuBtn1ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn1Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick5]</onclick>
-							<include>SubMenuBtn1PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn1Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick6]</onclick>
-							<include>SubMenuBtn1FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn1Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn1PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn1PresetVisible</include>
-						</control>
-					</control>
-				</control>
-
-				<control type="group" id="920">
-					<description>Edit Button 2 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,2)</visible>
-					<include>SubMenuBtn2Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn2)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn2)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn2)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn2)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn2)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn2)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn2)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn2)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn2)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn2)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn2)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn2)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn2)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn2)]">Conditional</animation>
-
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
-
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onup>2334</onup>
-						<onleft>2302</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn2FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn2TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn2PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn2TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2302</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn2ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn2TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn2PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn2TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn2TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2302</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn2Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn2Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick3]</onclick>
-							<include>SubMenuBtn2ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn2Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick5]</onclick>
-							<include>SubMenuBtn2PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn2Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick6]</onclick>
-							<include>SubMenuBtn2FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn2Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn2PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn2PresetVisible</include>
-						</control>
-					</control>
-				</control>
-
-				<control type="group" id="920">
-					<description>Edit Button 3 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,3)</visible>
-					<include>SubMenuBtn3Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn3)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn3)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn3)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn3)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn3)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn3)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn3)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn3)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn3)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn3)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn3)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn3)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn3)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn3)]">Conditional</animation>
-
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
-
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onup>2334</onup>
-						<onleft>2303</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn3FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn3TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn3PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn3TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2303</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn3ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn3TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn3PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn3TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn3TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2303</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn3Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn3Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick3]</onclick>
-							<include>SubMenuBtn3ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn3Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick5]</onclick>
-							<include>SubMenuBtn3PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn3Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick6]</onclick>
-							<include>SubMenuBtn3FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn3Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn3PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn3PresetVisible</include>
-						</control>
-					</control>
-				</control>
-
-				<control type="group" id="920">
-					<description>Edit Button 4 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,4)</visible>
-					<include>SubMenuBtn4Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn4)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn4)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn4)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn4)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn4)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn4)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn4)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn4)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn4)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn4)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn4)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn4)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn4)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn4)]">Conditional</animation>
-
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
-
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onup>2334</onup>
-						<onleft>2304</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn4FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn4TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn4PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn4TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2304</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn4ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn4TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn4PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn4TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn4TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2304</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn4Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn4Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick3]</onclick>
-							<include>SubMenuBtn4ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn4Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick5]</onclick>
-							<include>SubMenuBtn4PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn4Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick6]</onclick>
-							<include>SubMenuBtn4FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn4Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn4PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn4PresetVisible</include>
-						</control>
-					</control>
-				</control>
-
-				<control type="group" id="920">
-					<description>Edit Button 5 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,5)</visible>
-					<include>SubMenuBtn5Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn5)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn5)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn5)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn5)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn5)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn5)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn5)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn5)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn5)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn5)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn5)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn5)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn5)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn5)]">Conditional</animation>
-
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
-
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onup>2334</onup>
-						<onleft>2305</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn5FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn5TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn5PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn5TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2305</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn5ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn5TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn5PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn5TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn5TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2305</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn5Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn5Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick3]</onclick>
-							<include>SubMenuBtn5ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn5Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick5]</onclick>
-							<include>SubMenuBtn5PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn5Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick6]</onclick>
-							<include>SubMenuBtn5FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn5Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn5PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn5PresetVisible</include>
-						</control>
-					</control>
-				</control>
-
-				<control type="group" id="920">
-					<description>Edit Button 6 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,6)</visible>
-					<include>SubMenuBtn6Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn6)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn6)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn6)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn6)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn6)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn6)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn6)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn6)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn6)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn6)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn6)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn6)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn6)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn6)]">Conditional</animation>
-
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
-
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onup>2334</onup>
-						<onleft>2306</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn6FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn6TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn6PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn6TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2306</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn6ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn6TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn6PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn6TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn6TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2306</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn6Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn6Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick3]</onclick>
-							<include>SubMenuBtn6ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn6Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick5]</onclick>
-							<include>SubMenuBtn6PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn6Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick6]</onclick>
-							<include>SubMenuBtn6FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn6Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn6PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn6PresetVisible</include>
-						</control>
-					</control>
-				</control>
-
-				<control type="group" id="920">
-					<description>Edit Button 7 Controls Area</description>
-					<visible>Skin.String(SelectedExpandedBtn,7)</visible>
-					<include>SubMenuBtn7Enabled</include>
-					<animation effect="fade" start="100" end="50" time="300" condition="[Skin.HasSetting(ExpandMusicSubMenuSettings) + !Skin.HasSetting(EditMusicSubMenuBtn7)] | [Skin.HasSetting(ExpandVideosSubMenuSettings) + !Skin.HasSetting(EditVideosSubMenuBtn7)] | [Skin.HasSetting(ExpandMoviesSubMenuSettings) + !Skin.HasSetting(EditMoviesSubMenuBtn7)] | [Skin.HasSetting(ExpandTVShowsSubMenuSettings) + !Skin.HasSetting(EditTVShowsSubMenuBtn7)] | [Skin.HasSetting(ExpandAddonsSubMenuSettings) + !Skin.HasSetting(EditAddonsSubMenuBtn7)] | [Skin.HasSetting(ExpandGamesSubMenuSettings) + !Skin.HasSetting(EditGamesSubMenuBtn7)] | [Skin.HasSetting(ExpandPicturesSubMenuSettings) + !Skin.HasSetting(EditPicturesSubMenuBtn7)] | [Skin.HasSetting(ExpandWeatherSubMenuSettings) + !Skin.HasSetting(EditWeatherSubMenuBtn7)] | [Skin.HasSetting(ExpandGeneralSubMenuSettings) + !Skin.HasSetting(EditGeneralSubMenuBtn7)] | [Skin.HasSetting(ExpandSystemSubMenuSettings) + !Skin.HasSetting(EditSystemSubMenuBtn7)] | [Skin.HasSetting(ExpandPVRSubMenuSettings) + !Skin.HasSetting(EditPVRSubMenuBtn7)] | [Skin.HasSetting(ExpandPVRRadioSubMenuSettings) + !Skin.HasSetting(EditPVRRadioSubMenuBtn7)] | [Skin.HasSetting(ExpandCustom1SubMenuSettings) + !Skin.HasSetting(EditCustom1SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom2SubMenuSettings) + !Skin.HasSetting(EditCustom2SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom3SubMenuSettings) + !Skin.HasSetting(EditCustom3SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom4SubMenuSettings) + !Skin.HasSetting(EditCustom4SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom5SubMenuSettings) + !Skin.HasSetting(EditCustom5SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom6SubMenuSettings) + !Skin.HasSetting(EditCustom6SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom7SubMenuSettings) + !Skin.HasSetting(EditCustom7SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom8SubMenuSettings) + !Skin.HasSetting(EditCustom8SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom9SubMenuSettings) + !Skin.HasSetting(EditCustom9SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom10SubMenuSettings) + !Skin.HasSetting(EditCustom10SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom11SubMenuSettings) + !Skin.HasSetting(EditCustom11SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom12SubMenuSettings) + !Skin.HasSetting(EditCustom12SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom13SubMenuSettings) + !Skin.HasSetting(EditCustom13SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom14SubMenuSettings) + !Skin.HasSetting(EditCustom14SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom15SubMenuSettings) + !Skin.HasSetting(EditCustom15SubMenuBtn7)] | [Skin.HasSetting(ExpandCustom16SubMenuSettings) + !Skin.HasSetting(EditCustom16SubMenuBtn7)]">Conditional</animation>
-
-					<control type="button">
-						<description>Button Type Label</description>
-						<left>215</left>
-						<top>65</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31095]</label>
-					</control>
-
-					<control type="button">
-						<description>Button Properties Label</description>
-						<left>215</left>
-						<top>260</top>
-						<include>ExpandedSettingsHeaderBtn</include>
-						<label>$LOCALIZE[31098]</label>
-					</control>
-
-					<control type="grouplist" id="921">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>130</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<onup>2334</onup>
-						<onleft>2307</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2322">
-							<description>Favourite Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31603]</label>
-							<include>SubMenuBtn7FavouriteSelected</include>
-							<onclick>$VAR[SubMenuBtn7TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick5]</onclick>
-							<ondown>2320</ondown>
-						</control>
-						<control type="radiobutton" id="2323">
-							<description>Preset Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[31605]</label>
-							<include>SubMenuBtn7PresetSelected</include>
-							<onclick>$VAR[SubMenuBtn7TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick6]</onclick>
-							<ondown>2321</ondown>
-						</control>
-					</control>
-
-					<control type="grouplist" id="922">
-						<description>Button Type Area</description>
-						<left>215</left>
-						<top>195</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>9</itemgap>
-						<orientation>horizontal</orientation>
-						<ondown>2331</ondown>
-						<onleft>2307</onleft>
-						<onright>noop</onright>
-						<control type="radiobutton" id="2320">
-							<description>Script Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24009]</label>
-							<include>SubMenuBtn7ScriptSelected</include>
-							<onclick>$VAR[SubMenuBtn7TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick3]</onclick>
-							<onup>2322</onup>
-						</control>
-						<control type="radiobutton" id="2321">
-							<description>Plugin Type</description>
-							<include>ExpandedSettingsGroupRadioBtn</include>
-							<label>$LOCALIZE[24000]</label>
-							<include>SubMenuBtn7PluginSelected</include>
-							<onclick>$VAR[SubMenuBtn7TypeClick]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn7TypeClick4]</onclick>
-							<onup>2323</onup>
-						</control>
-					</control>
-
-					<control type="grouplist" id="923">
-						<description>Button Properties Area</description>
-						<left>215</left>
-						<top>310</top>
-						<width>540</width>
-						<height>500</height>
-						<itemgap>0</itemgap>
-						<onup>922</onup>
-						<ondown>921</ondown>
-						<onleft>2307</onleft>
-						<onright>noop</onright>
-						<control type="button" id="2330">
-							<description>Button Label</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[31097] - [COLOR=DefaultColor2]$VAR[SubMenuBtn7Label][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick]</onclick>
-						</control>
-						<control type="button" id="2331">
-							<description>Script Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn7Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick2]</onclick>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick3]</onclick>
-							<include>SubMenuBtn7ScriptVisible</include>
-						</control>
-						<control type="button" id="2332">
-							<description>Plugin Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn7Path][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick4]</onclick>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick5]</onclick>
-							<include>SubMenuBtn7PluginVisible</include>
-						</control>
-						<control type="button" id="2333">
-							<description>Favourite Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn7Favourite][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick6]</onclick>
-							<include>SubMenuBtn7FavouriteVisible</include>
-						</control>
-						<control type="button" id="2334">
-							<description>Preset Path</description>
-							<include>ExpandedSettingsListBtn</include>
-							<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[SubMenuBtn7Param][/COLOR]</label>
-							<onclick>$VAR[SubMenuBtn7PropertiesClick7]</onclick>
-							<onclick>ActivateWindow(1103)</onclick>
-							<include>SubMenuBtn7PresetVisible</include>
-						</control>
-					</control>
-				</control>
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="3" />
+					<param name="onleft" value="2303" />
+				</include>
+				
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="4" />
+					<param name="onleft" value="2304" />
+				</include>
+				
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="5" />
+					<param name="onleft" value="2305" />
+				</include>
+				
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="6" />
+					<param name="onleft" value="2306" />
+				</include>
+				
+				<include content="EditSubmenuButtonArea">
+					<param name="number" value="7" />
+					<param name="onleft" value="2307" />
+				</include>
 
 				<control type="button" id="1931">
 					<description>Back</description>
