@@ -1776,8 +1776,20 @@
 	
 	<!-- Skin Helper Service -->
 	<variable name="SkinHelperDurationVar">
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.Runtime),59) + Integer.IsLess(Window(home).Property(SkinHelper.ListItem.Duration.Minutes),10)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours)]$LOCALIZE[31403]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),$NUMBER[0],]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsGreater(Window(home).Property(SkinHelper.ListItem.Runtime),59)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours)]$LOCALIZE[31403]$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes)]</value>
 		<value>$INFO[Window(home).Property(SkinHelper.ListItem.Runtime)]</value>
+	</variable>
+	
+	<variable name="SkinHelperLongDurationVar">
+		<value condition="Integer.IsEqual(Window(home).Property(SkinHelper.ListItem.Runtime),01)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[31158]]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Window(home).Property(SkinHelper.ListItem.Runtime),60)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[31159]]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration.Minutes))">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[12392]]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Duration.Hours),1) + Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),1)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[31159]] $INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[31158]]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Duration.Hours),1)">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours)] hour $INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[12391]]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),1) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration.Hours))">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[12392]] $INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[31158]]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration.Hours))">$INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Hours),, $LOCALIZE[12392]] $INFO[Window(Home).Property(SkinHelper.ListItem.Duration.Minutes),, $LOCALIZE[12391]]</value>
+		<value>$INFO[Window(home).Property(SkinHelper.ListItem.Runtime),, $LOCALIZE[12391]]</value>
 	</variable>
 	
 	<variable name="SplashScreenImageDuration">
