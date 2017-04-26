@@ -96,8 +96,7 @@
 					</control>
 					<control type="label">
 						<description>Director Value</description>
-						<!--<width min="0" max="156">auto</width>-->
-						<width min="0" max="148">auto</width>
+						<width min="0" max="156">auto</width>
 						<include>ListInfoViewCatValueLabel</include>
 						<scroll>true</scroll>
 						<label fallback="31001">$INFO[ListItem.Director]</label>
@@ -142,7 +141,7 @@
 						<description>Runtime Value</description>
 						<width min="0" max="110">auto</width>
 						<include>ListInfoViewCatValueLabel</include>
-						<label fallback="31001">$VAR[MovieDuration]</label>
+						<label fallback="31001">$VAR[DurationVar]</label>
 					</control>
 					<include>ListInfoViewDot</include>
 					<control type="label">
@@ -449,7 +448,7 @@
 					<param name="Grouplist4LabelWidth" value="110" />
 					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist4InfoWidth" value="110" />
-					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist4Info" value="$VAR[DurationVar]" />
 				</include>
 				
 				<include content="ListInfo2MediaInfoArea">
@@ -469,7 +468,7 @@
 					<param name="Grouplist4LabelWidth" value="110" />
 					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist4InfoWidth" value="110" />
-					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist4Info" value="$VAR[SkinHelperDurationVar]" />
 				</include>
 				
 				<include content="ListInfo2Plot">
@@ -1012,7 +1011,7 @@
 					<param name="Grouplist2LabelWidth" value="110" />
 					<param name="Grouplist2Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist2InfoWidth" value="110" />
-					<param name="Grouplist2Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist2Info" value="$VAR[DurationVar]" />
 					<param name="Grouplist3LabelWidth" value="110" />
 					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
 					<param name="Grouplist3InfoWidth" value="110" />
@@ -1040,7 +1039,7 @@
 					<param name="Grouplist4LabelWidth" value="110" />
 					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist4InfoWidth" value="110" />
-					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist4Info" value="$VAR[SkinHelperDurationVar]" />
 				</include>
 				
 				<include content="ThumbsInfoPlot">
@@ -1273,7 +1272,7 @@
 					<param name="Grouplist2LabelWidth" value="110" />
 					<param name="Grouplist2Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist2InfoWidth" value="110" />
-					<param name="Grouplist2Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist2Info" value="$VAR[DurationVar]" />
 					<param name="Grouplist3LabelWidth" value="110" />
 					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
 					<param name="Grouplist3InfoWidth" value="110" />
@@ -1301,7 +1300,7 @@
 					<param name="Grouplist4LabelWidth" value="110" />
 					<param name="Grouplist4Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist4InfoWidth" value="110" />
-					<param name="Grouplist4Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist4Info" value="$VAR[SkinHelperDurationVar]" />
 				</include>
 				
 				<include content="ThumbsInfoPlot">
@@ -1880,7 +1879,7 @@
 				<description>Runtime Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$VAR[MovieDuration]</label>
+				<label fallback="31001">$VAR[DurationVar]</label>
 			</control>
 		</control>
 		
@@ -1929,7 +1928,7 @@
 				<description>Runtime Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$VAR[MovieDuration]</label>
+				<label fallback="31001">$VAR[SkinHelperDurationVar]</label>
 			</control>
 		</control>
 				
@@ -2275,7 +2274,7 @@
 				<description>Runtime Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$VAR[MovieDuration]</label>
+				<label fallback="31001">$VAR[DurationVar]</label>
 			</control>
 		</control>
 		
@@ -2324,7 +2323,7 @@
 				<description>Runtime Value</description>
 				<width min="0" max="110">auto</width>
 				<include>WrapInfoViewCatValueLabel</include>
-				<label fallback="31001">$VAR[MovieDuration]</label>
+				<label fallback="31001">$VAR[SkinHelperDurationVar]</label>
 			</control>
 		</control>
 	
@@ -3029,7 +3028,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<include>ListInfoViewCatLabel</include>
-					<label>$LOCALIZE[345]:$INFO[ListItem.Year,[COLOR=MediaInfoItemColor2] ,  &#x2022;  [/COLOR]]$LOCALIZE[2050]: [COLOR=MediaInfoItemColor2]$VAR[MovieDuration]  &#x2022;  [/COLOR]$LOCALIZE[563]:$INFO[ListItem.Rating,[COLOR=MediaInfoItemColor2] ,[/COLOR]]</label>
+					<label>$LOCALIZE[345]:$INFO[ListItem.Year,[COLOR=MediaInfoItemColor2] ,  &#x2022;  [/COLOR]]$LOCALIZE[2050]: [COLOR=MediaInfoItemColor2]$VAR[DurationVar]  &#x2022;  [/COLOR]$LOCALIZE[563]:$INFO[ListItem.Rating,[COLOR=MediaInfoItemColor2] ,[/COLOR]]</label>
 					<visible>!ListItem.IsCollection</visible>
 				</control>
 				
@@ -3042,7 +3041,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<include>ListInfoViewCatLabel</include>
-					<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Count),$LOCALIZE[20342]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$INFO[ListItem.Rating,$LOCALIZE[563]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$LOCALIZE[2050]: [COLOR=MediaInfoItemColor2]$VAR[MovieDuration][/COLOR]</label>
+					<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Count),$LOCALIZE[20342]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$INFO[ListItem.Rating,$LOCALIZE[563]: [COLOR=MediaInfoItemColor2],  &#x2022;  [/COLOR]]$LOCALIZE[2050]: [COLOR=MediaInfoItemColor2]$VAR[SkinHelperDurationVar][/COLOR]</label>
 					<visible>ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				

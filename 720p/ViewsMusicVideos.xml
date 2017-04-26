@@ -63,7 +63,7 @@
 					<param name="Grouplist2LabelWidth" value="150" />
 					<param name="Grouplist2Label" value="$LOCALIZE[2050]" />
 					<param name="Grouplist2InfoWidth" value="150" />
-					<param name="Grouplist2Info" value="$VAR[MovieDuration]" />
+					<param name="Grouplist2Info" value="$VAR[DurationVar]" />
 					<param name="Grouplist3LabelWidth" value="150" />
 					<param name="Grouplist3Label" value="$LOCALIZE[572]" />
 					<param name="Grouplist3InfoWidth" value="300" />
@@ -391,7 +391,7 @@
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Year,, - ]$VAR[MovieDuration,, $LOCALIZE[12391]]</label>
+				<label>$INFO[ListItem.Year,, - ]$VAR[DurationVar,, $LOCALIZE[12391]]</label>
 				<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[554])</visible>
 			</control>
 			<control type="group">
@@ -540,7 +540,7 @@
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Year,, - ]$VAR[MovieDuration,, $LOCALIZE[12391]]</label>
+					<label>$INFO[ListItem.Year,, - ]$VAR[DurationVar,, $LOCALIZE[12391]]</label>
 					<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[554])</visible>
 				</control>
 				<control type="group">
