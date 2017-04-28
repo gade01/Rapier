@@ -1014,7 +1014,7 @@
 	</variable>
 	 
 	<variable name="ExtendedInfoDurationVar">
-		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsLessOrEqual(Window.Property(duration),59) + !String.IsEmpty(Window.Property(duration))">$INFO[Window.Property(duration)]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsLessOrEqual(Window.Property(duration),59)">$INFO[Window.Property(duration)]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [Integer.IsLessOrEqual(Window.Property(duration),99) + String.StartsWith(Window.Property(duration),6)]">$NUMBER[1]$LOCALIZE[31403]$NUMBER[0]$VAR[ExtendedInfoMinutesVar]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [Integer.IsLessOrEqual(Window.Property(duration),99) + String.StartsWith(Window.Property(duration),7)]">$NUMBER[1]$LOCALIZE[31403]$NUMBER[1]$VAR[ExtendedInfoMinutesVar]</value>
 		<value condition="Skin.HasSetting(UseAlternativeDuration) + [Integer.IsLessOrEqual(Window.Property(duration),99) + String.StartsWith(Window.Property(duration),8)]">$NUMBER[1]$LOCALIZE[31403]$NUMBER[2]$VAR[ExtendedInfoMinutesVar]</value>
