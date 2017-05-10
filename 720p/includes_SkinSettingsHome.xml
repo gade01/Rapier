@@ -2305,15 +2305,16 @@
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(AddMoreCategoryBtn5BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(AddMoreCategoryBtn9BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn13BackgroundImageType,fanart)]</selected>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn1BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn1BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn5BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn5BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn9BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn9BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn13BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn13BackgroundImagePathLabel)</onclick>
-								<onclick>ActivateWindow(1132)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn1BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn1BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn5BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn5BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn9BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn9BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn13BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn13BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds)">ActivateWindow(1132)</onclick>
+								<onclick condition="!System.HasAddon(script.skin.helper.backgrounds)">InstallAddon(script.skin.helper.backgrounds)</onclick>
 								<label>$LOCALIZE[20445]</label>
 								<ondown>2338</ondown>
 								<onup condition="Control.IsVisible(2344)">2344</onup>
@@ -2589,15 +2590,16 @@
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(AddMoreCategoryBtn6BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(AddMoreCategoryBtn10BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn14BackgroundImageType,fanart)]</selected>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn2BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn2BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn6BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn6BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn10BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn10BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn14BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn14BackgroundImagePathLabel)</onclick>
-								<onclick>ActivateWindow(1132)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn2BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn2BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn6BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn6BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn10BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn10BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn14BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn14BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds)">ActivateWindow(1132)</onclick>
+								<onclick condition="!System.HasAddon(script.skin.helper.backgrounds)">InstallAddon(script.skin.helper.backgrounds)</onclick>
 								<label>$LOCALIZE[20445]</label>
 								<ondown>2338</ondown>
 								<onup condition="Control.IsVisible(2344)">2344</onup>
@@ -2873,15 +2875,16 @@
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(AddMoreCategoryBtn7BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(AddMoreCategoryBtn11BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn15BackgroundImageType,fanart)]</selected>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn3BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn3BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn7BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn7BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn11BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn11BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn15BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn15BackgroundImagePathLabel)</onclick>
-								<onclick>ActivateWindow(1132)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn3BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn3BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn7BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn7BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn11BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn11BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn15BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn15BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds)">ActivateWindow(1132)</onclick>
+								<onclick condition="!System.HasAddon(script.skin.helper.backgrounds)">InstallAddon(script.skin.helper.backgrounds)</onclick>
 								<label>$LOCALIZE[20445]</label>
 								<ondown>2338</ondown>
 								<onup condition="Control.IsVisible(2344)">2344</onup>
@@ -3157,15 +3160,16 @@
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(AddMoreCategoryBtn8BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart)]
 								| [Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart)]</selected>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn4BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn4BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn8BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn8BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn12BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn12BackgroundImagePathLabel)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn16BackgroundImageType,fanart)</onclick>
-								<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn16BackgroundImagePathLabel)</onclick>
-								<onclick>ActivateWindow(1132)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetString(AddMoreCategoryBtn4BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.Reset(AddMoreCategoryBtn4BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetString(AddMoreCategoryBtn8BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.Reset(AddMoreCategoryBtn8BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetString(AddMoreCategoryBtn12BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.Reset(AddMoreCategoryBtn12BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetString(AddMoreCategoryBtn16BackgroundImageType,fanart)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.Reset(AddMoreCategoryBtn16BackgroundImagePathLabel)</onclick>
+								<onclick condition="System.HasAddon(script.skin.helper.backgrounds)">ActivateWindow(1132)</onclick>
+								<onclick condition="!System.HasAddon(script.skin.helper.backgrounds)">InstallAddon(script.skin.helper.backgrounds)</onclick>
 								<label>$LOCALIZE[20445]</label>
 								<ondown>2338</ondown>
 								<onup condition="Control.IsVisible(2344)">2344</onup>
