@@ -25,7 +25,7 @@
 					<top>143</top>
 					
 					<control type="image">
-						<description>TV Shows Poster / Movies / Music Videos / Episodes Default Cover Image Background</description>
+						<description>TV Shows Poster / Movies Default Cover Image Background</description>
 						<width>336</width>
 						<height>500</height>
 						<texture border="4">covers/cover-case2.png</texture>
@@ -35,7 +35,7 @@
 					</control>
 					
 					<control type="image">
-						<description>TV Shows Poster / Movies / Music Videos / Episodes Default Cover Image</description>
+						<description>TV Shows Poster / Movies Default Cover Image</description>
 						<width>336</width>
 						<height>500</height>
 						<texture>DefaultVideo.png</texture>
@@ -82,7 +82,7 @@
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<animation effect="fade" end="80" condition="String.IsEmpty(ListItem.Thumb)">Conditional</animation>
-						<visible>![Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)] + ![String.IsEqual(ListItem.DBTYPE,movie) + String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+						<visible>![Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)] + ![String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
 					</control>
 					
 					<control type="image">
@@ -1454,7 +1454,7 @@
 				</control>
 
 				<control type="group">
-					<visible>![String.IsEqual(ListItem.DBTYPE,movie) + String.IsEqual(ListItem.DBTYPE,tvshow) + String.IsEqual(ListItem.DBTYPE,episode) + String.IsEqual(ListItem.DBTYPE,musicvideo)]</visible>
+					<visible>![String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]</visible>
 					
 					<control type="group">
 						<left>510</left>
@@ -1762,7 +1762,7 @@
 					<pagecontrol>61</pagecontrol>
 					<include>FSMediaInfoOpenCloseAnim</include>
 					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
-					<visible>!Control.IsVisible(50) + ![String.IsEqual(ListItem.DBTYPE,movie) + String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+					<visible>!Control.IsVisible(50) + ![String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
 				</control>
 				
 				<control type="textbox" id="902">
