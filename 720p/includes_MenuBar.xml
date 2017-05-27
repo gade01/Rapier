@@ -73,12 +73,12 @@
 		<focusedcolor>ButtonFocusColor</focusedcolor>
 		<textcolor>ButtonColor</textcolor>
 		<disabledcolor>DisabledColor</disabledcolor>
-		<textwidth>110</textwidth>
+		<textwidth>121</textwidth>
 		<aligny>top</aligny>
 		<textoffsety>9</textoffsety>
-		<textoffsetx>13</textoffsetx>
-		<radiowidth>40</radiowidth>
-		<radioheight>16</radioheight>
+		<textoffsetx>11</textoffsetx>
+		<radiowidth>35</radiowidth>
+		<radioheight>15</radioheight>
 		<texturefocus border="4">gui/menu-bar-button-focus.png</texturefocus>
 		<texturenofocus />
 	</include>
@@ -498,7 +498,7 @@
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<width>160</width>
-				<textwidth>85</textwidth>
+				<textwidth>96</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<selected>Container.Filtered</selected>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
@@ -511,7 +511,7 @@
 				<visible>Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<width>160</width>
-				<textwidth>85</textwidth>
+				<textwidth>96</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
@@ -699,7 +699,7 @@
 				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<width>190</width>
-				<textwidth>115</textwidth>
+				<textwidth>126</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<selected>Container.Filtered</selected>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
@@ -712,7 +712,7 @@
 				<visible>Container.CanFilterAdvanced</visible>
 				<description>Filter</description>
 				<width>190</width>
-				<textwidth>115</textwidth>
+				<textwidth>126</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
@@ -736,7 +736,7 @@
 			<control type="radiobutton" id="7">
 				<description>Hide foreign</description>
 				<width>197</width>
-				<textwidth>122</textwidth>
+				<textwidth>133</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[25001][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
@@ -747,7 +747,7 @@
 			<control type="radiobutton" id="8">
 				<description>Show / Hide broken add-ons</description>
 				<width>197</width>
-				<textwidth>122</textwidth>
+				<textwidth>133</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[24999][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
@@ -1267,7 +1267,7 @@
 			<control type="radiobutton" id="31">
 				<description>Filter</description>
 				<width>200</width>
-				<textwidth>125</textwidth>
+				<textwidth>136</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[587][/UPPERCASE]</label>
 				<selected>Container.Filtered</selected>
@@ -1280,7 +1280,7 @@
 			<control type="radiobutton" id="5">
 				<description>Group recording items by folder structure</description>
 				<width>200</width>
-				<textwidth>125</textwidth>
+				<textwidth>136</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>19270</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
@@ -1293,7 +1293,7 @@
 			<control type="radiobutton" id="6">
 				<description>Show hidden channels</description>
 				<width>200</width>
-				<textwidth>125</textwidth>
+				<textwidth>136</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19051][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
@@ -1302,16 +1302,16 @@
 			<control type="radiobutton" id="7">
 				<description>Show deleted recordings</description>
 				<width>200</width>
-				<textwidth>125</textwidth>
+				<textwidth>136</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19184][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>!Window.IsActive(MyPVRRecordings.xml)</visible>
+				<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
 			<control type="radiobutton" id="8">
 				<description>Hide Disabled Timers</description>
 				<width>200</width>
-				<textwidth>125</textwidth>
+				<textwidth>136</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19077][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
@@ -1425,7 +1425,7 @@
 				<control type="radiobutton" id="22">
 					<description>Only show current level</description>
 					<width>230</width>
-					<textwidth>155</textwidth>
+					<textwidth>166</textwidth>
 					<include>MenuBarRadioBtn</include>
 					<label>[UPPERCASE]-[/UPPERCASE]</label>
 				</control>
@@ -1991,7 +1991,7 @@
 			<control type="radiobutton" id="13">
 				<description>Auto-Update Add-on</description>
 				<width>179</width>
-				<textwidth>104</textwidth>
+				<textwidth>115</textwidth>
 				<include>MenuBarRadioBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[21340][/UPPERCASE]</label>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
