@@ -8502,7 +8502,7 @@
 				<onright>584</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
 				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTags] | Container.Content(Albums)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums]</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<width>354</width>
@@ -8662,7 +8662,7 @@
 				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
 				<onright condition="Control.IsVisible(151)">151</onright>
 				<visible>!ListItem.IsParentFolder</visible>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTags] | Container.Content(Albums)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums]</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<width>354</width>
