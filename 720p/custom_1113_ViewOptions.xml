@@ -837,7 +837,7 @@
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideMusicExtendedListFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideMusicExtendedListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,musicdb://years/)]</visible>
+				<visible>Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/)]</visible>
 			</control>
 			<control type="radiobutton" id="4121">
 				<description>Fanart Hide Fanart (Movies)</description>
@@ -1359,7 +1359,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>Skin.HasSetting(HideExtendedListViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideExtendedListViewScrollbar)</onclick>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTags] + Skin.String(CurrentViewMode,585)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums] + Skin.String(CurrentViewMode,585)</visible>
 			</control>
 			<control type="radiobutton" id="1032">
 				<description>Extended List Hide Scrollbar 2</description>
@@ -1367,7 +1367,7 @@
 				<label>$LOCALIZE[31025] $NUMBER[2]</label>
 				<selected>Skin.HasSetting(HideExtendedListViewScrollbar2)</selected>
 				<onclick>Skin.ToggleSetting(HideExtendedListViewScrollbar2)</onclick>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTags] + Skin.String(CurrentViewMode,585)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums] + Skin.String(CurrentViewMode,585)</visible>
 			</control>
 			<control type="radiobutton" id="1034">
 				<description>Wall Hide Scrollbar</description>
