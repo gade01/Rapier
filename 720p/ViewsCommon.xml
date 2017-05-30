@@ -8507,7 +8507,7 @@
 							<textcolor>MediaInfoItemColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$LOCALIZE[563]:</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(ListItem.Rating) + ![Control.HasFocus(584) | Control.HasFocus(151)]</visible>
+							<visible>String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<width min="0" max="110">auto</width>
@@ -8515,23 +8515,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$INFO[ListItem.Rating]</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(ListItem.Rating) + ![Control.HasFocus(584) | Control.HasFocus(151)]</visible>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[180]:</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(Container(584).ListItem.Duration) + [Control.HasFocus(584) | Control.HasFocus(151)]</visible>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Container(584).ListItem.Duration]</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(Container(584).ListItem.Duration) + [Control.HasFocus(584) | Control.HasFocus(151)]</visible>
+							<visible>String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(ListItem.Rating)</visible>
 						</control>
 						<control type="label">
 							<width min="0" max="110">auto</width>
@@ -8850,17 +8834,6 @@
 						<visible>String.IsEmpty(ListItem.Title) | String.Contains(Container.FolderPath,musicdb://)</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
-					<control type="image">
-						<description>Icon</description>
-						<left>5</left>
-						<top>6</top>
-						<width>24</width>
-						<height>24</height>
-						<texture>DefaultAudio.png.png</texture>
-						<aspectratio>stretch</aspectratio>
-						<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
-						<include>ListViewOverlayFadeAnim</include>
-					</control>
 					<control type="label">
 						<description>Label</description>
 						<left>35</left>
@@ -8883,7 +8856,32 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)]</visible>
+						<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/)]</visible>
+					</control>
+					<control type="label">
+						<description>Label</description>
+						<left>5</left>
+						<width>294</width>
+						<height>37</height>
+						<font>ListFont</font>
+						<textcolor>ListColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
+						<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+					</control>
+					<control type="label">
+						<description>Label</description>
+						<left>298</left>
+						<width>50</width>
+						<height>37</height>
+						<align>right</align>
+						<font>ListFont</font>
+						<textcolor>DefaultColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Duration]</label>
+						<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
 					</control>
 					<control type="group">
 						<visible>!ListItem.IsParentFolder + !ListItem.IsFolder + !Container.Content(Albums)</visible>
@@ -9013,16 +9011,6 @@
 							<aspectratio>stretch</aspectratio>
 							<visible>String.IsEmpty(ListItem.Title) | String.Contains(Container.FolderPath,musicdb://)</visible>
 						</control>
-						<control type="image">
-							<description>Icon</description>
-							<left>5</left>
-							<top>6</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>DefaultAudio.png.png</texture>
-							<aspectratio>stretch</aspectratio>
-							<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
-						</control>
 						<control type="label">
 							<description>Label</description>
 							<left>35</left>
@@ -9047,7 +9035,34 @@
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<scroll>true</scroll>
-							<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)]</visible>
+							<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/)]</visible>
+						</control>
+						<control type="label">
+							<description>Label</description>
+							<left>5</left>
+							<width>294</width>
+							<height>37</height>
+							<font>ListFont</font>
+							<textcolor>SelectedColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
+							<scroll>true</scroll>
+							<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+						</control>
+						<control type="label">
+							<description>Label</description>
+							<left>298</left>
+							<width>50</width>
+							<height>37</height>
+							<align>right</align>
+							<font>ListFont</font>
+							<textcolor>DefaultColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Duration]</label>
+							<scroll>true</scroll>
+							<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
 						</control>
 						<control type="group">
 							<visible>!ListItem.IsParentFolder + !ListItem.IsFolder + !Container.Content(Albums)</visible>
