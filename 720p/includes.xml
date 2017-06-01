@@ -67,10 +67,10 @@
 	<constant name="DepthHomeMenu">0.11</constant>
 	<constant name="DepthHomeMenuCategoryFocus">0.15</constant>
 	<constant name="DepthBackground">-0.80</constant>
-	<expression name="SortMethods">[String.IsEqual(Container.SortMethod,$LOCALIZE[515]) | String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[572]) | String.IsEqual(Container.SortMethod,$LOCALIZE[574]) | String.IsEqual(Container.SortMethod,$LOCALIZE[578])]</expression>
-	<expression name="AlbumsSongsArtists">[Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)]</expression>
-	<expression name="TVShowsSeasonsEpisodes">[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</expression>
-	<expression name="SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums">[Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags) | Container.Content(Albums)]</expression>
+	<expression name="SortMethods">String.IsEqual(Container.SortMethod,$LOCALIZE[515]) | String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[572]) | String.IsEqual(Container.SortMethod,$LOCALIZE[574]) | String.IsEqual(Container.SortMethod,$LOCALIZE[578])</expression>
+	<expression name="AlbumsSongsArtists">Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists)</expression>
+	<expression name="TVShowsSeasonsEpisodes">Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</expression>
+	<expression name="SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums">Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags) | Container.Content(Albums)</expression>
 	
 	<variable name="DurationMinutes">
 		<value condition="String.EndsWith(ListItem.Duration,1) | String.EndsWith(Window.Property(duration),1)">$NUMBER[1]</value>
