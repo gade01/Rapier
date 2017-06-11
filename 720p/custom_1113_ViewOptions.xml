@@ -803,7 +803,7 @@
 				<label>$LOCALIZE[31207]: $LOCALIZE[31043]</label>
 				<selected>Skin.HasSetting(HideTVShowsExtendedListFanart)</selected>
 				<onclick>Skin.ToggleSetting(HideTVShowsExtendedListFanart)</onclick>
-				<visible>Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/)]</visible>
+				<visible>Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/) | Container.Content(Seasons)]</visible>
 			</control>
 			<control type="radiobutton" id="4123">
 				<description>Fanart Hide Media Info (Movies)</description>
@@ -1052,7 +1052,7 @@
 				<onclick condition="System.HasAddon(script.tv.show.next.aired)">ReloadSkin()</onclick>
 				<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>$EXP[TVShowsSeasonsEpisodes] + [Skin.String(CurrentViewMode,583) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,94) | Skin.String(CurrentViewMode,100)]</visible>
+				<visible>$EXP[TVShowsSeasonsEpisodes] + [Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,583) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,589) | Skin.String(CurrentViewMode,61) | Skin.String(CurrentViewMode,94) | Skin.String(CurrentViewMode,100)]</visible>
 			</control>
 			<control type="radiobutton" id="3046">
 				<description>Hide Genre (Episodes) (Videos)</description>
@@ -1359,7 +1359,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>Skin.HasSetting(HideExtendedListViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideExtendedListViewScrollbar)</onclick>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums] + Skin.String(CurrentViewMode,585)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsAlbums] + Skin.String(CurrentViewMode,585)</visible>
 			</control>
 			<control type="radiobutton" id="1032">
 				<description>Extended List Hide Scrollbar 2</description>
@@ -1367,7 +1367,7 @@
 				<label>$LOCALIZE[31025] $NUMBER[2]</label>
 				<selected>Skin.HasSetting(HideExtendedListViewScrollbar2)</selected>
 				<onclick>Skin.ToggleSetting(HideExtendedListViewScrollbar2)</onclick>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsAlbums] + Skin.String(CurrentViewMode,585)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsAlbums] + Skin.String(CurrentViewMode,585)</visible>
 			</control>
 			<control type="radiobutton" id="1034">
 				<description>Wall Hide Scrollbar</description>
