@@ -62,7 +62,6 @@ script.favourites v5.0.2
 script.tv.show.next.aired v6.0.10  
 script.skin.helper.service v1.1.3  
 script.skin.helper.widgets v1.0.22  
-resource.uisounds.rapier 1.0.1  
 resource.images.studios.white 0.0.2  
 
 ## LICENSE
