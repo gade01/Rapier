@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<zorder>0</zorder>
+	<zorder>2</zorder>
 	<visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused | Player.Caching | Player.ShowInfo | Player.ShowTime | Player.IsTempo] + ![Window.IsVisible(VideoOSD) | Window.IsVisible(MusicOSD) | Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(script.pseudotv.TVOverlay.xml) | Window.IsActive(script.pseudotv.live.TVOverlay.xml)]</visible>
 	<depth>DepthOSD</depth>
 	
@@ -49,33 +49,38 @@
 			<visible>Window.IsActive(FullscreenVideo) | Window.IsActive(Visualisation)</visible>
 			<include>FSSeekBar</include>
 			<include>BottomPaneOpenCloseAnim</include>
+			<animation effect="slide" end="0,15" condition="Player.HasGame">Conditional</animation>
 			
-			<control type="progress">
-				<description>Progressbar Cache</description>
-				<left>37</left>
-				<top>39</top>
-				<width>412</width>
-				<midtexture border="2">controls/scrollbar-slider-horz-nofocus.png</midtexture>
-				<info>Player.ProgressCache</info>
-				<animation effect="fade" end="50" condition="true">Conditional</animation>
-			</control>
+			<control type="group">
+				<visible>!Player.HasGame</visible>
 				
-			<control type="progress" id="23">
-				<description>Progressbar</description>
-				<left>37</left>
-				<top>39</top>
-				<width>412</width>
-				<info>Player.Progress</info>
-			</control>
-			
-			<control type="progress" id="401">
-				<description>Progressbar</description>
-				<left>37</left>
-				<top>39</top>
-				<width>412</width>
-				<texturebg colordiffuse="00FFFFFF" border="4">controls/progress-background.png</texturebg>
-				<colordiffuse>88FFFFFF</colordiffuse>
-				<visible>Player.Seeking</visible>
+				<control type="progress">
+					<description>Progressbar Cache</description>
+					<left>37</left>
+					<top>39</top>
+					<width>412</width>
+					<midtexture border="2">controls/scrollbar-slider-horz-nofocus.png</midtexture>
+					<info>Player.ProgressCache</info>
+					<animation effect="fade" end="50" condition="true">Conditional</animation>
+				</control>
+					
+				<control type="progress" id="23">
+					<description>Progressbar</description>
+					<left>37</left>
+					<top>39</top>
+					<width>412</width>
+					<info>Player.Progress</info>
+				</control>
+				
+				<control type="progress" id="401">
+					<description>Progressbar</description>
+					<left>37</left>
+					<top>39</top>
+					<width>412</width>
+					<texturebg colordiffuse="00FFFFFF" border="4">controls/progress-background.png</texturebg>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<visible>Player.Seeking</visible>
+				</control>
 			</control>
 			
 			<control type="grouplist">
@@ -85,6 +90,7 @@
 				<width>400</width>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
+				<animation effect="slide" end="0,4" condition="Player.HasGame">Conditional</animation>
 				<control type="label">
 					<description>Elapsed/Duration Time</description>
 					<top>5</top>
@@ -113,6 +119,7 @@
 				<align>right</align>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
+				<animation effect="slide" end="0,4" condition="Player.HasGame">Conditional</animation>
 				<visible>Window.IsActive(FullScreenVideo)</visible>
 				<control type="image">
 					<top>5</top>
