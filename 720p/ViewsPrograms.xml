@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!--//// START LIST INFO VIEW /////////////////////////////////////////////////////////////////////-->
-	<include name="ProgramsListInfoView">
-		<control type="group" id="500">
+	<include name="ProgramsListInfoView">	
+		<control type="group" id="500">	
 			<defaultcontrol always="true">590</defaultcontrol>
 			<visible>Control.IsVisible(590)</visible>
-			<include>MediaViewOpenCloseAnim</include>
+			<include>MediaViewOpenCloseAnim</include>		
 			<include>ViewContentPanel</include>
 			<include>ListInfo2MediaInfoPanelCommon</include>
 			<include>ProgramsListInfoViewCommon</include>
 
-			<control type="list" id="590">
-				<viewtype label="31111">list</viewtype>
-				<left>595</left>
-				<top>110</top>
+			<control type="list" id="590">	
+				<viewtype label="31111">List Info</viewtype>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>920</pagecontrol>
@@ -22,10 +21,9 @@
 				<onup>590</onup>
 				<ondown>590</ondown>
 				<onleft>850</onleft>
-				<onright condition="Control.IsVisible(920) | Control.IsVisible(970)">150</onright>
-				<onright condition="![Control.IsVisible(920) | Control.IsVisible(970)]">ActivateWindow(1122)</onright>
-				<oninfo>ActivateWindow(1122)</oninfo>
-				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<onright condition="Control.IsVisible(920)">150</onright>
+				<onright condition="!Control.IsVisible(920)">ActivateWindow(1122)</onright>			
+				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 				<include condition="Skin.String(ProgramsListInfoStyle,1) | Skin.String(ProgramsListInfoStyle,3)">ProgramsListInfoItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfoStyle,) | Skin.String(ProgramsListInfoStyle,2)">ProgramsListInfoTallStyleItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfoStyle,1)">ProgramsListInfoFocusedLayout</include>
@@ -35,19 +33,30 @@
 			<include>ProgramsListInfoViewScrollbar</include>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,590)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(590)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
-			</control>
+			</control>	
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
+		</control>		
 	</include>
 
-	<include name="ProgramsListInfoView2">
-		<control type="group" id="500">
+	<include name="ProgramsListInfoView2">	
+		<control type="group" id="500">	
 			<defaultcontrol always="true">591</defaultcontrol>
 			<visible>Control.IsVisible(591)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -55,10 +64,10 @@
 			<include>ListInfo2MediaInfoPanelCommon</include>
 			<include>ProgramsListInfoViewCommon</include>
 
-			<control type="list" id="591">
-				<viewtype label="31112">list</viewtype>
-				<left>595</left>
-				<top>110</top>
+			<control type="list" id="591">	
+				<viewtype label="31112">List Info 2</viewtype>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>921</pagecontrol>
@@ -67,10 +76,9 @@
 				<onup>591</onup>
 				<ondown>591</ondown>
 				<onleft>850</onleft>
-				<onright condition="Control.IsVisible(921) | Control.IsVisible(971)">150</onright>
-				<onright condition="![Control.IsVisible(921) | Control.IsVisible(971)]">ActivateWindow(1122)</onright>
-				<oninfo>ActivateWindow(1122)</oninfo>
-				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<onright condition="Control.IsVisible(921)">150</onright>
+				<onright condition="!Control.IsVisible(921)">ActivateWindow(1122)</onright>			
+				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 				<include condition="Skin.String(ProgramsListInfo2Style,1) | Skin.String(ProgramsListInfo2Style,3)">ProgramsListInfoItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfo2Style,) | Skin.String(ProgramsListInfo2Style,2)">ProgramsListInfo2TallStyleItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfo2Style,1)">ProgramsListInfoFocusedLayout</include>
@@ -80,19 +88,30 @@
 			<include>ProgramsListInfo2ViewScrollbar</include>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,591)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(591)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
-			</control>
+			</control>	
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
+		</control>		
 	</include>
 
-	<include name="ProgramsListInfoView3">
-		<control type="group" id="500">
+	<include name="ProgramsListInfoView3">	
+		<control type="group" id="500">	
 			<defaultcontrol always="true">592</defaultcontrol>
 			<visible>Control.IsVisible(592)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -100,10 +119,10 @@
 			<include>ListInfo2MediaInfoPanelCommon</include>
 			<include>ProgramsListInfoViewCommon</include>
 
-			<control type="list" id="592">
-				<viewtype label="31115">list</viewtype>
-				<left>595</left>
-				<top>110</top>
+			<control type="list" id="592">	
+				<viewtype label="31115">List Info 3</viewtype>
+				<posx>595</posx>
+				<posy>110</posy>
 				<width>630</width>
 				<height>518</height>
 				<pagecontrol>922</pagecontrol>
@@ -112,10 +131,9 @@
 				<onup>592</onup>
 				<ondown>592</ondown>
 				<onleft>850</onleft>
-				<onright condition="Control.IsVisible(922) | Control.IsVisible(972)">150</onright>
-				<onright condition="![Control.IsVisible(922) | Control.IsVisible(972)]">ActivateWindow(1122)</onright>
-				<oninfo>ActivateWindow(1122)</oninfo>
-				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<onright condition="Control.IsVisible(922)">150</onright>
+				<onright condition="!Control.IsVisible(922)">ActivateWindow(1122)</onright>			
+				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 				<include condition="Skin.String(ProgramsListInfo3Style,1) | Skin.String(ProgramsListInfo3Style,3)">ProgramsListInfoItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfo3Style,) | Skin.String(ProgramsListInfo3Style,2)">ProgramsListInfo3TallStyleItemLayout</include>
 				<include condition="Skin.String(ProgramsListInfo3Style,1)">ProgramsListInfoFocusedLayout</include>
@@ -125,48 +143,152 @@
 			<include>ProgramsListInfo3ViewScrollbar</include>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,592)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(592)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
-			</control>
+			</control>	
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
+		</control>		
 	</include>
 
 	<!-- COMMON -->
 	<include name="ProgramsListInfoViewCommon">
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<include>ListInfo2PanelFanart</include>
 			
-			<include content="ListInfo2MediaInfoArea">
-				<param name="visible" value="true" />
-				<param name="Grouplist1LabelWidth" value="110" />
-				<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
-				<param name="Grouplist1InfoWidth" value="310" />
-				<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
-				<param name="Grouplist2LabelWidth" value="110" />
-				<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
-				<param name="Grouplist2InfoWidth" value="310" />
-				<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
-				<param name="Grouplist3LabelWidth" value="110" />
-				<param name="Grouplist3Label" value="$LOCALIZE[345]" />
-				<param name="Grouplist3InfoWidth" value="110" />
-				<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
-				<param name="Grouplist4LabelWidth" value="110" />
-				<param name="Grouplist4Label" value="$LOCALIZE[563]" />
-				<param name="Grouplist4InfoWidth" value="110" />
-				<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
-			</include>
-			
-			<include content="ListInfo2Plot">
-				<param name="fallback" value="31203" />
-				<param name="label" value="$INFO[ListItem.Plot]" />
-				<param name="visible" value="!Container.OnNext + !Container.OnPrevious" />
-			</include>
+			<control type="group">
+				<description>Programs Info Area</description>
+				<posx>38</posx>
+				<posy>430</posy>
+
+				<control type="grouplist">
+					<description>Publisher</description>
+					<posx>10</posx>
+					<posy>0</posy>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[32028]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="310">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Studio]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Platform</description>
+					<posx>10</posx>
+					<posy>22</posy>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[32027]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="310">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Writer]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Year</description>
+					<posx>406</posx>
+					<posy>0</posy>
+					<width>130</width>
+					<orientation>horizontal</orientation>
+					<align>right</align>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[345]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Premiered]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Rating</description>
+					<posx>406</posx>
+					<posy>22</posy>
+					<width>130</width>
+					<orientation>horizontal</orientation>
+					<align>right</align>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[563]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Rating]</label>
+					</control>
+				</control>
+			</control>
+
+			<control type="textbox">
+				<description>Plot</description>
+				<posx>48</posx>
+				<posy>492</posy>
+				<width>526</width>
+				<height>122</height>
+				<font>MediaInfoDescFont</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>justify</align>
+				<label fallback="31203">$INFO[ListItem.Plot]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsListInfoPlot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsListInfoPlot) + !Container.OnNext + !Container.OnPrevious</visible>
+				<include>ControlsOpenCloseAnim</include>
+			</control>
 		</control>
 	</include>
 
@@ -174,57 +296,61 @@
 	<include name="ProgramsListInfoItemLayout">
 		<itemlayout height="37">
 			<control type="image">
+				<posx>0</posx>
 				<width>630</width>
-				<height>37</height>
+				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
 				<description>Icon</description>
-				<left>5</left>
-				<top>6</top>
+				<posx>5</posx>
+				<posy>6</posy>
 				<width>24</width>
 				<height>24</height>
 				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 				<aspectratio>stretch</aspectratio>
 				<include>ListViewOverlayFadeAnim</include>
-			</control>
+			</control>		
 			<control type="label">
 				<description>Label</description>
-				<left>35</left>
+				<posx>35</posx>
+				<posy>16</posy>
 				<width>490</width>
-				<height>37</height>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>
+				<aligny>center</aligny>				
 				<info>ListItem.Title</info>
 			</control>
-		</itemlayout>
+		</itemlayout>	
 	</include>
 
 	<include name="ProgramsListInfoFocusedLayout">
-		<focusedlayout height="37">
+		<focusedlayout height="37">	
 			<control type="image">
+				<posx>0</posx>
 				<width>630</width>
-				<height>37</height>
+				<height>37</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
+				<posx>0</posx>
 				<width>630</width>
-				<height>36</height>
+				<height>36</height>	
 				<texture border="4">views/list-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>[Control.IsVisible(590) + Control.HasFocus(590)] 
 				| [Control.IsVisible(591) + Control.HasFocus(591)] 
 				| [Control.IsVisible(592) + Control.HasFocus(592)]</visible>
 				<include>ListViewSelectFadeAnim</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewScrollAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim)">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
+				<posx>0</posx>
 				<width>630</width>
-				<height>36</height>
+				<height>36</height>	
 				<texture border="4">views/list-alt-focus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>[Control.IsVisible(590) + !Control.HasFocus(590)] 
@@ -236,8 +362,8 @@
 				<include>ListViewFocusAnim</include>
 				<control type="image">
 					<description>Icon</description>
-					<left>5</left>
-					<top>6</top>
+					<posx>5</posx>
+					<posy>6</posy>
 					<width>24</width>
 					<height>24</height>
 					<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
@@ -245,18 +371,18 @@
 				</control>
 				<control type="label">
 					<description>Label</description>
-					<left>35</left>
+					<posx>35</posx>
+					<posy>16</posy>
 					<width>490</width>
-					<height>37</height>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<aligny>center</aligny>
 					<info>ListItem.Title</info>
-					<scroll>true</scroll>
-				</control>
+					<scroll>yes</scroll>
+				</control>	
 			</control>
-		</focusedlayout>
+		</focusedlayout>					
 	</include>
 
 	<!-- LIST INFO 1 -->
@@ -264,7 +390,7 @@
 		<itemlayout height="74">
 			<control type="image">
 				<width>630</width>
-				<height>74</height>
+				<height>74</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -284,7 +410,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">dim.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>!IsEmpty(ListItem.Thumb)</visible>
 				<include>CoverDimAnim</include>
 			</control>
 			<control type="image">
@@ -294,37 +420,39 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>60</left>
-				<top>12</top>
+				<posx>60</posx>
+				<posy>22</posy>
 				<width>465</width>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Label2</description>
-				<left>60</left>
-				<top>38</top>
+				<posx>60</posx>
+				<posy>47</posy>
 				<width>465</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>				
 				<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
-			</control>
+			</control>	
 		</itemlayout>
 	</include>
 
 	<include name="ProgramsListInfoTallStyleFocusedLayout">
-		<focusedlayout height="74">
+		<focusedlayout height="74">	
 			<control type="image">
 				<width>630</width>
-				<height>74</height>
+				<height>74</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -335,8 +463,8 @@
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(590)</visible>
 				<include>ListViewSelectFadeAnim</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)] + ![Skin.String(ProgramsListInfoStyle,) | Skin.String(ProgramsListInfoStyle,3)]">ListViewScrollAnim2</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)] + [Skin.String(ProgramsListInfoStyle,) | Skin.String(ProgramsListInfoStyle,3)]">ListViewScrollAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + ![Skin.String(ProgramsListInfoStyle,) | Skin.String(ProgramsListInfoStyle,3)]">ListViewScrollAnim2</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + [Skin.String(ProgramsListInfoStyle,) | Skin.String(ProgramsListInfoStyle,3)]">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
 				<width>630</width>
@@ -354,7 +482,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
 				<aspectratio>scale</aspectratio>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
@@ -365,31 +493,33 @@
 					<bordersize>5</bordersize>
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>				
 				<control type="label">
 					<description>Label</description>
-					<left>60</left>
-					<top>12</top>
+					<posx>60</posx>
+					<posy>22</posy>
 					<width>465</width>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
-					<scroll>true</scroll>
+					<aligny>center</aligny>
+					<scroll>yes</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
-					<left>60</left>
-					<top>38</top>
+					<posx>60</posx>
+					<posy>47</posy>
 					<width>465</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
+					<aligny>center</aligny>				
 					<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
-				</control>
+				</control>	
 			</control>
-		</focusedlayout>
+		</focusedlayout>					
 	</include>
 
 	<!-- LIST INFO 2 -->
@@ -397,7 +527,7 @@
 		<itemlayout height="74">
 			<control type="image">
 				<width>630</width>
-				<height>74</height>
+				<height>74</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -417,7 +547,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">dim.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>!IsEmpty(ListItem.Thumb)</visible>
 				<include>CoverDimAnim</include>
 			</control>
 			<control type="image">
@@ -427,49 +557,39 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>80</left>
-				<top>12</top>
-				<width>445</width>
-				<font>ListFont</font>
-				<textcolor>ListColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>String.IsEmpty(ListItem.Title)</visible>
-			</control>
-			<control type="label">
-				<description>Label</description>
-				<left>80</left>
-				<top>12</top>
+				<posx>80</posx>
+				<posy>22</posy>
 				<width>445</width>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Label2</description>
-				<left>80</left>
-				<top>38</top>
+				<posx>80</posx>
+				<posy>47</posy>
 				<width>445</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>				
 				<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
-			</control>
+			</control>	
 		</itemlayout>
 	</include>
 
 	<include name="ProgramsListInfo2TallStyleFocusedLayout">
-		<focusedlayout height="74">
+		<focusedlayout height="74">	
 			<control type="image">
 				<width>630</width>
-				<height>74</height>
+				<height>74</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -480,8 +600,8 @@
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(591)</visible>
 				<include>ListViewSelectFadeAnim</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)] + ![Skin.String(ProgramsListInfo2Style,) | Skin.String(ProgramsListInfo2Style,3)]">ListViewScrollAnim2</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)] + [Skin.String(ProgramsListInfo2Style,) | Skin.String(ProgramsListInfo2Style,3)]">ListViewScrollAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + ![Skin.String(ProgramsListInfo2Style,) | Skin.String(ProgramsListInfo2Style,3)]">ListViewScrollAnim2</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + [Skin.String(ProgramsListInfo2Style,) | Skin.String(ProgramsListInfo2Style,3)]">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
 				<width>630</width>
@@ -499,7 +619,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
 				<aspectratio>scale</aspectratio>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
@@ -510,44 +630,33 @@
 					<bordersize>5</bordersize>
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>				
 				<control type="label">
 					<description>Label</description>
-					<left>80</left>
-					<top>12</top>
-					<width>445</width>
-					<font>ListFont</font>
-					<textcolor>SelectedColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<scroll>true</scroll>
-					<visible>String.IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="label">
-					<description>Label</description>
-					<left>80</left>
-					<top>12</top>
+					<posx>80</posx>
+					<posy>22</posy>
 					<width>445</width>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
-					<scroll>true</scroll>
-					<visible>!String.IsEmpty(ListItem.Title)</visible>
+					<aligny>center</aligny>
+					<scroll>yes</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
-					<left>80</left>
-					<top>38</top>
+					<posx>80</posx>
+					<posy>47</posy>
 					<width>445</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
+					<aligny>center</aligny>				
 					<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
-				</control>
+				</control>	
 			</control>
-		</focusedlayout>
+		</focusedlayout>					
 	</include>
 
 	<!-- LIST INFO 3 -->
@@ -555,7 +664,7 @@
 		<itemlayout height="74">
 			<control type="image">
 				<width>630</width>
-				<height>74</height>
+				<height>74</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -575,7 +684,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">dim.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>!IsEmpty(ListItem.Thumb)</visible>
 				<include>CoverDimAnim</include>
 			</control>
 			<control type="image">
@@ -585,37 +694,39 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>IsEmpty(ListItem.Thumb)</visible>
 				<animation effect="fade" end="40" condition="true">Conditional</animation>
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>104</left>
-				<top>12</top>
+				<posx>104</posx>
+				<posy>22</posy>
 				<width>411</width>
 				<font>ListFont</font>
 				<textcolor>ListColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
 				<description>Label2</description>
-				<left>104</left>
-				<top>38</top>
+				<posx>104</posx>
+				<posy>47</posy>
 				<width>411</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>				
 				<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
-			</control>
+			</control>	
 		</itemlayout>
 	</include>
 
 	<include name="ProgramsListInfo3TallStyleFocusedLayout">
-		<focusedlayout height="74">
+		<focusedlayout height="74">	
 			<control type="image">
 				<width>630</width>
-				<height>74</height>
+				<height>74</height>	
 				<texture border="0,0,10,2">views/list-separator.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -626,8 +737,8 @@
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(592)</visible>
 				<include>ListViewSelectFadeAnim</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)] + ![Skin.String(ProgramsListInfo3Style,) | Skin.String(ProgramsListInfo3Style,3)]">ListViewScrollAnim2</include>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)] + [Skin.String(ProgramsListInfo3Style,) | Skin.String(ProgramsListInfo3Style,3)]">ListViewScrollAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + ![Skin.String(ProgramsListInfo3Style,) | Skin.String(ProgramsListInfo3Style,3)]">ListViewScrollAnim2</include>
+				<include condition="!Skin.HasSetting(DisableListViewScrollAnim) + [Skin.String(ProgramsListInfo3Style,) | Skin.String(ProgramsListInfo3Style,3)]">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
 				<width>630</width>
@@ -645,7 +756,7 @@
 				<bordersize>5</bordersize>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
 				<aspectratio>scale</aspectratio>
-				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+				<include condition="!Skin.HasSetting(DisableListViewCoverFocusAnim)">ListViewCoverFocusAnim</include>
 			</control>
 			<control type="group">
 				<include>ListViewFocusAnim</include>
@@ -656,46 +767,48 @@
 					<bordersize>5</bordersize>
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>				
 				<control type="label">
 					<description>Label</description>
-					<left>104</left>
-					<top>12</top>
+					<posx>104</posx>
+					<posy>22</posy>
 					<width>411</width>
 					<font>ListFont</font>
 					<textcolor>SelectedColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$INFO[ListItem.Title]</label>
-					<scroll>true</scroll>
+					<aligny>center</aligny>
+					<scroll>yes</scroll>
 				</control>
 				<control type="label">
 					<description>Label2</description>
-					<left>104</left>
-					<top>38</top>
+					<posx>104</posx>
+					<posy>47</posy>
 					<width>411</width>
 					<font>ListFont2</font>
 					<textcolor>ListColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
+					<aligny>center</aligny>				
 					<label>$INFO[ListItem.Premiered]$INFO[ListItem.Genre,  -  ,]</label>
-				</control>
+				</control>	
 			</control>
-		</focusedlayout>
+		</focusedlayout>					
 	</include>
 	<!--//// END LIST INFO VIEW  //////////////////////////////////////////////////////////////////////-->
 
-	<!--//// START THUMBS INFO VIEW ///////////////////////////////////////////////////////////////////-->
-	<include name="ProgramsThumbsInfoView">
-		<control type="group" id="500">
+	<!--//// START THUMBS INFO VIEW ///////////////////////////////////////////////////////////////////-->		
+	<include name="ProgramsThumbsInfoView">	
+		<control type="group" id="500">	
 			<defaultcontrol always="true">593</defaultcontrol>
 			<visible>Control.IsVisible(593)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ProgramsThumbsInfoViewCommon</include>
 
 			<control type="panel" id="593">
-				<viewtype label="31116">icon</viewtype>
-				<left>454</left>
-				<top>111</top>
+				<viewtype label="31116">Thumbs Info</viewtype>
+				<posx>454</posx>
+				<posy>111</posy>
 				<width>774</width>
 				<height>516</height>
 				<pagecontrol>923</pagecontrol>
@@ -706,8 +819,7 @@
 				<onright>150</onright>
 				<onup>593</onup>
 				<ondown>593</ondown>
-				<oninfo>ActivateWindow(1122)</oninfo>
-				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 				<itemlayout width="129" height="172">
 					<control type="image">
 						<description>Default Cover Case</description>
@@ -733,7 +845,7 @@
 						<texture background="true">dim.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<bordersize>10</bordersize>
-						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 						<include>CoverDimAnim</include>
 					</control>
 					<control type="image">
@@ -743,71 +855,71 @@
 						<bordersize>12</bordersize>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 						<animation effect="fade" end="50" condition="true">Conditional</animation>
-					</control>
+					</control>	
 				</itemlayout>
 				<focusedlayout width="129" height="172" condition="Container.Column(0) + Container.Row(0)">
 					<control type="group">
 						<description>Top Left Corner Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleTopLeftCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleTopLeftCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(0)">
 					<control type="group">
 						<description>Top Edge Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleTopEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleTopEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="Container.Column(5) + Container.Row(0)">
 					<control type="group">
 						<description>Top Right Corner Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleTopRightCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleTopRightCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="Container.Column(0) + Container.Row(1)">
 					<control type="group">
 						<description>Left Edge Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleLeftEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleLeftEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="!Container.Row(0) + !Container.Row(2) + !Container.Column(0) + !Container.Column(5)">
 					<control type="group">
 						<description>Mid Row Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleMidRowFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleMidRowFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="Container.Column(5) + Container.Row(1)">
 					<control type="group">
 						<description>Right Edge Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleRightEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleRightEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="Container.Column(0) + Container.Row(2)">
 					<control type="group">
 						<description>Bottom Left Corner Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleBottomLeftCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleBottomLeftCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(2)">
 					<control type="group">
 						<description>Bottom Edge Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleBottomEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleBottomEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="172" condition="Container.Column(5) + Container.Row(2)">
 					<control type="group">
 						<description>Bottom Right Corner Cover</description>
 						<include>StraitThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">StraitThumbsStyleBottomRightCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">StraitThumbsStyleBottomRightCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 			</control>
@@ -815,8 +927,19 @@
 			<include>ProgramsThumbsInfoViewScrollbar</include>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,593)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(593)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -834,23 +957,23 @@
 						<label>$INFO[ListItem.Premiered]</label>
 					</control>
 				</control>
-			</control>
+			</control>	
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
+		</control>		
 	</include>
 
-	<include name="ProgramsThumbsInfoView2">
-		<control type="group" id="500">
+	<include name="ProgramsThumbsInfoView2">	
+		<control type="group" id="500">	
 			<defaultcontrol always="true">594</defaultcontrol>
 			<visible>Control.IsVisible(594)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ProgramsThumbsInfoViewCommon</include>
 
 			<control type="panel" id="594">
-				<viewtype label="31119">icon</viewtype>
-				<left>454</left>
-				<top>111</top>
+				<viewtype label="31119">Thumbs Info</viewtype>
+				<posx>454</posx>
+				<posy>111</posy>
 				<width>774</width>
 				<height>516</height>
 				<pagecontrol>924</pagecontrol>
@@ -861,8 +984,7 @@
 				<onright>150</onright>
 				<onup>594</onup>
 				<ondown>594</ondown>
-				<oninfo>ActivateWindow(1122)</oninfo>
-				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 				<itemlayout width="129" height="129">
 					<control type="image">
 						<description>Default Cover Case</description>
@@ -888,7 +1010,7 @@
 						<texture background="true">dim.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<bordersize>10</bordersize>
-						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 						<include>CoverDimAnim</include>
 					</control>
 					<control type="image">
@@ -898,7 +1020,7 @@
 						<bordersize>20</bordersize>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 						<animation effect="fade" end="50" condition="true">Conditional</animation>
 					</control>
 				</itemlayout>
@@ -906,63 +1028,63 @@
 					<control type="group">
 						<description>Top Left Corner Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleTopLeftCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleTopLeftCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(0)">
 					<control type="group">
 						<description>Top Edge Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleTopEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleTopEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="Container.Column(5) + Container.Row(0)">
 					<control type="group">
 						<description>Top Right Corner Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleTopRightCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleTopRightCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="Container.Column(0) + [Container.Row(1) | Container.Row(2)]">
 					<control type="group">
 						<description>Left Edge Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleLeftEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleLeftEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="!Container.Row(0) + !Container.Row(3) + !Container.Column(0) + !Container.Column(5)">
 					<control type="group">
 						<description>Mid Row Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleMidRowFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleMidRowFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="Container.Column(5) + [Container.Row(1) | Container.Row(2)]">
 					<control type="group">
 						<description>Right Edge Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleRightEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleRightEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="Container.Column(0) + Container.Row(3)">
 					<control type="group">
 						<description>Bottom Left Corner Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleBottomLeftCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleBottomLeftCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(3)">
 					<control type="group">
 						<description>Bottom Edge Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleBottomEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleBottomEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="129" height="129" condition="Container.Column(5) + Container.Row(3)">
 					<control type="group">
 						<description>Bottom Right Corner Cover</description>
 						<include>SquareThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">SquareThumbsStyleBottomRightCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">SquareThumbsStyleBottomRightCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 			</control>
@@ -970,8 +1092,19 @@
 			<include>ProgramsThumbsInfo2ViewScrollbar</include>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,594)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(594)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -989,23 +1122,23 @@
 						<label>$INFO[ListItem.Premiered]</label>
 					</control>
 				</control>
-			</control>
+			</control>	
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
+		</control>		
 	</include>
 
-	<include name="ProgramsThumbsInfoView3">
-		<control type="group" id="500">
+	<include name="ProgramsThumbsInfoView3">	
+		<control type="group" id="500">	
 			<defaultcontrol always="true">595</defaultcontrol>
 			<visible>Control.IsVisible(595)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ProgramsThumbsInfoViewCommon</include>
 
 			<control type="panel" id="595">
-				<viewtype label="31120">icon</viewtype>
-				<left>454</left>
-				<top>111</top>
+				<viewtype label="31120">Thumbs Info</viewtype>
+				<posx>454</posx>
+				<posy>111</posy>
 				<width>775</width>
 				<height>516</height>
 				<pagecontrol>925</pagecontrol>
@@ -1016,8 +1149,7 @@
 				<onright>150</onright>
 				<onup>595</onup>
 				<ondown>595</ondown>
-				<oninfo>ActivateWindow(1122)</oninfo>
-				<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 				<itemlayout width="155" height="129">
 					<control type="image">
 						<description>Default Cover Case</description>
@@ -1043,7 +1175,7 @@
 						<texture background="true">dim.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<bordersize>10</bordersize>
-						<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
 						<include>CoverDimAnim</include>
 					</control>
 					<control type="image">
@@ -1053,7 +1185,7 @@
 						<bordersize>20</bordersize>
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 						<animation effect="fade" end="50" condition="true">Conditional</animation>
 					</control>
 				</itemlayout>
@@ -1061,63 +1193,63 @@
 					<control type="group">
 						<description>Top Left Corner Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleTopLeftCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleTopLeftCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="!Container.Column(0) + !Container.Column(4) + Container.Row(0)">
 					<control type="group">
 						<description>Top Edge Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleTopEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleTopEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="Container.Column(4) + Container.Row(0)">
 					<control type="group">
 						<description>Top Right Corner Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleTopRightCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleTopRightCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="Container.Column(0) + [Container.Row(1) | Container.Row(2)]">
 					<control type="group">
 						<description>Left Edge Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleLeftEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleLeftEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="!Container.Row(0) + !Container.Row(3) + !Container.Column(0) + !Container.Column(4)">
 					<control type="group">
 						<description>Mid Row Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleMidRowFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleMidRowFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="Container.Column(4) + [Container.Row(1) | Container.Row(2)]">
 					<control type="group">
 						<description>Right Edge Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleRightEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleRightEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="Container.Column(0) + Container.Row(3)">
 					<control type="group">
 						<description>Bottom Left Corner Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleBottomLeftCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleBottomLeftCornerFocusAnim</include>
 					</control>
-				</focusedlayout>
+				</focusedlayout>				
 				<focusedlayout width="155" height="129" condition="!Container.Column(0) + !Container.Column(4) + Container.Row(3)">
 					<control type="group">
 						<description>Bottom Edge Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleBottomEdgeFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleBottomEdgeFocusAnim</include>
 					</control>
 				</focusedlayout>
 				<focusedlayout width="155" height="129" condition="Container.Column(4) + Container.Row(3)">
 					<control type="group">
 						<description>Bottom Right Corner Cover</description>
 						<include>WideThumbsStyleCoverImage</include>
-						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">WideThumbsStyleBottomRightCornerFocusAnim</include>
+						<include condition="!Skin.HasSetting(DisableThumbsInfoViewCoverFocusAnim)">WideThumbsStyleBottomRightCornerFocusAnim</include>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1125,8 +1257,19 @@
 			<include>ProgramsThumbsInfo3ViewScrollbar</include>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,595)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(595)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1144,10 +1287,10 @@
 						<label>$INFO[ListItem.Premiered]</label>
 					</control>
 				</control>
-			</control>
+			</control>	
 
 			<include>ViewsDialogPopUpScreenDim</include>
-		</control>
+		</control>		
 	</include>
 
 	<!-- COMMON -->
@@ -1156,40 +1299,136 @@
 		<include>ListInfo3MediaInfoPanelCommon</include>
 
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<include>ListInfo3PanelFanart</include>
-			
-			<include content="ThumbsInfoMediaInfoArea">
-				<param name="visible" value="true" />
-				<param name="Grouplist1LabelWidth" value="110" />
-				<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
-				<param name="Grouplist1InfoWidth" value="190" />
-				<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
-				<param name="Grouplist2LabelWidth" value="110" />
-				<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
-				<param name="Grouplist2InfoWidth" value="140" />
-				<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
-				<param name="Grouplist3LabelWidth" value="110" />
-				<param name="Grouplist3Label" value="$LOCALIZE[345]" />
-				<param name="Grouplist3InfoWidth" value="110" />
-				<param name="Grouplist3Info" value="$INFO[ListItem.Premiered]" />
-				<param name="Grouplist4LabelWidth" value="110" />
-				<param name="Grouplist4Label" value="$LOCALIZE[563]" />
-				<param name="Grouplist4InfoWidth" value="110" />
-				<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
-			</include>
-			
-			<include content="ThumbsInfoPlot">
-				<param name="fallback" value="31203" />
-				<param name="label" value="$INFO[ListItem.Plot]" />
-			</include>
+
+			<control type="group">
+				<description>Programs Info Area</description>
+				<posx>38</posx>
+				<posy>354</posy>
+
+				<control type="grouplist">
+					<description>Publisher</description>
+					<posx>10</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[32028]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="190">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Studio]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Platform</description>
+					<posx>10</posx>
+					<posy>22</posy>
+					<width>400</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[32027]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="140">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Writer]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Year</description>
+					<posx>268</posx>
+					<posy>0</posy>
+					<width>130</width>
+					<orientation>horizontal</orientation>
+					<align>right</align>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[345]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Premiered]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Rating</description>
+					<posx>268</posx>
+					<posy>22</posy>
+					<width>130</width>
+					<orientation>horizontal</orientation>
+					<align>right</align>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[563]:</label>
+					</control>
+					<control type="label">
+						<width min="0" max="110">auto</width>
+						<font>MediaInfoFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<aligny>top</aligny>
+						<label fallback="31001">$INFO[ListItem.Rating]</label>
+					</control>
+				</control>
+			</control>
+
+			<control type="textbox">
+				<description>Plot</description>
+				<posx>48</posx>
+				<posy>416</posy>
+				<width>388</width>
+				<height>191</height>
+				<font>MediaInfoDescFont</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>justify</align>
+				<label fallback="31203">$INFO[ListItem.Plot]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsThumbsInfoPlot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsThumbsInfoPlot) + !Container.OnNext + !Container.OnPrevious</visible>
+				<include>ControlsOpenCloseAnim</include>
+			</control>
 		</control>
 	</include>
 	<!--//// END THUMBS INFO VIEW /////////////////////////////////////////////////////////////////////-->
 
 	<!--//// START WRAP LIST INFO VIEW ////////////////////////////////////////////////////////////////-->
 	<include name="ProgramsWrapListInfoView">
-		<control type="group" id="500">
+		<control type="group" id="500">	
 			<defaultcontrol always="true">596</defaultcontrol>
 			<visible>Control.IsVisible(596)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -1197,12 +1436,23 @@
 			<control type="group" id="254">
 				<animation effect="slide" end="0,120" time="500" condition="Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)">Conditional</animation>
 				<include condition="Skin.String(ProgramsWrapListInfoStyle,1) | Skin.String(ProgramsWrapListInfoStyle,)">ProgramsWrapListInfoStyle1</include>
-				<include condition="Skin.String(ProgramsWrapListInfoStyle,2)">ProgramsWrapListInfoStyle2</include>
+				<include condition="Skin.String(ProgramsWrapListInfoStyle,2)">ProgramsWrapListInfoStyle2</include>	
+			</control>
+
+			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,596)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(596)</visible>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1213,7 +1463,7 @@
 	</include>
 
 	<include name="ProgramsWrapListInfoView2">
-		<control type="group" id="500">
+		<control type="group" id="500">	
 			<defaultcontrol always="true">597</defaultcontrol>
 			<visible>Control.IsVisible(597)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -1221,12 +1471,23 @@
 			<control type="group" id="254">
 				<animation effect="slide" end="0,120" time="500" condition="Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)">Conditional</animation>
 				<include condition="Skin.String(ProgramsWrapListInfo2Style,1) | Skin.String(ProgramsWrapListInfo2Style,)">ProgramsWrapListInfo2Style1</include>
-				<include condition="Skin.String(ProgramsWrapListInfo2Style,2)">ProgramsWrapListInfo2Style2</include>
+				<include condition="Skin.String(ProgramsWrapListInfo2Style,2)">ProgramsWrapListInfo2Style2</include>	
+			</control>
+
+			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,597)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(597)</visible>
 			</control>
 
 			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1237,7 +1498,7 @@
 	</include>
 
 	<include name="ProgramsWrapListInfoView3">
-		<control type="group" id="500">
+		<control type="group" id="500">	
 			<defaultcontrol always="true">598</defaultcontrol>
 			<visible>Control.IsVisible(598)</visible>
 			<include>MediaViewOpenCloseAnim</include>
@@ -1248,8 +1509,19 @@
 			</control>
 
 			<control type="group">
+				<posy>SortLetterOffsetY</posy>
+				<include>SortLetterNotification</include>
+			</control>
+
+			<control type="button" id="188">
+				<onfocus>Skin.SetString(CurrentViewMode,598)</onfocus>
+				<include>ViewOptionsHelperBtn</include>
+				<visible>Control.IsVisible(598)</visible>
+			</control>
+
+			<control type="group">
 				<description>Bottom Bar Area</description>
-				<top>BottomPaneOffsetY</top>
+				<posy>BottomPaneOffsetY</posy>	
 				<!--<include>InfoPaneImage</include>-->
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
@@ -1263,16 +1535,16 @@
 	<include name="ProgramsWrapListInfoStyle1">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>378</top>
+			<posy>378</posy>
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
-		</control>
+		</control>	
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>382</top>
+			<posx>492</posx>
+			<posy>382</posy>
 			<width>755</width>
 			<height>345</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -1281,8 +1553,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>41</left>
-			<top>382</top>
+			<posx>41</posx>
+			<posy>382</posy>
 			<width>600</width>
 			<height>345</height>
 			<texture>views/cover-glow.png</texture>
@@ -1292,44 +1564,45 @@
 		</control>
 
 		<control type="image">
-			<top>211</top>
-			<width>ScreenWidth</width>
-			<height>171</height>
+			<posx>0</posx>
+			<posy>211</posy>
+			<width>1280</width>
+			<height>171</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>211</top>
+			<posx>485</posx>
+			<posy>211</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<label>$INFO[ListItem.Label]</label>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<aligny>center</aligny>
-			<scroll>true</scroll>
+			<scroll>yes</scroll>
 		</control>
 
 		<control type="image">
-			<top>244</top>
-			<width>ScreenWidth</width>
+			<posx>0</posx>
+			<posy>244</posy>
+			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>
-		</control>
+		</control>	
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<depth>DepthContent+</depth>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<control type="label">
 				<description>Platform</description>
 				<width min="0" max="110">auto</width>
@@ -1371,33 +1644,33 @@
 		</control>
 
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
-			<depth>DepthContent+</depth>
+			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>507</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
-				<height>123</height>
+				<height>125</height>
 				<font>MediaInfoDescFont</font>
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<label fallback="31203">$INFO[ListItem.Plot]</label>
 				<wrapmultiline>true</wrapmultiline>
-				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsWrapListInfoPlot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsWrapListInfoPlot) + !Container.OnNext + !Container.OnPrevious</visible>
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
 			<control type="group">
-				<left>239</left>
-				<top>520</top>
+				<posx>239</posx>
+				<posy>520</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>204</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -1409,9 +1682,9 @@
 		</control>
 
 		<control type="wraplist" id="596">
-			<viewtype label="31106">bigwrap</viewtype>
-			<left>-38</left>
-			<top>244</top>
+			<viewtype label="31106">Wrap Info</viewtype>
+			<posx>-38</posx>
+			<posy>244</posy>
 			<width>1350</width>
 			<height>330</height>
 			<focusposition>2</focusposition>
@@ -1420,10 +1693,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(926) | Control.IsVisible(976)">150</ondown>
-			<ondown condition="![Control.IsVisible(926) | Control.IsVisible(976)]">ActivateWindow(1122)</ondown>
-			<oninfo>ActivateWindow(1122)</oninfo>
-			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+			<ondown condition="Control.IsVisible(926)">150</ondown>
+			<ondown condition="!Control.IsVisible(926)">ActivateWindow(1122)</ondown>
+			<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="150">
 				<control type="image">
 					<description>Cover Case</description>
@@ -1447,8 +1719,8 @@
 					<texture>dim.png</texture>
 					<bordersize>9</bordersize>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>		
 				<control type="image">
 					<description>Default Cover</description>
 					<width>155</width>
@@ -1456,13 +1728,13 @@
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<bordersize>12</bordersize>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
-				</control>
+				</control>	
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>211</top>
+					<posx>4</posx>
+					<posy>211</posy>
 					<width>147</width>
 					<height>214</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1471,10 +1743,9 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>
+			</itemlayout>    
 			<focusedlayout width="150">
 				<control type="group">
-					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -1499,8 +1770,8 @@
 						<texture>dim.png</texture>
 						<bordersize>10</bordersize>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>		
 					<control type="image">
 						<description>Default Cover</description>
 						<width>155</width>
@@ -1508,12 +1779,12 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>12</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>211</top>
+						<posx>4</posx>
+						<posy>211</posy>
 						<width>147</width>
 						<height>214</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1523,19 +1794,16 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 					</control>
 				</control>
-			</focusedlayout>
+			</focusedlayout>                    
 		</control>
 
-		<control type="group">
-			<depth>DepthContent+</depth>
-			<include>ProgramsWrapInfoViewScrollbar</include>
-		</control>
+		<include>ProgramsWrapInfoViewScrollbar</include>
 	</include>
 
-	<include name="ProgramsWrapListInfoStyle2">
+	<include name="ProgramsWrapListInfoStyle2">			
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>345</top>
+			<posy>345</posy>
 			<width>ScreenWidth</width>
 			<height>380</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -1543,8 +1811,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>349</top>
+			<posx>492</posx>
+			<posy>349</posy>
 			<width>755</width>
 			<height>415</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -1553,8 +1821,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>-52</left>
-			<top>334</top>
+			<posx>-52</posx>
+			<posy>334</posy>
 			<width>744</width>
 			<height>415</height>
 			<texture>views/cover-glow.png</texture>
@@ -1564,44 +1832,45 @@
 		</control>
 
 		<control type="image">
-			<top>137</top>
-			<width>ScreenWidth</width>
-			<height>212</height>
+			<posx>0</posx>
+			<posy>137</posy>
+			<width>1280</width>
+			<height>212</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>137</top>
+			<posx>485</posx>
+			<posy>137</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<label>$INFO[ListItem.Label]</label>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<aligny>center</aligny>
-			<scroll>true</scroll>
+			<scroll>yes</scroll>
 		</control>
 
 		<control type="image">
-			<top>170</top>
-			<width>ScreenWidth</width>
+			<posx>0</posx>
+			<posy>170</posy>
+			<width>1280</width>
 			<height>2</height>
-			<texture>panels/panel-separator.png</texture>
+			<texture>panels/panel-separator.png</texture>				
 		</control>
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<depth>DepthContent+</depth>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<control type="label">
 				<description>Platform</description>
 				<width min="0" max="110">auto</width>
@@ -1643,33 +1912,33 @@
 		</control>
 
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
-			<depth>DepthContent+</depth>
+			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>507</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
-				<height>123</height>
+				<height>125</height>
 				<font>MediaInfoDescFont</font>
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<label fallback="31203">$INFO[ListItem.Plot]</label>
 				<wrapmultiline>true</wrapmultiline>
-				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsWrapListInfoPlot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsWrapListInfoPlot) + !Container.OnNext + !Container.OnPrevious</visible>
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
 			<control type="group">
-				<left>188</left>
-				<top>520</top>
+				<posx>188</posx>
+				<posy>520</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>268</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -1681,10 +1950,10 @@
 		</control>
 
 		<control type="wraplist" id="596">
-			<viewtype label="31106">bigwrap</viewtype>
-			<left>-3</left>
-			<top>170</top>
-			<width>ScreenWidth</width>
+			<viewtype label="31106">Wrap Info</viewtype>
+			<posx>-3</posx>
+			<posy>170</posy>
+			<width>1280</width>
 			<height>470</height>
 			<focusposition>1</focusposition>
 			<pagecontrol>926</pagecontrol>
@@ -1692,10 +1961,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">500</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(926) | Control.IsVisible(976)">150</ondown>
-			<ondown condition="![Control.IsVisible(926) | Control.IsVisible(976)]">ActivateWindow(1122)</ondown>
-			<oninfo>ActivateWindow(1122)</oninfo>
-			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+			<ondown condition="Control.IsVisible(926)">150</ondown>
+			<ondown condition="!Control.IsVisible(926)">ActivateWindow(1122)</ondown>
+			<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="214">
 				<control type="image">
 					<description>Cover Case</description>
@@ -1703,7 +1971,7 @@
 					<height>288</height>
 					<texture border="7">covers/cover-case-nofocus.png</texture>
 					<aspectratio>stretch</aspectratio>
-				</control>
+				</control>				
 				<control type="image">
 					<description>Cover</description>
 					<width>214</width>
@@ -1711,7 +1979,7 @@
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<bordersize>12</bordersize>
 					<aspectratio>stretch</aspectratio>
-				</control>
+				</control>			
 				<control type="image">
 					<description>Default Cover Background</description>
 					<width>214</width>
@@ -1719,8 +1987,8 @@
 					<texture>dim.png</texture>
 					<bordersize>12</bordersize>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>				
 				<control type="image">
 					<description>Default Cover</description>
 					<width>214</width>
@@ -1729,12 +1997,12 @@
 					<bordersize>20</bordersize>
 					<aspectratio>keep</aspectratio>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>			
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>285</top>
+					<posx>4</posx>
+					<posy>285</posy>
 					<width>206</width>
 					<height>288</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1743,10 +2011,9 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>
+			</itemlayout>    
 			<focusedlayout width="214">
 				<control type="group">
-					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
 					<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -1763,7 +2030,7 @@
 						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<bordersize>12</bordersize>
 						<aspectratio>stretch</aspectratio>
-					</control>
+					</control>			
 					<control type="image">
 						<description>Default Cover Background</description>
 						<width>214</width>
@@ -1771,7 +2038,7 @@
 						<texture>dim.png</texture>
 						<bordersize>12</bordersize>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -1780,12 +2047,12 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>20</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>			
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>285</top>
+						<posx>4</posx>
+						<posy>285</posy>
 						<width>206</width>
 						<height>288</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -1796,8 +2063,8 @@
 					</control>
 					<control type="image">
 						<description>Overlay</description>
-						<left>161</left>
-						<top>235</top>
+						<posx>161</posx>
+						<posy>235</posy>
 						<width>26</width>
 						<height>26</height>
 						<texture background="true">$INFO[ListItem.Overlay]</texture>
@@ -1805,29 +2072,26 @@
 						<visible>!Skin.HasSetting(HideMoviesWrapListInfoOverlay)</visible>
 					</control>
 				</control>
-			</focusedlayout>
+			</focusedlayout>                    
 		</control>
 
-		<control type="group">
-			<depth>DepthContent+</depth>
-			<include>ProgramsWrapInfoViewScrollbar</include>
-		</control>
+		<include>ProgramsWrapInfoViewScrollbar</include>
 	</include>
 
 	<!-- WRAP INFO 2 -->
 	<include name="ProgramsWrapListInfo2Style1">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>397</top>
+			<posy>397</posy>
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
-		</control>
+		</control>	
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>401</top>
+			<posx>492</posx>
+			<posy>401</posy>
 			<width>755</width>
 			<height>326</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -1836,8 +2100,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>41</left>
-			<top>401</top>
+			<posx>41</posx>
+			<posy>401</posy>
 			<width>600</width>
 			<height>326</height>
 			<texture>views/cover-glow.png</texture>
@@ -1847,44 +2111,45 @@
 		</control>
 
 		<control type="image">
-			<top>270</top>
-			<width>ScreenWidth</width>
-			<height>131</height>
+			<posx>0</posx>
+			<posy>270</posy>
+			<width>1280</width>
+			<height>131</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>270</top>
+			<posx>485</posx>
+			<posy>270</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<label>$INFO[ListItem.Label]</label>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<aligny>center</aligny>
-			<scroll>true</scroll>
+			<scroll>yes</scroll>
 		</control>
 
 		<control type="image">
-			<top>303</top>
-			<width>ScreenWidth</width>
+			<posx>0</posx>
+			<posy>303</posy>
+			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>
 		</control>
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<depth>DepthContent+</depth>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<control type="label">
 				<description>Platform</description>
 				<width min="0" max="110">auto</width>
@@ -1926,33 +2191,33 @@
 		</control>
 
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)</visible>
-			<depth>DepthContent+</depth>
+			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)</visible>
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>507</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
-				<height>123</height>
+				<height>125</height>
 				<font>MediaInfoDescFont</font>
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<label fallback="31203">$INFO[ListItem.Plot]</label>
 				<wrapmultiline>true</wrapmultiline>
-				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsWrapListInfo2Plot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsWrapListInfo2Plot) + !Container.OnNext + !Container.OnPrevious</visible>
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
 			<control type="group">
-				<left>239</left>
-				<top>500</top>
+				<posx>239</posx>
+				<posy>500</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>204</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -1964,9 +2229,9 @@
 		</control>
 
 		<control type="wraplist" id="597">
-			<viewtype label="31117">bigwrap</viewtype>
-			<left>-38</left>
-			<top>303</top>
+			<viewtype label="31117">Wrap Info</viewtype>
+			<posx>-38</posx>
+			<posy>303</posy>
 			<width>1350</width>
 			<height>330</height>
 			<focusposition>2</focusposition>
@@ -1975,10 +2240,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(927) | Control.IsVisible(977)">150</ondown>
-			<ondown condition="![Control.IsVisible(927) | Control.IsVisible(977)]">ActivateWindow(1122)</ondown>
-			<oninfo>ActivateWindow(1122)</oninfo>
-			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+			<ondown condition="Control.IsVisible(927)">150</ondown>
+			<ondown condition="!Control.IsVisible(927)">ActivateWindow(1122)</ondown>
+			<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="150">
 				<control type="image">
 					<description>Cover Case</description>
@@ -2002,8 +2266,8 @@
 					<texture>dim.png</texture>
 					<bordersize>9</bordersize>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>		
 				<control type="image">
 					<description>Default Cover</description>
 					<width>155</width>
@@ -2011,13 +2275,13 @@
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<bordersize>22</bordersize>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
-				</control>
+				</control>	
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>152</top>
+					<posx>4</posx>
+					<posy>152</posy>
 					<width>147</width>
 					<height>155</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2026,10 +2290,9 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>
+			</itemlayout>    
 			<focusedlayout width="150">
 				<control type="group">
-					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -2054,8 +2317,8 @@
 						<texture>dim.png</texture>
 						<bordersize>10</bordersize>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>		
 					<control type="image">
 						<description>Default Cover</description>
 						<width>155</width>
@@ -2063,12 +2326,12 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>22</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>152</top>
+						<posx>4</posx>
+						<posy>152</posy>
 						<width>147</width>
 						<height>155</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2078,19 +2341,16 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 					</control>
 				</control>
-			</focusedlayout>
+			</focusedlayout>                    
 		</control>
 
-		<control type="group">
-			<depth>DepthContent+</depth>
-			<include>ProgramsWrapInfo2ViewScrollbar</include>
-		</control>
+		<include>ProgramsWrapInfo2ViewScrollbar</include>
 	</include>
 
 	<include name="ProgramsWrapListInfo2Style2">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>372</top>
+			<posy>372</posy>
 			<width>ScreenWidth</width>
 			<height>353</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
@@ -2098,8 +2358,8 @@
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>376</top>
+			<posx>492</posx>
+			<posy>376</posy>
 			<width>755</width>
 			<height>388</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -2108,8 +2368,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>-52</left>
-			<top>360</top>
+			<posx>-52</posx>
+			<posy>360</posy>
 			<width>744</width>
 			<height>388</height>
 			<texture>views/cover-glow.png</texture>
@@ -2119,44 +2379,45 @@
 		</control>
 
 		<control type="image">
-			<top>209</top>
-			<width>ScreenWidth</width>
-			<height>167</height>
+			<posx>0</posx>
+			<posy>209</posy>
+			<width>1280</width>
+			<height>167</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>209</top>
+			<posx>485</posx>
+			<posy>209</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<label>$INFO[ListItem.Label]</label>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<aligny>center</aligny>
-			<scroll>true</scroll>
+			<scroll>yes</scroll>
 		</control>
 
 		<control type="image">
-			<top>242</top>
-			<width>ScreenWidth</width>
+			<posx>0</posx>
+			<posy>242</posy>
+			<width>1280</width>
 			<height>2</height>
-			<texture>panels/panel-separator.png</texture>
+			<texture>panels/panel-separator.png</texture>				
 		</control>
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<depth>DepthContent+</depth>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<control type="label">
 				<description>Platform</description>
 				<width min="0" max="110">auto</width>
@@ -2198,33 +2459,33 @@
 		</control>
 
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)</visible>
-			<depth>DepthContent+</depth>
+			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo2CompactMode)</visible>
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>507</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
-				<height>123</height>
+				<height>125</height>
 				<font>MediaInfoDescFont</font>
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<label fallback="31203">$INFO[ListItem.Plot]</label>
 				<wrapmultiline>true</wrapmultiline>
-				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsWrapListInfo2Plot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsWrapListInfo2Plot) + !Container.OnNext + !Container.OnPrevious</visible>
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
 			<control type="group">
-				<left>188</left>
-				<top>500</top>
+				<posx>188</posx>
+				<posy>500</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>268</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -2236,10 +2497,10 @@
 		</control>
 
 		<control type="wraplist" id="597">
-			<viewtype label="31117">bigwrap</viewtype>
-			<left>-3</left>
-			<top>242</top>
-			<width>ScreenWidth</width>
+			<viewtype label="31117">Wrap Info</viewtype>
+			<posx>-3</posx>
+			<posy>242</posy>
+			<width>1280</width>
 			<height>470</height>
 			<focusposition>1</focusposition>
 			<pagecontrol>927</pagecontrol>
@@ -2247,10 +2508,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">500</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(927) | Control.IsVisible(977)">150</ondown>
-			<ondown condition="![Control.IsVisible(927) | Control.IsVisible(977)]">ActivateWindow(1122)</ondown>
-			<oninfo>ActivateWindow(1122)</oninfo>
-			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+			<ondown condition="Control.IsVisible(927)">150</ondown>
+			<ondown condition="!Control.IsVisible(927)">ActivateWindow(1122)</ondown>
+			<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="214">
 				<control type="image">
 					<description>Cover Case</description>
@@ -2258,7 +2518,7 @@
 					<height>214</height>
 					<texture border="7">covers/cover-case-nofocus.png</texture>
 					<aspectratio>stretch</aspectratio>
-				</control>
+				</control>				
 				<control type="image">
 					<description>Cover</description>
 					<width>214</width>
@@ -2266,7 +2526,7 @@
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<bordersize>12</bordersize>
 					<aspectratio>stretch</aspectratio>
-				</control>
+				</control>			
 				<control type="image">
 					<description>Default Cover Background</description>
 					<width>214</width>
@@ -2274,8 +2534,8 @@
 					<texture>dim.png</texture>
 					<bordersize>12</bordersize>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>				
 				<control type="image">
 					<description>Default Cover</description>
 					<width>214</width>
@@ -2284,12 +2544,12 @@
 					<bordersize>30</bordersize>
 					<aspectratio>keep</aspectratio>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>			
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>211</top>
+					<posx>4</posx>
+					<posy>211</posy>
 					<width>206</width>
 					<height>214</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2298,10 +2558,9 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>
+			</itemlayout>    
 			<focusedlayout width="214">
 				<control type="group">
-					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
 					<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -2318,7 +2577,7 @@
 						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<bordersize>12</bordersize>
 						<aspectratio>stretch</aspectratio>
-					</control>
+					</control>			
 					<control type="image">
 						<description>Default Cover Background</description>
 						<width>214</width>
@@ -2326,7 +2585,7 @@
 						<texture>dim.png</texture>
 						<bordersize>12</bordersize>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
 						<description>Default Cover</description>
@@ -2335,12 +2594,12 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>30</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>			
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>211</top>
+						<posx>4</posx>
+						<posy>211</posy>
 						<width>206</width>
 						<height>214</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2350,29 +2609,26 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 					</control>
 				</control>
-			</focusedlayout>
+			</focusedlayout>                    
 		</control>
 
-		<control type="group">
-			<depth>DepthContent+</depth>
-			<include>ProgramsWrapInfo2ViewScrollbar</include>
-		</control>
+		<include>ProgramsWrapInfo2ViewScrollbar</include>
 	</include>
 
 	<!-- WRAP INFO 3 -->
 	<include name="ProgramsWrapListInfo3Style1">
 		<control type="image">
 			<description>Bottom Pane Background</description>
-			<top>397</top>
+			<posy>397</posy>
 			<width>ScreenWidth</width>
 			<height>347</height>
 			<texture border="0,6,0,0">gui/bottom-info-background.png</texture>
-		</control>
+		</control>	
 
 		<control type="image">
 			<description>Background Glow</description>
-			<left>492</left>
-			<top>401</top>
+			<posx>492</posx>
+			<posy>401</posy>
 			<width>755</width>
 			<height>326</height>
 			<texture flipy="true">gui/background-glow.png</texture>
@@ -2381,8 +2637,8 @@
 
 		<control type="image">
 			<description>Cover Glow</description>
-			<left>-111</left>
-			<top>401</top>
+			<posx>-111</posx>
+			<posy>401</posy>
 			<width>803</width>
 			<height>326</height>
 			<texture>views/cover-glow.png</texture>
@@ -2392,44 +2648,45 @@
 		</control>
 
 		<control type="image">
-			<top>270</top>
-			<width>ScreenWidth</width>
-			<height>131</height>
+			<posx>0</posx>
+			<posy>270</posy>
+			<width>1280</width>
+			<height>131</height>	
 			<texture border="0,0,0,2">views/wrap-list-header.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 
 		<control type="label">
 			<description>Title</description>
-			<left>485</left>
-			<top>270</top>
+			<posx>485</posx>
+			<posy>270</posy>
 			<width>765</width>
 			<height>33</height>
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
 			<label>$INFO[ListItem.Label]</label>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<aligny>center</aligny>
-			<scroll>true</scroll>
+			<scroll>yes</scroll>
 		</control>
 
 		<control type="image">
-			<top>303</top>
-			<width>ScreenWidth</width>
+			<posx>0</posx>
+			<posy>303</posy>
+			<width>1280</width>
 			<height>2</height>
 			<texture>panels/panel-separator.png</texture>
 		</control>
 
 		<control type="grouplist">
 			<description>Programs Info</description>
-			<depth>DepthContent+</depth>
-			<left>485</left>
-			<top>472</top>
+			<posx>485</posx>
+			<posy>472</posy>
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<visible>!IsEmpty(ListItem.Title)</visible>
 			<control type="label">
 				<description>Platform</description>
 				<width min="0" max="110">auto</width>
@@ -2471,33 +2728,33 @@
 		</control>
 
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo3CompactMode)</visible>
-			<depth>DepthContent+</depth>
+			<visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfo3CompactMode)</visible>
 
 			<control type="textbox">
 				<description>Plot</description>
-				<left>485</left>
-				<top>507</top>
+				<posx>485</posx>
+				<posy>505</posy>
 				<width>765</width>
-				<height>123</height>
+				<height>125</height>
 				<font>MediaInfoDescFont</font>
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
 				<label fallback="31203">$INFO[ListItem.Plot]</label>
 				<wrapmultiline>true</wrapmultiline>
-				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
-				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollProgramsWrapListInfo3Plot)</autoscroll>
+				<visible>!Skin.HasSetting(HideProgramsWrapListInfo3Plot) + !Container.OnNext + !Container.OnPrevious</visible>
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
 			<control type="group">
-				<left>161</left>
-				<top>500</top>
+				<posx>161</posx>
+				<posy>500</posy>
 
 				<control type="label">
 					<description>Genre</description>
-					<top>10</top>
+					<posx>0</posx>
+					<posy>10</posy>
 					<width>282</width>
 					<font>MediaInfoFont2</font>
 					<textcolor>WhiteColor</textcolor>
@@ -2509,9 +2766,9 @@
 		</control>
 
 		<control type="wraplist" id="598">
-			<viewtype label="31118">bigwrap</viewtype>
-			<left>-32</left>
-			<top>303</top>
+			<viewtype label="31118">Wrap Info</viewtype>
+			<posx>-32</posx>
+			<posy>303</posy>
 			<width>1350</width>
 			<height>330</height>
 			<focusposition>1</focusposition>
@@ -2520,10 +2777,9 @@
 			<preloaditems>4</preloaditems>
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
-			<ondown condition="Control.IsVisible(928) | Control.IsVisible(978)">150</ondown>
-			<ondown condition="![Control.IsVisible(928) | Control.IsVisible(978)]">ActivateWindow(1122)</ondown>
-			<oninfo>ActivateWindow(1122)</oninfo>
-			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+			<ondown condition="Control.IsVisible(928)">150</ondown>
+			<ondown condition="!Control.IsVisible(928)">ActivateWindow(1122)</ondown>
+			<visible>Substring(Container.FolderPath,plugin://plugin.program)</visible>
 			<itemlayout width="209">
 				<control type="image">
 					<description>Cover Case</description>
@@ -2547,8 +2803,8 @@
 					<texture>dim.png</texture>
 					<bordersize>9</bordersize>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+				</control>		
 				<control type="image">
 					<description>Default Cover</description>
 					<width>214</width>
@@ -2556,13 +2812,13 @@
 					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 					<bordersize>22</bordersize>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+					<visible>IsEmpty(ListItem.Thumb)</visible>
 					<animation effect="fade" end="30" condition="true">Conditional</animation>
-				</control>
+				</control>	
 				<control type="image">
 					<description>Reflection</description>
-					<left>4</left>
-					<top>152</top>
+					<posx>4</posx>
+					<posy>152</posy>
 					<width>206</width>
 					<height>155</height>
 					<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2571,10 +2827,9 @@
 					<aspectratio>stretch</aspectratio>
 					<animation effect="fade" end="70" condition="true">Conditional</animation>
 				</control>
-			</itemlayout>
+			</itemlayout>    
 			<focusedlayout width="209">
 				<control type="group">
-					<depth>DepthContent+</depth>
 					<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
 					<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
 					<control type="image">
@@ -2599,8 +2854,8 @@
 						<texture>dim.png</texture>
 						<bordersize>10</bordersize>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
-					</control>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+					</control>		
 					<control type="image">
 						<description>Default Cover</description>
 						<width>214</width>
@@ -2608,12 +2863,12 @@
 						<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 						<bordersize>22</bordersize>
 						<aspectratio>keep</aspectratio>
-						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+						<visible>IsEmpty(ListItem.Thumb)</visible>
 					</control>
 					<control type="image">
 						<description>Reflection</description>
-						<left>4</left>
-						<top>152</top>
+						<posx>4</posx>
+						<posy>152</posy>
 						<width>206</width>
 						<height>155</height>
 						<texture flipy="true" diffuse="views/reflection.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -2623,13 +2878,10 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 					</control>
 				</control>
-			</focusedlayout>
+			</focusedlayout>                    
 		</control>
 
-		<control type="group">
-			<depth>DepthContent+</depth>
-			<include>ProgramsWrapInfo3ViewScrollbar</include>
-		</control>
+		<include>ProgramsWrapInfo3ViewScrollbar</include>
 	</include>
 	<!--//// END WRAP LIST INFO VIEW //////////////////////////////////////////////////////////////////-->
 </includes>

@@ -1,301 +1,590 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <window id="2003">
 	<defaultcontrol always="true">500</defaultcontrol>
-	<menucontrol>850</menucontrol>
-	
+	<allowoverlay>yes</allowoverlay>
+	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.TuesdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.WednesdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.ThursdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.FridayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.SaturdayList,Home)</onload>
+	<onload>ClearProperty(TVGuide.SundayList,Home)</onload>
 	<controls>
+
 		<control type="group">
-			<depth>DepthBackground</depth>
 			<include>BackgroundDefault</include>
-			<include condition="[[!String.IsEmpty(Skin.String(CustomTVShowsBGPath)) + [Skin.String(CustomTVShowsBGType,2) | Skin.String(CustomTVShowsBGType,3)]] 
-			| Skin.String(CustomTVShowsBGType,4)] + Skin.HasSetting(ApplyAllTVShowsCustomBG)">BackgroundTVShows</include>
-			<control type="group">
-				<visible>!String.IsEmpty(Window(Home).Property(TVGuide.BackgroundFanart)) + !String.IsEmpty(Container.ListItem.Property(Fanart))</visible>
-				<animation effect="fade" time="600">VisibleChange</animation>
-				<control type="image">
-					<include>BackgroundSize</include>
-					<texture background="true">$INFO[Container.ListItem.Property(Fanart)]</texture>
-					<aspectratio>scale</aspectratio>
-					<fadetime>FanartCrossfadeTime</fadetime>
-					<include condition="Skin.HasSetting(AnimateFanart)">BackgroundAnim</include>
-				</control>
-				<control type="image">
-					<include>BackgroundDim</include>
-					<include>FanartBrightnessAnimations</include>
-				</control>
-			</control>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
+			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
 			<include>BackgroundOpenCloseAnim</include>
 		</control>
 		
-		<control type="group">
-			<depth>DepthContent</depth>
-			
-			<control type="image">
-				<left>30</left>
-				<top>106</top>
-				<width>1220</width>
-				<height>540</height>
-				<texture border="7">panels/content-panel.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<include>PanelFadeAnim</include>
-				<include>ControlsOpenCloseAnim</include>
-			</control>
+		<include>ViewContentPanel</include>
 
-			<control type="grouplist" id="500">
-				<description>Guide Area</description>
-				<left>39</left>
-				<top>115</top>
-				<width>852</width>
-				<height>525</height>
-				<orientation>horizontal</orientation>
-				<itemgap>2</itemgap>
-				<include>ControlsOpenCloseAnim</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Monday Area" />
-					<param name="id" value="200" />
-					<param name="onleft" value="206" />
-					<param name="onright" value="201" />
-				</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Tuesday Area" />
-					<param name="id" value="201" />
-					<param name="onleft" value="200" />
-					<param name="onright" value="202" />
-				</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Wednesday Area" />
-					<param name="id" value="202" />
-					<param name="onleft" value="201" />
-					<param name="onright" value="203" />
-				</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Thursday Area" />
-					<param name="id" value="203" />
-					<param name="onleft" value="202" />
-					<param name="onright" value="204" />
-				</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Friday Area" />
-					<param name="id" value="204" />
-					<param name="onleft" value="203" />
-					<param name="onright" value="205" />
-				</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Saturday Area" />
-					<param name="id" value="205" />
-					<param name="onleft" value="204" />
-					<param name="onright" value="206" />
-				</include>
-				
-				<include content="NextAiredDayArea">
-					<param name="description" value="Sunday Area" />
-					<param name="id" value="206" />
-					<param name="onleft" value="205" />
-					<param name="onright" value="200" />
-				</include>
+		<control type="group" id="500">
+			<description>Guide Area</description>
+			<posx>55</posx>
+			<posy>110</posy>
+			<include>ControlsOpenCloseAnim</include>
+
+			<control type="group">
+				<description>Monday Area</description>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Monday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[41]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.1.Date)]</label>
+				</control>
+
+				<control type="list" id="200">
+					<description>Monday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>SetProperty(TVGuide.MondayList,1,Home)</onup>
+					<onup>850</onup>
+					<ondown>201</ondown>
+					<onleft>206</onleft>
+					<onright>201</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[41])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[41])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(200)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[41])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[41])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
 			</control>
 
 			<control type="group">
-				<description>Info Area</description>
-				<left>901</left>
-				<top>115</top>
-				
-				<control type="image">
-					<description>Content Background</description>
-					<left>-5</left>
-					<top>-5</top>
-					<width>350</width>
-					<height>532</height>
-					<texture border="4">panels/panel-content-border2.png</texture>
-					<include>ListInfoViewContentBackgroundFadeAnim</include>
+				<description>Tuesday Area</description>
+				<posx>122</posx>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Tuesday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[42]</label>
 				</control>
-				
-				<control type="group">
-					<visible>!String.IsEmpty(Container.ListItem.Label)</visible>
-					<include>ControlsOpenCloseAnim</include>
-				
-					<control type="image">
-						<description>Title Background</description>
-						<width>340</width>
-						<height>55</height>
-						<texture border="4">panels/panel3.png</texture>
-						<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-					</control>
-					
-					<control type="image">
-						<description>Info Background</description>
-						<top>256</top>
-						<width>340</width>
-						<height>266</height>
-						<texture border="4">panels/panel3.png</texture>
-						<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
-					</control>
 
-					<control type="image">
-						<top>262</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>294</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>326</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>358</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>390</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>422</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>454</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
-					<control type="image">
-						<top>486</top>
-						<left>2</left>
-						<include>NextAiredInfoImage</include>
-					</control>
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.2.Date)]</label>
+				</control>
 
-					<control type="label">
-						<description>Title</description>
-						<include>NextAiredTitleLabel</include>
-						<label>$INFO[Container.ListItem.Label]</label>
-						<visible>String.IsEmpty(Container.ListItem.Property(Art(clearlogo)))</visible>
-					</control>
-					
-					<control type="image">
-						<description>Clear logo</description>
-						<top>1</top>
-						<width>340</width>
-						<height>53</height>
-						<texture background="true">$INFO[Container.ListItem.Property(Art(clearlogo))]</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<fadetime>FanartCrossfadeTime</fadetime>
-						<visible>!String.IsEmpty(Container.ListItem.Property(Art(clearlogo)))</visible>
-					</control>
-					
-					<control type="image">
-						<description>Fanart</description>
-						<top>60</top>
-						<width>340</width>
-						<height>191</height>
-						<texture background="true" diffuse="covers/list-info-3-fanart-diffuse.png">$INFO[Container.ListItem.Property(Fanart)]</texture>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<fadetime>FanartCrossfadeTime</fadetime>
-						<visible>!String.IsEmpty(Container.ListItem.Property(Fanart))</visible>
-					</control>
+				<control type="list" id="201">
+					<description>Tuesday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>200</onup>
+					<ondown>202</ondown>
+					<onleft>200</onleft>
+					<onright>202</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[42])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[42])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(201)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[42])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[42])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>		
+			</control>
 
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Episode Title" />
-						<param name="top" value="262" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[369]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(NextTitle)]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Episode" />
-						<param name="top" value="294" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[20359]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(NextSeasonNumber),S,]$INFO[Container.ListItem.Property(NextEpisodeNumber),E,]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Runtime" />
-						<param name="top" value="326" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[2050]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(Runtime),, $LOCALIZE[12391]]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Latest Episode" />
-						<param name="top" value="358" />
-						<param name="labelwidth" value="150" />
-						<param name="label" value="$LOCALIZE[31966]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(LatestSeasonNumber),S,]$INFO[Container.ListItem.Property(LatestEpisodeNumber),E,]$INFO[Container.ListItem.Property(LatestDate), (,)]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Status" />
-						<param name="top" value="390" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[126]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(Status)]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Genre" />
-						<param name="top" value="422" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[515]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(Genre)]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Network" />
-						<param name="top" value="454" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[705]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(Network)]" />
-					</include>
-					
-					<include content="NextAiredInfoGrouplist">
-						<param name="description" value="Country" />
-						<param name="top" value="486" />
-						<param name="labelwidth" value="110" />
-						<param name="label" value="$LOCALIZE[574]:" />
-						<param name="info" value="$INFO[Container.ListItem.Property(Country)]" />
-					</include>
+			<control type="group">
+				<description>Wednesday Area</description>
+				<posx>244</posx>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Wednesday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[43]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.3.Date)]</label>
+				</control>
+
+				<control type="list" id="202">
+					<description>Wednesday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>201</onup>
+					<ondown>203</ondown>
+					<onleft>201</onleft>
+					<onright>203</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[43])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[43])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(202)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[43])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[43])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>		
+			</control>
+
+			<control type="group">
+				<description>Thursday Area</description>
+				<posx>366</posx>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Thursday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[44]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.4.Date)]</label>
+				</control>
+
+				<control type="list" id="203">
+					<description>Thursday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>202</onup>
+					<ondown>204</ondown>
+					<onleft>202</onleft>
+					<onright>204</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[44])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[44])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(203)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[44])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[44])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>		
+			</control>
+
+			<control type="group">
+				<description>Friday Area</description>
+				<posx>488</posx>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Friday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[45]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.5.Date)]</label>
+				</control>
+
+				<control type="list" id="204">
+					<description>Friday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>203</onup>
+					<ondown>205</ondown>
+					<onleft>203</onleft>
+					<onright>205</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[45])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[45])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(204)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[45])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[45])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>		
+			</control>
+
+			<control type="group">
+				<description>Saturday Area</description>
+				<posx>610</posx>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Saturday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[46]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.6.Date)]</label>
+				</control>
+
+				<control type="list" id="205">
+					<description>Saturday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>204</onup>
+					<ondown>206</ondown>
+					<onleft>204</onleft>
+					<onright>206</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[46])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[46])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(205)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[46])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[46])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
+				</control>
+			</control>
+
+			<control type="group">
+				<description>Sunday Area</description>
+				<posx>732</posx>
+
+				<include>NextAiredHeaderImage</include>
+				<include>NextAiredColumnLayout</include>
+
+				<control type="label">
+					<description>Sunday</description>
+					<include>NextAiredDayLabel</include>
+					<label>$LOCALIZE[47]</label>
+				</control>
+
+				<control type="label">
+					<description>Date</description>
+					<include>NextAiredDateLabel</include>
+					<label>$INFO[Window(Home).Property(NextAired.7.Date)]</label>
+				</control>
+
+				<control type="list" id="206">
+					<description>Sunday list</description>
+					<posy>55</posy>
+					<width>120</width>
+					<height>465</height>
+					<orientation>vertical</orientation>
+					<scrolltime>0</scrolltime>
+					<onup>205</onup>
+					<ondown>200</ondown>
+					<onleft>205</onleft>
+					<onright>200</onright>
+					<itemlayout height="116" width="120">
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[47])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[47])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</itemlayout>
+					<focusedlayout height="116" width="120">
+						<control type="image">
+							<include>NextAiredItemImage</include>
+							<visible>Control.HasFocus(206)</visible>
+						</control>
+						<include condition="!stringcompare(System.Date(ddd),$LOCALIZE[47])">NextAiredTimeLabel</include>
+						<include condition="stringcompare(System.Date(ddd),$LOCALIZE[47])">NextAiredTimeLabel2</include>
+						<include>NextAiredItemLayout</include>
+					</focusedlayout>
 				</control>
 			</control>
 		</control>
 
-		<include>NextAiredMenuBar</include>
+		<control type="group">
+			<description>Info Area</description>
+			<posx>928</posx>
+			<posy>110</posy>
+			<include>ControlsOpenCloseAnim</include>
+
+			<include>NextAiredHeaderInfoImage</include>
+
+			<control type="image">
+				<posy>12</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>229</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>261</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>293</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>325</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>357</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>389</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>421</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>453</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+			<control type="image">
+				<posy>485</posy>
+				<include>NextAiredInfoImage</include>
+			</control>
+
+			<control type="group">
+				<visible>[Control.HasFocus(200) + !IsEmpty(Container(200).ListItem.Label)]
+				| [Control.HasFocus(201) + !IsEmpty(Container(201).ListItem.Label)]
+				| [Control.HasFocus(202) + !IsEmpty(Container(202).ListItem.Label)]
+				| [Control.HasFocus(203) + !IsEmpty(Container(203).ListItem.Label)]
+				| [Control.HasFocus(204) + !IsEmpty(Container(204).ListItem.Label)]
+				| [Control.HasFocus(205) + !IsEmpty(Container(205).ListItem.Label)]
+				| [Control.HasFocus(206) + !IsEmpty(Container(206).ListItem.Label)]</visible>
+
+				<control type="image">
+					<description>Fanart</description>
+					<posy>54</posy>
+					<width>298</width>
+					<height>163</height>
+					<texture background="true">$VAR[NextAiredFanart]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>FanartCrossfadeTime</fadetime>
+				</control>
+
+				<control type="label">
+					<description>Title</description>
+					<posx>9</posx>
+					<posy>12</posy>
+					<include>NextAiredTitleLabel</include>
+					<label>$VAR[NextAiredTitle]</label>
+				</control>
+
+				<control type="grouplist">
+					<description>Episode title</description>
+					<posx>9</posx>
+					<posy>229</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[369]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredNextTitle]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Episode</description>
+					<posx>9</posx>
+					<posy>261</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[20359]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredNextNumber]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Runtime</description>
+					<posx>9</posx>
+					<posy>293</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[2050]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredRuntime]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Genre</description>
+					<posx>9</posx>
+					<posy>325</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[515]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredGenre]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Date</description>
+					<posx>9</posx>
+					<posy>357</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[552]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredNextDate]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Time</description>
+					<posx>9</posx>
+					<posy>389</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[555]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredShortTime]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Network</description>
+					<posx>9</posx>
+					<posy>421</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[705]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredNetwork]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Country</description>
+					<posx>9</posx>
+					<posy>453</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[574]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredCountry]</label>
+					</control>
+				</control>
+
+				<control type="grouplist">
+					<description>Premiered</description>
+					<posx>9</posx>
+					<posy>485</posy>
+					<width>280</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<include>NextAiredInfoLabel</include>
+						<label>$LOCALIZE[345]:</label>
+					</control>
+					<control type="label">
+						<include>NextAiredInfoLabelVal</include>
+						<label fallback="31001">$VAR[NextAiredPremiered]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<include condition="!Skin.HasSetting(EnableKioskMode)">NextAiredMenuBar</include>
 
 		<control type="group">
 			<description>Top Bar Area</description>
-			<visible>![System.IdleTime(3) + !Control.IsVisible(505) + Skin.HasSetting(HideTopBar) + !Control.HasFocus(555)]</visible>
-			<depth>DepthTopBar</depth>
 			<include>TopBarImage</include>
 			<include>TopBarOpenCloseAnim</include>
 			<include>BreadCrumbNextAired</include>
-			<include>Notifications</include>
-		</control>
-		
-		<control type="group">
-			<description>Bottom Bar Area</description>
-			<depth>DepthContent</depth>
-			<top>BottomPaneOffsetY</top>
-			<control type="label">
-				<include>InfoPaneHeadLabel2</include>
-				<label>$VAR[NextAiredTotal]</label>
-			</control>
-			<include>BottomPaneOpenCloseAnim</include>
+			<include>Notifications</include>	
 		</control>
 	</controls>
 </window>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>
+<window id="606">
 	<defaultcontrol always="true">9</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
 
 	<coordinates>
 		<system>1</system>
@@ -9,14 +9,8 @@
 
 	<controls>
 		<control type="group">
-			<depth>DepthDialog</depth>
-			<include>DialogOpenCloseAnim</include>
-			
-			<include content="DialogWithCloseBtn">
-				<param name="width" value="875"/>
-				<param name="height" value="530" />
-				<param name="left" value="815" />
-			</include>
+			<include>PVRGuideSearchDialogBox</include>
+			<include>DialogOpenCloseAnim</include>	
 
 			<control type="label">
 				<description>Title</description>
@@ -28,8 +22,8 @@
 
 			<control type="grouplist" id="9000">
 				<description>Dialog Button Area</description>
-				<left>183</left>
-				<top>477</top>
+				<posx>183</posx>
+				<posy>477</posy>
 				<onup>27</onup>
 				<ondown>9</ondown>
 				<orientation>horizontal</orientation>
@@ -52,38 +46,37 @@
 			</control>
 
 			<control type="group">
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 
 				<control type="image">
-					<width>806</width>
+					<width>806</width>	
 					<height>35</height>
 					<texture border="5">controls/button-nofocus.png</texture>
 				</control>
 
 				<control type="edit" id="9">
 					<description>Search string</description>
-					<top>5</top>
+					<posy>5</posy>
 					<width>796</width>
 					<textwidth>796</textwidth>
 					<height>25</height>
-					<texturefocus />
-					<texturenofocus />
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
 					<align>left</align>
 					<onleft>9</onleft>
 					<onright>9</onright>
 					<onup>26</onup>
 					<ondown>10</ondown>
-					<hinttext>$LOCALIZE[137]...</hinttext>
 				</control>
 
 				<control type="textbox">
 					<description>Search help</description>
-					<left>3</left>
-					<top>37</top>
+					<posx>3</posx>
+					<posy>35</posy>
 					<width>800</width>
-					<height>58</height>
-					<aligny>top</aligny>
+					<height>60</height>
+					<aligny>left</aligny>
 					<align>justify</align>
 					<wrapmultiline>true</wrapmultiline>
 					<include>DialogContentLabel</include>
@@ -93,7 +86,7 @@
 
 				<control type="grouplist">
 					<description>Left Pane Area</description>
-					<top>100</top>
+					<posy>100</posy>
 					<onleft>12</onleft>
 					<onright>12</onright>
 					<onup>9</onup>
@@ -132,29 +125,29 @@
 						<description>Include unknown Genres</description>
 						<width>400</width>
 						<include>DialogContentLabel</include>
-						<pulseonselect>false</pulseonselect>
+						<pulseonselect>no</pulseonselect>
 						<label>$LOCALIZE[19132]</label>
 					</control>
 					<control type="radiobutton" id="22">
 						<description>FTA only</description>
 						<width>400</width>
 						<include>DialogContentLabel</include>
-						<pulseonselect>false</pulseonselect>
+						<pulseonselect>no</pulseonselect>
 						<label>$LOCALIZE[19123]</label>
 					</control>
 					<control type="radiobutton" id="24">
 						<description>Ignore Timers</description>
 						<width>400</width>
 						<include>DialogContentLabel</include>
-						<pulseonselect>false</pulseonselect>
+						<pulseonselect>no</pulseonselect>
 						<label>$LOCALIZE[19124]</label>
 					</control>
 				</control>
 
 				<control type="grouplist">
 					<description>Right Pane Area</description>
-					<top>100</top>
-					<left>406</left>
+					<posy>100</posy>
+					<posx>406</posx>
 					<onright>10</onright>
 					<onleft>10</onleft>
 					<onup>9</onup>
@@ -186,7 +179,7 @@
 						<description>avoid repeats</description>
 						<width>400</width>
 						<include>DialogContentLabel</include>
-						<pulseonselect>false</pulseonselect>
+						<pulseonselect>no</pulseonselect>
 						<label>$LOCALIZE[19121]</label>
 					</control>
 					<control type="spincontrolex" id="21">
@@ -203,7 +196,7 @@
 						<description>Ignore Recordings</description>
 						<width>400</width>
 						<include>DialogContentLabel</include>
-						<pulseonselect>false</pulseonselect>
+						<pulseonselect>no</pulseonselect>
 						<label>$LOCALIZE[19125]</label>
 					</control>
 				</control>

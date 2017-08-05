@@ -1,50 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+<window id="147">
+	<defaultcontrol always="true">61</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
 	
 	<coordinates>
 		<system>1</system>
-		<origin x="240" y="91">true</origin>
+		<origin x="290" y="120">true</origin>
 	</coordinates>
 	
 	<controls>
 		<control type="group">
-			<depth>DepthDialog</depth>
+			<include>TextViewerDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
 			
-			<include content="DialogWithCloseBtnLabelID">
-				<param name="width" value="800"/>
-				<param name="height" value="538" />
-				<param name="left" value="740" />
-				<param name="labelwidth" value="720" />
-				<param name="label" value="" />
-				<param name="id" value="1" />
-			</include>
+			<control type="label" id="1">
+				<description>Title</description>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogHeadingOffsetY</posy>
+				<width>630</width>
+				<font>DialogTitleFont</font>
+				<textcolor>DialogTitleColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
 			
 			<control type="textbox" id="5">
 				<description>Text Area</description>
-				<left>DialogMarginOffsetX</left>
-				<top>55</top>
-				<width>709</width>
-				<height>420</height>
-				<font>DefaultFont</font>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
+				<width>609</width>
+				<height>422</height>
+				<font>DefaultFontB</font>
 				<textcolor>ButtonColor</textcolor>
 				<align>justify</align>
 				<pagecontrol>61</pagecontrol>
 			</control>
 			
 			<include>TextViewerScrollbar</include>
-			
-			<control type="button" id="9000">
-				<description>Close</description>
-				<left>315</left>
-				<top>485</top>
-				<onup condition="Control.IsVisible(61)">61</onup>
-				<onright condition="Control.IsVisible(61)">61</onright>
-				<include>DialogMenuBarBtn</include>
-				<onclick>PreviousMenu</onclick>
-				<label>$LOCALIZE[15067]</label>
-			</control>
 		</control>
 	</controls>
 </window>

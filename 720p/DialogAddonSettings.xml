@@ -1,155 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>
-	<defaultcontrol>5</defaultcontrol>
+<window id="10140">
+	<defaultcontrol always="true">2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
 	
 	<coordinates>
 		<system>1</system>
-		<origin x="199" y="82">true</origin>
+		<origin x="311" y="120">true</origin>
 	</coordinates>
 
-	<controls>
+	<controls>	
 		<control type="group">
-			<depth>DepthDialog</depth>
+			<include>AddonSettingsDialogBox</include>
 			<include>DialogOpenCloseAnim</include>
+			<animation effect="slide" end="-289,-4" condition="Window.IsActive(FullScreenVideo) | Window.IsActive(Visualisation)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="250" condition="Window.IsActive(script.pseudotv.ChannelConfig.xml)">Conditional</animation>
 			
-			<include content="DialogWithCloseBtnLabelID">
-				<param name="width" value="882"/>
-				<param name="height" value="557" />
-				<param name="left" value="822" />
-				<param name="labelwidth" value="802" />
-				<param name="label" value="" />
-				<param name="id" value="2" />
-			</include>
-			
-			<control type="image">
-				<left>838</left>
-				<top>47</top>
-				<width>14</width>
-				<height>453</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="scrollbar" id="919">
-				<left>838</left>
-				<top>47</top>
-				<height>453</height>
-				<texturesliderbackground />
-				<onleft>5</onleft>
-				<onright condition="Control.IsVisible(30)">30</onright>
-				<onright condition="!Control.IsVisible(30)">29</onright>
-				<ondown>9000</ondown>
+			<control type="label" id="20">
+				<include>DialogTitle</include>
 			</control>
 			
 			<control type="group">
-				<left>DialogMarginOffsetX</left>
-				<top>DialogMarginOffsetY</top>
+				<posx>DialogMarginOffsetX</posx>
+				<posy>DialogMarginOffsetY</posy>
 				
-				<control type="image">
-					<description>Menu Background</description>
-					<width>150</width>
-					<height>442</height>
-					<texture border="5">controls/button-nofocus.png</texture>
-				</control>
-				
-				<control type="grouplist" id="3">
+				<control type="grouplist" id="9">
 					<description>Category Area</description>
-					<width>150</width>
-					<height>442</height>
-					<itemgap>2</itemgap>
-					<pagecontrol />
+					<width>600</width>
+					<height>35</height>
+					<itemgap>0</itemgap>
+					<pagecontrol>-</pagecontrol>
 					<align>left</align>
-					<orientation>vertical</orientation>
-					<ondown>9000</ondown>
-					<onleft>28</onleft>
-					<onright>5</onright>
+					<orientation>horizontal</orientation>
+					<ondown>2</ondown>
+					<onleft>9001</onleft>
+					<onright>9001</onright>
 				</control>
 
-				<control type="grouplist" id="5">
+				<control type="grouplist" id="2">
 					<description>Content Area</description>
-					<left>156</left>
-					<width>640</width>
-					<height>442</height>
+					<posy>41</posy>
+					<width>600</width>
+					<height>331</height>
 					<itemgap>2</itemgap>
-					<pagecontrol>919</pagecontrol>
-					<ondown>9000</ondown>
-					<onleft>3</onleft>
-					<onright>919</onright>
+					<pagecontrol>-</pagecontrol>
+					<onup>9</onup>
+					<ondown>2</ondown>
+					<onleft>9001</onleft>
+					<onright>9001</onright>
 				</control>
 			</control>
 			
-			<control type="button" id="10">
+			<control type="button" id="13">
 				<description>Default Category Button</description>
 				<width>150</width>
 				<align>center</align>
-				<texturenofocus />
+				<texturenofocus>-</texturenofocus>
 				<enable>true</enable>
 				<include>DialogHeadLabel</include>
 			</control>
 			
-			<control type="button" id="7">
+			<control type="button" id="3">
 				<description>Default Button</description>
+				<width>600</width>
 				<include>DialogContentLabel</include>
 			</control>
 		
-			<control type="radiobutton" id="8">
+			<control type="radiobutton" id="4">
 				<description>Default RadioButton</description>
-				<textwidth>565</textwidth>
+				<width>600</width>
 				<include>DialogContentLabel</include>
-			</control>
+			</control>			
 			
-			<control type="spincontrolex" id="9">
+			<control type="spincontrolex" id="5">
 				<description>Default SpinControlex</description>
+				<width>600</width>
 				<include>DialogContentLabel</include>
 			</control>
 			
-			<control type="sliderex" id="13">
+			<control type="sliderex" id="8">
 				<description>Default Slider</description>
+				<width>600</width>
 				<include>DialogContentLabel</include>
 			</control>
 			
-			<control type="edit" id="12">
-				<description>Default Edit Button</description>
-				<textwidth>624</textwidth>
-				<include>DialogContentLabel</include>
-			</control>
-			
-			<control type="image" id="11">
+			<control type="image" id="6">
 				<description>Separator</description>
+				<width>600</width>
 				<height>4</height>
-				<texture />
+				<texture>-</texture>
 			</control>
 			
-			<control type="label" id="14">
+			<control type="label" id="7">
 				<description>Separator</description>
 				<height>35</height>
 				<align>center</align>
 				<include>DialogContentLabel</include>
 			</control>
 
-			<control type="grouplist" id="9000">
-				<description>Dialog Button Area</description>
-				<width>882</width>
-				<align>center</align>
-				<top>504</top>
+			<control type="grouplist" id="9001">		
+				<description>Dialog Button Area</description>			
+				<posx>80</posx>
+				<posy>434</posy>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
-				<onup>5</onup>
-				<onleft>3</onleft>
-				<onright condition="Control.IsVisible(919)">919</onright>
-				<onright condition="!Control.IsVisible(919)">5</onright>
-				<control type="button" id="28">
+				<onup>2</onup>
+				<control type="button" id="10">
+					<description>OK</description>
 					<include>DialogMenuBarBtn</include>
-					<label />
-				</control>
-				<control type="button" id="29">
+					<label>$LOCALIZE[186]</label>
+				</control>			
+				<control type="button" id="11">
+					<description>Cancel</description>
 					<include>DialogMenuBarBtn</include>
-					<label />
-				</control>
-				<control type="button" id="30">
+					<label>$LOCALIZE[222]</label>
+				</control>		
+				<control type="button" id="12">
+					<description>Defaults</description>
 					<include>DialogMenuBarBtn</include>
-					<label />
-				</control>
+					<label>$LOCALIZE[409]</label>
+				</control>			
 			</control>
 		</control>
-	</controls>
+	</controls>	
 </window>
