@@ -1,84 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<window>
+<window id="11">
 	<defaultcontrol>8</defaultcontrol>
 	
 	<controls>
-		<control type="image">
+		<control type="videowindow">
 			<include>ScreenSize</include>
-			<texture>background-default.png</texture>
-		</control>
-		
-		<control type="group">
 			<visible>Player.HasVideo</visible>
-			<control type="videowindow">
-				<include>ScreenSize</include>
-				<visible>!SlideShow.IsActive</visible>
-			</control>
-			
-			<control type="image">
-				<description>Background Brightness</description>
-				<include>ScreenSize</include>
-				<texture>dim.png</texture>
-				<animation effect="fade" start="0" end="40" time="450">WindowOpen</animation>
-				<animation effect="fade" start="40" end="0" time="450">WindowClose</animation>
-			</control>
+		</control>
+
+		<control type="image">
+			<description>Dim Background</description>
+			<include>ScreenSize</include>
+			<texture>dim.png</texture>
+			<animation effect="fade" start="0" end="40" time="450">WindowOpen</animation>
+			<animation effect="fade" start="40" end="0" time="450">WindowClose</animation>
 		</control>
 
 		<control type="mover" id="8">
 			<description>Top Left</description>
-			<width>200</width>
-			<height>200</height>
+			<posx>0</posx>
+			<posy>0</posy>
 			<texturefocus border="6">settings/calibrate-topleft-focus.png</texturefocus>
 			<texturenofocus border="6">settings/calibrate-topleft-nofocus.png</texturenofocus>
 		</control>
 		
 		<control type="mover" id="9">
 			<description>Bottom Right</description>
-			<left>700</left>
-			<top>500</top>
-			<width>200</width>
-			<height>200</height>
+			<posx>700</posx>
+			<posy>500</posy>
 			<texturefocus border="6">settings/calibrate-bottomright-focus.png</texturefocus>
 			<texturenofocus border="6">settings/calibrate-bottomright-nofocus.png</texturenofocus>
 		</control>
 		
 		<control type="mover" id="10">
 			<description>Subtitle</description>
-			<left>200</left>
-			<top>500</top>
-			<width>700</width>
+			<posx>200</posx>
+			<posy>500</posy>
 			<texturefocus border="6">settings/calibrate-subtitles-focus.png</texturefocus>
 			<texturenofocus border="6">settings/calibrate-subtitles-nofocus.png</texturenofocus>
 		</control>
 		
 		<control type="resize" id="11">
 			<description>Pixel Aspect Ratio</description>
-			<top>270</top>
+			<posx>0</posx>
+			<posy>270</posy>
 			<width>288</width>
 			<height>288</height>
-			<texturefocus border="10">settings/calibrate-pixelratio-focus.png</texturefocus>
-			<texturenofocus border="10">settings/calibrate-pixelratio-nofocus.png</texturenofocus>
+			<texturefocus border="6">settings/calibrate-pixelratio-focus.png</texturefocus>
+			<texturenofocus border="6">settings/calibrate-pixelratio-nofocus.png</texturenofocus>
 		</control>
 		
-		<control type="group">
-			<top>50</top>
+		<control type="group">	
+			<posy>50</posy>
 			
 			<control type="label" id="2">
 				<description>Coordinates</description>
 				<width>ScreenWidth</width>
 				<font>ScreenCalibrationFont</font>
 				<textcolor>GreyColor2</textcolor>
-				<align>center</align>
+				<align>center</align>	
 			</control>
 			
 			<control type="label" id="3">
 				<description>Help Information</description>
-				<top>40</top>
+				<posy>40</posy>
 				<width>ScreenWidth</width>
 				<font>ScreenCalibrationFont</font>
 				<textcolor>GreyColor2</textcolor>
-				<align>center</align>
-			</control>
+				<align>center</align>		
+			</control>	
 		</control>
-	</controls>
+	</controls>	
 </window>

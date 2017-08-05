@@ -1,28 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">RunScript(script.artistslideshow, daemon=True)</onload>
-	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
-	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
-	<onload condition="Skin.String(SplashScreen)">RunScript(script.skin.helper.service,action=splashscreen,file=$INFO[Skin.String(SplashScreen)],duration=$VAR[SplashScreenImageDuration])</onload>
-	<onload condition="!Skin.String(SplashScreen)">ReplaceWindow($INFO[System.StartupWindow])</onload>
-	
+	<defaultcontrol always="true">9</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+		
 	<controls>
-		<control type="group">
-			<depth>DepthContent</depth>
-			
-			<!-- video control for splash -->
-			<control type="videowindow">
-				<width>100%</width>
-				<height>100%</height>
-			</control>
-			<!-- image control for splash -->
-			<control type="image">
-				<width>100%</width>
-				<height>100%</height>
-				<aspectratio>keep</aspectratio>
-				<texture background="true">$INFO[Window(Home).Property(SkinHelper.SplashScreen)]</texture>
-			</control>
-			
+		<control type="button" id="9">
+			<include>RedirectBtn</include>
+			<onfocus>XBMC.AlarmClock(UpdateRecentAdded,XBMC.RunScript(script.recentlyadded,limit=8&amp;albums=True&amp;totals=True),1,true)</onfocus>
+			<onfocus>Control.SetFocus(99)</onfocus>
+			<visible>System.GetBool(videolibrary.updateonstartup) + !Skin.HasSetting(HideRecentlyAddedHomePanel)</visible>
+		</control>
+		
+		<control type="button" id="9">
+			<include>RedirectBtn</include>
+			<onfocus>Control.SetFocus(99)</onfocus>
+			<visible>!System.GetBool(videolibrary.updateonstartup) + !Skin.HasSetting(HideRecentlyAddedHomePanel)</visible>
+		</control>
+		
+		<control type="button" id="9">
+			<include>RedirectBtn</include>
+			<onfocus>Control.SetFocus(99)</onfocus>
+			<visible>Skin.HasSetting(HideRecentlyAddedHomePanel)</visible>
+		</control>
+		
+		<control type="button" id="99">
+			<include>RedirectBtn</include>
+			<onfocus>ReplaceWindow(Home)</onfocus>
 		</control>
 	</controls>
 </window>
