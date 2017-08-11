@@ -396,7 +396,9 @@
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
 				<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
-				<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
+				<ondown condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</ondown>
+				<onleft condition="Container.Content(Movies) + Control.IsVisible(8000)">8000</onleft>
+				<onleft condition="Container.Content(TVShows) + Control.IsVisible(8001)">8001</onleft>
 				<include content="QuickJumpHorizontalLayout">
 					<param name="left" value="489" />
 					<param name="top" value="462" />
@@ -419,7 +421,9 @@
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
 				<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
 				<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
-				<onright condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</onright>
+				<ondown condition="!System.HasAddon(script.extendedinfo) + String.IsEmpty(ListItem.Trailer)">InstallAddon(script.extendedinfo)</ondown>
+				<onleft condition="Container.Content(Movies) + Control.IsVisible(8000)">8000</onleft>
+				<onleft condition="Container.Content(TVShows) + Control.IsVisible(8001)">8001</onleft>
 				<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 			</control>
 		</control>
