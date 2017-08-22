@@ -1849,8 +1849,8 @@
 						<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Title])</onclick>
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>Skin.String(VideoInfoMenubar,SimilarVideos)</visible>
-						<include condition="String.IsEqual(ListItem.DBTYPE,movie) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]">DialogVideoInfoSimilar1</include>
-						<include condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoSimilar2</include>
+						<include condition="String.IsEqual(ListItem.DBTYPE,movie) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]">DialogVideoInfoPoster</include>
+						<include condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoBanner</include>
 						<content>$VAR[SimilarVideos]</content>
 					</control>
 					
@@ -1863,7 +1863,7 @@
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>Skin.String(VideoInfoMenubar,MovieSet)</visible>
-						<include>DialogVideoInfoSimilar1</include>
+						<include>DialogVideoInfoPoster</include>
 						<content target="video" sortby="year">videodb://movies/sets/$INFO[ListItem.SetID]</content>
 					</control>
 					
@@ -1896,8 +1896,8 @@
 						<onclick>ActivateWindow(Videos,$INFO[ListItem.FolderPath])</onclick>
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>Skin.String(VideoInfoMenubar,TVShowSeasons)</visible>
-						<include condition="Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoSimilar1</include>
-						<include condition="!Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoSimilar2</include>
+						<include condition="Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoPoster</include>
+						<include condition="!Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoBanner</include>
 						<content target="video">videodb://tvshows/titles/$INFO[ListItem.DBID]/</content>
 					</control>
 				</control>
