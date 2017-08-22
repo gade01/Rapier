@@ -3403,7 +3403,7 @@
 		</focusedlayout>
 	</include>
 	
-	<include name="DialogVideoInfoSimilar1">
+	<include name="DialogVideoInfoPoster">
 		<left>469</left>
 		<top>459</top>
 		<width>715</width>
@@ -3431,6 +3431,49 @@
 				<texture background="true">DefaultMovies.png</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+			</control>
+			<control type="group">
+				<visible>Skin.String(VideoInfoMenubar,TVShowSeasons)</visible>
+				<top>8</top>
+				<left>104</left>
+				<control type="label">
+					<description>Unwatched Episodes</description>
+					<width>26</width>
+					<height>26</height>
+					<font>ListFont3</font>
+					<textcolor>ListColor</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				</control>
+				<control type="label">
+					<description>Unwatched Episodes</description>
+					<width>26</width>
+					<height>26</height>
+					<font>ListFont4</font>
+					<textcolor>ListColor</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				</control>
+				<control type="image">
+					<description>Unwatched Overlay</description>
+					<width>26</width>
+					<height>26</height>
+					<texture background="true">OverlayClean.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+				</control>
+				<control type="image">
+					<description>Watched Overlay</description>
+					<width>26</width>
+					<height>26</height>
+					<texture background="true">$INFO[ListItem.Overlay]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+				</control>
 			</control>
 		</itemlayout>
 		<focusedlayout width="143">
@@ -3466,11 +3509,54 @@
 					<aspectratio align="center" aligny="center">scale</aspectratio>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
 				</control>
+				<control type="group">
+					<visible>Skin.String(VideoInfoMenubar,TVShowSeasons)</visible>
+					<top>8</top>
+					<left>104</left>
+					<control type="label">
+						<description>Unwatched Episodes</description>
+						<width>26</width>
+						<height>26</height>
+						<font>ListFont3</font>
+						<textcolor>ListColor</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					</control>
+					<control type="label">
+						<description>Unwatched Episodes</description>
+						<width>26</width>
+						<height>26</height>
+						<font>ListFont4</font>
+						<textcolor>ListColor</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					</control>
+					<control type="image">
+						<description>Unwatched Overlay</description>
+						<width>26</width>
+						<height>26</height>
+						<texture background="true">OverlayClean.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+					</control>
+					<control type="image">
+						<description>Watched Overlay</description>
+						<width>26</width>
+						<height>26</height>
+						<texture background="true">$INFO[ListItem.Overlay]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
+				</control>
 			</control>
 		</focusedlayout>
 	</include>
 	
-	<include name="DialogVideoInfoSimilar2">
+	<include name="DialogVideoInfoBanner">
 		<left>651</left>
 		<top>424</top>
 		<width>580</width>
@@ -3499,6 +3585,49 @@
 				<texture background="true">DefaultMovies.png</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+			</control>
+			<control type="group">
+				<visible>Skin.String(VideoInfoMenubar,TVShowSeasons)</visible>
+				<top>8</top>
+				<left>108</left>
+				<control type="label">
+					<description>Unwatched Episodes</description>
+					<width>26</width>
+					<height>26</height>
+					<font>ListFont3</font>
+					<textcolor>ListColor</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				</control>
+				<control type="label">
+					<description>Unwatched Episodes</description>
+					<width>26</width>
+					<height>26</height>
+					<font>ListFont4</font>
+					<textcolor>ListColor</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+				</control>
+				<control type="image">
+					<description>Unwatched Overlay</description>
+					<width>26</width>
+					<height>26</height>
+					<texture background="true">OverlayClean.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+				</control>
+				<control type="image">
+					<description>Watched Overlay</description>
+					<width>26</width>
+					<height>26</height>
+					<texture background="true">$INFO[ListItem.Overlay]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+				</control>
 			</control>
 		</itemlayout>
 		<focusedlayout width="145">
@@ -3533,6 +3662,49 @@
 					<bordersize>2</bordersize>
 					<aspectratio align="center" aligny="center">scale</aspectratio>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+				</control>
+				<control type="group">
+					<visible>Skin.String(VideoInfoMenubar,TVShowSeasons)</visible>
+					<top>8</top>
+					<left>108</left>
+					<control type="label">
+						<description>Unwatched Episodes</description>
+						<width>26</width>
+						<height>26</height>
+						<font>ListFont3</font>
+						<textcolor>ListColor</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					</control>
+					<control type="label">
+						<description>Unwatched Episodes</description>
+						<width>26</width>
+						<height>26</height>
+						<font>ListFont4</font>
+						<textcolor>ListColor</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</visible>
+					</control>
+					<control type="image">
+						<description>Unwatched Overlay</description>
+						<width>26</width>
+						<height>26</height>
+						<texture background="true">OverlayClean.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+					</control>
+					<control type="image">
+						<description>Watched Overlay</description>
+						<width>26</width>
+						<height>26</height>
+						<texture background="true">$INFO[ListItem.Overlay]</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
 				</control>
 			</control>
 		</focusedlayout>
