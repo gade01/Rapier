@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window>
+<window type="dialog" id="1119">
 	<defaultcontrol>5001</defaultcontrol>
 	
 	<controls>
@@ -14,7 +14,7 @@
 		
 		<control type="group">
 			<description>Player Process Information</description>
-			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsActive(subtitlesearch) | Window.IsActive(osdcmssettings)]</visible>
+			<visible>![Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog) | Window.IsActive(PVRRadioRDSInfo)]</visible>
 			<depth>DepthOSD</depth>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<left>28</left>
@@ -30,172 +30,58 @@
 				<left>4</left>
 				<top>4</top>
 				<width>1216</width>
-				<height>57</height>
+				<height>38</height>
 				<texture border="5">panels/panel-content-border2.png</texture>
 				<animation effect="fade" end="5" condition="true">Conditional</animation>
 			</control>
 			
 			<control type="grouplist">
-				<top>11</top>
+				<top>4</top>
 				<left>18</left>
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 				<control type="group">
-					<height>56</height>
+					<height>48</height>
 					<control type="label">
 						<description>Header</description>
 						<width>1188</width>
+						<height>38</height>
+						<aligny>center</aligny>
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoTitleColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[31222]</label>
-					</control>
-					<control type="label">
-						<description>Hardware Decoding</description>
-						<top>22</top>
-						<width>1188</width>
-						<height>34</height>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoTitleColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[UPPERCASE]$VAR[videohwdecoder][/UPPERCASE]</label>
+						<label>$LOCALIZE[31232]</label>
 					</control>
 				</control>
 				<control type="label">
 					<description>Video Label</description>
-					<width>300</width>
-					<height>20</height>
-					<font>NextAiredTimeFont</font>
-					<textcolor>MediaInfoTitleColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>[UPPERCASE]$LOCALIZE[291][/UPPERCASE]</label>
-				</control>
-				<control type="group">
-					<height>20</height>
-					<control type="label">
-						<width>165</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[31225]:</label>
-					</control>
-					<control type="label">
-						<left>170</left>
-						<width>308</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(videodecoder)]</label>
-					</control>
-				</control>
-				<control type="group">
-					<height>20</height>
-					<control type="label">
-						<width>165</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[169]:</label>
-					</control>
-					<control type="label">
-						<left>170</left>
-						<width>308</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[Player.Process(videowidth)]$INFO[Player.Process(videoheight),X, px]$INFO[Player.Process(videodar), (, $LOCALIZE[31230])]</label>
-					</control>
-				</control>
-				<control type="group">
-					<height>20</height>
-					<control type="label">
-						<width>165</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[31226]:</label>
-					</control>
-					<control type="label">
-						<left>170</left>
-						<width>308</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(videofps),, FPS]</label>
-					</control>
-				</control>
-				<control type="group">
-					<height>20</height>
-					<control type="label">
-						<width>165</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[31227]:</label>
-					</control>
-					<control type="label">
-						<left>170</left>
-						<width>308</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(pixformat)]</label>
-					</control>
-				</control>
-				<control type="group">
-					<height>20</height>
-					<control type="label">
-						<width>165</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[16038]:</label>
-					</control>
-					<control type="label">
-						<left>170</left>
-						<width>308</width>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(deintmethod)]</label>
-					</control>
-				</control>
-			</control>
-			
-			<control type="grouplist">
-				<top>67</top>
-				<left>508</left>
-				<itemgap>0</itemgap>
-				<orientation>vertical</orientation>
-				<control type="label">
-					<description>Audio Label</description>
-					<width>300</width>
-					<height>20</height>
+					<width>584</width>
+					<height>22</height>
 					<font>NextAiredTimeFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>[UPPERCASE]$LOCALIZE[292][/UPPERCASE]</label>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<height>22</height>
 					<control type="label">
 						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[31225]:</label>
+						<label>$LOCALIZE[31233]:</label>
 					</control>
 					<control type="label">
 						<left>170</left>
-						<width>308</width>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(audiodecoder)]</label>
+						<label fallback="31001">$INFO[Musicplayer.Codec]</label>
 					</control>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<height>22</height>
 					<control type="label">
 						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
@@ -205,15 +91,15 @@
 					</control>
 					<control type="label">
 						<left>170</left>
-						<width>308</width>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(audiochannels)]</label>
+						<label fallback="31001">$INFO[MusicPlayer.Channels]</label>
 					</control>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<height>22</height>
 					<control type="label">
 						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
@@ -223,15 +109,15 @@
 					</control>
 					<control type="label">
 						<left>170</left>
-						<width>308</width>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.Process(audiosamplerate),, Hz]</label>
+						<label fallback="31001">$INFO[MusicPlayer.SampleRate,, Hz]</label>
 					</control>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<height>22</height>
 					<control type="label">
 						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
@@ -241,42 +127,59 @@
 					</control>
 					<control type="label">
 						<left>170</left>
-						<width>308</width>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[Player.Process(audiobitspersample),, Bit]</label>
+						<label fallback="31001">$INFO[MusicPlayer.BitsPerSample,, Bit]</label>
+					</control>
+				</control>
+				<control type="group">
+					<height>22</height>
+					<control type="label">
+						<width>165</width>
+						<font>FullMediaInfoTaglineFont</font>
+						<textcolor>MediaInfoItemColor</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$LOCALIZE[623]:</label>
+					</control>
+					<control type="label">
+						<left>170</left>
+						<width>400</width>
+						<font>FullMediaInfoTaglineFont</font>
+						<textcolor>MediaInfoItemColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label fallback="31001">$INFO[MusicPlayer.BitRate,, kb/s]</label>
 					</control>
 				</control>
 			</control>
 			
 			<control type="grouplist">
-				<top>67</top>
-				<left>1000</left>
+				<top>52</top>
+				<left>612</left>
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 				<control type="label">
 					<description>System Label</description>
-					<width>205</width>
-					<height>20</height>
+					<width>584</width>
+					<height>22</height>
 					<font>NextAiredTimeFont</font>
 					<textcolor>MediaInfoTitleColor</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>[UPPERCASE]$LOCALIZE[13000][/UPPERCASE]</label>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<height>22</height>
 					<control type="label">
-						<width>160</width>
+						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$LOCALIZE[13271]</label>
 					</control>
 					<control type="label">
-						<left>165</left>
-						<width>40</width>
-						<align>right</align>
+						<left>170</left>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
@@ -284,18 +187,17 @@
 					</control>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<height>22</height>
 					<control type="label">
-						<width>160</width>
+						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$LOCALIZE[31126]:</label>
 					</control>
 					<control type="label">
-						<left>165</left>
-						<width>40</width>
-						<align>right</align>
+						<left>170</left>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
@@ -303,30 +205,29 @@
 					</control>
 				</control>
 				<control type="group">
-					<height>20</height>
+					<visible>!String.IsEmpty(Player.CacheLevel)</visible>
+					<height>22</height>
 					<control type="label">
-						<width>160</width>
+						<width>165</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>$LOCALIZE[31192]:</label>
 					</control>
 					<control type="label">
-						<left>165</left>
-						<width>40</width>
-						<align>right</align>
+						<left>170</left>
+						<width>400</width>
 						<font>FullMediaInfoTaglineFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label fallback="31001">$INFO[Player.CacheLevel,,%]</label>
+						<label>$INFO[Player.CacheLevel,,%]</label>
 					</control>
 				</control>
 			</control>
 		</control>
 
 		<control type="group">
-			<visible>[[Pvr.IsPlayingTv + Window.IsActive(FullscreenVideo)] | [Pvr.IsPlayingRadio | Window.IsActive(visualisation)]] + system.getbool(pvrplayback.signalquality) +
-			![Player.ShowInfo | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsActive(subtitlesearch) | Window.IsActive(osdcmssettings)]</visible>
+			<visible>Pvr.IsPlayingRadio + ![Player.ShowInfo | Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog) | Window.IsActive(PVRRadioRDSInfo)]</visible>
 			<depth>DepthOSD</depth>
 			<include>FSMediaInfoOpenCloseAnim</include>
 			<left>28</left>
