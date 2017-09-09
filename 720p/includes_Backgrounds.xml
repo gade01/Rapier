@@ -2,7 +2,7 @@
 <includes>
 	<variable name="FanartImageVar">
 		<value condition="!String.IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(561).ListItem.Art(fanart)) + [Control.HasFocus(561) | Control.HasFocus(150)]">$INFO[Container(561).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(561).ListItem.Art(fanart)) + [Control.HasFocus(561) | Control.HasFocus(151)]">$INFO[Container(561).ListItem.Art(fanart)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
 	
