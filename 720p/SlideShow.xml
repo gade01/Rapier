@@ -169,5 +169,17 @@
 				<visible>!Control.IsVisible(9000)</visible>
 			</control>
 		</control>
+	
+		<control type="label">
+			<left>50</left>
+			<top>660</top>
+			<width>1180</width>
+			<align>center</align>
+			<font>SlideShowCaptionFont</font>
+			<textcolor>WhiteColor</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<label>$VAR[SlideShowCaptionVar]</label>
+			<visible>![String.IsEmpty(Slideshow.EXIFDescription) + String.IsEmpty(Slideshow.EXIFComment) + String.IsEmpty(Slideshow.Caption)]</visible>
+		</control>
 	</controls>
 </window>
