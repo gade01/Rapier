@@ -2828,6 +2828,14 @@
 	</variable>
 	<!-- END Music Visualization -->
 	
+	<!-- SlideShow -->
+	<variable name="SlideShowCaptionVar">
+		<value condition="!String.IsEmpty(Slideshow.EXIFDescription)">$INFO[Slideshow.EXIFDescription]</value>
+		<value condition="!String.IsEmpty(Slideshow.EXIFComment)">$INFO[Slideshow.EXIFComment]</value>
+		<value condition="!String.IsEmpty(Slideshow.Caption)">$INFO[Slideshow.Caption]</value>
+	</variable>
+	<!-- END SlideShow -->
+	
 	<!-- Custom Windows -->
 	<variable name="Window1117PosterThumb">
 		<value condition="!String.IsEmpty(Container(901).ListItem.Art(poster))">$INFO[Container(901).ListItem.Art(poster)]</value>
