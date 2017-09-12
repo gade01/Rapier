@@ -381,7 +381,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(ListItem.AudioCodec,ac3) | String.Contains(ListItem.AudioCodec,ac-3)</visible>
+			<visible>[String.Contains(ListItem.AudioCodec,ac3) | String.Contains(ListItem.AudioCodec,ac-3)] + !String.Contains(ListItem.AudioCodec,eac3)</visible>
 		</control>
 		<control type="image" id="688">
 			<description>EAC3 Codec</description>
