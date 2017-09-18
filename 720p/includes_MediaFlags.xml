@@ -390,7 +390,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(ListItem.AudioCodec,eac3)</visible>
+			<visible>String.Contains(ListItem.AudioCodec,eac3) + !String.Contains(ListItem.FilenameAndPath,.atmos)</visible>
 		</control>
 		<control type="image" id="628">
 			<description>TrueHD Codec</description>
@@ -399,7 +399,16 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(ListItem.AudioCodec,truehd)</visible>
+			<visible>String.Contains(ListItem.AudioCodec,truehd) + !String.Contains(ListItem.FilenameAndPath,.atmos)</visible>
+		</control>
+		<control type="image" id="722">
+			<description>Atmos Codec</description>
+			<width>66</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/atmos.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>[String.Contains(ListItem.AudioCodec,eac3) | String.Contains(ListItem.AudioCodec,truehd)] + String.Contains(ListItem.FilenameAndPath,.atmos)</visible>
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
@@ -927,7 +936,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(VideoPlayer.AudioCodec,ac3) | String.Contains(VideoPlayer.AudioCodec,ac-3)</visible>
+			<visible>[String.Contains(VideoPlayer.AudioCodec,ac3) | String.Contains(VideoPlayer.AudioCodec,ac-3)] + !String.Contains(VideoPlayer.AudioCodec,eac3)</visible>
 		</control>
 		<control type="image" id="689">
 			<description>EAC3 Codec</description>
@@ -936,7 +945,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(VideoPlayer.AudioCodec,eac3)</visible>
+			<visible>String.Contains(VideoPlayer.AudioCodec,eac3) + !String.Contains(Player.FilenameAndPath,.atmos)</visible>
 		</control>
 		<control type="image" id="669">
 			<description>TrueHD Codec</description>
@@ -945,7 +954,16 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(VideoPlayer.AudioCodec,truehd)</visible>
+			<visible>String.Contains(VideoPlayer.AudioCodec,truehd) + !String.Contains(Player.FilenameAndPath,.atmos)</visible>
+		</control>
+		<control type="image" id="723">
+			<description>Atmos Codec</description>
+			<width>66</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/atmos.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>[String.Contains(VideoPlayer.AudioCodec,eac3) | String.Contains(VideoPlayer.AudioCodec,truehd)] + String.Contains(Player.FilenameAndPath,.atmos)</visible>
 		</control>
 		<control type="image" id="657">
 			<description>WMA STD V2/WMA Codec</description>
