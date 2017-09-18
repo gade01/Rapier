@@ -963,7 +963,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(Container(100).ListItem.Property(AudioCodec),ac3) | String.Contains(Container(100).ListItem.Property(AudioCodec),ac-3)</visible>
+			<visible>[String.Contains(Container(100).ListItem.Property(AudioCodec),ac3) | String.Contains(Container(100).ListItem.Property(AudioCodec),ac-3)] + !String.Contains(Container(100).ListItem.Property(AudioCodec),eac3)</visible>
 		</control>
 		<control type="image" id="688">
 			<description>EAC3 Codec</description>
@@ -972,7 +972,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(Container(100).ListItem.Property(AudioCodec),eac3)</visible>
+			<visible>String.Contains(Container(100).ListItem.Property(AudioCodec),eac3) + !String.Contains(Container(100).ListItem.Property(Path),.atmos)</visible>
 		</control>
 		<control type="image" id="628">
 			<description>TrueHD Codec</description>
@@ -981,7 +981,16 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(Container(100).ListItem.Property(AudioCodec),truehd)</visible>
+			<visible>String.Contains(Container(100).ListItem.Property(AudioCodec),truehd) + !String.Contains(Container(100).ListItem.Property(Path),.atmos)</visible>
+		</control>
+		<control type="image" id="722">
+			<description>Atmos Codec</description>
+			<width>66</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/atmos.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>[String.Contains(Container(100).ListItem.Property(AudioCodec),eac3) | String.Contains(Container(100).ListItem.Property(AudioCodec),truehd)] + String.Contains(Container(100).ListItem.Property(Path),.atmos)</visible>
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
@@ -1641,7 +1650,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(Window.Property(AudioCodec),ac3) | String.Contains(Window.Property(AudioCodec),ac-3)</visible>
+			<visible>[String.Contains(Window.Property(AudioCodec),ac3) | String.Contains(Window.Property(AudioCodec),ac-3)] + !String.Contains(Window.Property(AudioCodec),eac3)</visible>
 		</control>
 		<control type="image" id="688">
 			<description>EAC3 Codec</description>
@@ -1650,7 +1659,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(Window.Property(AudioCodec),eac3)</visible>
+			<visible>String.Contains(Window.Property(AudioCodec),eac3) + !String.Contains(Window.Property(FilenameAndPath),.atmos)</visible>
 		</control>
 		<control type="image" id="628">
 			<description>TrueHD Codec</description>
@@ -1659,7 +1668,16 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>String.Contains(Window.Property(AudioCodec),truehd)</visible>
+			<visible>String.Contains(Window.Property(AudioCodec),truehd) + !String.Contains(Window.Property(FilenameAndPath),.atmos)</visible>
+		</control>
+		<control type="image" id="722">
+			<description>Atmos Codec</description>
+			<width>66</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/atmos.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>[String.Contains(Window.Property(AudioCodec),eac3) | String.Contains(Window.Property(AudioCodec),truehd)] + String.Contains(Window.Property(FilenameAndPath),.atmos)</visible>
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
