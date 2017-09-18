@@ -901,7 +901,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(AudioCodec),ac3) | substring(Container(100).ListItem.Property(AudioCodec),ac-3)</visible>
+			<visible>[substring(Container(100).ListItem.Property(AudioCodec),ac3) | substring(Container(100).ListItem.Property(AudioCodec),ac-3)] + !substring(Container(100).ListItem.Property(AudioCodec),eac3)</visible>
 		</control>
 		<control type="image" id="688">
 			<description>EAC3 Codec</description>
@@ -910,7 +910,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(AudioCodec),eac3)</visible>
+			<visible>substring(Container(100).ListItem.Property(AudioCodec),eac3) + !substring(Container(100).ListItem.Property(Path),.atmos)</visible>
 		</control>
 		<control type="image" id="628">
 			<description>TrueHD Codec</description>
@@ -919,7 +919,16 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Container(100).ListItem.Property(AudioCodec),truehd)</visible>
+			<visible>substring(Container(100).ListItem.Property(AudioCodec),truehd) + !substring(Container(100).ListItem.Property(Path),.atmos)</visible>
+		</control>
+		<control type="image" id="722">
+			<description>Atmos Codec</description>
+			<width>66</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/atmos.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>[substring(Container(100).ListItem.Property(AudioCodec),eac3) | substring(Container(100).ListItem.Property(AudioCodec),truehd)] + substring(Container(100).ListItem.Property(Path),.atmos)</visible>
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
@@ -1574,7 +1583,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/dolbydigital.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(AudioCodec),ac3) | substring(Window.Property(AudioCodec),ac-3)</visible>
+			<visible>[substring(Window.Property(AudioCodec),ac3) | substring(Window.Property(AudioCodec),ac-3)] + !substring(Window.Property(AudioCodec),eac3)</visible>
 		</control>
 		<control type="image" id="688">
 			<description>EAC3 Codec</description>
@@ -1583,7 +1592,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/eac3.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(AudioCodec),eac3)</visible>
+			<visible>substring(Window.Property(AudioCodec),eac3) + !substring(Window.Property(FilenameAndPath),.atmos)</visible>
 		</control>
 		<control type="image" id="628">
 			<description>TrueHD Codec</description>
@@ -1592,7 +1601,16 @@
 			<aspectratio>stretch</aspectratio>
 			<texture>flagging/$VAR[MediaFlagTheme]/audio/truehd.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-			<visible>substring(Window.Property(AudioCodec),truehd)</visible>
+			<visible>substring(Window.Property(AudioCodec),truehd) + !substring(Window.Property(FilenameAndPath),.atmos)</visible>
+		</control>
+		<control type="image" id="722">
+			<description>Atmos Codec</description>
+			<width>66</width>
+			<height>35</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>flagging/$VAR[MediaFlagTheme]/audio/atmos.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>[substring(Window.Property(AudioCodec),eac3) | substring(Window.Property(AudioCodec),truehd)] + substring(Window.Property(FilenameAndPath),.atmos)</visible>
 		</control>
 		<control type="image" id="629">
 			<description>WMA STD V2/WMA Codec</description>
