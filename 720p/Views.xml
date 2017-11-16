@@ -82,6 +82,16 @@
 		<value>flagging/imdbstarrating/10,0.png</value>
 	</variable>
 	
+	<variable name="SeasonsVar">
+		<value condition="Integer.IsGreater(ListItem.Property(TotalSeasons),1)">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]]</value>
+		<value>$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]]</value>
+	</variable>
+	
+	<variable name="EpisodesVar">
+		<value condition="Integer.IsGreater(ListItem.Episode,1)">$INFO[ListItem.Episode,, $LOCALIZE[20360]]</value>
+		<value>$INFO[ListItem.Episode,, $LOCALIZE[20359]]</value>
+	</variable>
+	
 	<variable name="ListTallStyleLabel">
 		<value condition="Container.Content(Albums) + !String.IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(Songs) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
