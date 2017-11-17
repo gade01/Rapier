@@ -813,46 +813,6 @@
 				<include>ReloadSkinNotification</include>
 				<visible>Skin.String(CurrentViewMode,531) | Skin.String(CurrentViewMode,532)</visible>
 			</control>
-			<control type="radiobutton" id="2091">
-				<description>Display Title on Top Bar (Music Library)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31913]</label>
-				<selected>Skin.HasSetting(DisplayMusicLibraryTitle)</selected>
-				<onclick>Skin.ToggleSetting(DisplayMusicLibraryTitle)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>Window.IsActive(Music) + !String.IsEmpty(ListItem.Artist)</visible>
-			</control>
-			<control type="radiobutton" id="2095">
-				<description>Display Movie Title on Top Bar (Movies)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31913]</label>
-				<selected>Skin.HasSetting(DisplayMovieTitle)</selected>
-				<onclick>Skin.ToggleSetting(DisplayMovieTitle)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
-			</control>
-			<control type="radiobutton" id="2096">
-				<description>Display TV Show Title on Top Bar (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31913]</label>
-				<selected>Skin.HasSetting(DisplayTVShowsTitle)</selected>
-				<onclick>Skin.ToggleSetting(DisplayTVShowsTitle)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
-			</control>
-			<control type="radiobutton" id="2099">
-				<description>Display Artist on Top Bar (Music Videos)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31913]</label>
-				<selected>Skin.HasSetting(DisplayMusicVideosArtist)</selected>
-				<onclick>Skin.ToggleSetting(DisplayMusicVideosArtist)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>Container.Content(MusicVideos)</visible>
-			</control>
 			<control type="radiobutton" id="2097">
 				<description>Clear Logo (Movies)</description>
 				<include>DropDownMenuRadioBtn</include>
