@@ -69,6 +69,12 @@
 					<width>344</width>
 					<height>37</height>
 					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
+					<visible>System.CanReboot + [System.HasAddon(service.libreelec.settings) | System.HasAddon(service.openelec.settings)] + !Skin.HasSetting(ShutdownMenuReboot)</visible>
+				</control>
+				<control type="image">
+					<width>344</width>
+					<height>37</height>
+					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
 					<visible>!Skin.HasSetting(ShutdownMenuRestart)</visible>
 				</control>
 				<control type="image">
@@ -183,6 +189,14 @@
 					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>Reset()</onclick>
 					<visible>System.CanReboot + !Skin.HasSetting(ShutdownMenuReboot)</visible>
+				</control>
+				<control type="button" id="23">
+					<description>Reboot from internal</description>
+					<include>ContextMenuBtn</include>
+					<label>$LOCALIZE[31420]</label>
+					<onclick>Dialog.Close(all,true)</onclick>
+					<onclick>System.ExecWait(&quot;/usr/sbin/rebootfromnand&quot;)</onclick>
+					<visible>System.CanReboot + [System.HasAddon(service.libreelec.settings) | System.HasAddon(service.openelec.settings)] + !Skin.HasSetting(ShutdownMenuReboot)</visible>
 				</control>
 				<control type="button" id="6">
 					<description>Restart Kodi</description>
