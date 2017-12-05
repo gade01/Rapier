@@ -388,18 +388,18 @@
 					<top>5</top>
 					<width>40</width>
 					<height>40</height>
-					<onclick>PlayerControl(Record)</onclick>
+					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
 					<pulseonselect>false</pulseonselect>
 					<label>264</label>
 					<altlabel>265</altlabel>
 					<font />
 					<texturefocus>osd/osd-record-focus.png</texturefocus>
 					<texturenofocus>osd/osd-record-nofocus.png</texturenofocus>
-					<usealttexture>Player.Recording</usealttexture>
+					<usealttexture>PVR.IsRecordingPlayingChannel</usealttexture>
 					<alttexturefocus>osd/osd-record-focus.png</alttexturefocus>
 					<alttexturenofocus>osd/osd-record-2.png</alttexturenofocus>
-					<enable>Player.CanRecord</enable>
-					<animation effect="fade" start="100" end="60" time="100" condition="!Player.CanRecord">Conditional</animation>
+					<enable>PVR.CanRecordPlayingChannel</enable>
+					<animation effect="fade" start="100" end="60" time="100" condition="!PVR.CanRecordPlayingChannel">Conditional</animation>
 				</control>
 				<control type="button" id="98">
 					<description>Guide</description>
