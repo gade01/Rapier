@@ -563,20 +563,24 @@
 				<include>MenuBarBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[191]$INFO[Playlist.Random,: ][/UPPERCASE]</label>
 				<onclick>PlayerControl(Random)</onclick>
+				<visible>!MusicPartyMode.Enabled</visible>
 				<visible>[Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)] + !Control.IsVisible(580)</visible>
 			</control>
 			<control type="image" id="109">
 				<include>MenuBarSeparator</include>
+				<visible>!MusicPartyMode.Enabled</visible>
 				<visible>[Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)] + !Control.IsVisible(580)</visible>
 			</control>
 			<control type="button" id="26">
 				<description>Repeat</description>
 				<include>MenuBarBtn</include>
 				<align>center</align>
+				<visible>!MusicPartyMode.Enabled</visible>
 				<visible>[Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)] + !Control.IsVisible(580)</visible>
 			</control>
 			<control type="image" id="110">
 				<include>MenuBarSeparator</include>
+				<visible>!MusicPartyMode.Enabled</visible>
 				<visible>[Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)] + !Control.IsVisible(580)</visible>
 			</control>
 			<control type="button" id="21">
