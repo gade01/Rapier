@@ -332,7 +332,7 @@
 	<include name="BackgroundMovies">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
-			<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(script-videoextras-main.xml)</visible>
+			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 
 			<control type="multiimage">
 				<description>Custom Background</description>
@@ -359,7 +359,7 @@
 	<include name="BackgroundTVShows">
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
-			<visible>Container.Content(TVShows) | Container.Content(Episodes) | Window.IsActive(script-videoextras-main.xml)</visible>
+			<visible>Container.Content(TVShows) | Container.Content(Episodes)</visible>
 
 			<control type="multiimage">
 				<description>Custom Background</description>
@@ -570,7 +570,7 @@
 
 			<control type="group">
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://movies/genres/) | String.Contains(Container.FolderPath,videodb://movies/years/) | String.Contains(Container.FolderPath,videodb://movies/actors/) | String.Contains(Container.FolderPath,videodb://movies/directors/) | String.Contains(Container.FolderPath,videodb://movies/studios/) | String.Contains(Container.FolderPath,videodb://movies/countries/) | String.Contains(Container.FolderPath,videodb://movies/tags/)]]</visible>
-				<visible>[[Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)
+				<visible>[[Window.IsActive(MovieInformation) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)
 				| Control.IsVisible(58) | Control.IsVisible(66) | Control.IsVisible(95) | Control.IsVisible(97) | Control.IsVisible(583) | Control.IsVisible(585) | Control.IsVisible(588)] + !Skin.HasSetting(EnableMoviesFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(EnableVideoPlaylistFanart)]
 				| Control.IsVisible(59)</visible>
@@ -582,7 +582,7 @@
 			
 			<control type="group">
 				<visible>Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/)]]</visible>
-				<visible>[[Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(585)
+				<visible>[[Window.IsActive(MovieInformation) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(585)
 				| Control.IsVisible(587] + !Skin.HasSetting(EnableMusicVideosFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(EnableVideoPlaylistFanart)]</visible>
 				<include>BackgroundVisibleAnim</include>
@@ -592,18 +592,18 @@
 			</control>
 
 			<control type="group">
-				<visible>[[Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)
+				<visible>[[Window.IsActive(MovieInformation) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(54)
 				| Control.IsVisible(61) | Control.IsVisible(65) | Control.IsVisible(68) | Control.IsVisible(73) | Control.IsVisible(94) | Control.IsVisible(100) | Control.IsVisible(577) | Control.IsVisible(583) | Control.IsVisible(585) | Control.IsVisible(588) | Control.IsVisible(589)] + !Skin.HasSetting(EnableTVShowsFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(EnableVideoPlaylistFanart)]</visible>
 				<control type="group">
-					<visible>Container.Content(TVShows) | Window.IsActive(script-videoextras-main.xml) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/)]]</visible>
+					<visible>Container.Content(TVShows) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://tvshows/genres/) | String.Contains(Container.FolderPath,videodb://tvshows/years/) | String.Contains(Container.FolderPath,videodb://tvshows/actors/) | String.Contains(Container.FolderPath,videodb://tvshows/studios/) | String.Contains(Container.FolderPath,videodb://tvshows/tags/)]]</visible>
 					<include>BackgroundVisibleAnim</include>
 					<include>FanartImage</include>
 					<include condition="Skin.HasSetting(EnableTVShowsExtraFanart)">ExtraFanartImage</include>
 					<include>FanartDim</include>
 				</control>
 				<control type="group">
-					<visible>Container.Content(Episodes) | Container.Content(Seasons) | Window.IsActive(VideoPlaylist) | Window.IsActive(script-videoextras-main.xml)</visible>
+					<visible>Container.Content(Episodes) | Container.Content(Seasons) | Window.IsActive(VideoPlaylist)</visible>
 					<include>BackgroundVisibleAnim</include>
 					<include>FanartImage</include>
 					<include>ParentFanartImage</include>
@@ -615,7 +615,7 @@
 			
 			<control type="group">
 				<visible>Container.Content(Videos)</visible>
-				<visible>[Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(530) | Control.IsVisible(531) | Control.IsVisible(532)] + !Skin.HasSetting(EnableVideosFanart)</visible>
+				<visible>[Window.IsActive(MovieInformation) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(530) | Control.IsVisible(531) | Control.IsVisible(532)] + !Skin.HasSetting(EnableVideosFanart)</visible>
 				<include>BackgroundVisibleAnim</include>
 				<include>FanartImage</include>
 				<include>FanartDim</include>
@@ -687,15 +687,20 @@
 		</control>
 	</include>
 	
+	<variable name="BackgroundGlobalSearchVar">
+		<value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.fanart))">$INFO[Container.ListItem.Art(tvshow.fanart)]</value>
+		<value>$INFO[Container.ListItem.Art(fanart)]</value>
+	</variable>
+	
 	<include name="BackgroundGlobalSearch">
 		<control type="group">
 			<control type="image">
 				<description>Fanart Background</description>
 				<include>BackgroundSize</include>
-				<texture background="true">$INFO[Container.ListItem.Property(Fanart)]</texture>
+				<texture background="true">$VAR[BackgroundGlobalSearchVar]</texture>
 				<aspectratio>scale</aspectratio>
 				<fadetime>BackgroundCrossfadeTime</fadetime>
-				<visible>!String.IsEmpty(Container.ListItem.Property(Fanart))</visible>
+				<visible>![String.IsEmpty(Container.ListItem.Art(fanart)) + String.IsEmpty(Container.ListItem.Art(tvshow.fanart))]</visible>
 			</control>
 
 			<control type="image">

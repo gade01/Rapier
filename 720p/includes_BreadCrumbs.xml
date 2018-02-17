@@ -1108,8 +1108,7 @@
 			<control type="button" id="555">
 				<include>BreadCrumbHomeIcon2</include>
 				<include>BreadCrumbSlideLvl1Anim</include>
-				<ondown condition="!Window.IsActive(script-globalsearch-infodialog.xml)">Control.SetFocus(9000)</ondown>
-				<ondown condition="Window.IsActive(script-globalsearch-infodialog.xml)">Control.SetFocus(190)</ondown>
+				<ondown>Control.SetFocus(9000)</ondown>
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
@@ -1128,99 +1127,20 @@
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$INFO[Window.Property(GlobalSearch.SearchString),","][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>!Window.IsActive(script-globalsearch-infodialog.xml)</visible>
 			</control>
 			<control type="image">
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>!Window.IsActive(script-globalsearch-infodialog.xml)</visible>
 			</control>
 			<control type="label">
 				<include>BreadCrumbLabel</include>
 				<label>[UPPERCASE]$INFO[Container(9000).ListItem.Label][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl4Anim</include>
-				<visible>!String.IsEmpty(Container(9000).ListItem.Label) + !Container(9000).HasFocus(11) + !Window.IsActive(script-globalsearch-infodialog.xml)</visible>
+				<visible>!String.IsEmpty(Container(9000).ListItem.Label)</visible>
 			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl4Anim</include>
-				<visible>!String.IsEmpty(Container(9000).ListItem.Label) + !Container(9000).HasFocus(11) + !Window.IsActive(script-globalsearch-infodialog.xml)</visible>
-			</control>
-			<control type="label">
+			<control type="label" id="999">
 				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$INFO[Container(100).ListItem.Label][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>Window.IsActive(script-globalsearch-infodialog.xml)</visible>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>Window.IsActive(script-globalsearch-infodialog.xml)</visible>
-			</control>
-		</control>
-	</include>
-	
-	<include name="BreadCrumbVideoExtras">
-		<control type="grouplist">
-			<left>10</left>
-			<top>StatusBartop</top>
-			<height>43</height>
-			<width>740</width>
-			<itemgap>8</itemgap>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<control type="button" id="555">
-				<include>BreadCrumbHomeIcon2</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl1Anim</include>
-			</control>
-			<!--
-			<control type="label">
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$ADDON[script.videoextras 32001][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			-->
-			<control type="label">
-				<description>Movies</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$LOCALIZE[20342][/UPPERCASE]</label>
-				<visible>String.IsEmpty(ListItem.TvShowTitle)</visible>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="label">
-				<description>TV Shows</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$LOCALIZE[20343][/UPPERCASE]</label>
-				<visible>!String.IsEmpty(ListItem.TvShowTitle)</visible>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl2Anim</include>
-			</control>
-			<control type="label">
-				<description>Movie / TV Show / Music Video Title</description>
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
-				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
-			</control>
-			<control type="image">
-				<include>BreadCrumbSeparator</include>
-				<include>BreadCrumbSlideLvl3Anim</include>
-				<visible>!String.IsEmpty(ListItem.Title)</visible>
-			</control>
-			<control type="label">
-				<include>BreadCrumbLabel</include>
-				<label>[UPPERCASE]$ADDON[script.videoextras 32001][/UPPERCASE]</label>
+				<label>[UPPERCASE]$LOCALIZE[284][/UPPERCASE]</label>
 				<include>BreadCrumbSlideLvl4Anim</include>
 			</control>
 			<control type="image">
@@ -1229,7 +1149,7 @@
 			</control>
 		</control>
 	</include>
-	
+	¨
 	<include name="BreadCrumbMovieSetInfo">
 		<control type="grouplist">
 			<left>10</left>
