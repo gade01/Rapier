@@ -304,7 +304,7 @@
 
 	<include name="BackgroundVideos">
 		<control type="group">
-			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 
 			<control type="multiimage">
 				<description>Custom Background</description>
@@ -331,7 +331,7 @@
 
 	<include name="BackgroundMovies">
 		<control type="group">
-			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 
 			<control type="multiimage">
@@ -358,7 +358,7 @@
 
 	<include name="BackgroundTVShows">
 		<control type="group">
-			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 			<visible>Container.Content(TVShows) | Container.Content(Episodes)</visible>
 
 			<control type="multiimage">
@@ -524,7 +524,6 @@
 	<include name="BackgroundMusicPlaying">
 		<control type="group">
 			<visible>Player.HasAudio</visible>
-			<include condition="System.HasAddon(script.tvtunes)">TVTunesDisableVizCond</include>
 			<include>BackgroundVisibleAnim</include>
 			
 			<control type="visualisation" id="9010">
@@ -566,7 +565,7 @@
 
 	<include name="BackgroundVideoFanart">
 		<control type="group">
-			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [Player.HasAudio + Window.IsActive(MovieInformation)] | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [Player.HasAudio + Window.IsActive(MovieInformation)]]">IsMediaPlayingCondition</include>
 
 			<control type="group">
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://movies/genres/) | String.Contains(Container.FolderPath,videodb://movies/years/) | String.Contains(Container.FolderPath,videodb://movies/actors/) | String.Contains(Container.FolderPath,videodb://movies/directors/) | String.Contains(Container.FolderPath,videodb://movies/studios/) | String.Contains(Container.FolderPath,videodb://movies/countries/) | String.Contains(Container.FolderPath,videodb://movies/tags/)]]</visible>
@@ -583,7 +582,7 @@
 			<control type="group">
 				<visible>Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/)]]</visible>
 				<visible>[[Window.IsActive(MovieInformation) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(585)
-				| Control.IsVisible(587] + !Skin.HasSetting(EnableMusicVideosFanart)]
+				| Control.IsVisible(587)] + !Skin.HasSetting(EnableMusicVideosFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(EnableVideoPlaylistFanart)]</visible>
 				<include>BackgroundVisibleAnim</include>
 				<include>FanartImage</include>
@@ -673,7 +672,7 @@
 	
 	<include name="BackgroundGenreFanart">
 		<control type="group">
-			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG) | [System.HasAddon(script.tvtunes) + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))]]">IsMediaPlayingCondition</include>
+			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 			<visible>![Control.HasFocus(151) | Control.HasFocus(584) | ListItem.IsParentFolder]</visible>
 			<include>BackgroundVisibleAnim</include>
 			<control type="image">
@@ -821,10 +820,6 @@
 			<include>BackgroundDim</include>
 			<include>TVShowsBrightnessAnimations</include>
 		</control>
-	</include>
-
-	<include name="TVTunesDisableVizCond">
-		<visible>String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 	</include>
 
 	<include name="IsMediaPlayingCondition">

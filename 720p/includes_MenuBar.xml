@@ -1674,18 +1674,6 @@
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="213">
-				<description>TV Tunes</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31928][/UPPERCASE]</label>
-				<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.HasAddon(script.tvtunes) + [String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,musicvideo)] + String.IsEmpty(Window(movieinformation).Property(TvTunes_HideVideoInfoButton))</visible>
-			</control>
-			<control type="image" id="124">
-				<include>MenuBarSeparator</include>
-				<visible>Control.IsVisible(213)</visible>
-			</control>
 		</control>
 	</include>
 
