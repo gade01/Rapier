@@ -18,7 +18,7 @@
 			<include>BackgroundOpenCloseAnim</include>
 		</control>
 
-		<include>HomePanelFanart</include>
+		<include condition="!Skin.HasSetting(HideWidgetBackgrounds)">HomePanelFanart</include>
 		
 		<control type="group">
 			<visible>![Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)]</visible>

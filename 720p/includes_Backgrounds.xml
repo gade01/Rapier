@@ -550,7 +550,7 @@
 			<control type="group">
 				<visible>Container.Content(MusicVideos) | Window.IsActive(VideoPlaylist) | [Control.IsVisible(585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/)]]</visible>
 				<visible>[[Window.IsActive(MovieInformation) | Window.IsActive(script-videoextras-main.xml) | Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(585)
-				| Control.IsVisible(587] + !Skin.HasSetting(EnableMusicVideosFanart)]
+				| Control.IsVisible(587)] + !Skin.HasSetting(EnableMusicVideosFanart)]
 				| [Control.IsVisible(580) + !Skin.HasSetting(EnableVideoPlaylistFanart)]</visible>
 				<include>BackgroundVisibleAnim</include>
 				<include>FanartImage</include>
