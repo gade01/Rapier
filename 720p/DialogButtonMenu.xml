@@ -212,7 +212,7 @@
 					<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>System.LogOff</onclick>
-					<visible>[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.LoggedOn</visible>
+					<visible>[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.Loggedon</visible>
 				</control>
 				<control type="togglebutton" id="8">
 					<description>Master Mode</description>
