@@ -363,6 +363,133 @@
 		<value condition="Control.IsVisible(991)">$LOCALIZE[31156]</value>
 		<value condition="!String.IsEqual(Container(50).NumItems,0)">$INFO[Container(50).NumItems] $LOCALIZE[31202]</value>
 	</variable>
+	
+	<variable name="GlobalSearchLabel1">
+		<value condition="Container.Content(Albums)">[UPPERCASE]$INFO[ListItem.Artist,,: ][/UPPERCASE]$INFO[ListItem.Album]</value>
+		<value>[UPPERCASE]$INFO[ListItem.Property(ChannelName),,: ]$INFO[ListItem.Label][/UPPERCASE]</value>
+	</variable>
+	
+	<variable name="GlobalSearchPlot">
+		<value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Container.Content(Albums)">$INFO[ListItem.Property(Album_Description)]</value>
+		<value>$INFO[ListItem.Property(Plot)]</value>
+	</variable>
+	
+	<variable name="GlobalSearchGenre">
+		<value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
+		<value condition="Container.Content(livetv)">$INFO[ListItem.Property(Genre)]</value>
+		<value>$INFO[ListItem.Genre]</value>
+	</variable>
+	
+	<variable name="GlobalSearchLabel2">
+		<value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Born),$LOCALIZE[21893]: ,   &#x2022;   ]$INFO[ListItem.Property(Artist_Formed),$LOCALIZE[21894]: ,   &#x2022;   ]$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[21898]: ,]$INFO[ListItem.Property(Artist_Disbanded),   &#x2022;   $LOCALIZE[21896]: ,]</value>
+		<value condition="Container.Content(livetv)">$INFO[ListItem.Property(Starttime),$LOCALIZE[19126]: ,   &#x2022;   ]$INFO[ListItem.Property(EndTime),$LOCALIZE[19127]: ,   &#x2022;   ]$INFO[ListItem.Property(Duration),$LOCALIZE[180]: , $LOCALIZE[31003]]</value>
+		<value>$INFO[ListItem.Year]</value>
+	</variable>
+	
+	<variable name="GlobalSearchLabel3">
+		<value condition="Container.Content(Songs)">$INFO[ListItem.Artist]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	
+	<variable name="GlobalSearchLabel4">
+		<value condition="Container.Content(Actors) + String.IsEqual(ListItem.Label2,1)">$INFO[ListItem.Label2,, $LOCALIZE[480]]</value>
+		<value condition="Container.Content(Actors)">$INFO[ListItem.Label2,, $LOCALIZE[38026]]</value>
+		<value condition="String.IsEqual(ListItem.Label2,1)">$INFO[ListItem.Label2,, $LOCALIZE[21869]]</value>
+		<value>$INFO[ListItem.Label2,, $LOCALIZE[470]]</value>
+	</variable>
+	
+	<include name="GlobalSearchItemLayoutBackgrounds">
+		<control type="image">
+			<width>$PARAM[BackgroundWidth]</width>
+			<height>145</height>
+			<bordersize>6</bordersize>
+			<texture background="true" border="4">covers/cover-case2.png</texture>
+			<animation effect="fade" end="65" condition="true">Conditional</animation>
+		</control>
+		<control type="image">
+			<top>9</top>
+			<left>$PARAM[HeaderLeft]</left>
+			<width>$PARAM[HeaderWidth]</width>
+			<height>$PARAM[HeaderHeight]</height>
+			<texture colordiffuse="10ffffff" border="1">white.png</texture>
+		</control>
+	</include>
+	
+	<include name="GlobalSearchFocusedLayoutBackgrounds">
+		<control type="image">
+			<width>$PARAM[BackgroundWidth]</width>
+			<height>145</height>
+			<texture border="7">covers/cover-case-focus.png</texture>
+		</control>
+		<control type="image">
+			<top>9</top>
+			<left>$PARAM[HeaderLeft]</left>
+			<width>$PARAM[HeaderWidth]</width>
+			<height>$PARAM[HeaderHeight]</height>
+			<texture colordiffuse="57ffffff" border="1">white.png</texture>
+		</control>
+		<control type="image">
+			<left>5</left>
+			<top>5</top>
+			<width>$PARAM[DimWidth]</width>
+			<height>135</height>
+			<bordersize>4</bordersize>
+			<texture background="true">dim.png</texture>
+			<animation effect="fade" end="70" condition="true">Conditional</animation>
+		</control>
+	</include>
+	
+	<include name="GlobalSearchOverlays">
+		<control type="image">
+			<description>Quality / Unwatched</description>
+			<left>$PARAM[left]</left>
+			<top>106</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>Integer.IsEqual(ListItem.PlayCount,0)</visible>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+		</control>
+		<control type="image">
+			<description>Quality / Watched</description>
+			<left>$PARAM[left]</left>
+			<top>106</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>!Integer.IsEqual(ListItem.PlayCount,0)</visible>
+			<animation effect="fade" end="85" condition="true">Conditional</animation>
+		</control>
+		<control type="image">
+			<description>Watched Partial</description>
+			<left>$PARAM[left]</left>
+			<top>106</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[WatchedPartial]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>ListItem.IsResumable</visible>
+			<include>ListViewPartialWatchedOverlayFadeAnim</include>
+			<include>ListViewWatchedOverlayFadeAnim</include>
+		</control>
+	</include>
+	
+	<include name="GlobalSearchWatchedOverlay">
+		<control type="image">
+			<description>Watched Overlay</description>
+			<left>67</left>
+			<top>106</top>
+			<width>24</width>
+			<height>24</height>
+			<aligny>center</aligny>
+			<texture background="true">OverlayWatched.png</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
+		</control>
+	</include>
 	<!-- END Global Search -->
 	
 	<!-- Extended Info -->

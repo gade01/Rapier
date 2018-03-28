@@ -135,45 +135,6 @@
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</focusedlayout>
-					<!--
-					<content>
-						<item id="5">
-							<label>$LOCALIZE[20389]</label>
-							<label2>$INFO[Container(151).NumItems]</label2>
-							<visible>Control.IsVisible(159)</visible>
-						</item>
-						<item id="6">
-							<label>$LOCALIZE[344]</label>
-							<label2>$INFO[Container(211).NumItems]</label2>
-							<visible>Control.IsVisible(219)</visible>
-						</item>
-						<item id="7">
-							<label>$LOCALIZE[20348]</label>
-							<label2>$INFO[Container(231).NumItems]</label2>
-							<visible>Control.IsVisible(239)</visible>
-						</item>
-						<item id="8">
-							<label>$LOCALIZE[19069]</label>
-							<label2>$INFO[Container(221).NumItems]</label2>
-							<visible>Control.IsVisible(229)</visible>
-						</item>
-						<item id="9">
-							<label>$LOCALIZE[133]</label>
-							<label2>$INFO[Container(161).NumItems]</label2>
-							<visible>Control.IsVisible(169)</visible>
-						</item>
-						<item id="10">
-							<label>$LOCALIZE[132]</label>
-							<label2>$INFO[Container(171).NumItems]</label2>
-							<visible>Control.IsVisible(179)</visible>
-						</item>
-						<item id="11">
-							<label>$LOCALIZE[134]</label>
-							<label2>$INFO[Container(181).NumItems]</label2>
-							<visible>Control.IsVisible(189)</visible>
-						</item>
-					</content>
-					-->
 				</control>
 				
 				<control type="button" id="990">
@@ -209,13 +170,12 @@
 					<itemlayout width="453" height="134" condition="Container.Content(Movies)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="98"/>
+								<param name="HeaderWidth" value="357"/>
+								<param name="HeaderHeight" value="30"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -224,40 +184,9 @@
 								<texture background="true">$VAR[PosterThumb]</texture>
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>Integer.IsEqual(ListItem.PlayCount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.PlayCount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Watched Partial</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[WatchedPartial]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>ListItem.IsResumable</visible>
-								<include>ListViewPartialWatchedOverlayFadeAnim</include>
-								<include>ListViewWatchedOverlayFadeAnim</include>
-							</control>
+							<include content="GlobalSearchOverlays">
+								<param name="left" value="67"/>
+							</include>
 							<control type="label">
 								<top>12</top>
 								<left>103</left>
@@ -274,7 +203,7 @@
 								<height>36</height>
 								<label>$INFO[ListItem.Tagline]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 							</control>
 							<control type="textbox">
 								<left>103</left>
@@ -283,7 +212,7 @@
 								<height>36</height>
 								<label>$INFO[ListItem.PlotOutline]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<visible>String.IsEmpty(ListItem.Tagline)</visible>
 							</control>
 							<control type="textbox">
@@ -293,7 +222,7 @@
 								<height>36</height>
 								<label fallback="31204">$INFO[ListItem.Plot]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<visible>String.IsEmpty(ListItem.Tagline) + String.IsEmpty(ListItem.PlotOutline)</visible>
 							</control>
 							<control type="label">
@@ -317,13 +246,12 @@
 					<itemlayout width="453" height="134" condition="Container.Content(TVShows)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="98"/>
+								<param name="HeaderWidth" value="357"/>
+								<param name="HeaderHeight" value="30"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -332,17 +260,7 @@
 								<texture background="true">$VAR[PosterThumb]</texture>
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 							</control>
-							<control type="image">
-								<description>Watched Overlay</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<aligny>center</aligny>
-								<texture background="true">OverlayWatched.png</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-							</control>
+							<include>GlobalSearchWatchedOverlay</include>
 							<control type="label">
 								<top>12</top>
 								<left>103</left>
@@ -359,7 +277,7 @@
 								<height>36</height>
 								<label fallback="31204">$INFO[ListItem.Plot]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 							</control>
 							<control type="label">
 								<top>87</top>
@@ -382,13 +300,12 @@
 					<itemlayout width="453" height="134" condition="Container.Content(Seasons)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="98"/>
+								<param name="HeaderWidth" value="357"/>
+								<param name="HeaderHeight" value="30"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -397,17 +314,7 @@
 								<texture background="true">$VAR[PosterThumb]</texture>
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 							</control>
-							<control type="image">
-								<description>Watched Overlay</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<aligny>center</aligny>
-								<texture background="true">OverlayWatched.png</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-							</control>
+							<include>GlobalSearchWatchedOverlay</include>
 							<control type="label">
 								<top>13</top>
 								<left>103</left>
@@ -447,13 +354,12 @@
 					<itemlayout height="134" condition="Container.Content(Episodes)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>918</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="918"/>
+								<param name="HeaderLeft" value="236"/>
+								<param name="HeaderWidth" value="673"/>
+								<param name="HeaderHeight" value="52"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -463,40 +369,9 @@
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 								<texture background="true">$INFO[ListItem.Icon]</texture>
 							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>Integer.IsEqual(ListItem.Playcount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Watched Partial</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[WatchedPartial]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>ListItem.IsResumable</visible>
-								<include>ListViewPartialWatchedOverlayFadeAnim</include>
-								<include>ListViewWatchedOverlayFadeAnim</include>
-							</control>
+							<include content="GlobalSearchOverlays">
+								<param name="left" value="205"/>
+							</include>
 							<control type="label">
 								<left>241</left>
 								<top>13</top>
@@ -512,7 +387,7 @@
 								<width>666</width>
 								<label>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.Title]</label>
 								<font>ListFont</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<shadowcolor>ShadowColor</shadowcolor>
 							</control>
 							<control type="textbox">
@@ -535,23 +410,228 @@
 							</control>
 						</control>
 					</itemlayout>
+					<itemlayout height="134" condition="Container.Content(musicvideos)">
+						<control type="group">
+							<top>-4</top>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="918"/>
+								<param name="HeaderLeft" value="236"/>
+								<param name="HeaderWidth" value="673"/>
+								<param name="HeaderHeight" value="30"/>
+							</include>
+							<control type="image">
+								<left>9</left>
+								<top>9</top>
+								<width>225</width>
+								<height>126</height>
+								<align>left</align>
+								<aspectratio align="center" aligny="center">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+							</control>
+							<include content="GlobalSearchOverlays">
+								<param name="left" value="205"/>
+							</include>
+							<control type="label">
+								<left>241</left>
+								<top>13</top>
+								<width>666</width>
+								<label>[UPPERCASE]$INFO[ListItem.Artist,,: ][/UPPERCASE]$INFO[ListItem.Album]</label>
+								<font>ListFont</font>
+								<textcolor>WhiteColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+							</control>
+							<control type="textbox">
+								<left>241</left>
+								<top>41</top>
+								<width>663</width>
+								<height>36</height>
+								<label fallback="31204">$INFO[ListItem.Plot]</label>
+								<font>ListFont3</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
+							</control>
+							<control type="label">
+								<left>241</left>
+								<top>87</top>
+								<width>666</width>
+								<label>$INFO[ListItem.Genre]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+							</control>
+							<control type="label">
+								<top>110</top>
+								<left>241</left>
+								<width>666</width>
+								<label>$INFO[ListItem.Year]$INFO[ListItem.Duration,   &#x2022;   , $LOCALIZE[31003]]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+							</control>
+						</control>
+					</itemlayout>
+					<itemlayout height="134" condition="Container.Content(Artists) | Container.Content(Albums) | Container.Content(livetv)">
+						<control type="group">
+							<top>-4</top>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="918"/>
+								<param name="HeaderLeft" value="137"/>
+								<param name="HeaderWidth" value="772"/>
+								<param name="HeaderHeight" value="30"/>
+							</include>
+							<control type="image">
+								<left>9</left>
+								<top>9</top>
+								<width>126</width>
+								<height>126</height>
+								<align>left</align>
+								<aspectratio align="center" aligny="center">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>13</top>
+								<width>756</width>
+								<label>$VAR[GlobalSearchLabel1]</label>
+								<font>ListFont</font>
+								<textcolor>WhiteColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+							</control>
+							<control type="textbox">
+								<left>142</left>
+								<top>41</top>
+								<width>753</width>
+								<height>36</height>
+								<label fallback="31204">$VAR[GlobalSearchPlot]</label>
+								<font>ListFont3</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>87</top>
+								<width>756</width>
+								<label>$VAR[GlobalSearchGenre]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+							</control>
+							<control type="label">
+								<top>110</top>
+								<left>142</left>
+								<width>756</width>
+								<label>$VAR[GlobalSearchLabel2]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+							</control>
+							<control type="image">
+								<description>Star Rating</description>
+								<right>5</right>
+								<top>112</top>
+								<width>100</width>
+								<height>16</height>
+								<texture background="true">$INFO[ListItem.Property(Album_Rating)]</texture>
+								<aspectratio align="right">keep</aspectratio>
+								<include>StarRatingFadeAnim</include>
+								<visible>Container.Content(Albums)</visible>
+							</control>
+						</control>
+					</itemlayout>
+					<itemlayout width="453" height="134" condition="Container.Content(Songs) | Container.Content(Actors) | Container.Content(Directors)">
+						<control type="group">
+							<top>-4</top>
+							<include content="GlobalSearchItemLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="137"/>
+								<param name="HeaderWidth" value="318"/>
+								<param name="HeaderHeight" value="30"/>
+							</include>
+							<control type="image">
+								<left>9</left>
+								<top>9</top>
+								<width>126</width>
+								<height>126</height>
+								<align>left</align>
+								<aspectratio align="center" aligny="center">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>13</top>
+								<width>310</width>
+								<label>[UPPERCASE]$VAR[GlobalSearchLabel3][/UPPERCASE]</label>
+								<font>ListFont</font>
+								<textcolor>WhiteColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>41</top>
+								<width>310</width>
+								<label>$VAR[GlobalSearchLabel4]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<visible>!Container.Content(Songs)</visible>
+							</control>
+							<control type="group">
+								<visible>Container.Content(Songs)</visible>
+								<control type="label">
+									<left>142</left>
+									<top>37</top>
+									<width>310</width>
+									<label>$INFO[ListItem.Label,$LOCALIZE[179]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor</textcolor>
+									<shadowcolor>ShadowColor</shadowcolor>
+									<visible>!String.IsEmpty(ListItem.Label)</visible>
+								</control>
+								<control type="label">
+									<left>142</left>
+									<top>59</top>
+									<width>310</width>
+									<label>$INFO[ListItem.Album,$LOCALIZE[558]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor</textcolor>
+									<shadowcolor>ShadowColor</shadowcolor>
+									<visible>!String.IsEmpty(ListItem.Album)</visible>
+								</control>
+								<control type="label">
+									<top>87</top>
+									<left>142</left>
+									<width>310</width>
+									<label>$INFO[ListItem.Genre]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor2</textcolor>
+								</control>
+								<control type="label">
+									<top>110</top>
+									<left>142</left>
+									<width>310</width>
+									<label>$INFO[ListItem.Year,,   &#x2022;   ]$INFO[ListItem.Duration,, $LOCALIZE[31003]]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor2</textcolor>
+								</control>
+								<control type="image">
+									<description>Star Rating</description>
+									<right>5</right>
+									<top>112</top>
+									<width>100</width>
+									<height>16</height>
+									<texture background="true">$INFO[ListItem.Rating]</texture>
+									<aspectratio align="right">keep</aspectratio>
+									<include>StarRatingFadeAnim</include>
+								</control>
+							</control>
+						</control>
+					</itemlayout>
 					<focusedlayout width="453" height="134" condition="Container.Content(Movies)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="98"/>
+								<param name="HeaderWidth" value="357"/>
+								<param name="HeaderHeight" value="30"/>
+								<param name="DimWidth" value="454"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -561,40 +641,9 @@
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>Integer.IsEqual(ListItem.Playcount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Watched Partial</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[WatchedPartial]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>ListItem.IsResumable</visible>
-								<include>ListViewPartialWatchedOverlayFadeAnim</include>
-								<include>ListViewWatchedOverlayFadeAnim</include>
-							</control>
+							<include content="GlobalSearchOverlays">
+								<param name="left" value="67"/>
+							</include>
 							<control type="label">
 								<top>12</top>
 								<left>103</left>
@@ -612,7 +661,7 @@
 								<height>36</height>
 								<label>$INFO[ListItem.Tagline]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
 							</control>
 							<control type="textbox">
@@ -622,7 +671,7 @@
 								<height>36</height>
 								<label>$INFO[ListItem.PlotOutline]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
 								<visible>String.IsEmpty(ListItem.Tagline)</visible>
 							</control>
@@ -633,7 +682,7 @@
 								<height>36</height>
 								<label fallback="31204">$INFO[ListItem.Plot]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
 								<visible>String.IsEmpty(ListItem.Tagline) + String.IsEmpty(ListItem.PlotOutline)</visible>
 							</control>
@@ -658,20 +707,13 @@
 					<focusedlayout width="453" height="134" condition="Container.Content(TVShows)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="98"/>
+								<param name="HeaderWidth" value="357"/>
+								<param name="HeaderHeight" value="30"/>
+								<param name="DimWidth" value="454"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -681,17 +723,7 @@
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 							</control>
-							<control type="image">
-								<description>Watched Overlay</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<aligny>center</aligny>
-								<texture background="true">OverlayWatched.png</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-							</control>
+							<include>GlobalSearchWatchedOverlay</include>
 							<control type="label">
 								<top>12</top>
 								<left>103</left>
@@ -709,7 +741,7 @@
 								<height>36</height>
 								<label fallback="31204">$INFO[ListItem.Plot]</label>
 								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
 							</control>
 							<control type="label">
@@ -733,20 +765,13 @@
 					<focusedlayout width="453" height="134" condition="Container.Content(Seasons)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="98"/>
+								<param name="HeaderWidth" value="357"/>
+								<param name="HeaderHeight" value="30"/>
+								<param name="DimWidth" value="454"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -756,17 +781,7 @@
 								<aspectratio align="center" aligny="center">scale</aspectratio>
 								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 							</control>
-							<control type="image">
-								<description>Watched Overlay</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<aligny>center</aligny>
-								<texture background="true">OverlayWatched.png</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-							</control>
+							<include>GlobalSearchWatchedOverlay</include>
 							<control type="label">
 								<top>13</top>
 								<left>103</left>
@@ -783,7 +798,7 @@
 								<width>348</width>
 								<label>$INFO[ListItem.Label]</label>
 								<font>ListFont</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<shadowcolor>ShadowColor</shadowcolor>
 								<scroll>true</scroll>
 							</control>
@@ -808,20 +823,13 @@
 					<focusedlayout height="134" condition="Container.Content(Episodes)">
 						<control type="group">
 							<top>-4</top>
-							<control type="image">
-								<width>917</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>907</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="917"/>
+								<param name="HeaderLeft" value="236"/>
+								<param name="HeaderWidth" value="671"/>
+								<param name="HeaderHeight" value="52"/>
+								<param name="DimWidth" value="907"/>
+							</include>
 							<control type="image">
 								<left>9</left>
 								<top>9</top>
@@ -832,40 +840,9 @@
 								<texture background="true">$INFO[ListItem.Icon]</texture>
 								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>Integer.IsEqual(ListItem.Playcount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!Integer.IsEqual(ListItem.Playcount,0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Watched Partial</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[WatchedPartial]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>ListItem.IsResumable</visible>
-								<include>ListViewPartialWatchedOverlayFadeAnim</include>
-								<include>ListViewWatchedOverlayFadeAnim</include>
-							</control>
+							<include content="GlobalSearchOverlays">
+								<param name="left" value="205"/>
+							</include>
 							<control type="label">
 								<left>241</left>
 								<top>13</top>
@@ -882,7 +859,7 @@
 								<width>666</width>
 								<label>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.Label]</label>
 								<font>ListFont</font>
-								<textcolor>MediaInfoItemColor</textcolor>
+								<textcolor>MediaInfoItemColor2</textcolor>
 								<shadowcolor>ShadowColor</shadowcolor>
 								<scroll>true</scroll>
 							</control>
@@ -906,6 +883,229 @@
 							</control>
 						</control>
 					</focusedlayout>
+					<focusedlayout height="134" condition="Container.Content(musicvideos)">
+						<control type="group">
+							<top>-4</top>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="917"/>
+								<param name="HeaderLeft" value="236"/>
+								<param name="HeaderWidth" value="671"/>
+								<param name="HeaderHeight" value="30"/>
+								<param name="DimWidth" value="907"/>
+							</include>
+							<control type="image">
+								<left>9</left>
+								<top>9</top>
+								<width>225</width>
+								<height>126</height>
+								<align>left</align>
+								<aspectratio align="center" aligny="center">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+							</control>
+							<include content="GlobalSearchOverlays">
+								<param name="left" value="205"/>
+							</include>
+							<control type="label">
+								<left>241</left>
+								<top>13</top>
+								<width>666</width>
+								<label>[UPPERCASE]$INFO[ListItem.Artist,,: ][/UPPERCASE]$INFO[ListItem.Album]</label>
+								<font>ListFont</font>
+								<textcolor>WhiteColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<scroll>true</scroll>
+							</control>
+							<control type="textbox">
+								<left>241</left>
+								<top>41</top>
+								<width>663</width>
+								<height>36</height>
+								<label fallback="31204">$INFO[ListItem.Plot]</label>
+								<font>ListFont3</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
+							</control>
+							<control type="label">
+								<left>241</left>
+								<top>87</top>
+								<width>666</width>
+								<label>$INFO[ListItem.Genre]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<scroll>true</scroll>
+							</control>
+							<control type="label">
+								<top>110</top>
+								<left>241</left>
+								<width>666</width>
+								<label>$INFO[ListItem.Year]$INFO[ListItem.Duration,   &#x2022;   , $LOCALIZE[31003]]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+							</control>
+						</control>
+					</focusedlayout>
+					<focusedlayout height="134" condition="Container.Content(Artists) | Container.Content(Albums) | Container.Content(livetv)">
+						<control type="group">
+							<top>-4</top>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="917"/>
+								<param name="HeaderLeft" value="137"/>
+								<param name="HeaderWidth" value="771"/>
+								<param name="HeaderHeight" value="30"/>
+								<param name="DimWidth" value="907"/>
+							</include>
+							<control type="image">
+								<left>9</left>
+								<top>9</top>
+								<width>126</width>
+								<height>126</height>
+								<align>left</align>
+								<aspectratio align="center" aligny="center">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>13</top>
+								<width>756</width>
+								<label>$VAR[GlobalSearchLabel1]</label>
+								<font>ListFont</font>
+								<textcolor>WhiteColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<scroll>true</scroll>
+							</control>
+							<control type="textbox">
+								<left>142</left>
+								<top>41</top>
+								<width>753</width>
+								<height>36</height>
+								<label fallback="31204">$VAR[GlobalSearchPlot]</label>
+								<font>ListFont3</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>87</top>
+								<width>756</width>
+								<label>$VAR[GlobalSearchGenre]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<scroll>true</scroll>
+							</control>
+							<control type="label">
+								<top>110</top>
+								<left>142</left>
+								<width>756</width>
+								<label>$VAR[GlobalSearchLabel2]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+							</control>
+							<control type="image">
+								<description>Star Rating</description>
+								<right>5</right>
+								<top>112</top>
+								<width>100</width>
+								<height>16</height>
+								<texture background="true">$INFO[ListItem.Property(Album_Rating)]</texture>
+								<aspectratio align="right">keep</aspectratio>
+								<include>StarRatingFadeAnim</include>
+								<visible>Container.Content(Albums)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<focusedlayout width="453" height="134" condition="Container.Content(Songs) | Container.Content(Actors) | Container.Content(Directors)">
+						<control type="group">
+							<top>-4</top>
+							<include content="GlobalSearchFocusedLayoutBackgrounds">
+								<param name="BackgroundWidth" value="464"/>
+								<param name="HeaderLeft" value="137"/>
+								<param name="HeaderWidth" value="318"/>
+								<param name="HeaderHeight" value="30"/>
+								<param name="DimWidth" value="454"/>
+							</include>
+							<control type="image">
+								<left>9</left>
+								<top>9</top>
+								<width>126</width>
+								<height>126</height>
+								<align>left</align>
+								<aspectratio align="center" aligny="center">scale</aspectratio>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>13</top>
+								<width>310</width>
+								<label>[UPPERCASE]$VAR[GlobalSearchLabel3][/UPPERCASE]</label>
+								<font>ListFont</font>
+								<textcolor>WhiteColor</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<scroll>true</scroll>
+							</control>
+							<control type="label">
+								<left>142</left>
+								<top>41</top>
+								<width>310</width>
+								<label>$VAR[GlobalSearchLabel4]</label>
+								<font>ListFont5</font>
+								<textcolor>MediaInfoItemColor2</textcolor>
+								<shadowcolor>ShadowColor</shadowcolor>
+								<visible>!Container.Content(Songs)</visible>
+							</control>
+							<control type="group">
+								<visible>Container.Content(Songs)</visible>
+								<control type="label">
+									<left>142</left>
+									<top>37</top>
+									<width>310</width>
+									<label>$INFO[ListItem.Label,$LOCALIZE[179]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor</textcolor>
+									<shadowcolor>ShadowColor</shadowcolor>
+									<visible>!String.IsEmpty(ListItem.Label)</visible>
+								</control>
+								<control type="label">
+									<left>142</left>
+									<top>59</top>
+									<width>310</width>
+									<label>$INFO[ListItem.Album,$LOCALIZE[558]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor</textcolor>
+									<shadowcolor>ShadowColor</shadowcolor>
+									<visible>!String.IsEmpty(ListItem.Album)</visible>
+								</control>
+								<control type="label">
+									<top>87</top>
+									<left>142</left>
+									<width>310</width>
+									<label>$INFO[ListItem.Genre]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor2</textcolor>
+								</control>
+								<control type="label">
+									<top>110</top>
+									<left>142</left>
+									<width>310</width>
+									<label>$INFO[ListItem.Year,,   &#x2022;   ]$INFO[ListItem.Duration,, $LOCALIZE[31003]]</label>
+									<font>ListFont5</font>
+									<textcolor>MediaInfoItemColor2</textcolor>
+								</control>
+								<control type="image">
+									<description>Star Rating</description>
+									<right>5</right>
+									<top>112</top>
+									<width>100</width>
+									<height>16</height>
+									<texture background="true">$INFO[ListItem.Rating]</texture>
+									<aspectratio align="right">keep</aspectratio>
+									<include>StarRatingFadeAnim</include>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="9001">
 					<right>34</right>
@@ -914,1292 +1114,6 @@
 					<texturesliderbackground />
 					<onleft>50</onleft>
 				</control>
-				
-				<!--
-				<control type="panel" id="151">
-					<visible>Container(9000).HasFocus(5)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>158</onright>
-					<onup>151</onup>
-					<ondown>158</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>158</pagecontrol>
-					<itemlayout height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>918</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>225</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="label">
-								<left>241</left>
-								<top>13</top>
-								<width>666</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(Artist),,: ][/UPPERCASE]$INFO[ListItem.Property(Album)]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="textbox">
-								<left>241</left>
-								<top>41</top>
-								<width>663</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>241</left>
-								<top>87</top>
-								<width>666</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>241</left>
-								<width>666</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>917</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>907</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>225</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>205</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="label">
-								<left>241</left>
-								<top>13</top>
-								<width>666</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(Artist),,: ][/UPPERCASE]$INFO[ListItem.Property(Album)]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="textbox">
-								<left>241</left>
-								<top>41</top>
-								<width>663</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>241</left>
-								<top>87</top>
-								<width>666</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>241</left>
-								<width>666</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="158">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>151</onleft>
-					<visible>Container(9000).HasFocus(5)</visible>
-				</control>
-				<control type="panel" id="211">
-					<visible>Container(9000).HasFocus(6)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>218</onright>
-					<onup>211</onup>
-					<ondown>211</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>218</pagecontrol>
-					<itemlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>87</width>
-								<height>126</height>
-								<texture background="true">$VAR[GlobalSearchPosterThumb]</texture>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="label">
-								<top>12</top>
-								<left>103</left>
-								<width>348</width>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(Tagline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(PlotOutline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<visible>String.IsEmpty(ListItem.Property(TagLine))</visible>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<visible>String.IsEmpty(ListItem.Property(TagLine)) + String.IsEmpty(ListItem.Property(PlotOutline))</visible>
-							</control>
-							<control type="label">
-								<top>87</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]$INFO[ListItem.Property(Rating),   &#x2022;   ,]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>87</width>
-								<height>126</height>
-								<texture background="true">$VAR[GlobalSearchPosterThumb]</texture>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="label">
-								<top>12</top>
-								<left>103</left>
-								<width>348</width>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(Tagline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(PlotOutline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-								<visible>String.IsEmpty(ListItem.Property(TagLine))</visible>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-								<visible>String.IsEmpty(ListItem.Property(TagLine)) + String.IsEmpty(ListItem.Property(PlotOutline))</visible>
-							</control>
-							<control type="label">
-								<top>87</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]$INFO[ListItem.Property(Rating),   &#x2022;   ,]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="218">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>211</onleft>
-					<visible>Container(9000).HasFocus(6)</visible>
-				</control>
-				<control type="panel" id="231">
-					<visible>Container(9000).HasFocus(7)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>238</onright>
-					<onup>231</onup>
-					<ondown>231</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>238</pagecontrol>
-					<itemlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>87</width>
-								<height>126</height>
-								<texture background="true">$VAR[GlobalSearchPosterThumb]</texture>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="label">
-								<top>12</top>
-								<left>103</left>
-								<width>348</width>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(Tagline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(PlotOutline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<visible>String.IsEmpty(ListItem.Property(TagLine))</visible>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<visible>String.IsEmpty(ListItem.Property(TagLine)) + String.IsEmpty(ListItem.Property(PlotOutline))</visible>
-							</control>
-							<control type="label">
-								<top>87</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]$INFO[ListItem.Property(Rating),   &#x2022;   ,]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>87</width>
-								<height>126</height>
-								<texture background="true">$VAR[GlobalSearchPosterThumb]</texture>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="image">
-								<description>Quality / Unwatched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayUnwatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<description>Quality / Watched</description>
-								<left>67</left>
-								<top>106</top>
-								<width>24</width>
-								<height>24</height>
-								<texture background="true">$VAR[VideoQualityOverlayWatchedGlobalSearch]</texture>
-								<aspectratio>keep</aspectratio>
-								<visible>!String.IsEqual(ListItem.Property(PlayCount),0)</visible>
-								<animation effect="fade" end="85" condition="true">Conditional</animation>
-							</control>
-							<control type="label">
-								<top>12</top>
-								<left>103</left>
-								<width>348</width>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(Tagline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label>$INFO[ListItem.Property(PlotOutline)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-								<visible>String.IsEmpty(ListItem.Property(TagLine))</visible>
-							</control>
-							<control type="textbox">
-								<left>103</left>
-								<top>41</top>
-								<width>348</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-								<visible>String.IsEmpty(ListItem.Property(TagLine)) + String.IsEmpty(ListItem.Property(PlotOutline))</visible>
-							</control>
-							<control type="label">
-								<top>87</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>103</left>
-								<width>348</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]$INFO[ListItem.Property(Rating),   &#x2022;   ,]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="238">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>231</onleft>
-					<visible>Container(9000).HasFocus(7)</visible>
-				</control>
-				<control type="panel" id="221">
-					<visible>Container(9000).HasFocus(8)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>228</onright>
-					<onup>221</onup>
-					<ondown>221</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>228</pagecontrol>
-					<itemlayout height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>918</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>756</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(ChannelName),,: ]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="textbox">
-								<left>142</left>
-								<top>41</top>
-								<width>753</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>87</top>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Starttime),$LOCALIZE[19126]: ,   &#x2022;   ]$INFO[ListItem.Property(EndTime),$LOCALIZE[19127]: ,   &#x2022;   ]$INFO[ListItem.Property(Duration),$LOCALIZE[180]: , $LOCALIZE[31003]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>917</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>907</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>756</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(ChannelName),,: ]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="textbox">
-								<left>142</left>
-								<top>41</top>
-								<width>753</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Plot)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>87</top>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Starttime),$LOCALIZE[19126]: ,   &#x2022;   ]$INFO[ListItem.Property(EndTime),$LOCALIZE[19127]: ,   &#x2022;   ]$INFO[ListItem.Property(Duration),$LOCALIZE[180]: , $LOCALIZE[31003]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="228">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>221</onleft>
-					<visible>Container(9000).HasFocus(8)</visible>
-				</control>
-				<control type="panel" id="161">
-					<visible>Container(9000).HasFocus(9)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>168</onright>
-					<onup>161</onup>
-					<ondown>161</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>168</pagecontrol>
-					<itemlayout height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>918</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>756</width>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="textbox">
-								<left>142</left>
-								<top>41</top>
-								<width>753</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Artist_Description)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>87</top>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Artist_Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Artist_Born),$LOCALIZE[21893]: ,   &#x2022;   ]$INFO[ListItem.Property(Artist_Formed),$LOCALIZE[21894]: ,   &#x2022;   ]$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[21898]: ,]$INFO[ListItem.Property(Artist_Disbanded),   &#x2022;   $LOCALIZE[21896]: ,]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>917</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>907</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>756</width>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="textbox">
-								<left>142</left>
-								<top>41</top>
-								<width>753</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Artist_Description)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>87</top>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Artist_Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>756</width>
-								<label>$INFO[ListItem.Property(Artist_Born),$LOCALIZE[21893]: ,   &#x2022;   ]$INFO[ListItem.Property(Artist_Formed),$LOCALIZE[21894]: ,   &#x2022;   ]$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[21898]: ,]$INFO[ListItem.Property(Artist_Disbanded),   &#x2022;   $LOCALIZE[21896]: ,]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="168">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>161</onleft>
-					<visible>Container(9000).HasFocus(9)</visible>
-				</control>
-				<control type="panel" id="171">
-					<visible>Container(9000).HasFocus(10)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>178</onright>
-					<onup>171</onup>
-					<ondown>171</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>178</pagecontrol>
-					<itemlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>310</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(Artist),,: ][/UPPERCASE]$INFO[ListItem.Label]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="textbox">
-								<left>142</left>
-								<top>41</top>
-								<width>306</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Album_Description)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>87</top>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Year)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="image">
-								<description>Star Rating</description>
-								<right>5</right>
-								<top>112</top>
-								<width>100</width>
-								<height>16</height>
-								<texture background="true">$INFO[ListItem.Property(StarRating)]</texture>
-								<aspectratio align="right">keep</aspectratio>
-								<include>StarRatingFadeAnim</include>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>310</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(Artist),,: ][/UPPERCASE]$INFO[ListItem.Label]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="textbox">
-								<left>142</left>
-								<top>41</top>
-								<width>306</width>
-								<height>36</height>
-								<label fallback="31204">$INFO[ListItem.Property(Album_Description)]</label>
-								<font>ListFont3</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<autoscroll time="2000" delay="4000" repeat="10000">true</autoscroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>87</top>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Year)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="image">
-								<description>Star Rating</description>
-								<right>5</right>
-								<top>112</top>
-								<width>100</width>
-								<height>16</height>
-								<texture background="true">$INFO[ListItem.Property(StarRating)]</texture>
-								<aspectratio align="right">keep</aspectratio>
-								<include>StarRatingFadeAnim</include>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="178">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>171</onleft>
-					<visible>Container(9000).HasFocus(10)</visible>
-				</control>
-				<control type="panel" id="181">
-					<visible>Container(9000).HasFocus(11)</visible>
-					<include>BackgroundVisibleAnim</include>
-					<left>318</left>
-					<top>90</top>
-					<width>913</width>
-					<height>538</height>
-					<onleft>9000</onleft>
-					<onright>188</onright>
-					<onup>181</onup>
-					<ondown>181</ondown>
-					<viewtype label="535">icon</viewtype>
-					<preloaditems>2</preloaditems>
-					<pagecontrol>188</pagecontrol>
-					<itemlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<bordersize>6</bordersize>
-								<texture background="true" border="4">covers/cover-case2.png</texture>
-								<animation effect="fade" end="65" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>310</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(Artist)][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>37</top>
-								<width>310</width>
-								<label>$INFO[ListItem.Label,$LOCALIZE[179]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<visible>!String.IsEmpty(ListItem.Label)</visible>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>59</top>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Album),$LOCALIZE[558]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<visible>!String.IsEmpty(ListItem.Property(Album))</visible>
-							</control>
-							<control type="label">
-								<top>87</top>
-								<left>142</left>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="image">
-								<description>Star Rating</description>
-								<right>5</right>
-								<top>112</top>
-								<width>100</width>
-								<height>16</height>
-								<texture background="true">$INFO[ListItem.Property(StarRating)]</texture>
-								<aspectratio align="right">keep</aspectratio>
-								<include>StarRatingFadeAnim</include>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout width="453" height="134">
-						<control type="group">
-							<top>-4</top>
-							<control type="image">
-								<width>464</width>
-								<height>145</height>
-								<texture border="7">covers/cover-case-focus.png</texture>
-							</control>
-							<control type="image">
-								<left>5</left>
-								<top>5</top>
-								<width>454</width>
-								<height>135</height>
-								<bordersize>4</bordersize>
-								<texture background="true">dim.png</texture>
-								<animation effect="fade" end="70" condition="true">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>9</left>
-								<top>9</top>
-								<width>126</width>
-								<height>126</height>
-								<align>left</align>
-								<aspectratio align="center" aligny="center">scale</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>13</top>
-								<width>310</width>
-								<label>[UPPERCASE]$INFO[ListItem.Property(Artist)][/UPPERCASE]</label>
-								<font>ListFont</font>
-								<textcolor>WhiteColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>37</top>
-								<width>310</width>
-								<label>$INFO[ListItem.Label,$LOCALIZE[179]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<visible>!String.IsEmpty(ListItem.Label)</visible>
-							</control>
-							<control type="label">
-								<left>142</left>
-								<top>59</top>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Album),$LOCALIZE[558]: [COLOR=MediaInfoItemColor2],[/COLOR]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor</textcolor>
-								<shadowcolor>ShadowColor</shadowcolor>
-								<visible>!String.IsEmpty(ListItem.Property(Album))</visible>
-							</control>
-							<control type="label">
-								<top>87</top>
-								<left>142</left>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Genre)]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-								<scroll>true</scroll>
-							</control>
-							<control type="label">
-								<top>110</top>
-								<left>142</left>
-								<width>310</width>
-								<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration),   &#x2022;   , $LOCALIZE[31003]]</label>
-								<font>ListFont5</font>
-								<textcolor>MediaInfoItemColor2</textcolor>
-							</control>
-							<control type="image">
-								<description>Star Rating</description>
-								<right>5</right>
-								<top>112</top>
-								<width>100</width>
-								<height>16</height>
-								<texture background="true">$INFO[ListItem.Property(StarRating)]</texture>
-								<aspectratio align="right">keep</aspectratio>
-								<include>StarRatingFadeAnim</include>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="188">
-					<right>34</right>
-					<top>91</top>
-					<height>536</height>
-					<texturesliderbackground />
-					<onleft>181</onleft>
-					<visible>Container(9000).HasFocus(11)</visible>
-				</control>
-				-->
 			</control>
 			
 			<control type="group">
