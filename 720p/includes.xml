@@ -927,6 +927,78 @@
 		<onclick>Notification($LOCALIZE[32024],$LOCALIZE[31219],3000,)</onclick>
 	</include>
 	
+	<include name="VideoOverlays">
+		<control type="image">
+			<description>Quality</description>
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<description>Quality</description>
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+			<include>ListViewOverlayFadeAnim</include>
+		</control>
+		<control type="image">
+			<description>Watched Partial</description>
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[WatchedPartial]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>ListItem.IsResumable</visible>
+			<include>ListViewPartialWatchedOverlayFadeAnim</include>
+			<include>ListViewWatchedOverlayFadeAnim</include>
+		</control>
+	</include>
+	
+	<include name="VideoOverlays2">
+		<control type="image">
+			<description>Quality</description>
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+		<control type="image">
+			<description>Quality</description>
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+		<control type="image">
+			<description>Watched Partial</description>
+			<left>$PARAM[left]</left>
+			<top>$PARAM[top]</top>
+			<width>24</width>
+			<height>24</height>
+			<texture background="true">$VAR[WatchedPartial]</texture>
+			<aspectratio align="right">keep</aspectratio>
+			<visible>ListItem.IsResumable</visible>
+			<include>ListViewPartialWatchedOverlayFadeAnim</include>
+			<include>ListViewWatchedOverlayFadeAnim</include>
+		</control>
+	</include>
+	
 	<!-- DialogVideoInfo.xml -->
 	<variable name="DialogVideoInfoButton8">
 		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,video)">$LOCALIZE[208]</value>
@@ -1786,40 +1858,10 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.Title]</label>
 			</control>
-			<control type="image">
-				<description>Quality</description>
-				<left>200</left>
-				<top>10</top>
-				<width>24</width>
-				<height>24</height>
-				<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-				<include>ListViewOverlayFadeAnim</include>
-			</control>
-			<control type="image">
-				<description>Quality</description>
-				<left>200</left>
-				<top>10</top>
-				<width>24</width>
-				<height>24</height>
-				<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-				<include>ListViewOverlayFadeAnim</include>
-			</control>
-			<control type="image">
-				<description>Watched Partial</description>
-				<left>200</left>
-				<top>10</top>
-				<width>24</width>
-				<height>24</height>
-				<texture background="true">$VAR[WatchedPartial]</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>ListItem.IsResumable</visible>
-				<include>ListViewPartialWatchedOverlayFadeAnim</include>
-				<include>ListViewWatchedOverlayFadeAnim</include>
-			</control>
+			<include content="VideoOverlays">
+				<param name="top" value="10"/>
+				<param name="left" value="200"/>
+			</include>
 		</itemlayout>
 		<focusedlayout width="239">
 			<control type="group">
@@ -1871,40 +1913,10 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.Title]</label>
 				</control>
-				<control type="image">
-					<description>Quality</description>
-					<left>200</left>
-					<top>10</top>
-					<width>24</width>
-					<height>24</height>
-					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-					<include>ListViewOverlayFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Quality</description>
-					<left>200</left>
-					<top>10</top>
-					<width>24</width>
-					<height>24</height>
-					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-					<include>ListViewOverlayFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Watched Partial</description>
-					<left>200</left>
-					<top>10</top>
-					<width>24</width>
-					<height>24</height>
-					<texture background="true">$VAR[WatchedPartial]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>ListItem.IsResumable</visible>
-					<include>ListViewPartialWatchedOverlayFadeAnim</include>
-					<include>ListViewWatchedOverlayFadeAnim</include>
-				</control>
+				<include content="VideoOverlays">
+					<param name="top" value="10"/>
+					<param name="left" value="200"/>
+				</include>
 			</control>
 		</focusedlayout>
 	</include>
@@ -1952,40 +1964,10 @@
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.Title]</label>
 			</control>
-			<control type="image">
-				<description>Quality</description>
-				<left>255</left>
-				<top>10</top>
-				<width>24</width>
-				<height>24</height>
-				<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-				<include>ListViewOverlayFadeAnim</include>
-			</control>
-			<control type="image">
-				<description>Quality</description>
-				<left>255</left>
-				<top>10</top>
-				<width>24</width>
-				<height>24</height>
-				<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-				<include>ListViewOverlayFadeAnim</include>
-			</control>
-			<control type="image">
-				<description>Watched Partial</description>
-				<left>255</left>
-				<top>10</top>
-				<width>24</width>
-				<height>24</height>
-				<texture background="true">$VAR[WatchedPartial]</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>ListItem.IsResumable</visible>
-				<include>ListViewPartialWatchedOverlayFadeAnim</include>
-				<include>ListViewWatchedOverlayFadeAnim</include>
-			</control>
+			<include content="VideoOverlays">
+				<param name="top" value="10"/>
+				<param name="left" value="255"/>
+			</include>
 		</itemlayout>
 		<focusedlayout width="294">
 			<control type="group">
@@ -2037,40 +2019,10 @@
 					<shadowcolor>ShadowColor</shadowcolor>
 					<label>$VAR[SeasonEpisodesNumberVar,,. ]$INFO[ListItem.Title]</label>
 				</control>
-				<control type="image">
-					<description>Quality</description>
-					<left>255</left>
-					<top>10</top>
-					<width>24</width>
-					<height>24</height>
-					<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-					<include>ListViewOverlayFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Quality</description>
-					<left>255</left>
-					<top>10</top>
-					<width>24</width>
-					<height>24</height>
-					<texture background="true">$VAR[VideoQualityOverlayWatched]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-					<include>ListViewOverlayFadeAnim</include>
-				</control>
-				<control type="image">
-					<description>Watched Partial</description>
-					<left>255</left>
-					<top>10</top>
-					<width>24</width>
-					<height>24</height>
-					<texture background="true">$VAR[WatchedPartial]</texture>
-					<aspectratio>keep</aspectratio>
-					<visible>ListItem.IsResumable</visible>
-					<include>ListViewPartialWatchedOverlayFadeAnim</include>
-					<include>ListViewWatchedOverlayFadeAnim</include>
-				</control>
+				<include content="VideoOverlays">
+				<param name="top" value="10"/>
+				<param name="left" value="255"/>
+			</include>
 			</control>
 		</focusedlayout>
 	</include>
