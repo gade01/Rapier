@@ -100,18 +100,6 @@
 					<onup>400</onup>
 					<visible>!Skin.HasSetting(UseFanartForMusicPlayingBG)</visible>
 				</control>
-				<control type="button" id="153">
-					<description>Audio DSP</description>
-					<width>35</width>
-					<height>35</height>
-					<font />
-					<label>$LOCALIZE[15047]</label>
-					<texturefocus>osd/osd-audio-settings-focus.png</texturefocus>
-					<texturenofocus>osd/osd-audio-settings-nofocus.png</texturenofocus>
-					<onclick>ActivateWindow(OSDAudioDSPSettings)</onclick>
-					<pulseonselect>false</pulseonselect>
-					<visible>system.getbool(audiooutput.dspaddonsenabled)</visible>
-				</control>
 				<control type="button" id="154">
 					<description>User Rating</description>
 					<width>35</width>
