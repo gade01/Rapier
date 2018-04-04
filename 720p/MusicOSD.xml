@@ -23,7 +23,7 @@
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[System.CurrentControl]</label>
-				<visible>![Control.HasFocus(257) | Window.IsVisible(OSDAudioDSPSettings)]</visible>
+				<visible>!Control.HasFocus(257)</visible>
 			</control>
 			
 			<control type="label">
@@ -33,7 +33,7 @@
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$LOCALIZE[590]$INFO[Playlist.Random,: ]</label>
-				<visible>Control.HasFocus(257) + !Window.IsVisible(OSDAudioDSPSettings)</visible>
+				<visible>Control.HasFocus(257)</visible>
 			</control>
 			
 			<control type="grouplist" id="201">
