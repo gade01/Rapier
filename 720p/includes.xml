@@ -2213,6 +2213,13 @@
 		<value>$INFO[System.CurrentControl]</value>
 	</variable>
 	
+	<variable name="TimeLabels">
+		<value condition="Player.Seeking + VideoPlayer.HasEPG">$INFO[PVR.EpgEventSeekTime]$INFO[PVR.EpgEventDuration, / ,]</value>
+		<value condition="Player.Seeking">$INFO[Player.SeekTime]$INFO[Player.Duration, / ,]</value>
+		<value condition="VideoPlayer.HasEpg">$INFO[PVR.EpgEventElapsedTime]$INFO[PVR.EpgEventDuration, / ,]</value>
+		<value>$INFO[VideoPlayer.Time]$INFO[Player.Duration, / ,]</value>
+	</variable>
+	
 	<variable name="SeekbarLabels">
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,,%]</value>
 		<value condition="!String.IsEmpty(Player.SeekStepSize)">$INFO[Player.SeekStepSize]</value>
@@ -2242,6 +2249,11 @@
 	<variable name="PausedLabels2">
 		<value condition="!String.IsEmpty(PVR.ChannelNumberInput)">$INFO[PVR.ChannelNumberInput]</value>
 		<value condition="!String.IsEmpty(Player.SeekNumeric)">$INFO[Player.SeekNumeric(hh:mm:ss)]</value>
+	</variable>
+	
+	<variable name="FinishTimeLabels">
+		<value condition="VideoPlayer.HasEpg">$INFO[PVR.EpgEventFinishTime]</value>
+		<value>$INFO[Player.FinishTime]</value>
 	</variable>
 	
 	<variable name="FSInfoTitle">

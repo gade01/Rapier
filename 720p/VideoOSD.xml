@@ -546,7 +546,7 @@
 						<width min="0" max="250">auto</width>
 						<font>OSDFont</font>
 						<textcolor>ProgressColor</textcolor>
-						<label>$INFO[VideoPlayer.Time] $INFO[VideoPlayer.Duration,/ ]</label>
+						<label>$VAR[TimeLabels]</label>
 					</control>
 					<control type="label">
 						<description>SeekbarLabels</description>
@@ -580,7 +580,7 @@
 						<width min="0" max="172">auto</width>
 						<font>OSDFont</font>
 						<textcolor>ProgressColor2</textcolor>
-						<label>$INFO[Player.FinishTime]</label>
+						<label>$VAR[FinishTimeLabels]</label>
 					</control>
 				</control>
 			</control>
