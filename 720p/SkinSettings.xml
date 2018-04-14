@@ -523,6 +523,14 @@
 							<onclick condition="System.HasAddon(script.cinemavision)">Addon.OpenSettings(script.cinemavision)</onclick>
 							<onclick condition="!System.HasAddon(script.cinemavision)">InstallAddon(script.cinemavision)</onclick>
 						</control>
+						<control type="button" id="7020">
+							<description>plugin.video.specialfeatures</description>
+							<include>SettingsContentBtn</include>
+							<label>$ADDON[plugin.video.specialfeatures 30000]</label>
+							<label2>$VAR[StatusSpecialFeaturesVar]</label2>
+							<onclick condition="System.HasAddon(plugin.video.specialfeatures)">Addon.OpenSettings(plugin.video.specialfeatures)</onclick>
+							<onclick condition="!System.HasAddon(plugin.video.specialfeatures)">InstallAddon(plugin.video.specialfeatures)</onclick>
+						</control>
 						<control type="button" id="7027">
 							<description>Manual installation Label</description>
 							<include>SettingsHeaderBtn</include>

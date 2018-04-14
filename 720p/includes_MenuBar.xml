@@ -1580,18 +1580,6 @@
 			<control type="image" id="115">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="210">
-				<description>CinemaVision</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$INFO[System.AddonTitle(script.cinemavision)][/UPPERCASE]</label>
-				<onclick>Dialog.Close(MovieInformation)</onclick>
-				<onclick>RunScript(script.cinemavision,experience)</onclick>
-				<visible>System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
-			</control>
-			<control type="image" id="122">
-				<include>MenuBarSeparator</include>
-				<visible>Control.IsVisible(210)</visible>
-			</control>
 			<control type="button" id="8">
 				<description>Play / Open</description>
 				<include>MenuBarSettingsBtn</include>
@@ -1673,6 +1661,30 @@
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
+			</control>
+			<control type="button" id="210">
+				<description>CinemaVision</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$INFO[System.AddonTitle(script.cinemavision)][/UPPERCASE]</label>
+				<onclick>Dialog.Close(MovieInformation)</onclick>
+				<onclick>RunScript(script.cinemavision,experience)</onclick>
+				<visible>System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
+			</control>
+			<control type="image" id="122">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(210)</visible>
+			</control>
+			<control type="button" id="213">
+				<description>Special Features</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$ADDON[plugin.video.specialfeatures 30000][/UPPERCASE]</label>
+				<onclick>Dialog.Close(MovieInformation)</onclick>
+				<onclick>RunScript(plugin.video.specialfeatures,listitem)</onclick>
+				<visible>System.HasAddon(plugin.video.specialfeatures) + String.IsEqual(Window(home).Property(SpecialFeatures.Visible),true)</visible>
+			</control>
+			<control type="image" id="123">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(213)</visible>
 			</control>
 		</control>
 	</include>
