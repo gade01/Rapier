@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="AddonInfoMenuBarBtn122Label">
-		<value condition="[Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">$LOCALIZE[24054]</value>
-		<value condition="[[Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description)] + String.IsEmpty(ListItem.AddonNews)] | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">$LOCALIZE[20008]</value>
+		<value condition="[String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">$LOCALIZE[24054]</value>
+		<value condition="[[String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description)] + String.IsEmpty(ListItem.AddonNews)] | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">$LOCALIZE[20008]</value>
 		<value>$LOCALIZE[21821]</value>
 	</variable>
 	
 	<variable name="AddonInfoMenuBarBtn122Click">
-		<value condition="[Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">Skin.SetString(AddonInfoContentToggle,news)</value>
-		<value condition="Skin.String(AddonInfoContentToggle,) | Skin.String(AddonInfoContentToggle,description) | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">Skin.SetString(AddonInfoContentToggle,screenshots)</value>
+		<value condition="[String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">Skin.SetString(AddonInfoContentToggle,news)</value>
+		<value condition="String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description) | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">Skin.SetString(AddonInfoContentToggle,screenshots)</value>
 		<value>Skin.SetString(AddonInfoContentToggle,description)</value>
 	</variable>
 	
