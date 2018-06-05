@@ -32,10 +32,12 @@
 				<top>17</top>
 				<width>395</width>
 				<height>35</height>
-				<itemgap>10</itemgap>
+				<include condition="!VideoPlayer.Content(LiveTV)">VideoOSDItemgap1</include>
+				<include condition="VideoPlayer.Content(LiveTV)">VideoOSDItemgap2</include>
 				<orientation>horizontal</orientation>
 				<onup>noop</onup>
 				<ondown>noop</ondown>
+				<onleft condition="Control.IsVisible(110)">110</onleft>
 				<onleft>109</onleft>
 				<onright>99</onright>
 				<control type="button" id="100">
@@ -97,7 +99,7 @@
 					<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 					<pulseonselect>false</pulseonselect>
 				</control>
-				<control type="button" id="101">
+				<control type="button" id="105">
 					<description>Teletext</description>
 					<width>35</width>
 					<height>35</height>
@@ -294,15 +296,17 @@
 			<control type="grouplist" id="202">
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 				<description>Player Controls</description>
-				<left>339</left>
+				<left>371</left>
 				<top>10</top>
 				<width>455</width>
 				<height>50</height>
-				<itemgap>10</itemgap>
+				<itemgap>6</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
 				<onup>noop</onup>
 				<ondown>noop</ondown>
+				<onleft condition="Control.IsVisible(115)">115</onleft>
+				<onleft condition="Control.IsVisible(114)">114</onleft>
 				<onleft condition="Control.IsVisible(104)">104</onleft>
 				<onleft>103</onleft>
 				<onright>100</onright>
