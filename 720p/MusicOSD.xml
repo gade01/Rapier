@@ -272,6 +272,7 @@
 					<texturenofocus>osd/osd-skip-prev-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Previous)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<visible>MusicPlayer.HasPrevious | Player.SeekEnabled</visible>
 				</control>
 				<control type="button" id="105">
 					<description>Rewind</description>
@@ -305,6 +306,7 @@
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<visible>Player.PauseEnabled</visible>
 				</control>
 				<control type="button" id="108">
 					<description>Forward</description>
@@ -325,6 +327,7 @@
 					<texturenofocus>osd/osd-skip-next-nofocus.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
 					<pulseonselect>false</pulseonselect>
+					<visible>MusicPlayer.HasNext | [MusicPlayer.Content(LiveTV) + Player.SeekEnabled]</visible>
 				</control>
 			</control>
 		
