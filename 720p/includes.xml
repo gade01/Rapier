@@ -2525,5 +2525,46 @@
 			<onclick>Dialog.Close(1132)</onclick>
 		</control>
 	</include>
+	
+	<include name="DialogCustomBackgroundTypeButton2">
+		<control type="button" id="$PARAM[id]">
+			<description>$PARAM[description]</description>
+			<include>ContextMenuBtn</include>
+			<label>$PARAM[label]</label>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(AddMoreCategoryBtn1BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom1BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(AddMoreCategoryBtn2BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom2BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(AddMoreCategoryBtn3BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom3BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(AddMoreCategoryBtn4BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom4BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(AddMoreCategoryBtn5BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom5BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(AddMoreCategoryBtn6BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom6BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(AddMoreCategoryBtn7BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom7BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(AddMoreCategoryBtn8BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom8BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(AddMoreCategoryBtn9BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom9BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(AddMoreCategoryBtn10BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom10BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(AddMoreCategoryBtn11BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom11BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(AddMoreCategoryBtn12BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom12BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetString(AddMoreCategoryBtn13BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,1)">Skin.SetFile(Custom13BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetString(AddMoreCategoryBtn14BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,2)">Skin.SetFile(Custom14BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(AddMoreCategoryBtn15BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetFile(Custom15BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(AddMoreCategoryBtn16BackgroundImagePathLabel,$PARAM[label])</onclick>
+			<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16BackgroundImagePath,.xsp,special://profile/playlists/video/)</onclick>
+			<onclick>Dialog.Close(1132)</onclick>
+		</control>
+	</include>
 	<!-- END PARAMS -->
 </includes>
