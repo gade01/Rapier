@@ -158,6 +158,11 @@
 		<value condition="!System.HasAlarm(ShutdownTimer)">$LOCALIZE[20150]</value>
 	</variable>
 	
+	<variable name="MusicClearlogoVar">
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value>$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[ListItem.Artist,,/logo.png]</value>
+	</variable>
+	
 	<variable name="ContextMenuLabel2001">
         <value condition="Container.Content(Artists) + Window.IsVisible(Music)">$ADDON[script.extendedinfo 32010]</value>
         <value condition="Container.Content(Actors)">$LOCALIZE[31035]</value>

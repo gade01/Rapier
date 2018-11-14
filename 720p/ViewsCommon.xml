@@ -6672,6 +6672,11 @@
 		<value>$VAR[ExtendedListUnformattedDurationVar]</value>
 	</variable>
 	
+	<variable name="ExtendedListMusicClearlogoVar">
+		<value condition="!String.IsEmpty(Container(584).ListItem.Art(clearlogo))">$INFO[Container(584).ListItem.Art(clearlogo)]</value>
+		<value>$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</value>
+	</variable>
+	
 	<variable name="ExtendedListUnformattedDurationVar">
 		<value condition="String.StartsWith(Container(584).ListItem.Duration,01:00:)">60</value>
 		<value condition="String.StartsWith(Container(584).ListItem.Duration,01:01:)">61</value>
@@ -9109,11 +9114,11 @@
 					<top>-4</top>
 					<width>116</width>
 					<height>45</height>
-					<texture fallback="empty.png" background="true">$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</texture>
+					<texture fallback="empty.png" background="true">$VAR[ExtendedListMusicClearlogoVar]</texture>
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
-					<visible>!String.IsEmpty(Skin.String(MusicLibraryClearLogosPath)) + [[String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + !Skin.HasSetting(EnableMusicLibraryClearLogos)]</visible>
+					<visible>![String.IsEmpty(Container(584).ListItem.Art(clearlogo)) + String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))] + [[String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + !Skin.HasSetting(EnableMusicLibraryClearLogos)]</visible>
 				</control>
 				<control type="label">
 					<include>InfoPaneHeadLabel</include>
