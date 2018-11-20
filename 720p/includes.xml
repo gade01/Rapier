@@ -2281,6 +2281,13 @@
 		<value>$LOCALIZE[19048] • $LOCALIZE[19173]</value>
 	</variable>
 	
+	<include name="OSDButton">
+		<width>$PARAM[size]</width>
+		<height>$PARAM[size]</height>
+		<aspectratio>keep</aspectratio>
+		<pulseonselect>false</pulseonselect>
+	</include>
+	
 	<include name="FSMediaInfoPanel">
 		<control type="group" id="1">
 			<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio]</visible>
