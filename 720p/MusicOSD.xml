@@ -129,7 +129,7 @@
 				
 			<control type="grouplist" id="202">
 				<description>Player Controls</description>
-				<left>367</left>
+				<left>380</left>
 				<top>10</top>
 				<width>480</width>
 				<height>50</height>
@@ -144,6 +144,7 @@
 				<onright>100</onright>
 				<animation effect="slide" end="50,0" condition="!PVR.CanRecordPlayingChannel">Conditional</animation>
 				<animation effect="slide" end="50,0" condition="MusicPartyMode.Enabled">Conditional</animation>
+				<animation effect="slide" end="-50,0" condition="[MusicPlayer.HasPrevious | Player.SeekEnabled] + [MusicPlayer.HasNext | [MusicPlayer.Content(LiveTV) + Player.SeekEnabled]]">Conditional</animation>
 				<control type="togglebutton" id="110">
 					<description>Rec</description>
 					<top>5</top>
