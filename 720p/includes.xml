@@ -2281,6 +2281,11 @@
 		<value>$LOCALIZE[19048] • $LOCALIZE[19173]</value>
 	</variable>
 	
+	<variable name="MusicInfoGenre">
+		<value condition="!String.IsEmpty(MusicPlayer.Genre)">$INFO[MusicPlayer.Genre]</value>
+		<value>$INFO[RDS.GetLine(0)]</value>
+	</variable>
+	
 	<include name="OSDButton">
 		<width>$PARAM[size]</width>
 		<height>$PARAM[size]</height>
