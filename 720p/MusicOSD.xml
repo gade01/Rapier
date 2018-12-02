@@ -129,10 +129,11 @@
 				
 			<control type="grouplist" id="202">
 				<description>Player Controls</description>
-				<left>380</left>
+				<left>330</left>
 				<top>10</top>
-				<width>480</width>
+				<width>455</width>
 				<height>50</height>
+				<align>right</align>
 				<itemgap>10</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<orientation>horizontal</orientation>
@@ -142,9 +143,6 @@
 				<onback condition="Window.IsVisible(script-cu-lrclyrics-main.xml)">SetFocus(9000)</onback>
 				<onleft>151</onleft>
 				<onright>100</onright>
-				<animation effect="slide" end="50,0" condition="!PVR.CanRecordPlayingChannel">Conditional</animation>
-				<animation effect="slide" end="50,0" condition="MusicPartyMode.Enabled">Conditional</animation>
-				<animation effect="slide" end="-50,0" condition="[MusicPlayer.HasPrevious | Player.SeekEnabled] + [MusicPlayer.HasNext | [MusicPlayer.Content(LiveTV) + Player.SeekEnabled]]">Conditional</animation>
 				<control type="togglebutton" id="110">
 					<description>Rec</description>
 					<top>5</top>
@@ -163,8 +161,32 @@
 					<onright>250</onright>
 					<visible>PVR.CanRecordPlayingChannel</visible>
 				</control>
+				<control type="button" id="98">
+					<description>Guide</description>
+					<top>5</top>
+					<include content="OSDButton">
+						<param name="size" value="40" />
+					</include>
+					<texturefocus>osd/osd-epg-focus.png</texturefocus>
+					<texturenofocus>osd/osd-epg-nofocus.png</texturenofocus>
+					<onclick>ActivateWindow(pvrchannelguide)</onclick>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
+					<visible>MusicPlayer.Content(LiveTV) + VideoPlayer.HasEpg</visible>
+				</control>
+				<control type="button" id="97">
+					<description>Channels</description>
+					<top>5</top>
+					<include content="OSDButton">
+						<param name="size" value="40" />
+					</include>
+					<texturefocus>osd/osd-channel-list-focus.png</texturefocus>
+					<texturenofocus>osd/osd-channel-list-nofocus.png</texturenofocus>
+					<onclick>ActivateWindow(PVROSDChannels)</onclick>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
+					<visible>MusicPlayer.Content(LiveTV)</visible>
+				</control>
 				<control type="group" id="410">
-					<visible>!MusicPartyMode.Enabled</visible>
+					<visible>!MusicPartyMode.Enabled + !MusicPlayer.Content(LiveTV)</visible>
 					<top>5</top>
 					<width>40</width>
 					<control type="button" id="250">
@@ -241,7 +263,7 @@
 					<alttexturefocus>osd/osd-random-on-focus.png</alttexturefocus>
 					<alttexturenofocus>osd/osd-random-on-nofocus.png</alttexturenofocus>
 					<onclick>PlayerControl(Random)</onclick>
-					<visible>!MusicPartyMode.Enabled</visible>
+					<visible>!MusicPartyMode.Enabled + !MusicPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="button" id="106">
 					<description>Skip Prev</description>
@@ -445,7 +467,7 @@
 			<left>22</left>
 			<bottom>46</bottom>
 			<height>236</height>
-			<animation effect="slide" end="0,37" time="0" condition="[Control.HasFocus(127) | Control.HasFocus(403) | ControlGroup(402).HasFocus] + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus]">Conditional</animation>
+			<animation effect="slide" end="0,37" time="0" condition="[Control.HasFocus(127) | Control.HasFocus(403) | ControlGroup(402).HasFocus] + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotext]">Conditional</animation>
 			<include>DialogOpenCloseAnim</include>
 			
 			<control type="grouplist">
@@ -469,7 +491,7 @@
 					<width>340</width>
 					<height>37</height>
 					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
-					<visible>![[Control.HasFocus(127) | Control.HasFocus(403) | ControlGroup(402).HasFocus] + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus]]</visible>
+					<visible>![[Control.HasFocus(127) | Control.HasFocus(403) | ControlGroup(402).HasFocus] + ![MusicPlayer.Content(LiveTV) + RDS.HasRadiotext]]</visible>
 				</control>
 				<control type="image">
 					<width>340</width>
@@ -566,7 +588,7 @@
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[29900]</label>
 						<onclick>ActivateWindow(PVRRadioRDSInfo)</onclick>
-						<visible>MusicPlayer.Content(LiveTV) + RDS.HasRadiotextPlus</visible>
+						<visible>MusicPlayer.Content(LiveTV) + RDS.HasRadiotext</visible>
 					</control>
 					<control type="button" id="124">
 						<description>Technical Information</description>
