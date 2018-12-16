@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">4012</defaultcontrol>
+	<defaultcontrol always="true">3012</defaultcontrol>
 	<include>FSMediaInfoOpenCloseAnim</include>
 	
 	<controls>
@@ -26,13 +26,13 @@
 					<animation effect="fade" end="5" condition="true">Conditional</animation>
 				</control>
 				
-				<control type="image" id="4002">
+				<control type="image">
 					<description>Cover</description>
 					<left>4</left>
 					<top>37</top>
 					<width>466</width>
 					<height>262</height>
-					<texture diffuse="covers/list-info-2-extrathumbs-diffuse.png"></texture>
+					<texture diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[Window.Property(thumb)]</texture>
 					<aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
 				</control>
 				
@@ -68,46 +68,6 @@
 				<control type="group">
 					<left>14</left>
 					<top>4</top>
-					
-					<control type="group">
-						<left>1400</left>
-						<control type="label" description="Title" id="4000">
-						</control>
-						<control type="image" id="4005">
-							<description>Landscape</description>
-						</control>
-						<control type="textbox" id="4006">
-							<description>Plot</description>
-							<font>MediaInfoDescFont</font>
-							<textcolor>MediaInfoColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<align>justify</align>
-							<wrapmultiline>true</wrapmultiline>
-							<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
-						</control>
-						<control type="label" description="Rating" id="4003">
-						</control>
-						<control type="label" description="Airdate" id="4004">
-						</control>
-						<control type="label" description="Season Number" id="4008">
-						</control>
-						<control type="label" description="Episode Number" id="4009">
-						</control>
-						<control type="label" description="Title" id="4010">
-						</control>
-						<control type="image" id="4001">
-							<description>Poster</description>
-							<height>292</height>
-							<width>199</width>
-							<texture diffuse="covers/list-info-poster-diffuse.png"></texture>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-						</control>
-						<control type="progress" id="23">
-							<description>Progressbar</description>
-							<width>412</width>
-							<info>Player.Progress</info>
-						</control>
-					</control>
 					
 					<control type="label">
 						<description>Still There?</description>
@@ -155,7 +115,7 @@
 						<font>WeatherCurrentConditionFont</font>
 						<textcolor>MediaInfoTitleColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>[UPPERCASE]$VAR[NextUpEpisodeNumber2]. $INFO[Control.GetLabel(4010)][/UPPERCASE]</label>
+						<label>[UPPERCASE]$VAR[UpnextEpisodeNumber]. $INFO[Window.Property(title)][/UPPERCASE]</label>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 					</control>
@@ -169,10 +129,10 @@
 						<align>center</align>
 						<onup condition="Control.IsVisible(9000)">9000</onup>
 						<orientation>horizontal</orientation>
-						<control type="button" id="4012">
-							<description>Still watching</description>
+						<control type="button" id="3012">
+							<description>Continue Watching</description>
 							<width>180</width>
-							<label>$ADDON[service.nextup.notification 30010]</label>
+							<label>$ADDON[service.upnext 30010]</label>
 							<pulseonselect>false</pulseonselect>
 						</control>
 						<control type="label" id="9001">
@@ -183,7 +143,7 @@
 							<aligny>center</aligny>
 							<label>$INFO[Player.TimeRemaining(ss)]</label>
 						</control>
-						<control type="button" id="4013">
+						<control type="button" id="3013">
 							<description>Cancel</description>
 							<width>180</width>
 							<label>222</label>
@@ -246,11 +206,11 @@
 					<height>120</height>
 					<scrolltime>200</scrolltime>
 					<onup>9000</onup>
-					<ondown>4012</ondown>
-					<onleft>4012</onleft>
-					<onright>4013</onright>
+					<ondown>3012</ondown>
+					<onleft>3012</onleft>
+					<onright>3013</onright>
 					<include>ContainerPosition1</include>
-					<onclick>SendClick(4013)</onclick>
+					<onclick>SendClick(3013)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
 					<itemlayout height="24">
 						<control type="label">
