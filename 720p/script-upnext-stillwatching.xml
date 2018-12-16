@@ -9,11 +9,11 @@
 			
 			<control type="group">
 				<left>778</left>
-				<top>230</top>
+				<top>261</top>
 				
 				<control type="image">
 					<width>474</width>
-					<height>415</height>
+					<height>384</height>
 					<texture border="8">panels/panel.png</texture>
 				</control>
 				
@@ -50,15 +50,6 @@
 				<control type="image">
 					<left>4</left>
 					<top>302</top>
-					<width>466</width>
-					<height>30</height>
-					<texture border="5">panels/panel-content-border2.png</texture>
-					<animation effect="fade" end="5" condition="true">Conditional</animation>
-				</control>
-				
-				<control type="image">
-					<left>4</left>
-					<top>381</top>
 					<width>466</width>
 					<height>30</height>
 					<texture border="5">panels/panel-content-border2.png</texture>
@@ -150,18 +141,6 @@
 							<pulseonselect>false</pulseonselect>
 						</control>
 					</control>
-					
-					<control type="label">
-						<top>377</top>
-						<width>438</width>
-						<height>30</height>
-						<font>FullMediaInfoTaglineFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[31017]</label>
-						<align>center</align>
-						<aligny>center</aligny>
-					</control>
 				</control>
 			</control>
 			
@@ -170,7 +149,7 @@
 				<animation effect="fade" start="0" end="100" time="300" reversible="false" condition="Integer.IsGreater(Container(9000).NumItems,0)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="300" reversible="false" condition="String.IsEqual(Container(9000).NumItems,0)">Conditional</animation>
 				<left>778</left>
-				<top>56</top>
+				<top>87</top>
 
 				<control type="image">
 					<width>474</width>
