@@ -210,7 +210,7 @@
 							<aspectratio>keep</aspectratio>
 							<include>StarRatingFadeAnim</include>
 							<aligny>center</aligny>
-							<visible>!String.IsEmpty(MusicPlayer.Rating)</visible>
+							<visible>![String.IsEmpty(MusicPlayer.Rating) + String.IsEmpty(MusicPlayer.UserRating)]</visible>
 						</control>
 					</control>
 				</control>
@@ -254,7 +254,7 @@
 							<texture>$VAR[PlayerStarRating]</texture>
 							<aspectratio>keep</aspectratio>
 							<include>StarRatingFadeAnim</include>
-							<visible>!String.IsEmpty(MusicPlayer.Rating)</visible>
+							<visible>![String.IsEmpty(MusicPlayer.Rating) + String.IsEmpty(MusicPlayer.UserRating)]</visible>
 						</control>
 					</control>
 			
