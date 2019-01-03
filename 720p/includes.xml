@@ -2174,13 +2174,6 @@
 		<value>$LOCALIZE[31184]</value>
 	</variable>
 	
-	<variable name="FullscreenRatingType">
-		<value condition="Player.HasVideo + Skin.HasSetting(RatingTypeUser)">$INFO[VideoPlayer.UserRating]</value>
-		<value condition="Player.HasVideo">$INFO[VideoPlayer.Rating]</value>
-		<value condition="Player.HasAudio + Skin.HasSetting(RatingTypeUser)">$INFO[MusicPlayer.UserRating]</value>
-		<value condition="Player.HasAudio">$INFO[MusicPlayer.Rating]</value>
-	</variable>
-	
 	<variable name="PausedLabels2">
 		<value condition="!String.IsEmpty(PVR.ChannelNumberInput)">$INFO[PVR.ChannelNumberInput]</value>
 		<value condition="!String.IsEmpty(Player.SeekNumeric)">$INFO[Player.SeekNumeric(hh:mm:ss)]</value>
@@ -2403,7 +2396,7 @@
 	</include>
 	
 	<variable name="PlayerStarRating">
-		<value condition="Player.HasVideo + Skin.HasSetting(RatingTypeUser)">$INFO[VideoPlayer.UserRating,flagging/imdbstarrating/,,0.png]</value>
+		<value condition="Player.HasVideo + Skin.HasSetting(RatingTypeUser)">flagging/imdbstarrating/$INFO[VideoPlayer.UserRating],0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
@@ -2415,7 +2408,7 @@
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,9)">flagging/imdbstarrating/8,0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
 		<value condition="Player.HasVideo">flagging/imdbstarrating/10,0.png</value>
-		<value condition="Player.HasAudio + Skin.HasSetting(RatingTypeUser)">$INFO[MusicPlayer.UserRating,flagging/imdbstarrating/,,0.png]</value>
+		<value condition="Player.HasAudio + Skin.HasSetting(RatingTypeUser)">flagging/imdbstarrating/$INFO[MusicPlayer.UserRating],0.png</value>
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
