@@ -154,7 +154,7 @@
 	</variable>
 	
 	<variable name="RatingType">
-		<value condition="Skin.HasSetting(RatingTypeUser)">$INFO[ListItem.UserRating]</value>
+		<value condition="Skin.HasSetting(RatingTypeUser) + ![ListItem.IsCollection + String.IsEmpty(ListItem.UserRating)]">$INFO[ListItem.UserRating]</value>
 		<value>$INFO[ListItem.Rating]</value>
 	</variable>
 	
