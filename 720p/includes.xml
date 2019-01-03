@@ -153,6 +153,11 @@
 		<value>$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E,]</value>
 	</variable>
 	
+	<variable name="RatingType">
+		<value condition="Skin.HasSetting(RatingTypeUser)">$INFO[ListItem.UserRating]</value>
+		<value>$INFO[ListItem.Rating]</value>
+	</variable>
+	
 	<variable name="ShutDownButton">
 		<value condition="System.HasAlarm(ShutdownTimer)">$LOCALIZE[20151]</value>
 		<value condition="!System.HasAlarm(ShutdownTimer)">$LOCALIZE[20150]</value>
@@ -1974,6 +1979,12 @@
 	<!-- END DialogMusicInfo.xml -->
 	
 	<!-- Skin Settings -->
+	<variable name="RatingTypeLabel">
+		<value condition="Skin.HasSetting(RatingTypeUser)">$LOCALIZE[38018]</value>
+		<value condition="Skin.HasSetting(RatingTypeDefault)">$LOCALIZE[571]</value>
+		<value>$LOCALIZE[571]</value>
+	</variable>
+	
 	<variable name="MusicBackgroundLabel">
 		<value condition="Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)">$LOCALIZE[31171]</value>
 		<value condition="!Skin.HasSetting(UseFanartForMusicPlayingBG)">$LOCALIZE[31170]</value>
@@ -2161,6 +2172,13 @@
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,$LOCALIZE[10213] ,%]</value>
 		<value condition="Player.Paused">$LOCALIZE[112]</value>
 		<value>$LOCALIZE[31184]</value>
+	</variable>
+	
+	<variable name="FullscreenRatingType">
+		<value condition="Player.HasVideo + Skin.HasSetting(RatingTypeUser)">$INFO[VideoPlayer.UserRating]</value>
+		<value condition="Player.HasVideo">$INFO[VideoPlayer.Rating]</value>
+		<value condition="Player.HasAudio + Skin.HasSetting(RatingTypeUser)">$INFO[MusicPlayer.UserRating]</value>
+		<value condition="Player.HasAudio">$INFO[MusicPlayer.Rating]</value>
 	</variable>
 	
 	<variable name="PausedLabels2">
@@ -2385,6 +2403,7 @@
 	</include>
 	
 	<variable name="PlayerStarRating">
+		<value condition="Player.HasVideo + Skin.HasSetting(RatingTypeUser)">$INFO[VideoPlayer.UserRating,flagging/imdbstarrating/,,0.png]</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>
@@ -2396,6 +2415,7 @@
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,9)">flagging/imdbstarrating/8,0.png</value>
 		<value condition="Player.HasVideo + Integer.IsLess(VideoPlayer.Rating,10)">flagging/imdbstarrating/9,0.png</value>
 		<value condition="Player.HasVideo">flagging/imdbstarrating/10,0.png</value>
+		<value condition="Player.HasAudio + Skin.HasSetting(RatingTypeUser)">$INFO[MusicPlayer.UserRating,flagging/imdbstarrating/,,0.png]</value>
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,1)">flagging/imdbstarrating/0,0.png</value>
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,2)">flagging/imdbstarrating/1,0.png</value>
 		<value condition="Player.HasAudio + Integer.IsLess(MusicPlayer.Rating,3)">flagging/imdbstarrating/2,0.png</value>

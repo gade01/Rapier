@@ -71,6 +71,7 @@
 	</variable>
 	
 	<variable name="StarRating">
+		<value condition="Skin.HasSetting(RatingTypeUser)">$INFO[ListItem.UserRating,flagging/imdbstarrating/,,0.png]</value>
 		<value condition="Integer.IsLess(ListItem.Rating,1)">flagging/imdbstarrating/0,0.png</value>
 		<value condition="Integer.IsLess(ListItem.Rating,2)">flagging/imdbstarrating/1,0.png</value>
 		<value condition="Integer.IsLess(ListItem.Rating,3)">flagging/imdbstarrating/2,0.png</value>
