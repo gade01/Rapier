@@ -281,6 +281,20 @@
 							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(1)</visible>
 						</item>
+						<item id="153">
+							<description>Play CD</description>
+							<label>$LOCALIZE[31497]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],PlayDisc(CD))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
+						</item>
+						<item id="154">
+							<description>Rip CD</description>
+							<label>$LOCALIZE[600]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],RipCD)</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(1)</visible>
+						</item>
 						<item id="6">
 							<description>Genres</description>
 							<label>$LOCALIZE[135]</label>
@@ -560,6 +574,13 @@
 							<description>Clean Library</description>
 							<label>$LOCALIZE[14247] ($LOCALIZE[3])</label>
 							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],CleanLibrary(Video))</onclick>
+							<onclick>Dialog.Close(1103)</onclick>
+							<visible>Container(450).HasFocus(4)</visible>
+						</item>
+						<item id="155">
+							<description>Play DVD</description>
+							<label>$LOCALIZE[31496]</label>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],PlayDisc(DVD))</onclick>
 							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(4)</visible>
 						</item>
@@ -1326,7 +1347,7 @@
 						<item id="88">
 							<description>Play Disc</description>
 							<label>$LOCALIZE[341]</label>
-							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],PlayDVD())</onclick>
+							<onclick>Skin.SetString($INFO[Skin.String(CustomBtnPresetsParam)],PlayDisc(DVD))</onclick>
 							<onclick>Dialog.Close(1103)</onclick>
 							<visible>Container(450).HasFocus(12)</visible>
 						</item>

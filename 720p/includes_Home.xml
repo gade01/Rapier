@@ -2176,7 +2176,13 @@
 						<description>Party Mode</description>
 						<label>$LOCALIZE[589]</label>
 						<onclick>PlayerControl(Partymode(music))</onclick>
-						<visible>!Skin.HasSetting(EditMusicSubMenuBtn6)</visible>
+						<visible>!Skin.HasSetting(EditMusicSubMenuBtn6) + !System.HasMediaAudioCD</visible>
+					</item>
+					<item id="6">
+						<description>Play CD</description>
+						<label>$LOCALIZE[31497]</label>
+						<onclick>PlayDisc(CD)</onclick>
+						<visible>!Skin.HasSetting(EditMusicSubMenuBtn6) + System.HasMediaAudioCD</visible>
 					</item>
 					<item id="6">
 						<description>Custom Button</description>
@@ -2297,7 +2303,7 @@
 					<item id="6">
 						<description>Play DVD</description>
 						<label>$LOCALIZE[341]</label>
-						<onclick>PlayDVD()</onclick>
+						<onclick>PlayDisc(DVD)</onclick>
 						<visible>!Skin.HasSetting(EditVideosSubMenuBtn6) + System.HasMediaDVD</visible>
 					</item>
 					<item id="6">
@@ -3535,57 +3541,57 @@
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="950" />
-				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="910" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="850" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="810" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="825" />
-				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="785" />
-				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="725" />
-				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="685" />
-				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="890" />
-				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="790" />
-				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="750" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
@@ -3622,57 +3628,57 @@
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="1065" />
-				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="1025" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="965" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="925" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="940" />
-				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="900" />
-				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="840" />
-				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="800" />
-				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[Window.IsActive(VolumeBar) + !Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [Window.IsActive(VolumeBar) + !Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="1005" />
-				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="905" />
-				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
+				<param name="visible" value="!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]" />
 			</include>
 			
 			<include content="RSSFeedControl">
 				<param name="width" value="865" />
-				<param name="visible" value="[!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
+				<param name="visible" value="[!Window.IsActive(VolumeBar) + Player.Muted + !System.HasMediaDVD + !System.HasMediaAudioCD + !Skin.HasSetting(DisableWeather) + [Integer.IsGreater(System.BatteryLevel,0) + Integer.IsLessOrEqual(System.BatteryLevel,99)] + Skin.HasSetting(EnableBatteryNotification)] | [!Window.IsActive(VolumeBar) + Player.Muted + System.HasMediaDVD + !Skin.HasSetting(DisableWeather) + [[Integer.IsGreater(System.BatteryLevel,99) + Skin.HasSetting(EnableBatteryNotification)] | !Skin.HasSetting(EnableBatteryNotification)]]" />
 			</include>
 			
 			<include content="RSSFeedControl">
