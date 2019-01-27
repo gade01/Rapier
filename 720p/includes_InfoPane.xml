@@ -176,7 +176,7 @@
 				<aspectratio>keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
 				<animation effect="fade" end="90" condition="true">Conditional</animation>
-				<visible>![String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))]</visible>
+				<visible>![String.IsEmpty(ListItem.Art(artist.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))]</visible>
 			</control>
 		</control>
 	</include>

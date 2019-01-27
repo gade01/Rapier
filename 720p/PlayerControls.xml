@@ -131,7 +131,7 @@
 					<height>190</height>
 					<texture border="5">panels/panel-content-border.png</texture>
 					<aspectratio>stretch</aspectratio>
-					<visible>String.IsEmpty(MusicPlayer.Cover)</visible>
+					<visible>String.IsEmpty(Player.Art(album.thumb))</visible>
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 				</control>
 
@@ -142,14 +142,14 @@
 					<texture>DefaultAudio.png</texture>
 					<bordersize>25</bordersize>
 					<aspectratio>keep</aspectratio>
-					<visible>String.IsEmpty(MusicPlayer.Cover)</visible>
+					<visible>String.IsEmpty(Player.Art(album.thumb))</visible>
 				</control>
 
 				<control type="image">
 					<description>Cover</description>
 					<width>190</width>
 					<height>190</height>
-					<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
+					<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[Player.Art(album.thumb)]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
@@ -172,9 +172,9 @@
 					<description>Cover</description>
 					<width>190</width>
 					<height>190</height>
-					<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
+					<texture diffuse="covers/player-control-media-cover-diffuse.png">$INFO[Player.Art(album.thumb)]</texture>
 					<aspectratio>keep</aspectratio>
-					<visible>!String.Contains(Control.GetLabel(90001),cdart.png)</visible>
+					<visible>!String.Contains(Control.GetLabel(90001),cdart.png) + String.IsEmpty(Player.Art(album.discart))</visible>
 				</control>
 				
 				<control type="image" id="90001">
@@ -183,10 +183,10 @@
 					<top>5</top>
 					<width>180</width>
 					<height>180</height>
-					<texture diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+					<texture diffuse="icons/cdart/cdart-mask.png">$VAR[DiscartImageVar]</texture>
 					<aspectratio>keep</aspectratio>
 					<include>CdArtImageRotateAnim</include>
-					<visible>String.Contains(Control.GetLabel(90001),cdart.png)</visible>
+					<visible>String.Contains(Control.GetLabel(90001),cdart.png) | !String.IsEmpty(Player.Art(album.discart))</visible>
 				</control>
 			</control>
 

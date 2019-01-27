@@ -3968,9 +3968,9 @@
 						<top>15</top>
 						<width>134</width>
 						<height>134</height>
-						<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[MusicPlayer.cover]</texture>
+						<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[Player.Art(album.thumb)]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<visible>![Skin.HasSetting(EnableMusicCdArt) + String.Contains(Control.GetLabel(90000),cdart.png)]</visible>
+						<visible>![Skin.HasSetting(EnableMusicCdArt) + [String.Contains(Control.GetLabel(90000),cdart.png) | !String.IsEmpty(Player.Art(album.discart))]]</visible>
 					</control>
 						
 					<control type="image" id="90000">
@@ -3979,10 +3979,10 @@
 						<top>25</top>
 						<width>114</width>
 						<height>114</height>
-						<texture diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+						<texture diffuse="icons/cdart/cdart-mask.png">$VAR[DiscartImageVar]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<include>CdArtImageRotateAnim</include>
-						<visible>Skin.HasSetting(EnableMusicCdArt) + String.Contains(Control.GetLabel(90000),cdart.png)</visible>
+						<visible>Skin.HasSetting(EnableMusicCdArt) + [String.Contains(Control.GetLabel(90000),cdart.png) | !String.IsEmpty(Player.Art(album.discart))]</visible>
 					</control>
 
 					<control type="label">

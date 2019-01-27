@@ -97,7 +97,7 @@
 					<top>3</top>
 					<width>120</width>
 					<height>120</height>
-					<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+					<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$VAR[DiscartImageVar]</texture>
 					<aspectratio>keep</aspectratio>
 					<include>CdArtImageOpenCloseAnim2</include>
 					<include>CdArtImageRotateAnim</include>
@@ -108,7 +108,7 @@
 					<width>127</width>
 					<height>127</height>
 					<bordertexture border="8">panels/panel-content-border.png</bordertexture>
-					<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
+					<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[Player.Art(album.thumb)]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 				</control>
 
@@ -495,7 +495,7 @@
 					<top>92</top>
 					<width>167</width>
 					<height>167</height>
-					<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
+					<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[Player.Art(album.thumb)]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>!Skin.HasSetting(EnableMusicCdArt)</visible>
 				</control>
@@ -510,7 +510,7 @@
 						<top>3</top>
 						<width>160</width>
 						<height>160</height>
-						<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+						<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$VAR[DiscartImageVar]</texture>
 						<aspectratio>keep</aspectratio>
 						<include>CdArtImageOpenCloseAnim</include>
 						<include>CdArtImageRotateAnim</include>
@@ -521,7 +521,7 @@
 						<width>167</width>
 						<height>167</height>
 						<bordertexture border="8">panels/panel-content-border.png</bordertexture>
-						<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
+						<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[Player.Art(album.thumb)]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
 				</control>
