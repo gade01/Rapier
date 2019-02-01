@@ -63,13 +63,13 @@
 				<description>cdart now Playing</description>
 				<visible>!Skin.HasSetting(HideCdArtInMusicPlayingBG) + ![Player.ShowInfo | Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog)]</visible>
 				<left>29</left>
-				<top>503</top>
+				<top>450</top>
 
 				<control type="image">
 					<description>cdart</description>
 					<top>3</top>
-					<width>120</width>
-					<height>120</height>
+					<width>174</width>
+					<height>174</height>
 					<texture fallback="icons/cdart/cdart.png" diffuse="icons/cdart/cdart-mask.png">$INFO[Player.FolderPath,,cdart.png]</texture>
 					<aspectratio>keep</aspectratio>
 					<include>CdArtImageOpenCloseAnim2</include>
@@ -78,8 +78,8 @@
 
 				<control type="image">
 					<description>Cover</description>
-					<width>127</width>
-					<height>127</height>
+					<width>180</width>
+					<height>180</height>
 					<bordertexture border="8">panels/panel-content-border.png</bordertexture>
 					<texture diffuse="covers/player-media-cover-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -87,11 +87,10 @@
 
 				<control type="group">
 					<description>cdart Info Area</description>
-					<top>-21</top>
-					<left>170</left>
+					<top>1</top>
+					<left>266</left>
 					
 					<control type="label">
-						<left>7</left>
 						<width>600</width>
 						<height>60</height>
 						<font>FSInfoTitleFont</font>
@@ -129,8 +128,8 @@
 					</control>
 
 					<control type="grouplist">
-						<left>26</left>
-						<top>68</top>
+						<left>18</left>
+						<top>72</top>
 						<width>600</width>
 						<orientation>horizontal</orientation>
 						<include>CdArtLabelOpenCloseAnim3</include>
@@ -155,8 +154,8 @@
 					</control>
 					
 					<control type="grouplist">
-						<left>21</left>
-						<top>93</top>
+						<left>15</left>
+						<top>97</top>
 						<width>600</width>
 						<orientation>horizontal</orientation>
 						<include>CdArtLabelOpenCloseAnim4</include>
@@ -186,7 +185,7 @@
 					</control>
 					
 					<control type="grouplist">
-						<top>119</top>
+						<top>130</top>
 						<width>600</width>
 						<orientation>horizontal</orientation>
 						<itemgap>10</itemgap>
