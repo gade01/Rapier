@@ -11,13 +11,14 @@
 
 	<variable name="LiveTVListInfoLabel1">
 		<value condition="Window.IsActive(MyPVRChannels.xml)">$LOCALIZE[19031]:</value>
-		<value condition="Window.IsActive(MyPVRRecordings.xml) + [!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating)) | [String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))]]">$LOCALIZE[563]:</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + ![String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating)) + String.IsEmpty(ListItem.Rating)]">$LOCALIZE[563]:</value>
 		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))">$LOCALIZE[126]:</value>
-		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))">$LOCALIZE[572]:</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml)">$LOCALIZE[572]:</value>
 	</variable>
 
 	<variable name="LiveTVListInfoLabel1Val">
 		<value condition="Window.IsActive(MyPVRChannels.xml)">$INFO[ListItem.NextTitle]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
 		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating))">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating)]</value>
 		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))">$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</value>
 		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Studio))">$INFO[Window(Home).Property(SkinHelper.ListItem.Studio)]</value>
