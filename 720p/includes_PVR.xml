@@ -50,7 +50,8 @@
 
 	<variable name="LiveTVListInfoItemLabel">
 		<value condition="Window.IsActive(MyPVRChannels.xml)">$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.ChannelName,.  ]</value>
-		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]$INFO[ListItem.Season, (S,]$INFO[ListItem.Episode,E,)]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEmpty(ListItem.EpisodeName) + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]$VAR[SeasonEpisodesNumberVar, (,. ]$INFO[ListItem.EpisodeName,,)]</value>
+		<value condition="Window.IsActive(MyPVRRecordings.xml) + !String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]$VAR[SeasonEpisodesNumberVar, (,)]</value>
 		<value condition="Window.IsActive(MyPVRRecordings.xml) + String.IsEqual(ListItem.Season,0)">$INFO[ListItem.Label]</value>
 	</variable>
 
@@ -354,7 +355,7 @@
 			<description>Label</description>
 			<left>80</left>
 			<top>12</top>
-			<width>411</width>
+			<width>490</width>
 			<font>ListFont</font>
 			<textcolor>ListColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
@@ -365,7 +366,7 @@
 			<description>Label2</description>
 			<left>80</left>
 			<top>38</top>
-			<width>411</width>
+			<width>490</width>
 			<font>ListFont2</font>
 			<textcolor>ListColor2</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
@@ -416,7 +417,7 @@
 				<description>Label</description>
 				<left>80</left>
 				<top>12</top>
-				<width>411</width>
+				<width>490</width>
 				<font>ListFont</font>
 				<textcolor>SelectedColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
@@ -428,7 +429,7 @@
 				<description>Label2</description>
 				<left>80</left>
 				<top>38</top>
-				<width>411</width>
+				<width>490</width>
 				<font>ListFont2</font>
 				<textcolor>ListColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
