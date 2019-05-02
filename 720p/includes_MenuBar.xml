@@ -1907,7 +1907,7 @@
 			</control>
 			<control type="image" id="119">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(PVRGuideInfo)</visible>
+				<visible>Control.IsVisible(6)</visible>
 			</control>
 			<control type="button" id="9">
 				<description>Add Timer</description>
@@ -1917,17 +1917,27 @@
 			</control>
 			<control type="image" id="120">
 				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(9)</visible>
+			</control>
+			<control type="button" id="11">
+				<description>Set Reminder</description>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]$LOCALIZE[826][/UPPERCASE]</label>
 				<visible>Window.IsActive(PVRGuideInfo)</visible>
+			</control>
+			<control type="image" id="126">
+				<include>MenuBarSeparator</include>
+				<visible>Control.IsVisible(11)</visible>
 			</control>
 			<control type="button" id="4">
 				<description>Find Similar</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[19003][/UPPERCASE]</label>
-				<visible>Window.IsVisible(PVRGuideInfo)</visible>
+				<visible>Window.IsVisible(PVRRecordingInfo) | Window.IsVisible(PVRGuideInfo)</visible>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
-				<visible>Window.IsVisible(PVRGuideInfo)</visible>
+				<visible>Window.IsVisible(PVRRecordingInfo) | Window.IsVisible(PVRGuideInfo)</visible>
 			</control>
 			<control type="button" id="122">
 				<description>Trailer</description>
