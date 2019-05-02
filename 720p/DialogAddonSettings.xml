@@ -55,14 +55,35 @@
 				<control type="grouplist" id="3">
 					<description>Category Area</description>
 					<width>150</width>
-					<height>442</height>
+					<height>407</height>
 					<itemgap>2</itemgap>
 					<pagecontrol />
 					<align>left</align>
 					<orientation>vertical</orientation>
-					<ondown>9000</ondown>
+					<ondown>20</ondown>
 					<onleft>28</onleft>
 					<onright>5</onright>
+				</control>
+				
+				<control type="radiobutton" id="20">
+					<description>Settings level button</description>
+					<top>407</top>
+					<width>150</width>
+					<texturenofocus />
+					<enable>true</enable>
+					<textoffsetx>33</textoffsetx>
+					<radioposx>7</radioposx>
+					<radiowidth>20</radiowidth>
+					<textureradioonfocus>DefaultScript.png.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="DefaultColor2">DefaultScript.png.png</textureradioonnofocus>
+					<textureradioofffocus>DefaultScript.png.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="DefaultColor2">DefaultScript.png.png</textureradiooffnofocus>
+					<onclick>SettingsLevelChange</onclick>
+					<ondown>9000</ondown>
+					<onup>3</onup>
+					<onleft>28</onleft>
+					<onright>5</onright>
+					<include>DialogHeadLabel</include>
 				</control>
 
 				<control type="grouplist" id="5">
