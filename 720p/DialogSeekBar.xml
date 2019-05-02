@@ -53,11 +53,11 @@
 			
 			<control type="group">
 				<visible>!Player.HasGame</visible>
+				<left>37</left>
+				<top>39</top>
 				
 				<control type="progress">
 					<description>Progressbar Cache</description>
-					<left>37</left>
-					<top>39</top>
 					<width>412</width>
 					<midtexture border="2">controls/scrollbar-slider-horz-nofocus.png</midtexture>
 					<info>Player.ProgressCache</info>
@@ -66,8 +66,6 @@
 					
 				<control type="progress" id="23">
 					<description>Progressbar</description>
-					<left>37</left>
-					<top>39</top>
 					<width>412</width>
 					<info>Player.Progress</info>
 					<visible>!VideoPlayer.HasEpg</visible>
@@ -75,8 +73,6 @@
 				
 				<control type="progress" id="24">
 					<description>Progressbar</description>
-					<left>37</left>
-					<top>39</top>
 					<width>412</width>
 					<info>PVR.EpgEventProgress</info>
 					<visible>VideoPlayer.HasEpg</visible>
@@ -84,12 +80,25 @@
 				
 				<control type="progress" id="401">
 					<description>Progressbar</description>
-					<left>37</left>
-					<top>39</top>
 					<width>412</width>
 					<texturebg colordiffuse="00FFFFFF" border="4">controls/progress-background.png</texturebg>
 					<colordiffuse>88FFFFFF</colordiffuse>
 					<visible>Player.Seeking</visible>
+				</control>
+				
+				<control type="ranges">
+					<height>12</height>
+					<lefttexture>white4.png</lefttexture>
+					<midtexture colordiffuse="FFFF0000">white4.png</midtexture>
+					<righttexture>white2.png</righttexture>
+					<info>Player.Cutlist</info>
+				</control>
+				
+				<control type="ranges">
+					<top>5</top>
+					<height>10</height>
+					<righttexture colordiffuse="aaffffff">white2.png</righttexture>
+					<info>Player.Chapters</info>
 				</control>
 			</control>
 			
