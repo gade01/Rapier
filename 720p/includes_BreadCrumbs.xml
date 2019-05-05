@@ -49,6 +49,7 @@
 	
 	<variable name="MediaInfoBreadCrumbsLabel">
 		<value condition="String.IsEqual(ListItem.DBTYPE,movie)">$LOCALIZE[20338]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,set)">$LOCALIZE[20457]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season)">$LOCALIZE[20364]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,episode)">$LOCALIZE[20359]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,musicvideo)">$LOCALIZE[20391]</value>
@@ -1160,7 +1161,6 @@
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
 			<control type="button" id="555">
-				<oninfo>Dialog.Close(1102)</oninfo>
 				<include>BreadCrumbHomeIcon</include>
 				<include>BreadCrumbSlideLvl1Anim</include>
 			</control>

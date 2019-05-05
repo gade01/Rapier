@@ -1344,7 +1344,8 @@
 	
 	<variable name="MovieSetPlot">
 		<value condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.ExtendedPlot))">$INFO[Window(home).Property(SkinHelper.ListItem.ExtendedPlot)]</value>
-		<value>$INFO[Window(home).Property(SkinHelper.ListItem.ExtendedPlots)]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.ExtendedPlots))">$INFO[Window(home).Property(SkinHelper.ListItem.ExtendedPlots)]</value>
+		<value>$INFO[ListItem.Plot]</value>
 	</variable>
 	<!-- END Skin Helper Service -->
 	

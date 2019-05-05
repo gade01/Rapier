@@ -510,7 +510,6 @@
 				<onleft>850</onleft>
 				<onright>150</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<include condition="String.IsEmpty(Skin.String(CommonListStyle)) | Skin.String(CommonListStyle,1) | Skin.String(CommonListStyle,3)">CommonListItemLayout</include>
 				<include condition="Skin.String(CommonListStyle,2)">CommonListTallStyleItemLayout</include>
 				<include condition="String.IsEmpty(Skin.String(CommonListStyle)) | Skin.String(CommonListStyle,1)">CommonListFocusedLayout</include>
@@ -2925,7 +2924,6 @@
 			<ondown>54</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<animation effect="slide" end="24,-9" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="270" width="208">
@@ -3382,7 +3380,6 @@
 			<ondown>54</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<animation effect="slide" end="15,5" condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover)">Conditional</animation>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			<itemlayout condition="Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)" height="179" width="138">
@@ -3684,7 +3681,6 @@
 			<ondown>54</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="132" width="308">
 				<control type="image">
@@ -3964,7 +3960,6 @@
 			<ondown>54</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="180" width="306">
 				<control type="image">
@@ -4284,7 +4279,6 @@
 			<ondown>54</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			<itemlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" height="182" width="304">
 				<control type="image">
@@ -8617,7 +8611,6 @@
 				<onleft condition="Integer.IsLessOrEqual(Container(585).NumPages,1)">850</onleft>
 				<onright>584</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsAlbums]</visible>
 				<itemlayout height="37">
 					<control type="image">
@@ -9198,7 +9191,6 @@
                 <focusposition>0</focusposition>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(583)">Conditional</animation>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
 				<itemlayout height="400">
 					<control type="group">

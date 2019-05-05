@@ -183,7 +183,6 @@
 				<ondown>58</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<itemlayout height="37">
 					<control type="image">
@@ -435,7 +434,6 @@
 				<ondown>66</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<include condition="Skin.String(MoviesListInfo2Style,1) | Skin.String(MoviesListInfo2Style,3)">MoviesListInfo2ItemLayout</include>
 				<include condition="String.IsEmpty(Skin.String(MoviesListInfo2Style)) | Skin.String(MoviesListInfo2Style,2)">MoviesListInfo2TallStyleItemLayout</include>
@@ -894,7 +892,6 @@
 				<ondown>95</ondown>
 				<onleft>850</onleft>
 				<onright>150</onright>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 				<itemlayout height="37">
 					<control type="image">
@@ -1144,7 +1141,6 @@
 			<onright>150</onright>
 			<onup>97</onup>
 			<ondown>97</ondown>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			<itemlayout width="129" height="171">
 				<control type="group">
@@ -1306,7 +1302,6 @@
 			<onright>150</onright>
 			<onup>97</onup>
 			<ondown>97</ondown>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies)</visible>
 			<itemlayout width="257" height="129">
 				<control type="group">
@@ -1749,7 +1744,6 @@
 			<scrolltime tween="sine" easing="inout">401</scrolltime>
 			<onup>850</onup>
 			<ondown>150</ondown>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			<itemlayout width="150">
 				<control type="image">
@@ -2146,7 +2140,6 @@
 			<scrolltime tween="sine" easing="inout">500</scrolltime>
 			<onup>850</onup>
 			<ondown>150</ondown>
-			<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 			<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			<itemlayout width="214">
 				<control type="image">
@@ -2315,7 +2308,6 @@
 				<scrolltime tween="sine" easing="inout">403</scrolltime>
 				<include condition="Skin.HasSetting(WallViewVerticalNavigation)">WallViewVertical</include>
 				<include condition="!Skin.HasSetting(WallViewVerticalNavigation)">WallViewHorizontal</include>
-				<oninfo condition="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</oninfo>
 				<visible>Container.Content(Movies)</visible>
 				<itemlayout width="160" height="225" condition="Skin.String(MoviesWallStyle,1) | String.IsEmpty(Skin.String(MoviesWallStyle))">
 					<control type="image">

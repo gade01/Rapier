@@ -483,7 +483,7 @@
 				<label>$LOCALIZE[20457]</label>
 				<onclick>Dialog.Close(1101)</onclick>
 				<onclick>Skin.SetString(VideoInfoMenubar,MovieSet)</onclick>
-				<visible>[String.IsEqual(ListItem.DBTYPE,movie) + !String.IsEmpty(ListItem.SetID)] | String.IsEqual(ListItem.DBTYPE,set)</visible>
+				<visible>!String.IsEmpty(ListItem.SetID) + !ListItem.IsCollection</visible>
 			</control>
 			<control type="button" id="793">
 				<description>Movie Set Info</description>
@@ -495,7 +495,7 @@
 				<onclick>Dialog.Close(1101)</onclick>
 				<onclick>Dialog.Close(movieinformation)</onclick>
 				<onclick>ActivateWindow(1117)</onclick>
-				<visible>!String.IsEmpty(ListItem.SetID) | String.IsEqual(ListItem.DBTYPE,set)</visible>
+				<visible>!String.IsEmpty(ListItem.SetID) + !ListItem.IsCollection</visible>
 			</control>
 			<control type="button" id="794">
 				<description>Seasons</description>

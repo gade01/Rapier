@@ -45,13 +45,14 @@
 				<onclick condition="System.HasAddon(script.artwork.downloader) | System.HasAddon(script.artwork.beef)">Dialog.Close(1106)</onclick>
 				<onclick condition="System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.artwork.beef, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.artwork.downloader) + !System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+				<onclick condition="System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,set)">RunScript(script.artwork.beef,mode=gui,mediatype=set,dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.artwork.beef, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.artwork.downloader) + !System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,episode)">RunScript(script.artwork.beef, mode=gui, mediatype=episode, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,musicvideo)">RunScript(script.artwork.beef, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="System.HasAddon(script.artwork.downloader) + !System.HasAddon(script.artwork.beef) + String.IsEqual(ListItem.DBTYPE,musicvideo)">RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="!System.HasAddon(script.artwork.beef)">InstallAddon(script.artwork.beef)</onclick>
-				<visible>String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,musicvideo) | [String.IsEqual(ListItem.DBTYPE,episode) + System.HasAddon(script.artwork.beef)]</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,musicvideo) | [String.IsEqual(ListItem.DBTYPE,episode) + System.HasAddon(script.artwork.beef)]</visible>
 			</control>
 			<control type="button" id="783">
 				<description>Get Extrafanart</description>
@@ -74,7 +75,7 @@
 				<label>$LOCALIZE[184]</label>
 				<onclick>Dialog.Close(1106)</onclick>
 				<onclick>SendClick(2003,6)</onclick>
-				<visible>!String.IsEqual(ListItem.DBTYPE,video)</visible>
+				<visible>![String.IsEqual(ListItem.DBTYPE,video) | String.IsEqual(ListItem.DBTYPE,set)]</visible>
 			</control>
 			<control type="button" id="785">
 				<description>Set My Rating</description>
@@ -84,6 +85,7 @@
 				<label>$LOCALIZE[38023]</label>
 				<onclick>Dialog.Close(1106)</onclick>
 				<onclick>SendClick(2003,7)</onclick>
+				<visible>!String.IsEqual(ListItem.DBTYPE,set)</visible>
 			</control>
 			<control type="button" id="786">
 				<description>Edit Database</description>

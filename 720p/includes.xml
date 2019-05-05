@@ -1421,6 +1421,127 @@
 		</focusedlayout>
 	</include>
 	
+	<include name="DialogVideoInfoSet">
+		<left>465</left>
+		<top>250</top>
+		<width>482</width>
+		<height>300</height>
+		<onup>987</onup>
+		<onright condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(50).ListItem.Title])</onright>
+		<itemlayout height="30">
+			<control type="image">
+				<top>28</top>
+				<left>5</left>
+				<width>472</width>
+				<height>2</height>
+				<animation effect="fade" end="30" condition="true">Conditional</animation>
+				<texture>views/videoinfo-separator.png</texture>
+			</control>
+			<control type="label">
+				<left>5</left>
+				<width>382</width>
+				<height>30</height>
+				<font>FullMediaInfoFont</font>
+				<aligny>center</aligny>
+				<textcolor>MediaInfoItemColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+			</control>
+			<control type="label">
+				<left>392</left>
+				<width>100</width>
+				<height>30</height>
+				<font>FullMediaInfoFont</font>
+				<aligny>center</aligny>
+				<textcolor>MediaInfoItemColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Year]</label>
+			</control>
+			<control type="image">
+				<left>446</left>
+				<width>24</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<texture>$INFO[ListItem.Overlay]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="image">
+				<description>Watched Partial</description>
+				<left>446</left>
+				<width>24</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<texture background="true">$VAR[WatchedPartial]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>ListItem.IsResumable</visible>
+				<include>ListViewOverlayFadeAnim</include>
+				<include>ListViewWatchedOverlayFadeAnim</include>
+			</control>
+		</itemlayout>
+		<focusedlayout height="30">
+			<control type="image">
+				<top>28</top>
+				<left>5</left>
+				<width>472</width>
+				<height>2</height>
+				<animation effect="fade" end="30" condition="true">Conditional</animation>
+				<texture>views/videoinfo-separator.png</texture>
+			</control>
+			<control type="image">
+				<width>482</width>
+				<height>30</height>
+				<texture border="4">views/list-focus.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>Control.HasFocus(50)</visible>
+				<include>ListViewSelectFadeAnim</include>
+				<animation effect="slide" start="0,-30" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(50).OnNext">Focus</animation>
+				<animation effect="slide" start="0,30" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(50).OnPrevious">Focus</animation>
+			</control>
+			<control type="label">
+				<left>5</left>
+				<width>382</width>
+				<height>30</height>
+				<font>FullMediaInfoFont</font>
+				<aligny>center</aligny>
+				<textcolor>MediaInfoItemColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+			</control>
+			<control type="label">
+				<left>392</left>
+				<width>100</width>
+				<height>30</height>
+				<font>FullMediaInfoFont</font>
+				<aligny>center</aligny>
+				<textcolor>MediaInfoItemColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<label>$INFO[ListItem.Year]</label>
+			</control>
+			<control type="image">
+				<left>446</left>
+				<width>24</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<texture>$INFO[ListItem.Overlay]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+			</control>
+			<control type="image">
+				<description>Watched Partial</description>
+				<left>446</left>
+				<width>24</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<texture background="true">$VAR[WatchedPartial]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>ListItem.IsResumable</visible>
+				<include>ListViewOverlayFadeAnim</include>
+				<include>ListViewWatchedOverlayFadeAnim</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
 	<include name="DialogVideoInfoPoster">
 		<left>469</left>
 		<top>459</top>

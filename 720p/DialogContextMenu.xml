@@ -98,8 +98,7 @@
 				<control type="button" id="2064">
 					<description>Movie Set Information</description>
 					<label>$LOCALIZE[31040]</label>
-					<onclick condition="System.HasAddon(script.skin.helper.service)">ActivateWindow(1102)</onclick>
-					<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+					<onclick>ActivateWindow(movieinformation)</onclick>
 					<include>ContextMenuBtn</include>
 					<visible>!String.IsEmpty(ListItem.DBID) + ListItem.IsCollection + !Skin.HasSetting(ContextMenuMovieSetInformation)</visible>
 				</control>
