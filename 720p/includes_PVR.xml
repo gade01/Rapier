@@ -81,7 +81,7 @@
 		<value condition="[ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)] + ListItem.TimerHasConflict">pvr/status_conflict.png</value>
 		<value condition="ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.Property(PVR.IsRemindingTimer)">pvr/status_timer.png</value>
 		<value condition="ListItem.Property(PVR.IsRecordingTimer)">pvr/status_recording.png</value>
-		<value condition="ListItem.HasRecording">DefaultVideo.png.png</value>
+		<value condition="ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable">DefaultVideo.png.png</value>
 		<value condition="[ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)] + !ListItem.TimerIsActive">pvr/status_none.png</value>
 	</variable>
 	
@@ -801,7 +801,7 @@
 			<height>22</height>
 			<texture>$VAR[PVRStatusIcon]</texture>
 			<colordiffuse>WhiteColor</colordiffuse>
-			<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
+			<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
 		</control>
 		
 		<control type="label">

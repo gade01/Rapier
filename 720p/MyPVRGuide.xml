@@ -320,7 +320,7 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>![ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)]</visible>
+							<visible>![ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)]</visible>
 						</control>
 						<control type="label" id="1">
 							<left>40</left>
@@ -329,7 +329,7 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
 						</control>
 						<control type="image">
 							<description>Status Icon</description>
@@ -339,7 +339,7 @@
 							<height>22</height>
 							<texture>$VAR[PVRStatusIcon]</texture>
 							<colordiffuse>WhiteColor</colordiffuse>
-							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="42" width="102">
@@ -357,7 +357,7 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>![ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)]</visible>
+							<visible>![ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)]</visible>
 						</control>
 						<control type="label" id="1">
 							<left>40</left>
@@ -366,7 +366,7 @@
 							<align>left</align>
 							<include>LiveTVColumnItemLabel</include>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
 						</control>
 						<control type="image">
 							<description>Status Icon</description>
@@ -376,7 +376,7 @@
 							<height>22</height>
 							<texture>$VAR[PVRStatusIcon]</texture>
 							<colordiffuse>WhiteColor</colordiffuse>
-							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
+							<visible>ListItem.HasTimer | ListItem.HasTimerSchedule | ListItem.IsRecording | ListItem.HasRecording | ListItem.HasArchive | ListItem.IsPlayable | ListItem.Property(PVR.IsRemindingTimer) | ListItem.Property(PVR.IsRecordingTimer)</visible>
 						</control>
 					</focusedlayout>
 				</control>
