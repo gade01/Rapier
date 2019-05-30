@@ -6595,10 +6595,7 @@
 				</control>
 				
 				<control type="panel" id="979">
-					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
-					<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
-					<ondown condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</ondown>
+					<ondown>$VAR[ScrollbarTrailer2]</ondown>
 					<include content="QuickJumpHorizontalLayout">
 						<param name="left" value="550" />
 						<param name="top" value="678" />
@@ -6618,10 +6615,7 @@
 					<textureslidernib />
 					<textureslidernibfocus />
 					<onup>588</onup>
-					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-					<ondown condition="[Container.Content(Movies) | Container.Content(TVShows)] + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
-					<ondown condition="Container.Content(Episodes) + String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</ondown>
-					<ondown condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</ondown>
+					<ondown>$VAR[ScrollbarTrailer2]</ondown>
 					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 				</control>
 			</control>
@@ -9445,9 +9439,7 @@
 				</control>
 				
 				<control type="panel" id="980">
-					<ondown condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-					<ondown condition="String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
-					<ondown condition="String.IsEmpty(ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</ondown>
+					<ondown>$VAR[ScrollbarTrailer3]</ondown>
 					<include content="QuickJumpHorizontalLayout">
 						<param name="left" value="540" />
 						<param name="top" value="690" />
@@ -9467,9 +9459,7 @@
 					<textureslidernib />
 					<textureslidernibfocus />
 					<onup>500</onup>
-					<ondown condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</ondown>
-					<ondown condition="String.IsEmpty(ListItem.Trailer) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</ondown>
-					<ondown condition="String.IsEmpty(ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</ondown>
+					<ondown>$VAR[ScrollbarTrailer3]</ondown>
 					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 				</control>
 			</control>
