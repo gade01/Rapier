@@ -2575,22 +2575,10 @@
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
 	</variable>
 	
-	<!--
-	<variable name="FSInfoLabel4">
-		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Season,9) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E0,]. $INFO[VideoPlayer.Title]</value> 
-		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E,]. $INFO[VideoPlayer.Title]</value> 
-		<value condition="VideoPlayer.Content(Episodes) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E0,]. $INFO[VideoPlayer.Title]</value> 
-		<value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,]. $INFO[VideoPlayer.Title]</value>
-		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording">$INFO[VideoPlayer.ChannelNumberLabel]$INFO[VideoPlayer.ChannelName,.  ]</value>
-		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Artist]: $INFO[VideoPlayer.Title] $INFO[VideoPlayer.Year,(,)]</value>
-		<value>$INFO[VideoPlayer.Title] $INFO[VideoPlayer.Year,(,)]</value>
-	</variable>
-	-->
-	
 	<variable name="PosterImageOSD">
-		<value condition="VideoPlayer.Content(Movies) + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
-		<value condition="VideoPlayer.Content(Movies) + !String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
-		<value condition="VideoPlayer.Content(Episodes)">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 	</variable>
 	
 	<variable name="ClearImageOSD">
@@ -2610,8 +2598,8 @@
 	</variable>
 	
 	<variable name="ClearImageOSD2">
-		<value condition="VideoPlayer.Content(Episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+		<value>$INFO[Player.Art(poster)]</value>
 	</variable>
 	
 	<variable name="VideoPlayerSeasonVal">
