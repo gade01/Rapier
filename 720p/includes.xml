@@ -2237,9 +2237,9 @@
 	</variable>
 	
 	<variable name="PosterImageOSD">
-		<value condition="VideoPlayer.Content(Movies) + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
-		<value condition="VideoPlayer.Content(Movies) + !String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
-		<value condition="VideoPlayer.Content(Episodes)">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 	</variable>
 	
 	<variable name="ClearImageOSD">
@@ -2259,8 +2259,8 @@
 	</variable>
 	
 	<variable name="ClearImageOSD2">
-		<value condition="VideoPlayer.Content(Episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+		<value>$INFO[Player.Art(poster)]</value>
 	</variable>
 	
 	<variable name="SubtitleDelayLabel">

@@ -762,6 +762,33 @@
 			</control>
 		</control>
 	</include>
+	
+	<include name="LiveTVColumnChannelIcon">
+		<control type="group">
+			<visible>![String.IsEqual(ListItem.Label,$LOCALIZE[19026]) | String.IsEqual(ListItem.Label,$LOCALIZE[19140])]</visible>
+			
+			<control type="label">
+				<description>Channel Name</description>
+				<left>50</left>
+				<width>158</width>
+				<height>38</height>
+				<include>LiveTVColumnChannelLabel</include>
+				<label>$INFO[ListItem.ChannelName]</label>
+				<visible>![Skin.HasSetting(ShowPVRGuideChannelIcons) + !String.IsEmpty(ListItem.Icon)]</visible>
+			</control>
+			
+			<control type="image">
+				<description>Channel Icon</description>
+				<left>49</left>
+				<width>169</width>
+				<height>38</height>
+				<aspectratio aligny="center" align="left">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<bordersize>2</bordersize>
+				<visible>Skin.HasSetting(ShowPVRGuideChannelIcons) + !String.IsEmpty(ListItem.Icon)</visible>
+			</control>
+		</control>
+	</include>
 
 	<include name="LiveTVColumnLayoutArea">
 		<!-- LiveTVSearchView -->
@@ -785,26 +812,7 @@
 			<label>$INFO[ListItem.ChannelNumberLabel]</label>
 		</control>
 
-		<control type="label">
-			<description>Channel Name</description>
-			<left>50</left>
-			<width>158</width>
-			<height>38</height>
-			<include>LiveTVColumnChannelLabel</include>
-			<label>$INFO[ListItem.ChannelName]</label>
-			<visible>![Skin.HasSetting(ShowPVRGuideChannelIcons) + !String.IsEmpty(ListItem.Icon)]</visible>
-		</control>
-		
-		<control type="image">
-			<description>Channel Icon</description>
-			<left>49</left>
-			<width>169</width>
-			<height>38</height>
-			<aspectratio aligny="center" align="left">keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<bordersize>2</bordersize>
-			<visible>Skin.HasSetting(ShowPVRGuideChannelIcons) + !String.IsEmpty(ListItem.Icon)</visible>
-		</control>
+		<include>LiveTVColumnChannelIcon</include>
 
 		<control type="label">
 			<description>Title</description>
@@ -873,14 +881,7 @@
 			<label>$INFO[ListItem.ChannelNumberLabel]</label>
 		</control>
 
-		<control type="label">
-			<description>Channel Name</description>
-			<left>50</left>
-			<width>158</width>
-			<height>38</height>
-			<include>LiveTVColumnChannelLabel</include>
-			<label>$INFO[ListItem.ChannelName]</label>
-		</control>
+		<include>LiveTVColumnChannelIcon</include>
 
 		<control type="label">
 			<description>Title</description>
