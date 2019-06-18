@@ -492,43 +492,6 @@
 		</control>
 	</include>
 
-	<include name="ProgramsListInfoViewScrollbar">
-		<control type="group" id="150">
-			<control type="image">
-				<left>1232</left>
-				<top>110</top>
-				<width>14</width>
-				<height>517</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="group">
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView2Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-				
-				<control type="panel" id="91302">
-					<visible>Control.IsVisible(590)</visible>
-					<onright>ActivateWindow(1122)</onright>
-					<include content="QuickJumpVerticalLayout">
-						<param name="left" value="1232" />
-						<param name="top" value="113" />
-						<param name="height" value="514" />
-						<param name="itemheight" value="19" />
-					</include>
-				</control>
-
-				<control type="scrollbar" id="91301">
-					<left>1232</left>
-					<top>110</top>
-					<height>517</height>
-					<texturesliderbackground />
-					<onright>ActivateWindow(1122)</onright>
-					<onleft>500</onleft>
-					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-				</control>
-			</control>
-		</control>
-	</include>
-
 	<include name="ProgramsListInfo2ViewScrollbar">
 		<control type="group" id="150">
 			<control type="image">
@@ -542,9 +505,9 @@
 			<control type="group">
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView2Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
-				<control type="panel" id="91401">
-					<visible>Control.IsVisible(591)</visible>
-					<onright>ActivateWindow(1122)</onright>
+				<control type="panel" id="91301">
+					<visible>Control.IsVisible(590)</visible>
+					<onright condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
 						<param name="top" value="113" />
@@ -553,49 +516,12 @@
 					</include>
 				</control>
 
-				<control type="scrollbar" id="91402">
+				<control type="scrollbar" id="91302">
 					<left>1232</left>
 					<top>110</top>
 					<height>517</height>
 					<texturesliderbackground />
-					<onright>ActivateWindow(1122)</onright>
-					<onleft>500</onleft>
-					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-				</control>
-			</control>
-		</control>
-	</include>
-
-	<include name="ProgramsListInfo3ViewScrollbar">
-		<control type="group" id="150">
-			<control type="image">
-				<left>1232</left>
-				<top>110</top>
-				<width>14</width>
-				<height>517</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="group">
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView2Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-				
-				<control type="panel" id="91501">
-					<visible>Control.IsVisible(592)</visible>
-					<onright>ActivateWindow(1122)</onright>
-					<include content="QuickJumpVerticalLayout">
-						<param name="left" value="1232" />
-						<param name="top" value="113" />
-						<param name="height" value="514" />
-						<param name="itemheight" value="19" />
-					</include>
-				</control>
-
-				<control type="scrollbar" id="91502">
-					<left>1232</left>
-					<top>110</top>
-					<height>517</height>
-					<texturesliderbackground />
-					<onright>ActivateWindow(1122)</onright>
+					<onright condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</onright>
 					<onleft>500</onleft>
 					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 				</control>
@@ -616,8 +542,8 @@
 			<control type="group">
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideThumbsInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
-				<control type="panel" id="91601">
-					<visible>Control.IsVisible(593)</visible>
+				<control type="panel" id="91401">
+					<visible>Control.IsVisible(591)</visible>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
 						<param name="top" value="113" />
@@ -626,77 +552,7 @@
 					</include>
 				</control>
 			
-				<control type="scrollbar" id="91602">
-					<left>1232</left>
-					<top>110</top>
-					<height>517</height>
-					<texturesliderbackground />
-					<onleft>500</onleft>
-					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-				</control>
-			</control>
-		</control>
-	</include>
-
-	<include name="ProgramsThumbsInfo2ViewScrollbar">
-		<control type="group" id="150">
-			<control type="image">
-				<left>1232</left>
-				<top>110</top>
-				<width>14</width>
-				<height>517</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="group">
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideThumbsInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-				
-				<control type="panel" id="91701">
-					<visible>Control.IsVisible(594)</visible>
-					<include content="QuickJumpVerticalLayout">
-						<param name="left" value="1232" />
-						<param name="top" value="113" />
-						<param name="height" value="514" />
-						<param name="itemheight" value="19" />
-					</include>
-				</control>
-			
-				<control type="scrollbar" id="91702">
-					<left>1232</left>
-					<top>110</top>
-					<height>517</height>
-					<texturesliderbackground />
-					<onleft>500</onleft>
-					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-				</control>
-			</control>
-		</control>
-	</include>
-
-	<include name="ProgramsThumbsInfo3ViewScrollbar">
-		<control type="group" id="150">
-			<control type="image">
-				<left>1232</left>
-				<top>110</top>
-				<width>14</width>
-				<height>517</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="group">
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideThumbsInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-				
-				<control type="panel" id="91801">
-					<visible>Control.IsVisible(595)</visible>
-					<include content="QuickJumpVerticalLayout">
-						<param name="left" value="1232" />
-						<param name="top" value="113" />
-						<param name="height" value="514" />
-						<param name="itemheight" value="19" />
-					</include>
-				</control>
-			
-				<control type="scrollbar" id="91802">
+				<control type="scrollbar" id="91402">
 					<left>1232</left>
 					<top>110</top>
 					<height>517</height>
@@ -721,9 +577,9 @@
 				<visible>Skin.HasSetting(EnableQuickJump)</visible>
 			</control>
 			
-			<control type="panel" id="91901">
-				<visible>Control.IsVisible(596)</visible>
-				<ondown>ActivateWindow(1122)</ondown>
+			<control type="panel" id="91501">
+				<visible>Control.IsVisible(592)</visible>
+				<ondown condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</ondown>
 				<include content="QuickJumpHorizontalLayout">
 					<param name="left" value="489" />
 					<param name="top" value="462" />
@@ -732,7 +588,7 @@
 				</include>
 			</control>
 			
-			<control type="scrollbar" id="91902">
+			<control type="scrollbar" id="91502">
 				<left>485</left>
 				<top>465</top>
 				<width>765</width>
@@ -742,89 +598,7 @@
 				<texturesliderbarfocus border="2">controls/scrollbar-slider-horz-focus.png</texturesliderbarfocus>
 				<textureslidernib />
 				<textureslidernibfocus />
-				<ondown>ActivateWindow(1122)</ondown>
-				<onup>500</onup>
-				<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-			</control>
-		</control>
-	</include>
-
-	<include name="ProgramsWrapInfo2ViewScrollbar">
-		<control type="group" id="150">
-			<animation effect="fade" start="100" end="0" time="150" condition="!Skin.HasSetting(ShowWrapInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-			
-			<control type="image">
-				<left>485</left>
-				<top>465</top>
-				<width>765</width>
-				<height>12</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-				<visible>Skin.HasSetting(EnableQuickJump)</visible>
-			</control>
-			
-			<control type="panel" id="92101">
-				<visible>Control.IsVisible(597)</visible>
-				<ondown>ActivateWindow(1122)</ondown>
-				<include content="QuickJumpHorizontalLayout">
-					<param name="left" value="489" />
-					<param name="top" value="462" />
-					<param name="width" value="760" />
-					<param name="itemwidth" value="28" />
-				</include>
-			</control>
-			
-			<control type="scrollbar" id="92102">
-				<left>485</left>
-				<top>465</top>
-				<width>765</width>
-				<height>12</height>
-				<orientation>horizontal</orientation>
-				<texturesliderbar border="2">controls/scrollbar-slider-horz-nofocus.png</texturesliderbar>
-				<texturesliderbarfocus border="2">controls/scrollbar-slider-horz-focus.png</texturesliderbarfocus>
-				<textureslidernib />
-				<textureslidernibfocus />
-				<ondown>ActivateWindow(1122)</ondown>
-				<onup>500</onup>
-				<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-			</control>
-		</control>
-	</include>
-
-	<include name="ProgramsWrapInfo3ViewScrollbar">
-		<control type="group" id="150">
-			<animation effect="fade" start="100" end="0" time="150" condition="!Skin.HasSetting(ShowWrapInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-			
-			<control type="image">
-				<left>485</left>
-				<top>465</top>
-				<width>765</width>
-				<height>12</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-				<visible>Skin.HasSetting(EnableQuickJump)</visible>
-			</control>
-			
-			<control type="panel" id="92201">
-				<visible>Control.IsVisible(598)</visible>
-				<ondown>ActivateWindow(1122)</ondown>
-				<include content="QuickJumpHorizontalLayout">
-					<param name="left" value="489" />
-					<param name="top" value="462" />
-					<param name="width" value="760" />
-					<param name="itemwidth" value="28" />
-				</include>
-			</control>
-			
-			<control type="scrollbar" id="92202">
-				<left>485</left>
-				<top>465</top>
-				<width>765</width>
-				<height>12</height>
-				<orientation>horizontal</orientation>
-				<texturesliderbar border="2">controls/scrollbar-slider-horz-nofocus.png</texturesliderbar>
-				<texturesliderbarfocus border="2">controls/scrollbar-slider-horz-focus.png</texturesliderbarfocus>
-				<textureslidernib />
-				<textureslidernibfocus />
-				<ondown>ActivateWindow(1122)</ondown>
+				<ondown condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</ondown>
 				<onup>500</onup>
 				<visible>!Skin.HasSetting(EnableQuickJump)</visible>
 			</control>

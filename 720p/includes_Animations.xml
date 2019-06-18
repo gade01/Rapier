@@ -854,7 +854,7 @@
 		<animation effect="slide" start="0,0" end="-33,-22" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(2) + Container.Row(2)">Conditional</animation>
 	</include>
 	
-	<include name="MusicThumbsInfoFocusAnim">
+	<include name="ThumbsInfoSquareFocusAnim">
 		<animation effect="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out" reversible="false">Focus</animation>
 		<animation effect="slide" start="0,0" end="12,12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(0)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(0)">Conditional</animation>
@@ -864,6 +864,30 @@
 		<animation effect="slide" start="0,0" end="12,-12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(3)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,-12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(3)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-12,-12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(5) + Container.Row(3)">Conditional</animation>
+	</include>
+	
+	<include name="ProgramsThumbsInfoPosterFocusAnim">
+		<animation effect="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out" reversible="false">Focus</animation>
+		<animation effect="slide" start="0,0" end="15,20" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,17" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-12,17" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(5) + Container.Row(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="12,0" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(1)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-12,0" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(5) + Container.Row(1)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="12,-17" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(2)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-17" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(2)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-12,-17" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(5) + Container.Row(2)">Conditional</animation>
+	</include>
+	
+	<include name="ProgramsThumbsInfoWideFocusAnim">
+		<animation effect="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out" reversible="false">Focus</animation>
+		<animation effect="slide" start="0,0" end="12,12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(4) + Container.Row(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-15,12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(4) + Container.Row(0)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="15,0" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + [Container.Row(1) | Container.Row(2)]">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-15,0" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(4) + [Container.Row(1) | Container.Row(2)]">Conditional</animation>
+		<animation effect="slide" start="0,0" end="15,-12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(3)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(4) + Container.Row(3)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-15,-12" time="200" delay="600" tween="circle" easing="out" reversible="false" condition="Container.Column(4) + Container.Row(3)">Conditional</animation>
 	</include>
 	
 	<include name="WallStyle1FocusAnim">
@@ -900,169 +924,6 @@
 		<animation effect="slide" start="0,0" end="34,-40" time="300" delay="600" tween="back" easing="out" reversible="false" condition="Container.Column(0) + Container.Row(2)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,-40" time="300" delay="600" tween="back" easing="out" reversible="false" condition="!Container.Column(0) + !Container.Column(5) + Container.Row(2)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-40,-40" time="300" delay="600" tween="back" easing="out" reversible="false" condition="Container.Column(5) + Container.Row(2)">Conditional</animation>
-	</include>
-	
-	<include name="ThumbsStyleFocusAnim">
-		<animation type="Focus" reversible="false">
-			<effect type="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out"/>
-			<effect type="slide" start="0,0" end="$PARAM[end]" time="200" delay="600" tween="circle" easing="out"/>
-		</animation>
-	</include>
-
-	<include name="StraitThumbsStyleTopLeftCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,17" />
-		</include>
-	</include>
-	
-	<include name="StraitThumbsStyleTopEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="0,17" />
-		</include>
-	</include>
-	
-	<include name="StraitThumbsStyleTopRightCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-12,17" />
-		</include>
-	</include>
-	
-	<include name="StraitThumbsStyleLeftEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,0" />
-		</include>
-	</include>
-	
-	<include name="StraitThumbsStyleMidRowFocusAnim">
-		<animation effect="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out" reversible="false">Focus</animation>
-	</include>
-
-	<include name="StraitThumbsStyleRightEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-12,0" />
-		</include>
-	</include>
-
-	<include name="StraitThumbsStyleBottomLeftCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,-17" />
-		</include>
-	</include>
-	
-	<include name="StraitThumbsStyleBottomEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="0,-17" />
-		</include>
-	</include>
-	
-	<include name="StraitThumbsStyleBottomRightCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-12,-17" />
-		</include>
-	</include>
-
-	<include name="SquareThumbsStyleTopLeftCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,12" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleTopEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="0,12" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleTopRightCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-12,12" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleLeftEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,0" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleMidRowFocusAnim">
-		<animation effect="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out" reversible="false">Focus</animation>
-	</include>
-	
-	<include name="SquareThumbsStyleRightEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-12,0" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleBottomLeftCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,-12" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleBottomEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="0,-12" />
-		</include>
-	</include>
-	
-	<include name="SquareThumbsStyleBottomRightCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-12,-12" />
-		</include>
-	</include>
-
-	<include name="WideThumbsStyleTopLeftCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="12,12" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleTopEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="0,12" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleTopRightCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-15,12" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleLeftEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="15,0" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleMidRowFocusAnim">
-		<animation effect="zoom" start="100" end="135" center="auto" time="200" delay="600" tween="circle" easing="out" reversible="false">Focus</animation>
-	</include>
-	
-	<include name="WideThumbsStyleRightEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-15,0" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleBottomLeftCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="15,-12" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleBottomEdgeFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="0,-12" />
-		</include>
-	</include>
-	
-	<include name="WideThumbsStyleBottomRightCornerFocusAnim">
-		<include content="ThumbsStyleFocusAnim">
-			<param name="end" value="-15,-12" />
-		</include>
 	</include>
 	<!-- END Views -->
 </includes>
