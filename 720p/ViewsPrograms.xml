@@ -8,7 +8,37 @@
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ViewContentPanel</include>
 			<include>ListInfo2MediaInfoPanelCommon</include>
-			<include>ProgramsListInfoViewCommon</include>
+			
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Title)</visible>
+				<include>ListInfo2PanelFanart</include>
+				
+				<include content="ListInfo2MediaInfoArea">
+					<param name="visible" value="true" />
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
+					<param name="Grouplist1InfoWidth" value="310" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
+					<param name="Grouplist2InfoWidth" value="310" />
+					<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
+				</include>
+				
+				<include content="ListInfo2Plot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$INFO[ListItem.Plot]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious" />
+				</include>
+			</control>
 
 			<control type="list" id="590">
 				<viewtype label="31111">list</viewtype>
@@ -521,40 +551,6 @@
 			<include>ViewsDialogPopUpScreenDim</include>
 		</control>
 	</include>
-
-	<!-- COMMON -->
-	<include name="ProgramsListInfoViewCommon">
-		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
-			<include>ListInfo2PanelFanart</include>
-			
-			<include content="ListInfo2MediaInfoArea">
-				<param name="visible" value="true" />
-				<param name="Grouplist1LabelWidth" value="110" />
-				<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
-				<param name="Grouplist1InfoWidth" value="310" />
-				<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
-				<param name="Grouplist2LabelWidth" value="110" />
-				<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
-				<param name="Grouplist2InfoWidth" value="310" />
-				<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
-				<param name="Grouplist3LabelWidth" value="110" />
-				<param name="Grouplist3Label" value="$LOCALIZE[345]" />
-				<param name="Grouplist3InfoWidth" value="110" />
-				<param name="Grouplist3Info" value="$INFO[ListItem.Year]" />
-				<param name="Grouplist4LabelWidth" value="110" />
-				<param name="Grouplist4Label" value="$LOCALIZE[563]" />
-				<param name="Grouplist4InfoWidth" value="110" />
-				<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
-			</include>
-			
-			<include content="ListInfo2Plot">
-				<param name="fallback" value="31203" />
-				<param name="label" value="$INFO[ListItem.Plot]" />
-				<param name="visible" value="!Container.OnNext + !Container.OnPrevious" />
-			</include>
-		</control>
-	</include>
 	<!--//// END LIST INFO VIEW  //////////////////////////////////////////////////////////////////////-->
 
 	<!--//// START THUMBS INFO VIEW ///////////////////////////////////////////////////////////////////-->
@@ -563,7 +559,38 @@
 			<defaultcontrol always="true">591</defaultcontrol>
 			<visible>Control.IsVisible(591)</visible>
 			<include>MediaViewOpenCloseAnim</include>
-			<include>ProgramsThumbsInfoViewCommon</include>
+			<include>ViewContentPanel</include>
+			<include>ListInfo3MediaInfoPanelCommon</include>
+
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Title)</visible>
+				<include>ListInfo3PanelFanart</include>
+				
+				<include content="ThumbsInfoMediaInfoArea">
+					<param name="visible" value="true" />
+					<param name="Grouplist1LabelWidth" value="110" />
+					<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
+					<param name="Grouplist1InfoWidth" value="190" />
+					<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
+					<param name="Grouplist2LabelWidth" value="110" />
+					<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
+					<param name="Grouplist2InfoWidth" value="140" />
+					<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
+					<param name="Grouplist3LabelWidth" value="110" />
+					<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+					<param name="Grouplist3InfoWidth" value="110" />
+					<param name="Grouplist3Info" value="$INFO[ListItem.Premiered]" />
+					<param name="Grouplist4LabelWidth" value="110" />
+					<param name="Grouplist4Label" value="$LOCALIZE[563]" />
+					<param name="Grouplist4InfoWidth" value="110" />
+					<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
+				</include>
+				
+				<include content="ThumbsInfoPlot">
+					<param name="fallback" value="31203" />
+					<param name="label" value="$INFO[ListItem.Plot]" />
+				</include>
+			</control>
 
 			<control type="panel" id="591">
 				<viewtype label="31116">icon</viewtype>
@@ -745,42 +772,6 @@
 			<include>ViewsDialogPopUpScreenDim</include>
 		</control>
 	</include>
-
-	<!-- COMMON -->
-	<include name="ProgramsThumbsInfoViewCommon">
-		<include>ViewContentPanel</include>
-		<include>ListInfo3MediaInfoPanelCommon</include>
-
-		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title)</visible>
-			<include>ListInfo3PanelFanart</include>
-			
-			<include content="ThumbsInfoMediaInfoArea">
-				<param name="visible" value="true" />
-				<param name="Grouplist1LabelWidth" value="110" />
-				<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
-				<param name="Grouplist1InfoWidth" value="190" />
-				<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
-				<param name="Grouplist2LabelWidth" value="110" />
-				<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
-				<param name="Grouplist2InfoWidth" value="140" />
-				<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
-				<param name="Grouplist3LabelWidth" value="110" />
-				<param name="Grouplist3Label" value="$LOCALIZE[345]" />
-				<param name="Grouplist3InfoWidth" value="110" />
-				<param name="Grouplist3Info" value="$INFO[ListItem.Premiered]" />
-				<param name="Grouplist4LabelWidth" value="110" />
-				<param name="Grouplist4Label" value="$LOCALIZE[563]" />
-				<param name="Grouplist4InfoWidth" value="110" />
-				<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
-			</include>
-			
-			<include content="ThumbsInfoPlot">
-				<param name="fallback" value="31203" />
-				<param name="label" value="$INFO[ListItem.Plot]" />
-			</include>
-		</control>
-	</include>
 	<!--//// END THUMBS INFO VIEW /////////////////////////////////////////////////////////////////////-->
 
 	<!--//// START WRAP LIST INFO VIEW ////////////////////////////////////////////////////////////////-->
@@ -943,20 +934,16 @@
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
-			<control type="group">
+			<control type="label">
+				<description>Genre</description>
 				<left>239</left>
-				<top>520</top>
-
-				<control type="label">
-					<description>Genre</description>
-					<top>10</top>
-					<width>204</width>
-					<font>MediaInfoFont2</font>
-					<textcolor>WhiteColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-				</control>
+				<top>530</top>
+				<width>204</width>
+				<font>MediaInfoFont2</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			</control>
 		</control>
 
@@ -1214,20 +1201,16 @@
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
-			<control type="group">
+			<control type="label">
+				<description>Genre</description>
 				<left>188</left>
-				<top>520</top>
-
-				<control type="label">
-					<description>Genre</description>
-					<top>10</top>
-					<width>268</width>
-					<font>MediaInfoFont2</font>
-					<textcolor>WhiteColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-				</control>
+				<top>530</top>
+				<width>268</width>
+				<font>MediaInfoFont2</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			</control>
 		</control>
 
@@ -1496,20 +1479,16 @@
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
-			<control type="group">
+			<control type="label">
+				<description>Genre</description>
 				<left>239</left>
-				<top>500</top>
-
-				<control type="label">
-					<description>Genre</description>
-					<top>10</top>
-					<width>204</width>
-					<font>MediaInfoFont2</font>
-					<textcolor>WhiteColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Genre]$INFO[ListItem.Genre]$INFO[ListItem.Genre]$INFO[ListItem.Genre][/UPPERCASE]</label>
-				</control>
+				<top>510</top>
+				<width>204</width>
+				<font>MediaInfoFont2</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<label>[UPPERCASE]$INFO[ListItem.Genre]$INFO[ListItem.Genre]$INFO[ListItem.Genre]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			</control>
 		</control>
 
@@ -1766,21 +1745,17 @@
 				<visible>!Container.OnNext + !Container.OnPrevious</visible>
 				<include>ControlsOpenCloseAnim</include>
 			</control>
-
-			<control type="group">
+			
+			<control type="label">
+				<description>Genre</description>
 				<left>188</left>
-				<top>500</top>
-
-				<control type="label">
-					<description>Genre</description>
-					<top>10</top>
-					<width>268</width>
-					<font>MediaInfoFont2</font>
-					<textcolor>WhiteColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-				</control>
+				<top>510</top>
+				<width>268</width>
+				<font>MediaInfoFont2</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			</control>
 		</control>
 
@@ -2039,20 +2014,16 @@
 				<include>ControlsOpenCloseAnim</include>
 			</control>
 
-			<control type="group">
+			<control type="label">
+				<description>Genre</description>
 				<left>161</left>
-				<top>500</top>
-
-				<control type="label">
-					<description>Genre</description>
-					<top>10</top>
-					<width>282</width>
-					<font>MediaInfoFont2</font>
-					<textcolor>WhiteColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>center</align>
-					<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
-				</control>
+				<top>510</top>
+				<width>282</width>
+				<font>MediaInfoFont2</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
 			</control>
 		</control>
 
