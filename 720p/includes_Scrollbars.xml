@@ -94,6 +94,7 @@
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + Container.Content(Episodes) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + Container.Content(musicvideos) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</value>
+		<value condition="String.Contains(Container.FolderPath,plugin://plugin.program)">ActivateWindow(1122)</value>
 		<value condition="Skin.HasSetting(ScrollbarTrailerPlayback)">noop</value>
 	</variable>
 	
@@ -241,7 +242,7 @@
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
 				<control type="panel" id="90601">
-					<visible>[Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(62) | Control.IsVisible(73) | Control.IsVisible(91) | Control.IsVisible(530)] + ![Container.Content(Seasons) | [Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
+					<visible>[Control.IsVisible(58) | Control.IsVisible(530)] + ![Container.Content(Seasons) | [Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]]</visible>
 					<onright>$VAR[ScrollbarTrailer2]</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
@@ -278,7 +279,7 @@
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView2Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
 				<control type="panel" id="90701">
-					<visible>[Control.IsVisible(50) | Control.IsVisible(65) | Control.IsVisible(66) | Control.IsVisible(67) | Control.IsVisible(68) | Control.IsVisible(531) | Control.IsVisible(587) | Control.IsVisible(591)] + ![[Container.Content(Episodes) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml)] + ![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]]</visible>
+					<visible>[Control.IsVisible(50) | Control.IsVisible(59) | Control.IsVisible(65) | Control.IsVisible(531) | Control.IsVisible(591)] + ![[Container.Content(Episodes) | Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml)] + ![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]]</visible>
 					<onright>$VAR[ScrollbarTrailer1]</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
@@ -315,7 +316,7 @@
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView3Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
 				<control type="panel" id="90801">
-					<visible>[Control.IsVisible(94) | Control.IsVisible(95) | Control.IsVisible(96) | Control.IsVisible(578) | Control.IsVisible(589)] + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
+					<visible>[Control.IsVisible(60) | Control.IsVisible(578)] + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
 					<onright>$VAR[ScrollbarTrailer2]</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="817" />
@@ -488,43 +489,6 @@
 				<visible>!Control.IsVisible(659) + !Skin.HasSetting(EnableQuickJump) + Skin.HasSetting(WallViewVerticalNavigation)</visible>
 				<onleft>500</onleft>
 				<onright>$VAR[ScrollbarTrailer3]</onright>
-			</control>
-		</control>
-	</include>
-
-	<include name="ProgramsListInfo2ViewScrollbar">
-		<control type="group" id="150">
-			<control type="image">
-				<left>1232</left>
-				<top>110</top>
-				<width>14</width>
-				<height>517</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-			</control>
-			
-			<control type="group">
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView2Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-				
-				<control type="panel" id="91301">
-					<visible>Control.IsVisible(590)</visible>
-					<onright condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</onright>
-					<include content="QuickJumpVerticalLayout">
-						<param name="left" value="1232" />
-						<param name="top" value="113" />
-						<param name="height" value="514" />
-						<param name="itemheight" value="19" />
-					</include>
-				</control>
-
-				<control type="scrollbar" id="91302">
-					<left>1232</left>
-					<top>110</top>
-					<height>517</height>
-					<texturesliderbackground />
-					<onright condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</onright>
-					<onleft>500</onleft>
-					<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-				</control>
 			</control>
 		</control>
 	</include>

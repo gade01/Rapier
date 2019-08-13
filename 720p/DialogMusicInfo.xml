@@ -447,22 +447,8 @@
 				<align>justify</align>
 				<pagecontrol>61</pagecontrol>
 				<label>$VAR[MusicInfoTextbox]</label>
-				<visible>!Control.IsVisible(50) + String.IsEmpty(Skin.String(MusicInfoMenubar))
-				+ ![[String.IsEqual(ListItem.DBTYPE,artist) + String.IsEmpty(ListItem.Property(Artist_Description))] | [String.IsEqual(ListItem.DBTYPE,album) + String.IsEmpty(ListItem.Property(Album_Description))] | [String.IsEqual(ListItem.DBTYPE,song) + String.IsEmpty(ListItem.Comment)]]</visible>
+				<visible>!Control.IsVisible(50) + String.IsEmpty(Skin.String(MusicInfoMenubar))</visible>
 				<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
-				<include>FSMediaInfoOpenCloseAnim</include>
-			</control>
-			
-			<control type="label">
-				<left>100</left>
-				<top>462</top>
-				<width>1080</width>
-				<font>FullMediaInfoDescFont</font>
-				<textcolor>MediaInfoColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$VAR[MusicInfoTextboxFallback]</label>
-				<visible>!Control.IsVisible(50) + String.IsEmpty(Skin.String(MusicInfoMenubar))
-				+ [[String.IsEqual(ListItem.DBTYPE,artist) + String.IsEmpty(ListItem.Property(Artist_Description))] | [String.IsEqual(ListItem.DBTYPE,album) + String.IsEmpty(ListItem.Property(Album_Description))] | [String.IsEqual(ListItem.DBTYPE,song) + String.IsEmpty(ListItem.Comment)]]</visible>
 				<include>FSMediaInfoOpenCloseAnim</include>
 			</control>
 			

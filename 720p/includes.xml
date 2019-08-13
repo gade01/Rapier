@@ -26,13 +26,16 @@
 	<include file="includes_StatusBar.xml"/>
 	<include file="includes_VideoLyrics.xml"/>
 	<include file="includes_Weather.xml"/>
+	<include file="View_50_Icon.xml"/>
+	<include file="View_52_List.xml"/>
+	<include file="View_58_ListInfo.xml"/>
+	<include file="View_59_ListInfo2.xml"/>
+	<include file="View_60_ListInfo3.xml"/>
 	<include file="Views.xml"/>
 	<include file="ViewsAddons.xml"/>
 	<include file="ViewsCommon.xml"/>
-	<include file="ViewsEpisodes.xml"/>
 	<include file="ViewsMusic.xml"/>
 	<include file="ViewsMovies.xml"/>
-	<include file="ViewsMusicVideos.xml"/>
 	<include file="ViewsPictures.xml"/>
 	<include file="ViewsPlaylist.xml"/>
 	<include file="ViewsPrograms.xml"/>
@@ -2081,14 +2084,11 @@
 	</variable>
 	
 	<variable name="MusicInfoTextbox">
-		<value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Description)]</value>
-		<value condition="Container.Content(Albums)">$INFO[ListItem.Property(Album_Description)]</value>
-		<value condition="Container.Content(Songs)">$INFO[ListItem.Comment]</value>
-	</variable>
-	
-	<variable name="MusicInfoTextboxFallback">
+		<value condition="Container.Content(Artists) + !String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="Container.Content(Artists)">$LOCALIZE[547].</value>
-		<value condition="Container.Content(Albums)">$LOCALIZE[414].</value>
+		<value condition="Container.Content(Albums) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="Container.Content(Albums)">$LOCALIZE[31204]</value>
+		<value condition="Container.Content(Songs) + !String.IsEmpty(ListItem.Comment)">$INFO[ListItem.Comment]</value>
 		<value condition="Container.Content(Songs)">$LOCALIZE[31205]</value>
 	</variable>
 	

@@ -152,6 +152,98 @@
 		<value>$INFO[ListItem.Date]$INFO[ListItem.Premiered]</value>
 	</variable>
 	
+	<include name="ListFocusedlayoutBackgrounds">
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>37</height>
+			<texture border="0,0,10,2">views/list-separator.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>36</height>
+			<texture border="4">views/list-focus.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>Control.HasFocus($PARAM[id])</visible>
+			<include>ListViewSelectFadeAnim</include>
+			<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewScrollAnim</include>
+		</control>
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>36</height>
+			<texture border="4">views/list-alt-focus.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!Control.HasFocus($PARAM[id])</visible>
+			<include>ListViewSelectFadeAnim2</include>
+		</control>
+	</include>
+	
+	<include name="FocusedlayoutBackgrounds">
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>37</height>
+			<texture border="0,0,10,2">views/list-separator.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>36</height>
+			<texture border="4">views/list-focus.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>ListViewSelectFadeAnim</include>
+			<animation type="Focus" condition="Container($PARAM[id]).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+				<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+				<effect type="slide" start="0,-37" time="200" tween="sine" easing="out"/>
+			</animation>
+			<animation type="Focus" condition="Container($PARAM[id]).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+				<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+				<effect type="slide" start="0,37" time="200" tween="sine" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus($PARAM[id])</visible>
+		</control>
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>36</height>
+			<texture border="4">views/list-alt-focus.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>!Control.HasFocus($PARAM[id])</visible>
+			<include>ListViewSelectFadeAnim2</include>
+		</control>
+	</include>
+	
+	<include name="TallStyleFocusedlayoutBackgrounds">
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>74</height>
+			<texture border="0,0,10,2">views/list-separator.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>73</height>
+			<texture border="4">views/list-focus.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>ListViewSelectFadeAnim</include>
+			<animation type="Focus" condition="Container($PARAM[id]).OnNext + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+				<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+				<effect type="slide" start="0,-74" time="200" tween="sine" easing="out"/>
+			</animation>
+			<animation type="Focus" condition="Container($PARAM[id]).OnPrevious + ![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]" reversible="false">
+				<effect type="Fade" start="40" end="100" time="500" tween="back" easing="in"/>
+				<effect type="slide" start="0,74" time="200" tween="sine" easing="out"/>
+			</animation>
+			<visible>Control.HasFocus($PARAM[id])</visible>
+		</control>
+		<control type="image">
+			<width>$PARAM[width]</width>
+			<height>73</height>
+			<texture border="4">views/list-alt-focus.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>ListViewSelectFadeAnim2</include>
+			<visible>!Control.HasFocus($PARAM[id])</visible>
+		</control>
+	</include>
+	
 	<include name="ViewContentPanel">
 		<control type="image">
 			<left>30</left>
@@ -2307,28 +2399,29 @@
 			<height>505</height>
 			<align>center</align>
 			<itemgap>17</itemgap>
+			<visible>$PARAM[visible]</visible>
 			<control type="image">
 				<width>320</width>
 				<height>158</height>
 				<texture background="true">$INFO[ListItem.Path]extrathumbs/thumb1.jpg</texture>
-				<bordertexture border="4">covers/cover-case2.png</bordertexture>
-				<bordersize>4</bordersize>
+				<bordertexture border="$PARAM[border]">$PARAM[bordertexture]</bordertexture>
+				<bordersize>$PARAM[bordersize]</bordersize>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
 				<width>320</width>
 				<height>158</height>
 				<texture background="true">$INFO[ListItem.Path]extrathumbs/thumb2.jpg</texture>
-				<bordertexture border="4">covers/cover-case2.png</bordertexture>
-				<bordersize>4</bordersize>
+				<bordertexture border="$PARAM[border]">$PARAM[bordertexture]</bordertexture>
+				<bordersize>$PARAM[bordersize]</bordersize>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
 				<width>320</width>
 				<height>158</height>
 				<texture background="true">$INFO[ListItem.Path]extrathumbs/thumb3.jpg</texture>
-				<bordertexture border="4">covers/cover-case2.png</bordertexture>
-				<bordersize>4</bordersize>
+				<bordertexture border="$PARAM[border]">$PARAM[bordertexture]</bordertexture>
+				<bordersize>$PARAM[bordersize]</bordersize>
 				<aspectratio>keep</aspectratio>
 			</control>
 		</control>
