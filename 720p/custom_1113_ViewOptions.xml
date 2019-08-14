@@ -96,31 +96,16 @@
 				<onclick>Skin.ToggleSetting(WallViewVerticalNavigation)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,70) | Skin.String(CurrentViewMode,586)</visible>
-			</control>
-			<control type="radiobutton" id="1033">
-				<description>Wall Do Not Dim Cover (Music)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31424]</label>
-				<selected>!Skin.HasSetting(DoNotDimMusicWallCover)</selected>
-				<onclick>Skin.ToggleSetting(DoNotDimMusicWallCover)</onclick>
-				<visible>Skin.String(CurrentViewMode,70) + Container.Content(Albums)</visible>
+				<visible>Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="3083">
-				<description>Wall Show Rating (Movies)</description>
+				<description>Wall Show Rating (Movies) (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31047]</label>
-				<selected>Skin.HasSetting(ShowMoviesWallRating)</selected>
-				<onclick>Skin.ToggleSetting(ShowMoviesWallRating)</onclick>
-				<visible>Skin.String(CurrentViewMode,69) + Container.Content(Movies)</visible>
-			</control>
-			<control type="radiobutton" id="3079">
-				<description>Wall Show Rating (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31047]</label>
-				<selected>Skin.HasSetting(ShowTVShowsWallRating)</selected>
-				<onclick>Skin.ToggleSetting(ShowTVShowsWallRating)</onclick>
-				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
+				<selected>[Container.Content(Movies) + Skin.HasSetting(ShowMoviesWallRating)] | [Container.Content(TVShows) + Skin.HasSetting(ShowTVShowsWallRating)]</selected>
+				<onclick condition="Container.Content(Movies)">Skin.ToggleSetting(ShowMoviesWallRating)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(ShowTVShowsWallRating)</onclick>
+				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="1035">
 				<description>Do Not Show Star Rating (Music)</description>
@@ -147,8 +132,8 @@
 				<label>$LOCALIZE[31050]</label>
 				<selected>!Skin.HasSetting(DoNotUseStarRatingTVShows)</selected>
 				<onclick>Skin.ToggleSetting(DoNotUseStarRatingTVShows)</onclick>
-				<enable>![[Skin.String(CurrentViewMode,586) + !Skin.HasSetting(ShowTVShowsWallRating)] | [Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowDVDThumbsRating)] | [Skin.String(CurrentViewMode,54) + Skin.HasSetting(HideDVDThumbsLabel)]]</enable>
-				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,586)] + Container.Content(TVShows)</visible>
+				<enable>![[Skin.String(CurrentViewMode,69) + !Skin.HasSetting(ShowTVShowsWallRating)] | [Skin.String(CurrentViewMode,54) + !Skin.HasSetting(ShowDVDThumbsRating)] | [Skin.String(CurrentViewMode,54) + Skin.HasSetting(HideDVDThumbsLabel)]]</enable>
+				<visible>[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,69)] + Container.Content(TVShows)</visible>
 			</control>
 			<control type="radiobutton" id="2076">
 				<description>Do Not Use Star Rating (Episodes) (Videos)</description>
@@ -365,82 +350,47 @@
 				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,588)</visible>
 			</control>
 			<control type="radiobutton" id="2069">
-				<description>Wall Do Not Dim Cover (Movies)</description>
+				<description>Wall Do Not Dim Cover (Movies) (TVShows) (Albums)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31424]</label>
-				<selected>!Skin.HasSetting(DoNotDimMoviesWallCover)</selected>
-				<onclick>Skin.ToggleSetting(DoNotDimMoviesWallCover)</onclick>
-				<visible>Skin.String(CurrentViewMode,69) + Container.Content(Movies)</visible>
-			</control>
-			<control type="radiobutton" id="2070">
-				<description>Wall Do Not Dim Cover (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31424]</label>
-				<selected>!Skin.HasSetting(DoNotDimTVShowsWallCover)</selected>
-				<onclick>Skin.ToggleSetting(DoNotDimTVShowsWallCover)</onclick>
-				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
+				<selected>[Container.Content(Movies) + !Skin.HasSetting(DoNotDimMoviesWallCover)] | [Container.Content(TVShows) + !Skin.HasSetting(DoNotDimTVShowsWallCover)] | [Container.Content(Albums) + !Skin.HasSetting(DoNotDimMusicWallCover)]</selected>
+				<onclick condition="Container.Content(Movies)">Skin.ToggleSetting(DoNotDimMoviesWallCover)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(DoNotDimTVShowsWallCover)</onclick>
+				<onclick condition="Container.Content(Albums)">Skin.ToggleSetting(DoNotDimMusicWallCover)</onclick>
+				<visible>Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="3081">
-				<description>Wall Hide Overlay (Movies)</description>
+				<description>Wall Hide Overlay (Movies) (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
-				<selected>Skin.HasSetting(HideMoviesWallOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesWallOverlay)</onclick>
-				<visible>Skin.String(CurrentViewMode,69) + Container.Content(Movies)</visible>
-			</control>
-			<control type="radiobutton" id="3086">
-				<description>Wall Hide Overlay (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31046]</label>
-				<selected>Skin.HasSetting(HideTVShowsWallOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsWallOverlay)</onclick>
-				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
+				<selected>[Container.Content(Movies) + Skin.HasSetting(HideMoviesWallOverlay)] | [Container.Content(TVShows) + Skin.HasSetting(HideTVShowsWallOverlay)]</selected>
+				<onclick condition="Container.Content(Movies)">Skin.ToggleSetting(HideMoviesWallOverlay)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsWallOverlay)</onclick>
+				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="3021">
-				<description>Wall Hide Info Panel (Movies)</description>
+				<description>Wall Hide Info Panel (Movies) (TVShows) (Albums)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31021]</label>
-				<selected>Skin.HasSetting(HideMoviesWallInfoPanel)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesWallInfoPanel)</onclick>
-				<onclick condition="Skin.HasSetting(HideMoviesWallExtendedInfoPanel) + Skin.HasSetting(HideMoviesWallInfoPanel)">Skin.ToggleSetting(HideMoviesWallExtendedInfoPanel)</onclick>
+				<selected>[Container.Content(Movies) + Skin.HasSetting(HideMoviesWallInfoPanel)] | [Container.Content(TVShows) + Skin.HasSetting(HideTVShowsWallInfoPanel)] | [Container.Content(Albums) + Skin.HasSetting(HideMusicWallInfoPanel)]</selected>
+				<onclick condition="Container.Content(Movies)">Skin.ToggleSetting(HideMoviesWallInfoPanel)</onclick>
+				<onclick condition="Container.Content(Movies) + Skin.HasSetting(HideMoviesWallExtendedInfoPanel) + Skin.HasSetting(HideMoviesWallInfoPanel)">Skin.ToggleSetting(HideMoviesWallExtendedInfoPanel)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsWallInfoPanel)</onclick>
+				<onclick condition="Container.Content(TVShows) + Skin.HasSetting(HideTVShowsWallExtendedInfoPanel) + Skin.HasSetting(HideTVShowsWallInfoPanel)">Skin.ToggleSetting(HideTVShowsWallExtendedInfoPanel)</onclick>
+				<onclick condition="Container.Content(Albums)">Skin.ToggleSetting(HideMusicWallInfoPanel)</onclick>
 				<visible>Skin.String(CurrentViewMode,69)</visible>
-			</control>
-			<control type="radiobutton" id="3087">
-				<description>Wall Hide Info Panel (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31021]</label>
-				<selected>Skin.HasSetting(HideTVShowsWallInfoPanel)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsWallInfoPanel)</onclick>
-				<onclick condition="Skin.HasSetting(HideTVShowsWallExtendedInfoPanel) + Skin.HasSetting(HideTVShowsWallInfoPanel)">Skin.ToggleSetting(HideTVShowsWallExtendedInfoPanel)</onclick>
-				<visible>Skin.String(CurrentViewMode,586)</visible>
 			</control>
 			<control type="radiobutton" id="3023">
-				<description>Wall Hide Extended Info Panel (Movies)</description>
+				<description>Wall Hide Extended Info Panel (Movies) (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31971]</label>
-				<selected>!Skin.HasSetting(HideMoviesWallExtendedInfoPanel)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesWallExtendedInfoPanel)</onclick>
-				<onclick condition="!Skin.HasSetting(HideMoviesWallExtendedInfoPanel) + !Skin.HasSetting(HideMoviesWallInfoPanel)">Skin.ToggleSetting(HideMoviesWallInfoPanel)</onclick>
-				<enable>!Skin.String(MoviesWallStyle,2)</enable>
-				<visible>Skin.String(CurrentViewMode,69)</visible>
-			</control>
-			<control type="radiobutton" id="3088">
-				<description>Wall Hide Extended Info Panel (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31971]</label>
-				<selected>!Skin.HasSetting(HideTVShowsWallExtendedInfoPanel)</selected>
-				<onclick>Skin.ToggleSetting(HideTVShowsWallExtendedInfoPanel)</onclick>
-				<onclick condition="!Skin.HasSetting(HideTVShowsWallExtendedInfoPanel) + !Skin.HasSetting(HideTVShowsWallInfoPanel)">Skin.ToggleSetting(HideTVShowsWallInfoPanel)</onclick>
-				<enable>!Skin.String(TVShowsWallStyle,2)</enable>
-				<visible>Skin.String(CurrentViewMode,586)</visible>
-			</control>
-			<control type="radiobutton" id="3022">
-				<description>Wall Hide Info Panel (Music)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31021]</label>
-				<selected>Skin.HasSetting(HideMusicWallInfoPanel)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicWallInfoPanel)</onclick>
-				<visible>Skin.String(CurrentViewMode,70)</visible>
+				<selected>[Container.Content(Movies) + !Skin.HasSetting(HideMoviesWallExtendedInfoPanel)] | [Container.Content(TVShows) + !Skin.HasSetting(HideTVShowsWallExtendedInfoPanel)]</selected>
+				<onclick condition="Container.Content(Movies)">Skin.ToggleSetting(HideMoviesWallExtendedInfoPanel)</onclick>
+				<onclick condition="Container.Content(Movies) + !Skin.HasSetting(HideMoviesWallExtendedInfoPanel) + !Skin.HasSetting(HideMoviesWallInfoPanel)">Skin.ToggleSetting(HideMoviesWallInfoPanel)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsWallExtendedInfoPanel)</onclick>
+				<onclick condition="Container.Content(TVShows) + !Skin.HasSetting(HideTVShowsWallExtendedInfoPanel) + !Skin.HasSetting(HideTVShowsWallInfoPanel)">Skin.ToggleSetting(HideTVShowsWallInfoPanel)</onclick>
+				<enable>[Container.Content(Movies) | !Skin.String(MoviesWallStyle,2)] | [Container.Content(TVShows) | !Skin.String(TVShowsWallStyle,2)]</enable>
+				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="5000">
 				<description>Enable Fanart (Music)</description>
@@ -529,7 +479,7 @@
 				<include>ReloadSkinNotification</include>
 				<enable>![[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60)] + Skin.HasSetting(EnableTVShowsFanart)]
 				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(EnableVideoPlaylistFanart)]</enable>
-				<visible>[$EXP[TVShowsSeasonsEpisodes] | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://tvshows/)]] + ![Skin.String(CurrentViewMode,69) | Skin.String(CurrentViewMode,586)]</visible>
+				<visible>[$EXP[TVShowsSeasonsEpisodes] | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://tvshows/)]] + !Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="3044">
 				<description>Extra Fanart (MusicVideos)</description>
@@ -753,7 +703,7 @@
 				<onclick>Skin.ToggleSetting(EnableMusicLibraryClearLogos)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | [Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/) | String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,musicdb://years/)]]] + ![Skin.String(CurrentViewMode,63) | Skin.String(CurrentViewMode,70)] + !String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))</visible>
+				<visible>[Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | [Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://musicvideos/genres/) | String.Contains(Container.FolderPath,videodb://musicvideos/years/) | String.Contains(Container.FolderPath,videodb://musicvideos/directors/) | String.Contains(Container.FolderPath,videodb://musicvideos/studios/) | String.Contains(Container.FolderPath,videodb://musicvideos/tags/) | String.Contains(Container.FolderPath,musicdb://genres/) | String.Contains(Container.FolderPath,musicdb://years/)]]] + ![Skin.String(CurrentViewMode,63) | Skin.String(CurrentViewMode,69)] + !String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))</visible>
 			</control>
 			<control type="radiobutton" id="3047">
 				<description>Hide Genre (TVShows)</description>
@@ -865,7 +815,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>!Skin.HasSetting(ShowWallViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(ShowWallViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,70) | Skin.String(CurrentViewMode,69)</visible>
+				<visible>Skin.String(CurrentViewMode,69)</visible>
 			</control>
 			<control type="radiobutton" id="4055">
 				<description>Thumbs Info Hide Scrollbar (Programs)</description>
@@ -1553,46 +1503,28 @@
 				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,588)</visible>
 			</control>
 			<control type="radiobutton" id="2021">
-				<description>Wall Use Style 1 (Movies)</description>
+				<description>Wall Use Style 1 (Movies) (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31418]</label>
-				<selected>Skin.String(MoviesWallStyle,1) | String.IsEmpty(Skin.String(MoviesWallStyle))</selected>
-				<onclick>Skin.SetString(MoviesWallStyle,1)</onclick>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(MoviesWallStyle,1) | String.IsEmpty(Skin.String(MoviesWallStyle))]] | [Container.Content(TVShows) + [Skin.String(TVShowsWallStyle,1) | String.IsEmpty(Skin.String(TVShowsWallStyle))]]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.SetString(MoviesWallStyle,1)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.SetString(TVShowsWallStyle,1)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="2022">
-				<description>Wall Use Style 2 (Movies)</description>
+				<description>Wall Use Style 2 (Movies) (TVShows)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[1438]</label>
-				<selected>Skin.String(MoviesWallStyle,2)</selected>
-				<onclick>Skin.SetString(MoviesWallStyle,2)</onclick>
-				<onclick>Skin.Reset(HideMoviesWallExtendedInfoPanel)</onclick>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesWallStyle,2)] | [Container.Content(TVShows) + Skin.String(TVShowsWallStyle,2)]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.SetString(MoviesWallStyle,2)</onclick>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.Reset(HideMoviesWallExtendedInfoPanel)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.SetString(TVShowsWallStyle,2)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.Reset(HideTVShowsWallExtendedInfoPanel)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
-			</control>
-			<control type="radiobutton" id="2028">
-				<description>Wall Use Style 1 (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31418]</label>
-				<selected>Skin.String(TVShowsWallStyle,1) | String.IsEmpty(Skin.String(TVShowsWallStyle))</selected>
-				<onclick>Skin.SetString(TVShowsWallStyle,1)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
-			</control>
-			<control type="radiobutton" id="2029">
-				<description>Wall Use Style 2 (TVShows)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[1438]</label>
-				<selected>Skin.String(TVShowsWallStyle,2)</selected>
-				<onclick>Skin.SetString(TVShowsWallStyle,2)</onclick>
-				<onclick>Skin.Reset(HideTVShowsWallExtendedInfoPanel)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,586) + Container.Content(TVShows)</visible>
+				<visible>Skin.String(CurrentViewMode,69) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]</visible>
 			</control>
 			<control type="radiobutton" id="2066">
 				<description>List Info 2 Use Style 1 (Music Videos)</description>

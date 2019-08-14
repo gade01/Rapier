@@ -443,7 +443,7 @@
 			</control>
 			
 			<control type="panel" id="91201">
-				<visible>!Control.IsVisible(659) + [Control.IsVisible(69) | Control.IsVisible(70) | Control.IsVisible(586)] + !Skin.HasSetting(WallViewVerticalNavigation)</visible>
+				<visible>!Control.IsVisible(659) + Control.IsVisible(69) + !Skin.HasSetting(WallViewVerticalNavigation)</visible>
 				<ondown>$VAR[ScrollbarTrailer3]</ondown>
 				<include content="QuickJumpHorizontalLayout">
 					<param name="left" value="4" />
@@ -454,7 +454,7 @@
 			</control>
 			
 			<control type="panel" id="91201">
-				<visible>!Control.IsVisible(659) + [Control.IsVisible(69) | Control.IsVisible(70) | Control.IsVisible(586)] + Skin.HasSetting(WallViewVerticalNavigation)</visible>
+				<visible>!Control.IsVisible(659) + Control.IsVisible(69) + Skin.HasSetting(WallViewVerticalNavigation)</visible>
 				<onright>$VAR[ScrollbarTrailer3]</onright>
 				<include content="QuickJumpVerticalLayout">
 					<param name="left" value="1266" />

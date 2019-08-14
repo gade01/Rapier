@@ -31,6 +31,7 @@
 	<include file="View_58_ListInfo.xml"/>
 	<include file="View_59_ListInfo2.xml"/>
 	<include file="View_60_ListInfo3.xml"/>
+	<include file="View_69_Wall.xml"/>
 	<include file="Views.xml"/>
 	<include file="ViewsAddons.xml"/>
 	<include file="ViewsCommon.xml"/>
@@ -932,6 +933,26 @@
         <value condition="Skin.String(DialogVideoInfoButtonMenu,writer)">$LOCALIZE[31037]</value>
         <value condition="Skin.String(DialogVideoInfoButtonMenu,artist)">$LOCALIZE[21891]</value>
     </variable>
+	
+	<include name="DialogVideoInfoMediaFlags">
+		<control type="grouplist">
+			<left>510</left>
+			<top>650</top>
+			<width>580</width>
+			<height>60</height>
+			<itemgap>5</itemgap>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<include>MediaFlagFadeAnim</include>
+			<include>VideoSourceMediaFlags</include>
+			<include>VideoCodecMediaFlags</include>
+			<include>AudioMediaFlags</include>
+			<include>AspectMediaFlags</include>
+			<include>SubtitleMediaFlags</include>
+			<include>StudioMediaFlag2</include>
+		</control>
+	</include>
 	
 	<include name="DialogVideoInfoActors1">
 		<left>470</left>
