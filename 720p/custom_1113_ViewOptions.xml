@@ -221,7 +221,7 @@
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollPlot)</onclick>
 				<enable>![[[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59)] + Container.Content(Songs)] | [Skin.String(CurrentViewMode,64) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)]]</enable>
 				<visible>[[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,72)] + $EXP[AlbumsSongsArtists]]
-				| [[Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,599) | Skin.String(CurrentViewMode,64)] + Container.Content(Albums)]</visible>
+				| [[Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,64) | Skin.String(CurrentViewMode,65)] + Container.Content(Albums)]</visible>
 			</control>
 			<control type="radiobutton" id="2088">
 				<description>Do Not Auto Scroll Plot (Movies / Sets / TV Shows / Episodes / Videos / Programs)</description>
@@ -231,8 +231,8 @@
 				<enable>![[[Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,577)] + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)] | [Skin.String(CurrentViewMode,592) + Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)]]</enable>
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollPlot)</onclick>
 				<visible>[Skin.String(CurrentViewMode,59) + Container.Content(musicvideos)]
-				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,588)] + [Container.Content(Movies) | Container.Content(Sets)]]
-				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588)] + [Container.Content(TVShows) | Container.Content(Seasons)]]
+				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,588)] + [Container.Content(Movies) | Container.Content(Sets)]]
+				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588)] + [Container.Content(TVShows) | Container.Content(Seasons)]]
 				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60)] + Container.Content(Episodes)]
 				| [[Skin.String(CurrentViewMode,530) | Skin.String(CurrentViewMode,531) | Skin.String(CurrentViewMode,532)] + Container.Content(Videos)]
 				| [[Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,591) | Skin.String(CurrentViewMode,592)] + String.Contains(Container.FolderPath,plugin://plugin.program)]
@@ -251,22 +251,16 @@
 				<onclick condition="Container.Content(musicvideos)">Skin.ToggleSetting(HideMusicVideosListInfo2Overlay)</onclick>
 				<visible>[Skin.String(CurrentViewMode,59) + [[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.String(MoviesListInfo2Style,1)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + !Skin.String(TVShowsListInfo2Style,1)] | [Container.Content(Episodes) + !Skin.String(EpisodesListInfo2Style,1)] | [Container.Content(musicvideos) + !Skin.String(MusicVideosListInfo2Style,1)]]] | [Skin.String(CurrentViewMode,531) + Container.Content(Videos) + !Skin.String(VideosListInfo2Style,1)]</visible>
 			</control>
-			<control type="radiobutton" id="3084">
-				<description>Thumbs Info Hide Label (Music)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31042]</label>
-				<selected>Skin.HasSetting(HideMusicThumbsInfoLabel)</selected>
-				<onclick>Skin.ToggleSetting(HideMusicThumbsInfoLabel)</onclick>
-				<visible>Skin.String(CurrentViewMode,599) + Container.Content(Albums)</visible>
-			</control>
 			<control type="radiobutton" id="3085">
-				<description>Thumbs Info Hide Label (Movies) (Videos)</description>
+				<description>Thumbs Info Hide Label (Movies) (Sets) (TVShows) (Albums) (Videos)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31042]</label>
-				<selected>[Skin.HasSetting(HideMoviesThumbsInfoLabel) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.HasSetting(HideVideosThumbsInfoLabel) + Container.Content(Videos)]</selected>
+				<selected>[Skin.HasSetting(HideMoviesThumbsInfoLabel) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.HasSetting(HideTVShowsThumbsInfoLabel) + Container.Content(TVShows)] | [Skin.HasSetting(HideVideosThumbsInfoLabel) + Container.Content(Videos)] | [Skin.HasSetting(HideMusicThumbsInfoLabel) + Container.Content(Albums)]</selected>
 				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.ToggleSetting(HideMoviesThumbsInfoLabel)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsThumbsInfoLabel)</onclick>
 				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoLabel)</onclick>
-				<visible>[Skin.String(CurrentViewMode,97) + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
+				<onclick condition="Container.Content(Albums)">Skin.ToggleSetting(HideMusicThumbsInfoLabel)</onclick>
+				<visible>[Skin.String(CurrentViewMode,65) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums)]] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="4051">
 				<description>Thumbs Info Hide Label (Programs)</description>
@@ -277,21 +271,14 @@
 				<visible>Skin.String(CurrentViewMode,591) + String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
 			</control>
 			<control type="radiobutton" id="3069">
-				<description>Thumbs Info Hide Overlay (Movies)</description>
+				<description>Thumbs Info Hide Overlay (Movies) (Sets) (TVShows) (Videos)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31046]</label>
-				<selected>Skin.HasSetting(HideMoviesThumbsInfoOverlay)</selected>
-				<onclick>Skin.ToggleSetting(HideMoviesThumbsInfoOverlay)</onclick>
-				<visible>Skin.String(CurrentViewMode,97) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
-			</control>
-			<control type="radiobutton" id="3077">
-				<description>Thumbs Info Hide Overlay (TVShows) (Videos)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31046]</label>
-				<selected>[Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + Container.Content(TVShows)] | [Skin.HasSetting(HideVideosThumbsInfoOverlay) + Container.Content(Videos)]</selected>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesThumbsInfoOverlay)] | [Skin.HasSetting(HideTVShowsThumbsInfoOverlay) + Container.Content(TVShows)] | [Skin.HasSetting(HideVideosThumbsInfoOverlay) + Container.Content(Videos)]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.ToggleSetting(HideMoviesThumbsInfoOverlay)</onclick>
 				<onclick condition="Container.Content(TVShows)">Skin.ToggleSetting(HideTVShowsThumbsInfoOverlay)</onclick>
 				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoOverlay)</onclick>
-				<visible>[Skin.String(CurrentViewMode,100) + Container.Content(TVShows)] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
+				<visible>[Skin.String(CurrentViewMode,65) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="1015">
 				<description>Wrap List Info Enable Compact Mode (Music)</description>
@@ -398,7 +385,7 @@
 				<label>$LOCALIZE[31207]: $LOCALIZE[20445]</label>
 				<selected>!Skin.HasSetting(EnableMusicFanart)</selected>
 				<onclick>Skin.ToggleSetting(EnableMusicFanart)</onclick>
-				<visible>[[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,63) | Skin.String(CurrentViewMode,64) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,72) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,599)] + $EXP[AlbumsSongsArtists]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,musicdb://)]</visible>
+				<visible>[[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,63) | Skin.String(CurrentViewMode,64) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,72) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65)] + $EXP[AlbumsSongsArtists]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,musicdb://)]</visible>
 			</control>
 			<control type="radiobutton" id="5001">
 				<description>Enable Fanart (Movies) (Sets)</description>
@@ -406,7 +393,7 @@
 				<label>$LOCALIZE[31207]: $LOCALIZE[20445]</label>
 				<selected>!Skin.HasSetting(EnableMoviesFanart)</selected>
 				<onclick>Skin.ToggleSetting(EnableMoviesFanart)</onclick>
-				<visible>[[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,588)] + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://movies/)]</visible>
+				<visible>[[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,588)] + [Container.Content(Movies) | Container.Content(Sets)]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://movies/)]</visible>
 			</control>
 			<control type="radiobutton" id="5002">
 				<description>Enable Fanart (TVShows) (Seasons) (Episodes)</description>
@@ -414,7 +401,7 @@
 				<label>$LOCALIZE[31207]: $LOCALIZE[20445]</label>
 				<selected>!Skin.HasSetting(EnableTVShowsFanart)</selected>
 				<onclick>Skin.ToggleSetting(EnableTVShowsFanart)</onclick>
-				<visible>[[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60)] + $EXP[TVShowsSeasonsEpisodes]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://tvshows/)]</visible>
+				<visible>[[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60)] + $EXP[TVShowsSeasonsEpisodes]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://tvshows/)]</visible>
 			</control>
 			<control type="radiobutton" id="5003">
 				<description>Enable Fanart (Videos)</description>
@@ -465,7 +452,7 @@
 				<onclick>Skin.ToggleSetting(EnableMoviesExtraFanart)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<enable>![[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588)] + Skin.HasSetting(EnableMoviesFanart)]
+				<enable>![[Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588)] + Skin.HasSetting(EnableMoviesFanart)]
 				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(EnableVideoPlaylistFanart)]</enable>
 				<visible>[Container.Content(Movies) | Container.Content(Sets) | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://movies/)]] + !Skin.String(CurrentViewMode,69)</visible>
 			</control>
@@ -477,7 +464,7 @@
 				<onclick>Skin.ToggleSetting(EnableTVShowsExtraFanart)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<enable>![[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60)] + Skin.HasSetting(EnableTVShowsFanart)]
+				<enable>![[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,577) | Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60)] + Skin.HasSetting(EnableTVShowsFanart)]
 				+ ![Skin.String(CurrentViewMode,580) + Skin.HasSetting(EnableVideoPlaylistFanart)]</enable>
 				<visible>[$EXP[TVShowsSeasonsEpisodes] | Window.IsActive(VideoPlaylist) | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,videodb://tvshows/)]] + !Skin.String(CurrentViewMode,69)</visible>
 			</control>
@@ -534,7 +521,7 @@
 				<onclick condition="System.HasAddon(script.tv.show.next.aired)">ReloadSkin()</onclick>
 				<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>$EXP[TVShowsSeasonsEpisodes] + [Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,100)]</visible>
+				<visible>$EXP[TVShowsSeasonsEpisodes] + [Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,65)]</visible>
 			</control>
 			<control type="radiobutton" id="3046">
 				<description>Hide Genre (Episodes) (Videos)</description>
@@ -600,7 +587,7 @@
 				<onclick condition="Skin.HasSetting(EnableMoviesListInfo3ExtraThumbs) + Skin.String(CurrentViewMode,60)">Skin.Reset(EnableMoviesListInfo3ExtraThumbs)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,97)]</visible>
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65)]</visible>
 			</control>
 			<control type="radiobutton" id="3105">
 				<description>Show Extra Fanart (Small) (TVShows)</description>
@@ -611,7 +598,7 @@
 				<onclick condition="Skin.HasSetting(ShowTVShowsLandscape)">Skin.Reset(ShowTVShowsLandscape)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,60)]</visible>
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65)]</visible>
 			</control>
 			<control type="radiobutton" id="3106">
 				<description>Show Extra Fanart (Small) (Episodes)</description>
@@ -636,7 +623,7 @@
 				<onclick condition="Skin.HasSetting(EnableTVShowsSmallExtraFanart)">Skin.Reset(EnableTVShowsSmallExtraFanart)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,60)]</visible>
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65)]</visible>
 			</control>
 			<control type="radiobutton" id="3091">
 				<description>Show Landscape.jpg (Episodes)</description>
@@ -711,7 +698,7 @@
 				<label>$LOCALIZE[31938]</label>
 				<selected>Skin.HasSetting(HideTVShowsGenres)</selected>
 				<onclick>Skin.ToggleSetting(HideTVShowsGenres)</onclick>
-				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,588) | [Skin.String(CurrentViewMode,58) + !Skin.HasSetting(UseTVShowsPosterCover)]]</visible>
+				<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,588) | [Skin.String(CurrentViewMode,58) + !Skin.HasSetting(UseTVShowsPosterCover)]]</visible>
 			</control>
 			<control type="radiobutton" id="3048">
 				<description>Hide Genre (Movies / Sets)</description>
@@ -719,7 +706,7 @@
 				<label>$LOCALIZE[31938]</label>
 				<selected>Skin.HasSetting(HideMoviesGenres)</selected>
 				<onclick>Skin.ToggleSetting(HideMoviesGenres)</onclick>
-				<visible>[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,588)]</visible>
+				<visible>[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,588)]</visible>
 			</control>
 			<control type="radiobutton" id="1023">
 				<description>Icon Hide Scrollbar</description>
@@ -783,7 +770,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>Skin.HasSetting(HideThumbsInfoViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideThumbsInfoViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,97) | Skin.String(CurrentViewMode,599) | Skin.String(CurrentViewMode,100) | Skin.String(CurrentViewMode,532) | Skin.String(CurrentViewMode,579)</visible>
+				<visible>Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,532) | Skin.String(CurrentViewMode,579)</visible>
 			</control>
 			<control type="radiobutton" id="1031">
 				<description>Wrap Info Hide Scrollbar</description>
@@ -917,7 +904,7 @@
 				| Control.IsVisible(2044) | Control.IsVisible(2050) | Control.IsVisible(3008) | Control.IsVisible(3012) | Control.IsVisible(3060)
 				| Control.IsVisible(4020) | Control.IsVisible(4026) | Control.IsVisible(4036) | Control.IsVisible(4046) | Control.IsVisible(4087) | Control.IsVisible(2028)
 				| Control.IsVisible(4097) | Control.IsVisible(3092) | Control.IsVisible(3096) | Control.IsVisible(2021) | Control.IsVisible(3114)
-				| Control.IsVisible(3098) | Control.IsVisible(3100) | Control.IsVisible(3102) | Control.IsVisible(4003) | Control.IsVisible(2066)</visible>
+				| Control.IsVisible(3098) | Control.IsVisible(3100) | Control.IsVisible(3102) | Control.IsVisible(2066)</visible>
 			</control>
 			<control type="radiobutton" id="3050">
 				<description>Common DVD Thumbs Use Style 1 (Normal)</description>
@@ -1063,59 +1050,40 @@
 				<visible>Skin.String(CurrentViewMode,578)</visible>
 			</control>
 			<control type="radiobutton" id="3098">
-				<description>Thumbs Info Use Style 1 (TVShow)</description>
+				<description>Thumbs Info Use Style 1 (Movies) (Sets) (TVShow)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31418]</label>
-				<selected>Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))</selected>
-				<onclick>Skin.SetString(ThumbsInfoTVShowStyle,1)</onclick>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))]] | [Container.Content(TVShows) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.SetString(ThumbsInfoMoviesStyle,1)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.SetString(ThumbsInfoTVShowStyle,1)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(100)</onclick>
-				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,100)</visible>
+				<onclick>Container.SetViewMode(65)</onclick>
+				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)] + Skin.String(CurrentViewMode,65)</visible>
 			</control>
 			<control type="radiobutton" id="3099">
-				<description>Thumbs Info Use Style 2 (TVShow)</description>
+				<description>Thumbs Info Use Style 2 (Movies) (Sets) (TVShow)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31508]</label>
-				<selected>Skin.String(ThumbsInfoTVShowStyle,2)</selected>
-				<onclick>Skin.SetString(ThumbsInfoTVShowStyle,2)</onclick>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(ThumbsInfoMoviesStyle,2)] | [Container.Content(TVShows) + Skin.String(ThumbsInfoTVShowStyle,2)]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.SetString(ThumbsInfoMoviesStyle,2)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.SetString(ThumbsInfoTVShowStyle,2)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(100)</onclick>
-				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,100)</visible>
+				<onclick>Container.SetViewMode(65)</onclick>
+				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)] + Skin.String(CurrentViewMode,65)</visible>
 			</control>
 			<control type="radiobutton" id="4000">
-				<description>Thumbs Info Use Style 3 (TVShow)</description>
+				<description>Thumbs Info Use Style 3 (Movies) (Sets) (TVShow)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31507]</label>
-				<selected>Skin.String(ThumbsInfoTVShowStyle,3)</selected>
-				<onclick>Skin.SetString(ThumbsInfoTVShowStyle,3)</onclick>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(ThumbsInfoMoviesStyle,3)] | [Container.Content(TVShows) + Skin.String(ThumbsInfoTVShowStyle,3)]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.SetString(ThumbsInfoMoviesStyle,3)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.SetString(ThumbsInfoTVShowStyle,3)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(100)</onclick>
-				<visible>Container.Content(TVShows) + Skin.String(CurrentViewMode,100)</visible>
-			</control>
-			<control type="radiobutton" id="4003">
-				<description>Thumbs Info Use Style 1 (Movies)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31418]</label>
-				<selected>Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))</selected>
-				<onclick>Skin.SetString(ThumbsInfoMoviesStyle,1)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(97)</onclick>
-				<visible>Container.Content(Movies) + Skin.String(CurrentViewMode,97)</visible>
-			</control>
-			<control type="radiobutton" id="4004">
-				<description>Thumbs Info Use Style 2 (Movies)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31508]</label>
-				<selected>Skin.String(ThumbsInfoMoviesStyle,2)</selected>
-				<onclick>Skin.SetString(ThumbsInfoMoviesStyle,2)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(97)</onclick>
-				<visible>Container.Content(Movies) + Skin.String(CurrentViewMode,97)</visible>
+				<onclick>Container.SetViewMode(65)</onclick>
+				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)] + Skin.String(CurrentViewMode,65)</visible>
 			</control>
 			<control type="radiobutton" id="4020">
 				<description>List Info 3 Use Style 1 (TVShows) (Seasons)</description>

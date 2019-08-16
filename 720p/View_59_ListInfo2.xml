@@ -1232,6 +1232,175 @@
 		</focusedlayout>
 	</include>
 	
+	<include name="ListInfo2MediaInfoArea">
+		<control type="group">
+			<visible>$PARAM[visible]</visible>
+			<left>38</left>
+			<top>430</top>
+
+			<control type="grouplist">
+				<left>10</left>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist1LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist1Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist1InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist1Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>10</left>
+				<top>23</top>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist2LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist2Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist2InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist2Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>391</left>
+				<width>145</width>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist3LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist3Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist3InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist3Info]</label>
+				</control>
+			</control>
+			
+			<control type="grouplist">
+				<left>391</left>
+				<top>23</top>
+				<width>145</width>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist4LabelWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$PARAM[Grouplist4Label]:</label>
+				</control>
+				<control type="label">
+					<width min="0" max="$PARAM[Grouplist4InfoWidth]">auto</width>
+					<font>MediaInfoFont</font>
+					<textcolor>MediaInfoItemColor2</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label fallback="31001">$PARAM[Grouplist4Info]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+	
+	<include name="ListInfo2PanelExtraThumbs">
+		<control type="image">
+			<left>40</left>
+			<top>116</top>
+			<width>269</width>
+			<height>150</height>
+			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb1.jpg</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+		</control>
+
+		<control type="image">
+			<left>313</left>
+			<top>116</top>
+			<width>269</width>
+			<height>150</height>
+			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb2.jpg</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+		</control>
+
+		<control type="image">
+			<left>40</left>
+			<top>270</top>
+			<width>269</width>
+			<height>150</height>
+			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb3.jpg</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+		</control>
+
+		<control type="image">
+			<left>313</left>
+			<top>270</top>
+			<width>269</width>
+			<height>150</height>
+			<texture background="true" diffuse="covers/list-info-2-extrathumbs-diffuse.png">$INFO[ListItem.Path]extrathumbs/thumb4.jpg</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+		</control>
+		
+		<control type="image">
+			<description>Genre Background</description>
+			<left>43</left>
+			<top>119</top>
+			<width>250</width>
+			<height>27</height>
+			<texture border="8">views/genre-background.png</texture>
+			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(NextAired.Genre)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>![[Container.Content(Episodes) + Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
+		</control>
+					
+		<control type="label">
+			<description>Genre</description>
+			<left>51</left>
+			<top>121</top>
+			<width>234</width>
+			<font>MediaInfoFont3</font>
+			<textcolor>WhiteColor</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
+			<scroll>false</scroll>
+			<animation effect="fade" end="90" condition="true">Conditional</animation>
+			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>![[Container.Content(Episodes) + Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
+		</control>
+		
+		<control type="label">
+			<description>Next Aired Genre</description>
+			<left>51</left>
+			<top>121</top>
+			<width>234</width>
+			<font>MediaInfoFont3</font>
+			<textcolor>WhiteColor</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<label>[UPPERCASE]$INFO[Window(Home).Property(NextAired.Genre)][/UPPERCASE]</label>
+			<scroll>false</scroll>
+			<animation effect="fade" end="90" condition="true">Conditional</animation>
+			<visible>String.IsEmpty(ListItem.Genre) + !String.IsEmpty(Window(Home).Property(NextAired.Genre))</visible>
+			<visible>![[Container.Content(Episodes) + Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
+		</control>
+	</include>
+	
 	<include name="MoviesListInfo2">
 		<control type="group">
 			<visible>!ListItem.IsParentFolder + [Container.Content(Movies) | Container.Content(Sets)]</visible>
