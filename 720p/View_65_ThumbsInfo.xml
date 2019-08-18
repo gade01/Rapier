@@ -12,6 +12,7 @@
 			<include condition="String.Contains(Container.FolderPath,movies/) | String.Contains(Container.FolderPath,.xsp) | String.Contains(Container.FolderPath,special://videoplaylists/)">MoviesThumbsInfo</include>
 			<include condition="String.Contains(Container.FolderPath,tvshows/) | String.Contains(Container.FolderPath,.xsp) | String.Contains(Container.FolderPath,special://videoplaylists/)">TVShowsThumbsInfo</include>
 			<include condition="Window.IsActive(Music)">MusicThumbsInfo</include>
+			<include condition="Window.IsActive(Programs)">ProgramsThumbsInfo</include>
 
 			<control type="panel" id="65">
 				<viewtype label="31116">icon</viewtype>
@@ -27,8 +28,9 @@
 				<onright>150</onright>
 				<onup>65</onup>
 				<ondown>65</ondown>
-				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums)</visible>
-				<itemlayout width="129" height="171" condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))]] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]]">
+				<oninfo condition="Window.IsActive(Programs)">ActivateWindow(1122)</oninfo>
+				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<itemlayout width="129" height="171" condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))]] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]] | [String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,1)]">
 					<control type="group">
 						<top>-2</top>
 						<include content="ThumbsInfoItemlayout">
@@ -97,7 +99,7 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout width="129" height="171" condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))]] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]]">
+				<focusedlayout width="129" height="171" condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))]] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]] | [String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,1)]">
 					<control type="group">
 						<top>-2</top>
 						<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbsInfoDefaultStyleFocusAnim</include>
@@ -169,7 +171,7 @@
 					</control>
 				</focusedlayout>
 				<include condition="Window.IsActive(Videos) + !Skin.HasSetting(UseTVShowsPosterCover)">TVShowsThumbsInfoBannerStyle</include>
-				<include condition="Window.IsActive(Music)">MusicThumbsInfoLayout</include>
+				<include condition="Window.IsActive(Music) | Window.IsActive(Programs)">MusicProgramsThumbsInfoLayout</include>
 			</control>
 			
 			<include content="ThumbsInfoViewScrollbar">
@@ -184,25 +186,18 @@
 				<include>BottomPaneOpenCloseAnim</include>
 				
 				<control type="group">
-					<visible>[[Container.Content(TVShows) + !Skin.HasSetting(HideTVShowsThumbsInfoLabel)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMoviesThumbsInfoLabel)] | [Container.Content(Albums) + !Skin.HasSetting(HideMusicThumbsInfoLabel)]] + !ListItem.IsParentFolder</visible>
+					<visible>[[Container.Content(TVShows) + !Skin.HasSetting(HideTVShowsThumbsInfoLabel)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMoviesThumbsInfoLabel)] | [Container.Content(Albums) + !Skin.HasSetting(HideMusicThumbsInfoLabel)] | [Window.IsActive(Programs) + !Skin.HasSetting(HideProgramsThumbsInfoLabel)]] + !ListItem.IsParentFolder</visible>
 					
 					<control type="label">
 						<include>InfoPaneItemTitle</include>
-						<label>[B]$INFO[ListItem.Label][/B]</label>
-						<visible>[Window.IsActive(Videos) + [String.IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableVideosClearLogo)]] | [Container.Content(Albums) + String.IsEmpty(ListItem.Artist)]</visible>
+						<label>[B]$VAR[ThumbsInfoInfoPaneItemTitle][/B]</label>
+						<visible>[Window.IsActive(Videos) + [String.IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableVideosClearLogo)]] | Container.Content(Albums) | Window.IsActive(Programs)</visible>
 					</control>
-					
-					<control type="group">
-						<visible>Container.Content(Albums)</visible>
-						<control type="label">
-							<include>InfoPaneItemTitle</include>
-							<label>[B]$INFO[ListItem.Album][/B]</label>
-						</control>
 						
-						<control type="label">
-							<include>InfoPaneItemTitle2</include>
-							<label>$INFO[ListItem.Artist]</label>
-						</control>
+					<control type="label">
+						<include>InfoPaneItemTitle2</include>
+						<label>$VAR[ThumbsInfoInfoPaneItemTitle2]</label>
+						<visible>Container.Content(Albums) | Window.IsActive(Programs)</visible>
 					</control>
 					
 					<control type="group">
@@ -233,6 +228,16 @@
 	<!--//// END THUMBS INFO VIEW ////////////////////////////////////////////////////////////////////////////-->
 	
 	<!-- INCLUDES -->
+	<variable name="ThumbsInfoInfoPaneItemTitle">
+		<value condition="Container.Content(Albums) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Album]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	
+	<variable name="ThumbsInfoInfoPaneItemTitle2">
+		<value condition="Container.Content(Albums)">$INFO[ListItem.Artist]</value>
+		<value>$INFO[ListItem.Premiered]</value>
+	</variable>
+	
 	<include name="ThumbsInfoOverlays">
 		<control type="group">
 			<visible>[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMoviesThumbsInfoOverlay)</visible>
@@ -464,8 +469,8 @@
 		</focusedlayout>
 	</include>
 	
-	<include name="MusicThumbsInfoLayout">
-		<itemlayout width="128" height="128" condition="Container.Content(Albums)">
+	<include name="MusicProgramsThumbsInfoLayout">
+		<itemlayout width="128" height="128" condition="Container.Content(Albums) | [String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,2)]">
 			<control type="group">
 				<top>-2</top>
 				<left>2</left>
@@ -480,7 +485,22 @@
 				</include>
 			</control>
 		</itemlayout>
-		<focusedlayout width="128" height="128" condition="Container.Content(Albums)">
+		<itemlayout width="194" height="128" condition="String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,3)">
+			<control type="group">
+				<top>-3</top>
+				<left>-1</left>
+				<include content="ThumbsInfoItemlayout">
+					<param name="width" value="202" />
+					<param name="height" value="137" />
+					<param name="texture" value="$INFO[ListItem.Thumb]" />
+					<param name="aspectratio" value="scale" />
+					<param name="visible_image" value="true" />
+					<param name="bordersize" value="20" />
+					<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				</include>
+			</control>
+		</itemlayout>
+		<focusedlayout width="128" height="128" condition="Container.Content(Albums) | [String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,2)]">
 			<control type="group">
 				<top>-2</top>
 				<left>2</left>
@@ -488,6 +508,22 @@
 				<include content="ThumbsInfoFocusedlayout">
 					<param name="width" value="136" />
 					<param name="height" value="136" />
+					<param name="texture" value="$INFO[ListItem.Thumb]" />
+					<param name="aspectratio" value="scale" />
+					<param name="visible_image" value="true" />
+					<param name="bordersize" value="20" />
+					<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				</include>
+			</control>
+		</focusedlayout>
+		<focusedlayout width="194" height="128" condition="String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,3)">
+			<control type="group">
+				<top>-3</top>
+				<left>-1</left>
+				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ProgramsThumbsInfoWideFocusAnim</include>
+				<include content="ThumbsInfoFocusedlayout">
+					<param name="width" value="202" />
+					<param name="height" value="137" />
 					<param name="texture" value="$INFO[ListItem.Thumb]" />
 					<param name="aspectratio" value="scale" />
 					<param name="visible_image" value="true" />
@@ -656,6 +692,38 @@
 			<include content="ThumbsInfoPlot">
 				<param name="fallback" value="31204" />
 				<param name="label" value="$INFO[ListItem.Property(Album_Description)]" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="ProgramsThumbsInfo">
+		<control type="group">
+			<visible>!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+			<include>ListInfo3PanelFanart</include>
+			
+			<include content="ThumbsInfoMediaInfoArea">
+				<param name="visible" value="true" />
+				<param name="Grouplist1LabelWidth" value="110" />
+				<param name="Grouplist1Label" value="$LOCALIZE[32028]" />
+				<param name="Grouplist1InfoWidth" value="190" />
+				<param name="Grouplist1Info" value="$INFO[ListItem.Studio]" />
+				<param name="Grouplist2LabelWidth" value="110" />
+				<param name="Grouplist2Label" value="$LOCALIZE[32027]" />
+				<param name="Grouplist2InfoWidth" value="140" />
+				<param name="Grouplist2Info" value="$INFO[ListItem.Writer]" />
+				<param name="Grouplist3LabelWidth" value="110" />
+				<param name="Grouplist3Label" value="$LOCALIZE[345]" />
+				<param name="Grouplist3InfoWidth" value="110" />
+				<param name="Grouplist3Info" value="$INFO[ListItem.Premiered]" />
+				<param name="Grouplist4LabelWidth" value="110" />
+				<param name="Grouplist4Label" value="$LOCALIZE[563]" />
+				<param name="Grouplist4InfoWidth" value="110" />
+				<param name="Grouplist4Info" value="$INFO[ListItem.Rating]" />
+			</include>
+			
+			<include content="ThumbsInfoPlot">
+				<param name="fallback" value="31203" />
+				<param name="label" value="$INFO[ListItem.Plot]" />
 			</include>
 		</control>
 	</include>
