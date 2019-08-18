@@ -2065,13 +2065,10 @@
 						<onright condition="Control.IsVisible(61)">61</onright>
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>String.IsEmpty(Skin.String(VideoInfoMenubar))</visible>
-						<include condition="[String.IsEqual(ListItem.DBTYPE,movie) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]] + !System.HasAddon(script.extendedinfo)">DialogVideoInfoActors1</include>
+						<include condition="String.IsEqual(ListItem.DBTYPE,movie) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]">DialogVideoInfoActors1</include>
 						<include condition="String.IsEqual(ListItem.DBTYPE,set)">DialogVideoInfoSet</include>
-						<include condition="[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)] + !System.HasAddon(script.extendedinfo)">DialogVideoInfoActors2</include>
-						<include condition="[String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)] + !System.HasAddon(script.extendedinfo)">DialogVideoInfoActors3</include>
-						<include condition="[String.IsEqual(ListItem.DBTYPE,movie) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]] + System.HasAddon(script.extendedinfo)">DialogVideoInfoActors4</include>
-						<include condition="[String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)] + System.HasAddon(script.extendedinfo)">DialogVideoInfoActors5</include>
-						<include condition="[String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)] + System.HasAddon(script.extendedinfo)">DialogVideoInfoActors6</include>
+						<include condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoActors3</include>
+						<include condition="String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)">DialogVideoInfoActors2</include>
 					</control>
 					
 					<control type="panel" id="966">
