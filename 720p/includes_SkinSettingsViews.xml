@@ -75,6 +75,13 @@
 					<selected>!Skin.HasSetting(DisableMoviesTVShowsThumbsInfoView)</selected>
 					<onclick>Skin.ToggleSetting(DisableMoviesTVShowsThumbsInfoView)</onclick>
 				</control>
+				<control type="radiobutton" id="8012">
+					<description>Wrap Info View</description>
+					<include>SettingsContentRadioBtn</include>
+					<label>$LOCALIZE[31106]</label>
+					<selected>!Skin.HasSetting(DisableMoviesTVShowsWrapListInfoView)</selected>
+					<onclick>Skin.ToggleSetting(DisableMoviesTVShowsWrapListInfoView)</onclick>
+				</control>
 				<control type="radiobutton" id="8010">
 					<description>3D Wrap View</description>
 					<include>SettingsContentRadioBtn</include>
@@ -82,43 +89,12 @@
 					<selected>!Skin.HasSetting(Disable3DWrapView)</selected>
 					<onclick>Skin.ToggleSetting(Disable3DWrapView)</onclick>
 				</control>
-				<control type="button" id="8011">
-					<description>Movies Label</description>
-					<include>SettingsHeaderBtn</include>
-					<label>$LOCALIZE[342]</label>
-				</control>
-				<control type="radiobutton" id="8012">
-					<description>Wrap Info View</description>
-					<include>SettingsContentRadioBtn</include>
-					<label>$LOCALIZE[31106]</label>
-					<selected>!Skin.HasSetting(DisableMoviesWrapListInfoView)</selected>
-					<onclick>Skin.ToggleSetting(DisableMoviesWrapListInfoView)</onclick>
-				</control>
 				<control type="radiobutton" id="8013">
 					<description>Wall View</description>
 					<include>SettingsContentRadioBtn</include>
 					<label>$LOCALIZE[31113]</label>
-					<selected>!Skin.HasSetting(DisableMoviesWallView)</selected>
-					<onclick>Skin.ToggleSetting(DisableMoviesWallView)</onclick>
-				</control>
-				<control type="button" id="8014">
-					<description>TV Shows Label</description>
-					<include>SettingsHeaderBtn</include>
-					<label>$LOCALIZE[20343]</label>
-				</control>
-				<control type="radiobutton" id="8016">
-					<description>Wrap Info View</description>
-					<include>SettingsContentRadioBtn</include>
-					<label>$LOCALIZE[31106]</label>
-					<selected>!Skin.HasSetting(DisableTVShowsWrapListInfoView)</selected>
-					<onclick>Skin.ToggleSetting(DisableTVShowsWrapListInfoView)</onclick>
-				</control>
-				<control type="radiobutton" id="8017">
-					<description>Wall View</description>
-					<include>SettingsContentRadioBtn</include>
-					<label>$LOCALIZE[31113]</label>
-					<selected>!Skin.HasSetting(DisableTVShowsWallView)</selected>
-					<onclick>Skin.ToggleSetting(DisableTVShowsWallView)</onclick>
+					<selected>!Skin.HasSetting(DisableMoviesTVShowsWallView)</selected>
+					<onclick>Skin.ToggleSetting(DisableMoviesTVShowsWallView)</onclick>
 				</control>
 				<control type="button" id="8018">
 					<description>Music Label</description>

@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">500</defaultcontrol>
 	<menucontrol>850</menucontrol>
-	<views>50,54,63,52,58,59,530,531,60,585,65,532,53,577,93,588,69</views>
+	<views>50,54,63,52,58,59,530,531,60,585,65,532,53,93,588,69</views>
 	<onload>Skin.Reset(ShowMediaExtraOptions)</onload>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + $EXP[TVShowsSeasonsEpisodes]">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	
@@ -33,13 +33,12 @@
 				<include>IconView</include> <!-- 50 -->
 				<include>ListView</include> <!-- 52 -->
 				<include>DVDThumbsView</include> <!-- 54 -->
-				<include condition="!Skin.HasSetting(DisableMoviesWrapListInfoView)">MoviesWrapListInfoView</include> <!-- 53 -->
+				<include condition="!Skin.HasSetting(DisableMoviesTVShowsWrapListInfoView)">WrapListInfoView</include> <!-- 53 -->
 				<include condition="!Skin.HasSetting(DisableMoviesTVShowsListInfoView)">ListInfoView</include> <!-- 58 -->
 				<include condition="!Skin.HasSetting(DisableMoviesTVShowsListInfoView2)">ListInfoView2</include> <!-- 59 -->
 				<include condition="!Skin.HasSetting(DisableMoviesTVShowsListInfoView3)">ListInfoView3</include> <!-- 60 -->
 				<include condition="!Skin.HasSetting(DisableMoviesTVShowsThumbsInfoView)">ThumbsInfoView</include> <!-- 65 -->
 				<include condition="!Skin.HasSetting(Disable3DWrapView)">3DWrapView</include> <!-- 588 -->
-				<include condition="!Skin.HasSetting(DisableTVShowsWrapListInfoView)">TVShowsWrapListInfoView</include> <!-- 577 -->
 				<include condition="!Skin.HasSetting(DisableMoviesTVShowsWallView)">WallView</include> <!-- 69 -->
 				<include condition="!Skin.HasSetting(DisableExtendedListView)">ExtendedListView</include> <!-- 585 -->
 				<include>AlbumThumbsView</include> <!-- 63 -->
