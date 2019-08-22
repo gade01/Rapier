@@ -8,121 +8,43 @@
 			<include>MediaViewOpenCloseAnim</include>
 			
 			<control type="group" id="254">
-				<animation effect="slide" end="0,120" time="500" condition="Window.IsActive(Videos) + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)">Conditional</animation>
+				<animation effect="slide" end="0,120" time="500" condition="[Window.IsActive(Videos) + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)] | [Window.IsActive(Music) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)]">Conditional</animation>
 				
 				<control type="group">
 					<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
-					<include condition="Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))">MoviesWrapListInfoStyle1</include>
-					<include condition="Skin.String(MoviesWrapListInfoStyle,2)">MoviesWrapListInfoStyle2</include>
+					<include condition="Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]">MoviesWrapListInfoStyle1</include>
+					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">MoviesWrapListInfoStyle2</include>
 				</control>
 				
 				<control type="group">
 					<visible>Container.Content(TVShows)</visible>
-					<include condition="Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))">TVShowsWrapListInfoStyle1</include>
-					<include condition="Skin.String(MoviesWrapListInfoStyle,2)">TVShowsWrapListInfoStyle2</include>
+					<include condition="Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]">TVShowsWrapListInfoStyle1</include>
+					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">TVShowsWrapListInfoStyle2</include>
+				</control>
+				
+				<control type="group">
+					<visible>Container.Content(Albums)</visible>
+					<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">MusicWrapListInfoStyle1</include>
+					<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">MusicWrapListInfoStyle2</include>
 				</control>
 				
 				<control type="wraplist" id="53">
 					<viewtype label="31106">bigwrap</viewtype>
-					<include condition="Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))">WrapListInfoContainerSpecs1</include>
-					<include condition="Skin.String(MoviesWrapListInfoStyle,2)">WrapListInfoContainerSpecs2</include>
+					<include condition="Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]">WrapListInfoContainerSpecs1</include>
+					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">WrapListInfoContainerSpecs2</include>
+					<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">WrapListInfoContainerSpecs3</include>
+					<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">WrapListInfoContainerSpecs4</include>
 					<pagecontrol>91103</pagecontrol>
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<scrolltime tween="sine" easing="inout">401</scrolltime>
 					<onup>850</onup>
 					<ondown>150</ondown>
-					<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)</visible>
-					<itemlayout width="150" condition="Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))">
-						<include content="WrapListInfoItemlayout">
-							<param name="width" value="155" />
-							<param name="height" value="214" />
-							<param name="bordersize" value="9" />
-							<param name="actualicon_bordersize" value="12" />
-							<param name="reflection_top" value="211" />
-							<param name="reflection_width" value="147" />
-							<param name="reflection_bordersize" value="5" />
-						</include>
-						<include content="WrapListInfoMoviesOverlays">
-							<param name="top" value="170" />
-							<param name="left" value="111" />
-							<param name="size" value="24" />
-						</include>
-						<include content="WrapListInfoTVShowsOverlays">
-							<param name="top" value="169" />
-							<param name="left" value="110" />
-						</include>
-					</itemlayout>
-					<focusedlayout width="150" condition="Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))">
-						<control type="group">
-							<depth>DepthContent+</depth>
-							<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
-							<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
-							<include content="WrapListInfoFocusedlayout">
-								<param name="width" value="155" />
-								<param name="height" value="214" />
-								<param name="bordersize" value="10" />
-								<param name="actualicon_bordersize" value="12" />
-								<param name="reflection_top" value="211" />
-								<param name="reflection_width" value="147" />
-								<param name="reflection_bordersize" value="6" />
-							</include>
-							<include content="WrapListInfoMoviesOverlays">
-								<param name="top" value="170" />
-								<param name="left" value="111" />
-								<param name="size" value="24" />
-							</include>
-							<include content="WrapListInfoTVShowsOverlays">
-								<param name="top" value="169" />
-								<param name="left" value="110" />
-							</include>
-						</control>
-					</focusedlayout>
-					<itemlayout width="214" condition="Skin.String(MoviesWrapListInfoStyle,2)">
-						<include content="WrapListInfoItemlayout">
-							<param name="width" value="214" />
-							<param name="height" value="288" />
-							<param name="bordersize" value="12" />
-							<param name="actualicon_bordersize" value="20" />
-							<param name="reflection_top" value="285" />
-							<param name="reflection_width" value="206" />
-							<param name="reflection_bordersize" value="8" />
-						</include>
-						<include content="WrapListInfoMoviesOverlays">
-							<param name="top" value="235" />
-							<param name="left" value="161" />
-							<param name="size" value="26" />
-						</include>
-						<include content="WrapListInfoTVShowsOverlays">
-							<param name="top" value="243" />
-							<param name="left" value="169" />
-						</include>
-					</itemlayout>
-					<focusedlayout width="214" condition="Skin.String(MoviesWrapListInfoStyle,2)">
-						<control type="group">
-							<depth>DepthContent+</depth>
-							<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
-							<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
-							<include content="WrapListInfoFocusedlayout">
-								<param name="width" value="214" />
-								<param name="height" value="288" />
-								<param name="bordersize" value="12" />
-								<param name="actualicon_bordersize" value="20" />
-								<param name="reflection_top" value="285" />
-								<param name="reflection_width" value="206" />
-								<param name="reflection_bordersize" value="8" />
-							</include>
-							<include content="WrapListInfoMoviesOverlays">
-								<param name="top" value="235" />
-								<param name="left" value="161" />
-								<param name="size" value="26" />
-							</include>
-							<include content="WrapListInfoTVShowsOverlays">
-								<param name="top" value="243" />
-								<param name="left" value="169" />
-							</include>
-						</control>
-					</focusedlayout>
+					<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums)</visible>
+					<include condition="Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]">VideosWrapListInfoContainerStyle1</include>
+					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">VideosWrapListInfoContainerStyle2</include>
+					<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">MusicWrapListInfoContainerStyle1</include>
+					<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">MusicWrapListInfoContainerStyle2</include>
 				</control>
 				
 				<control type="group">
@@ -137,7 +59,8 @@
 				<description>Bottom Bar Area</description>
 				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
-				<include condition="!Skin.HasSetting(DisableVideosClearLogo)">InfoPaneClearLogoVideos</include>
+				<include condition="Window.IsActive(Videos) + !Skin.HasSetting(DisableVideosClearLogo)">InfoPaneClearLogoVideos</include>
+				<include condition="Window.IsActive(Music) + !Skin.HasSetting(EnableMusicLibraryClearLogos)">InfoPaneClearLogoMusic</include>
 				<include>InfoPaneMediaDetails</include>
 				<include>BottomPaneOpenCloseAnim</include>
 			</control>
@@ -196,7 +119,7 @@
 			<font>WrapListFont</font>
 			<textcolor>DefaultColor</textcolor>
 			<shadowcolor>ShadowColor</shadowcolor>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$PARAM[label]</label>
 			<aligny>center</aligny>
 			<scroll>true</scroll>
 		</control>
@@ -439,9 +362,42 @@
 		</control>
 	</include>
 	
+	<include name="WrapListInfoMusicGrouplists">
+		<control type="grouplist">
+			<description>Media Info</description>
+			<depth>DepthContent+</depth>
+			<left>485</left>
+			<top>472</top>
+			<width>765</width>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<visible>!String.IsEmpty(ListItem.Album)</visible>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[557]:" />
+				<param name="maxwidth" value="220" />
+				<param name="info" value="$INFO[ListItem.Artist]" />
+				<param name="visible" value="true" />
+			</include>
+			<include>WrapInfoViewDot</include>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[21899]:" />
+				<param name="maxwidth" value="220" />
+				<param name="info" value="$INFO[ListItem.Property(Album_Label)]" />
+				<param name="visible" value="true" />
+			</include>
+			<include>WrapInfoViewDot</include>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[345]:" />
+				<param name="maxwidth" value="110" />
+				<param name="info" value="$INFO[ListItem.Year]" />
+				<param name="visible" value="true" />
+			</include>
+		</control>
+	</include>
+	
 	<include name="WrapListInfoBottomInfo">
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)</visible>
+			<visible>$PARAM[visible]</visible>
 			<depth>DepthContent+</depth>
 
 			<control type="textbox">
@@ -454,7 +410,7 @@
 				<textcolor>MediaInfoColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<align>justify</align>
-				<label fallback="31203">$VAR[MoviePlot]</label>
+				<label fallback="$PARAM[fallback]">$PARAM[plot]</label>
 				<wrapmultiline>true</wrapmultiline>
 				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
 				<visible>!Container.OnNext + !Container.OnPrevious</visible>
@@ -463,7 +419,7 @@
 			
 			<control type="group">
 				<left>$PARAM[left]</left>
-				<top>520</top>
+				<top>$PARAM[top]</top>
 				
 				<control type="label">
 					<description>Genre</description>
@@ -518,6 +474,22 @@
 		<focusposition>1</focusposition>
 	</include>
 	
+	<include name="WrapListInfoContainerSpecs3">
+		<left>-38</left>
+		<top>303</top>
+		<width>1350</width>
+		<height>330</height>
+		<focusposition>2</focusposition>
+	</include>
+	
+	<include name="WrapListInfoContainerSpecs4">
+		<left>-3</left>
+		<top>242</top>
+		<width>ScreenWidth</width>
+		<height>470</height>
+		<focusposition>1</focusposition>
+	</include>
+	
 	<include name="WrapListInfoItemlayout">
 		<control type="image">
 			<description>Cover Case</description>
@@ -530,7 +502,7 @@
 			<description>Cover</description>
 			<width>$PARAM[width]</width>
 			<height>$PARAM[height]</height>
-			<texture background="true">$VAR[PosterThumb]</texture>
+			<texture background="true">$PARAM[image]</texture>
 			<bordersize>$PARAM[bordersize]</bordersize>
 			<aspectratio>stretch</aspectratio>
 		</control>
@@ -579,7 +551,7 @@
 			<description>Cover</description>
 			<width>$PARAM[width]</width>
 			<height>$PARAM[height]</height>
-			<texture background="true">$VAR[PosterThumb]</texture>
+			<texture background="true">$PARAM[image]</texture>
 			<bordersize>$PARAM[bordersize]</bordersize>
 			<aspectratio>stretch</aspectratio>
 		</control>
@@ -684,6 +656,170 @@
 		</control>
 	</include>
 	
+	<include name="VideosWrapListInfoContainerStyle1">
+		<itemlayout width="150">
+			<include content="WrapListInfoItemlayout">
+				<param name="width" value="155" />
+				<param name="height" value="214" />
+				<param name="image" value="$VAR[PosterThumb]" />
+				<param name="bordersize" value="9" />
+				<param name="actualicon_bordersize" value="12" />
+				<param name="reflection_top" value="211" />
+				<param name="reflection_width" value="147" />
+				<param name="reflection_bordersize" value="5" />
+			</include>
+			<include content="WrapListInfoMoviesOverlays">
+				<param name="top" value="170" />
+				<param name="left" value="111" />
+				<param name="size" value="24" />
+			</include>
+			<include content="WrapListInfoTVShowsOverlays">
+				<param name="top" value="169" />
+				<param name="left" value="110" />
+			</include>
+		</itemlayout>
+		<focusedlayout width="150">
+			<control type="group">
+				<depth>DepthContent+</depth>
+				<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
+				<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
+				<include content="WrapListInfoFocusedlayout">
+					<param name="width" value="155" />
+					<param name="height" value="214" />
+					<param name="image" value="$VAR[PosterThumb]" />
+					<param name="bordersize" value="10" />
+					<param name="actualicon_bordersize" value="12" />
+					<param name="reflection_top" value="211" />
+					<param name="reflection_width" value="147" />
+					<param name="reflection_bordersize" value="6" />
+				</include>
+				<include content="WrapListInfoMoviesOverlays">
+					<param name="top" value="170" />
+					<param name="left" value="111" />
+					<param name="size" value="24" />
+				</include>
+				<include content="WrapListInfoTVShowsOverlays">
+					<param name="top" value="169" />
+					<param name="left" value="110" />
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="VideosWrapListInfoContainerStyle2">
+		<itemlayout width="214">
+			<include content="WrapListInfoItemlayout">
+				<param name="width" value="214" />
+				<param name="height" value="288" />
+				<param name="image" value="$VAR[PosterThumb]" />
+				<param name="bordersize" value="12" />
+				<param name="actualicon_bordersize" value="20" />
+				<param name="reflection_top" value="285" />
+				<param name="reflection_width" value="206" />
+				<param name="reflection_bordersize" value="8" />
+			</include>
+			<include content="WrapListInfoMoviesOverlays">
+				<param name="top" value="235" />
+				<param name="left" value="161" />
+				<param name="size" value="26" />
+			</include>
+			<include content="WrapListInfoTVShowsOverlays">
+				<param name="top" value="243" />
+				<param name="left" value="169" />
+			</include>
+		</itemlayout>
+		<focusedlayout width="214">
+			<control type="group">
+				<depth>DepthContent+</depth>
+				<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
+				<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
+				<include content="WrapListInfoFocusedlayout">
+					<param name="width" value="214" />
+					<param name="height" value="288" />
+					<param name="image" value="$VAR[PosterThumb]" />
+					<param name="bordersize" value="12" />
+					<param name="actualicon_bordersize" value="20" />
+					<param name="reflection_top" value="285" />
+					<param name="reflection_width" value="206" />
+					<param name="reflection_bordersize" value="8" />
+				</include>
+				<include content="WrapListInfoMoviesOverlays">
+					<param name="top" value="235" />
+					<param name="left" value="161" />
+					<param name="size" value="26" />
+				</include>
+				<include content="WrapListInfoTVShowsOverlays">
+					<param name="top" value="243" />
+					<param name="left" value="169" />
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="MusicWrapListInfoContainerStyle1">
+		<itemlayout width="150">
+			<include content="WrapListInfoItemlayout">
+				<param name="width" value="155" />
+				<param name="height" value="155" />
+				<param name="image" value="$INFO[ListItem.Thumb]" />
+				<param name="bordersize" value="9" />
+				<param name="actualicon_bordersize" value="22" />
+				<param name="reflection_top" value="152" />
+				<param name="reflection_width" value="147" />
+				<param name="reflection_bordersize" value="5" />
+			</include>
+		</itemlayout>
+		<focusedlayout width="150">
+			<control type="group">
+				<depth>DepthContent+</depth>
+				<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
+				<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
+				<include content="WrapListInfoFocusedlayout">
+					<param name="width" value="155" />
+					<param name="height" value="155" />
+					<param name="image" value="$INFO[ListItem.Thumb]" />
+					<param name="bordersize" value="10" />
+					<param name="actualicon_bordersize" value="22" />
+					<param name="reflection_top" value="152" />
+					<param name="reflection_width" value="147" />
+					<param name="reflection_bordersize" value="6" />
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="MusicWrapListInfoContainerStyle2">
+		<itemlayout width="214">
+			<include content="WrapListInfoItemlayout">
+				<param name="width" value="214" />
+				<param name="height" value="214" />
+				<param name="image" value="$INFO[ListItem.Thumb]" />
+				<param name="bordersize" value="12" />
+				<param name="actualicon_bordersize" value="30" />
+				<param name="reflection_top" value="211" />
+				<param name="reflection_width" value="206" />
+				<param name="reflection_bordersize" value="8" />
+			</include>
+		</itemlayout>
+		<focusedlayout width="214">
+			<control type="group">
+				<depth>DepthContent+</depth>
+				<animation effect="zoom" start="100" end="130" center="107,132" time="360" tween="back" easing="out" reversible="false" delay="200">Focus</animation>
+				<animation effect="zoom" start="130" end="100" center="107,132" time="200" reversible="false">UnFocus</animation>
+				<include content="WrapListInfoFocusedlayout">
+					<param name="width" value="214" />
+					<param name="height" value="214" />
+					<param name="image" value="$INFO[ListItem.Thumb]" />
+					<param name="bordersize" value="12" />
+					<param name="actualicon_bordersize" value="30" />
+					<param name="reflection_top" value="211" />
+					<param name="reflection_width" value="206" />
+					<param name="reflection_bordersize" value="8" />
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
 	<include name="MoviesWrapListInfoStyle1">
 		<include content="WrapListInfoContent">
 			<param name="bg_top" value="378" />
@@ -695,6 +831,7 @@
 			<param name="cover_glow_width" value="600" />
 			<param name="header_top" value="211" />
 			<param name="header_height" value="171" />
+			<param name="label" value="$INFO[ListItem.Label]" />
 			<param name="separator_top" value="244" />
 		</include>
 		
@@ -706,6 +843,10 @@
 		<include>WrapListInfoMoviesGrouplists</include>
 		
 		<include content="WrapListInfoBottomInfo">
+			<param name="visible" value="!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)" />
+			<param name="fallback" value="31203" />
+			<param name="plot" value="$VAR[MoviePlot]" />
+			<param name="top" value="520" />
 			<param name="left" value="239" />
 			<param name="width" value="204" />
 			<param name="content" value="Movies" />
@@ -723,12 +864,17 @@
 			<param name="cover_glow_width" value="744" />
 			<param name="header_top" value="137" />
 			<param name="header_height" value="212" />
+			<param name="label" value="$INFO[ListItem.Label]" />
 			<param name="separator_top" value="170" />
 		</include>
 		
 		<include>WrapListInfoMoviesGrouplists</include>
 		
 		<include content="WrapListInfoBottomInfo">
+			<param name="visible" value="!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)" />
+			<param name="fallback" value="31203" />
+			<param name="plot" value="$VAR[MoviePlot]" />
+			<param name="top" value="520" />
 			<param name="left" value="188" />
 			<param name="width" value="268" />
 			<param name="content" value="Movies" />
@@ -746,6 +892,7 @@
 			<param name="cover_glow_width" value="600" />
 			<param name="header_top" value="211" />
 			<param name="header_height" value="171" />
+			<param name="label" value="$INFO[ListItem.Label]" />
 			<param name="separator_top" value="244" />
 		</include>
 		
@@ -757,6 +904,10 @@
 		<include>WrapListInfoTVShowsGrouplists</include>
 		
 		<include content="WrapListInfoBottomInfo">
+			<param name="visible" value="!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)" />
+			<param name="fallback" value="31203" />
+			<param name="plot" value="$VAR[MoviePlot]" />
+			<param name="top" value="520" />
 			<param name="left" value="239" />
 			<param name="width" value="204" />
 			<param name="content" value="TVShows" />
@@ -774,15 +925,81 @@
 			<param name="cover_glow_width" value="744" />
 			<param name="header_top" value="137" />
 			<param name="header_height" value="212" />
+			<param name="label" value="$INFO[ListItem.Label]" />
 			<param name="separator_top" value="170" />
 		</include>
 		
 		<include>WrapListInfoTVShowsGrouplists</include>
 		
 		<include content="WrapListInfoBottomInfo">
+			<param name="visible" value="!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)" />
+			<param name="fallback" value="31203" />
+			<param name="plot" value="$VAR[MoviePlot]" />
+			<param name="top" value="520" />
 			<param name="left" value="188" />
 			<param name="width" value="268" />
 			<param name="content" value="TVShows" />
+		</include>
+	</include>
+	
+	<variable name="WrapListInfoAlbumLabel">
+		<value condition="!String.IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	
+	<include name="MusicWrapListInfoStyle1">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="397" />
+			<param name="bg_height" value="347" />
+			<param name="bg_glow_top" value="401" />
+			<param name="bg_glow_height" value="326" />
+			<param name="cover_glow_top" value="401" />
+			<param name="cover_glow_left" value="41" />
+			<param name="cover_glow_width" value="600" />
+			<param name="header_top" value="270" />
+			<param name="header_height" value="131" />
+			<param name="label" value="$VAR[WrapListInfoAlbumLabel]" />
+			<param name="separator_top" value="303" />
+		</include>
+		
+		<include>WrapListInfoMusicGrouplists</include>
+		
+		<include content="WrapListInfoBottomInfo">
+			<param name="visible" value="!String.IsEmpty(ListItem.Album) + !Skin.HasSetting(EnableMusicWrapListInfoCompactMode)" />
+			<param name="fallback" value="31204" />
+			<param name="plot" value="$INFO[ListItem.Property(Album_Description)]" />
+			<param name="top" value="500" />
+			<param name="left" value="239" />
+			<param name="width" value="204" />
+			<param name="content" value="Music" />
+		</include>
+	</include>
+	
+	<include name="MusicWrapListInfoStyle2">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="372" />
+			<param name="bg_height" value="353" />
+			<param name="bg_glow_top" value="376" />
+			<param name="bg_glow_height" value="388" />
+			<param name="cover_glow_top" value="360" />
+			<param name="cover_glow_left" value="-52" />
+			<param name="cover_glow_width" value="744" />
+			<param name="header_top" value="209" />
+			<param name="header_height" value="167" />
+			<param name="label" value="$VAR[WrapListInfoAlbumLabel]" />
+			<param name="separator_top" value="242" />
+		</include>
+		
+		<include>WrapListInfoMusicGrouplists</include>
+		
+		<include content="WrapListInfoBottomInfo">
+			<param name="visible" value="!String.IsEmpty(ListItem.Album) + !Skin.HasSetting(EnableMusicWrapListInfoCompactMode)" />
+			<param name="fallback" value="31204" />
+			<param name="plot" value="$INFO[ListItem.Property(Album_Description)]" />
+			<param name="top" value="500" />
+			<param name="left" value="188" />
+			<param name="width" value="268" />
+			<param name="content" value="Music" />
 		</include>
 	</include>
 	<!-- END INCLUDES -->
