@@ -34,6 +34,8 @@
 	<include file="View_60_ListInfo3.xml"/>
 	<include file="View_65_ThumbsInfo.xml"/>
 	<include file="View_69_Wall.xml"/>
+	<include file="View_585_ExtendedList.xml"/>
+	<include file="View_588_3DWrap.xml"/>
 	<include file="Views.xml"/>
 	<include file="ViewsAddons.xml"/>
 	<include file="ViewsCommon.xml"/>
@@ -922,6 +924,11 @@
 	</include>
 	
 	<!-- DialogVideoInfo.xml -->
+	<variable name="DialogVideoInfoActorImage">
+		<value condition="Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)">$INFO[Container(50).ListItem.Thumb]</value>
+		<value>$VAR[PosterThumb]</value>
+	</variable>
+	
 	<variable name="DialogVideoInfoButton8">
 		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,video)">$LOCALIZE[208]</value>
 		<value>$LOCALIZE[21385]</value>
@@ -954,47 +961,223 @@
 	</include>
 	
 	<include name="DialogVideoInfoActors1">
-		<left>469</left>
-		<top>459</top>
-		<width>715</width>
+		<left>470</left>
+		<top>460</top>
+		<width>710</width>
 		<height>175</height>
 		<onup>901</onup>
-		<orientation>horizontal</orientation>
-		<itemlayout width="143">
+		<itemlayout height="35" width="355">
 			<control type="image">
-				<width>140</width>
-				<height>175</height>
+				<left>5</left>
+				<top>5</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+			<control type="label">
+				<top>6</top>
+				<left>35</left>
+				<width>318</width>
+				<height>23</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<selectedcolor>SelectedColor</selectedcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="35" width="355">
+			<control type="image">
+				<width>355</width>
+				<height>33</height>
+				<texture border="4">views/list-focus.png</texture>
+				<include>ListViewSelectFadeAnim</include>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<top>5</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+			<control type="label">
+				<top>6</top>
+				<left>35</left>
+				<width>318</width>
+				<height>23</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<selectedcolor>SelectedColor</selectedcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="DialogVideoInfoActors2">
+		<left>61</left>
+		<top>470</top>
+		<width>1160</width>
+		<height>140</height>
+		<onup>901</onup>
+		<itemlayout height="35" width="386">
+			<control type="image">
+				<left>5</left>
+				<top>5</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+			<control type="label">
+				<top>6</top>
+				<left>35</left>
+				<width>346</width>
+				<height>23</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<selectedcolor>SelectedColor</selectedcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="35" width="386">
+			<control type="image">
+				<width>386</width>
+				<height>33</height>
+				<texture border="4">views/list-focus.png</texture>
+				<include>ListViewSelectFadeAnim</include>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<top>5</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+			<control type="label">
+				<top>6</top>
+				<left>35</left>
+				<width>346</width>
+				<height>23</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<selectedcolor>SelectedColor</selectedcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="DialogVideoInfoActors3">
+		<left>652</left>
+		<top>409</top>
+		<width>408</width>
+		<height>232</height>
+		<onup>505</onup>
+		<itemlayout height="29">
+			<control type="image">
+				<left>5</left>
+				<top>3</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+			<control type="label">
+				<top>3</top>
+				<left>35</left>
+				<width>368</width>
+				<height>23</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<selectedcolor>SelectedColor</selectedcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="29">
+			<control type="image">
+				<width>408</width>
+				<height>29</height>
+				<texture border="4">views/list-focus.png</texture>
+				<include>ListViewSelectFadeAnim</include>
+				<animation effect="slide" start="0,-29" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(50).OnNext">Focus</animation>
+				<animation effect="slide" start="0,29" time="200" tween="quadratic" easing="out" reversible="false" condition="Container(50).OnPrevious">Focus</animation>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<top>3</top>
+				<width>24</width>
+				<height>24</height>
+				<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
+			</control>
+			<control type="label">
+				<top>3</top>
+				<left>35</left>
+				<width>368</width>
+				<height>23</height>
+				<font>FullMediaInfoDescFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<selectedcolor>SelectedColor</selectedcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ,]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="DialogVideoInfoActors">
+		<left>$PARAM[left]</left>
+		<top>$PARAM[top]</top>
+		<width>$PARAM[width]</width>
+		<height>$PARAM[height]</height>
+		<onup>$PARAM[onup]</onup>
+		<orientation>horizontal</orientation>
+		<itemlayout width="$PARAM[layout_width]">
+			<control type="image">
+				<width>$PARAM[item_width]</width>
+				<height>$PARAM[height]</height>
 				<bordertexture border="4">covers/cover-case2.png</bordertexture>
 				<bordersize>4</bordersize>
 				<aspectratio align="center" aligny="center">scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Thumb]</texture>
 			</control>
 			<control type="image">
-				<width>140</width>
-				<height>175</height>
+				<width>$PARAM[item_width]</width>
+				<height>$PARAM[height]</height>
 				<texture border="4">covers/cover-case2.png</texture>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
-				<top>7</top>
-				<width>140</width>
-				<height>140</height>
+				<top>$PARAM[defaultimage_top]</top>
+				<width>$PARAM[item_width]</width>
+				<height>$PARAM[defaultimage_height]</height>
 				<texture background="true">DefaultActor.png</texture>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 				<visible>String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="image">
-				<left>10</left>
-				<top>140</top>
-				<width>120</width>
+				<left>$PARAM[genrebg_left]</left>
+				<top>$PARAM[genrebg_top]</top>
+				<width>$PARAM[genrebg_width]</width>
 				<height>27</height>
 				<texture border="8">views/genre-background.png</texture>
 				<visible>!String.IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="label">
-				<left>15</left>
-				<top>144</top>
-				<width>110</width>
+				<left>$PARAM[label_left]</left>
+				<top>$PARAM[label_top]</top>
+				<width>$PARAM[label_width]</width>
 				<align>center</align>
 				<font>SubMenuArrowFont</font>
 				<textcolor>WhiteColor</textcolor>
@@ -1007,22 +1190,22 @@
 			<control type="group">
 				<include>ListViewCoverFocusAnim</include>
 				<control type="image">
-					<width>140</width>
-					<height>175</height>
+					<width>$PARAM[item_width]</width>
+					<height>$PARAM[height]</height>
 					<texture border="4">covers/cover-case-noshadow-focus.png</texture>
 					<include>ListViewOverlayFadeAnim</include>
 				</control>
 				<control type="image">
-					<width>140</width>
-					<height>175</height>
+					<width>$PARAM[item_width]</width>
+					<height>$PARAM[height]</height>
 					<texture border="4">black.png</texture>
 					<bordersize>3</bordersize>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
 				</control>
 				<control type="image">
-					<top>7</top>
-					<width>140</width>
-					<height>140</height>
+					<top>$PARAM[defaultimage_top]</top>
+					<width>$PARAM[item_width]</width>
+					<height>$PARAM[defaultimage_height]</height>
 					<texture background="true">DefaultActor.png</texture>
 					<aspectratio align="center" aligny="top">keep</aspectratio>
 					<visible>String.IsEmpty(ListItem.Thumb)</visible>
@@ -1030,25 +1213,25 @@
 				<control type="image">
 					<top>2</top>
 					<left>2</left>
-					<width>136</width>
-					<height>171</height>
+					<width>$PARAM[focusedthumb_width]</width>
+					<height>$PARAM[focusedthumb_height]</height>
 					<bordertexture border="4">black.png</bordertexture>
 					<bordersize>2</bordersize>
 					<aspectratio align="center" aligny="center">scale</aspectratio>
 					<texture background="true">$INFO[ListItem.Thumb]</texture>
 				</control>
 				<control type="image">
-					<left>10</left>
-					<top>140</top>
-					<width>120</width>
+					<left>$PARAM[genrebg_left]</left>
+					<top>$PARAM[genrebg_top]</top>
+					<width>$PARAM[genrebg_width]</width>
 					<height>27</height>
 					<texture border="8">views/genre-background.png</texture>
 					<visible>!String.IsEmpty(ListItem.Label)</visible>
 				</control>
 				<control type="label">
-					<left>15</left>
-					<top>144</top>
-					<width>110</width>
+					<left>$PARAM[label_left]</left>
+					<top>$PARAM[label_top]</top>
+					<width>$PARAM[label_width]</width>
 					<align>center</align>
 					<font>SubMenuArrowFont</font>
 					<textcolor>SelectedColor2</textcolor>
@@ -1060,218 +1243,70 @@
 		</focusedlayout>
 	</include>
 	
-	<include name="DialogVideoInfoActors2">
-		<left>61</left>
-		<top>460</top>
-		<width>1160</width>
-		<height>173</height>
-		<onup>901</onup>
-		<orientation>horizontal</orientation>
-		<itemlayout width="145">
-			<control type="image">
-				<width>142</width>
-				<height>173</height>
-				<bordertexture border="4">covers/cover-case2.png</bordertexture>
-				<bordersize>4</bordersize>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
-			</control>
-			<control type="image">
-				<width>142</width>
-				<height>173</height>
-				<texture border="4">covers/cover-case2.png</texture>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="image">
-				<top>2</top>
-				<width>142</width>
-				<height>142</height>
-				<texture background="true">DefaultActor.png</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="image">
-				<left>10</left>
-				<top>137</top>
-				<width>122</width>
-				<height>27</height>
-				<texture border="8">views/genre-background.png</texture>
-				<visible>!String.IsEmpty(ListItem.Label)</visible>
-			</control>
-			<control type="label">
-				<left>15</left>
-				<top>141</top>
-				<width>112</width>
-				<align>center</align>
-				<font>SubMenuArrowFont</font>
-				<textcolor>WhiteColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>!String.IsEmpty(ListItem.Label)</visible>
-			</control>
-		</itemlayout>
-		<focusedlayout width="145">
-			<control type="group">
-				<include>ListViewCoverFocusAnim</include>
-				<control type="image">
-					<width>142</width>
-					<height>173</height>
-					<texture border="4">covers/cover-case-noshadow-focus.png</texture>
-					<include>ListViewOverlayFadeAnim</include>
-				</control>
-				<control type="image">
-					<width>142</width>
-					<height>173</height>
-					<texture border="4">black.png</texture>
-					<bordersize>3</bordersize>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
-				<control type="image">
-					<top>2</top>
-					<width>142</width>
-					<height>142</height>
-					<texture background="true">DefaultActor.png</texture>
-					<aspectratio align="center" aligny="top">keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
-				<control type="image">
-					<top>2</top>
-					<left>2</left>
-					<width>138</width>
-					<height>169</height>
-					<bordertexture border="4">black.png</bordertexture>
-					<bordersize>2</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$INFO[ListItem.Thumb]</texture>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>137</top>
-					<width>122</width>
-					<height>27</height>
-					<texture border="8">views/genre-background.png</texture>
-					<visible>!String.IsEmpty(ListItem.Label)</visible>
-				</control>
-				<control type="label">
-					<left>15</left>
-					<top>141</top>
-					<width>112</width>
-					<align>center</align>
-					<font>SubMenuArrowFont</font>
-					<textcolor>SelectedColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>!String.IsEmpty(ListItem.Label)</visible>
-				</control>
-			</control>
-		</focusedlayout>
+	<include name="DialogVideoInfoActors4">
+		<include content="DialogVideoInfoActors">
+			<param name="left" value="469" />
+			<param name="top" value="459" />
+			<param name="width" value="715" />
+			<param name="height" value="175" />
+			<param name="onup" value="901" />
+			<param name="layout_width" value="143" />
+			<param name="item_width" value="140" />
+			<param name="defaultimage_top" value="7" />
+			<param name="defaultimage_height" value="140" />
+			<param name="genrebg_left" value="10" />
+			<param name="genrebg_top" value="140" />
+			<param name="genrebg_width" value="120" />
+			<param name="label_left" value="15" />
+			<param name="label_top" value="144" />
+			<param name="label_width" value="110" />
+			<param name="focusedthumb_width" value="136" />
+			<param name="focusedthumb_height" value="171" />
+		</include>
 	</include>
 	
-	<include name="DialogVideoInfoActors3">
-		<left>651</left>
-		<top>418</top>
-		<width>580</width>
-		<height>214</height>
-		<onup>505</onup>
-		<orientation>horizontal</orientation>
-		<itemlayout width="145">
-			<control type="image">
-				<width>142</width>
-				<height>214</height>
-				<bordertexture border="4">covers/cover-case2.png</bordertexture>
-				<bordersize>4</bordersize>
-				<aspectratio align="center" aligny="center">scale</aspectratio>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
-			</control>
-			<control type="image">
-				<width>142</width>
-				<height>214</height>
-				<texture border="4">covers/cover-case2.png</texture>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="image">
-				<top>30</top>
-				<width>142</width>
-				<height>130</height>
-				<texture background="true">DefaultActor.png</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<visible>String.IsEmpty(ListItem.Thumb)</visible>
-			</control>
-			<control type="image">
-				<left>8</left>
-				<top>180</top>
-				<width>126</width>
-				<height>27</height>
-				<texture border="8">views/genre-background.png</texture>
-				<visible>!String.IsEmpty(ListItem.Label)</visible>
-			</control>
-			<control type="label">
-				<left>13</left>
-				<top>184</top>
-				<width>116</width>
-				<align>center</align>
-				<font>SubMenuArrowFont</font>
-				<textcolor>WhiteColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>!String.IsEmpty(ListItem.Label)</visible>
-			</control>
-		</itemlayout>
-		<focusedlayout width="145">
-			<control type="group">
-				<include>ListViewCoverFocusAnim</include>
-				<control type="image">
-					<width>142</width>
-					<height>214</height>
-					<texture border="4">covers/cover-case-noshadow-focus.png</texture>
-					<include>ListViewOverlayFadeAnim</include>
-				</control>
-				<control type="image">
-					<width>142</width>
-					<height>214</height>
-					<texture border="4">black.png</texture>
-					<bordersize>3</bordersize>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
-				<control type="image">
-					<top>30</top>
-					<width>142</width>
-					<height>130</height>
-					<texture background="true">DefaultActor.png</texture>
-					<aspectratio align="center" aligny="top">keep</aspectratio>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
-				<control type="image">
-					<top>2</top>
-					<left>2</left>
-					<width>138</width>
-					<height>210</height>
-					<bordertexture border="4">black.png</bordertexture>
-					<bordersize>2</bordersize>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<texture background="true">$INFO[ListItem.Thumb]</texture>
-				</control>
-					<control type="image">
-					<left>8</left>
-					<top>180</top>
-					<width>126</width>
-					<height>27</height>
-					<texture border="8">views/genre-background.png</texture>
-					<visible>!String.IsEmpty(ListItem.Label)</visible>
-				</control>
-				<control type="label">
-					<left>13</left>
-					<top>184</top>
-					<width>116</width>
-					<align>center</align>
-					<font>SubMenuArrowFont</font>
-					<textcolor>SelectedColor2</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>!String.IsEmpty(ListItem.Label)</visible>
-				</control>
-			</control>
-		</focusedlayout>
+	<include name="DialogVideoInfoActors5">
+		<include content="DialogVideoInfoActors">
+			<param name="left" value="61" />
+			<param name="top" value="460" />
+			<param name="width" value="1160" />
+			<param name="height" value="173" />
+			<param name="onup" value="901" />
+			<param name="layout_width" value="145" />
+			<param name="item_width" value="142" />
+			<param name="defaultimage_top" value="2" />
+			<param name="defaultimage_height" value="142" />
+			<param name="genrebg_left" value="10" />
+			<param name="genrebg_top" value="137" />
+			<param name="genrebg_width" value="122" />
+			<param name="label_left" value="15" />
+			<param name="label_top" value="141" />
+			<param name="label_width" value="112" />
+			<param name="focusedthumb_width" value="138" />
+			<param name="focusedthumb_height" value="169" />
+		</include>
+	</include>
+	
+	<include name="DialogVideoInfoActors6">
+		<include content="DialogVideoInfoActors">
+			<param name="left" value="651" />
+			<param name="top" value="418" />
+			<param name="width" value="580" />
+			<param name="height" value="214" />
+			<param name="onup" value="505" />
+			<param name="layout_width" value="145" />
+			<param name="item_width" value="142" />
+			<param name="defaultimage_top" value="30" />
+			<param name="defaultimage_height" value="130" />
+			<param name="genrebg_left" value="8" />
+			<param name="genrebg_top" value="180" />
+			<param name="genrebg_width" value="126" />
+			<param name="label_left" value="13" />
+			<param name="label_top" value="184" />
+			<param name="label_width" value="116" />
+			<param name="focusedthumb_width" value="138" />
+			<param name="focusedthumb_height" value="210" />
+		</include>
 	</include>
 	
 	<include name="DialogVideoInfoSet">
