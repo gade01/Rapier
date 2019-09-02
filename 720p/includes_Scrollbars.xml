@@ -93,8 +93,8 @@
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + [Container.Content(Movies) | Container.Content(TVShows)] + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + Container.Content(Episodes) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + Container.Content(musicvideos) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Label])</value>
-		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</value>
 		<value condition="String.Contains(Container.FolderPath,plugin://plugin.program)">ActivateWindow(1122)</value>
+		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</value>
 		<value condition="Skin.HasSetting(ScrollbarTrailerPlayback)">noop</value>
 	</variable>
 	
@@ -102,6 +102,7 @@
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + [Container.Content(Movies) | Container.Content(TVShows)] + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],noresume)</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + [Container.Content(Movies) | Container.Content(TVShows)] + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + Container.Content(Episodes) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</value>
+		<value condition="String.Contains(Container.FolderPath,plugin://plugin.program)">ActivateWindow(1122)</value>
 		<value condition="!Skin.HasSetting(ScrollbarTrailerPlayback) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</value>
 		<value condition="Skin.HasSetting(ScrollbarTrailerPlayback)">noop</value>
 	</variable>
@@ -493,47 +494,6 @@
 		</control>
 	</include>
 
-	<include name="ProgramsWrapInfoViewScrollbar">
-		<control type="group" id="150">
-			<animation effect="fade" start="100" end="0" time="150" condition="!Skin.HasSetting(ShowWrapInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
-			
-			<control type="image">
-				<left>485</left>
-				<top>465</top>
-				<width>765</width>
-				<height>12</height>
-				<texture border="4">controls/scrollbar-background.png</texture>
-				<visible>Skin.HasSetting(EnableQuickJump)</visible>
-			</control>
-			
-			<control type="panel" id="91501">
-				<visible>Control.IsVisible(592)</visible>
-				<ondown condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</ondown>
-				<include content="QuickJumpHorizontalLayout">
-					<param name="left" value="489" />
-					<param name="top" value="462" />
-					<param name="width" value="760" />
-					<param name="itemwidth" value="28" />
-				</include>
-			</control>
-			
-			<control type="scrollbar" id="91502">
-				<left>485</left>
-				<top>465</top>
-				<width>765</width>
-				<height>12</height>
-				<orientation>horizontal</orientation>
-				<texturesliderbar border="2">controls/scrollbar-slider-horz-nofocus.png</texturesliderbar>
-				<texturesliderbarfocus border="2">controls/scrollbar-slider-horz-focus.png</texturesliderbarfocus>
-				<textureslidernib />
-				<textureslidernibfocus />
-				<ondown condition="!Skin.HasSetting(ScrollbarTrailerPlayback)">ActivateWindow(1122)</ondown>
-				<onup>500</onup>
-				<visible>!Skin.HasSetting(EnableQuickJump)</visible>
-			</control>
-		</control>
-	</include>
-	
 	<include name="SettingsScrollbar">
 		<control type="group" id="150">
 			<control type="scrollbar" id="911">

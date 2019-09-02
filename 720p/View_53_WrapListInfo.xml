@@ -8,7 +8,7 @@
 			<include>MediaViewOpenCloseAnim</include>
 			
 			<control type="group" id="254">
-				<animation effect="slide" end="0,120" time="500" condition="[Window.IsActive(Videos) + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)] | [Window.IsActive(Music) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)]">Conditional</animation>
+				<animation effect="slide" end="0,120" time="500" condition="[Window.IsActive(Videos) + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)] | [Window.IsActive(Music) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)] | [Window.IsActive(Programs) + Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)]">Conditional</animation>
 				
 				<control type="group">
 					<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
@@ -22,29 +22,35 @@
 					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">TVShowsWrapListInfoStyle2</include>
 				</control>
 				
-				<control type="group">
-					<visible>Container.Content(Albums)</visible>
-					<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">MusicWrapListInfoStyle1</include>
-					<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">MusicWrapListInfoStyle2</include>
-				</control>
+				<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">MusicWrapListInfoStyle1</include>
+				<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">MusicWrapListInfoStyle2</include>
+				
+				<include condition="Window.IsActive(Programs) + [Skin.String(ProgramsWrapListInfoStyle,1) | String.IsEmpty(Skin.String(ProgramsWrapListInfoStyle))]">ProgramsWrapListInfoPosterStyle</include>
+				<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,2)">ProgramsWrapListInfoPosterStyleLarge</include>
+				<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,3)">ProgramsWrapListInfoSquareStyle</include>
+				<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,4)">ProgramsWrapListInfoSquareStyleLarge</include>
+				<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,5)">ProgramsWrapListInfoWideStyle</include>
 				
 				<control type="wraplist" id="53">
 					<viewtype label="31106">bigwrap</viewtype>
-					<include condition="Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]">WrapListInfoContainerSpecs1</include>
-					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">WrapListInfoContainerSpecs2</include>
-					<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">WrapListInfoContainerSpecs3</include>
-					<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">WrapListInfoContainerSpecs4</include>
+					<include condition="[Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]] | [Window.IsActive(Programs) + [Skin.String(ProgramsWrapListInfoStyle,1) | String.IsEmpty(Skin.String(ProgramsWrapListInfoStyle))]]">WrapListInfoContainerSpecs1</include>
+					<include condition="[Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)] | [Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,2)]">WrapListInfoContainerSpecs2</include>
+					<include condition="[Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]] | [Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,3)]">WrapListInfoContainerSpecs3</include>
+					<include condition="[Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)] | [Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,4)]">WrapListInfoContainerSpecs4</include>
+					<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,5)">WrapListInfoContainerSpecs5</include>
 					<pagecontrol>91103</pagecontrol>
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<scrolltime tween="sine" easing="inout">401</scrolltime>
 					<onup>850</onup>
 					<ondown>150</ondown>
-					<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums)</visible>
-					<include condition="Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]">VideosWrapListInfoContainerStyle1</include>
-					<include condition="Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)">VideosWrapListInfoContainerStyle2</include>
-					<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">MusicWrapListInfoContainerStyle1</include>
-					<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">MusicWrapListInfoContainerStyle2</include>
+					<oninfo condition="Window.IsActive(Programs)">ActivateWindow(1122)</oninfo>
+					<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+					<include condition="[Window.IsActive(Videos) + [Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))]] | [Window.IsActive(Programs) + [Skin.String(ProgramsWrapListInfoStyle,1) | String.IsEmpty(Skin.String(ProgramsWrapListInfoStyle))]]">WrapListInfoPosterStyleLayout</include>
+					<include condition="[Window.IsActive(Videos) + Skin.String(MoviesWrapListInfoStyle,2)] | [Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,2)]">WrapListInfoPosterStyleLargeLayout</include>
+					<include condition="[Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]] | [Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,3)]">WrapListInfoSquareStyleLayout</include>
+					<include condition="[Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)] | [Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,4)]">WrapListInfoSquareStyleLargeLayout</include>
+					<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,5)">WrapListInfoWideStyleLayout</include>
 				</control>
 				
 				<control type="group">
@@ -395,6 +401,73 @@
 		</control>
 	</include>
 	
+	<include name="WrapListInfoProgramsInfo">
+		<control type="grouplist">
+			<description>Programs Info</description>
+			<depth>DepthContent+</depth>
+			<left>485</left>
+			<top>472</top>
+			<width>765</width>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<visible>!String.IsEmpty(ListItem.Title)</visible>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[32027]:" />
+				<param name="maxwidth" value="150" />
+				<param name="info" value="$INFO[ListItem.Writer]" />
+				<param name="visible" value="true" />
+			</include>
+			<include>WrapInfoViewDot</include>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[32028]:" />
+				<param name="maxwidth" value="140" />
+				<param name="info" value="$INFO[ListItem.Studio]" />
+				<param name="visible" value="true" />
+			</include>
+			<include>WrapInfoViewDot</include>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[345]:" />
+				<param name="maxwidth" value="110" />
+				<param name="info" value="$INFO[ListItem.Premiered]" />
+				<param name="visible" value="true" />
+			</include>
+		</control>
+		
+		<control type="group">
+			<visible>!String.IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)</visible>
+			<depth>DepthContent+</depth>
+
+			<control type="textbox">
+				<description>Plot</description>
+				<left>485</left>
+				<top>507</top>
+				<width>765</width>
+				<height>123</height>
+				<font>MediaInfoDescFont</font>
+				<textcolor>MediaInfoColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>justify</align>
+				<label fallback="31203">$INFO[ListItem.Plot]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<autoscroll time="2000" delay="6000" repeat="10000">!Skin.HasSetting(DoNotAutoScrollPlot)</autoscroll>
+				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<include>ControlsOpenCloseAnim</include>
+			</control>
+
+			<control type="label">
+				<description>Genre</description>
+				<left>$PARAM[genre_left]</left>
+				<top>530</top>
+				<width>$PARAM[genre_width]</width>
+				<font>MediaInfoFont2</font>
+				<textcolor>WhiteColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<align>center</align>
+				<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+			</control>
+		</control>
+	</include>
+	
 	<include name="WrapListInfoBottomInfo">
 		<control type="group">
 			<visible>$PARAM[visible]</visible>
@@ -487,6 +560,14 @@
 		<top>242</top>
 		<width>ScreenWidth</width>
 		<height>470</height>
+		<focusposition>1</focusposition>
+	</include>
+	
+	<include name="WrapListInfoContainerSpecs5">
+		<left>-32</left>
+		<top>303</top>
+		<width>1350</width>
+		<height>330</height>
 		<focusposition>1</focusposition>
 	</include>
 	
@@ -656,7 +737,7 @@
 		</control>
 	</include>
 	
-	<include name="VideosWrapListInfoContainerStyle1">
+	<include name="WrapListInfoPosterStyleLayout">
 		<itemlayout width="150">
 			<include content="WrapListInfoItemlayout">
 				<param name="width" value="155" />
@@ -706,7 +787,7 @@
 		</focusedlayout>
 	</include>
 	
-	<include name="VideosWrapListInfoContainerStyle2">
+	<include name="WrapListInfoPosterStyleLargeLayout">
 		<itemlayout width="214">
 			<include content="WrapListInfoItemlayout">
 				<param name="width" value="214" />
@@ -756,7 +837,7 @@
 		</focusedlayout>
 	</include>
 	
-	<include name="MusicWrapListInfoContainerStyle1">
+	<include name="WrapListInfoSquareStyleLayout">
 		<itemlayout width="150">
 			<include content="WrapListInfoItemlayout">
 				<param name="width" value="155" />
@@ -788,7 +869,7 @@
 		</focusedlayout>
 	</include>
 	
-	<include name="MusicWrapListInfoContainerStyle2">
+	<include name="WrapListInfoSquareStyleLargeLayout">
 		<itemlayout width="214">
 			<include content="WrapListInfoItemlayout">
 				<param name="width" value="214" />
@@ -815,6 +896,38 @@
 					<param name="reflection_top" value="211" />
 					<param name="reflection_width" value="206" />
 					<param name="reflection_bordersize" value="8" />
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="WrapListInfoWideStyleLayout">
+		<itemlayout width="209">
+			<include content="WrapListInfoItemlayout">
+				<param name="width" value="214" />
+				<param name="height" value="155" />
+				<param name="image" value="$INFO[ListItem.Thumb]" />
+				<param name="bordersize" value="9" />
+				<param name="actualicon_bordersize" value="22" />
+				<param name="reflection_top" value="152" />
+				<param name="reflection_width" value="206" />
+				<param name="reflection_bordersize" value="5" />
+			</include>
+		</itemlayout>
+		<focusedlayout width="209">
+			<control type="group">
+				<depth>DepthContent+</depth>
+				<animation effect="zoom" start="100" end="145" center="78,90" time="300" tween="back" easing="out" reversible="false" delay="150">Focus</animation>
+				<animation effect="zoom" start="145" end="100" center="78,90" time="100" reversible="false">UnFocus</animation>
+				<include content="WrapListInfoFocusedlayout">
+					<param name="width" value="214" />
+					<param name="height" value="155" />
+					<param name="image" value="$INFO[ListItem.Thumb]" />
+					<param name="bordersize" value="10" />
+					<param name="actualicon_bordersize" value="22" />
+					<param name="reflection_top" value="152" />
+					<param name="reflection_width" value="206" />
+					<param name="reflection_bordersize" value="6" />
 				</include>
 			</control>
 		</focusedlayout>
@@ -1000,6 +1113,112 @@
 			<param name="left" value="188" />
 			<param name="width" value="268" />
 			<param name="content" value="Music" />
+		</include>
+	</include>
+	
+	<include name="ProgramsWrapListInfoPosterStyle">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="378" />
+			<param name="bg_height" value="347" />
+			<param name="bg_glow_top" value="382" />
+			<param name="bg_glow_height" value="345" />
+			<param name="cover_glow_top" value="382" />
+			<param name="cover_glow_left" value="41" />
+			<param name="cover_glow_width" value="600" />
+			<param name="header_top" value="211" />
+			<param name="header_height" value="171" />
+			<param name="label" value="$INFO[ListItem.Label]" />
+			<param name="separator_top" value="244" />
+		</include>
+
+		<include content="WrapListInfoProgramsInfo">
+			<param name="genre_left" value="239" />
+			<param name="genre_width" value="204" />
+		</include>
+	</include>
+
+	<include name="ProgramsWrapListInfoPosterStyleLarge">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="345" />
+			<param name="bg_height" value="380" />
+			<param name="bg_glow_top" value="349" />
+			<param name="bg_glow_height" value="415" />
+			<param name="cover_glow_top" value="334" />
+			<param name="cover_glow_left" value="-52" />
+			<param name="cover_glow_width" value="744" />
+			<param name="header_top" value="137" />
+			<param name="header_height" value="212" />
+			<param name="label" value="$INFO[ListItem.Label]" />
+			<param name="separator_top" value="170" />
+		</include>
+		
+		<include content="WrapListInfoProgramsInfo">
+			<param name="genre_left" value="188" />
+			<param name="genre_width" value="268" />
+		</include>
+	</include>
+
+	<include name="ProgramsWrapListInfoSquareStyle">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="397" />
+			<param name="bg_height" value="347" />
+			<param name="bg_glow_top" value="401" />
+			<param name="bg_glow_height" value="326" />
+			<param name="cover_glow_top" value="401" />
+			<param name="cover_glow_left" value="41" />
+			<param name="cover_glow_width" value="600" />
+			<param name="header_top" value="270" />
+			<param name="header_height" value="131" />
+			<param name="label" value="$INFO[ListItem.Label]" />
+			<param name="separator_top" value="303" />
+		</include>
+
+		<include content="WrapListInfoProgramsInfo">
+			<param name="genre_left" value="239" />
+			<param name="genre_width" value="204" />
+		</include>
+	</include>
+
+	<include name="ProgramsWrapListInfoSquareStyleLarge">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="372" />
+			<param name="bg_height" value="353" />
+			<param name="bg_glow_top" value="376" />
+			<param name="bg_glow_height" value="388" />
+			<param name="cover_glow_top" value="360" />
+			<param name="cover_glow_left" value="-52" />
+			<param name="cover_glow_width" value="744" />
+			<param name="header_top" value="209" />
+			<param name="header_height" value="167" />
+			<param name="label" value="$INFO[ListItem.Label]" />
+			<param name="separator_top" value="242" />
+		</include>
+
+		<include content="WrapListInfoProgramsInfo">
+			<param name="genre_left" value="188" />
+			<param name="genre_width" value="268" />
+		</include>
+	</include>
+
+	<!-- WRAP INFO 3 -->
+	<include name="ProgramsWrapListInfoWideStyle">
+		<include content="WrapListInfoContent">
+			<param name="bg_top" value="397" />
+			<param name="bg_height" value="347" />
+			<param name="bg_glow_top" value="401" />
+			<param name="bg_glow_height" value="326" />
+			<param name="cover_glow_top" value="401" />
+			<param name="cover_glow_left" value="-111" />
+			<param name="cover_glow_width" value="803" />
+			<param name="header_top" value="270" />
+			<param name="header_height" value="131" />
+			<param name="label" value="$INFO[ListItem.Label]" />
+			<param name="separator_top" value="303" />
+		</include>
+
+		<include content="WrapListInfoProgramsInfo">
+			<param name="genre_left" value="161" />
+			<param name="genre_width" value="282" />
 		</include>
 	</include>
 	<!-- END INCLUDES -->

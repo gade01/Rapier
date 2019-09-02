@@ -469,13 +469,13 @@
 							<param name="label" value="$LOCALIZE[20339]" />
 							<param name="width" value="240" />
 							<param name="info" value="$INFO[Container(584).ListItem.Director]" />
-							<param name="visible" value="[String.Contains(Container.FolderPath,videodb://movies/) + !Container.Content(Sets)] | String.Contains(Container.FolderPath,videodb://musicvideos/) | [Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]]" />
+							<param name="visible" value="[String.Contains(Container.FolderPath,videodb://movies/) + !Container.Content(Sets)] | String.Contains(Container.FolderPath,videodb://musicvideos/) | [Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(91305)]]]]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[20342]" />
 							<param name="width" value="240" />
 							<param name="info" value="$INFO[Window(home).Property(SkinHelper.ListItem.Count)]" />
-							<param name="visible" value="Container.Content(Sets) + System.HasAddon(script.skin.helper.service) + ![Control.HasFocus(584) | Control.HasFocus(151)]" />
+							<param name="visible" value="Container.Content(Sets) + System.HasAddon(script.skin.helper.service) + ![Control.HasFocus(584) | Control.HasFocus(91305)]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[33054]" />
@@ -507,13 +507,13 @@
 							<param name="label" value="$LOCALIZE[31936]" />
 							<param name="width" value="320" />
 							<param name="info" value="$VAR[SeasonPremiered]" />
-							<param name="visible" value="Container.Content(Seasons) + ![Control.HasFocus(584) | Control.HasFocus(151)]" />
+							<param name="visible" value="Container.Content(Seasons) + ![Control.HasFocus(584) | Control.HasFocus(91305)]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[20416]" />
 							<param name="width" value="110" />
 							<param name="info" value="$INFO[Container(584).ListItem.Premiered]" />
-							<param name="visible" value="Container.Content(Seasons) + [Control.HasFocus(584) | Control.HasFocus(151)]" />
+							<param name="visible" value="Container.Content(Seasons) + [Control.HasFocus(584) | Control.HasFocus(91305)]" />
 						</include>
 					</control>
 					
@@ -538,7 +538,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$VAR[ExtendedListDurationVar]</label>
-							<visible>[String.Contains(Container.FolderPath,videodb://movies/) + !Container.Content(Sets)] | String.Contains(Container.FolderPath,videodb://musicvideos/) | [Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]]</visible>
+							<visible>[String.Contains(Container.FolderPath,videodb://movies/) + !Container.Content(Sets)] | String.Contains(Container.FolderPath,videodb://musicvideos/) | [Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(91305)]]]]</visible>
 						</control>
 						<control type="label">
 							<width min="0" max="110">auto</width>
@@ -546,7 +546,7 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$VAR[SkinHelperDurationVar]</label>
-							<visible>Container.Content(Sets) + System.HasAddon(script.skin.helper.service) + ![Control.HasFocus(584) | Control.HasFocus(151)]</visible>
+							<visible>Container.Content(Sets) + System.HasAddon(script.skin.helper.service) + ![Control.HasFocus(584) | Control.HasFocus(91305)]</visible>
 						</control>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[20360]" />
@@ -616,7 +616,7 @@
 						<width>215</width>
 						<orientation>horizontal</orientation>
 						<align>right</align>
-						<visible>Container.Content(Seasons) + [Control.HasFocus(584) | Control.HasFocus(151)]</visible>
+						<visible>Container.Content(Seasons) + [Control.HasFocus(584) | Control.HasFocus(91305)]</visible>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[563]" />
 							<param name="width" value="110" />
@@ -631,7 +631,7 @@
 						<width>215</width>
 						<orientation>horizontal</orientation>
 						<align>right</align>
-						<visible>Container.Content(Seasons) + [Control.HasFocus(584) | Control.HasFocus(151)]</visible>
+						<visible>Container.Content(Seasons) + [Control.HasFocus(584) | Control.HasFocus(91305)]</visible>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[2050]" />
 							<param name="width" value="110" />
@@ -691,29 +691,12 @@
 						<width>370</width>
 						<orientation>horizontal</orientation>
 						<align>right</align>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[345]:</label>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Container(584).ListItem.Year]</label>
-							<visible>![Container.Content(Sets) + System.HasAddon(script.skin.helper.service) + ![Control.HasFocus(584) | Control.HasFocus(151)]]</visible>
-						</control>
-						<control type="label">
-							<width min="0" max="260">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Window(home).Property(SkinHelper.ListItem.Years)]</label>
-							<visible>Container.Content(Sets) + System.HasAddon(script.skin.helper.service) + ![Control.HasFocus(584) | Control.HasFocus(151)]</visible>
-						</control>
+						<include content="ExtendedListGrouplistContent">
+							<param name="label" value="$LOCALIZE[345]" />
+							<param name="width" value="260" />
+							<param name="info" value="$VAR[ExtendedListYearInfoVar]" />
+							<param name="visible" value="true" />
+						</include>
 					</control>
 					
 					<control type="grouplist">
@@ -746,7 +729,7 @@
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$INFO[Container(584).ListItem.Rating]</label>
 							<visible>![String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
-							<visible>![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(151)] + System.HasAddon(script.skin.helper.service)]</visible>
+							<visible>![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)] + System.HasAddon(script.skin.helper.service)]</visible>
 							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
 						</control>
 						<control type="label">
@@ -755,27 +738,15 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label fallback="31001">$VAR[RatingType]</label>
-							<visible>Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(151)] + System.HasAddon(script.skin.helper.service)</visible>
+							<visible>Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)] + System.HasAddon(script.skin.helper.service)</visible>
 							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
 						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[572]:</label>
-							<visible>String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/)</visible>
-							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
-						</control>
-						<control type="label">
-							<width min="0" max="240">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Container(584).ListItem.Studio]</label>
-							<visible>String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/)</visible>
-							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
-						</control>
+						<include content="ExtendedListGrouplistContent">
+							<param name="label" value="$LOCALIZE[572]" />
+							<param name="width" value="240" />
+							<param name="info" value="$INFO[Container(584).ListItem.Studio]" />
+							<param name="visible" value="String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/) + !String.Contains(Container.FolderPath,musicdb://)" />
+						</include>
 					</control>
 				</control>
 				
@@ -790,28 +761,28 @@
 					<param name="top" value="380" />
 					<param name="height" value="235" />
 					<param name="label" value="$INFO[Container.ShowPlot]" />
-					<param name="visible" value="Container.Content(Seasons) + Skin.HasSetting(EnableNextAiredInfo) + ![Control.HasFocus(584) | Control.HasFocus(151)]" />
+					<param name="visible" value="Container.Content(Seasons) + Skin.HasSetting(EnableNextAiredInfo) + ![Control.HasFocus(584) | Control.HasFocus(91305)]" />
 				</include>
 				
 				<include content="ExtendedListPlot">
 					<param name="top" value="380" />
 					<param name="height" value="235" />
 					<param name="label" value="$INFO[Container(584).ListItem.Plot]" />
-					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Seasons) + Skin.HasSetting(EnableNextAiredInfo) + [Control.HasFocus(584) | Control.HasFocus(151)]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Seasons) + Skin.HasSetting(EnableNextAiredInfo) + [Control.HasFocus(584) | Control.HasFocus(91305)]" />
 				</include>
 				
 				<include content="ExtendedListPlot">
 					<param name="top" value="445" />
 					<param name="height" value="167" />
 					<param name="label" value="$INFO[Container.ShowPlot]" />
-					<param name="visible" value="Container.Content(Seasons) + !Skin.HasSetting(EnableNextAiredInfo) + ![Control.HasFocus(584) | Control.HasFocus(151)]" />
+					<param name="visible" value="Container.Content(Seasons) + !Skin.HasSetting(EnableNextAiredInfo) + ![Control.HasFocus(584) | Control.HasFocus(91305)]" />
 				</include>
 				
 				<include content="ExtendedListPlot">
 					<param name="top" value="445" />
 					<param name="height" value="167" />
 					<param name="label" value="$INFO[Container(584).ListItem.Plot]" />
-					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Seasons) + !Skin.HasSetting(EnableNextAiredInfo) + [Control.HasFocus(584) | Control.HasFocus(151)]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Seasons) + !Skin.HasSetting(EnableNextAiredInfo) + [Control.HasFocus(584) | Control.HasFocus(91305)]" />
 				</include>
 				
 				<include content="ExtendedListPlot">
@@ -825,14 +796,14 @@
 					<param name="top" value="442" />
 					<param name="height" value="117" />
 					<param name="label" value="$INFO[Container(584).ListItem.Plot]" />
-					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(91305)]]]" />
 				</include>
 				
 				<include content="ExtendedListPlot">
 					<param name="top" value="442" />
 					<param name="height" value="117" />
 					<param name="label" value="$INFO[Window(home).Property(SkinHelper.ListItem.Plot)]" />
-					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(151)] + System.HasAddon(script.skin.helper.service)" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)] + System.HasAddon(script.skin.helper.service)" />
 				</include>
 			</control>
 			
@@ -842,7 +813,7 @@
 				<top>110</top>
 				<width>354</width>
 				<height>518</height>
-				<pagecontrol>150</pagecontrol>
+				<pagecontrol>91304</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine" easing="inout">300</scrolltime>
 				<onup>585</onup>
@@ -957,7 +928,7 @@
 						</include>
 					</control>
 					
-					<control type="scrollbar" id="150">
+					<control type="scrollbar" id="91304">
 						<left>34</left>
 						<top>110</top>
 						<width>12</width>
@@ -976,18 +947,18 @@
 				<top>110</top>
 				<width>354</width>
 				<height>518</height>
-				<pagecontrol>151</pagecontrol>
+				<pagecontrol>91305</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine" easing="inout">300</scrolltime>
 				<onup>584</onup>
 				<ondown>584</ondown>
 				<onleft>585</onleft>
-				<onright condition="!Control.IsVisible(151) + !String.IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
-				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + ![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] trailer)</onright>
-				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer)</onright>
-				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
-				<onright condition="!Control.IsVisible(151) + String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
-				<onright condition="Control.IsVisible(151)">151</onright>
+				<onright condition="!Control.IsVisible(91305) + !String.IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + ![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] trailer)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
+				<onright condition="Control.IsVisible(91305)">91305</onright>
 				<visible>!ListItem.IsParentFolder</visible>
 				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsAlbums]</visible>
 				<itemlayout height="37">
@@ -1246,13 +1217,13 @@
 				<texture border="4">controls/scrollbar-background.png</texture>
 			</control>
 			
-			<control type="scrollbar" id="151">
+			<control type="scrollbar" id="91305">
 				<left>1234</left>
 				<top>110</top>
 				<width>12</width>
 				<height>517</height>
 				<texturesliderbackground />
-				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideExtendedListViewScrollbar2) + !Control.HasFocus(151)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideExtendedListViewScrollbar2) + !Control.HasFocus(91305)">Conditional</animation>
 				<onup>850</onup>
 				<onleft>584</onleft>
 				<onright condition="!String.IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
@@ -2262,6 +2233,12 @@
 	<variable name="ExtendedInfoGenre2InfoVar">
 		<value condition="!String.IsEmpty(Container(584).ListItem.Property(Artist_Died))">$INFO[Container(584).ListItem.Property(Artist_Died)]</value>
 		<value>$INFO[Container(584).ListItem.Property(Artist_Disbanded)]</value>
+	</variable>
+	
+	<variable name="ExtendedListYearInfoVar">
+		<value condition="Container.Content(Sets) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Years)) + ![Control.HasFocus(584) | Control.HasFocus(91305)]">$INFO[Window(home).Property(SkinHelper.ListItem.Years)]</value>
+		<value condition="!String.IsEmpty(Container(584).ListItem.Year) + ![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]">$INFO[Container(584).ListItem.Year]</value>
+		<value>$LOCALIZE[31001]</value>
 	</variable>
 	
 	<include name="ExtendedListGrouplistContent">

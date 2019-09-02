@@ -706,7 +706,7 @@
 		<control type="group">
 			<include condition="![Skin.HasSetting(DisableMusicPlayingBG) | Skin.HasSetting(DisableVideoPlayingBG)]">IsMediaPlayingCondition</include>
 			<visible>String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
-			<visible>[Window.IsActive(1122) | Control.IsVisible(59) | Control.IsVisible(65) | Control.IsVisible(592)] + !Skin.HasSetting(EnableProgramsFanart)</visible>
+			<visible>[Window.IsActive(1122) | Control.IsVisible(59) | Control.IsVisible(65) | Control.IsVisible(53)] + !Skin.HasSetting(EnableProgramsFanart)</visible>
 			<include>BackgroundVisibleAnim</include>
 			<include>FanartImage</include>
 			<include>FanartDim</include>
