@@ -9,8 +9,16 @@
 			<include>ViewContentPanel</include>
 			<include>ListInfo2MediaInfoPanelCommon</include>
 
-			<include condition="String.Contains(Container.FolderPath,movies/) | String.Contains(Container.FolderPath,.xsp) | String.Contains(Container.FolderPath,special://videoplaylists/)">MoviesListInfo2</include>
-			<include condition="String.Contains(Container.FolderPath,tvshows/) | String.Contains(Container.FolderPath,.xsp) | String.Contains(Container.FolderPath,special://videoplaylists/)">TVShowsListInfo2</include>
+			<control type="group">
+				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
+				<include condition="Window.IsActive(Videos)">MoviesListInfo2</include>
+			</control>
+			
+			<control type="group">
+				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				<include condition="Window.IsActive(Videos)">TVShowsListInfo2</include>
+			</control>
+			
 			<include condition="String.Contains(Container.FolderPath,musicvideos/) | String.Contains(Container.FolderPath,.xsp) | String.Contains(Container.FolderPath,special://videoplaylists/)">MusicVideosListInfo2</include>
 			<include condition="Window.IsActive(Music)">MusicListInfo2</include>
 			<include condition="Window.IsActive(Programs)">ProgramsListInfo2</include>
@@ -1403,7 +1411,7 @@
 	
 	<include name="MoviesListInfo2">
 		<control type="group">
-			<visible>!ListItem.IsParentFolder + [Container.Content(Movies) | Container.Content(Sets)]</visible>
+			<visible>!ListItem.IsParentFolder</visible>
 			<include condition="!Skin.HasSetting(EnableMoviesListInfo2ExtraThumbs)">ListInfo2PanelFanart</include>
 			<include condition="Skin.HasSetting(EnableMoviesListInfo2ExtraThumbs)">ListInfo2PanelExtraThumbs</include>
 			

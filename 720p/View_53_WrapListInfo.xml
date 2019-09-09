@@ -24,7 +24,6 @@
 				
 				<include condition="Window.IsActive(Music) + [Skin.String(MusicWrapInfoStyle,1) | String.IsEmpty(Skin.String(MusicWrapInfoStyle))]">MusicWrapListInfoStyle1</include>
 				<include condition="Window.IsActive(Music) + Skin.String(MusicWrapInfoStyle,2)">MusicWrapListInfoStyle2</include>
-				
 				<include condition="Window.IsActive(Programs) + [Skin.String(ProgramsWrapListInfoStyle,1) | String.IsEmpty(Skin.String(ProgramsWrapListInfoStyle))]">ProgramsWrapListInfoPosterStyle</include>
 				<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,2)">ProgramsWrapListInfoPosterStyleLarge</include>
 				<include condition="Window.IsActive(Programs) + Skin.String(ProgramsWrapListInfoStyle,3)">ProgramsWrapListInfoSquareStyle</include>
@@ -1200,7 +1199,6 @@
 		</include>
 	</include>
 
-	<!-- WRAP INFO 3 -->
 	<include name="ProgramsWrapListInfoWideStyle">
 		<include content="WrapListInfoContent">
 			<param name="bg_top" value="397" />
