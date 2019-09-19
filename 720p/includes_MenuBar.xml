@@ -1799,18 +1799,6 @@
 				<include>MenuBarSeparator</include>
 				<visible>Control.IsVisible(7)</visible>
 			</control>
-			<control type="button" id="211">
-				<description>CD Art Manager</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$ADDON[script.cdartmanager 32042][/UPPERCASE]</label>
-				<onclick>RunScript(script.cdartmanager)</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.HasAddon(script.cdartmanager)</visible>
-			</control>
-			<control type="image" id="123">
-				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.cdartmanager)</visible>
-			</control>
 			<control type="button" id="212">
 				<description>Edit Database</description>
 				<include>MenuBarSettingsBtn</include>
