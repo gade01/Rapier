@@ -479,6 +479,14 @@
 							<onclick condition="System.HasAddon(script.skin.helper.skinbackup)">Addon.OpenSettings(script.skin.helper.skinbackup)</onclick>
 							<onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">InstallAddon(script.skin.helper.skinbackup)</onclick>
 						</control>
+						<control type="button" id="7015">
+							<description>script.cdartmanager</description>
+							<include>SettingsContentBtn</include>
+							<label>cdART Manager</label>
+							<label2>$VAR[StatusCDArtManagerVar]</label2>
+							<onclick condition="System.HasAddon(script.cdartmanager)">Addon.OpenSettings(script.cdartmanager)</onclick>
+							<onclick condition="!System.HasAddon(script.cdartmanager)">InstallAddon(script.cdartmanager)</onclick>
+						</control>
 						<control type="button" id="7016">
 							<description>service.upnext</description>
 							<include>SettingsContentBtn</include>
