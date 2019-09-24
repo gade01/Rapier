@@ -3962,7 +3962,7 @@
 						<top>15</top>
 						<width>134</width>
 						<height>134</height>
-						<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$INFO[Player.Art(album.thumb)]</texture>
+						<texture diffuse="covers/home-panel-album-cover-diffuse.png" background="true">$VAR[MusicPlayingCover]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<visible>![Skin.HasSetting(EnableMusicCdArt) + [String.Contains(Control.GetLabel(90000),cdart.png) | !String.IsEmpty(Player.Art(album.discart))]]</visible>
 					</control>
