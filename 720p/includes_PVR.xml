@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="PVRPremieredLabel">
+		<value condition="ListItem.IsPremiere">$INFO[ListItem.Premiered] [COLOR=DisabledColor]($LOCALIZE[842])[/COLOR]</value>
+		<value>$INFO[ListItem.Premiered]</value>
+	</variable>
+	
 	<variable name="LiveTVListInfoCoverImage">
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.FanArt))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.FanArt)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
