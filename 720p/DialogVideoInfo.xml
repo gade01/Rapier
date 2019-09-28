@@ -468,11 +468,12 @@
 								<description>Writer</description>
 								<label>$LOCALIZE[20417]</label>
 								<label2>$INFO[ListItem.Writer]</label2>
-								<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,writer)</onclick>
-								<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">ActivateWindow(1105)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
-								<onclick condition="System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=writer&amp;type=Movie)</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,writer)</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">ActivateWindow(1105)</onclick>
+								<onclick condition="!System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + [!System.HasAddon(script.extendedinfo) | !System.AddonIsEnabled(script.extendedinfo)]">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=writer&amp;type=Movie)</onclick>
 								<onclick condition="!System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+								<onclick condition="!System.HasAddon(script.libraryeditor) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 							</item>
 							<item id="3">
 								<description>Studio</description>
@@ -510,8 +511,9 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[21801]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
-								<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 								<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 							</item>
 						</content>
 					</control>
@@ -728,15 +730,17 @@
 									<description>Director</description>
 									<label>$LOCALIZE[20339]</label>
 									<label2>$INFO[Window(home).Property(SkinHelper.ListItem.Director)]</label2>
-									<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(SkinHelper.ListItem.Director)])</onclick>
+									<onclick condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(SkinHelper.ListItem.Director)])</onclick>
 									<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+									<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 								</item>
 								<item id="3">
 									<description>Writer</description>
 									<label>$LOCALIZE[20417]</label>
 									<label2>$INFO[Window(home).Property(SkinHelper.ListItem.Writer)]</label2>
-									<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(SkinHelper.ListItem.Writer)])</onclick>
+									<onclick condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(home).Property(SkinHelper.ListItem.Writer)])</onclick>
 									<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+									<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 								</item>
 								<item id="4">
 									<description>Year</description>
@@ -1021,11 +1025,12 @@
 								<description>Artist</description>
 								<label>$LOCALIZE[557]</label>
 								<label2>$INFO[ListItem.Artist]</label2>
-								<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,artist)</onclick>
-								<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">ActivateWindow(1105)</onclick>
-								<onclick condition="System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=MusicVideo)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,artist)</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">ActivateWindow(1105)</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + [!System.HasAddon(script.extendedinfo) | !System.AddonIsEnabled(script.extendedinfo)]">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=MusicVideo)</onclick>
+								<onclick condition="!System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
 								<onclick condition="!System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+								<onclick condition="!System.HasAddon(script.libraryeditor) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 							</item>
 							<item id="2">
 								<description>Album</description>
@@ -1076,8 +1081,9 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[21801]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
-								<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 								<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 							</item>
 						</content>
 					</control>
@@ -1271,11 +1277,12 @@
 								<description>Writer</description>
 								<label>$LOCALIZE[20417]</label>
 								<label2>$INFO[ListItem.Writer]</label2>
-								<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,writer)</onclick>
-								<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">ActivateWindow(1105)</onclick>
-								<onclick condition="!System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
-								<onclick condition="System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=writer&amp;type=Episode)</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,writer)</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">ActivateWindow(1105)</onclick>
+								<onclick condition="!System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
+								<onclick condition="System.HasAddon(script.libraryeditor) + [!System.HasAddon(script.extendedinfo) | !System.AddonIsEnabled(script.extendedinfo)]">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=writer&amp;type=Episode)</onclick>
 								<onclick condition="!System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+								<onclick condition="!System.HasAddon(script.libraryeditor) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 							</item>
 							<item id="5">
 								<description>Runtime</description>
@@ -1300,8 +1307,9 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[21801]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
-								<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 								<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 							</item>
 						</content>
 					</control>
@@ -1523,8 +1531,9 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[573]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
-								<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 								<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 							</item>
 						</content>
 					</control>
@@ -1750,8 +1759,9 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[573]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
-								<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 								<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 							</item>
 						</content>
 					</control>
@@ -1958,8 +1968,9 @@
 								<description>Writer</description>
 								<label>$LOCALIZE[20417]</label>
 								<label2>$INFO[ListItem.Writer]</label2>
-								<onclick condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Writer])</onclick>
 								<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 								<visible>!String.IsEmpty(ListItem.Writer)</visible>
 							</item>
 							<item id="5">
@@ -2010,8 +2021,9 @@
 								<description>File Path</description>
 								<label>$LOCALIZE[21801]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
-								<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+								<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 								<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+								<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 								<visible>!String.IsEmpty(ListItem.FileNameAndPath)</visible>
 							</item>
 						</content>

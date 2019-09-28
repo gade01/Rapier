@@ -2000,143 +2000,171 @@
 	</variable>
 	
 	<variable name="StatusUISoundsVar">
-		<value condition="System.HasAddon(resource.uisounds.rapier)">$INFO[System.AddonVersion(resource.uisounds.rapier)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(resource.uisounds.rapier) + System.AddonIsEnabled(resource.uisounds.rapier)">$INFO[System.AddonVersion(resource.uisounds.rapier)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(resource.uisounds.rapier)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusImageResourceSelectVar">
-		<value condition="System.HasAddon(script.image.resource.select)">$INFO[System.AddonVersion(script.image.resource.select)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.image.resource.select) + System.AddonIsEnabled(script.image.resource.select)">$INFO[System.AddonVersion(script.image.resource.select)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.image.resource.select)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusStudioIconsVar">
-		<value condition="System.HasAddon(resource.images.studios.white)">$INFO[System.AddonVersion(resource.images.studios.white)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(resource.images.studios.white) + System.AddonIsEnabled(resource.images.studios.white)">$INFO[System.AddonVersion(resource.images.studios.white)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(resource.images.studios.white)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusSkinHelperServiceVar">
-		<value condition="System.HasAddon(script.skin.helper.service)">$INFO[System.AddonVersion(script.skin.helper.service)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.skin.helper.service) + System.AddonIsEnabled(script.skin.helper.service)">$INFO[System.AddonVersion(script.skin.helper.service)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.skin.helper.service)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusSkinHelperBackgroundsVar">
-		<value condition="System.HasAddon(script.skin.helper.backgrounds)">$INFO[System.AddonVersion(script.skin.helper.backgrounds)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.skin.helper.backgrounds) + System.AddonIsEnabled(script.skin.helper.backgrounds)">$INFO[System.AddonVersion(script.skin.helper.backgrounds)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.skin.helper.backgrounds)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusSkinHelperWidgetsVar">
-		<value condition="System.HasAddon(script.skin.helper.widgets)">$INFO[System.AddonVersion(script.skin.helper.widgets)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.skin.helper.widgets) + System.AddonIsEnabled(script.skin.helper.widgets)">$INFO[System.AddonVersion(script.skin.helper.widgets)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.skin.helper.widgets)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusFavouritesScriptVar">
-		<value condition="System.HasAddon(script.favourites)">$INFO[System.AddonVersion(script.favourites)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.favourites) + System.AddonIsEnabled(script.favourites)">$INFO[System.AddonVersion(script.favourites)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.favourites)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusArtistSlideshowVar">
-		<value condition="System.HasAddon(script.artistslideshow)">$INFO[System.AddonVersion(script.artistslideshow)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.artistslideshow) + System.AddonIsEnabled(script.artistslideshow)">$INFO[System.AddonVersion(script.artistslideshow)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.artistslideshow)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusRandomAndLastItemsVar">
-		<value condition="System.HasAddon(script.randomandlastitems)">$INFO[System.AddonVersion(script.randomandlastitems)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.randomandlastitems) + System.AddonIsEnabled(script.randomandlastitems)">$INFO[System.AddonVersion(script.randomandlastitems)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.randomandlastitems)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusArtworkDownloaderVar">
-		<value condition="System.HasAddon(script.artwork.downloader)">$INFO[System.AddonVersion(script.artwork.downloader)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.artwork.downloader) + System.AddonIsEnabled(script.artwork.downloader)">$INFO[System.AddonVersion(script.artwork.downloader)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.artwork.downloader)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusTVShowNextAiredVar">
-		<value condition="System.HasAddon(script.tv.show.next.aired)">$INFO[System.AddonVersion(script.tv.show.next.aired)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.tv.show.next.aired) + System.AddonIsEnabled(script.tv.show.next.aired)">$INFO[System.AddonVersion(script.tv.show.next.aired)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.tv.show.next.aired)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusGlobalSearchVar">
-		<value condition="System.HasAddon(script.globalsearch)">$INFO[System.AddonVersion(script.globalsearch)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.globalsearch) + System.AddonIsEnabled(script.globalsearch)">$INFO[System.AddonVersion(script.globalsearch)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.globalsearch)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusCULRCLyricsVar">
-		<value condition="System.HasAddon(script.cu.lrclyrics)">$INFO[System.AddonVersion(script.cu.lrclyrics)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.cu.lrclyrics) + System.AddonIsEnabled(script.cu.lrclyrics)">$INFO[System.AddonVersion(script.cu.lrclyrics)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.cu.lrclyrics)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusSkinShortcutsVar">
-		<value condition="System.HasAddon(script.skinshortcuts)">$INFO[System.AddonVersion(script.skinshortcuts)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.skinshortcuts) + System.AddonIsEnabled(script.skinshortcuts)">$INFO[System.AddonVersion(script.skinshortcuts)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.skinshortcuts)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusSkinHelperSkinbackupVar">
-		<value condition="System.HasAddon(script.skin.helper.skinbackup)">$INFO[System.AddonVersion(script.skin.helper.skinbackup)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.skin.helper.skinbackup) + System.AddonIsEnabled(script.skin.helper.skinbackup)">$INFO[System.AddonVersion(script.skin.helper.skinbackup)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.skin.helper.skinbackup)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusExtendedInfoVar">
-		<value condition="System.HasAddon(script.extendedinfo)">$INFO[System.AddonVersion(script.extendedinfo)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.extendedinfo) + System.AddonIsEnabled(script.extendedinfo)">$INFO[System.AddonVersion(script.extendedinfo)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.extendedinfo)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusAutoCompletionVar">
-		<value condition="System.HasAddon(plugin.program.autocompletion)">$INFO[System.AddonVersion(plugin.program.autocompletion)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(plugin.program.autocompletion) + System.AddonIsEnabled(plugin.program.autocompletion)">$INFO[System.AddonVersion(plugin.program.autocompletion)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(plugin.program.autocompletion)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusWeatherbitVar">
-		<value condition="System.HasAddon(weather.weatherbit.io)">$INFO[System.AddonVersion(weather.weatherbit.io)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(weather.weatherbit.io) + System.AddonIsEnabled(weather.weatherbit.io)">$INFO[System.AddonVersion(weather.weatherbit.io)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(weather.weatherbit.io)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusUpnextVar">
-		<value condition="System.HasAddon(service.upnext)">$INFO[System.AddonVersion(service.upnext)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(service.upnext) + System.AddonIsEnabled(service.upnext)">$INFO[System.AddonVersion(service.upnext)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(service.upnext)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusLibraryNodeEditorVar">
-		<value condition="System.HasAddon(plugin.library.node.editor)">$INFO[System.AddonVersion(plugin.library.node.editor)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(plugin.library.node.editor) + System.AddonIsEnabled(plugin.library.node.editor)">$INFO[System.AddonVersion(plugin.library.node.editor)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(plugin.library.node.editor)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusUserRatingVar">
-		<value condition="System.HasAddon(script.user.rating)">$INFO[System.AddonVersion(script.user.rating)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.user.rating) + System.AddonIsEnabled(script.user.rating)">$INFO[System.AddonVersion(script.user.rating)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.user.rating)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusCinemaVisionVar">
-		<value condition="System.HasAddon(script.cinemavision)">$INFO[System.AddonVersion(script.cinemavision)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.cinemavision) + System.AddonIsEnabled(script.cinemavision)">$INFO[System.AddonVersion(script.cinemavision)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.cinemavision)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusSpecialFeaturesVar">
-		<value condition="System.HasAddon(plugin.video.specialfeatures)">$INFO[System.AddonVersion(plugin.video.specialfeatures)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(plugin.video.specialfeatures) + System.AddonIsEnabled(plugin.video.specialfeatures)">$INFO[System.AddonVersion(plugin.video.specialfeatures)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(plugin.video.specialfeatures)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusArtworkBeefVar">
-		<value condition="System.HasAddon(script.artwork.beef)">$INFO[System.AddonVersion(script.artwork.beef)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.artwork.beef) + System.AddonIsEnabled(script.artwork.beef)">$INFO[System.AddonVersion(script.artwork.beef)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.artwork.beef)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusLibraryEditorVar">
-		<value condition="System.HasAddon(script.libraryeditor)">$INFO[System.AddonVersion(script.libraryeditor)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.libraryeditor)">$INFO[System.AddonVersion(script.libraryeditor)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.libraryeditor)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusMyPicsDBVar">
-		<value condition="System.HasAddon(plugin.image.mypicsdb)">$INFO[System.AddonVersion(plugin.image.mypicsdb)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(plugin.image.mypicsdb) + System.AddonIsEnabled(plugin.image.mypicsdb)">$INFO[System.AddonVersion(plugin.image.mypicsdb)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(plugin.image.mypicsdb)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusIMDBUpdateVar">
-		<value condition="System.HasAddon(script.imdbupdate)">$INFO[System.AddonVersion(script.imdbupdate)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.imdbupdate) + System.AddonIsEnabled(script.imdbupdate)">$INFO[System.AddonVersion(script.imdbupdate)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.imdbupdate)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	
 	<variable name="StatusYoutubeBrowserVar">
-		<value condition="System.HasAddon(script.youtube.browser)">$INFO[System.AddonVersion(script.youtube.browser)] $LOCALIZE[31437]</value>
-		<value>$LOCALIZE[31438]</value>
+		<value condition="System.HasAddon(script.youtube.browser) + System.AddonIsEnabled(script.youtube.browser)">$INFO[System.AddonVersion(script.youtube.browser)] $LOCALIZE[31437]</value>
+		<value condition="!System.HasAddon(script.youtube.browser)">$LOCALIZE[31492]</value>
+		<value>$LOCALIZE[24023]</value>
 	</variable>
 	<!-- END Skin Settings -->
 	

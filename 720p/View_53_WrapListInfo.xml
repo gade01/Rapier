@@ -161,8 +161,9 @@
 				<onup>53</onup>
 				<onleft>850</onleft>
 				<onright>53</onright>
-				<oninfo condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container($PARAM[id]).ListItem.Label])</oninfo>
+				<oninfo condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container($PARAM[id]).ListItem.Label])</oninfo>
 				<oninfo condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</oninfo>
+				<oninfo condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</oninfo>
 				<itemlayout height="22">
 					<control type="label">
 						<left>5</left>

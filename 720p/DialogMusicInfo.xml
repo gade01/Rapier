@@ -217,10 +217,11 @@
 						<label>$LOCALIZE[557]</label>
 						<label2>$INFO[ListItem.Artist]</label2>
 						<onclick condition="!System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-						<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,artist)</onclick>
-						<onclick condition="System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">ActivateWindow(1105)</onclick>
-						<onclick condition="!System.HasAddon(script.libraryeditor) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
-						<onclick condition="System.HasAddon(script.libraryeditor) + !System.HasAddon(script.extendedinfo)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=Album)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+						<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">Skin.SetString(DialogVideoInfoButtonMenu,artist)</onclick>
+						<onclick condition="System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">ActivateWindow(1105)</onclick>
+						<onclick condition="!System.HasAddon(script.libraryeditor) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
+						<onclick condition="System.HasAddon(script.libraryeditor) + [!System.HasAddon(script.extendedinfo) | !System.AddonIsEnabled(script.extendedinfo)]">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=arr_artist&amp;type=Album)</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album)</visible>
 					</item>
 					<item id="2">
@@ -289,8 +290,9 @@
 						<description>File Path</description>
 						<label>$LOCALIZE[573]</label>
 						<label2>$INFO[ListItem.FileNameAndPath]</label2>
-						<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+						<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 						<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+						<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,album)</visible>
 					</item>
 					<item id="12">
@@ -419,8 +421,9 @@
 						<description>File Path</description>
 						<label>$LOCALIZE[21801]</label>
 						<label2>$INFO[ListItem.FileNameAndPath]</label2>
-						<onclick condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
+						<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.skin.helper.service,action=textviewer,header=$LOCALIZE[573],message=$INFO[ListItem.FileNameAndPath])</onclick>
 						<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
+						<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 						<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
 					</item>
 				</content>

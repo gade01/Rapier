@@ -117,8 +117,7 @@
 						<height>538</height>
 						<texturesliderbackground />
 						<onleft>500</onleft>
-						<onright condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(500).ListItem.Label] trailer)</onright>
-						<onright condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
+						<onright>RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(500).ListItem.Label] trailer)</onright>
 						<ondown>600</ondown>
 						<onup>700</onup>
 						<include>MediaInfoOpenCloseAnim</include>
@@ -330,8 +329,7 @@
 						<height>531</height>
 						<texturesliderbackground />
 						<onleft>500</onleft>
-						<onright condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(500).ListItem.Label] trailer)</onright>
-						<onright condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
+						<onright>RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(500).ListItem.Label] trailer)</onright>
 						<ondown>600</ondown>
 						<onup>700</onup>
 						<include>MediaInfoOpenCloseAnim</include>
