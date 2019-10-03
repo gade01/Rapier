@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="PVRPremieredLabel">
-		<value condition="ListItem.IsPremiere">$INFO[ListItem.Premiered] [COLOR=DisabledColor]($LOCALIZE[842])[/COLOR]</value>
+		<value condition="ListItem.IsNew">$INFO[ListItem.Premiered] [COLOR=DisabledColor]($LOCALIZE[842])[/COLOR]</value>
 		<value>$INFO[ListItem.Premiered]</value>
 	</variable>
 	
