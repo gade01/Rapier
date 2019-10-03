@@ -202,7 +202,7 @@
 					<onclick condition="System.AddonIsEnabled(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,4)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + !System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
@@ -259,7 +259,7 @@
 					<onclick condition="System.AddonIsEnabled(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,5)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16PanelPlaylist,.xsp,special://profile/playlists/video/)</onclick>
 					<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + !System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
@@ -316,7 +316,7 @@
 					<onclick condition="System.AddonIsEnabled(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,9)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.randomandlastitems) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetFile(Custom16PanelPlaylist,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
+					<onclick condition="System.HasAddon(script.randomandlastitems) + !System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click8Top]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click8Top]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click8Top]</onclick>
@@ -357,7 +357,7 @@
 					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,10)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,10)</onclick>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+					<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
@@ -401,7 +401,7 @@
 					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,11)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,11)</onclick>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+					<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
@@ -445,7 +445,7 @@
 					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,3)">Skin.SetString(Custom15PanelType,12)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,12)</onclick>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+					<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>
@@ -662,7 +662,7 @@
 					<onclick condition="System.AddonIsEnabled(script.skinshortcuts) + Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(SelectedExpandedBtn,4)">Skin.SetString(Custom16PanelType,13)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.skinshortcuts)">Skin.SetString(DialogVideoInfoButtonMenu,CustomWidgets)</onclick>
 					<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + !System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn1Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn2Click7]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn3Click7]</onclick>

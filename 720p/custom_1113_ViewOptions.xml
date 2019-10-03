@@ -34,7 +34,7 @@
 				<onclick condition="System.AddonIsEnabled(script.skin.helper.service) + !Skin.HasSetting(EnableAnimatedPosters)">Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.skin.helper.service) + Skin.HasSetting(EnableAnimatedPosters)">Skin.Reset(SkinHelper.EnableAnimatedPosters)</onclick>
 				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
+				<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
 			</control>
 			<control type="radiobutton" id="3059">
@@ -153,7 +153,7 @@
 				<selected>!Skin.HasSetting(HideWrapListInfoCast)</selected>
 				<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">Skin.ToggleSetting(HideWrapListInfoCast)</onclick>
 				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
+				<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 				<enable>!Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)</enable>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)] + Skin.String(CurrentViewMode,53)] + [String.IsEmpty(Skin.String(MoviesWrapListInfoStyle)) | Skin.String(MoviesWrapListInfoStyle,1)]</visible>
 			</control>
@@ -494,7 +494,7 @@
 				<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">Skin.ToggleSetting(EnableNextAiredInfo)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">ReloadSkin()</onclick>
 				<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.tv.show.next.aired)">EnableAddon(script.tv.show.next.aired)</onclick>
+				<onclick condition="System.HasAddon(script.tv.show.next.aired) + !System.AddonIsEnabled(script.tv.show.next.aired)">EnableAddon(script.tv.show.next.aired)</onclick>
 				<include>ReloadSkinNotification</include>
 				<visible>$EXP[TVShowsSeasonsEpisodes] + [Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,65)]</visible>
 			</control>

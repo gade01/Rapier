@@ -621,7 +621,7 @@
 				<onclick condition="System.AddonIsEnabled(plugin.library.node.editor) + Window.IsActive(Videos)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 				<onclick condition="System.AddonIsEnabled(plugin.library.node.editor) + Window.IsActive(Music)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
 				<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-				<onclick condition="!System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
+				<onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
 				<visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
 			</control>
@@ -1605,7 +1605,7 @@
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,video)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label])</onclick>
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,episode)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label])</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 				<visible>String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,video)</visible>
 			</control>
 			<control type="image" id="127">
@@ -1645,7 +1645,7 @@
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + ![String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label] trailer)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,season)]">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label] trailer)</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 				<visible>String.IsEmpty(ListItem.Trailer)</visible>
 			</control>
 			<control type="image" id="121">
@@ -1742,7 +1742,7 @@
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo)">Skin.SetString(ExtendedInfoDialog,6)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo)">ActivateWindow(1101)</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 			</control>
 			<control type="image" id="121">
 				<include>MenuBarSeparator</include>
@@ -1910,7 +1910,7 @@
 				<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">Action(close)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">PlayMedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)])</onclick>
 				<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
+				<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 				<label>[UPPERCASE]$LOCALIZE[20410][/UPPERCASE]</label>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Trailer))</visible>
 			</control>
@@ -1924,7 +1924,7 @@
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo)">Action(close)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Title])</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 				<label>[UPPERCASE]$LOCALIZE[31092][/UPPERCASE]</label>
 			</control>
 			<control type="image" id="125">
@@ -2478,7 +2478,7 @@
 				<onclick>Dialog.Close(1117)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,video)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(901).ListItem.Label])</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 				<oninfo>Dialog.Close(1117)</oninfo>
 			</control>
 			<control type="image" id="121">
@@ -2500,7 +2500,7 @@
 				<onclick>Dialog.Close(1117)</onclick>
 				<onclick condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(901).ListItem.Label] trailer)</onclick>
 				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="!System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 				<oninfo>Dialog.Close(1117)</oninfo>
 				<visible>String.IsEmpty(Container(901).ListItem.Trailer)</visible>
 			</control>
