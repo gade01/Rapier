@@ -226,12 +226,12 @@
 					<left>420</left>
 					<width>218</width>
 					<height>218</height>
-					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)]</texture>
+					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png">$VAR[ExtendedListMusicThumb]</texture>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
 					<bordersize>1</bordersize>
-					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)) + String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+					<visible>[String.Contains(Container.FolderPath,musicdb://albums/) + !String.IsEmpty(ListItem.Art(artist.thumb))] | [String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Art(thumb))] | [String.Contains(Container.FolderPath,videodb://musicvideos/directors/) + !String.IsEmpty(ListItem.Art(thumb))]</visible>
 				</control>
 				
 				<control type="image">
@@ -244,19 +244,7 @@
 					<fadetime>FanartCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
 					<bordersize>10</bordersize>
-					<visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.ArtistThumb)) + String.Contains(Container.FolderPath,musicdb://albums/)</visible>
-				</control>
-				
-				<control type="image">
-					<left>420</left>
-					<width>218</width>
-					<height>218</height>
-					<texture background="true" diffuse="covers/list-info-thumb-diffuse.png">$INFO[ListItem.Thumb]</texture>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<fadetime>FanartCrossfadeTime</fadetime>
-					<include>NotificationsOpenCloseAnim</include>
-					<bordersize>1</bordersize>
-					<visible>!String.IsEmpty(ListItem.Thumb) + String.Contains(Container.FolderPath,videodb://musicvideos/directors/)</visible>
+					<visible>[String.Contains(Container.FolderPath,musicdb://albums/) + String.IsEmpty(ListItem.Art(artist.thumb))] | [String.Contains(Container.FolderPath,musicdb://artists/) + String.IsEmpty(ListItem.Art(thumb))]</visible>
 				</control>
 				
 				<control type="image">
@@ -450,7 +438,7 @@
 			</control>
 
 			<control type="group">
-				<visible>![[Window.IsActive(Videos) + String.IsEmpty(Container(584).ListItem.Title)] | [Window.IsActive(Music) + String.IsEmpty(Container(584).ListItem.Artist)]] + !ListItem.IsParentFolder</visible>
+				<visible>![[Window.IsActive(Videos) + String.IsEmpty(Container(584).ListItem.Title)] | [Window.IsActive(Music) + String.IsEmpty(Container(584).ListItem.Artist) + !String.Contains(Container.FolderPath,musicdb://artists/) + !String.Contains(Container.FolderPath,musicdb://albums/)]] + !ListItem.IsParentFolder</visible>
 				<animation effect="slide" end="0,-41" condition="String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)">Conditional</animation>
 				<animation effect="slide" end="0,61" condition="Container.Content(Sets)">Conditional</animation>
 				
@@ -484,16 +472,16 @@
 							<param name="visible" value="String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
-							<param name="label" value="$LOCALIZE[557]" />
+							<param name="label" value="$VAR[ExtendedListArtistLabelVar]" />
 							<param name="width" value="320" />
-							<param name="info" value="$VAR[ExtendedListArtistVar]" />
-							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/)" />
+							<param name="info" value="$VAR[ExtendedListArtistInfoVar]" />
+							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/) | [String.Contains(Container.FolderPath,musicdb://artists/) + [Control.HasFocus(584) | Control.HasFocus(91305)]]" />
 						</include>						
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$VAR[ExtendedListGenreLabelVar]" />
 							<param name="width" value="320" />
 							<param name="info" value="$VAR[ExtendedListGenreInfoVar]" />
-							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://genres/) + ![String.IsEmpty(Container(584).ListItem.Property(Artist_Born)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Formed))]" />
+							<param name="visible" value="[String.Contains(Container.FolderPath,musicdb://genres/) + ![String.IsEmpty(Container(584).ListItem.Property(Artist_Born)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Formed))]] | [String.Contains(Container.FolderPath,musicdb://artists/) + ![[String.IsEmpty(ListItem.Property(Artist_Born)) + String.IsEmpty(ListItem.Property(Artist_Formed))] | Control.HasFocus(584) | Control.HasFocus(91305)]]" />
 						</include>
 						<control type="label">
 							<width min="0" max="320">auto</width>
@@ -501,7 +489,7 @@
 							<textcolor>MediaInfoItemColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$LOCALIZE[21893]/$LOCALIZE[21894]: [COLOR=MediaInfoItemColor2]$LOCALIZE[31001][/COLOR]</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://genres/) + String.IsEmpty(Container(584).ListItem.Property(Artist_Born)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Formed))</visible>
+							<visible>[String.Contains(Container.FolderPath,musicdb://genres/) + String.IsEmpty(Container(584).ListItem.Property(Artist_Born)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Formed))] | [String.Contains(Container.FolderPath,musicdb://artists/) + String.IsEmpty(ListItem.Property(Artist_Born)) + String.IsEmpty(ListItem.Property(Artist_Formed)) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]</visible>
 						</control>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[31936]" />
@@ -569,8 +557,8 @@
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[345]" />
 							<param name="width" value="110" />
-							<param name="info" value="$INFO[ListItem.Year]" />
-							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://albums/)" />
+							<param name="info" value="$VAR[ExtendedListMusicYearVar]" />
+							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://albums/) | [String.Contains(Container.FolderPath,musicdb://artists/) + [Control.HasFocus(584) | Control.HasFocus(91304)]]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[515]" />
@@ -584,21 +572,21 @@
 							<textcolor>MediaInfoItemColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$LOCALIZE[21898]:</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive))</visible>
+							<visible>[String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive))] | [String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Property(Artist_YearsActive)) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]</visible>
 						</control>
 						<control type="label">
 							<width min="0" max="320">auto</width>
 							<font>MediaInfoFont</font>
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[Container(584).ListItem.Property(Artist_YearsActive)]</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive))</visible>
-						</control>						
+							<label>$VAR[ExtendedListYearsActiveVar]</label>
+							<visible>[String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive))] | [String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Property(Artist_YearsActive)) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]</visible>
+						</control>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$VAR[ExtendedInfoGenre2LabelVar]" />
 							<param name="width" value="320" />
 							<param name="info" value="$VAR[ExtendedInfoGenre2InfoVar]" />
-							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://genres/) + String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive)) + ![String.IsEmpty(Container(584).ListItem.Property(Artist_Died)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Disbanded))]" />
+							<param name="visible" value="[String.Contains(Container.FolderPath,musicdb://genres/) + String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive)) + ![String.IsEmpty(Container(584).ListItem.Property(Artist_Died)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Disbanded))]] | [String.Contains(Container.FolderPath,musicdb://artists/) + String.IsEmpty(ListItem.Property(Artist_YearsActive)) + ![[String.IsEmpty(ListItem.Property(Artist_Died)) + String.IsEmpty(ListItem.Property(Artist_Disbanded))] | Control.HasFocus(584) | Control.HasFocus(91305)]]" />
 						</include>
 						<control type="label">
 							<width min="0" max="320">auto</width>
@@ -606,7 +594,7 @@
 							<textcolor>MediaInfoItemColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$LOCALIZE[21897]/$LOCALIZE[21896]: [COLOR=MediaInfoItemColor2]$LOCALIZE[31001][/COLOR]</label>
-							<visible>String.Contains(Container.FolderPath,musicdb://genres/) + String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Died)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Disbanded))</visible>
+							<visible>[String.Contains(Container.FolderPath,musicdb://genres/) + String.IsEmpty(Container(584).ListItem.Property(Artist_YearsActive)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Died)) + String.IsEmpty(Container(584).ListItem.Property(Artist_Disbanded))] | [String.Contains(Container.FolderPath,musicdb://artists/) + String.IsEmpty(ListItem.Property(Artist_YearsActive)) + String.IsEmpty(ListItem.Property(Artist_Died)) + String.IsEmpty(ListItem.Property(Artist_Disbanded)) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]</visible>
 						</control>
 					</control>
 					
@@ -710,37 +698,15 @@
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[563]" />
 							<param name="width" value="110" />
-							<param name="info" value="$VAR[RatingType]" />
-							<param name="visible" value="String.Contains(Container.FolderPath,musicdb://albums/) + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="info" value="$VAR[ExtendedListRatingType]" />
+							<param name="visible" value="[String.Contains(Container.FolderPath,musicdb://albums/) + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]] | [String.Contains(Container.FolderPath,musicdb://artists/) + ![String.IsEmpty(Container(584).ListItem.Rating) + String.IsEmpty(Container(584).ListItem.UserRating)] + [Control.HasFocus(584) | Control.HasFocus(91305)]]" />
 						</include>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[563]:</label>
-							<visible>![String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
-							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[Container(584).ListItem.Rating]</label>
-							<visible>![String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/)]</visible>
-							<visible>![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)] + System.HasAddon(script.skin.helper.service)]</visible>
-							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
-						</control>
-						<control type="label">
-							<width min="0" max="110">auto</width>
-							<font>MediaInfoFont</font>
-							<textcolor>MediaInfoItemColor2</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$VAR[RatingType]</label>
-							<visible>Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)] + System.HasAddon(script.skin.helper.service)</visible>
-							<visible>!String.Contains(Container.FolderPath,musicdb://)</visible>
-						</control>
+						<include content="ExtendedListGrouplistContent">
+							<param name="label" value="$LOCALIZE[563]" />
+							<param name="width" value="110" />
+							<param name="info" value="$VAR[ExtendedListRatingType]" />
+							<param name="visible" value="![String.IsEmpty(Container(584).ListItem.Rating) + String.IsEmpty(Container(584).ListItem.UserRating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/)] + !String.Contains(Container.FolderPath,musicdb://)" />
+						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[572]" />
 							<param name="width" value="240" />
@@ -789,7 +755,7 @@
 					<param name="top" value="446" />
 					<param name="height" value="212" />
 					<param name="label" value="$VAR[ExtendedListDescriptionVar]" />
-					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)" />
+					<param name="visible" value="!Container.OnNext + !Container.OnPrevious + [String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)]" />
 				</include>
 				
 				<include content="ExtendedListPlot">
@@ -822,7 +788,7 @@
 				<onleft condition="Integer.IsLessOrEqual(Container(585).NumPages,1)">850</onleft>
 				<onright>584</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsAlbums]</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums]</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<width>354</width>
@@ -961,7 +927,7 @@
 				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onright>
 				<onright condition="Control.IsVisible(91305)">91305</onright>
 				<visible>!ListItem.IsParentFolder</visible>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsAlbums]</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums]</visible>
 				<itemlayout height="37">
 					<control type="image">
 						<width>354</width>
@@ -989,20 +955,8 @@
 						<textcolor>ListColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Label]</label>
-						<visible>String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)</visible>
-					</control>
-					<control type="label">
-						<description>Label</description>
-						<left>35</left>
-						<width>314</width>
-						<height>37</height>
-						<font>ListFont</font>
-						<textcolor>ListColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/)]</visible>
+						<label>$VAR[ExtendedListContainerLabel]</label>
+						<visible>!String.Contains(Container.FolderPath,musicdb://albums/)</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -1108,22 +1062,9 @@
 						<textcolor>SelectedColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Label]</label>
+						<label>$VAR[ExtendedListContainerLabel]</label>
 						<scroll>true</scroll>
-						<visible>String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)</visible>
-					</control>
-					<control type="label">
-						<description>Label</description>
-						<left>35</left>
-						<width>314</width>
-						<height>37</height>
-						<font>ListFont</font>
-						<textcolor>SelectedColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-						<scroll>true</scroll>
-						<visible>![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://albums/)]</visible>
+						<visible>!String.Contains(Container.FolderPath,musicdb://albums/)</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -1273,7 +1214,7 @@
 					<aspectratio>keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
-					<visible>![String.IsEmpty(Container(584).ListItem.Art(clearlogo)) + String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))] + [[String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + !Skin.HasSetting(EnableMusicLibraryClearLogos)]</visible>
+					<visible>![String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Container(584).ListItem.Art(clearlogo)) + String.IsEmpty(Skin.String(MusicLibraryClearLogosPath))] + [[String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + !Skin.HasSetting(EnableMusicLibraryClearLogos)]</visible>
 				</control>
 				<control type="label">
 					<include>InfoPaneHeadLabel</include>
@@ -1302,8 +1243,8 @@
 	</variable>
 	
 	<variable name="ExtendedListSortby">
+		<value condition="String.Contains(Container.FolderPath,videodb://movies/sets/) | String.Contains(Container.FolderPath,musicdb://artists/)">year</value>
 		<value condition="Window.IsActive(Music)">artist</value>
-		<value condition="String.Contains(Container.FolderPath,videodb://movies/sets/)">year</value>
 		<value condition="String.Contains(Container.FolderPath,videodb://musicvideos/)">artist</value>
 		<value>label</value>
 	</variable>
@@ -1315,11 +1256,13 @@
 		<value condition="String.Contains(Container.FolderPath,videodb://musicvideos/)">$INFO[Container(584).NumItems,, $LOCALIZE[20389]]</value>
 		<value condition="String.Contains(Container.FolderPath,musicdb://albums/)">$INFO[Container(584).NumItems,, $LOCALIZE[134]]</value>
 		<value condition="String.Contains(Container.FolderPath,musicdb://genres/)">$INFO[Container(584).NumItems,, $LOCALIZE[133]]</value>
-		<value condition="String.Contains(Container.FolderPath,musicdb://years/)">$INFO[Container(584).NumItems,, $LOCALIZE[132]]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/) | String.Contains(Container.FolderPath,musicdb://years/)">$INFO[Container(584).NumItems,, $LOCALIZE[132]]</value>
 	</variable>
 	
 	<variable name="ExtendedListDescriptionVar">
 		<value condition="String.Contains(Container.FolderPath,musicdb://genres/)">$INFO[Container(584).ListItem.Property(Artist_Description)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/) + [Control.HasFocus(584) | Control.HasFocus(91305)]">$INFO[Container(584).ListItem.Property(Album_Description)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="String.Contains(Container.FolderPath,musicdb://albums/)">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="String.Contains(Container.FolderPath,musicdb://years/)">$INFO[Container(584).ListItem.Property(Album_Description)]</value>
 		<value condition="String.Contains(Container.FolderPath,videodb://musicvideos/)">$INFO[Container(584).ListItem.Plot]</value>
@@ -1330,7 +1273,13 @@
 		<value>$VAR[ExtendedListUnformattedDurationVar]</value>
 	</variable>
 	
+	<variable name="ExtendedListMusicThumb">
+		<value condition="Container.Content(Albums)">$INFO[ListItem.Art(artist.thumb)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>
+	</variable>
+	
 	<variable name="ExtendedListMusicClearlogoVar">
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(Container(584).ListItem.Art(clearlogo))">$INFO[Container(584).ListItem.Art(clearlogo)]</value>
 		<value>$INFO[Skin.String(MusicLibraryClearLogosPath)]$INFO[Container(584).ListItem.Artist,,/logo.png]</value>
 	</variable>
@@ -2212,35 +2161,67 @@
 		</control>
 	</include>
 	
-	<variable name="ExtendedListArtistVar">
-		<value condition="String.Contains(Container.FolderPath,musicdb://years/)">$INFO[Container(584).ListItem.Artist]</value>
+	<variable name="ExtendedListArtistInfoVar">
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[Container(584).ListItem.Genre]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://years/) | String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[Container(584).ListItem.Artist]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	
+	<variable name="ExtendedListArtistLabelVar">
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$LOCALIZE[515]</value>
+		<value>$LOCALIZE[557]</value>
+	</variable>
+	
 	<variable name="ExtendedListGenreLabelVar">
-		<value condition="!String.IsEmpty(Container(584).ListItem.Property(Artist_Born))">$LOCALIZE[21893]</value>
+		<value condition="[String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_Born))] | [String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Property(Artist_Born))]">$LOCALIZE[21893]</value>
 		<value>$LOCALIZE[21894]</value>
 	</variable>
 	
 	<variable name="ExtendedListGenreInfoVar">
-		<value condition="!String.IsEmpty(Container(584).ListItem.Property(Artist_Born))">$INFO[Container(584).ListItem.Property(Artist_Born)]</value>
-		<value>$INFO[Container(584).ListItem.Property(Artist_Formed)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_Born))">$INFO[Container(584).ListItem.Property(Artist_Born)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://genres/)">$INFO[Container(584).ListItem.Property(Artist_Formed)]</value>
+		<value>$INFO[ListItem.Property(Artist_Formed)]</value>
+	</variable>
+	
+	<variable name="ExtendedListMusicYearVar">
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[Container(584).ListItem.Year]</value>
+		<value>$INFO[ListItem.Year]</value>
+	</variable>
+	
+	<variable name="ExtendedListYearsActiveVar">
+		<value condition="String.Contains(Container.FolderPath,musicdb://genres/)">$INFO[Container(584).ListItem.Property(Artist_YearsActive)]</value>
+		<value>$INFO[ListItem.Property(Artist_YearsActive)]</value>
 	</variable>
 	
 	<variable name="ExtendedInfoGenre2LabelVar">
-		<value condition="!String.IsEmpty(Container(584).ListItem.Property(Artist_Died))">$LOCALIZE[21897]</value>
+		<value condition="[String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_Died))] | [String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Property(Artist_Died))]">$LOCALIZE[21897]</value>
 		<value>$LOCALIZE[21896]</value>
 	</variable>
 	
 	<variable name="ExtendedInfoGenre2InfoVar">
-		<value condition="!String.IsEmpty(Container(584).ListItem.Property(Artist_Died))">$INFO[Container(584).ListItem.Property(Artist_Died)]</value>
-		<value>$INFO[Container(584).ListItem.Property(Artist_Disbanded)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://genres/) + !String.IsEmpty(Container(584).ListItem.Property(Artist_Died))">$INFO[Container(584).ListItem.Property(Artist_Died)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/) + !String.IsEmpty(ListItem.Property(Artist_Died))">$INFO[ListItem.Property(Artist_Died)]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://genres/)">$INFO[Container(584).ListItem.Property(Artist_Disbanded)]</value>
+		<value>$INFO[ListItem.Property(Artist_Disbanded)]</value>
+	</variable>
+	
+	<variable name="ExtendedListRatingType">
+		<value condition="[[Window.IsActive(Videos) + ![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]] | String.Contains(Container.FolderPath,musicdb://artists/)] + Skin.HasSetting(RatingTypeUser) + !String.IsEmpty(Container(584).ListItem.UserRating)">$INFO[Container(584).ListItem.UserRating]</value>
+		<value condition="[Window.IsActive(Videos) + ![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]] | String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[Container(584).ListItem.Rating]</value>
+		<value>$VAR[RatingType]</value>
 	</variable>
 	
 	<variable name="ExtendedListYearInfoVar">
 		<value condition="Container.Content(Sets) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Years)) + ![Control.HasFocus(584) | Control.HasFocus(91305)]">$INFO[Window(home).Property(SkinHelper.ListItem.Years)]</value>
 		<value condition="!String.IsEmpty(Container(584).ListItem.Year) + ![Container.Content(Sets) + ![Control.HasFocus(584) | Control.HasFocus(91305)]]">$INFO[Container(584).ListItem.Year]</value>
 		<value>$LOCALIZE[31001]</value>
+	</variable>
+	
+	<variable name="ExtendedListContainerLabel">
+		<value condition="String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://years/)">$INFO[ListItem.Artist,, - ]$INFO[ListItem.Label]</value>
+		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</value>
+		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	
 	<include name="ExtendedListGrouplistContent">
