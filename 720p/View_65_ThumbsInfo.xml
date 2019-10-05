@@ -7,7 +7,8 @@
 			<visible>Control.IsVisible(65)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ViewContentPanel</include>
-			<include>ListInfo3MediaInfoPanelCommon</include>
+			<include condition="!Window.IsActive(Pictures)">ListInfo3MediaInfoPanelCommon</include>
+			<include condition="Window.IsActive(Pictures)">ViewContentPanelPictures</include>
 			
 			<control type="group">
 				<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
@@ -21,6 +22,7 @@
 			
 			<include condition="Window.IsActive(Music)">MusicThumbsInfo</include>
 			<include condition="Window.IsActive(Programs)">ProgramsThumbsInfo</include>
+			<include condition="Window.IsActive(Pictures)">PicturesThumbsInfo</include>
 
 			<control type="panel" id="65">
 				<viewtype label="31116">icon</viewtype>
@@ -37,7 +39,7 @@
 				<onup>65</onup>
 				<ondown>65</ondown>
 				<oninfo condition="Window.IsActive(Programs)">ActivateWindow(1122)</oninfo>
-				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program) | Container.HasFiles</visible>
 				<itemlayout width="129" height="171" condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(ThumbsInfoMoviesStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoMoviesStyle))]] | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]] | [String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.String(ProgramsThumbsInfoStyle,1)]">
 					<control type="group">
 						<top>-2</top>
@@ -180,6 +182,7 @@
 				</focusedlayout>
 				<include condition="Window.IsActive(Videos) + !Skin.HasSetting(UseTVShowsPosterCover)">TVShowsThumbsInfoBannerStyle</include>
 				<include condition="Window.IsActive(Music) | Window.IsActive(Programs)">MusicProgramsThumbsInfoLayout</include>
+				<include condition="Window.IsActive(Pictures)">PicturesThumbsInfoLayout</include>
 			</control>
 			
 			<include content="ThumbsInfoViewScrollbar">
@@ -378,6 +381,32 @@
 		</control>
 	</include>
 	
+	<include name="ThumbsInfoPicturesGenre">
+		<control type="image">
+			<description>Title Background</description>
+			<left>10</left>
+			<top>228</top>
+			<width>244</width>
+			<height>25</height>
+			<texture background="true">dim.png</texture>
+			<visible>!ListItem.IsParentFolder</visible>
+		</control>
+		<control type="label">
+			<description>Genre</description>
+			<left>13</left>
+			<top>229</top>
+			<width>240</width>
+			<align>center</align>
+			<font>MediaInfoFont3</font>
+			<textcolor>WhiteColor</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<scroll>$PARAM[scroll]</scroll>
+			<animation effect="fade" end="90" condition="true">Conditional</animation>
+			<visible>!ListItem.IsParentFolder</visible>
+		</control>
+	</include>
+	
 	<include name="TVShowsThumbsInfoBannerStyle">
 		<itemlayout width="386" height="73" condition="Container.Content(TVShows) + [Skin.String(ThumbsInfoTVShowStyle,1) | String.IsEmpty(Skin.String(ThumbsInfoTVShowStyle))]">
 			<control type="group">
@@ -537,6 +566,53 @@
 					<param name="visible_image" value="true" />
 					<param name="bordersize" value="20" />
 					<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="PicturesThumbsInfoLayout">
+		<itemlayout width="258" height="256">
+			<control type="group">
+				<top>-2</top>
+				<include content="ThumbsInfoItemlayout">
+					<param name="width" value="264" />
+					<param name="height" value="263" />
+					<param name="texture" value="$INFO[ListItem.Thumb]" />
+					<param name="aspectratio" value="keep" />
+					<param name="visible_image" value="true" />
+					<param name="bordersize" value="20" />
+					<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				</include>
+				<control type="image">
+					<description>Dim</description>
+					<width>264</width>
+					<height>263</height>
+					<texture background="true">dim.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<bordersize>10</bordersize>
+					<include>CoverDimAnim</include>
+				</control>
+				<include content="ThumbsInfoPicturesGenre">
+					<param name="scroll" value="false" />
+				</include>
+			</control>
+		</itemlayout>
+		<focusedlayout width="258" height="256">
+			<control type="group">
+				<top>-2</top>
+				<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">PicturesThumbsInfoSquareFocusAnim</include>
+				<include content="ThumbsInfoFocusedlayout">
+					<param name="width" value="264" />
+					<param name="height" value="263" />
+					<param name="texture" value="$INFO[ListItem.Thumb]" />
+					<param name="aspectratio" value="keep" />
+					<param name="visible_image" value="true" />
+					<param name="bordersize" value="20" />
+					<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				</include>
+				<include content="ThumbsInfoPicturesGenre">
+					<param name="scroll" value="true" />
 				</include>
 			</control>
 		</focusedlayout>
@@ -733,6 +809,14 @@
 				<param name="fallback" value="31203" />
 				<param name="label" value="$INFO[ListItem.Plot]" />
 			</include>
+		</control>
+	</include>
+	
+	<include name="PicturesThumbsInfo">
+		<control type="group">
+			<visible>!ListItem.IsParentFolder</visible>
+			<include>MediaViewOpenCloseAnim</include>
+			<include>PicsInfo</include>
 		</control>
 	</include>
 	<!-- END INCLUDES -->

@@ -320,7 +320,7 @@
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideListInfoView3Scrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
 				<control type="panel" id="90801">
-					<visible>[Control.IsVisible(60) | Control.IsVisible(578)] + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
+					<visible>Control.IsVisible(60) + ![Container.Content(Episodes) + !String.IsEqual(Container.SortMethod,$LOCALIZE[551])]</visible>
 					<onright>$VAR[ScrollbarTrailer2]</onright>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="817" />
@@ -358,7 +358,7 @@
 				<animation effect="fade" start="100" end="0" time="150" condition="Skin.HasSetting(HideThumbsInfoViewScrollbar) + !ControlGroup(150).HasFocus">Conditional</animation>
 				
 				<control type="panel" id="90901">
-					<visible>Control.IsVisible(65) | Control.IsVisible(532) | Control.IsVisible(579)</visible>
+					<visible>Control.IsVisible(65) | Control.IsVisible(532)</visible>
 					<include content="QuickJumpVerticalLayout">
 						<param name="left" value="1232" />
 						<param name="top" value="113" />

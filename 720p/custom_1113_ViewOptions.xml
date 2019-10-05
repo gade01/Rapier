@@ -263,7 +263,7 @@
 				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoLabel)</onclick>
 				<onclick condition="Container.Content(Albums)">Skin.ToggleSetting(HideMusicThumbsInfoLabel)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Skin.ToggleSetting(HideProgramsThumbsInfoLabel)</onclick>
-				<visible>Skin.String(CurrentViewMode,65) | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
+				<visible>[Skin.String(CurrentViewMode,65) + !Container.HasFiles) | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="3069">
 				<description>Thumbs Info Hide Overlay (Movies) (Sets) (TVShows) (Videos)</description>
@@ -737,7 +737,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>Skin.HasSetting(HideListInfoView3Scrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideListInfoView3Scrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,578)</visible>
+				<visible>Skin.String(CurrentViewMode,60)</visible>
 			</control>
 			<control type="radiobutton" id="3070">
 				<description>Thumbs Info Hide Scrollbar</description>
@@ -745,7 +745,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>Skin.HasSetting(HideThumbsInfoViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideThumbsInfoViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,532) | Skin.String(CurrentViewMode,579)</visible>
+				<visible>Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,532)</visible>
 			</control>
 			<control type="radiobutton" id="1031">
 				<description>Wrap Info Hide Scrollbar</description>
@@ -983,8 +983,8 @@
 				<onclick>Skin.SetString(PicturesListStyle,1)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(578)</onclick>
-				<visible>Skin.String(CurrentViewMode,578)</visible>
+				<onclick>Container.SetViewMode(60)</onclick>
+				<visible>Container.Content(Images) + Skin.String(CurrentViewMode,60)</visible>
 			</control>
 			<control type="radiobutton" id="3061">
 				<description>Pictures List Use Style 2</description>
@@ -994,8 +994,8 @@
 				<onclick>Skin.SetString(PicturesListStyle,2)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(578)</onclick>
-				<visible>Skin.String(CurrentViewMode,578)</visible>
+				<onclick>Container.SetViewMode(60)</onclick>
+				<visible>Container.Content(Images) + Skin.String(CurrentViewMode,60)</visible>
 			</control>
 			<control type="radiobutton" id="3062">
 				<description>Pictures List Use Style 3</description>
@@ -1005,8 +1005,8 @@
 				<onclick>Skin.SetString(PicturesListStyle,3)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(578)</onclick>
-				<visible>Skin.String(CurrentViewMode,578)</visible>
+				<onclick>Container.SetViewMode(60)</onclick>
+				<visible>Container.Content(Images) + Skin.String(CurrentViewMode,60)</visible>
 			</control>
 			<control type="radiobutton" id="3098">
 				<description>Thumbs Info Use Style 1 (Movies) (Sets) (TVShow)</description>

@@ -82,8 +82,7 @@
 				<description>List Media Info 3</description>
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31115]</label>
-				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Albums)">Container.SetViewMode(60)</onclick>
-				<onclick condition="Container.Content(images)">Container.SetViewMode(578)</onclick>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Albums) | Container.Content(images)">Container.SetViewMode(60)</onclick>
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(DisableMoviesTVShowsListInfoView3)]
 				| [Container.Content(Albums) + !Skin.HasSetting(DisableMusicListInfoView3)] | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles] + !Skin.HasSetting(DisablePicturesListInfoView3)]</visible>
@@ -103,9 +102,8 @@
 				<description>Thumbs Media Info</description>
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31116]</label>
-				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program)">Container.SetViewMode(65)</onclick>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program) | Container.Content(images)">Container.SetViewMode(65)</onclick>
 				<onclick condition="Container.Content(Videos)">Container.SetViewMode(532)</onclick>
-				<onclick condition="Container.Content(images)">Container.SetViewMode(579)</onclick>
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)] + !Skin.HasSetting(DisableMoviesTVShowsThumbsInfoView)] | [Container.Content(Videos) + !Skin.HasSetting(DisableVideosThumbsInfoView)]
 				| [Container.Content(Albums) + !Skin.HasSetting(DisableMusicThumbsInfoView)] | [String.Contains(Container.FolderPath,plugin://plugin.program) + !Skin.HasSetting(DisableProgramsThumbsInfoView)] | [Window.IsActive(Pictures) + [Container(52).HasFiles | Container(50).HasFiles] + !Skin.HasSetting(DisablePicturesThumbsInfoView)]</visible>
