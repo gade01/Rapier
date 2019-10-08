@@ -263,7 +263,7 @@
 				<onclick condition="Container.Content(Videos)">Skin.ToggleSetting(HideVideosThumbsInfoLabel)</onclick>
 				<onclick condition="Container.Content(Albums)">Skin.ToggleSetting(HideMusicThumbsInfoLabel)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Skin.ToggleSetting(HideProgramsThumbsInfoLabel)</onclick>
-				<visible>[Skin.String(CurrentViewMode,65) + !Container.HasFiles) | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
+				<visible>[Skin.String(CurrentViewMode,65) + !Container.HasFiles] | [Skin.String(CurrentViewMode,532) + Container.Content(Videos)]</visible>
 			</control>
 			<control type="radiobutton" id="3069">
 				<description>Thumbs Info Hide Overlay (Movies) (Sets) (TVShows) (Videos)</description>
