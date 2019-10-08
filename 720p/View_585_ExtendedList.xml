@@ -990,53 +990,7 @@
 							<param name="left" value="5"/>
 						</include>
 					</control>
-					<control type="group">
-						<visible>!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)</visible>
-						<control type="label">
-							<description>Unwatched Episodes</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<font>ListFont3</font>
-							<textcolor>white</textcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-							<visible>$EXP[UnwatchedEpisodes99-]</visible>
-						</control>
-						<control type="label">
-							<description>Unwatched Episodes</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<font>ListFont4</font>
-							<textcolor>white</textcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-							<visible>$EXP[UnwatchedEpisodes99+]</visible>
-						</control>
-						<control type="image">
-							<description>Unwatched Overlay</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<aligny>center</aligny>
-							<texture background="true">OverlayClean.png</texture>
-							<aspectratio>keep</aspectratio>
-							<visible>$EXP[UnwatchedEpisodesOverlay]</visible>
-						</control>
-						<control type="image">
-							<description>Watched Overlay</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<aligny>center</aligny>
-							<texture background="true">$INFO[ListItem.Overlay]</texture>
-							<aspectratio>keep</aspectratio>
-							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-						</control>
-					</control>
+					<includes>ExtendedListOverlays</includes>
 				</itemlayout>
 				<focusedlayout height="37">
 					<include content="FocusedlayoutBackgrounds">
@@ -1100,53 +1054,7 @@
 							<param name="left" value="5"/>
 						</include>
 					</control>
-					<control type="group">
-						<visible>!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)</visible>
-						<control type="label">
-							<description>Unwatched Episodes</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<font>ListFont3</font>
-							<textcolor>white</textcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-							<visible>$EXP[UnwatchedEpisodes99-]</visible>
-						</control>
-						<control type="label">
-							<description>Unwatched Episodes</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<font>ListFont4</font>
-							<textcolor>white</textcolor>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-							<visible>$EXP[UnwatchedEpisodes99+]</visible>
-						</control>
-						<control type="image">
-							<description>Unwatched Overlay</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<aligny>center</aligny>
-							<texture background="true">OverlayClean.png</texture>
-							<aspectratio>keep</aspectratio>
-							<visible>$EXP[UnwatchedEpisodesOverlay]</visible>
-						</control>
-						<control type="image">
-							<description>Watched Overlay</description>
-							<left>3</left>
-							<width>26</width>
-							<height>37</height>
-							<aligny>center</aligny>
-							<texture background="true">$INFO[ListItem.Overlay]</texture>
-							<aspectratio>keep</aspectratio>
-							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
-						</control>
-					</control>
+					<include>ExtendedListOverlays</include>
 				</focusedlayout>
 				<content target="$VAR[ExtendedListTarget]" sortorder="ascending" sortby="$VAR[ExtendedListSortby]">$INFO[ListItem.FolderPath]</content>
 			</control>
@@ -2223,6 +2131,53 @@
 		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	
+	<include name="ExtendedListOverlays">
+		<control type="group">
+			<visible>!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)</visible>
+			<left>3</left>
+			<control type="label">
+				<description>Unwatched Episodes</description>
+				<width>26</width>
+				<height>37</height>
+				<font>ListFont3</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<visible>$EXP[UnwatchedEpisodes99-]</visible>
+			</control>
+			<control type="label">
+				<description>Unwatched Episodes</description>
+				<width>26</width>
+				<height>37</height>
+				<font>ListFont4</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<visible>$EXP[UnwatchedEpisodes99+]</visible>
+			</control>
+			<control type="image">
+				<description>Unwatched Overlay</description>
+				<width>26</width>
+				<height>37</height>
+				<aligny>center</aligny>
+				<texture background="true">OverlayClean.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>$EXP[UnwatchedEpisodesOverlay]</visible>
+			</control>
+			<control type="image">
+				<description>Watched Overlay</description>
+				<width>26</width>
+				<height>37</height>
+				<aligny>center</aligny>
+				<texture background="true">$INFO[ListItem.Overlay]</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+			</control>
+		</control>
+	</include>
 	
 	<include name="ExtendedListGrouplistContent">
 		<control type="label">

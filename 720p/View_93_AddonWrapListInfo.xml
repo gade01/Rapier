@@ -136,7 +136,9 @@
 			<include>ViewsDialogPopUpScreenDim</include>
 		</control>
 	</include>
+	<!--//// END WRAP LIST INFO VIEW //////////////////////////////////////////////////////////////////-->
 	
+	<!-- INCLUDES -->
 	<variable name="WrapListInfoAddonsLabelVar">
 		<value condition="!String.IsEmpty(ListItem.AddonName)">$INFO[ListItem.AddonName]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -154,5 +156,5 @@
 			<label>[UPPERCASE]$INFO[ListItem.AddonType][/UPPERCASE]</label>
 		</control>
 	</include>
-	<!--//// END WRAP LIST INFO VIEW //////////////////////////////////////////////////////////////////-->
+	<!-- END INCLUDES -->
 </includes>
