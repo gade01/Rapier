@@ -568,8 +568,8 @@
 			</include>
 			<include content="ListOverlays">
 				<param name="left" value="5" />
-					<param name="top" value="6" />
-				<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.Size" />
+				<param name="top" value="6" />
+				<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)" />
 				<param name="condition" value="true" />
 			</include>
 			<include content="ListStarRating">
@@ -630,7 +630,7 @@
 			<include content="ListOverlays">
 				<param name="left" value="5" />
 				<param name="top" value="6" />
-				<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.Size" />
+				<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !String.IsEmpty(ListItem.Size)" />
 				<param name="condition" value="false" />
 			</include>
 			<include content="ListStarRating">
