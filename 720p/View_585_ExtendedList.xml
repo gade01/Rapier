@@ -804,7 +804,7 @@
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
-						<visible>![Container.Content(Sets) + !ListItem.IsParentFolder]</visible>
+						<visible>![Container.Content(Sets) + !ListItem.IsParentFolder] + ![!ListItem.IsParentFolder + Container.Content(Seasons)]</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
 					<control type="image">
@@ -829,6 +829,9 @@
 						<aligny>center</aligny>
 						<info>ListItem.Label</info>
 					</control>
+					<include content="ExtendedListOverlays">
+						<param name="visible" value="!ListItem.IsParentFolder + Container.Content(Seasons)" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="37">
 					<include content="ListFocusedlayoutBackgrounds">
@@ -843,7 +846,7 @@
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
-						<visible>![Container.Content(Sets) + !ListItem.IsParentFolder]</visible>
+						<visible>![Container.Content(Sets) + !ListItem.IsParentFolder] + ![!ListItem.IsParentFolder + Container.Content(Seasons)]</visible>
 					</control>
 					<control type="image">
 						<description>Icon</description>
@@ -867,6 +870,9 @@
 						<info>ListItem.Label</info>
 						<scroll>true</scroll>
 					</control>
+					<include content="ExtendedListOverlays">
+						<param name="visible" value="!ListItem.IsParentFolder + Container.Content(Seasons)" />
+					</include>
 				</focusedlayout>
 			</control>
 			
@@ -990,7 +996,9 @@
 							<param name="left" value="5"/>
 						</include>
 					</control>
-					<includes>ExtendedListOverlays</includes>
+					<include content="ExtendedListOverlays">
+						<param name="visible" value="!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="37">
 					<include content="FocusedlayoutBackgrounds">
@@ -1054,7 +1062,9 @@
 							<param name="left" value="5"/>
 						</include>
 					</control>
-					<include>ExtendedListOverlays</include>
+					<include content="ExtendedListOverlays">
+						<param name="visible" value="!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)" />
+					</include>
 				</focusedlayout>
 				<content target="$VAR[ExtendedListTarget]" sortorder="ascending" sortby="$VAR[ExtendedListSortby]">$INFO[ListItem.FolderPath]</content>
 			</control>
@@ -2134,7 +2144,7 @@
 	
 	<include name="ExtendedListOverlays">
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.Title) + String.Contains(Container.FolderPath,videodb://tvshows/) + !Container.Content(Seasons)</visible>
+			<visible>$PARAM[visible]</visible>
 			<left>3</left>
 			<control type="label">
 				<description>Unwatched Episodes</description>
