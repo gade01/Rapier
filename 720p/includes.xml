@@ -81,6 +81,7 @@
 	<expression name="SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums">Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags) | Container.Content(Seasons) | Container.Content(Artists) | Container.Content(Albums)</expression>
 	<expression name="AllInfoDialogs">Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(DialogPVRInfo.xml)</expression>
 	<expression name="ExtendedinfoInfoDialogs">Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)</expression>
+	<expression name="EmbuaryInfoDialogs">Window.IsActive(script-embuary-person.xml) | Window.IsActive(script-embuary-video.xml)</expression>
 	<expression name="HideTopBar">![System.IdleTime(3) + !Control.IsVisible(505) + Skin.HasSetting(HideTopBar) + !Control.HasFocus(555)]</expression>
 	<expression name="UnwatchedEpisodes99-">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</expression>
 	<expression name="UnwatchedEpisodes99+">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</expression>

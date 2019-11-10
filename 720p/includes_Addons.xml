@@ -1305,6 +1305,83 @@
 	</include>
 	<!-- END Extended Info -->
 	
+	<!-- Embuary Info -->
+	<variable name="EmbuaryInfoThumb">
+		<value condition="Skin.String(EmbuaryInfo,2)">$INFO[Container(10052).ListItem.Art(thumb)]</value>
+		<value condition="Skin.String(EmbuaryInfo,3)">$INFO[Container(10053).ListItem.Art(thumb)]</value>
+	</variable>
+	
+	<variable name="EmbuaryInfoFanart">
+		<value condition="Control.HasFocus(10052)">$INFO[Container(10052).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(10053)">$INFO[Container(10053).ListItem.Art(fanart)]</value>
+	</variable>
+	
+	<variable name="EmbuaryInfoActorRole">
+		<value condition="Skin.String(EmbuaryInfo,2)">$LOCALIZE[38033]: [COLOR=MediaInfoItemColor2]$INFO[Container(10052).ListItem.Property(Role)][/COLOR]</value>
+		<value condition="Skin.String(EmbuaryInfo,3)">$LOCALIZE[38033]: [COLOR=MediaInfoItemColor2]$INFO[Container(10053).ListItem.Property(Role)][/COLOR]</value>
+	</variable>
+	
+	<variable name="EmbuaryInfoWatchedPartial">
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,15)">watched/watched-10pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,25)">watched/watched-20pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,35)">watched/watched-30pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,45)">watched/watched-40pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,55)">watched/watched-50pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,65)">watched/watched-60pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,75)">watched/watched-70pct.png</value>
+		<value condition="Integer.IsLessOrEqual(Container(10051).ListItem.PercentPlayed,85)">watched/watched-80pct.png</value>
+		<value condition="Integer.IsGreater(Container(10051).ListItem.PercentPlayed,85)">watched/watched-90pct.png</value>
+	</variable>
+	
+	<variable name="EmbuaryVideoInfoLabel">
+		<value condition="String.IsEqual(Container(10051).ListItem.DBType,movie)">$LOCALIZE[20338]</value>
+		<value condition="String.IsEqual(Container(10051).ListItem.DBType,tvshow)">$LOCALIZE[20364]</value>
+		<value condition="String.IsEqual(Container(10051).ListItem.DBType,episode)">$LOCALIZE[20359]</value>
+		<value condition="String.IsEqual(Container(10051).ListItem.DBType,season)">$LOCALIZE[20373]</value>
+	</variable>
+	
+	<variable name="EmbuaryContainer901Label">
+		<value condition="String.IsEqual(Container(10051).ListItem.DBType,season)">$INFO[Container(10051).ListItem.TVShowTitle]</value>
+        <value condition="String.IsEqual(Container(10051).ListItem.DBType,episode)">$INFO[Container(10051).ListItem.Season,$LOCALIZE[20373] ,]$INFO[Container(10051).ListItem.Episode, $LOCALIZE[20359] ,]</value>
+        <value>$INFO[Container(10051).ListItem.Genre]</value>
+    </variable>
+	
+	<variable name="EmbuaryLongDurationVar">
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + [String.StartsWith(Container(10051).ListItem.Duration,01:00:) | Integer.IsEqual(Container(10051).ListItem.Duration(mins),60)]">$NUMBER[1] $LOCALIZE[31159]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,01:01:)">$NUMBER[1] $LOCALIZE[31159] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),1)">$NUMBER[1] $LOCALIZE[31159] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,02:00:)">$NUMBER[2] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,02:01:)">$NUMBER[2] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),2)">$NUMBER[2] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,03:00:)">$NUMBER[3] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,03:01:)">$NUMBER[3] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),3)">$NUMBER[3] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,04:00:)">$NUMBER[4] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,04:01:)">$NUMBER[4] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),4)">$NUMBER[4] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,05:00:)">$NUMBER[5] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,05:01:)">$NUMBER[5] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),5)">$NUMBER[5] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,06:00:)">$NUMBER[6] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,06:01:)">$NUMBER[6] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),6)">$NUMBER[6] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,07:00:)">$NUMBER[7] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,07:01:)">$NUMBER[7] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),7)">$NUMBER[7] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,08:00:)">$NUMBER[8] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,08:01:)">$NUMBER[8] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),8)">$NUMBER[8] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,09:00:)">$NUMBER[9] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,09:01:)">$NUMBER[9] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),9)">$NUMBER[9] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,10:00:)">$NUMBER[10] $LOCALIZE[12392]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + String.StartsWith(Container(10051).ListItem.Duration,10:01:)">$NUMBER[10] $LOCALIZE[12392] $NUMBER[1] $LOCALIZE[31158]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + Integer.IsEqual(Container(10051).ListItem.Duration(h),10)">$NUMBER[10] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
+		<value condition="Skin.HasSetting(UseAlternativeDuration) + [Integer.IsEqual(Container(10051).ListItem.Duration(mins),0) | Integer.IsEqual(Container(10051).ListItem.Duration(mins),1)]">1 $LOCALIZE[31158]</value>
+		<value>$INFO[ListItem.Duration(mins)] $LOCALIZE[12391]</value>
+	</variable>
+	<!-- END Embuary Info -->
+	
 	<!-- Upnext -->
 	<variable name="UpnextInfoPlayButton">
         <value condition="Integer.IsLessOrEqual(Player.TimeRemaining(ss),30)">$INFO[Player.TimeRemaining(ss),gui/play/,.png]</value>
