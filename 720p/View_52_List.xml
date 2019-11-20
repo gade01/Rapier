@@ -240,7 +240,7 @@
 			<height>24</height>
 			<texture background="true">$VAR[VideoQualityOverlayUnwatched]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>!$PARAM[visible]</visible>
+			<visible>!Container.Content(Sets) + !$PARAM[visible]</visible>
 			<include condition="$PARAM[condition]">ListViewOverlayFadeAnim</include>
 		</control>
 		<control type="image">
@@ -679,7 +679,7 @@
 					<param name="condition" value="true" />
 				</include>
 				<control type="group">
-					<visible>!Skin.HasSetting(HideMoviesListOverlay) + !ListItem.IsFolder</visible>
+					<visible>!Skin.HasSetting(HideMoviesListOverlay)</visible>
 					<include content="ListOverlays">
 						<param name="left" value="686" />
 						<param name="top" value="39" />
@@ -707,12 +707,15 @@
 					<param name="visible" value="Skin.HasSetting(DoNotUseStarRatingMusicVideos)" />
 					<param name="condition" value="true" />
 				</include>
-				<include content="ListOverlays">
-					<param name="left" value="686" />
-					<param name="top" value="39" />
-					<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder" />
-					<param name="condition" value="true" />
-				</include>
+				<control type="group">
+					<visible>!Skin.HasSetting(HideMusicVideosListOverlay)</visible>
+					<include content="ListOverlays">
+						<param name="left" value="686" />
+						<param name="top" value="39" />
+						<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder" />
+						<param name="condition" value="true" />
+					</include>
+				</control>
 			</control>
 		</itemlayout>
 		<itemlayout condition="Container.Content(TVShows)" height="74">
@@ -910,10 +913,12 @@
 					<param name="condition" value="false" />
 				</include>
 				<control type="group">
-					<visible>!Skin.HasSetting(HideMoviesListOverlay) + !ListItem.IsFolder</visible>
-					<include content="VideoOverlays2">
-						<param name="top" value="39"/>
-						<param name="left" value="686"/>
+					<visible>!Skin.HasSetting(HideMoviesListOverlay)</visible>
+					<include content="ListOverlays">
+						<param name="left" value="686" />
+						<param name="top" value="39" />
+						<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png)" />
+						<param name="condition" value="false" />
 					</include>
 				</control>
 			</control>
@@ -936,12 +941,15 @@
 					<param name="visible" value="Skin.HasSetting(DoNotUseStarRatingMusicVideos)" />
 					<param name="condition" value="false" />
 				</include>
-				<include content="ListOverlays">
-					<param name="left" value="686" />
-					<param name="top" value="39" />
-					<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder" />
-					<param name="condition" value="false" />
-				</include>
+				<control type="group">
+					<visible>!Skin.HasSetting(HideMusicVideosListOverlay)</visible>
+					<include content="ListOverlays">
+						<param name="left" value="686" />
+						<param name="top" value="39" />
+						<param name="visible" value="String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsFolder" />
+						<param name="condition" value="false" />
+					</include>
+				</control>
 			</control>
 		</focusedlayout>
 		<focusedlayout condition="Container.Content(TVShows)" height="74">

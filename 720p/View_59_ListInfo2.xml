@@ -40,14 +40,14 @@
 				<itemlayout height="37" condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(MoviesListInfo2Style,1) | Skin.String(MoviesListInfo2Style,3)]] | [Container.Content(musicvideos) + [Skin.String(MusicVideosListInfo2Style,1) | Skin.String(MusicVideosListInfo2Style,3)]] | [Container.Content(Episodes) + [Skin.String(EpisodesListInfo2Style,1) | Skin.String(EpisodesListInfo2Style,3)]]">
 					<include content="ListInfo2Itemlayout">
 						<param name="visible_actualicon" value="String.IsEmpty(ListItem.Title)" />
-						<param name="visible_label2" value="$VAR[SkinSettingStarRating]" />
+						<param name="visible_label2" value="[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(musicvideos) + Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + Skin.HasSetting(DoNotUseStarRatingEpisodes)]" />
 					</include>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
 						<include content="ListInfo2StarRating">
 							<param name="top" value="10" />
 							<param name="fade" value="70" />
-							<param name="visible" value="!$VAR[SkinSettingStarRating] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="visible" value="[[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(musicvideos) + !Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
 						</include>
 						<include content="VideoOverlays">
 							<param name="top" value="6"/>
@@ -58,14 +58,14 @@
 				<focusedlayout height="37" condition="[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesListInfo2Style,1)] | [Container.Content(musicvideos) + Skin.String(MusicVideosListInfo2Style,1)] | [Container.Content(Episodes) + Skin.String(EpisodesListInfo2Style,1)]">
 					<include content="ListInfo2Focusedlayout">
 						<param name="visible_actualicon" value="String.IsEmpty(ListItem.Title)" />
-						<param name="visible_label2" value="$VAR[SkinSettingStarRating]" />
+						<param name="visible_label2" value="[[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(musicvideos) + Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + Skin.HasSetting(DoNotUseStarRatingEpisodes)]" />
 					</include>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
 						<include content="ListInfo2StarRating">
 							<param name="top" value="10" />
 							<param name="fade" value="100" />
-							<param name="visible" value="!$VAR[SkinSettingStarRating] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="visible" value="[[[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(DoNotUseStarRatingMovies)] | [Container.Content(musicvideos) + !Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
 						</include>
 						<include content="VideoOverlays2">
 							<param name="top" value="6"/>
@@ -180,15 +180,15 @@
 						<visible>!ListItem.IsParentFolder</visible>
 						<include content="ListInfo2Rating">
 							<param name="textcolor" value="ListColor3" />
-							<param name="visible" value="$VAR[SkinSettingStarRating] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="visible" value="[[Container.Content(musicvideos) + Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + Skin.HasSetting(DoNotUseStarRatingEpisodes)]] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
 						</include>
 						<include content="ListInfo2StarRating">
 							<param name="top" value="16" />
 							<param name="fade" value="70" />
-							<param name="visible" value="!$VAR[SkinSettingStarRating] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="visible" value="[[Container.Content(musicvideos) + !Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
 						</include>
 						<control type="group">
-							<visible>!$VAR[SkinSettingOverlay]</visible>
+							<visible>[Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesListInfo2Overlay)] | [Container.Content(musicvideos) + !Skin.HasSetting(HideMusicVideosListInfo2Overlay)]</visible>
 							<include content="VideoOverlays">
 								<param name="top" value="39"/>
 								<param name="left" value="596"/>
@@ -211,15 +211,15 @@
 						<visible>!ListItem.IsParentFolder</visible>
 						<include content="ListInfo2Rating">
 							<param name="textcolor" value="ListColor3" />
-							<param name="visible" value="$VAR[SkinSettingStarRating] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="visible" value="[[Container.Content(musicvideos) + Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + Skin.HasSetting(DoNotUseStarRatingEpisodes)]] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
 						</include>
 						<include content="ListInfo2StarRating">
 							<param name="top" value="16" />
 							<param name="fade" value="100" />
-							<param name="visible" value="!$VAR[SkinSettingStarRating] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
+							<param name="visible" value="[[Container.Content(musicvideos) + !Skin.HasSetting(DoNotUseStarRatingMusicVideos)] | [Container.Content(Episodes) + !Skin.HasSetting(DoNotUseStarRatingEpisodes)]] + ![String.IsEmpty(ListItem.Rating) + String.IsEmpty(ListItem.UserRating)]" />
 						</include>
 						<control type="group">
-							<visible>!$VAR[SkinSettingOverlay]</visible>
+							<visible>[Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesListInfo2Overlay)] | [Container.Content(musicvideos) + !Skin.HasSetting(HideMusicVideosListInfo2Overlay)]</visible>
 							<include content="VideoOverlays2">
 								<param name="top" value="39"/>
 								<param name="left" value="596"/>
@@ -356,17 +356,6 @@
 		<value condition="Container.Content(Episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode,  -  $LOCALIZE[20359] ,]</value>
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[554])">$INFO[ListItem.Year,, - ]$VAR[LongDurationVar]</value>
 		<value>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Year]</value>
-	</variable>
-	
-	<variable name="SkinSettingStarRating">
-		<value condition="Container.Content(Episodes)">Skin.HasSetting(DoNotUseStarRatingEpisodes)</value>
-		<value condition="Container.Content(musicvideos)">Skin.HasSetting(DoNotUseStarRatingMusicVideos)</value>
-		<value>Skin.HasSetting(DoNotUseStarRatingMovies)</value>
-	</variable>
-	
-	<variable name="SkinSettingOverlay">
-		<value condition="Container.Content(Episodes)">Skin.HasSetting(HideMusicVideosListInfo2Overlay)</value>
-		<value condition="Container.Content(musicvideos)">Skin.HasSetting(HideEpisodesListInfo2Overlay)</value>
 	</variable>
 	
 	<include name="ListInfo2Itemlayout">
