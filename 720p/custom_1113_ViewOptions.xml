@@ -223,7 +223,7 @@
 				<selected>!Skin.HasSetting(DoNotAutoScrollPlot)</selected>
 				<onclick>Skin.ToggleSetting(DoNotAutoScrollPlot)</onclick>
 				<enable>![[[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59)] + Container.Content(Songs)] | [Skin.String(CurrentViewMode,53) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)]]</enable>
-				<visible>[[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,72)] + $EXP[AlbumsSongsArtists]]
+				<visible>[[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59)] + $EXP[AlbumsSongsArtists]]
 				| [[Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,65)] + Container.Content(Albums)]</visible>
 			</control>
 			<control type="radiobutton" id="2088">
@@ -360,7 +360,7 @@
 				<label>$LOCALIZE[31207]: $LOCALIZE[20445]</label>
 				<selected>!Skin.HasSetting(EnableMusicFanart)</selected>
 				<onclick>Skin.ToggleSetting(EnableMusicFanart)</onclick>
-				<visible>[[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,63) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,72) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65)] + $EXP[AlbumsSongsArtists]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,musicdb://)]</visible>
+				<visible>[[Skin.String(CurrentViewMode,50) | Skin.String(CurrentViewMode,52) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,63) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65)] + $EXP[AlbumsSongsArtists]] | [Skin.String(CurrentViewMode,585) + String.Contains(Container.FolderPath,musicdb://)]</visible>
 			</control>
 			<control type="radiobutton" id="5001">
 				<description>Enable Fanart (Movies) (Sets)</description>
@@ -738,7 +738,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>Skin.HasSetting(HideListInfoView2Scrollbar)</selected>
 				<onclick>Skin.ToggleSetting(HideListInfoView2Scrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,72) | Skin.String(CurrentViewMode,531)</visible>
+				<visible>Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,531)</visible>
 			</control>
 			<control type="radiobutton" id="3027">
 				<description>List Info 3 Hide Scrollbar</description>
@@ -869,7 +869,7 @@
 				<label>$LOCALIZE[31206]</label>
 				<visible>Control.IsVisible(3050) | Control.IsVisible(3052) | Control.IsVisible(3018) | Control.IsVisible(3019)
 				| Control.IsVisible(1006) | Control.IsVisible(1012) | Control.IsVisible(2010) | Control.IsVisible(2017) 
-				| Control.IsVisible(2044) | Control.IsVisible(2050) | Control.IsVisible(3008) | Control.IsVisible(3012) | Control.IsVisible(3060)
+				| Control.IsVisible(2044) | Control.IsVisible(2050) | Control.IsVisible(3012) | Control.IsVisible(3060)
 				| Control.IsVisible(4020) | Control.IsVisible(4026) | Control.IsVisible(4036) | Control.IsVisible(4046) | Control.IsVisible(4087) | Control.IsVisible(2028)
 				| Control.IsVisible(4097) | Control.IsVisible(3092) | Control.IsVisible(3096) | Control.IsVisible(2021) | Control.IsVisible(3114)
 				| Control.IsVisible(3098) | Control.IsVisible(3100) | Control.IsVisible(3102) | Control.IsVisible(2066)</visible>
@@ -1329,28 +1329,6 @@
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
 				<visible>Skin.String(CurrentViewMode,531) + Container.Content(Videos)</visible>
-			</control>
-			<control type="radiobutton" id="3008">
-				<description>List Info 2 Use Style 1 (Addons) (Games)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31418]</label>
-				<selected>Skin.String(AddonsListInfo2Style,1)</selected>
-				<onclick>Skin.SetString(AddonsListInfo2Style,1)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(92)</onclick>
-				<visible>Skin.String(CurrentViewMode,92) + [Container.Content(Addons) | Container.Content(Games)]</visible>
-			</control>
-			<control type="radiobutton" id="3009">
-				<description>List Info 2 Use Style 2 (Addons) (Games)</description>
-				<include>DropDownMenuRadioBtn</include>
-				<label>$LOCALIZE[31417]</label>
-				<selected>Skin.String(AddonsListInfo2Style,2) | String.IsEmpty(Skin.String(AddonsListInfo2Style))</selected>
-				<onclick>Skin.SetString(AddonsListInfo2Style,2)</onclick>
-				<onclick>ReloadSkin()</onclick>
-				<include>ReloadSkinNotification</include>
-				<onclick>Container.SetViewMode(92)</onclick>
-				<visible>Skin.String(CurrentViewMode,92) + [Container.Content(Addons) | Container.Content(Games)]</visible>
 			</control>
 			<control type="radiobutton" id="3012">
 				<description>Wrap List Info Use Style 1 (Addons) (Games)</description>
