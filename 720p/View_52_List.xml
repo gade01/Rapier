@@ -130,6 +130,7 @@
 				<onleft>850</onleft>
 				<onright>150</onright>
 				<oninfo condition="System.HasAddon(script.extendedinfo) + [Container.Content(Actors) | Container.Content(Directors)]">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>
+				<oninfo condition="Window.IsActive(Programs)">ActivateWindow(1122)</oninfo>
 				<include condition="String.IsEmpty(Skin.String(CommonListStyle)) | Skin.String(CommonListStyle,1) | Skin.String(CommonListStyle,3)">CommonListItemLayout</include>
 				<include condition="Skin.String(CommonListStyle,2)">CommonListTallStyleItemLayout</include>
 				<include condition="String.IsEmpty(Skin.String(CommonListStyle)) | Skin.String(CommonListStyle,1)">CommonListFocusedLayout</include>
