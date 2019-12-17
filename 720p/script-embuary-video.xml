@@ -4,7 +4,6 @@
 	<menucontrol>987</menucontrol>
 	<onload>Skin.Reset(EmbuaryVideoInfo)</onload>
 	<onunload>Skin.Reset(EmbuaryInfoDialog)</onunload>
-	<onunload condition="!String.IsEmpty(Skin.String(EmbuaryInfoTrailerButton))">Skin.Reset(EmbuaryInfoTrailerButton)</onunload>
 	<include>ControlsOpenCloseAnim</include>
     
     <controls>
@@ -212,32 +211,6 @@
 						<animation effect="fade" end="30" condition="true">Conditional</animation>
 						<texture>views/videoinfo-separator.png</texture>
 					</control>
-					
-					<control type="image">
-						<description>Studio</description>
-						<top>546</top>
-						<width>710</width>
-						<height>65</height>
-						<aspectratio>keep</aspectratio>
-						<align>center</align>
-						<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-						<texture>$INFO[Container(10051).ListItem.Property(Studio.icon.0),resource://resource.images.studios.white/,.png]</texture>
-						<include>MediaFlagFadeAnim</include>
-						<visible>!String.IsEmpty(Container(10051).ListItem.Property(Studio.icon.0))</visible>
-					</control>
-					
-					<control type="image">
-						<description>Network</description>
-						<top>546</top>
-						<width>710</width>
-						<height>65</height>
-						<aspectratio>keep</aspectratio>
-						<align>center</align>
-						<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
-						<texture>$INFO[Container(10051).ListItem.Property(Network.icon.0),resource://resource.images.studios.white/,.png]</texture>
-						<include>MediaFlagFadeAnim</include>
-						<visible>!String.IsEmpty(Container(10051).ListItem.Property(Network.icon.0))</visible>
-					</control>
 				</control>
 				
 				<control type="group">
@@ -381,7 +354,7 @@
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[Container(10051).ListItem.Property(TotalEpisodes)]$INFO[Container(10051).ListItem.Property(WatchedEpisodes), (, $LOCALIZE[16102])]</label2>
-								<visible>!String.IsEqual(Container(10051).ListItem.Property(TotalEpisodes))</visible>
+								<visible>!String.IsEqual(Container(10051).ListItem.Property(TotalEpisodes)) + [String.IsEqual(Container(10051).ListItem.DBType,tvshow) |  String.IsEqual(Container(10051).ListItem.DBType,season)]</visible>
 							</item>
 							<item id="5">
 								<description>Duration</description>
@@ -392,14 +365,15 @@
 							<item id="6">
 								<description>Rating</description>
 								<label>$LOCALIZE[563]</label>
-								<label2>$INFO[Container(10051).ListItem.Property(Rating.IMDB)]$INFO[Container(10051).ListItem.Property(Votes.IMDB), (, $LOCALIZE[205])]$INFO[Container(10051).ListItem.Top250,  &#x2022;  $LOCALIZE[31974] #,]</label2>
+								<label2>$VAR[EmbuaryRatingType]$INFO[Container(10051).ListItem.Votes, (, $LOCALIZE[205])]$INFO[Container(10051).ListItem.Top250,  &#x2022;  $LOCALIZE[31974] #,]</label2>
 							</item>
 							<item id="7">
 								<description>MPAA Rating</description>
 								<label>$LOCALIZE[20074]</label>
 								<label2>$INFO[Container(10051).ListItem.Mpaa]</label2>
-								<visible>!String.IsEmpty(Container(10051).ListItem.Mpaa)</visible>
+								<visible>!String.IsEmpty(Container(10051).ListItem.Mpaa) + !Integer.IsGreaterOrEqual(Container(901).NumItems,7)</visible>
 							</item>
+							<!--
 							<item id="8">
 								<description>Studio</description>
 								<label>$LOCALIZE[572]</label>
@@ -412,46 +386,47 @@
 								<label2>$INFO[Container(10051).ListItem.Property(Network.0)]$INFO[Container(10051).ListItem.Property(Network.1), / ,]$INFO[Container(10051).ListItem.Property(Network.2), / ,]$INFO[Container(10051).ListItem.Property(Network.3), / ,]$INFO[Container(10051).ListItem.Property(Network.4), / ,]$INFO[Container(10051).ListItem.Property(Network.5), / ,]</label2>
 								<visible>![String.IsEmpty(Container(10051).ListItem.Property(Network.0)) + String.IsEmpty(Container(10051).ListItem.Property(Network.1)) + String.IsEmpty(Container(10051).ListItem.Property(Network.2)) + String.IsEmpty(Container(10051).ListItem.Property(Network.3)) + String.IsEmpty(Container(10051).ListItem.Property(Network.4)) + String.IsEmpty(Container(10051).ListItem.Property(Network.5))]</visible>
 							</item>
-							<item id="10">
+							-->
+							<item id="8">
 								<description>Premiered</description>
 								<label>$ADDON[script.embuary.info 32011]</label>
-								<label2>$INFO[Container(10051).ListItem.Premiered]</label2>
-								<visible>!String.IsEmpty(Container(10051).ListItem.Premiered)</visible>
+								<label2>$INFO[Container(10051).ListItem.Year]$INFO[Container(10051).ListItem.Premiered, (,)]</label2>
+								<visible>![String.IsEmpty(Container(10051).ListItem.Premiered) + String.IsEmpty(Container(10051).ListItem.Year)]</visible>
 							</item>
-							<item id="11">
+							<item id="9">
 								<description>Release Date</description>
 								<label fallback="172">$INFO[Container(10051).ListItem.Status]</label>
 								<label2>$INFO[Container(10051).ListItem.Property(Release)]</label2>
 								<visible>!String.IsEmpty(Container(10051).ListItem.Property(Release))</visible>
 							</item>
-							<item id="12">
+							<item id="10">
 								<description>Budget</description>
 								<label>$ADDON[script.embuary.info 32013]</label>
 								<label2>$INFO[Container(10051).ListItem.Property(Budget),$]</label2>
 								<visible>!String.IsEmpty(Container(10051).ListItem.Property(Budget))</visible>
 							</item>
-							<item id="13">
+							<item id="11">
 								<description>Revenue</description>
 								<label>$ADDON[script.embuary.info 32014]</label>
 								<label2>$INFO[Container(10051).ListItem.Property(Revenue),$]</label2>
 								<visible>!String.IsEmpty(Container(10051).ListItem.Property(Revenue))</visible>
 							</item>
-							<item id="14">
+							<item id="12">
 								<description>Awards</description>
 								<label>$ADDON[script.embuary.info 32015]</label>
 								<label2>$INFO[Container(10051).ListItem.Property(awards)]</label2>
 								<visible>!String.IsEmpty(Container(10051).ListItem.Property(awards))</visible>
 							</item>
-							<item id="15">
+							<item id="13">
 								<description>File Path</description>
 								<label>$LOCALIZE[21801]</label>
 								<label2>$INFO[Container(10051).ListItem.Property(file)]</label2>
-								<visible>!String.IsEmpty(Container(10051).ListItem.Property(file))</visible>
+								<visible>!String.IsEmpty(Container(10051).ListItem.Property(file)) + !Integer.IsGreaterOrEqual(Container(901).NumItems,7)</visible>
 							</item>
 						</content>
 					</control>
 					
-					<!--<include>ExtendedInfoVideoInfoStudioMediaFlag</include>-->
+					<include>EmbuaryVideoInfoStudioMediaFlag</include>
 			
 					<control type="grouplist">
 						<description>Media Flags Area</description>
@@ -464,11 +439,11 @@
 						<orientation>horizontal</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<include>MediaFlagFadeAnim</include>
-						<include>ExtendedInfoVideoSourceMediaFlags</include>
-						<include>ExtendedInfoVideoCodecMediaFlags</include>
-						<include>ExtendedInfoAudioMediaFlags</include>
-						<include>ExtendedInfoAspectMediaFlags</include>
-						<include condition="!Skin.HasSetting(HideRatingMediaFlag)">ExtendedInfoRatingMediaFlags</include>
+						<include>EmbuaryVideoSourceMediaFlags</include>
+						<include>EmbuaryVideoCodecMediaFlags</include>
+						<include>EmbuaryAudioMediaFlags</include>
+						<include>EmbuaryAspectMediaFlags</include>
+						<include condition="!Skin.HasSetting(HideRatingMediaFlag)">EmbuaryRatingMediaFlags</include>
 					</control>
 				</control>
 				
@@ -481,22 +456,35 @@
 					<texture>views/videoinfo-separator.png</texture>
 				</control>
 				
-				<control type="textbox" id="800">
-					<description>Plot</description>
-					<left>470</left>
-					<top>427</top>
-					<width>710</width>
-					<height>209</height>
-					<font>FullMediaInfoDescFont</font>
-					<textcolor>MediaInfoColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<align>justify</align>
-					<label fallback="31203">$INFO[Container(10051).ListItem.Plot]</label>
-					<pagecontrol>61</pagecontrol>
-					<include>FSMediaInfoOpenCloseAnim</include>
-					<autoscroll time="2000" delay="6000" repeat="10000">true</autoscroll>
-					<visible>String.IsEmpty(Skin.String(EmbuaryVideoInfo))</visible>
-				</control>
+				<include content="EmbuaryVideoInfoPlot">
+					<param name="top" value="311" />
+					<param name="height" value="325" />
+					<param name="visible" value="String.IsEqual(Container(901).NumItems,3)" />
+				</include>
+				
+				<include content="EmbuaryVideoInfoPlot">
+					<param name="top" value="340" />
+					<param name="height" value="296" />
+					<param name="visible" value="String.IsEqual(Container(901).NumItems,4)" />
+				</include>
+				
+				<include content="EmbuaryVideoInfoPlot">
+					<param name="top" value="369" />
+					<param name="height" value="267" />
+					<param name="visible" value="String.IsEqual(Container(901).NumItems,5)" />
+				</include>
+				
+				<include content="EmbuaryVideoInfoPlot">
+					<param name="top" value="398" />
+					<param name="height" value="238" />
+					<param name="visible" value="String.IsEqual(Container(901).NumItems,6)" />
+				</include>
+				
+				<include content="EmbuaryVideoInfoPlot">
+					<param name="top" value="427" />
+					<param name="height" value="209" />
+					<param name="visible" value="String.IsEqual(Container(901).NumItems,7)" />
+				</include>
 				
 				<control type="group" id="50111">
 					<visible>Skin.String(EmbuaryVideoInfo,1)</visible>
@@ -1695,8 +1683,8 @@
 			<control type="group">
 				<visible>Skin.String(EmbuaryInfoDialog,1)</visible>
 				<depth>DepthMenuBar</depth>
-				<animation effect="slide" end="80,0" condition="Control.IsVisible(118) | Control.IsVisible(119)" >Conditional</animation>
-				<animation effect="slide" end="-80,0" condition="Control.IsVisible(100)" >Conditional</animation>
+				<animation effect="slide" end="80,0" condition="[Control.IsVisible(118) | Control.IsVisible(119)] + !Control.IsVisible(134)" >Conditional</animation>
+				<animation effect="slide" end="-80,0" condition="![Control.IsVisible(118) | Control.IsVisible(119)] + Control.IsVisible(134)" >Conditional</animation>
 				<animation type="Visible">
 					<effect type="fade" end="100" time="200"/>
 					<effect type="slide" start="0,-10" time="300" tween="cubic" easing="out"/>
@@ -1715,7 +1703,7 @@
 				</control>
 				
 				<control type="grouplist" id="202">
-					<left>236</left>
+					<left>554</left>
 					<top>80</top>
 					<width>173</width>
 					<itemgap>0</itemgap>
@@ -1760,7 +1748,7 @@
 						<onclick>Skin.Reset(EmbuaryInfoDialog)</onclick>
 						<onclick>Skin.SetString(EmbuaryVideoInfo,2)</onclick>
 						<onclick>Control.SetFocus(10056)</onclick>
-						<label>$ADDON[script.extendedinfo 32115]</label>
+						<label>$ADDON[script.embuary.info 32018]</label>
 						<visible>Integer.IsGreater(Container(10056).NumItems,0)</visible>
 					</control>
 					<control type="button" id="164">
@@ -1808,7 +1796,7 @@
 						<width>173</width>
 						<textwidth>137</textwidth>
 						<include>DropDownMenuHeader</include>
-						<label>$ADDON[script.extendedinfo 32119]</label>
+						<label>$LOCALIZE[31490]</label>
 						<visible>Integer.IsGreater(Container(10059).NumItems,0) | Integer.IsGreater(Container(10055).NumItems,0)</visible>
 					</control>
 					<control type="button" id="169">
