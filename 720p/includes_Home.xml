@@ -1319,6 +1319,10 @@
 			<param name="CategoryNumber" value="29" />
 		</include>
 	</include>
+	
+	<include name="HomeMenuHitrect">
+		<hitrect x="510" y="35" w="260" h="96" />
+	</include>
 
 	<include name="HomeMenuNavButtons">
 		<left>40</left>
@@ -1329,6 +1333,7 @@
 	<include name="HomeMenuNoNavButtons">
 		<left>-10</left>
 		<width>1300</width>
+		<include condition="System.GetBool(input.enablemouse)">HomeMenuHitrect</include>
 	</include>
 	
 	<include name="HomeMenuLabelNavButtons">
