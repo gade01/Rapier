@@ -2280,6 +2280,18 @@
 		<value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Album]</value>
 	</variable>
 	
+	<variable name="VideoPlayerSeekBar1Var">
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.TVShowTitle)">$INFO[VideoPlayer.TVShowTitle]</value>
+		<value>$INFO[VideoPlayer.Title]</value>
+	</variable>
+	
+	<variable name="VideoPlayerSeekBar2Var">
+		<value condition="!String.IsEmpty(VideoPlayer.Season)">$VAR[VideoPlayerSeasonEpisodesNumberVar,,. ]$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.Title]</value>
+		<value>$INFO[VideoPlayer.Year]</value>
+	</variable>
+	
 	<variable name="PosterImageOSD">
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
