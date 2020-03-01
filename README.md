@@ -2,7 +2,7 @@
 <img src="http://inlinestudio.dk/xtra/kodi/logo-crop.png" width="400" align="middle">
 </p>
 
-## ABOUT RAPIER 11.x FOR KODI 18 LEIA
+## ABOUT RAPIER 12.x FOR KODI 19 MATRIX
 The goal is to provide a simple to use but clean and elegant interface that focuses on efficiency when browsing your media. 
 Important considerations are put on usability, performance, and providing the user with flexibility when it comes to customization.   
 Rapier tries to support all the latest features Kodi has to offer as long as it fits in with the skin's design goals.   
