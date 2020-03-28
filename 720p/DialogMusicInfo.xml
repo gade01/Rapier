@@ -447,6 +447,14 @@
 						<label2>$INFO[ListItem.Bpm]</label2>
 						<visible>String.IsEqual(ListItem.DBTYPE,song) + !String.IsEmpty(ListItem.Bpm)</visible>
 					</item>
+					<!--
+					<item id="36">
+						<description>Technical Info</description>
+						<label>TECHNICAL INFO</label>
+						<label2>$INFO[ListItem.MusicChannels,, $LOCALIZE[10127] / ]$INFO[ListItem.SampleRate,, kHz / ]$INFO[ListItem.BitRate,, kb/s ]</label2>
+						<visible>String.IsEqual(ListItem.DBTYPE,song) + ![String.IsEmpty(ListItem.MusicChannels) + String.IsEmpty(ListItem.SampleRate) + String.IsEmpty(ListItem.BitRate)]</visible>
+					</item>
+					-->
 					<item id="35">
 						<description>File Path</description>
 						<label>$LOCALIZE[21801]</label>

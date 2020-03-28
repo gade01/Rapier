@@ -926,6 +926,16 @@
 		</control>
 	</include>
 	
+	<!-- DialogAddonInfo.xml -->
+	<variable name="AddonInfoTextbox">
+		<value condition="Skin.String(AddonInfoContentToggle,news)">$INFO[ListItem.AddonNews]</value>
+		<value>$INFO[ListItem.AddonDescription]</value>
+	</variable>
+	
+	<!--<value condition="Skin.String(AddonInfoContentToggle,news) + !String.IsEmpty(Window(Home).Property(Changelog)) + !String.IsEqual(ListItem.AddonNews,Window(Home).Property(Changelog))">$INFO[ListItem.AddonNews]$INFO[Window(Home).Property(Changelog),[CR][CR][CR][UPPERCASE]$LOCALIZE[24036][/UPPERCASE][CR][CR],]</value>
+	<value condition="Skin.String(AddonInfoContentToggle,changelog)">$INFO[Window(Home).Property(Changelog)]</value>-->
+	<!-- END DialogAddonInfo.xml -->
+	
 	<!-- DialogVideoInfo.xml -->
 	<variable name="DialogVideoInfoActorImage">
 		<value condition="Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.HasAddon(script.extendedinfo)">$INFO[Container(50).ListItem.Thumb]</value>

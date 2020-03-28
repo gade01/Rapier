@@ -6,11 +6,15 @@
 		<value>$LOCALIZE[21821]</value>
 	</variable>
 	
+	<!--<value condition="[[String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description)] + String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0)] | [Skin.String(AddonInfoContentToggle,screenshots) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))]">$LOCALIZE[24036]</value>-->
+	
 	<variable name="AddonInfoMenuBarBtn122Click">
 		<value condition="[String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description)] + !String.IsEmpty(ListItem.AddonNews)">Skin.SetString(AddonInfoContentToggle,news)</value>
 		<value condition="String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description) | [Skin.String(AddonInfoContentToggle,news) + Integer.IsGreater(Container(50).NumItems,0)]">Skin.SetString(AddonInfoContentToggle,screenshots)</value>
 		<value>Skin.SetString(AddonInfoContentToggle,description)</value>
 	</variable>
+	
+	<!--<value condition="String.IsEmpty(Skin.String(AddonInfoContentToggle)) | Skin.String(AddonInfoContentToggle,description) | Skin.String(AddonInfoContentToggle,news) | [Skin.String(AddonInfoContentToggle,screenshots) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))]">Skin.SetString(AddonInfoContentToggle,changelog)</value>-->
 	
 	<include name="MenuBarImage">
 		<control type="image">
@@ -2033,12 +2037,29 @@
 				<label>[UPPERCASE]$VAR[AddonInfoMenuBarBtn122Label][/UPPERCASE]</label>
 				<onclick>$VAR[AddonInfoMenuBarBtn122Click]</onclick>
 				<visible>![String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0)]</visible>
+				<!--<visible>![String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Window(Home).Property(Changelog.Exists))]</visible>-->
 			</control>
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
 				<visible>![String.IsEmpty(ListItem.AddonNews) + Integer.IsEqual(Container(50).NumItems,0)]</visible>
 			</control>
 			<!--
+			<control type="button" id="125">
+				<description>Changelog</description>
+				<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
+				<alttexturenofocus />
+				<width>156</width>
+				<textwidth>142</textwidth>
+				<include>MenuBarSettingsBtn</include>
+				<label>[UPPERCASE]CHANGELOG[/UPPERCASE]</label>
+				<onclick>RunScript(script.embuary.helper,action=txtfile,path='"special://home/addons/$INFO[ListItem.Property(Addon.ID)]/changelog.txt"',header=$LOCALIZE[24036])</onclick>
+				<visible>System.HasAddon(script.embuary.helper) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))</visible>
+			</control>
+			<control type="image" id="126">
+				<include>MenuBarSeparator</include>
+				<visible>System.HasAddon(script.embuary.helper) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))</visible>
+			</control>
+			--><!--
 			<control type="button" id="125">
 				<description>Changelog</description>
 				<width>179</width>
