@@ -105,7 +105,7 @@
 	</variable>
 	
 	<variable name="FormattedDurationVar">
-		<value condition="Integer.IsEqual(ListItem.Duration(mins),0)">$NUMBER[1]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration) + Integer.IsEqual(ListItem.Duration(mins),0)">$NUMBER[1]</value>
 		<value condition="Integer.IsEqual(ListItem.Duration(mins),60)">$NUMBER[1]$LOCALIZE[31403]$NUMBER[00]</value>
 		<value condition="Integer.IsEqual(ListItem.Duration(h),0)">$INFO[ListItem.Duration(mins)]</value>
 		<value>$INFO[ListItem.Duration(h)]$LOCALIZE[31403]$INFO[ListItem.Duration(mm)]</value>
