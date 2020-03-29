@@ -3707,6 +3707,11 @@
 			</include>
 		</control>
 	</include>
+	
+	<variable name="NowPlayingMovieNextLabel">
+		<value condition="!String.IsEmpty(VideoPlayer.offset(1).Title)">$INFO[VideoPlayer.offset(1).Title,$LOCALIZE[209]: ,]$INFO[VideoPlayer.offset(1).Year, (,)]</value>
+		<value>$INFO[VideoPlayer.Studio]</value>
+	</variable>
 
 	<include name="NowPlayingPanel">
 		<control type="group">
@@ -3733,7 +3738,7 @@
 						<top>15</top>
 						<width>98</width>
 						<height>134</height>
-						<texture diffuse="covers/home-panel-movie-cover-diffuse.png" background="true">$INFO[VideoPlayer.cover]</texture>
+						<texture diffuse="covers/home-panel-movie-cover-diffuse.png" background="true">$VAR[PosterImageOSD]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
 
@@ -3787,13 +3792,13 @@
 							<scroll>true</scroll>
 						</control>
 						<control type="label">
-							<description>Studio</description>
+							<description>Next Video</description>
 							<width>350</width>
 							<height>12</height>
 							<font>PanelInfoFont</font>
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[VideoPlayer.Studio]</label>
+							<label>$VAR[NowPlayingMovieNextLabel]</label>
 							<scroll>true</scroll>
 						</control>
 					</control>
@@ -3801,16 +3806,17 @@
 
 				<control type="group">
 					<visible>VideoPlayer.Content(LiveTV)</visible>
+					
 					<control type="image">
 						<description>Cover</description>
 						<left>15</left>
-						<top>27</top>
+						<top>15</top>
 						<width>176</width>
-						<height>110</height>
+						<height>134</height>
 						<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true" fallback="DefaultVideo.png">$INFO[VideoPlayer.Cover]</texture>
-						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 					</control>
+					
 					<control type="label">
 						<description>Title</description>
 						<left>203</left>
@@ -3821,6 +3827,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
 					</control>
+					
 					<control type="grouplist">
 						<left>203</left>
 						<top>47</top>
@@ -3849,7 +3856,7 @@
 							<visible>!Player.Seeking</visible>
 						</control>
 						<control type="label">
-							<description>Show/Year</description>
+							<description>Channel Name</description>
 							<top>9</top>
 							<width>272</width>
 							<height>12</height>
@@ -3857,6 +3864,16 @@
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
 							<label>$INFO[VideoPlayer.ChannelName]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<description>Next Title</description>
+							<width>272</width>
+							<height>12</height>
+							<font>PanelInfoFont</font>
+							<textcolor>MediaInfoItemColor2</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[VideoPlayer.NextTitle,$LOCALIZE[209]: ,]</label>
 							<scroll>true</scroll>
 						</control>
 					</control>
@@ -3868,11 +3885,10 @@
 					<control type="image">
 						<description>Cover</description>
 						<left>15</left>
-						<top>27</top>
+						<top>15</top>
 						<width>176</width>
-						<height>110</height>
+						<height>134</height>
 						<texture diffuse="covers/home-panel-episode-cover-diffuse.png" background="true">$INFO[VideoPlayer.cover]</texture>
-						<bordersize>4</bordersize>
 						<aspectratio>keep</aspectratio>
 					</control>
 
@@ -3899,7 +3915,7 @@
 							<font>PanelInfoHeadFont</font>
 							<textcolor>WhiteColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[VideoPlayer.Title]</label>
+							<label>$VAR[VideoPlayerSeasonEpisodesNumberVar,,. ]$INFO[VideoPlayer.Title]</label>
 							<scroll>true</scroll>
 						</control>
 						<control type="label">
@@ -3926,14 +3942,15 @@
 							<scroll>true</scroll>
 						</control>
 						<control type="label">
-							<description>Season/Episode</description>
+							<description>Next Episode</description>
 							<width>272</width>
 							<height>12</height>
 							<font>PanelInfoFont</font>
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[VideoPlayer.Season,$LOCALIZE[20373] ,] - $INFO[VideoPlayer.Episode,$LOCALIZE[20359] ,]</label>
+							<label>$LOCALIZE[209]: $VAR[VideoPlayerSeasonEpisodesOffset1NumberVar,,. ]$INFO[VideoPlayer.offset(1).Title]</label>
 							<scroll>true</scroll>
+							<visible>!String.IsEmpty(VideoPlayer.offset(1).Title)</visible>
 						</control>
 					</control>
 				</control>
