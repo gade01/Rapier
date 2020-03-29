@@ -2311,6 +2311,17 @@
 		<value>$INFO[VideoPlayer.Year]</value>
 	</variable>
 	
+	<variable name="VideoFullscreenChapterNextLabel">
+		<value condition="Player.ChapterCount">$LOCALIZE[21396]</value>
+		<value>$LOCALIZE[209]</value>
+	</variable>
+	
+	<variable name="VideoFullscreenChapterNextInfo">
+		<value condition="Player.ChapterCount">$INFO[Player.Chapter]$INFO[Player.ChapterCount, / ]$INFO[Player.ChapterName, - ,]</value>
+		<value condition="VideoPlayer.Content(Movies)">$INFO[VideoPlayer.offset(1).Title]$INFO[VideoPlayer.offset(1).Year, (,)]</value>
+		<value>$VAR[VideoPlayerSeasonEpisodesOffset1NumberVar,,. ]$INFO[VideoPlayer.offset(1).Title]</value>
+	</variable>
+	
 	<variable name="PosterImageOSD">
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
