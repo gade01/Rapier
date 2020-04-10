@@ -566,13 +566,13 @@
 							<param name="label" value="$LOCALIZE[572]" />
 							<param name="width" value="320" />
 							<param name="info" value="$VAR[SeasonStudio]" />
-							<param name="visible" value="Container.Content(Seasons) + ![System.HasAddon(script.tv.show.next.aired) | String.IsEmpty(Window(Home).Property(NextAired.Status))]" />
+							<param name="visible" value="Container.Content(Seasons) + [String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(ListItem.Status)]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[126]" />
 							<param name="width" value="320" />
-							<param name="info" value="$INFO[Window(Home).Property(NextAired.Status)]" />
-							<param name="visible" value="Container.Content(Seasons) + System.HasAddon(script.tv.show.next.aired) + !String.IsEmpty(Window(Home).Property(NextAired.Status))" />
+							<param name="info" value="$VAR[TVShowStatusVar]" />
+							<param name="visible" value="Container.Content(Seasons) + ![String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(ListItem.Status)]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[345]" />

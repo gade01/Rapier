@@ -1480,46 +1480,52 @@
 						</focusedlayout>
 						<content>
 							<item id="1">
+								<description>Seasons</description>
+								<label>$LOCALIZE[33054]</label>
+								<label2>$INFO[ListItem.Season]</label2>
+								<visible>String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
+							</item>
+							<item id="2">
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[ListItem.Episode][COLOR=DisabledColor] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
 							</item>
-							<item id="2">
+							<item id="3">
 								<description>Studio</description>
 								<label>$LOCALIZE[572]</label>
 								<label2>$INFO[ListItem.Studio]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=TVShow)</onclick>
 								<visible>String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
-							<item id="3">
+							<item id="4">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
 							</item>
-							<item id="4">
+							<item id="5">
 								<description>Next Aired Status</description>
 								<label>$LOCALIZE[126]</label>
-								<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
+								<label2>$VAR[TVShowStatusVar]</label2>
 							</item>
-							<item id="5">
+							<item id="6">
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=premiered&amp;type=TVShow)</onclick>
 							</item>
-							<item id="6">
+							<item id="7">
 								<description>Next Aired Latest Episode</description>
 								<label>$LOCALIZE[31966]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
 							</item>
-							<item id="7">
+							<item id="8">
 								<description>Next Aired Next Episode</description>
 								<label>$LOCALIZE[31967]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
-							<item id="8">
+							<item id="9">
 								<description>Rating</description>
 								<label>$LOCALIZE[563]</label>
 								<label2>$INFO[ListItem.Rating]$INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250),  &#x2022;  $LOCALIZE[31974] #,]$INFO[ListItem.UserRating,  &#x2022;  $LOCALIZE[38018] ,]</label2>
@@ -1527,7 +1533,7 @@
 								<onclick condition="System.HasAddon(script.libraryeditor)">ActivateWindow(1105)</onclick>
 								<onclick condition="!System.HasAddon(script.libraryeditor)">SendClick(2013,7)</onclick>
 							</item>
-							<item id="9">
+							<item id="10">
 								<description>File Path</description>
 								<label>$LOCALIZE[573]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>
@@ -1708,46 +1714,52 @@
 						</focusedlayout>
 						<content>
 							<item id="1">
+								<description>Seasons</description>
+								<label>$LOCALIZE[33054]</label>
+								<label2>$INFO[ListItem.Season]</label2>
+								<visible>String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
+							</item>
+							<item id="2">
 								<description>Episodes</description>
 								<label>$LOCALIZE[20360]</label>
 								<label2>$INFO[ListItem.Episode][COLOR=DisabledColor] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label2>
 							</item>
-							<item id="2">
+							<item id="3">
 								<description>Studio</description>
 								<label>$LOCALIZE[572]</label>
 								<label2>$INFO[ListItem.Studio]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=studio&amp;type=TVShow)</onclick>
 								<visible>String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
-							<item id="3">
+							<item id="4">
 								<description>Year</description>
 								<label>$LOCALIZE[345]</label>
 								<label2>$INFO[ListItem.Year]</label2>
 							</item>
-							<item id="4">
+							<item id="5">
 								<description>Next Aired Status</description>
 								<label>$LOCALIZE[126]</label>
-								<label2>$INFO[Window(Home).Property(NextAired.Status)]</label2>
+								<label2>$VAR[TVShowStatusVar]</label2>
 							</item>
-							<item id="5">
+							<item id="6">
 								<description>First Aired</description>
 								<label>$LOCALIZE[20416]</label>
 								<label2>$INFO[ListItem.Premiered]</label2>
 								<onclick condition="System.HasAddon(script.libraryeditor)">RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID]&amp;tag=premiered&amp;type=TVShow)</onclick>
 							</item>
-							<item id="6">
+							<item id="7">
 								<description>Next Aired Latest Episode</description>
 								<label>$LOCALIZE[31966]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.LatestSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.LatestEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.LatestTitle)] $INFO[Window(Home).Property(NextAired.LatestDate),(,)]</label2>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))</visible>
 							</item>
-							<item id="7">
+							<item id="8">
 								<description>Next Aired Next Episode</description>
 								<label>$LOCALIZE[31967]</label>
 								<label2>$INFO[Window(Home).Property(NextAired.NextSeasonNumber),S,]$INFO[Window(Home).Property(NextAired.NextEpisodeNumber),E,.] $INFO[Window(Home).Property(NextAired.NextTitle)] $INFO[Window(Home).Property(NextAired.NextDate),(,)]</label2>
 								<visible>!String.IsEmpty(Window(Home).Property(NextAired.Nextdate))</visible>
 							</item>
-							<item id="8">
+							<item id="9">
 								<description>Rating</description>
 								<label>$LOCALIZE[563]</label>
 								<label2>$INFO[ListItem.Rating]$INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250),  &#x2022;  $LOCALIZE[31974] #,]$INFO[ListItem.UserRating,  &#x2022;  $LOCALIZE[38018] ,]</label2>
@@ -1755,7 +1767,7 @@
 								<onclick condition="System.HasAddon(script.libraryeditor)">ActivateWindow(1105)</onclick>
 								<onclick condition="!System.HasAddon(script.libraryeditor)">SendClick(2013,7)</onclick>
 							</item>
-							<item id="9">
+							<item id="10">
 								<description>File Path</description>
 								<label>$LOCALIZE[573]</label>
 								<label2>$INFO[ListItem.FileNameAndPath]</label2>

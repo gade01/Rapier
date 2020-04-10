@@ -802,7 +802,7 @@
 					</include>
 					
 					<include content="ListInfo3GrouplistContent">
-						<param name="visible" value="!System.HasAddon(script.tv.show.next.aired)" />
+						<param name="visible" value="String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(ListItem.Status)" />
 						<param name="top" value="22" />
 						<param name="label_width" value="150" />
 						<param name="label" value="$LOCALIZE[572]:" />
@@ -811,12 +811,12 @@
 					</include>
 					
 					<include content="ListInfo3GrouplistContent">
-						<param name="visible" value="System.HasAddon(script.tv.show.next.aired)" />
+						<param name="visible" value="![String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(ListItem.Status)]" />
 						<param name="top" value="22" />
 						<param name="label_width" value="150" />
 						<param name="label" value="$LOCALIZE[126]:" />
 						<param name="info_width" value="300" />
-						<param name="info" value="$INFO[Window(Home).Property(NextAired.Status)]" />
+						<param name="info" value="$VAR[TVShowStatusVar]" />
 					</include>
 					
 					<include content="ListInfo3GrouplistContent">

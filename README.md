@@ -9,6 +9,9 @@ Rapier tries to support all the latest features Kodi has to offer as long as it 
   
 Created by scarfa and Gade  
 
+### DOCUMENTATION:
+[Documentation for this skin can be found at the wiki](https://github.com/gade01/Rapier/wiki)
+
 ### DOWNLOAD / INSTALL:
 Can be installed through the official Kodi repository or Gade's Development Repository.
 

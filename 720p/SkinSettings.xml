@@ -61,7 +61,7 @@
 	<onunload>Skin.Reset(ExpandContextMenuSettings)</onunload>
 	
 	<controls>
-		<include>CustomPlaylistBackground</include>
+		<include>BackgroundImagesCustomCategoryPlaylist</include>
 		
 		<control type="group">
 			<depth>DepthBackground</depth>
@@ -379,15 +379,6 @@
 							<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
 							<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 						</control>
-						<control type="button" id="7024">
-							<description>script.skin.helper.backgrounds</description>
-							<include>SettingsContentBtn</include>
-							<label>Skin Helper Service Backgrounds</label>
-							<label2>$VAR[StatusSkinHelperBackgroundsVar]</label2>
-							<onclick condition="System.AddonIsEnabled(script.skin.helper.backgrounds)">Addon.OpenSettings(script.skin.helper.backgrounds)</onclick>
-							<onclick condition="!System.HasAddon(script.skin.helper.backgrounds)">InstallAddon(script.skin.helper.backgrounds)</onclick>
-							<onclick condition="System.HasAddon(script.skin.helper.backgrounds) + !System.AddonIsEnabled(script.skin.helper.backgrounds)">EnableAddon(script.skin.helper.backgrounds)</onclick>
-						</control>
 						<control type="button" id="7032">
 							<description>script.skin.helper.widgets</description>
 							<include>SettingsContentBtn</include>
@@ -414,15 +405,6 @@
 							<onclick condition="System.AddonIsEnabled(script.artistslideshow)">Addon.OpenSettings(script.artistslideshow)</onclick>
 							<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
 							<onclick condition="System.HasAddon(script.artistslideshow) + !System.AddonIsEnabled(script.artistslideshow)">EnableAddon(script.artistslideshow)</onclick>
-						</control>
-						<control type="button" id="7009">
-							<description>script.randomandlastitems</description>
-							<include>SettingsContentBtn</include>
-							<label>Random and Last items script</label>
-							<label2>$VAR[StatusRandomAndLastItemsVar]</label2>
-							<onclick condition="System.AddonIsEnabled(script.randomandlastitems)">Addon.OpenSettings(script.randomandlastitems)</onclick>
-							<onclick condition="!System.HasAddon(script.randomandlastitems)">InstallAddon(script.randomandlastitems)</onclick>
-							<onclick condition="System.HasAddon(script.randomandlastitems) + !System.AddonIsEnabled(script.randomandlastitems)">EnableAddon(script.randomandlastitems)</onclick>
 						</control>
 						<control type="button" id="7010">
 							<description>script.artwork.downloader</description>
