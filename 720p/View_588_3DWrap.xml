@@ -344,7 +344,7 @@
 				<texture border="8">views/genre-background.png</texture>
 				<include>ControlsOpenCloseAnim</include>
 				<include>BackgroundVisibleAnim</include>
-				<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+				<visible>!String.IsEmpty(ListItem.Genre) | ListItem.IsCollection</visible>
 				<visible>![[Container.Content(TVShows) + Skin.HasSetting(HideTVShowsGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 			</control>
 			
@@ -360,7 +360,7 @@
 				<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
 				<scroll>true</scroll>
 				<include>BackgroundVisibleAnim</include>
-				<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+				<visible>!String.IsEmpty(ListItem.Genre) | ListItem.IsCollection</visible>
 				<visible>![[Container.Content(TVShows) + Skin.HasSetting(HideTVShowsGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 			</control>
 
@@ -393,19 +393,6 @@
 					<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
 					<scroll>true</scroll>
 					<visible>String.IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableVideosClearLogo)</visible>
-				</control>
-				
-				<control type="label">
-					<top>174</top>
-					<width>572</width>
-					<height>65</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>MediaInfoFont</font>
-					<textcolor>MediaInfoItemColor</textcolor>
-					<shadowcolor>ShadowColor</shadowcolor>
-					<label>$LOCALIZE[20457]</label>
-					<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
 				<control type="group">

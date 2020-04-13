@@ -623,20 +623,6 @@
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>ListInfo3PanelFanart</include>
 			
-			<control type="label">
-				<left>40</left>
-				<top>348</top>
-				<width>404</width>
-				<height>58</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>MediaInfoFont</font>
-				<textcolor>MediaInfoItemColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$LOCALIZE[20457]</label>
-				<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
-			</control>
-			
 			<include content="ThumbsInfoMediaInfoArea">
 				<param name="visible" value="!ListItem.IsCollection" />
 				<param name="Grouplist1LabelWidth" value="110" />

@@ -1364,7 +1364,7 @@
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
-			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(NextAired.Genre)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(NextAired.Genre))] | ListItem.IsCollection</visible>
 			<visible>![[Container.Content(Episodes) + Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 		</control>
 					
@@ -1379,7 +1379,7 @@
 			<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="90" condition="true">Conditional</animation>
-			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>!String.IsEmpty(ListItem.Genre) | ListItem.IsCollection</visible>
 			<visible>![[Container.Content(Episodes) + Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + Skin.HasSetting(HideMoviesGenres)]]</visible>
 		</control>
 		
@@ -1405,20 +1405,6 @@
 			<include condition="!Skin.HasSetting(EnableMoviesListInfo2ExtraThumbs)">ListInfo2PanelFanart</include>
 			<include condition="Skin.HasSetting(EnableMoviesListInfo2ExtraThumbs)">ListInfo2PanelExtraThumbs</include>
 			
-			<control type="label">
-				<left>40</left>
-				<top>424</top>
-				<width>542</width>
-				<height>58</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>MediaInfoFont</font>
-				<textcolor>MediaInfoItemColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<label>$LOCALIZE[20457]</label>
-				<visible>ListItem.IsCollection + !System.HasAddon(script.skin.helper.service)</visible>
-			</control>
-			
 			<include content="ListInfo2MediaInfoArea">
 				<param name="visible" value="!ListItem.IsCollection" />
 				<param name="Grouplist1LabelWidth" value="110" />
@@ -1440,7 +1426,7 @@
 			</include>
 			
 			<include content="ListInfo2MediaInfoArea">
-				<param name="visible" value="ListItem.IsCollection + System.HasAddon(script.skin.helper.service)" />
+				<param name="visible" value="ListItem.IsCollection" />
 				<param name="Grouplist1LabelWidth" value="110" />
 				<param name="Grouplist1Label" value="$LOCALIZE[342]" />
 				<param name="Grouplist1InfoWidth" value="310" />

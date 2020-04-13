@@ -826,7 +826,7 @@
 			<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="90" condition="true">Conditional</animation>
-			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>!String.IsEmpty(ListItem.Genre) | ListItem.IsCollection</visible>
 			<visible>[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMoviesGenres)</visible>
 		</control>
 		
@@ -1138,7 +1138,7 @@
 			<width>250</width>
 			<height>27</height>
 			<texture border="8">views/genre-background.png</texture>
-			<visible>![String.IsEmpty(ListItem.Genre) + [Container.Content(Seasons) + String.IsEmpty(ListItem(1).Genre) + String.IsEmpty(ListItem(2).Genre)] + String.IsEmpty(Window(Home).Property(NextAired.Genre)) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>![String.IsEmpty(ListItem.Genre) + [Container.Content(Seasons) + String.IsEmpty(ListItem(1).Genre) + String.IsEmpty(ListItem(2).Genre)] + String.IsEmpty(Window(Home).Property(NextAired.Genre))] | ListItem.IsCollection</visible>
 			<visible>[Container.Content(Episodes) + !Skin.HasSetting(HideEpisodesGenres)] | [[Container.Content(TVShows) | Container.Content(Seasons)] + !Skin.HasSetting(HideTVShowsGenres)] | [[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMoviesGenres)]</visible>
 		</control>
 		
@@ -1163,7 +1163,7 @@
 			<label>[UPPERCASE]$VAR[MovieGenre][/UPPERCASE]</label>
 			<scroll>false</scroll>
 			<animation effect="fade" end="90" condition="true">Conditional</animation>
-			<visible>![String.IsEmpty(ListItem.Genre) + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Genre))]</visible>
+			<visible>!String.IsEmpty(ListItem.Genre) | ListItem.IsCollection</visible>
 			<visible>[Container.Content(Movies) | Container.Content(Sets)] + !Skin.HasSetting(HideMoviesGenres)</visible>
 		</control>
 		
