@@ -627,7 +627,7 @@
 	
 	<variable name="TVCategoryAction">
 		<value condition="!String.IsEmpty(Skin.String(PVRCategoryAction))">$INFO[Skin.String(PVRCategoryAction)]</value>
-		<value>ActivateWindow(TVChannels,Return)</value>
+		<value>ActivateWindow(TVChannels)</value>
 	</variable>
 	
 	<include name="HomeTVCategory">
@@ -642,7 +642,7 @@
 	
 	<variable name="RadioCategoryAction">
 		<value condition="!String.IsEmpty(Skin.String(PVRRadioCategoryAction))">$INFO[Skin.String(PVRRadioCategoryAction)]</value>
-		<value>ActivateWindow(RadioChannels,Return)</value>
+		<value>ActivateWindow(RadioChannels)</value>
 	</variable>
 		
 	<include name="HomeRadioCategory">
