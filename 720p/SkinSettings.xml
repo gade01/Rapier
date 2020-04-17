@@ -379,6 +379,15 @@
 							<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
 							<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">EnableAddon(script.skin.helper.service)</onclick>
 						</control>
+						<control type="button" id="7009">
+							<description>script.embuary helper</description>
+							<include>SettingsContentBtn</include>
+							<label>Embuary Helper</label>
+							<label2>$VAR[StatusEmbuaryHelperVar]</label2>
+							<onclick condition="System.AddonIsEnabled(script.embuary.helper)">Addon.OpenSettings(script.embuary.helper)</onclick>
+							<onclick condition="!System.HasAddon(script.embuary.helper)">InstallAddon(script.embuary.helper)</onclick>
+							<onclick condition="System.HasAddon(script.embuary.helper) + !System.AddonIsEnabled(script.embuary.helper)">EnableAddon(script.embuary.helper)</onclick>
+						</control>
 						<control type="button" id="7032">
 							<description>script.skin.helper.widgets</description>
 							<include>SettingsContentBtn</include>

@@ -38,7 +38,7 @@
 				<include condition="System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(HideNextAiredWidget)">NextAiredWidget</include>
 				<include condition="!Skin.HasSetting(HideAddonsWidget)">AddonsWidget</include>
 				<include condition="!Skin.HasSetting(HideGamesWidget)">GamesWidget</include>
-				<include condition="System.HasAddon(script.skin.helper.widgets) + !Skin.HasSetting(HideFavouritesWidget)">FavouritesWidget</include>
+				<include condition="!Skin.HasSetting(HideFavouritesWidget)">FavouritesWidget</include>
 				<include condition="System.HasAddon(script.tv.show.next.aired) + String.Contains(Window(Home).Property(NextAired.ShowAllTVShows),true)">NextAiredUpcomingWidget</include>
 				<include condition="!Skin.HasSetting(HideHomeCategoryIcons)">HomeCategoryIcons</include>
 				<include>HomeAddonShortcuts</include>
