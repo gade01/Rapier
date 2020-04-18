@@ -874,6 +874,22 @@
 					<param name="info" value="$INFO[ListItem.Year]" />
 					<param name="visible" value="true" />
 				</include>
+				<control type="label">
+					<height>45</height>
+					<width>26</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>MediaInfoFont</font>
+					<textcolor>GreyColor3</textcolor>
+					<label>&#x2022;</label>
+					<visible>ListItem.IsBoxset</visible>
+				</control>
+		<include content="ListInfoGrouplistContent">
+					<param name="label" value="$LOCALIZE[14087]:" />
+					<param name="maxwidth" value="110" />
+					<param name="info" value="$INFO[ListItem.TotalDiscs]" />
+					<param name="visible" value="ListItem.IsBoxset" />
+				</include>
 			</control>
 			
 			<control type="grouplist">

@@ -982,7 +982,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<aligny>center</aligny>
 						<label>$VAR[ExtendedListContainerLabel]</label>
-						<visible>!String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+						<visible>![String.Contains(Container.FolderPath,musicdb://albums/) + ![Container(584).ListItem.IsBoxset + !String.IsEmpty(Container(584).ListItem.ActualIcon)]]</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -994,7 +994,7 @@
 						<shadowcolor>ShadowColor</shadowcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
-						<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+						<visible>String.Contains(Container.FolderPath,musicdb://albums/) + ![Container(584).ListItem.IsBoxset + !String.IsEmpty(Container(584).ListItem.ActualIcon)]</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -1046,7 +1046,7 @@
 						<aligny>center</aligny>
 						<label>$VAR[ExtendedListContainerLabel]</label>
 						<scroll>true</scroll>
-						<visible>!String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+						<visible>![String.Contains(Container.FolderPath,musicdb://albums/) + ![Container(584).ListItem.IsBoxset + !String.IsEmpty(Container(584).ListItem.ActualIcon)]]</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -1059,7 +1059,7 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
 						<scroll>true</scroll>
-						<visible>String.Contains(Container.FolderPath,musicdb://albums/)</visible>
+						<visible>String.Contains(Container.FolderPath,musicdb://albums/) + ![Container(584).ListItem.IsBoxset + !String.IsEmpty(Container(584).ListItem.ActualIcon)]</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>

@@ -398,6 +398,22 @@
 				<param name="info" value="$INFO[ListItem.Year]" />
 				<param name="visible" value="true" />
 			</include>
+			<control type="label">
+				<height>33</height>
+				<width>26</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>PanelTitleFont</font>
+				<textcolor>GreyColor3</textcolor>
+				<label>&#x2022;</label>
+				<visible>ListItem.IsBoxset</visible>
+			</control>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$LOCALIZE[14087]:" />
+				<param name="maxwidth" value="110" />
+				<param name="info" value="$INFO[ListItem.TotalDiscs]" />
+				<param name="visible" value="ListItem.IsBoxset" />
+			</include>
 		</control>
 	</include>
 	
@@ -1056,6 +1072,7 @@
 	</include>
 	
 	<variable name="WrapListInfoAlbumLabel">
+		<value condition="ListItem.IsBoxset + !String.IsEqual(ListItem.Album,ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Album,  (,)]</value>
 		<value condition="!String.IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>

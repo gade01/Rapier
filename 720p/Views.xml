@@ -96,6 +96,7 @@
 	</variable>
 	
 	<variable name="ListTallStyleLabel">
+		<value condition="ListItem.IsBoxset + !String.IsEqual(ListItem.Album,ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Album,  (,)]</value>
 		<value condition="Container.Content(Albums) + !String.IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(Songs) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value condition="Container.Content(Artists) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>

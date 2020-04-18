@@ -317,6 +317,7 @@
 	</include>
 	
 	<variable name="ListTallStyleMusicLabel2">
+		<value condition="ListItem.IsBoxset">$INFO[ListItem.Year]$INFO[ListItem.Artist,  -  ,]$INFO[ListItem.TotalDiscs,  (, $LOCALIZE[14087])]</value>
 		<value condition="Container.Content(Albums)">$INFO[ListItem.Year]$INFO[ListItem.Artist,  -  ,]</value>
 		<value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_Born)]$INFO[ListItem.Property(Artist_Formed)]</value>
 		<value>$INFO[ListItem.Duration,, $LOCALIZE[31003]]$INFO[ListItem.Artist,  -  ,]</value>

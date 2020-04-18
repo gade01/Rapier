@@ -240,6 +240,7 @@
 	
 	<!-- INCLUDES -->
 	<variable name="ThumbsInfoInfoPaneItemTitle">
+		<value condition="ListItem.IsBoxset + !String.IsEqual(ListItem.Album,ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Album,  (,)]</value>
 		<value condition="Container.Content(Albums) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Album]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>

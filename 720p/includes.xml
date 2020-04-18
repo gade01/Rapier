@@ -2001,6 +2001,11 @@
 		<value condition="String.IsEqual(ListItem.DBTYPE,album)">$LOCALIZE[183]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,song)">$LOCALIZE[569]</value>
 	</variable>
+	
+	<variable name="MusicInfoAlbumTypeVar">
+		<value condition="ListItem.IsBoxset">$INFO[ListItem.Property(Album_Type)]$INFO[ListItem.TotalDiscs, (, $LOCALIZE[14087])]</value>
+		<value>$INFO[ListItem.Property(Album_Type)]</value>
+	</variable>
 	<!-- END DialogMusicInfo.xml -->
 	
 	<!-- Skin Settings -->
