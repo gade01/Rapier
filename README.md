@@ -55,16 +55,15 @@ resource.images.studios.white 0.0.2
 <br>
 
 ## DEVELOPMENT:
-[Github](https://github.com/gade01/Rapier)
+[Github](https://github.com/gade01/Rapier)  
 <br>
 
 ## LINKS:
 [Kodi forum (skin support)](http://forum.kodi.tv/forumdisplay.php?fid=120)
 
-[Kodi Wiki](http://kodi.wiki/view/Add-on:Rapier)
-<br>
+[Kodi Wiki](http://kodi.wiki/view/Add-on:Rapier)  
 
-## [Screenshots](http://kodi.wiki/view/Add-on:Rapier#Screenshots)
+[SCREENSHOTS](http://kodi.wiki/view/Add-on:Rapier#Screenshots)  
 <br>
 
 ## DONATIONS:
