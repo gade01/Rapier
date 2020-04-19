@@ -26,6 +26,17 @@ To install this add-on you must do so from the Add-on manager from within Kodi b
 6. Skins   
 7. Rapier   
 8. Install
+
+Any script dependencies that the skin requires will automatically be downloaded. If you already have the skin file, then go into the add-ons node and choose "Install from zip file" and select the Rapier zip file.
+
+Manual installation of the skin can be done by moving the skin.rapier folder inside the zip file into your addons folder of your Kodi profile.  
+Please make sure you have the following scripts installed when doing it manually: 
+
+script.favourites v5.0.2  
+script.tv.show.next.aired v6.0.10  
+script.skin.helper.service v1.1.3  
+script.embuary.helper v2.0.2  
+resource.images.studios.white 0.0.2  
 <br>
 
 ## DEVELOPMENT REPOSITORY:  
@@ -41,17 +52,6 @@ To install this repository, you must do so by following these steps:
 7. Install   
 
 After this, you will automatically receive the latest development versions directly within Kodi.   
-
-Any script dependencies that the skin requires will automatically be downloaded. If you already have the skin file, then go into the add-ons node and choose "Install from zip file" and select the Rapier zip file.
-
-Manual installation of the skin can be done by moving the skin.rapier folder inside the zip file into your addons folder of your Kodi profile.  
-Please make sure you have the following scripts installed when doing it manually: 
-
-script.favourites v5.0.2  
-script.tv.show.next.aired v6.0.10  
-script.skin.helper.service v1.1.3  
-script.embuary.helper v2.0.2  
-resource.images.studios.white 0.0.2  
 <br>
 
 ## DEVELOPMENT:
