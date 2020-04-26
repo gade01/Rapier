@@ -35,11 +35,11 @@
 				<include condition="!Skin.HasSetting(HideWeatherHomePanel) + !Skin.HasSetting(DisableWeather) + !String.IsEmpty(Weather.Plugin)">WeatherPanel</include>
 				<include condition="!Skin.HasSetting(HideSystemInfoHomePanel)">SystemInfoPanel</include>
 				<include condition="!Skin.HasSetting(HideRecordingInfoHomePanel)">RecordingInfoPanel</include>
-				<include condition="System.HasAddon(script.tv.show.next.aired) + !Skin.HasSetting(HideNextAiredWidget)">NextAiredWidget</include>
+				<include condition="System.HasAddon(script.embuary.info) + !Skin.HasSetting(HideNextAiredWidget)">NextAiredWidget</include>
 				<include condition="!Skin.HasSetting(HideAddonsWidget)">AddonsWidget</include>
 				<include condition="!Skin.HasSetting(HideGamesWidget)">GamesWidget</include>
 				<include condition="!Skin.HasSetting(HideFavouritesWidget)">FavouritesWidget</include>
-				<include condition="System.HasAddon(script.tv.show.next.aired) + String.Contains(Window(Home).Property(NextAired.ShowAllTVShows),true)">NextAiredUpcomingWidget</include>
+				<include condition="System.HasAddon(script.embuary.info)">NextAiredUpcomingWidget</include>
 				<include condition="!Skin.HasSetting(HideHomeCategoryIcons)">HomeCategoryIcons</include>
 				<include>HomeAddonShortcuts</include>
 				<include>DialogPopUpScreenDim</include>

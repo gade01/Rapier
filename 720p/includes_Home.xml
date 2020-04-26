@@ -4663,7 +4663,7 @@
 				<texture>$VAR[NextAiredWidget$PARAM[Widget1Number]]</texture>
 				<aspectratio aligny="center" align="center">keep</aspectratio>
 				<include>NextAiredFadeAnim</include>
-				<visible>String.Contains(Window(Home).Property(NextAired.$PARAM[Widget1Number].Today),true)</visible>
+				<visible>!String.IsEmpty(Container(3570).ListItemNoWrap($PARAM[Widget1Number]).Label)</visible>
 			</control>
 			<control type="image">
 				<width>146</width>
@@ -4671,7 +4671,7 @@
 				<texture>$VAR[NextAiredWidget$PARAM[Widget2Number]]</texture>
 				<aspectratio aligny="center" align="center">keep</aspectratio>
 				<include>NextAiredFadeAnim2</include>
-				<visible>String.Contains(Window(Home).Property(NextAired.$PARAM[Widget2Number].Today),true)</visible>
+				<visible>!String.IsEmpty(Container(3570).ListItemNoWrap($PARAM[Widget2Number]).Label)</visible>
 			</control>
 			<control type="image">
 				<width>146</width>
@@ -4679,21 +4679,28 @@
 				<texture>$VAR[NextAiredWidget$PARAM[Widget3Number]]</texture>
 				<aspectratio aligny="center" align="center">keep</aspectratio>
 				<include>NextAiredFadeAnim3</include>
-				<visible>String.Contains(Window(Home).Property(NextAired.$PARAM[Widget3Number].Today),true)</visible>
+				<visible>!String.IsEmpty(Container(3570).ListItemNoWrap($PARAM[Widget3Number]).Label)</visible>
 			</control>
 		</control>
 	</include>
 	
 	<variable name="NextAiredWidgetTitle">
-		<value condition="String.IsEqual(Window(Home).Property(NextAired.TodayTotal),1)">$INFO[Window(Home).Property(NextAired.TodayTotal),, $LOCALIZE[31926]]</value>
-		<value>$INFO[Window(Home).Property(NextAired.TodayTotal),, $LOCALIZE[31925]]</value>
+		<value condition="String.IsEqual(Container(3570).NumItems,1)">$INFO[Container(3570).NumItems,, $LOCALIZE[31926]]</value>
+		<value>$INFO[Container(3570).NumItems,, $LOCALIZE[31925]]</value>
 	</variable>
 	
 	<include name="NextAiredWidget">
+		<control type="list" id="3570">
+			<left>2000</left>
+			<itemlayout />
+			<focusedlayout />
+			<content>plugin://script.embuary.info/nextaired/today</content>
+		</control>
+		
 		<control type="group">
 			<left>5</left>
 			<top>280</top>
-			<visible>Container(850).HasFocus(4) + Integer.IsGreater(Window(Home).Property(NextAired.TodayTotal),0) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + !Control.IsVisible(6930)</visible>
+			<visible>Container(850).HasFocus(4) + !String.IsEmpty(Container(3570).ListItemNoWrap(0).Label) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + !Control.IsVisible(6930)</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
 
 			<control type="image">
@@ -4764,6 +4771,11 @@
 				<orientation>horizontal</orientation>
 				<itemgap>9</itemgap>
 				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="0" />
+					<param name="Widget2Number" value="6" />
+					<param name="Widget3Number" value="12" />
+				</include>
+				<include content="NextAiredWidgetContent">
 					<param name="Widget1Number" value="1" />
 					<param name="Widget2Number" value="7" />
 					<param name="Widget3Number" value="13" />
@@ -4772,11 +4784,6 @@
 					<param name="Widget1Number" value="2" />
 					<param name="Widget2Number" value="8" />
 					<param name="Widget3Number" value="14" />
-				</include>
-				<include content="NextAiredWidgetContent">
-					<param name="Widget1Number" value="3" />
-					<param name="Widget2Number" value="9" />
-					<param name="Widget3Number" value="15" />
 				</include>
 			</control>
 			
@@ -4789,6 +4796,11 @@
 				<orientation>horizontal</orientation>
 				<itemgap>9</itemgap>
 				<include content="NextAiredWidgetContent">
+					<param name="Widget1Number" value="3" />
+					<param name="Widget2Number" value="9" />
+					<param name="Widget3Number" value="15" />
+				</include>
+				<include content="NextAiredWidgetContent">
 					<param name="Widget1Number" value="4" />
 					<param name="Widget2Number" value="10" />
 					<param name="Widget3Number" value="16" />
@@ -4797,11 +4809,6 @@
 					<param name="Widget1Number" value="5" />
 					<param name="Widget2Number" value="11" />
 					<param name="Widget3Number" value="17" />
-				</include>
-				<include content="NextAiredWidgetContent">
-					<param name="Widget1Number" value="6" />
-					<param name="Widget2Number" value="12" />
-					<param name="Widget3Number" value="18" />
 				</include>
 			</control>
 		</control>
@@ -4936,12 +4943,16 @@
 		<control type="group" id="6927">
 			<left>5</left>
 			<top>105</top>
-			<visible>Container(850).HasFocus(4) + !String.IsEmpty(Window(Home).Property(NextAired.1.Label)) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasMedia + !Skin.HasSetting(HideNowPlayingHomePanel) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
+			<visible>Container(850).HasFocus(4) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput) + ![Player.HasMedia + !Skin.HasSetting(HideNowPlayingHomePanel) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
 			<include>HomeLeftPanelOpenCloseAnim</include>
 			<animation effect="slide" end="0,175" condition="Skin.HasSetting(HideNextAiredWidget)">Conditional</animation>
 			
+			<include content="HomeWidgetLeftAnim">
+				<param name="id" value="6926" />
+			</include>
+			
 			<include content="WidgetPosterContent">
-				<param name="image" value="$INFO[Container(6926).ListItem.Thumb]" />
+				<param name="image" value="$INFO[Container(6926).ListItem.Art(poster)]" />
 				<param name="label" value="$LOCALIZE[31930]" />
 			</include>
 			
@@ -4959,254 +4970,14 @@
 				<onleft condition="Control.IsVisible(110)">110</onleft>
 				<onleft>850</onleft>
 				<include>ContainerPosition1</include>
+				<!--<onclick>ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.DBID]/,return)</onclick>-->
 				<include content="WidgetContainerLayout">
 					<param name="width" value="345" />
 					<param name="focus_width" value="355" />
-					<param name="label" value="$INFO[ListItem.Label]" />
+					<param name="label" value="$INFO[ListItem.Premiered,,: ]$INFO[ListItem.TVShowTitle]$VAR[SeasonEpisodesNumberVar, (,)]" />
 					<param name="id" value="6926" />
 				</include>
-				<content>
-					<item id="1">
-						<label>$INFO[Window(Home).Property(NextAired.1.NextDate),,: ]$INFO[Window.Property(NextAired.1.Label)]$INFO[Window.Property(NextAired.1.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.1.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.1.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.1.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.1.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.1.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.1.Label)) + ![String.Contains(Window(Home).Property(NextAired.1.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="2">
-						<label>$INFO[Window(Home).Property(NextAired.2.NextDate),,: ]$INFO[Window.Property(NextAired.2.Label)]$INFO[Window.Property(NextAired.2.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.2.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.2.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.2.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.2.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.2.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.2.Label)) + ![String.Contains(Window(Home).Property(NextAired.2.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="3">
-						<label>$INFO[Window(Home).Property(NextAired.3.NextDate),,: ]$INFO[Window.Property(NextAired.3.Label)]$INFO[Window.Property(NextAired.3.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.3.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.3.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.3.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.3.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.3.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.3.Label)) + ![String.Contains(Window(Home).Property(NextAired.3.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="4">
-						<label>$INFO[Window(Home).Property(NextAired.4.NextDate),,: ]$INFO[Window.Property(NextAired.4.Label)]$INFO[Window.Property(NextAired.4.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.4.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.4.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.4.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.4.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.4.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.4.Label)) + ![String.Contains(Window(Home).Property(NextAired.4.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="5">
-						<label>$INFO[Window(Home).Property(NextAired.5.NextDate),,: ]$INFO[Window.Property(NextAired.5.Label)]$INFO[Window.Property(NextAired.5.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.5.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.5.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.5.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.5.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.5.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.5.Label)) + ![String.Contains(Window(Home).Property(NextAired.5.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="6">
-						<label>$INFO[Window(Home).Property(NextAired.6.NextDate),,: ]$INFO[Window.Property(NextAired.6.Label)]$INFO[Window.Property(NextAired.6.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.6.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.6.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.6.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.6.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.6.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.6.Label)) + ![String.Contains(Window(Home).Property(NextAired.6.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="7">
-						<label>$INFO[Window(Home).Property(NextAired.7.NextDate),,: ]$INFO[Window.Property(NextAired.7.Label)]$INFO[Window.Property(NextAired.7.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.7.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.7.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.7.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.7.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.7.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.7.Label)) + ![String.Contains(Window(Home).Property(NextAired.7.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="8">
-						<label>$INFO[Window(Home).Property(NextAired.8.NextDate),,: ]$INFO[Window.Property(NextAired.8.Label)]$INFO[Window.Property(NextAired.8.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.8.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.8.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.8.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.8.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.8.Label)) + ![String.Contains(Window(Home).Property(NextAired.8.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="9">
-						<label>$INFO[Window(Home).Property(NextAired.9.NextDate),,: ]$INFO[Window.Property(NextAired.9.Label)]$INFO[Window.Property(NextAired.9.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.9.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.9.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.9.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.9.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.9.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.9.Label)) + ![String.Contains(Window(Home).Property(NextAired.9.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="10">
-						<label>$INFO[Window(Home).Property(NextAired.10.NextDate),,: ]$INFO[Window.Property(NextAired.10.Label)]$INFO[Window.Property(NextAired.10.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.10.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.10.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.10.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.10.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.10.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.10.Label)) + ![String.Contains(Window(Home).Property(NextAired.10.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="11">
-						<label>$INFO[Window(Home).Property(NextAired.11.NextDate),,: ]$INFO[Window.Property(NextAired.11.Label)]$INFO[Window.Property(NextAired.11.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.11.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.11.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.11.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.11.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.11.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.11.Label)) + ![String.Contains(Window(Home).Property(NextAired.11.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="12">
-						<label>$INFO[Window(Home).Property(NextAired.12.NextDate),,: ]$INFO[Window.Property(NextAired.12.Label)]$INFO[Window.Property(NextAired.12.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.12.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.12.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.12.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.12.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.12.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.12.Label)) + ![String.Contains(Window(Home).Property(NextAired.12.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="13">
-						<label>$INFO[Window(Home).Property(NextAired.13.NextDate),,: ]$INFO[Window.Property(NextAired.13.Label)]$INFO[Window.Property(NextAired.13.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.13.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.13.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.13.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.13.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.13.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.13.Label)) + ![String.Contains(Window(Home).Property(NextAired.13.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="14">
-						<label>$INFO[Window(Home).Property(NextAired.14.NextDate),,: ]$INFO[Window.Property(NextAired.14.Label)]$INFO[Window.Property(NextAired.14.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.14.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.14.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.14.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.14.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.14.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.14.Label)) + ![String.Contains(Window(Home).Property(NextAired.14.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="15">
-						<label>$INFO[Window(Home).Property(NextAired.15.NextDate),,: ]$INFO[Window.Property(NextAired.15.Label)]$INFO[Window.Property(NextAired.15.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.15.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.15.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.15.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.15.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.15.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.15.Label)) + ![String.Contains(Window(Home).Property(NextAired.15.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="16">
-						<label>$INFO[Window(Home).Property(NextAired.16.NextDate),,: ]$INFO[Window.Property(NextAired.16.Label)]$INFO[Window.Property(NextAired.16.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.16.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.16.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.16.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.16.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.16.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.16.Label)) + ![String.Contains(Window(Home).Property(NextAired.16.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="17">
-						<label>$INFO[Window(Home).Property(NextAired.17.NextDate),,: ]$INFO[Window.Property(NextAired.17.Label)]$INFO[Window.Property(NextAired.17.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.17.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.17.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.17.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.17.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.17.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.17.Label)) + ![String.Contains(Window(Home).Property(NextAired.17.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="18">
-						<label>$INFO[Window(Home).Property(NextAired.18.NextDate),,: ]$INFO[Window.Property(NextAired.18.Label)]$INFO[Window.Property(NextAired.18.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.18.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.18.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.18.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.18.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.18.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.18.Label)) + ![String.Contains(Window(Home).Property(NextAired.18.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="19">
-						<label>$INFO[Window(Home).Property(NextAired.19.NextDate),,: ]$INFO[Window.Property(NextAired.19.Label)]$INFO[Window.Property(NextAired.19.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.19.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.19.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.19.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.19.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.19.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.19.Label)) + ![String.Contains(Window(Home).Property(NextAired.19.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="20">
-						<label>$INFO[Window(Home).Property(NextAired.20.NextDate),,: ]$INFO[Window.Property(NextAired.20.Label)]$INFO[Window.Property(NextAired.20.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.20.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.20.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.20.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.20.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.20.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.20.Label)) + ![String.Contains(Window(Home).Property(NextAired.20.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="21">
-						<label>$INFO[Window(Home).Property(NextAired.21.NextDate),,: ]$INFO[Window.Property(NextAired.21.Label)]$INFO[Window.Property(NextAired.21.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.21.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.21.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.21.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.21.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.21.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.21.Label)) + ![String.Contains(Window(Home).Property(NextAired.21.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="22">
-						<label>$INFO[Window(Home).Property(NextAired.22.NextDate),,: ]$INFO[Window.Property(NextAired.22.Label)]$INFO[Window.Property(NextAired.22.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.22.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.22.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.22.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.22.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.22.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.22.Label)) + ![String.Contains(Window(Home).Property(NextAired.22.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="23">
-						<label>$INFO[Window(Home).Property(NextAired.23.NextDate),,: ]$INFO[Window.Property(NextAired.23.Label)]$INFO[Window.Property(NextAired.23.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.23.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.23.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.23.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.23.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.23.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.23.Label)) + ![String.Contains(Window(Home).Property(NextAired.23.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="24">
-						<label>$INFO[Window(Home).Property(NextAired.24.NextDate),,: ]$INFO[Window.Property(NextAired.24.Label)]$INFO[Window.Property(NextAired.24.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.24.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.24.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.24.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.24.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.24.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.24.Label)) + ![String.Contains(Window(Home).Property(NextAired.24.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="25">
-						<label>$INFO[Window(Home).Property(NextAired.25.NextDate),,: ]$INFO[Window.Property(NextAired.25.Label)]$INFO[Window.Property(NextAired.25.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.25.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.25.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.25.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.25.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.25.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.25.Label)) + ![String.Contains(Window(Home).Property(NextAired.25.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="26">
-						<label>$INFO[Window(Home).Property(NextAired.26.NextDate),,: ]$INFO[Window.Property(NextAired.26.Label)]$INFO[Window.Property(NextAired.26.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.26.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.26.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.26.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.26.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.26.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.26.Label)) + ![String.Contains(Window(Home).Property(NextAired.26.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="27">
-						<label>$INFO[Window(Home).Property(NextAired.27.NextDate),,: ]$INFO[Window.Property(NextAired.27.Label)]$INFO[Window.Property(NextAired.27.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.27.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.27.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.27.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.27.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.27.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.27.Label)) + ![String.Contains(Window(Home).Property(NextAired.27.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="28">
-						<label>$INFO[Window(Home).Property(NextAired.28.NextDate),,: ]$INFO[Window.Property(NextAired.28.Label)]$INFO[Window.Property(NextAired.28.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.28.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.28.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.28.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.28.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.28.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.28.Label)) + ![String.Contains(Window(Home).Property(NextAired.28.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="29">
-						<label>$INFO[Window(Home).Property(NextAired.29.NextDate),,: ]$INFO[Window.Property(NextAired.29.Label)]$INFO[Window.Property(NextAired.29.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.29.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.29.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.29.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.29.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.29.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.29.Label)) + ![String.Contains(Window(Home).Property(NextAired.29.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-					<item id="30">
-						<label>$INFO[Window(Home).Property(NextAired.30.NextDate),,: ]$INFO[Window.Property(NextAired.30.Label)]$INFO[Window.Property(NextAired.30.NextSeasonNumber), (S,]$INFO[Window.Property(NextAired.30.NextEpisodeNumber),E,)]</label>
-						<label2>$INFO[Window(Home).Property(NextAired.30.Label)]</label2>
-						<thumb>$INFO[Window(Home).Property(NextAired.30.Art(poster))]</thumb>
-						<icon>$INFO[Window(Home).Property(NextAired.30.Art(fanart))]</icon>
-						<onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.30.Library)],Return)</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(NextAired.30.Label)) + ![String.Contains(Window(Home).Property(NextAired.30.Today),true) + !Skin.HasSetting(HideNextAiredWidget)]</visible>
-					</item>
-				</content>
+				<content>plugin://script.embuary.info/nextaired/week</content>
 			</control>
 		</control>
 	</include>
@@ -5214,9 +4985,8 @@
 	<include name="HomePanelFanart">
 		<control type="group">
 			<visible>[!String.IsEmpty(Container.ListItem.Thumb) + [Control.HasFocus(6882) | Control.HasFocus(6883)]] |
-			[!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6870) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]] |
-			[!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]] |
-			[!String.IsEmpty(Container.ListItem.ActualIcon) + Control.HasFocus(6926)]</visible>
+			[!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6870) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886) | Control.HasFocus(6926)]] |
+			[!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]]</visible>
 			<depth>DepthBackground</depth>
 			<include>RecentlyAddedFanartOpenCloseAnim</include>
 
@@ -5236,9 +5006,8 @@
 
 	<variable name="HomePanelFanart">
 		<value condition="!String.IsEmpty(Container.ListItem.Thumb) + [Control.HasFocus(6882) | Control.HasFocus(6883)]">$INFO[Container.ListItem.Thumb]</value>
-		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6870) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886)]">$INFO[Container.ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart)) + [Control.HasFocus(6888) | Control.HasFocus(6890) | Control.HasFocus(6891) | Control.HasFocus(6893) | Control.HasFocus(6928) | Control.HasFocus(6929) | Control.HasFocus(6875) |Control.HasFocus(6878) | Control.HasFocus(6870) | Control.HasFocus(6880) | Control.HasFocus(6881) | Control.HasFocus(6886) | Control.HasFocus(6926)]">$INFO[Container.ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.fanart)) + [Control.HasFocus(6889) | Control.HasFocus(6892)]">$INFO[Container.ListItem.Art(tvshow.fanart)]</value>
-		<value condition="!String.IsEmpty(Container.ListItem.ActualIcon) + Control.HasFocus(6926)">$INFO[Container.ListItem.ActualIcon]</value>
 	</variable>
 
 	<include name="RecentlyAddedPanel">
