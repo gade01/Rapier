@@ -17,9 +17,9 @@
 	</variable>
 	
 	<variable name="RaspberryPiLabel">
-		<value condition="System.HasAddon(service.openelec.settings)">$LOCALIZE[31129]</value>
-		<value condition="System.HasAddon(service.libreelec.settings)">$LOCALIZE[31190]</value>
-		<value condition="System.HasAddon(service.coreelec.settings)">$LOCALIZE[31150]</value>
+		<value condition="System.AddonIsEnabled(service.openelec.settings)">$LOCALIZE[31129]</value>
+		<value condition="System.AddonIsEnabled(service.libreelec.settings)">$LOCALIZE[31190]</value>
+		<value condition="System.AddonIsEnabled(service.coreelec.settings)">$LOCALIZE[31150]</value>
 	</variable>
 	
 	<include name="ContainerPosition1">
@@ -2718,7 +2718,8 @@
 					<item id="7">
 						<description>TV Show Next Aired</description>
 						<label>$LOCALIZE[4]</label>
-						<onclick>RunScript(script.tv.show.next.aired)</onclick>
+						<onclick condition="System.HasAddon(script.tv.show.next.aired) + !System.AddonIsEnabled(script.tv.show.next.aired)">EnableAddon(script.tv.show.next.aired)</onclick>
+						<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired)</onclick>
 						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn7) + System.HasAddon(script.tv.show.next.aired)</visible>
 					</item>
 					<item id="7">
@@ -3426,15 +3427,15 @@
 						<description>Settings</description>
 						<label>$LOCALIZE[5]</label>
 						<onclick>ActivateWindow(InterfaceSettings)</onclick>
-						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + ![System.HasAddon(service.openelec.settings) | System.HasAddon(service.coreelec.settings) | System.HasAddon(service.libreelec.settings)]</visible>
+						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + ![System.AddonIsEnabled(service.openelec.settings) | System.AddonIsEnabled(service.coreelec.settings) | System.AddonIsEnabled(service.libreelec.settings)]</visible>
 					</item>
 					<item id="2">
 						<description>OpenELEC / LibreELEC / CoreELEC Settings</description>
 						<label>$VAR[RaspberryPiLabel]</label>
-						<onclick condition="System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
-						<onclick condition="System.HasAddon(service.libreelec.settings)">RunAddon(service.libreelec.settings)</onclick>
-						<onclick condition="System.HasAddon(service.coreelec.settings)">RunAddon(service.coreelec.settings)</onclick>
-						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + [System.HasAddon(service.openelec.settings) | System.HasAddon(service.coreelec.settings) | System.HasAddon(service.libreelec.settings)]</visible>
+						<onclick condition="System.AddonIsEnabled(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
+						<onclick condition="System.AddonIsEnabled(service.libreelec.settings)">RunAddon(service.libreelec.settings)</onclick>
+						<onclick condition="System.AddonIsEnabled(service.coreelec.settings)">RunAddon(service.coreelec.settings)</onclick>
+						<visible>![[Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn2)] | [!Skin.HasSetting(HidePowerCategory) + Skin.HasSetting(EditSystemSubMenuBtn1)]] + [System.AddonIsEnabled(service.openelec.settings) | System.AddonIsEnabled(service.coreelec.settings) | System.AddonIsEnabled(service.libreelec.settings)]</visible>
 					</item>
 					<item id="2">
 						<description>Custom Button</description>
@@ -5157,7 +5158,7 @@
 		
 		<control type="group">
 			<visible>Container(850).HasFocus(6)</visible>
-			<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBLatest.1.Name)) + System.HasAddon(plugin.image.mypicsdb) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
+			<visible>!String.IsEmpty(Window(Home).Property(MyPicsDBLatest.1.Name)) + System.AddonIsEnabled(plugin.image.mypicsdb) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
@@ -5458,7 +5459,7 @@
 		
 		<control type="group">
 			<visible>Container(850).HasFocus(6)</visible>
-			<visible>System.HasAddon(plugin.image.mypicsdb) + !String.IsEmpty(Window(Home).Property(MyPicsDBRandom.1.Name)) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
+			<visible>System.AddonIsEnabled(plugin.image.mypicsdb) + !String.IsEmpty(Window(Home).Property(MyPicsDBRandom.1.Name)) + !Window.IsActive(PlayerControls) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(NumericInput)</visible>
 			<include>HomeRightPanelOpenCloseAnim</include>
 
 			<control type="group">
@@ -6592,7 +6593,7 @@
 	</variable>
 	
 	<variable name="FavouritesWidgetContent">
-		<value condition="System.HasAddon(script.skin.helper.widgets)">plugin://script.skin.helper.widgets/?mediatype=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="System.AddonIsEnabled(script.skin.helper.widgets)">plugin://script.skin.helper.widgets/?mediatype=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>favourites://</value>
 	</variable>
 	
@@ -6835,7 +6836,7 @@
 				<top>178</top>
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
-				<include condition="System.HasAddon(weather.weatherbit.io)">WeatherbitFadeAnim</include>
+				<include condition="System.AddonIsEnabled(weather.weatherbit.io)">WeatherbitFadeAnim</include>
 				<control type="group">
 					<description>Day 1</description>
 					<height>125</height>
@@ -6999,7 +7000,7 @@
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<include>WeatherbitFadeAnim2</include>
-				<visible>System.HasAddon(weather.weatherbit.io)</visible>
+				<visible>System.AddonIsEnabled(weather.weatherbit.io)</visible>
 				<control type="group">
 					<description>Day 6</description>
 					<height>125</height>

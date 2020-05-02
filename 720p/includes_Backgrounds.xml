@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="FanartImageVar">
-		<value condition="!String.IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.HasAddon(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(584).ListItem.Art(fanart)) + [[Container.Content(Sets) + [!System.HasAddon(script.skin.helper.service) | [System.AddonIsEnabled(script.skin.helper.service) + [Control.HasFocus(584) | Control.HasFocus(151)]]]] | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags)]">$INFO[Container(584).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(561).ListItem.Art(fanart)) + [Control.HasFocus(561) | Control.HasFocus(151)]">$INFO[Container(561).ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
@@ -814,7 +814,7 @@
 	
 	<variable name="CustomPicturesBGPath">
 		<value condition="Skin.String(CustomPicturesBGType,2) | Skin.String(CustomPicturesBGType,3)">$INFO[Skin.String(CustomPicturesBGPath)]</value>
-		<value condition="System.HasAddon(plugin.image.mypicsdb) + [Skin.String(CustomPicturesBGType,4) | Skin.String(CustomPicturesBGType,5)]">$INFO[Control.GetLabel(4165)]</value>
+		<value condition="System.AddonIsEnabled(plugin.image.mypicsdb) + [Skin.String(CustomPicturesBGType,4) | Skin.String(CustomPicturesBGType,5)]">$INFO[Control.GetLabel(4165)]</value>
 	</variable>
 	
 	<include name="BackgroundPictures">
@@ -917,7 +917,7 @@
 			
 			<include condition="[[Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + !Skin.HasSetting(EnableArtistFanartSlideshow)]
 			| [[Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + !System.HasAddon(script.artistslideshow)]">MusicPlayingArtistFanart</include>
-			<include condition="System.HasAddon(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">MusicPlayingArtistFanartSlideshow</include>
+			<include condition="System.AddonIsEnabled(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">MusicPlayingArtistFanartSlideshow</include>
 			<include condition="![Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + !Window.IsActive(Home)">MediaPlayingVizDim</include>
 			<include condition="[Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + !Window.IsActive(Home)">MediaPlayingFanartDim</include>
 			

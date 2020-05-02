@@ -279,26 +279,35 @@
 			<width>765</width>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!String.IsEmpty(ListItem.Title) + ListItem.IsCollection + System.HasAddon(script.skin.helper.service)</visible>
+			<visible>!String.IsEmpty(ListItem.Title) + ListItem.IsCollection</visible>
 			<include content="WrapListInfoGrouplistContent">
 				<param name="label" value="$LOCALIZE[20342]:" />
 				<param name="maxwidth" value="110" />
-				<param name="info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Count)]" />
+				<param name="info" value="$VAR[MovieSetCount]" />
 				<param name="visible" value="true" />
 			</include>
 			<include>WrapInfoViewDot</include>
 			<include content="WrapListInfoGrouplistContent">
 				<param name="label" value="$LOCALIZE[345]:" />
 				<param name="maxwidth" value="437" />
-				<param name="info" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Years)]" />
+				<param name="info" value="$VAR[MovieYear]" />
 				<param name="visible" value="true" />
 			</include>
-			<include>WrapInfoViewDot</include>
+			<control type="label">
+				<height>33</height>
+				<width>26</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>PanelTitleFont</font>
+				<textcolor>GreyColor3</textcolor>
+				<label>&#x2022;</label>
+				<visible>System.AddonIsEnabled(script.skin.helper.service)</visible>
+			</control>
 			<include content="WrapListInfoGrouplistContent">
 				<param name="label" value="$LOCALIZE[2050]:" />
 				<param name="maxwidth" value="110" />
 				<param name="info" value="$VAR[SkinHelperDurationVar]" />
-				<param name="visible" value="true" />
+				<param name="visible" value="System.AddonIsEnabled(script.skin.helper.service)" />
 			</include>
 		</control>
 	</include>

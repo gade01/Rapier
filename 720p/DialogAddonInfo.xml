@@ -3,8 +3,8 @@
 	<defaultcontrol always="true">987</defaultcontrol>
 	<menucontrol>987</menucontrol>
 	<onunload>Skin.Reset(AddonInfoContentToggle)</onunload>
-	<!--<onload condition="System.HasAddon(script.embuary.helper)">RunScript(script.embuary.helper,action=lookforfile,file='"special://home/addons/$INFO[ListItem.Property(Addon.ID)]/changelog.txt"',prop=Changelog.Exists)</onload>
-	<onload condition="System.HasAddon(script.embuary.helper)">RunScript(script.embuary.helper,action=txtfile,path='"special://home/addons/$INFO[ListItem.Property(Addon.ID)]/changelog.txt"',header=$LOCALIZE[24036],prop=Changelog)</onload>-->
+	<!--<onload condition="System.AddonIsEnabled(script.embuary.helper)">RunScript(script.embuary.helper,action=lookforfile,file='"special://home/addons/$INFO[ListItem.Property(Addon.ID)]/changelog.txt"',prop=Changelog.Exists)</onload>
+	<onload condition="System.AddonIsEnabled(script.embuary.helper)">RunScript(script.embuary.helper,action=txtfile,path='"special://home/addons/$INFO[ListItem.Property(Addon.ID)]/changelog.txt"',header=$LOCALIZE[24036],prop=Changelog)</onload>-->
 	<include>ControlsOpenCloseAnim</include>
 	
 	<controls>

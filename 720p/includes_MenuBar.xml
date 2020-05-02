@@ -1671,7 +1671,7 @@
 				<label>[UPPERCASE]$INFO[System.AddonTitle(script.cinemavision)][/UPPERCASE]</label>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
 				<onclick>RunScript(script.cinemavision,experience)</onclick>
-				<visible>System.HasAddon(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
+				<visible>System.AddonIsEnabled(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
@@ -1683,7 +1683,7 @@
 				<label>[UPPERCASE]$ADDON[plugin.video.specialfeatures 30000][/UPPERCASE]</label>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
 				<onclick>RunScript(plugin.video.specialfeatures,listitem)</onclick>
-				<visible>System.HasAddon(plugin.video.specialfeatures) + String.IsEqual(Window(home).Property(SpecialFeatures.Visible),true)</visible>
+				<visible>System.AddonIsEnabled(plugin.video.specialfeatures) + String.IsEqual(Window(home).Property(SpecialFeatures.Visible),true)</visible>
 			</control>
 			<control type="image" id="123">
 				<include>MenuBarSeparator</include>
@@ -1788,11 +1788,11 @@
 				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">RunScript(script.artwork.beef,mode=gui,mediatype=album,dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="String.IsEqual(ListItem.DBTYPE,song)">RunScript(script.artwork.beef,mode=gui,mediatype=song,dbid=$INFO[ListItem.DBID])</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.HasAddon(script.artwork.beef)</visible>
+				<visible>System.AddonIsEnabled(script.artwork.beef)</visible>
 			</control>
 			<control type="image" id="129">
 				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.artwork.beef)</visible>
+				<visible>System.AddonIsEnabled(script.artwork.beef)</visible>
 			</control>
 			-->
 			<control type="button" id="7">
@@ -1811,11 +1811,11 @@
 				<label>[UPPERCASE]$LOCALIZE[21435] $LOCALIZE[15101][/UPPERCASE]</label>
 				<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
 				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.HasAddon(script.libraryeditor)</visible>
+				<visible>System.AddonIsEnabled(script.libraryeditor)</visible>
 			</control>
 			<control type="image" id="124">
 				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.libraryeditor)</visible>
+				<visible>System.AddonIsEnabled(script.libraryeditor)</visible>
 			</control>
 		</control>
 	</include>
@@ -2053,11 +2053,11 @@
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]CHANGELOG[/UPPERCASE]</label>
 				<onclick>RunScript(script.embuary.helper,action=txtfile,path='"special://home/addons/$INFO[ListItem.Property(Addon.ID)]/changelog.txt"',header=$LOCALIZE[24036])</onclick>
-				<visible>System.HasAddon(script.embuary.helper) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))</visible>
+				<visible>System.AddonIsEnabled(script.embuary.helper) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))</visible>
 			</control>
 			<control type="image" id="126">
 				<include>MenuBarSeparator</include>
-				<visible>System.HasAddon(script.embuary.helper) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))</visible>
+				<visible>System.AddonIsEnabled(script.embuary.helper) + !String.IsEmpty(Window(Home).Property(Changelog.Exists))</visible>
 			</control>
 			--><!--
 			<control type="button" id="125">

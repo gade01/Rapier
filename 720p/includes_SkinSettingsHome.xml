@@ -658,7 +658,7 @@
 					<label>$LOCALIZE[31077]</label>
 					<selected>Skin.HasSetting(HideInCinemasHomeWidget)</selected>
 					<onclick>Skin.ToggleSetting(HideInCinemasHomeWidget)</onclick>
-					<visible>System.HasAddon(script.extendedinfo)</visible>
+					<visible>System.AddonIsEnabled(script.extendedinfo)</visible>
 				</control>
 				<control type="radiobutton" id="2121">
 					<description>Hide TV Show Next Aired Widget</description>
@@ -666,7 +666,7 @@
 					<label>$LOCALIZE[31927]</label>
 					<selected>Skin.HasSetting(HideNextAiredWidget)</selected>
 					<onclick>Skin.ToggleSetting(HideNextAiredWidget)</onclick>
-					<visible>System.HasAddon(script.embuary.info)</visible>
+					<visible>System.AddonIsEnabled(script.embuary.info)</visible>
 				</control>
 				<control type="radiobutton" id="2357">
 					<description>Hide Videos Widget</description>

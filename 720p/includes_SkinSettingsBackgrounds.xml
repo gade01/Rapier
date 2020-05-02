@@ -54,7 +54,7 @@
 					<label>$LOCALIZE[31191]: [COLOR DefaultColor2]$INFO[Skin.String(MovieGenreFanartAddon.name)][/COLOR]</label>
 					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanartAddon&amp;type=resource.images.moviegenrefanart)</onclick>
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
-					<onclick condition="System.HasAddon(script.image.resource.select) + System.HasAddon(script.artwork.downloader) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
+					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
 				</control>
 				<control type="button" id="4054">
 					<description>Select Music Genre Fanart Pack</description>
@@ -1595,7 +1595,7 @@
 						<onclick>Skin.SetString(CustomPicturesBGType,2)</onclick>
 						<onclick>Skin.Reset(CustomPicturesBGPath)</onclick>
 						<label>$LOCALIZE[31056]</label>
-						<animation effect="slide" end="0,-4" condition="System.HasAddon(plugin.image.mypicsdb)">Conditional</animation>
+						<animation effect="slide" end="0,-4" condition="System.AddonIsEnabled(plugin.image.mypicsdb)">Conditional</animation>
 					</control>
 					<control type="radiobutton" id="4162">
 						<description>Multi Image</description>
@@ -1604,7 +1604,7 @@
 						<onclick>Skin.SetString(CustomPicturesBGType,3)</onclick>
 						<onclick>Skin.Reset(CustomPicturesBGPath)</onclick>
 						<label>$LOCALIZE[31057]</label>
-						<animation effect="slide" end="0,-8" condition="System.HasAddon(plugin.image.mypicsdb)">Conditional</animation>
+						<animation effect="slide" end="0,-8" condition="System.AddonIsEnabled(plugin.image.mypicsdb)">Conditional</animation>
 					</control>
 					<control type="radiobutton" id="4163">
 						<description>Latest Images</description>
@@ -1613,8 +1613,8 @@
 						<onclick>Skin.SetString(CustomPicturesBGType,4)</onclick>
 						<onclick>Skin.Reset(CustomPicturesBGPath)</onclick>
 						<label>$LOCALIZE[31993]</label>
-						<animation effect="slide" end="0,-12" condition="System.HasAddon(plugin.image.mypicsdb)">Conditional</animation>
-						<visible>System.HasAddon(plugin.image.mypicsdb)</visible>
+						<animation effect="slide" end="0,-12" condition="System.AddonIsEnabled(plugin.image.mypicsdb)">Conditional</animation>
+						<visible>System.AddonIsEnabled(plugin.image.mypicsdb)</visible>
 					</control>
 					<control type="radiobutton" id="4164">
 						<description>Random Images</description>
@@ -1623,16 +1623,16 @@
 						<onclick>Skin.SetString(CustomPicturesBGType,5)</onclick>
 						<onclick>Skin.Reset(CustomPicturesBGPath)</onclick>
 						<label>$LOCALIZE[590]</label>
-						<animation effect="slide" end="0,-16" condition="System.HasAddon(plugin.image.mypicsdb)">Conditional</animation>
-						<visible>System.HasAddon(plugin.image.mypicsdb)</visible>
+						<animation effect="slide" end="0,-16" condition="System.AddonIsEnabled(plugin.image.mypicsdb)">Conditional</animation>
+						<visible>System.AddonIsEnabled(plugin.image.mypicsdb)</visible>
 					</control>
 				</control>
 					
 				<control type="grouplist" id="926">
 					<top>379</top>
 					<itemgap>0</itemgap>
-					<onup condition="!System.HasAddon(plugin.image.mypicsdb)">4162</onup>
-					<onup condition="System.HasAddon(plugin.image.mypicsdb)">4164</onup>
+					<onup condition="!System.AddonIsEnabled(plugin.image.mypicsdb)">4162</onup>
+					<onup condition="System.AddonIsEnabled(plugin.image.mypicsdb)">4164</onup>
 					<ondown>4160</ondown>
 					<onleft>1946</onleft>
 					<control type="button" id="4260">
