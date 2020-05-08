@@ -103,7 +103,7 @@
 					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
 					<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
 					<include>ContextMenuBtn</include>
-					<visible>[Container.Content(Artists) | [[Container.Content(Actors) | Container.Content(Directors) | [Container.Content(Movies) + !ListItem.IsCollection] | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !System.HasAddon(context.extendedinfo.dialog)]] + !Skin.HasSetting(ContextMenuExtendedInformation)</visible>
+					<visible>[Container.Content(Artists) | [[Container.Content(Actors) | Container.Content(Directors) | [Container.Content(Movies) + !ListItem.IsCollection] | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !System.AddonIsEnabled(context.extendedinfo.dialog)]] + !Skin.HasSetting(ContextMenuExtendedInformation)</visible>
 				</control>
 				<control type="button" id="2064">
 					<description>Movie Set Information</description>

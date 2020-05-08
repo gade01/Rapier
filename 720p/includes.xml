@@ -89,8 +89,6 @@
 	
 	<variable name="DurationVar">
 		<value condition="ListItem.IsCollection + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Runtime))">$VAR[SkinHelperDurationVar]</value>
-		<!--<value condition="ListItem.IsCollection + Skin.HasSetting(UseAlternativeDuration)">$VAR[FormattedMovieSetDurationVar]</value>
-		<value condition="ListItem.IsCollection">$INFO[Container(3650).TotalTime(mins)]</value>-->
 		<value condition="Skin.HasSetting(UseAlternativeDuration)">$VAR[FormattedDurationVar]</value>
 		<value>$INFO[ListItem.Duration(mins)]</value>
 	</variable>
@@ -135,15 +133,6 @@
 		<value condition="Integer.IsEqual(ListItem.Duration(mins),0) | Integer.IsEqual(ListItem.Duration(mins),1)">1 $LOCALIZE[31158]</value>
 		<value>$INFO[ListItem.Duration(mins)] $LOCALIZE[12391]</value>
 	</variable>
-	
-	<!--
-	<variable name="FormattedMovieSetDurationVar">
-		<value condition="!String.IsEmpty(Container(3650).TotalTime) + Integer.IsEqual(Container(3650).TotalTime(mins),0)">$NUMBER[1]</value>
-		<value condition="Integer.IsEqual(Container(3650).TotalTime(mins),60)">$NUMBER[1]$LOCALIZE[31403]$NUMBER[00]</value>
-		<value condition="Integer.IsEqual(Container(3650).TotalTime(h),0)">$INFO[Container(3650).TotalTime(mins)]</value>
-		<value>$INFO[Container(3650).TotalTime(h)]$LOCALIZE[31403]$INFO[Container(3650).TotalTime(mm)]</value>
-	</variable>
-	-->
 	
 	<variable name="Container901FormattedLongDurationVar">
 		<value condition="String.StartsWith(Container(901).ListItem.Duration,01:00:) | Integer.IsEqual(Container(901).ListItem.Duration(mins),60)">$NUMBER[1] $LOCALIZE[31159]</value>
