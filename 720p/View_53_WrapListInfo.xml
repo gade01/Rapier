@@ -213,7 +213,7 @@
 	
 	<variable name="WrapListInfoCastVar">
 		<value condition="ListItem.IsCollection">plugin://script.embuary.helper?info=getsetcast&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value>plugin://script.embuary.helper?info=getcast&type=movie&dbid=$INFO[ListItem.DBID]</value>
+		<value>plugin://script.embuary.helper?info=getcast&amp;type=movie&amp;dbid=$INFO[ListItem.DBID]</value>
 	</variable>
 	
 	<include name="WrapListInfoGrouplistContent">
@@ -1036,7 +1036,7 @@
 		
 		<include content="WrapListInfoCast">
 			<param name="id" value="8001" />
-			<param name="content" value="plugin://script.embuary.helper?info=getcast&type=tvshow&dbid=$INFO[ListItem.DBID]" />
+			<param name="content" value="plugin://script.embuary.helper?info=getcast&amp;type=tvshow&amp;dbid=$INFO[ListItem.DBID]" />
 		</include>
 		
 		<include>WrapListInfoTVShowsGrouplists</include>
