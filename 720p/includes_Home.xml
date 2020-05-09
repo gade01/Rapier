@@ -6836,7 +6836,7 @@
 				<top>178</top>
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
-				<include condition="System.AddonIsEnabled(weather.weatherbit.io)">WeatherbitFadeAnim</include>
+				<include condition="String.IsEqual(Weather.Plugin,weather.weatherbit.io) | String.IsEqual(Weather.Plugin,weather.multi)">WeatherAdvancedFadeAnim</include>
 				<control type="group">
 					<description>Day 1</description>
 					<height>125</height>
@@ -6999,8 +6999,8 @@
 				<top>178</top>
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
-				<include>WeatherbitFadeAnim2</include>
-				<visible>System.AddonIsEnabled(weather.weatherbit.io)</visible>
+				<include>WeatherAdvancedFadeAnim2</include>
+				<visible>String.IsEqual(Weather.Plugin,weather.weatherbit.io) | String.IsEqual(Weather.Plugin,weather.multi)</visible>
 				<control type="group">
 					<description>Day 6</description>
 					<height>125</height>

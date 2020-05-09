@@ -226,6 +226,7 @@
 		<value condition="Control.HasFocus(7016)">$LOCALIZE[31453]</value>
 		<value condition="Control.HasFocus(7023)">$LOCALIZE[31454]</value>
 		<value condition="Control.HasFocus(7025)">$LOCALIZE[31455]</value>
+		<value condition="Control.HasFocus(7018)">$LOCALIZE[31458]</value>
 		<value condition="Control.HasFocus(7019)">$LOCALIZE[31458]</value>
 		<value condition="Control.HasFocus(7020)">$LOCALIZE[31461]</value>
 		<value condition="Control.HasFocus(7021)">$LOCALIZE[31460]</value>
@@ -2127,6 +2128,12 @@
 	<variable name="StatusWeatherbitVar">
 		<value condition="System.AddonIsEnabled(weather.weatherbit.io)">$INFO[System.AddonVersion(weather.weatherbit.io)] $LOCALIZE[31437]</value>
 		<value condition="System.HasAddon(weather.weatherbit.io) + !System.AddonIsEnabled(weather.weatherbit.io)">$LOCALIZE[24023]</value>
+		<value>$LOCALIZE[31492]</value>
+	</variable>
+	
+	<variable name="StatusMultiWeatherVar">
+		<value condition="System.AddonIsEnabled(weather.multi)">$INFO[System.AddonVersion(weather.multi)] $LOCALIZE[31437]</value>
+		<value condition="System.HasAddon(weather.multi) + !System.AddonIsEnabled(weather.multi)">$LOCALIZE[24023]</value>
 		<value>$LOCALIZE[31492]</value>
 	</variable>
 	

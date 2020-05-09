@@ -532,6 +532,15 @@
 							<onclick condition="!System.HasAddon(weather.weatherbit.io)">InstallAddon(weather.weatherbit.io)</onclick>
 							<onclick condition="System.HasAddon(weather.weatherbit.io) + !System.AddonIsEnabled(weather.weatherbit.io)">EnableAddon(weather.weatherbit.io)</onclick>
 						</control>
+						<control type="button" id="7018">
+							<description>weather.multi</description>
+							<include>SettingsContentBtn</include>
+							<label>Multi Weather</label>
+							<label2>$VAR[StatusMultiWeatherVar]</label2>
+							<onclick condition="System.AddonIsEnabled(weather.multi)">Addon.OpenSettings(weather.multi)</onclick>
+							<onclick condition="!System.HasAddon(weather.multi)">InstallAddon(weather.multi)</onclick>
+							<onclick condition="System.HasAddon(weather.multi) + !System.AddonIsEnabled(weather.multi)">EnableAddon(weather.multi)</onclick>
+						</control>
 						<control type="button" id="7021">
 							<description>script.cinemavision</description>
 							<include>SettingsContentBtn</include>
