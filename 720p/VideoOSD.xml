@@ -12,7 +12,7 @@
 
 	<controls>
 		<control type="group">
-			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings) | Window.IsActive(playerprocessinfo)]</visible>
+			<visible>![Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings) | Window.IsActive(playerprocessinfo) | Window.IsActive(1121)]</visible>
 			<top>655</top>
 			<include>BottomPaneOpenCloseAnim</include>
 			<include>PlayerControlsPanel</include>
@@ -24,7 +24,7 @@
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$VAR[VideoOSDCurrentControlLabel]</label>
-				<visible>![Window.IsActive(DialogPVRChannelsOSD.xml) | Window.IsActive(DialogPVRChannelGuide.xml)]</visible>
+				<visible>![Window.IsActive(DialogPVRChannelsOSD.xml) | Window.IsActive(DialogPVRChannelGuide.xml) | Window.IsVisible(1121)]</visible>
 			</control>
 
 			<control type="grouplist" id="201">
@@ -158,7 +158,6 @@
 					<texturefocus>osd/osd-viz-preset-settings-focus.png</texturefocus>
 					<texturenofocus>osd/osd-viz-preset-settings-nofocus.png</texturenofocus>
 					<onup>401</onup>
-					<visible>System.HasCMS | Player.HasResolutions</visible>
 				</control>
 				<control type="button" id="115">
 					<description>Video Menu</description>
@@ -187,8 +186,7 @@
 				<onup>noop</onup>
 				<ondown>noop</ondown>
 				<onleft condition="Control.IsVisible(115)">115</onleft>
-				<onleft condition="Control.IsVisible(114)">114</onleft>
-				<onleft condition="Control.IsVisible(104)">104</onleft>
+				<onleft condition="!Control.IsVisible(115)">114</onleft>
 				<onleft>103</onleft>
 				<onright>100</onright>
 				<control type="button" id="99">
@@ -309,8 +307,7 @@
 				<onup>noop</onup>
 				<ondown>noop</ondown>
 				<onleft condition="Control.IsVisible(115)">115</onleft>
-				<onleft condition="Control.IsVisible(114)">114</onleft>
-				<onleft condition="Control.IsVisible(104)">104</onleft>
+				<onleft condition="!Control.IsVisible(115)">114</onleft>
 				<onleft>103</onleft>
 				<onright>100</onright>
 				<control type="togglebutton" id="99">
@@ -608,13 +605,13 @@
 		</control>
 		
 		<control type="group">
-			<visible>![Window.IsActive(playerprocessinfo) | Window.IsActive(selectdialog) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings)] + [Control.HasFocus(104) | Control.HasFocus(114) | ControlGroup(400).HasFocus | Control.HasFocus(127) | ControlGroup(401).HasFocus | ControlGroup(402).HasFocus | Control.HasFocus(403) | Control.HasFocus(404) | Control.HasFocus(405)]</visible>
+			<visible>![Window.IsActive(playerprocessinfo) | Window.IsActive(selectdialog) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(VideoBookmarks) | Window.IsActive(SliderDialog) | Window.IsActive(osdcmssettings) | Window.IsActive(1121)] + [Control.HasFocus(104) | Control.HasFocus(114) | ControlGroup(400).HasFocus | Control.HasFocus(127) | ControlGroup(401).HasFocus | ControlGroup(402).HasFocus | Control.HasFocus(403) | Control.HasFocus(404) | Control.HasFocus(405)]</visible>
 			<left>22</left>
 			<bottom>84</bottom>
 			<height>199</height>
 			<include>DialogOpenCloseAnim</include>
-			<animation effect="slide" end="0,37" condition="Control.IsVisible(404) + System.HasCMS + Player.HasResolutions">Conditional</animation>
-			<animation effect="slide" end="0,74" condition="Control.IsVisible(404) + [System.HasCMS | Player.HasResolutions]">Conditional</animation>
+			<animation effect="slide" end="0,37" condition="Control.IsVisible(404) + [System.HasCMS | Player.HasResolutions]">Conditional</animation>
+			<animation effect="slide" end="0,74" condition="Control.IsVisible(404) + !System.HasCMS + !Player.HasResolutions">Conditional</animation>
 			
 			<control type="grouplist">
 				<itemgap>0</itemgap>
@@ -627,7 +624,13 @@
 					<width>340</width>
 					<height>111</height>
 					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
-					<visible>![Control.IsVisible(404) + [System.HasCMS | Player.HasResolutions]]</visible>
+					<visible>!Control.IsVisible(404)</visible>
+				</control>
+				<control type="image">
+					<width>340</width>
+					<height>37</height>
+					<texture border="40,2,40,2">gui/context-menu-middle.png</texture>
+					<visible>Control.IsVisible(404)</visible>
 				</control>
 				<control type="image">
 					<width>340</width>
@@ -722,10 +725,18 @@
 					<ondown>114</ondown>
 					<onleft>114</onleft>
 					<onright>114</onright>
+					<control type="button" id="125">
+						<description>Skin Settings</description>
+						<width>270</width>
+						<hitrect x="-10" y="-3" w="290" h="39"/>
+						<include>DialogContentLabel</include>
+						<label>$LOCALIZE[10035]</label>
+						<onclick>ActivateWindow(1121)</onclick>
+					</control>
 					<control type="button" id="123">
 						<description>OSD CMS Settings</description>
 						<width>270</width>
-						<hitrect x="-10" y="-3" w="290" h="39"/>
+						<hitrect x="-10" y="-1" w="290" h="37"/>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[36560]</label>
 						<onclick>ActivateWindow(osdcmssettings)</onclick>

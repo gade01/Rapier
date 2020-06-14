@@ -12,7 +12,7 @@
 	
 	<controls>
 		<control type="group">
-			<visible>![Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog) | Window.IsActive(PVRRadioRDSInfo)]</visible>
+			<visible>![Window.IsActive(VisualisationPresetList) | Window.IsActive(AddonSettings) | Window.IsActive(SelectDialog) | Window.IsActive(PVRRadioRDSInfo) | Window.IsActive(1121)]</visible>
 			<top>655</top>
 			<include>BottomPaneOpenCloseAnim</include>
 			<include>PlayerControlsPanel</include>
@@ -24,7 +24,7 @@
 				<textcolor>WhiteColor</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
 				<label>$INFO[System.CurrentControl]</label>
-				<visible>!Control.HasFocus(257)</visible>
+				<visible>![Control.HasFocus(257) | Window.IsVisible(1121)]</visible>
 			</control>
 			
 			<control type="label">
@@ -100,6 +100,17 @@
 					<texturenofocus>osd/osd-viz-nofocus.png</texturenofocus>
 					<onup>400</onup>
 					<visible>!Skin.HasSetting(UseFanartForMusicPlayingBG)</visible>
+				</control>
+				<control type="button" id="152">
+					<description>Skin Settings</description>
+					<include content="OSDButton">
+						<param name="size" value="35" />
+					</include>
+					<font />
+					<label>$LOCALIZE[10035]</label>
+					<texturefocus>osd/osd-viz-preset-settings-focus.png</texturefocus>
+					<texturenofocus>osd/osd-viz-preset-settings-nofocus.png</texturenofocus>
+					<onclick>ActivateWindow(1121)</onclick>
 				</control>
 				<control type="button" id="154">
 					<description>User Rating</description>
