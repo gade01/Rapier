@@ -351,13 +351,13 @@
 		<control type="label">
 			<width>550</width>
 			<include>InfoPaneHeadLabel</include>
-			<label>[UPPERCASE][B]$INFO[System.BuildVersion][/B][/UPPERCASE]</label>
+			<label>[UPPERCASE][B]$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)][/B][/UPPERCASE]</label>
 		</control>
 		
 		<control type="label">
 			<width>550</width>
 			<include>InfoPaneHeadLabel2</include>
-			<label>[UPPERCASE]$INFO[System.BuildDate][/UPPERCASE]</label>
+			<label>[UPPERCASE]$INFO[System.BuildVersionGit,$LOCALIZE[31708]: ,]$INFO[System.BuildDate, (,)][/UPPERCASE]</label>
 		</control>
 		
 		<control type="group">
