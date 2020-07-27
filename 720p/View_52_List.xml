@@ -74,13 +74,13 @@
 				<include content="ListViewCoverImage">
 					<param name="fallback" value="DefaultFolder.png" />
 					<param name="texture" value="$INFO[ListItem.ActualIcon]" />
-					<param name="visible" value="String.IsEmpty(ListItem.Thumb) + String.IsEmpty(Container.Art(tvshow.poster)) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]" />
+					<param name="visible" value="String.IsEmpty(ListItem.Thumb) + String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(Container.Art(tvshow.poster)) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]" />
 				</include>
 				
 				<include content="ListViewCoverImageReflection">
 					<param name="fallback" value="DefaultFolder.png" />
 					<param name="texture" value="$INFO[ListItem.ActualIcon]" />
-					<param name="visible" value="String.IsEmpty(ListItem.Thumb) + String.IsEmpty(Container.Art(tvshow.poster)) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]" />
+					<param name="visible" value="String.IsEmpty(ListItem.Thumb) + String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(Container.Art(tvshow.poster)) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]" />
 				</include>
 				
 				<control type="image">
@@ -188,10 +188,10 @@
 	</include>
 	
 	<variable name="ListViewImageVar">
-		<value condition="[Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]] + !String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="Container.Content(TVShows) + !Skin.HasSetting(UseTVShowsPosterCover) + !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 		<value condition="Container.Content(Seasons) + String.IsEmpty(ListItem.DBID) + !String.IsEmpty(Container.Art(tvshow.poster))">$INFO[Container.Art(tvshow.poster)]</value>
 		<value condition="!Skin.HasSetting(EnableAnimatedPosters) + [Container.Content(Movies) | Container.Content(Sets)] + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.AnimatedPoster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	
@@ -767,7 +767,7 @@
 			<include content="ListTallStyleItemlayoutContent">
 				<param name="top" value="0" />
 				<param name="width" value="53" />
-				<param name="height" value="97" />
+				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />

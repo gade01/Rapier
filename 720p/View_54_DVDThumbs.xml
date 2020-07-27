@@ -163,7 +163,7 @@
 			<bordersize>12</bordersize>
 			<texture background="true">$VAR[BannerThumb]</texture>
 			<aspectratio>scale</aspectratio>
-			<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+			<visible>![String.IsEmpty(ListItem.Thumb) + String.IsEmpty(ListItem.Art(banner))]</visible>
 		</control>
 		<control type="image">
 			<description>Overlay</description>
