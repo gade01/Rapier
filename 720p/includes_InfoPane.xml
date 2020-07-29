@@ -205,6 +205,7 @@
 			<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
 			<include condition="System.AddonIsEnabled(script.tv.show.next.aired) + !Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(EnableNextAiredStatusMediaFlag)">NextAiredStatusMediaFlag</include>
 			<include condition="!Skin.HasSetting(DisableMediaFlags)">StudioMediaFlag</include>
+			<include condition="!Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(HideRatingMediaFlag)">RatingMediaFlags</include>
 			
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Size) + String.IsEmpty(ListItem.Studio)</visible>
