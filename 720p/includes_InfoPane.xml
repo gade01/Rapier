@@ -205,7 +205,18 @@
 			<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
 			<include condition="System.AddonIsEnabled(script.tv.show.next.aired) + !Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(EnableNextAiredStatusMediaFlag)">NextAiredStatusMediaFlag</include>
 			<include condition="!Skin.HasSetting(DisableMediaFlags)">StudioMediaFlag</include>
-			<include condition="!Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(HideRatingMediaFlag)">RatingMediaFlags</include>
+			
+			<control type="group">
+				<visible>String.IsEmpty(ListItem.Size) + !String.IsEmpty(ListItem.Studio)</visible>
+				<include>InfoPaneElementOpenCloseAnim</include>
+				<include>MediaFlagFadeAnim</include>
+				<animation effect="slide" end="109,0" condition="!System.AddonIsEnabled(script.tv.show.next.aired) | Skin.HasSetting(EnableNextAiredStatusMediaFlag)">Conditional</animation>
+				<top>3</top>
+				<left>1023</left>
+				<width>68</width>
+				<align>right</align>
+				<include condition="!Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(HideRatingMediaFlag)">RatingMediaFlags</include>
+			</control>
 			
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Size) + String.IsEmpty(ListItem.Studio)</visible>
