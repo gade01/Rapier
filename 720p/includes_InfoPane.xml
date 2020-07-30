@@ -206,15 +206,15 @@
 			<include condition="System.AddonIsEnabled(script.tv.show.next.aired) + !Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(EnableNextAiredStatusMediaFlag)">NextAiredStatusMediaFlag</include>
 			<include condition="!Skin.HasSetting(DisableMediaFlags)">StudioMediaFlag</include>
 			
-			<control type="group">
+			<control type="grouplist">
 				<visible>String.IsEmpty(ListItem.Size) + !String.IsEmpty(ListItem.Studio)</visible>
 				<include>InfoPaneElementOpenCloseAnim</include>
 				<include>MediaFlagFadeAnim</include>
-				<animation effect="slide" end="109,0" condition="!System.AddonIsEnabled(script.tv.show.next.aired) | Skin.HasSetting(EnableNextAiredStatusMediaFlag)">Conditional</animation>
+				<animation effect="slide" end="-109,0" condition="System.AddonIsEnabled(script.tv.show.next.aired) + !Skin.HasSetting(EnableNextAiredStatusMediaFlag)">Conditional</animation>
 				<top>3</top>
-				<left>1023</left>
-				<width>68</width>
+				<right>93</right>
 				<align>right</align>
+				<orientation>horizontal</orientation>
 				<include condition="!Skin.HasSetting(DisableMediaFlags) + !Skin.HasSetting(HideRatingMediaFlag)">RatingMediaFlags</include>
 			</control>
 			
