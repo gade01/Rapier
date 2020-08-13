@@ -1741,6 +1741,7 @@
 			<include>HomeMenuOpenCloseAnim</include>
 			<include>HomeMenuFocusAnim</include>
 			<animation effect="slide" end="0,2" condition="String.IsEqual(Skin.Font,multilingual)">Conditional</animation>
+			<animation effect="slide" end="0,-7" condition="String.IsEqual(Skin.Font,Raleway)">Conditional</animation>
 			<visible>![Player.HasAudio + System.IdleTime(5) + Skin.HasSetting(EnableMusicPlayingHomeProgressBar)]</visible>
 			<itemlayout width="260" condition="!Skin.HasSetting(ShowHomeNavButtons)">
 				<control type="label">
@@ -1796,6 +1797,7 @@
 						<animation effect="fade" end="14" condition="true">Conditional</animation>
 						<animation effect="slide" end="0,-1" condition="String.IsEqual(Skin.Font,Arial)">Conditional</animation>
 						<animation effect="slide" end="0,10" condition="String.IsEqual(Skin.Font,multilingual)">Conditional</animation>
+						<animation effect="slide" end="0,-13" condition="String.IsEqual(Skin.Font,Raleway)">Conditional</animation>
 					</control>
 					<control type="label">
 						<top>50</top>
@@ -1815,6 +1817,7 @@
 						</animation>
 						<animation effect="slide" end="0,-2" condition="String.IsEqual(Skin.Font,Arial)">Conditional</animation>
 						<animation effect="slide" end="0,-8" condition="String.IsEqual(Skin.Font,multilingual)">Conditional</animation>
+						<animation effect="slide" end="0,5" condition="String.IsEqual(Skin.Font,Raleway)">Conditional</animation>
 					</control>
 				</control>
 			</focusedlayout>
