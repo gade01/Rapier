@@ -45,6 +45,7 @@
 					</include>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
+						<include>MissingVideoFadeAnim</include>
 						<include content="VideoOverlays">
 							<param name="top" value="6"/>
 							<param name="left" value="5"/>
@@ -59,6 +60,7 @@
 					</include>
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
+						<include>MissingVideoFadeAnim</include>
 						<include content="VideoOverlays2">
 							<param name="top" value="6"/>
 							<param name="left" value="5"/>
@@ -379,6 +381,7 @@
 			<shadowcolor>ShadowColor</shadowcolor>
 			<aligny>center</aligny>
 			<info>ListItem.Label</info>
+			<include>MissingVideoFadeAnim</include>
 			<visible>$PARAM[visible_label]</visible>
 		</control>
 	</include>
@@ -409,6 +412,7 @@
 			<aligny>center</aligny>
 			<info>ListItem.Label</info>
 			<scroll>true</scroll>
+			<include>MissingVideoFadeAnim</include>
 			<visible>$PARAM[visible_label]</visible>
 		</control>
 	</include>
