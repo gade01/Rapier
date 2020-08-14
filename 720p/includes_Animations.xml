@@ -883,5 +883,9 @@
 	<include name="MissingVideoFadeAnim">
 		<animation effect="fade" end="50" condition="[Container.Content(Movies) | Container.Content(Episodes)] + [String.Contains(ListItem.FileName,missingvideo) | String.Contains(ListItem.FileName,Missingvideo)]">Conditional</animation>
 	</include>
+	
+	<include name="MissingVideo3DWrapFadeAnim">
+		<animation effect="fade" end="50" reversible="false" condition="[Container.Content(Movies) | Container.Content(Episodes)] + [String.Contains(ListItem.FileName,missingvideo) | String.Contains(ListItem.FileName,Missingvideo)]">Conditional</animation>
+	</include>
 	<!-- END Views -->
 </includes>
