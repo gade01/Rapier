@@ -121,7 +121,7 @@
 					<description>Favourite Type</description>
 					<include>ExpandedSettingsGroupRadioBtn</include>
 					<label>$LOCALIZE[31603]</label>
-					<include>SubMenuBtn1FavouriteSelected</include>
+					<include>SubMenuBtn$PARAM[number]FavouriteSelected</include>
 					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick]</onclick>
 					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick2]</onclick>
 					<onclick>$VAR[SubMenuBtn$PARAM[number]TypeClick5]</onclick>
@@ -643,8 +643,6 @@
 					<label>$LOCALIZE[31072]</label>
 					<selected>Skin.HasSetting(HideRecentlyAddedHomePanel)</selected>
 					<onclick>Skin.ToggleSetting(HideRecentlyAddedHomePanel)</onclick>
-					<onclick>ReloadSkin()</onclick>
-					<include>ReloadSkinNotification</include>
 				</control>
 				<control type="radiobutton" id="2340">
 					<description>Hide in Progress Info Panel</description>
@@ -5070,7 +5068,7 @@
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + String.IsEqual(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[3] ($LOCALIZE[31311]))">$INFO[Window(Home).Property(SkinHelper.InProgressVideosBackground)]</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + String.IsEqual(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[590]))">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + String.IsEqual(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[2] ($LOCALIZE[31924]))">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</value>
-		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn12BackgroundImageType,fanart) + [String.IsEqual(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[31030] ($LOCALIZE[590])) | String.IsEqual(Skin.String(AddMoreCategoryBtn12BackgroundImagePathLabel),$LOCALIZE[31030] ($LOCALIZE[31924]))]">$INFO[Container(9050).ListItem.Art(fanart)]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4) + Skin.String(AddMoreCategoryBtn16BackgroundImageType,fanart) + [String.IsEqual(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[31030] ($LOCALIZE[590])) | String.IsEqual(Skin.String(AddMoreCategoryBtn16BackgroundImagePathLabel),$LOCALIZE[31030] ($LOCALIZE[31924]))]">$INFO[Container(9050).ListItem.Art(fanart)]</value>
 	</variable>
 
 	<include name="AddMoreCategoryBtn4BackgroundImageVisible">
