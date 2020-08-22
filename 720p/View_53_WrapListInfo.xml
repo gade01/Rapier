@@ -395,16 +395,9 @@
 			</include>
 			<include>WrapInfoViewDot</include>
 			<include content="WrapListInfoGrouplistContent">
-				<param name="label" value="$LOCALIZE[21899]:" />
-				<param name="maxwidth" value="220" />
-				<param name="info" value="$INFO[ListItem.Property(Album_Label)]" />
-				<param name="visible" value="true" />
-			</include>
-			<include>WrapInfoViewDot</include>
-			<include content="WrapListInfoGrouplistContent">
 				<param name="label" value="$LOCALIZE[345]:" />
-				<param name="maxwidth" value="110" />
-				<param name="info" value="$INFO[ListItem.Year]" />
+				<param name="maxwidth" value="170" />
+				<param name="info" value="$VAR[MusicYearVar]" />
 				<param name="visible" value="true" />
 			</include>
 			<control type="label">
@@ -422,6 +415,13 @@
 				<param name="maxwidth" value="110" />
 				<param name="info" value="$INFO[ListItem.TotalDiscs]" />
 				<param name="visible" value="ListItem.IsBoxset" />
+			</include>
+			<include>WrapInfoViewDot</include>
+			<include content="WrapListInfoGrouplistContent">
+				<param name="label" value="$VAR[MusicDurationLabelVar]:" />
+				<param name="maxwidth" value="110" />
+				<param name="info" value="$VAR[MusicDurationLabelValueVar]" />
+				<param name="visible" value="true" />
 			</include>
 		</control>
 	</include>

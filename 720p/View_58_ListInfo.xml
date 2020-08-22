@@ -872,13 +872,19 @@
 					<param name="label" value="$LOCALIZE[21899]:" />
 					<param name="maxwidth" value="200" />
 					<param name="info" value="$INFO[ListItem.Property(Album_Label)]" />
-					<param name="visible" value="true" />
+					<param name="visible" value="String.IsEmpty(ListItem.Duration)" />
+				</include>
+				<include content="ListInfoGrouplistContent">
+					<param name="label" value="$LOCALIZE[180]:" />
+					<param name="maxwidth" value="200" />
+					<param name="info" value="$VAR[MusicDurationVar]" />
+					<param name="visible" value="!String.IsEmpty(ListItem.Duration)" />
 				</include>
 				<include>ListInfoViewDot</include>
 				<include content="ListInfoGrouplistContent">
 					<param name="label" value="$LOCALIZE[345]:" />
-					<param name="maxwidth" value="110" />
-					<param name="info" value="$INFO[ListItem.Year]" />
+					<param name="maxwidth" value="150" />
+					<param name="info" value="$VAR[MusicYearVar]" />
 					<param name="visible" value="true" />
 				</include>
 				<control type="label">

@@ -160,6 +160,16 @@
 		<value>$INFO[ListItem.Date]$INFO[ListItem.Premiered]</value>
 	</variable>
 	
+	<variable name="MusicDurationLabelVar">
+		<value condition="String.IsEmpty(ListItem.Duration)">$LOCALIZE[21899]</value>
+		<value>$LOCALIZE[180]</value>
+	</variable>
+	
+	<variable name="MusicDurationLabelValueVar">
+		<value condition="String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Property(Album_Label)]</value>
+		<value>$VAR[MusicDurationVar]</value>
+	</variable>
+	
 	<include name="ListFocusedlayoutBackgrounds">
 		<control type="image">
 			<width>$PARAM[width]</width>

@@ -727,6 +727,22 @@
 							<param name="visible" value="String.IsEmpty(Container(584).ListItem.Rating) + String.Contains(Container.FolderPath,videodb://musicvideos/) + !String.Contains(Container.FolderPath,videodb://musicvideos/studios/) + !String.Contains(Container.FolderPath,musicdb://)" />
 						</include>
 					</control>
+					
+					<control type="grouplist">
+						<description>Album Duration</description>
+						<left>84</left>
+						<top>0</top>
+						<width>350</width>
+						<orientation>horizontal</orientation>
+						<align>right</align>
+						<visible>Container.Content(Albums)</visible>
+						<include content="ExtendedListGrouplistContent">
+							<param name="label" value="$LOCALIZE[180]" />
+							<param name="width" value="110" />
+							<param name="info" value="$VAR[MusicDurationVar]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Duration)" />
+						</include>
+					</control>
 				</control>
 				
 				<include content="ExtendedListPlot">
@@ -964,7 +980,7 @@
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Title) | String.Contains(Container.FolderPath,musicdb://)</visible>
+						<visible>String.IsEmpty(ListItem.Title) | [String.Contains(Container.FolderPath,musicdb://) + ![String.Contains(Container.FolderPath,musicdb://albums/) + !Container(584).ListItem.IsBoxset]]</visible>
 						<include>ListViewOverlayFadeAnim</include>
 					</control>
 					<control type="label">
@@ -982,7 +998,7 @@
 					<control type="label">
 						<description>Label</description>
 						<left>5</left>
-						<width>294</width>
+						<width>270</width>
 						<height>37</height>
 						<font>ListFont</font>
 						<textcolor>ListColor</textcolor>
@@ -993,8 +1009,8 @@
 					</control>
 					<control type="label">
 						<description>Label</description>
-						<left>298</left>
-						<width>50</width>
+						<left>268</left>
+						<width>80</width>
 						<height>37</height>
 						<align>right</align>
 						<font>ListFont</font>
@@ -1028,7 +1044,7 @@
 						<height>24</height>
 						<texture background="true">$INFO[ListItem.ActualIcon].png</texture>
 						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Title) | String.Contains(Container.FolderPath,musicdb://)</visible>
+						<visible>String.IsEmpty(ListItem.Title) | [String.Contains(Container.FolderPath,musicdb://) + ![String.Contains(Container.FolderPath,musicdb://albums/) + !Container(584).ListItem.IsBoxset]]</visible>
 					</control>
 					<control type="label">
 						<description>Label</description>
@@ -1046,7 +1062,7 @@
 					<control type="label">
 						<description>Label</description>
 						<left>5</left>
-						<width>294</width>
+						<width>270</width>
 						<height>37</height>
 						<font>ListFont</font>
 						<textcolor>SelectedColor</textcolor>
@@ -1058,8 +1074,8 @@
 					</control>
 					<control type="label">
 						<description>Label</description>
-						<left>298</left>
-						<width>50</width>
+						<left>268</left>
+						<width>80</width>
 						<height>37</height>
 						<align>right</align>
 						<font>ListFont</font>
@@ -2143,7 +2159,7 @@
 	
 	<variable name="ExtendedListMusicYearVar">
 		<value condition="String.Contains(Container.FolderPath,musicdb://artists/)">$INFO[Container(584).ListItem.Year]</value>
-		<value>$INFO[ListItem.Year]</value>
+		<value>$VAR[MusicYearVar]</value>
 	</variable>
 	
 	<variable name="ExtendedListYearsActiveVar">
