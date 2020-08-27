@@ -319,10 +319,18 @@
 			<control type="image" id="438">
 				<include>MenuBarSeparator</include>
 			</control>
-			<control type="button" id="3">
+			<control type="button" id="439">
 				<description>Sort By</description>
+				<include>MenuBarArrowBtn</include>
+				<label>[UPPERCASE]$INFO[Control.GetLabel(3)][/UPPERCASE]</label>
+				<onclick>Skin.SetString(SortMethods,1)</onclick>
+				<onclick>SendClick(3)</onclick>
+			</control>
+			<control type="button" id="3">
+				<description>Sort By Hidden</description>
 				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[103][/UPPERCASE]</label>
+				<visible>false</visible>
 			</control>
 			<control type="image" id="352">
 				<include>MenuBarSeparator</include>
@@ -1222,10 +1230,18 @@
 			<control type="image" id="101">
 				<include>MenuBarSeparator</include>
 			</control>
+			<control type="button" id="439">
+				<description>Sort By</description>
+				<include>MenuBarArrowBtn</include>
+				<label>[UPPERCASE]$INFO[Control.GetLabel(3)][/UPPERCASE]</label>
+				<onclick>Skin.SetString(SortMethods,2)</onclick>
+				<onclick>SendClick(3)</onclick>
+			</control>
 			<control type="button" id="3">
-				<description>Sort by button</description>
+				<description>Sort By Hidden</description>
 				<include>MenuBarBigBtn</include>
-				<label>103</label>
+				<label>[UPPERCASE]$LOCALIZE[103][/UPPERCASE]</label>
+				<visible>false</visible>
 			</control>
 			<control type="image" id="102">
 				<include>MenuBarSeparator</include>
