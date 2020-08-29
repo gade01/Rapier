@@ -7,7 +7,7 @@
 			<visible>Control.IsVisible(585)</visible>
 			<include>MediaViewOpenCloseAnim</include>
 			<include>ViewContentPanel</include>
-			<include condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">TheMovieDBHelperActors</include>
+			<include condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">ExtendedListTheMovieDBHelperActors</include>
 			
 			<control type="group">
 				<left>414</left>
@@ -2088,7 +2088,7 @@
 		<value condition="String.StartsWith(Container(584).ListItem.Duration,59:)">59</value>
 	</variable>
 	
-	<include name="TheMovieDBHelperActors">
+	<include name="ExtendedListTheMovieDBHelperActors">
 		<control type="list" id="5050">
 			<left>2000</left>
 			<visible>Container.Content(Actors) + Control.IsVisible(585)</visible>

@@ -238,6 +238,7 @@
 				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,588)] + [Container.Content(TVShows) | Container.Content(Seasons)]]
 				| [[Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,60)] + Container.Content(Episodes)]
 				| [[Skin.String(CurrentViewMode,530) | Skin.String(CurrentViewMode,531) | Skin.String(CurrentViewMode,532)] + Container.Content(Videos)]
+				| [[Skin.String(CurrentViewMode,53) | Skin.String(CurrentViewMode,58)] + Container.Content(Actors)]
 				| [[Skin.String(CurrentViewMode,59) | Skin.String(CurrentViewMode,65) | Skin.String(CurrentViewMode,53)] + String.Contains(Container.FolderPath,plugin://plugin.program)]
 				| [Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,videodb://movies/) | String.Contains(Container.FolderPath,videodb://tvshows/) | String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)]]
 				| Window.IsActive(1116)</visible>
@@ -281,10 +282,10 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31414]</label>
 				<selected>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)] + Skin.HasSetting(EnableMoviesWrapListInfoCompactMode)] | [Container.Content(Albums) + Skin.HasSetting(EnableMusicWrapListInfoCompactMode)] | [String.Contains(Container.FolderPath,plugin://plugin.program) + Skin.HasSetting(EnableProgramsWrapListInfoCompactMode)]</selected>
-				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)">Skin.ToggleSetting(EnableMoviesWrapListInfoCompactMode)</onclick>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Actors)">Skin.ToggleSetting(EnableMoviesWrapListInfoCompactMode)</onclick>
 				<onclick condition="Container.Content(Albums)">Skin.ToggleSetting(EnableMusicWrapListInfoCompactMode)</onclick>
 				<onclick condition="String.Contains(Container.FolderPath,plugin://plugin.program)">Skin.ToggleSetting(EnableProgramsWrapListInfoCompactMode)</onclick>
-				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program)] + Skin.String(CurrentViewMode,53)</visible>
+				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Actors) | Container.Content(Albums) | String.Contains(Container.FolderPath,plugin://plugin.program)] + Skin.String(CurrentViewMode,53)</visible>
 			</control>
 			<control type="radiobutton" id="2025">
 				<description>Wrap List Info Hide Overlay (Movies) (Sets) (TVShows)</description>
@@ -1201,24 +1202,24 @@
 				<visible>Skin.String(CurrentViewMode,59) + [Container.Content(Movies) | Container.Content(Sets)]</visible>
 			</control>
 			<control type="radiobutton" id="2017">
-				<description>Wrap List Info Use Style 1 (Movies) (TVShows)</description>
+				<description>Wrap List Info Use Style 1 (Movies) (TVShows) (Actors)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31418]</label>
 				<selected>Skin.String(MoviesWrapListInfoStyle,1) | String.IsEmpty(Skin.String(MoviesWrapListInfoStyle))</selected>
 				<onclick>Skin.SetString(MoviesWrapListInfoStyle,1)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,53) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]</visible>
+				<visible>Skin.String(CurrentViewMode,53) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Actors)]</visible>
 			</control>
 			<control type="radiobutton" id="2018">
-				<description>Wrap List Info Use Style 2 (Movies) (TVShows)</description>
+				<description>Wrap List Info Use Style 2 (Movies) (TVShows) (Actors)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31413]</label>
 				<selected>Skin.String(MoviesWrapListInfoStyle,2)</selected>
 				<onclick>Skin.SetString(MoviesWrapListInfoStyle,2)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<visible>Skin.String(CurrentViewMode,53) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows)]</visible>
+				<visible>Skin.String(CurrentViewMode,53) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Actors)]</visible>
 			</control>
 				<control type="radiobutton" id="2044">
 				<description>List Info 2 Use Style 1 (TVShows)</description>

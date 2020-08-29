@@ -170,6 +170,16 @@
 		<value>$VAR[MusicDurationVar]</value>
 	</variable>
 	
+	<include name="MovieSetContainer">
+		<control type="list" id="3650">
+			<left>2000</left>
+			<visible>String.Contains(Container.FolderPath,://movies/)</visible>
+			<itemlayout />
+			<focusedlayout />
+			<content sortby="year" sortorder="ascending">$INFO[ListItem.Folderpath]</content>
+		</control>
+	</include>
+	
 	<include name="ListFocusedlayoutBackgrounds">
 		<control type="image">
 			<width>$PARAM[width]</width>
@@ -321,7 +331,7 @@
 		</control>
 		
 		<control type="group">
-			<visible>[Container.Content(Movies) | Container.Content(Sets) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)] | Container.Content(Seasons)] + ![ListItem.IsParentFolder + !Container.Content(Seasons)]</visible>
+			<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(Actors) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)] | Container.Content(Seasons)] + ![ListItem.IsParentFolder + !Container.Content(Seasons)]</visible>
 			<include>BackgroundVisibleAnim</include>
 			
 			<control type="image">

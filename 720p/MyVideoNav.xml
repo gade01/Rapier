@@ -24,13 +24,7 @@
 			<include>BackgroundOpenCloseAnim</include>
 		</control>
 		
-		<control type="list" id="3650">
-			<left>2000</left>
-			<visible>!System.AddonIsEnabled(script.skin.helper.service) + String.Contains(Container.FolderPath,://movies/)</visible>
-			<itemlayout />
-			<focusedlayout />
-			<content sortby="year" sortorder="ascending">$INFO[ListItem.Folderpath]</content>
-		</control>
+		<include condition="!System.AddonIsEnabled(script.skin.helper.service)">MovieSetContainer</include>
 		
 		<control type="group">
 			<visible>![Window.IsActive(1117) | $EXP[ExtendedinfoInfoDialogs] | $EXP[EmbuaryInfoDialogs]]</visible>

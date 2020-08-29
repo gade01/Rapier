@@ -325,9 +325,10 @@
 				<label>[UPPERCASE]$INFO[Control.GetLabel(3)][/UPPERCASE]</label>
 				<onclick>Skin.SetString(SortMethods,1)</onclick>
 				<onclick>SendClick(3)</onclick>
+				<enable>Control.IsEnabled(3)</enable>
 			</control>
 			<control type="button" id="3">
-				<description>Sort By Hidden</description>
+				<description>Sort By (Hidden)</description>
 				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[103][/UPPERCASE]</label>
 				<visible>false</visible>
@@ -1236,9 +1237,10 @@
 				<label>[UPPERCASE]$INFO[Control.GetLabel(3)][/UPPERCASE]</label>
 				<onclick>Skin.SetString(SortMethods,2)</onclick>
 				<onclick>SendClick(3)</onclick>
+				<enable>Control.IsEnabled(3)</enable>
 			</control>
 			<control type="button" id="3">
-				<description>Sort By Hidden</description>
+				<description>Sort By (Hidden)</description>
 				<include>MenuBarBigBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[103][/UPPERCASE]</label>
 				<visible>false</visible>
@@ -1401,6 +1403,8 @@
 					<label>[UPPERCASE]$LOCALIZE[31110][/UPPERCASE]</label>
 					<altlabel>[UPPERCASE]$LOCALIZE[31109][/UPPERCASE]</altlabel>
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+					<alttexturefocus border="4">gui/menu-bar-button-focus.png</alttexturefocus>
+					<alttexturenofocus />
 				</control>
 				<control type="image" id="351">
 					<include>MenuBarSeparator</include>
