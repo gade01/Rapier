@@ -41,6 +41,7 @@
 	<include file="View_532_VideosThumbsInfo.xml"/>
 	<include file="View_580_PlayList.xml"/>
 	<include file="View_585_ExtendedList.xml"/>
+	<include file="View_586_ExtendedList2.xml"/>
 	<include file="View_588_3DWrap.xml"/>
 	<include file="Views.xml"/>
 	
@@ -154,6 +155,18 @@
 		<value condition="Integer.IsEqual(Container(901).ListItem.Duration(h),6)">$NUMBER[6] $LOCALIZE[12392] $INFO[ListItem.Duration(m)] $LOCALIZE[12391]</value>
 		<value condition="Integer.IsEqual(Container(901).ListItem.Duration(mins),0) | Integer.IsEqual(Container(901).ListItem.Duration(mins),1)">1 $LOCALIZE[31158]</value>
 		<value>$INFO[ListItem.Duration(mins)] $LOCALIZE[12391]</value>
+	</variable>
+	
+	<variable name="Container592DurationVar">
+		<value condition="Skin.HasSetting(UseAlternativeDuration)">$VAR[Container592FormattedDurationVar]</value>
+		<value>$INFO[Container(592).ListItem.Duration(mins)]</value>
+	</variable>
+	
+	<variable name="Container592FormattedDurationVar">
+		<value condition="!String.IsEmpty(Container(592).ListItem.Duration) + Integer.IsEqual(Container(592).ListItem.Duration(mins),0)">$NUMBER[1]</value>
+		<value condition="Integer.IsEqual(Container(592).ListItem.Duration(mins),60)">$NUMBER[1]$LOCALIZE[31403]$NUMBER[00]</value>
+		<value condition="Integer.IsEqual(Container(592).ListItem.Duration(h),0)">$INFO[Container(592).ListItem.Duration(mins)]</value>
+		<value>$INFO[Container(592).ListItem.Duration(h)]$LOCALIZE[31403]$INFO[Container(592).ListItem.Duration(mm)]</value>
 	</variable>
 	
 	<variable name="MusicDurationVar">
