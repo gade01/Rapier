@@ -719,7 +719,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.AddonBroken)</visible>
+			<visible>$EXP[AddonLifecycleType]</visible>
 			<control type="image">
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
@@ -733,7 +733,7 @@
 				<height>$PARAM[textbox_size]</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$LOCALIZE[24096]</label>
+				<label>$VAR[AddonLifecycleType]</label>
 				<font>FullMediaInfoTaglineFont</font>
 				<textcolor>MediaInfoItemColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>
@@ -791,7 +791,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!String.IsEmpty(ListItem.AddonBroken)</visible>
+			<visible>$EXP[AddonLifecycleType]</visible>
 			<control type="image">
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
@@ -805,7 +805,7 @@
 				<height>$PARAM[textbox_size]</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$LOCALIZE[24096]</label>
+				<label>$VAR[AddonLifecycleType]</label>
 				<font>FullMediaInfoTaglineFont</font>
 				<textcolor>MediaInfoItemColor2</textcolor>
 				<shadowcolor>ShadowColor</shadowcolor>

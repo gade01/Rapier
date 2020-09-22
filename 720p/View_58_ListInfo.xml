@@ -822,15 +822,14 @@
 			<visible>!ListItem.IsParentFolder + Container.Content(Episodes)</visible>
 			
 			<control type="image">
-				<description>Cover Case</description>
+				<description>Cover Background</description>
 				<left>39</left>
 				<top>372</top>
 				<width>334</width>
 				<height>215</height>
-				<texture border="4">covers/cover-case2.png</texture>
+				<texture background="true" border="4">panels/panel3.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<fadetime>IconCrossfadeTime</fadetime>
-				<animation effect="fade" end="60" condition="true">Conditional</animation>
+				<include>ListInfoViewMediaInfoBackgroundFadeAnim</include>
 			</control>
 			
 			<control type="image">
@@ -853,13 +852,12 @@
 				<top>372</top>
 				<width>334</width>
 				<height>215</height>
-				<texture background="true">$INFO[ListItem.Thumb]</texture>
-				<bordersize>4</bordersize>
+				<texture background="true" diffuse="covers/list-info-2-fanart-diffuse.png">$INFO[ListItem.Thumb]</texture>
+				<bordersize>1</bordersize>
 				<aspectratio>keep</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 			</control>
-		
+			
 			<control type="label">
 				<description>TV Show</description>
 				<left>44</left>
@@ -1079,29 +1077,15 @@
 					<description>Born</description>
 					<width min="0" max="150">auto</width>
 					<include>ListInfoViewCatLabel</include>
-					<label>$LOCALIZE[21893]:</label>
-					<visible>!String.IsEmpty(ListItem.Property(Artist_Born))</visible>
-				</control>
-				<control type="label">
-					<description>Formed</description>
-					<width min="0" max="150">auto</width>
-					<include>ListInfoViewCatLabel</include>
-					<label>$LOCALIZE[21894]:</label>
-					<visible>!String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
+					<label>$VAR[ArtistBornFormedLabel]:</label>
+					<visible>![String.IsEmpty(ListItem.Property(Artist_Born)) + String.IsEmpty(ListItem.Property(Artist_Formed))]</visible>
 				</control>
 				<control type="label">
 					<description>Born Value</description>
 					<width min="0" max="300">auto</width>
 					<include>ListInfoViewCatValueLabel</include>
-					<label>$INFO[ListItem.Property(Artist_Born)]</label>
-					<visible>!String.IsEmpty(ListItem.Property(Artist_Born))</visible>
-				</control>
-				<control type="label">
-					<description>Formed Value</description>
-					<width min="0" max="300">auto</width>
-					<include>ListInfoViewCatValueLabel</include>
-					<label>$INFO[ListItem.Property(Artist_Formed)]</label>
-					<visible>!String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
+					<label>$VAR[ArtistBornFormedValue]</label>
+					<visible>![String.IsEmpty(ListItem.Property(Artist_Born)) + String.IsEmpty(ListItem.Property(Artist_Formed))]</visible>
 				</control>
 				<control type="label">
 					<description>No Value</description>
@@ -1140,7 +1124,7 @@
 			</include>
 			
 			<control type="group">
-				<visible>!String.IsEmpty(ListItem.AddonBroken)</visible>
+				<visible>$EXP[AddonLifecycleType]</visible>
 				<include>MediaInfoOpenCloseAnim</include>
 				<left>39</left>
 				<top>337</top>
@@ -1159,7 +1143,7 @@
 					<height>228</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>$LOCALIZE[24096]</label>
+					<label>$VAR[AddonLifecycleType]</label>
 					<font>FullMediaInfoFont</font>
 					<textcolor>MediaInfoItemColor2</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>

@@ -86,6 +86,7 @@
 	<expression name="UnwatchedEpisodes99-">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</expression>
 	<expression name="UnwatchedEpisodes99+">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</expression>
 	<expression name="UnwatchedEpisodesOverlay">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))</expression>
+	<expression name="AddonLifecycleType">String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</expression>
 	
 	<variable name="DurationVar">
 		<value condition="ListItem.IsCollection + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Runtime))">$VAR[SkinHelperDurationVar]</value>
@@ -212,6 +213,18 @@
 	<variable name="SecondsVar">
 		<value condition="String.EndsWith(ListItem.Duration,:01)">$NUMBER[1] $LOCALIZE[31990]</value>
 		<value>$INFO[ListItem.Duration(ss)] $LOCALIZE[31992]</value>
+	</variable>
+	
+	<variable name="Container591MusicDurationVar">
+		<value condition="Skin.HasSetting(UseAlternativeDuration)">$VAR[Container591MusicFormattedDurationVar]</value>
+		<value>$INFO[Container(591).ListItem.Duration]</value>
+	</variable>
+	
+	<variable name="Container591MusicFormattedDurationVar">
+		<value condition="!String.IsEmpty(Container(591).ListItem.Duration) + Integer.IsEqual(Container(591).ListItem.Duration(mins),0)">$NUMBER[1]$LOCALIZE[31399]$INFO[Container(591).ListItem.Duration(ss)]</value>
+		<value condition="Integer.IsEqual(Container(591).ListItem.Duration(mins),60)">$NUMBER[1]$LOCALIZE[31403]$NUMBER[00]$LOCALIZE[31399]$INFO[Container(591).ListItem.Duration(ss)]</value>
+		<value condition="Integer.IsEqual(Container(591).ListItem.Duration(h),0)">$INFO[Container(591).ListItem.Duration(mins)]$LOCALIZE[31399]$INFO[Container(591).ListItem.Duration(ss)]</value>
+		<value>$INFO[Container(591).ListItem.Duration(h)]$LOCALIZE[31403]$INFO[Container(591).ListItem.Duration(mm)]$LOCALIZE[31399]$INFO[Container(591).ListItem.Duration(ss)]</value>
 	</variable>
 	
 	<variable name="SeasonEpisodesNumberVar">
@@ -505,6 +518,11 @@
 		<textwidth>230</textwidth>
 		<scroll>true</scroll>
 	</include>
+	
+	<variable name="AddonLifecycleType">
+		<value condition="String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170])">$LOCALIZE[24049]</value>
+		<value condition="String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])">$LOCALIZE[24096]</value>
+	</variable>
 	
 	<!-- Settings -->
 	<include name="SettingsCatBtn">

@@ -49,7 +49,7 @@
 				</control>
 				
 				<control type="group">
-					<visible>!String.IsEmpty(ListItem.AddonBroken)</visible>
+					<visible>$EXP[AddonLifecycleType]</visible>
 					
 					<control type="image">
 						<width>328</width>
@@ -65,7 +65,7 @@
 						<height>320</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$LOCALIZE[24096]</label>
+						<label>$VAR[AddonLifecycleType]</label>
 						<font>FullMediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
@@ -236,7 +236,7 @@
 					<item id="5">
 						<description>Status</description>
 						<label>$LOCALIZE[126]</label>
-						<label2 fallback="1223">$INFO[ListItem.Property(Addon.Status)]</label2>
+						<label2 fallback="1223">$INFO[ListItem.Property(Addon.Status)]$INFO[ListItem.AddonLifecycleType, (,)]</label2>
 					</item>
 					<item id="6">
 						<description>Size</description>
