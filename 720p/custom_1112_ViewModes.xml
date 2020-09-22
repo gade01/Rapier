@@ -92,11 +92,20 @@
 				<description>Extended List View</description>
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31122]</label>
-				<onclick condition="!Container.Content(TVShows)">Container.SetViewMode(585)</onclick>
-				<onclick condition="Container.Content(TVShows)">Container.SetViewMode(586)</onclick>
+				<onclick>Container.SetViewMode(585)</onclick>
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>!Skin.HasSetting(DisableExtendedListView)</visible>
-				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums] | Container.Content(TVShows)</visible>
+				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums]</visible>
+			</control>
+			
+			<control type="button" id="18">
+				<description>Extended List 2 View</description>
+				<include>DropDownMenuViewModeBtn</include>
+				<label>$LOCALIZE[31114]</label>
+				<onclick>Container.SetViewMode(586)</onclick>
+				<onclick>Dialog.Close(1112)</onclick>
+				<visible>!Skin.HasSetting(DisableExtendedListView2)</visible>
+				<visible>Container.Content(Artists) | Container.Content(TVShows)</visible>
 			</control>
 
 			<control type="button" id="9">
@@ -234,8 +243,8 @@
 				<height>25</height>
 				<texture>gui/view-extended-list2.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
-				<visible>!Skin.HasSetting(DisableExtendedListView)</visible>
-				<visible>Container.Content(TVShows)</visible>
+				<visible>!Skin.HasSetting(DisableExtendedListView2)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Artists)</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
