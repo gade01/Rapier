@@ -170,6 +170,16 @@
 		<value>$VAR[MusicDurationVar]</value>
 	</variable>
 	
+	<variable name="ArtistBornFormedLabel">
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Born))">$LOCALIZE[21893]</value>
+		<value>$LOCALIZE[21894]</value>
+	</variable>
+	
+	<variable name="ArtistBornFormedValue">
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Born))">$INFO[ListItem.Property(Artist_Born)]</value>
+		<value>$INFO[ListItem.Property(Artist_Formed)]</value>
+	</variable>
+	
 	<include name="MovieSetContainer">
 		<control type="list" id="3650">
 			<left>2000</left>

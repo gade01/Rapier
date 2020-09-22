@@ -1745,32 +1745,16 @@
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[21893]:</label>
-						<visible>!String.IsEmpty(ListItem.Property(Artist_Born))</visible>
-					</control>
-					<control type="label">
-						<width min="0" max="150">auto</width>
-						<font>MediaInfoFont</font>
-						<textcolor>MediaInfoItemColor</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$LOCALIZE[21894]:</label>
-						<visible>!String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
+						<label>$VAR[ArtistBornFormedLabel]:</label>
+						<visible>![String.IsEmpty(ListItem.Property(Artist_Born)) + String.IsEmpty(ListItem.Property(Artist_Formed))]</visible>
 					</control>
 					<control type="label">
 						<width min="0" max="450">auto</width>
 						<font>MediaInfoFont</font>
 						<textcolor>MediaInfoItemColor2</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Property(Artist_Born)]</label>
-						<visible>!String.IsEmpty(ListItem.Property(Artist_Born))</visible>
-					</control>
-					<control type="label">
-						<width min="0" max="450">auto</width>
-						<font>MediaInfoFont</font>
-						<textcolor>MediaInfoItemColor2</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<label>$INFO[ListItem.Property(Artist_Formed)]</label>
-						<visible>!String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
+						<label>$VAR[ArtistBornFormedValue]</label>
+						<visible>![String.IsEmpty(ListItem.Property(Artist_Born)) + String.IsEmpty(ListItem.Property(Artist_Formed))]</visible>
 					</control>
 					<control type="label">
 						<width min="0" max="200">auto</width>
