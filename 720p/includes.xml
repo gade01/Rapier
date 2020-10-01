@@ -2624,6 +2624,16 @@
 		<value>$INFO[MusicPlayer.Title]</value>
 	</variable>
 	
+	<variable name="MusicPlayingLine3Label">
+		<value condition="MusicPlayer.IsMultiDisc">$LOCALIZE[427]</value>
+		<value>$LOCALIZE[31148]</value>
+	</variable>
+	
+	<variable name="MusicPlayingLine3Value">
+		<value condition="MusicPlayer.IsMultiDisc">$INFO[MusicPlayer.DiscNumber]$INFO[MusicPlayer.TotalDiscs,/,: ]$INFO[MusicPlayer.DiscTitle]</value>
+		<value>$INFO[MusicPlayer.Station]</value>
+	</variable>
+	
 	<variable name="MusicVizDescription">
 		<value condition="System.AddonIsEnabled(script.artistslideshow) + [Skin.HasSetting(UseFanartForMusicPlayingBG) | Skin.HasSetting(UseVisualizationAndFanartForMusicPlayingBG)] + Skin.HasSetting(EnableArtistFanartSlideshow)">$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</value>
 		<value>$INFO[MusicPlayer.Property(Album_Description)]</value>

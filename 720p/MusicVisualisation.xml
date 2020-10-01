@@ -117,7 +117,7 @@
 					<top>10</top>
 					<left>266</left>
 					<orientation>vertical</orientation>
-					<animation effect="slide" end="0,-10" condition="MusicPlayer.IsMultiDisc">Conditional</animation>
+					<animation effect="slide" end="0,-10" condition="MusicPlayer.IsMultiDisc | !String.IsEmpty(MusicPlayer.Station)">Conditional</animation>
 					<control type="label">
 						<height>39</height>
 						<font>FSInfoTitleFont</font>
@@ -143,7 +143,7 @@
 							<font>MediaInfoFont</font>
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label fallback="31001">$INFO[MusicPlayer.Artist]</label>'
+							<label fallback="31001">$INFO[MusicPlayer.Artist]</label>
 						</control>
 					</control>
 					<control type="grouplist">
@@ -193,20 +193,20 @@
 						<orientation>horizontal</orientation>
 						<include>CdArtLabelOpenCloseAnim4</include>
 						<animation effect="slide" end="18,0" condition="true">Conditional</animation>
-						<visible>MusicPlayer.IsMultiDisc</visible>
+						<visible>MusicPlayer.IsMultiDisc | !String.IsEmpty(MusicPlayer.Station)</visible>
 						<control type="label">
 							<width min="10" max="140">auto</width>
 							<font>MediaInfoFont</font>
 							<textcolor>MediaInfoItemColor</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$LOCALIZE[427]:</label>
+							<label>$VAR[MusicPlayingLine3Label]:</label>
 						</control>
 						<control type="label">
 							<width min="10" max="600">auto</width>
 							<font>MediaInfoFont</font>
 							<textcolor>MediaInfoItemColor2</textcolor>
 							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[MusicPlayer.DiscNumber]$INFO[MusicPlayer.TotalDiscs,/,: ]$INFO[MusicPlayer.DiscTitle]</label>
+							<label>$VAR[MusicPlayingLine3Value]</label>
 						</control>
 					</control>
 					<control type="grouplist">
