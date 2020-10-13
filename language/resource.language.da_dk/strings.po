@@ -8,31 +8,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Skins\n"
-"Report-Msgid-Bugs-To: gade@kodi.tv\n"
+"Report-Msgid-Bugs-To: http://trac.kodi.tv/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2020-10-09 18:12+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
-"Language-Team: Danish <https://kodi.weblate.cloud/projects/"
-"kodi-add-ons-skins/skin-rapier/da/>\n"
+"Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-"
+"skins/skin-rapier/da/>\n"
 "Language: da_dk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.2.2\n"
-
-msgctxt "Addon Summary"
-msgid "Rapier skin by Scarfa, Gade."
-msgstr "Rapier skin af Scarfa, Gade."
-
-msgctxt "Addon Description"
-msgid ""
-"The goal is to provide a simple to use but clean and elegant interface that "
-"focuses on efficiency when browsing your media. Important considerations are"
-" put on usability, performance, and providing the user with flexibility when"
-" it comes to customization. Rapier tries to support all the latest features "
-"Kodi has to offer as long as it fits in with the skin's design goals."
-msgstr "Målet er at levere en grænseflade, der er simpel at anvende, ren, elegant og fokuserer på effektivitet, når du browser dine medier. Vigtige overvejelser er gjort i forbindelse med brugervenlighed, ydelse og levering af fleksibilitet for brugeren, når det kommer til tilpasning. Rapier forsøger at understøtte alle de nyeste funktioner, Kodi har at tilbyde, så længe det stemmer overens med skin'ets design-mål."
 
 #: /720p/custom_1102_DialogMovieSetInfo.xml /720p/custom_1122_ProgramsInfo.xml
 #: /720p/DialogAddonInfo.xml /720p/DialogMusicInfo.xml
@@ -48,8 +35,7 @@ msgstr "Ikke tilgængelig"
 
 #: /720p/DialogMusicInfo.xml /720p/DialogPlayerProcessInfo.xml
 #: /720p/includes_Addons.xml /720p/includes_PVR.xml /720p/includes_Weather.xml
-#: /720p/MusicVisualisation.xml
-#: /720p/script-script.extendedinfo-DialogInfo.xml
+#: /720p/MusicVisualisation.xml /720p/script-script.extendedinfo-DialogInfo.xml
 #: /720p/script-script.extendedinfo-DialogVideoInfo.xml /720p/Views.xml
 msgctxt "#31001"
 msgid "N/A"
@@ -185,7 +171,7 @@ msgctxt "#31025"
 msgid "Hide Scrollbar"
 msgstr "Skjul scrollbar"
 
-#: /720p/includes_SkinSettingsWeather.xml
+#: Not used for Kodi Matrix / Rapier 12 /720p/includes_SkinSettingsWeather.xml
 msgctxt "#31026"
 msgid "Enable Weather"
 msgstr "Aktiver Vejr"
@@ -209,6 +195,12 @@ msgstr "Skjul lukknapper i dialoger"
 msgctxt "#31030"
 msgid "Custom playlist"
 msgstr "Brugerdefineret playliste"
+
+#: /720p/includes_SkinSettingsWeather.xml
+#, fuzzy
+msgctxt "#31031"
+msgid "Weather add-on"
+msgstr "Søg i add-ons"
 
 #: /720p/includes_SkinSettingsMedia.xml
 msgctxt "#31032"
@@ -255,10 +247,21 @@ msgctxt "#31040"
 msgid "Movie Set Information"
 msgstr "Filmsætinformation"
 
+#: /720p/includes_SkinSettingsWeather.xml
+#, fuzzy
+msgctxt "#31041"
+msgid "click to install"
+msgstr "Ikke installeret"
+
 #: /720p/custom_1101_DialogExtendedInfo.xml /720p/custom_1113_ViewOptions.xml
 msgctxt "#31042"
 msgid "Hide Title"
 msgstr "Skjul titel"
+
+#: /720p/includes_SkinSettingsWeather.xml
+msgctxt "#31043"
+msgid "Weather add-on settings"
+msgstr ""
 
 #: /720p/custom_1114_ViewOptionsPVR.xml /720p/includes_MenuBar.xml
 msgctxt "#31044"
@@ -283,7 +286,8 @@ msgstr "Skjul bedømmelse"
 #: /720p/includes_SkinSettingsMedia.xml
 msgctxt "#31048"
 msgid "Enable Media Flags (Enabling All Media Flags May Break The Layout)"
-msgstr "Aktiver mediemærkater (aktivering af alle mediemærkater kan bryde layoutet)"
+msgstr ""
+"Aktiver mediemærkater (aktivering af alle mediemærkater kan bryde layoutet)"
 
 #: /720p/includes_SkinSettingsMedia.xml
 msgctxt "#31049"
@@ -457,6 +461,12 @@ msgid "Background"
 msgstr "Baggrund"
 
 #: /720p/includes_SkinSettingsHome.xml
+#, fuzzy
+msgctxt "#31084"
+msgid "New test"
+msgstr "Nye DVD'er"
+
+#: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31085"
 msgid "Widget"
 msgstr "Widget"
@@ -615,6 +625,14 @@ msgid "Wall"
 msgstr "Væg"
 
 #. Viewtype name
+#: /720p/custom_1112_ViewModes.xml /720p/includes_SkinSettingsViews.xml
+#: /720p/View_586_ExtendedList2.xml
+#, fuzzy
+msgctxt "#31114"
+msgid "Extended List 2"
+msgstr "Udvidet liste"
+
+#. Viewtype name
 #: /720p/custom_1101_DialogExtendedInfo.xml
 #: /720p/includes_SkinSettingsViews.xml /720p/custom_1112_ViewModes.xml
 #: /720p/ViewsEpisodes.xml /720p/ViewsMovies.xml /720p/ViewsMusic.xml
@@ -743,36 +761,48 @@ msgctxt "#31136"
 msgid ""
 "[B]CONFIGURE INTERFACE SETTINGS[/B][CR]Change the skin · Set language and "
 "region · Setup remote controls[CR]Set up a screensaver · Setup master lock"
-msgstr "[B]KONFIGURER INDSTILLINGER FOR UDSEENDE[/B][CR]Skift skin · Indstil sprog og region · Opsæt fjernbetjeninger[CR]Opsæt en pauseskærm · Opret hovedlås"
+msgstr ""
+"[B]KONFIGURER INDSTILLINGER FOR UDSEENDE[/B][CR]Skift skin · Indstil sprog "
+"og region · Opsæt fjernbetjeninger[CR]Opsæt en pauseskærm · Opret hovedlås"
 
 #: /720p/includes.xml
 msgctxt "#31137"
 msgid ""
-"[B]CONFIGURE SYSTEM SETTINGS[/B][CR]Setup and calibrate displays · Configure"
-" audio output[CR]Set power saving options · Enable debugging"
-msgstr "[B]KONFIGURER SYSTEMINDSTILLINGER[/B][CR]Indstil og kalibrer skærme · Konfigurer lydudgang[CR]Vælg indstillinger for strømbesparelse · Aktiver fejllogning"
+"[B]CONFIGURE SYSTEM SETTINGS[/B][CR]Setup and calibrate displays · Configure "
+"audio output[CR]Set power saving options · Enable debugging"
+msgstr ""
+"[B]KONFIGURER SYSTEMINDSTILLINGER[/B][CR]Indstil og kalibrer skærme · "
+"Konfigurer lydudgang[CR]Vælg indstillinger for strømbesparelse · Aktiver "
+"fejllogning"
 
 #: /720p/includes.xml
 msgctxt "#31138"
 msgid ""
 "[B]SETUP PROFILES[/B][CR]Setup and manage user profiles · Enable login "
 "screen[CR]Change password · Add a profile picture"
-msgstr "[B]OPSÆT PROFILER[/B][CR]Indstil og håndter brugerprofiler · Aktiver login-skærm[CR]Ændring af adgangskode · Tilføj et profilbillede"
+msgstr ""
+"[B]OPSÆT PROFILER[/B][CR]Indstil og håndter brugerprofiler · Aktiver login-"
+"skærm[CR]Ændring af adgangskode · Tilføj et profilbillede"
 
 #: /720p/includes.xml
 msgctxt "#31139"
 msgid ""
-"[B]CONFIGURE SERVICE SETTINGS[/B][CR]Setup control of Kodi via UPnP and HTTP"
-" · Configure file sharing[CR]Configure AirPlay and Zeroconf · Select a "
+"[B]CONFIGURE SERVICE SETTINGS[/B][CR]Setup control of Kodi via UPnP and HTTP "
+"· Configure file sharing[CR]Configure AirPlay and Zeroconf · Select a "
 "weather addon"
-msgstr "[B]KONFIGURER TJENESTER[/B][CR]Opsæt styring af Kodi via UPnP og HTTP · Konfigurer fildeling[CR]Konfigurer AirPlay og Zeroconf · Vælg et vejr-add-on"
+msgstr ""
+"[B]KONFIGURER TJENESTER[/B][CR]Opsæt styring af Kodi via UPnP og HTTP · "
+"Konfigurer fildeling[CR]Konfigurer AirPlay og Zeroconf · Vælg et vejr-add-on"
 
 #: /720p/includes.xml
 msgctxt "#31140"
 msgid ""
 "[B]CONFIGURE PLAYER SETTINGS[/B][CR]Set video and audio playback options · "
 "Configure picture slideshow[CR]Configure video language and subtitles"
-msgstr "[B]KONFIGURER AFSPILNINGSINDSTILLINGER[/B][CR]Vælg indstillinger til afspilning af video og audio · Konfigurer diasshows[CR]Indstil sprog og undertekster for video"
+msgstr ""
+"[B]KONFIGURER AFSPILNINGSINDSTILLINGER[/B][CR]Vælg indstillinger til "
+"afspilning af video og audio · Konfigurer diasshows[CR]Indstil sprog og "
+"undertekster for video"
 
 #: /720p/includes.xml
 msgctxt "#31141"
@@ -780,21 +810,34 @@ msgid ""
 "[B]CONFIGURE MEDIA SETTINGS[/B][CR]Configure library sources · Set default "
 "select action[CR]Configure file list options · Configure metadata options · "
 "Manage databases"
-msgstr "[B]KONFIGURER INDSTILLINGER FOR MEDIER[/B][CR]Konfigurer bibliotekets kilder · Indstil standardhandling for valg[CR]Konfigurer indstillinger for fillister · Konfigurer metadata-indstillinger · Administrer databaser"
+msgstr ""
+"[B]KONFIGURER INDSTILLINGER FOR MEDIER[/B][CR]Konfigurer bibliotekets kilder "
+"· Indstil standardhandling for valg[CR]Konfigurer indstillinger for "
+"fillister · Konfigurer metadata-indstillinger · Administrer databaser"
 
 #: /720p/includes.xml
 msgctxt "#31142"
 msgid ""
 "[B]CONFIGURE ADD-ONS[/B][CR]Manage your installed Add-ons · Browse for and "
 "install Add-ons from kodi.tv[CR]Modify Add-on settings"
-msgstr "[B]KONFIGURER ADD-ONS[/B][CR]Administrer dine installerede add-ons · Gennemse og installer add-ons fra kodi.tv[CR]Tilpas indstillinger til add-ons"
+msgstr ""
+"[B]KONFIGURER ADD-ONS[/B][CR]Administrer dine installerede add-ons · "
+"Gennemse og installer add-ons fra kodi.tv[CR]Tilpas indstillinger til add-ons"
 
 #: /720p/includes.xml
 msgctxt "#31143"
 msgid ""
 "[B]CONFIGURE GAME SETTINGS[/B][CR]Configure gameplay settings · Setup "
 "keyboard and player configuration"
-msgstr "[B]KONFIGURER INDSTILLINGER FOR SPIL[/B][CR]Konfigurer indstillinger for gameplay · Opsæt konfiguration for tastatur og spiller"
+msgstr ""
+"[B]KONFIGURER INDSTILLINGER FOR SPIL[/B][CR]Konfigurer indstillinger for "
+"gameplay · Opsæt konfiguration for tastatur og spiller"
+
+# empty strings from id 31144 to 31148
+#: /720p/includes.xml
+msgctxt "#31149"
+msgid "Playback speed"
+msgstr ""
 
 #: /720p/includes_Home.xml
 msgctxt "#31150"
@@ -916,14 +959,18 @@ msgctxt "#31173"
 msgid ""
 "Please make sure to activate this category in Skin Settings > Home > "
 "Category Menu > Reorder Categories or it might be hidden."
-msgstr "Aktiver venligst denne kategori i Skinindstillinger > Hjem > Kategori-menu > Omarranger kategorier. Ellers vil den muligvis være skjult."
+msgstr ""
+"Aktiver venligst denne kategori i Skinindstillinger > Hjem > Kategori-menu > "
+"Omarranger kategorier. Ellers vil den muligvis være skjult."
 
 #: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31174"
 msgid ""
 "Please make sure all categories are used[CR]or you will end up missing "
 "categories.[CR][CR]Reset will revert to default category order."
-msgstr "Sørg for at alle kategorier er benyttet[CR]eller der vil mangle kategorier.[CR][CR]Nulstil for at vende tilbage til standard rækkefølgen."
+msgstr ""
+"Sørg for at alle kategorier er benyttet[CR]eller der vil mangle kategorier."
+"[CR][CR]Nulstil for at vende tilbage til standard rækkefølgen."
 
 #: /720p/custom_1115_DialogReorderCategories.xml
 msgctxt "#31175"
@@ -933,7 +980,8 @@ msgstr "Ikke flere kategorier til rådighed..."
 #: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31176"
 msgid "This will reset all your changes![CR]Press \"YES\" to continue."
-msgstr "Dette vil nulstille alle dine ændringer![CR]Tryk \"Ja\" for at fortsætte."
+msgstr ""
+"Dette vil nulstille alle dine ændringer![CR]Tryk \"Ja\" for at fortsætte."
 
 #: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31177"
@@ -1047,7 +1095,7 @@ msgctxt "#31198"
 msgid "Location"
 msgstr "Placering"
 
-#: /720p/includes_SkinSettingsMedia.xml
+#: Not used for Kodi Matrix / Rapier 12.x /720p/includes_SkinSettingsMedia.xml
 msgctxt "#31199"
 msgid "Enable fullscreen window when starting music"
 msgstr "Aktiver fuldskærmsvindue når musik startes"
@@ -1111,6 +1159,12 @@ msgstr "BG"
 msgctxt "#31208"
 msgid "Button"
 msgstr "Knap"
+
+# empty strings from id 31209 to 31211
+#: /720p/Fonts.xml
+msgctxt "#31212"
+msgid "Raleway"
+msgstr ""
 
 #: /720p/includes.xml
 msgctxt "#31213"
@@ -1291,9 +1345,11 @@ msgstr "Sørg for at et vejr add-on er installeret."
 #: /720p/MyWeather.xml
 msgctxt "#31310"
 msgid ""
-"Weather Provider Has Not Been Set. Check Your Weather Settings And Make Sure"
-" A Weather Add-on Is Installed."
-msgstr "Vejrudbyder er ikke indstillet. Kontroller indstillinger for vejr og sørg for at et add-on til vejr er installeret."
+"Weather Provider Has Not Been Set. Check Your Weather Settings And Make Sure "
+"A Weather Add-on Is Installed."
+msgstr ""
+"Vejrudbyder er ikke indstillet. Kontroller indstillinger for vejr og sørg "
+"for at et add-on til vejr er installeret."
 
 #: /720p/custom_1132_DialogCustomBackgroundType.xml /720p/includes_Home.xml
 #: /720p/includes_SkinSettingsBackgrounds.xml
@@ -1306,6 +1362,13 @@ msgstr "Igangværende"
 msgctxt "#31312"
 msgid "Featured"
 msgstr "Fremhævede"
+
+# empty strings from id 31313 to 31398
+#. Short for minutes - example: 1h53m33
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+msgctxt "#31399"
+msgid "m"
+msgstr ""
 
 #: /720p/includes_SkinSettingsBackgrounds.xml
 msgctxt "#31400"
@@ -1367,7 +1430,8 @@ msgstr "Aktiver afspilning af video i baggrunden"
 #: /720p/includes_SkinSettingsMedia.xml
 msgctxt "#31411"
 msgid "Use Both Music Visualization And Artist Fanart For Background"
-msgstr "Anvend både visualisering for musik samt kunstner fankunst i baggrunden"
+msgstr ""
+"Anvend både visualisering for musik samt kunstner fankunst i baggrunden"
 
 #: /720p/custom_1101_DialogExtendedInfo.xml /720p/custom_1113_ViewOptions.xml
 msgctxt "#31412"
@@ -1509,7 +1573,9 @@ msgctxt "#31440"
 msgid ""
 "Script to let you select image resource genre, weather icons and weather "
 "fanart add-ons to be used with the skin"
-msgstr "Script der lader dig vælge billede ressource genre-, vejrikon- og vejr fanart add-ons, der skal bruges med skinnet"
+msgstr ""
+"Script der lader dig vælge billede ressource genre-, vejrikon- og vejr "
+"fanart add-ons, der skal bruges med skinnet"
 
 #: /720p/includes.xml
 msgctxt "#31441"
@@ -1517,36 +1583,49 @@ msgid ""
 "This script is used widely throughout the skin for displaying widget "
 "content, backgrounds, animated posters, movie set information, splash "
 "screen, media flag information, import and export of skin settings etc."
-msgstr "Dette script er gennemgående benyttet i Rapier til visning af indhold i widgets, baggrunde, animerede plakater, filmsætinformation, startskærm, mediemærkatinformation, import og eksport af skinindstillinger osv."
+msgstr ""
+"Dette script er gennemgående benyttet i Rapier til visning af indhold i "
+"widgets, baggrunde, animerede plakater, filmsætinformation, startskærm, "
+"mediemærkatinformation, import og eksport af skinindstillinger osv."
 
 #: /720p/includes.xml
 msgctxt "#31442"
 msgid ""
 "Fetches item from your Kodi favourites to populate Home categories and "
 "submenus with custom buttons"
-msgstr "Henter elementer fra dine Kodi favoritter til anvendelse som brugerdefinerede knapper i Hjemmeskærmens kategorier og undermenuer"
+msgstr ""
+"Henter elementer fra dine Kodi favoritter til anvendelse som "
+"brugerdefinerede knapper i Hjemmeskærmens kategorier og undermenuer"
 
 #: /720p/includes.xml
 msgctxt "#31443"
 msgid ""
 "Creates a fanart slideshow and downloads additional information for the "
 "artist being listened to"
-msgstr "Opretter et diasshow med fankunst og downloader yderligere oplysninger til den kunstner, der lyttes til"
+msgstr ""
+"Opretter et diasshow med fankunst og downloader yderligere oplysninger til "
+"den kunstner, der lyttes til"
 
-#: /720p/includes.xml
+#: Not used for Kodi Matrix / Rapier 12.x /720p/includes.xml
 msgctxt "#31444"
 msgid ""
 "Script to get random or last added movies, episodes, albums or music videos "
 "from your playlists to use in Home screen widgets"
-msgstr "Script der viser tilfældige eller senest tilføjede film, episoder, albums eller musikvideoer fra dine playlister til brug i Hjemmeskærmens widgets"
+msgstr ""
+"Script der viser tilfældige eller senest tilføjede film, episoder, albums "
+"eller musikvideoer fra dine playlister til brug i Hjemmeskærmens widgets"
 
-#: /720p/includes.xml
+#: Not used for Kodi Matrix / Rapier 12.x /720p/includes.xml
 msgctxt "#31445"
 msgid ""
 "Used throughout the skin to download artwork for tv shows, movies and music "
 "videos in your library. Supported art types are posters, fanart, extra "
 "fanart, banners, extra thumbs, clear logos, clear art, tv thumbs, disc art"
-msgstr "Dette script er gennemgående benyttet i Rapier til download af billeder til tv-serier, film og musikvideoer i biblioteket. Understøttede kunsttyper er plakater, fankunst, ekstra fankunst, bannere, ekstra miniaturebilleder, klare logoer, klar kunst, tv miniaturebilleder, disc kunst"
+msgstr ""
+"Dette script er gennemgående benyttet i Rapier til download af billeder til "
+"tv-serier, film og musikvideoer i biblioteket. Understøttede kunsttyper er "
+"plakater, fankunst, ekstra fankunst, bannere, ekstra miniaturebilleder, "
+"klare logoer, klar kunst, tv miniaturebilleder, disc kunst"
 
 #: /720p/includes.xml
 msgctxt "#31446"
@@ -1555,14 +1634,21 @@ msgid ""
 "status, next and latest aired episodes etc. A TV Guide is available in the "
 "Home screen tv shows submenu. Two widgets are available for the Home screen "
 "tv shows category: tv shows airing today and upcoming tv shows"
-msgstr "Anvendt i tv-seriebiblioteket til at vise yderligere information angående status for tv-serien, næste og senest viste episoder osv. En TV-Guide er tilgængelig i undermenuen for hjemmeskærmens tv-seriekategori. 2 widgets er tilgængelige hjemmeskærmens tv-seriekategori: tv-serier der vises i dag samt kommende tv-serier"
+msgstr ""
+"Anvendt i tv-seriebiblioteket til at vise yderligere information angående "
+"status for tv-serien, næste og senest viste episoder osv. En TV-Guide er "
+"tilgængelig i undermenuen for hjemmeskærmens tv-seriekategori. 2 widgets er "
+"tilgængelige hjemmeskærmens tv-seriekategori: tv-serier der vises i dag samt "
+"kommende tv-serier"
 
 #: /720p/includes.xml
 msgctxt "#31447"
 msgid ""
-"This add-on can find any item in your video and music library and is used in"
-" the search dialog"
-msgstr "Denne add-on kan finde alle elementer i dit video- og musikbibliotek og er anvendt i søgedialogen"
+"This add-on can find any item in your video and music library and is used in "
+"the search dialog"
+msgstr ""
+"Denne add-on kan finde alle elementer i dit video- og musikbibliotek og er "
+"anvendt i søgedialogen"
 
 #: /720p/includes.xml
 msgctxt "#31448"
@@ -1570,7 +1656,11 @@ msgid ""
 "This script is used widely throughout the skin for displaying widget "
 "content, additional artist / album / actor / director / writer / movie / tv "
 "show / season information, library views, a complete MovieDB browser etc."
-msgstr "Dette script er gennemgående benyttet i Rapier til visning af indhold i widgets, yderligere kunstner- / album- / skuespiller- / instruktør- / manuskriptforfatter- / film- / tv-serie- / sæsoninformation, biblioteks-stilarter, en komplet MovieDB-browser etc."
+msgstr ""
+"Dette script er gennemgående benyttet i Rapier til visning af indhold i "
+"widgets, yderligere kunstner- / album- / skuespiller- / instruktør- / "
+"manuskriptforfatter- / film- / tv-serie- / sæsoninformation, biblioteks-"
+"stilarter, en komplet MovieDB-browser etc."
 
 #: /720p/includes.xml
 msgctxt "#31449"
@@ -1580,34 +1670,41 @@ msgstr "Viser Google eller Youtube autofærdiggørelser i tastaturdialogen"
 #: /720p/includes.xml
 msgctxt "#31450"
 msgid "This script is required to export and import skin settings"
-msgstr "Dette script er nødvendigt for at eksportere og importere skinindstillinger"
+msgstr ""
+"Dette script er nødvendigt for at eksportere og importere skinindstillinger"
 
 #: /720p/includes.xml
 msgctxt "#31451"
 msgid ""
 "When playing music, this script can display synchronized/unsynchronized "
 "lyrics in the fullscreen music window"
-msgstr "Når der afspilles musik i fuld skærm, kan dette script vise synkroniserede / ikke-synkroniserede sangtekster"
+msgstr ""
+"Når der afspilles musik i fuld skærm, kan dette script vise synkroniserede / "
+"ikke-synkroniserede sangtekster"
 
 #: Not used for Kodi Matrix / Rapier 12.x /720p/includes.xml
 msgctxt "#31452"
 msgid ""
 "Use this script to download artwork for your music library. Supported art "
 "types are cd art, covers, fanart, clear logos"
-msgstr "Benyt dette script til at downloade billeder til dit musikbibliotek. Understøttede kunsttyper er cd-kunst, covers, fankunst, klare logoer"
+msgstr ""
+"Benyt dette script til at downloade billeder til dit musikbibliotek. "
+"Understøttede kunsttyper er cd-kunst, covers, fankunst, klare logoer"
 
 #: /720p/includes.xml
 msgctxt "#31453"
 msgid ""
 "When playing episodes, this script provides a Netflix style Next Up dialog "
 "to automatically play the next episode"
-msgstr "Når der afspilles episoder, vil dette script vise en Netflix-lignende dialog for automatisk at afspille den næste episode"
+msgstr ""
+"Når der afspilles episoder, vil dette script vise en Netflix-lignende dialog "
+"for automatisk at afspille den næste episode"
 
 #: /720p/includes.xml
 msgctxt "#31454"
 msgid ""
-"Create and edit library nodes. A button is available in the top options menu"
-" bar to launch the script."
+"Create and edit library nodes. A button is available in the top options menu "
+"bar to launch the script."
 msgstr ""
 "Opret og rediger biblioteksnoder. En knap, der starter scriptet, er "
 "tilgængelig på den øverste menulinje."
@@ -1626,40 +1723,51 @@ msgctxt "#31456"
 msgid ""
 "Enables the fetching, organising and playing of themes whilst browsing your "
 "movie and tv show library"
-msgstr "Aktiverer hentning, organisering og afspilning af temaer i film- og tv-seriebibliotek"
+msgstr ""
+"Aktiverer hentning, organisering og afspilning af temaer i film- og tv-"
+"seriebibliotek"
 
 #: Not used for Kodi Leia / Rapier 11.x /720p/includes.xml
 msgctxt "#31457"
 msgid "Allows you to add Video Extras to your video library"
-msgstr "Giver dig mulighed for at tilføje ekstramateriale til dit videobibliotek"
+msgstr ""
+"Giver dig mulighed for at tilføje ekstramateriale til dit videobibliotek"
 
 #: /720p/includes.xml
+#, fuzzy
 msgctxt "#31458"
 msgid ""
-"Detailed weather forecast provided by OpenWeatherMap. This is used in the "
-"top bar, Home screen weather widget and weather window"
-msgstr "Detaljeret vejrudsigt leveret af OpenWeatherMap. Dette bruges i den øverste bjælke, hjemmeskærmens vejr-widget og vejrvindue"
+"Detailed weather forecast provided by OpenWeatherMap, Yahoo and Weatherbit."
+"io. This is used in the top bar, Home screen weather widget and weather "
+"window"
+msgstr ""
+"Detaljeret vejrudsigt leveret af OpenWeatherMap. Dette bruges i den øverste "
+"bjælke, hjemmeskærmens vejr-widget og vejrvindue"
 
 #: /720p/includes.xml
 msgctxt "#31459"
 msgid ""
 "Play trailers, slideshows, intro videos, outro videos to create a movie "
 "theater experience in the comfort of your home"
-msgstr "Afspil trailere, diasshows, introvideoer og outrovideoer for at skabe en biografoplevelse i dit hjem"
+msgstr ""
+"Afspil trailere, diasshows, introvideoer og outrovideoer for at skabe en "
+"biografoplevelse i dit hjem"
 
 #: /720p/includes.xml
 msgctxt "#31460"
 msgid ""
 "Create a sequence of trivia slides, video bumpers, trailers and more that "
 "will bring the experience of a movie theater straight to your home theater"
-msgstr "Opret en sekvens af trivia-dias, videointroer, trailere osv., der vil bringe biografoplevelsen lige til din hjemmebiograf"
+msgstr ""
+"Opret en sekvens af trivia-dias, videointroer, trailere osv., der vil bringe "
+"biografoplevelsen lige til din hjemmebiograf"
 
 #: /720p/includes.xml
 msgctxt "#31461"
 msgid ""
 "Given a properly structured 'Extras' directory, this addon will present all "
-"of the bonus videos, discs and alternate versions of the movies and tv shows"
-" in your library."
+"of the bonus videos, discs and alternate versions of the movies and tv shows "
+"in your library."
 msgstr ""
 "Hvis du har en korrekt struktureret \"Ekstras\"-mappe, vil dette add-on "
 "præsentere alle bonusvideoer, diske og alternative versioner af film og tv-"
@@ -1676,7 +1784,11 @@ msgid ""
 "This script is used when adding custom widgets to custom home screen "
 "categories. Go to Skin Settings > Home > Add more categories / 2 / 3 / 4 > "
 "Custom widget > Select \"Custom\" from the dialog."
-msgstr "Dette script benyttes, når der tilføjes brugerdefinerede widgets til brugerdefinerede kategorier på hjemmeskærmen. Gå til Skinindstillinger > Hjem > Tilføj flere kategorier / 2 / 3 / 4 > Brugerdefineret widget > Vælg \"Brugerdefineret\" fra dialogen."
+msgstr ""
+"Dette script benyttes, når der tilføjes brugerdefinerede widgets til "
+"brugerdefinerede kategorier på hjemmeskærmen. Gå til Skinindstillinger > "
+"Hjem > Tilføj flere kategorier / 2 / 3 / 4 > Brugerdefineret widget > Vælg "
+"\"Brugerdefineret\" fra dialogen."
 
 #: /720p/includes.xml
 msgctxt "#31464"
@@ -1684,7 +1796,10 @@ msgid ""
 "This script makes it possible to edit library details manually from within "
 "Kodi. Buttons are available either in the context menu or video information "
 "window menubar (\"Manage\" button)."
-msgstr "Dette script gør det muligt manuelt at redigere bibliotekets detaljer direkte i Kodi. Knapper er tilgængelige enten i kontekstmenuen eller videoinformationsvinduets menulinje (knappen \"Administrer\")."
+msgstr ""
+"Dette script gør det muligt manuelt at redigere bibliotekets detaljer "
+"direkte i Kodi. Knapper er tilgængelige enten i kontekstmenuen eller "
+"videoinformationsvinduets menulinje (knappen \"Administrer\")."
 
 #: /720p/includes.xml
 msgctxt "#31465"
@@ -1692,31 +1807,42 @@ msgid ""
 "Manage your pictures as you do for music and videos. You will be able to "
 "sort your pictures by day/month/year, keywords and much more.[CR]A widget "
 "will be added for the home screen pictures category."
-msgstr "Håndter dine billeder ligesom du håndterer musik eller videoer. Du kan sortere dine billeder efter dag/måned/år, nøgleord og meget mere.[CR]Der tilføjes en widget til hjemmeskærmens kategori \"Billeder\"."
+msgstr ""
+"Håndter dine billeder ligesom du håndterer musik eller videoer. Du kan "
+"sortere dine billeder efter dag/måned/år, nøgleord og meget mere.[CR]Der "
+"tilføjes en widget til hjemmeskærmens kategori \"Billeder\"."
 
-#: /720p/includes.xml
+#: Not used for Kodi Matrix / Rapier 12 /720p/includes.xml
 msgctxt "#31466"
 msgid ""
 "Updates movie ratings and Top250 from IMDB. The updates are either fully "
 "automatic or manual using Skin Settings > Add-ons > IMDB Update."
-msgstr "Opdaterer filmbedømmelser og Top 250 fra IMDB. Opdateringerne er enten automatiske eller kan foretages manuelt i Skin indstillinger > Add-ons > IMDB Update."
+msgstr ""
+"Opdaterer filmbedømmelser og Top 250 fra IMDB. Opdateringerne er enten "
+"automatiske eller kan foretages manuelt i Skin indstillinger > Add-ons > "
+"IMDB Update."
 
 #: /720p/includes.xml
 msgctxt "#31467"
 msgid ""
 "Browse Youtube with an optimized interface for searching and filtering "
 "videos, playlists and channels."
-msgstr "Gennemse Youtube med et optimeret brugerflade til søgning og filtrering af videoer, playlister og kanaler."
+msgstr ""
+"Gennemse Youtube med et optimeret brugerflade til søgning og filtrering af "
+"videoer, playlister og kanaler."
 
-#: /720p/includes.xml
+#: Not used for Kodi Matrix / Rapier 12 /720p/includes.xml
 msgctxt "#31468"
 msgid ""
 "Helper service for providing rotating backgrounds: random, recent, in "
 "progress and unwatched backgrounds for music, videos, movies, tv shows, "
 "radio and tv categories / windows."
-msgstr "Service der giver roterende baggrunde: tilfældige, seneste, igangværende og usete baggrunde til musik-, video-, film-, tv-serie-, radio- og tv-kategorier samt vinduer."
+msgstr ""
+"Service der giver roterende baggrunde: tilfældige, seneste, igangværende og "
+"usete baggrunde til musik-, video-, film-, tv-serie-, radio- og tv-"
+"kategorier samt vinduer."
 
-#: /720p/includes.xml
+#: Not used for Kodi Matrix / Rapier 12 /720p/includes.xml
 msgctxt "#31469"
 msgid "Provides widgets for in progress tv show episodes and favourites."
 msgstr "Giver widgets til tv-seriers igangværende episoder samt favoritter."
@@ -1726,9 +1852,66 @@ msgctxt "#31470"
 msgid ""
 "Artwork Beef automatically adds extra artwork for TV shows and movies into "
 "your library. It grabs them from wonderful web services and the file system."
-msgstr "Artwork Beef henter automatisk ekstra billeder til tv-serier og film ind i dit bibliotek. Billederne hentes fra vidunderlige webservices og fra filsystemet."
+msgstr ""
+"Artwork Beef henter automatisk ekstra billeder til tv-serier og film ind i "
+"dit bibliotek. Billederne hentes fra vidunderlige webservices og fra "
+"filsystemet."
 
 #: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+msgctxt "#31471"
+msgid "Provides additional info for the favourites widget."
+msgstr ""
+
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+msgctxt "#31472"
+msgid "Provides in progress episodes widget and quick jump alphabet feature."
+msgstr ""
+
+# empty strings from id 31473 to 31484
+#: Added from Kodi Matrix / Rapier 12 /720p/View_58_ListInfo.xml
+msgctxt "#31485"
+msgid "Age"
+msgstr ""
+
+#: Added from Kodi Matrix / Rapier 12 /720p/includes_SkinSettingsMedia.xml
+#, fuzzy
+msgctxt "#31486"
+msgid "Lyrics add-on"
+msgstr "Søg i add-ons"
+
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+msgctxt "#31487"
+msgid ""
+"TheMovieDb Helper provides details about actors in Extended List View."
+"[CR]Requires API key for The Movie Database (TMDB)."
+msgstr ""
+
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+msgctxt "#31488"
+msgid ""
+"Helper script to provide The Movie DB informations for persons, shows and "
+"movies."
+msgstr ""
+
+#: Added from Kodi Matrix / Rapier 12 /720p/View_585_ExtendedList.xml
+msgctxt "#31489"
+msgid "Birthday"
+msgstr ""
+
+#: Added from Kodi Matrix / Rapier 12 /720p/script-embuary-video.xml
+#, fuzzy
+msgctxt "#31490"
+msgid "Artwork"
+msgstr "Hent illustrationer"
+
+#: Added from Kodi Matrix / Rapier 12 /720p/script-embuary-person.xml
+#, fuzzy
+msgctxt "#31491"
+msgid "in database"
+msgstr "Add-on database"
+
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+#: /720p/includes_SkinSettingsWeather.xml
 msgctxt "#31492"
 msgid "Not installed"
 msgstr "Ikke installeret"
@@ -1983,6 +2166,12 @@ msgctxt "#31706"
 msgid "Restart Kodi"
 msgstr "Genstart Kodi"
 
+# empty strings from id 31707 to 31707
+#: /720p/includes_InfoPane.xml
+msgctxt "#31708"
+msgid "Git"
+msgstr ""
+
 #: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31709"
 msgid "Hide Games"
@@ -2023,7 +2212,9 @@ msgctxt "#31720"
 msgid ""
 "Enabling too many custom widgets with playlists[CR]could result in "
 "performance decline of skin.[CR]Consider yourself warned."
-msgstr "Aktivering af for mange brugerdefinerede widgets med playlister[CR]kan resultere i en forværring af skinnets ydeevne.[CR]Nu er du advaret."
+msgstr ""
+"Aktivering af for mange brugerdefinerede widgets med playlister[CR]kan "
+"resultere i en forværring af skinnets ydeevne.[CR]Nu er du advaret."
 
 #: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31723"
@@ -2031,7 +2222,10 @@ msgid ""
 "If you have enabled add-on shortcuts for some categories,[CR]their category "
 "icons are not displayed.[CR][CR]The button in this section is disabled for "
 "that category."
-msgstr "Hvis du har aktiveret genveje til add-ons for nogle kategorier,[CR]vises deres kategori-ikoner ikke.[CR][CR]Knappen i denne sektion er deaktiveret for den pågældende kategori."
+msgstr ""
+"Hvis du har aktiveret genveje til add-ons for nogle kategorier,[CR]vises "
+"deres kategori-ikoner ikke.[CR][CR]Knappen i denne sektion er deaktiveret "
+"for den pågældende kategori."
 
 #: /720p/includes_SkinSettingsHome.xml
 msgctxt "#31724"
@@ -2278,14 +2472,19 @@ msgctxt "#31954"
 msgid ""
 "[B]CONFIGURE TV SETTINGS[/B][CR]Change full screen info · Manage EPG data "
 "settings"
-msgstr "[B]KONFIGURER TV-INDSTILLINGER[/B][CR]Skift fuldskærmsinformation · Administrer indstillinger for EPG"
+msgstr ""
+"[B]KONFIGURER TV-INDSTILLINGER[/B][CR]Skift fuldskærmsinformation · "
+"Administrer indstillinger for EPG"
 
 #: /720p/includes.xml
 msgctxt "#31959"
 msgid ""
 "[B]CONFIGURE SKIN SETTINGS[/B][CR]Change and customize the Rapier skin · "
 "Create custom categories and submenus[CR]Setup backgrounds, images and icons"
-msgstr "[B]KONFIGURER SKININDSTILLINGER[/B][CR]Ændring og tilpasning af Rapier skin · Opret brugerdefinerede kategorier og undermenuer[CR]Opsæt baggrunde, billeder og ikoner"
+msgstr ""
+"[B]KONFIGURER SKININDSTILLINGER[/B][CR]Ændring og tilpasning af Rapier skin "
+"· Opret brugerdefinerede kategorier og undermenuer[CR]Opsæt baggrunde, "
+"billeder og ikoner"
 
 #: /720p/SettingsProfile.xml
 msgctxt "#31960"
@@ -2301,6 +2500,12 @@ msgstr "Fuld skærm"
 msgctxt "#31962"
 msgid "Weather provided by"
 msgstr "Vejrudsigt leveret af"
+
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+#, fuzzy
+msgctxt "#31964"
+msgid "No screenshots available."
+msgstr "Ikke flere kategorier til rådighed..."
 
 #: /720p/includes_MediaFlags.xml /720p/ViewsTVShows.xml
 msgctxt "#31965"
@@ -2375,14 +2580,17 @@ msgstr "Vælg playliste"
 #: /720p/custom_1104_DialogPresetsYesNo.xml
 msgctxt "#31980"
 msgid "Do you want to play the playlist[CR]instead of entering?"
-msgstr "Ønsker du at afspille playlisten[CR]i stedet for at åbne den i biblioteket?"
+msgstr ""
+"Ønsker du at afspille playlisten[CR]i stedet for at åbne den i biblioteket?"
 
 #: /720p/includes_SkinSettingsMedia.xml
 msgctxt "#31981"
 msgid ""
 "Play trailers in a window [COLOR=DisabledColor](movie information window "
 "only)[/COLOR]"
-msgstr "Afspil trailere i et vindue [COLOR=DisabledColor](kun i filminformationsvinduet)[/COLOR]"
+msgstr ""
+"Afspil trailere i et vindue [COLOR=DisabledColor](kun i "
+"filminformationsvinduet)[/COLOR]"
 
 #: /720p/DialogVideoInfo.xml
 msgctxt "#31982"
@@ -2424,6 +2632,13 @@ msgctxt "#31989"
 msgid "Play random music video"
 msgstr "Afspil tilfældig musikvideo"
 
+#: Added from Kodi Matrix / Rapier 12 /720p/includes.xml
+#, fuzzy
+msgctxt "#31990"
+msgid "second"
+msgstr "sekunder"
+
+#: Not used for Kodi Matrix / Rapier 12
 #: /720p/includes_SkinSettingsBackgrounds.xml
 msgctxt "#31991"
 msgid "Time per Image for Fanart Backgrounds:"
@@ -2484,3 +2699,23 @@ msgstr "Gå til afspilning i fuld skærm"
 msgctxt "#32031"
 msgid "Player Controls OSD"
 msgstr "OSD afspilningskontrol"
+
+#~ msgctxt "Addon Summary"
+#~ msgid "Rapier skin by Scarfa, Gade."
+#~ msgstr "Rapier skin af Scarfa, Gade."
+
+#~ msgctxt "Addon Description"
+#~ msgid ""
+#~ "The goal is to provide a simple to use but clean and elegant interface "
+#~ "that focuses on efficiency when browsing your media. Important "
+#~ "considerations are put on usability, performance, and providing the user "
+#~ "with flexibility when it comes to customization. Rapier tries to support "
+#~ "all the latest features Kodi has to offer as long as it fits in with the "
+#~ "skin's design goals."
+#~ msgstr ""
+#~ "Målet er at levere en grænseflade, der er simpel at anvende, ren, elegant "
+#~ "og fokuserer på effektivitet, når du browser dine medier. Vigtige "
+#~ "overvejelser er gjort i forbindelse med brugervenlighed, ydelse og "
+#~ "levering af fleksibilitet for brugeren, når det kommer til tilpasning. "
+#~ "Rapier forsøger at understøtte alle de nyeste funktioner, Kodi har at "
+#~ "tilbyde, så længe det stemmer overens med skin'ets design-mål."
