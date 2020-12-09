@@ -729,7 +729,7 @@
 	
 	<include name="SeasonsEpisodesListInfo">
 		<control type="group">
-			<visible>Container.Content(Seasons)</visible>
+			<visible>!ListItem.IsParentFolder + Container.Content(Seasons)</visible>
 			
 			<include content="ListInfoCommon">
 				<param name="width" value="177" />
@@ -743,7 +743,7 @@
 			<include content="ListInfoGenre">
 				<param name="left" value="227" />
 				<param name="width" value="476" />
-				<param name="label" value="$VAR[SeasonGenre]" />
+				<param name="label" value="$INFO[ListItem.Genre]" />
 			</include>
 			
 			<control type="group">
@@ -798,14 +798,14 @@
 				<include content="ListInfoGrouplistContent">
 					<param name="label" value="$LOCALIZE[572]:" />
 					<param name="maxwidth" value="200" />
-					<param name="info" value="$VAR[SeasonStudio]" />
+					<param name="info" value="$INFO[ListItem.Studio]" />
 					<param name="visible" value="true" />
 				</include>
 				<include>ListInfoViewDot</include>
 				<include content="ListInfoGrouplistContent">
 					<param name="label" value="$LOCALIZE[31936]:" />
 					<param name="maxwidth" value="110" />
-					<param name="info" value="$VAR[SeasonPremiered]" />
+					<param name="info" value="$INFO[ListItem.Premiered]" />
 					<param name="visible" value="true" />
 				</include>
 				<include>ListInfoViewDot</include>

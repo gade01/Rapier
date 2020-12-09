@@ -501,7 +501,7 @@
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[31936]" />
 							<param name="width" value="320" />
-							<param name="info" value="$VAR[SeasonPremiered]" />
+							<param name="info" value="$INFO[ListItem.Premiered]" />
 							<param name="visible" value="Container.Content(Seasons) + ![Control.HasFocus(584) | Control.HasFocus(91305)]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
@@ -558,7 +558,7 @@
 						<include content="ExtendedListGrouplistContent">
 							<param name="label" value="$LOCALIZE[572]" />
 							<param name="width" value="320" />
-							<param name="info" value="$VAR[SeasonStudio]" />
+							<param name="info" value="$INFO[ListItem.Studio]" />
 							<param name="visible" value="Container.Content(Seasons) + [String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(ListItem.Status)]" />
 						</include>
 						<include content="ExtendedListGrouplistContent">
@@ -1152,7 +1152,7 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<include>NotificationsOpenCloseAnim</include>
 					<animation effect="fade" end="90" condition="true">Conditional</animation>
-					<visible>Container.Content(Seasons) + ![String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(1).Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(2).Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableVideosClearLogo)</visible>
+					<visible>Container.Content(Seasons) + ![String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem(1).Art(tvshow.clearlogo))] + !Skin.HasSetting(DisableVideosClearLogo)</visible>
 				</control>
 				<control type="image">
 					<left>582</left>
