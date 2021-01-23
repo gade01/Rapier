@@ -63,7 +63,7 @@
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | [Container.Content(Actors) + System.AddonIsEnabled(plugin.video.themoviedb.helper)]] + !Skin.HasSetting(DisableMoviesTVShowsListInfoView)]
 				| [Container.Content(Videos) + !Skin.HasSetting(DisableVideosListInfoView)]
-				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView)] | [Container.Content(Addons) + !Skin.HasSetting(DisableAddonsListInfoView)]</visible>
+				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView) + !Window.IsActive(MusicPlaylist)] | [Container.Content(Addons) + !Skin.HasSetting(DisableAddonsListInfoView)]</visible>
 			</control>
 
 			<control type="button" id="7">
@@ -75,7 +75,7 @@
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(DisableMoviesTVShowsListInfoView2)]
 				| [Container.Content(musicvideos) + !Skin.HasSetting(DisableMusicVideosListInfoView2)] | [Container.Content(Videos) + !Skin.HasSetting(DisableVideosListInfoView2)]
-				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView2)] | [String.Contains(Container.FolderPath,plugin://plugin.program) + !Skin.HasSetting(DisableProgramsListInfoView2)]</visible>
+				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView2) + !Window.IsActive(MusicPlaylist)] | [String.Contains(Container.FolderPath,plugin://plugin.program) + !Skin.HasSetting(DisableProgramsListInfoView2)]</visible>
 			</control>
 
 			<control type="button" id="8">
@@ -211,7 +211,7 @@
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | [Container.Content(Actors) + System.AddonIsEnabled(plugin.video.themoviedb.helper)]] + !Skin.HasSetting(DisableMoviesTVShowsListInfoView)]
 				| [Container.Content(Videos) + !Skin.HasSetting(DisableVideosListInfoView)]
-				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView)] | [Container.Content(Addons) + !Skin.HasSetting(DisableAddonsListInfoView)]</visible>
+				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView) + !Window.IsActive(MusicPlaylist)] | [Container.Content(Addons) + !Skin.HasSetting(DisableAddonsListInfoView)]</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
@@ -220,7 +220,7 @@
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>[[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !Skin.HasSetting(DisableMoviesTVShowsListInfoView2)]
 				| [Container.Content(musicvideos) + !Skin.HasSetting(DisableMusicVideosListInfoView2)] | [Container.Content(Videos) + !Skin.HasSetting(DisableVideosListInfoView2)]
-				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView2)] | [String.Contains(Container.FolderPath,plugin://plugin.program) + !Skin.HasSetting(DisableProgramsListInfoView2)]</visible>
+				| [$EXP[AlbumsSongsArtists] + !Skin.HasSetting(DisableMusicListInfoView2) + !Window.IsActive(MusicPlaylist)] | [String.Contains(Container.FolderPath,plugin://plugin.program) + !Skin.HasSetting(DisableProgramsListInfoView2)]</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
