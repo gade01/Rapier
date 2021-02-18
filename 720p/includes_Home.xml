@@ -36,7 +36,7 @@
 			<ondown condition="Control.IsVisible(6930)">6930</ondown>
 			<ondown condition="Container(850).HasFocus(3) + Control.IsVisible(6928)">6928</ondown>
 			<ondown condition="Container(850).HasFocus(4) + Control.IsVisible(6927)">6926</ondown>
-			<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</ondown>
+			<ondown condition="Control.IsVisible(556)">556</ondown>
 			<ondown condition="Control.IsVisible(110)">110</ondown>
 			<ondown>850</ondown>
 			<onright condition="Container(850).HasFocus(50) + [Control.IsVisible(6887) | Control.IsVisible(6886)]">6885</onright>
@@ -65,7 +65,7 @@
 			<onright condition="Container(850).HasFocus(23) + Control.IsVisible(6922)">6922</onright>
 			<onright condition="Container(850).HasFocus(24) + Control.IsVisible(6924)">6924</onright>
 			<onright condition="Container(850).HasFocus(26) + Control.IsVisible(6870)">6870</onright>
-			<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onright>
+			<onright condition="Control.IsVisible(556)">556</onright>
 			<onright condition="Control.IsVisible(110)">110</onright>
 			<onright>850</onright>
 			<width>78</width>
@@ -1540,7 +1540,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom1IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(7)</visible>
+			<visible>Container(850).HasFocus(7) + !Control.IsVisible(521)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1550,7 +1550,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom2IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(8)</visible>
+			<visible>Container(850).HasFocus(8) + !Control.IsVisible(522)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1560,7 +1560,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom3IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(9)</visible>
+			<visible>Container(850).HasFocus(9) + !Control.IsVisible(523)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1570,7 +1570,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom4IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(10)</visible>
+			<visible>Container(850).HasFocus(10) + !Control.IsVisible(524)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1580,7 +1580,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom5IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(11)</visible>
+			<visible>Container(850).HasFocus(11) + !Control.IsVisible(525)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1590,7 +1590,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom6IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(12)</visible>
+			<visible>Container(850).HasFocus(12) + !Control.IsVisible(526)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1600,7 +1600,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom7IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(13)</visible>
+			<visible>Container(850).HasFocus(13) + !Control.IsVisible(527)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1610,7 +1610,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom8IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(14)</visible>
+			<visible>Container(850).HasFocus(14) + !Control.IsVisible(528)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1620,7 +1620,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom9IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(17)</visible>
+			<visible>Container(850).HasFocus(17) + !Control.IsVisible(529)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1630,7 +1630,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom10IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(18)</visible>
+			<visible>Container(850).HasFocus(18) + !Control.IsVisible(530)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1640,7 +1640,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom11IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(19)</visible>
+			<visible>Container(850).HasFocus(19) + !Control.IsVisible(531)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1650,7 +1650,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom12IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(20)</visible>
+			<visible>Container(850).HasFocus(20) + !Control.IsVisible(532)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1660,7 +1660,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom13IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(21)</visible>
+			<visible>Container(850).HasFocus(21) + !Control.IsVisible(533)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1670,7 +1670,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom14IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(22)</visible>
+			<visible>Container(850).HasFocus(22) + !Control.IsVisible(534)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1680,7 +1680,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom15IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(23)</visible>
+			<visible>Container(850).HasFocus(23) + !Control.IsVisible(535)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1690,7 +1690,7 @@
 			<include>HomeMenuIconDim</include>
 			<texture>$INFO[Skin.String(Custom16IconPath)]</texture>
 			<aspectratio>keep</aspectratio>
-			<visible>Container(850).HasFocus(24)</visible>
+			<visible>Container(850).HasFocus(24) + !Control.IsVisible(536)</visible>
 			<include>HomeMenuIconAnim</include>
 		</control>
 	</include>
@@ -1709,7 +1709,7 @@
 			<orientation>horizontal</orientation>
 			<preloaditems>2</preloaditems>
 			<onup condition="Control.IsVisible(110)">110</onup>
-			<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+			<onup condition="Control.IsVisible(556)">556</onup>
 			<onup condition="Container(850).HasFocus(50) + [Control.IsVisible(6887) | Control.IsVisible(6886)]">6885</onup>
 			<onup condition="Container(850).HasFocus(52) + [Control.IsVisible(6876) | Control.IsVisible(6875)]">6877</onup>
 			<onup condition="Container(850).HasFocus(2) + Control.IsVisible(6873)">6873</onup>
@@ -1839,7 +1839,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-music-icon.png">$INFO[Skin.String(MusicCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(1) + String.IsEqual(Container(544).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(1) + !Control.IsVisible(544)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1866,7 +1866,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-videos-icon.png">$INFO[Skin.String(VideosCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(2) + String.IsEqual(Container(541).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(2) + !Control.IsVisible(541)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1875,7 +1875,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-movies-icon.png">$INFO[Skin.String(MoviesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(3) + String.IsEqual(Container(542).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(3) + !Control.IsVisible(542)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1884,7 +1884,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-tvshows-icon.png">$INFO[Skin.String(TVShowsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(4) + String.IsEqual(Container(543).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(4) + !Control.IsVisible(543)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1893,7 +1893,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-add-ons-icon.png">$INFO[Skin.String(AddonsCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(5) + String.IsEqual(Container(546).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(5) + !Control.IsVisible(546)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 			
@@ -1902,7 +1902,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-games-icon.png">$INFO[Skin.String(GamesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(26) + String.IsEqual(Container(548).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(26) + !Control.IsVisible(548)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1911,7 +1911,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-pictures-icon.png">$INFO[Skin.String(PicturesCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(6) + String.IsEqual(Container(545).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(6) + !Control.IsVisible(545)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -1929,7 +1929,7 @@
 				<include>HomeMenuIconDim</include>
 				<texture fallback="home-general-icon.png">$INFO[Skin.String(GeneralCategoryIconPath)]</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Container(850).HasFocus(15) + String.IsEqual(Container(547).NumItems,0)</visible>
+				<visible>Container(850).HasFocus(15) + !Control.IsVisible(547)</visible>
 				<include>HomeMenuIconAnim</include>
 			</control>
 
@@ -2111,6 +2111,214 @@
 		</content>
 	</include>
 	
+	<include name="HomeCustomAddon1">
+		<control type="list" id="521">
+			<onup condition="Control.IsVisible(6894)">6894</onup>
+			<onup condition="Control.IsVisible(6895)">6895</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="521" />
+				<param name="Container850Position" value="7" />
+				<param name="AddonType" value="AddMoreCategoryBtn1" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon2">
+		<control type="list" id="522">
+			<onup condition="Control.IsVisible(6896)">6896</onup>
+			<onup condition="Control.IsVisible(6897)">6897</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="522" />
+				<param name="Container850Position" value="8" />
+				<param name="AddonType" value="AddMoreCategoryBtn2" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon3">
+		<control type="list" id="523">
+			<onup condition="Control.IsVisible(6898)">6898</onup>
+			<onup condition="Control.IsVisible(6899)">6899</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="523" />
+				<param name="Container850Position" value="9" />
+				<param name="AddonType" value="AddMoreCategoryBtn3" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon4">
+		<control type="list" id="524">
+			<onup condition="Control.IsVisible(6900)">6900</onup>
+			<onup condition="Control.IsVisible(6901)">6901</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="524" />
+				<param name="Container850Position" value="10" />
+				<param name="AddonType" value="AddMoreCategoryBtn4" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon5">
+		<control type="list" id="525">
+			<onup condition="Control.IsVisible(6902)">6902</onup>
+			<onup condition="Control.IsVisible(6903)">6903</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="525" />
+				<param name="Container850Position" value="11" />
+				<param name="AddonType" value="AddMoreCategoryBtn5" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon6">
+		<control type="list" id="526">
+			<onup condition="Control.IsVisible(6904)">6904</onup>
+			<onup condition="Control.IsVisible(6905)">6905</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="526" />
+				<param name="Container850Position" value="12" />
+				<param name="AddonType" value="AddMoreCategoryBtn6" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon7">
+		<control type="list" id="527">
+			<onup condition="Control.IsVisible(6906)">6906</onup>
+			<onup condition="Control.IsVisible(6907)">6907</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="527" />
+				<param name="Container850Position" value="13" />
+				<param name="AddonType" value="AddMoreCategoryBtn7" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon8">
+		<control type="list" id="528">
+			<onup condition="Control.IsVisible(6908)">6908</onup>
+			<onup condition="Control.IsVisible(6909)">6909</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="528" />
+				<param name="Container850Position" value="14" />
+				<param name="AddonType" value="AddMoreCategoryBtn8" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon9">
+		<control type="list" id="529">
+			<onup condition="Control.IsVisible(6910)">6910</onup>
+			<onup condition="Control.IsVisible(6911)">6911</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="529" />
+				<param name="Container850Position" value="17" />
+				<param name="AddonType" value="AddMoreCategoryBtn9" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon10">
+		<control type="list" id="530">
+			<onup condition="Control.IsVisible(6912)">6912</onup>
+			<onup condition="Control.IsVisible(6913)">6913</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="530" />
+				<param name="Container850Position" value="18" />
+				<param name="AddonType" value="AddMoreCategoryBtn10" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon11">
+		<control type="list" id="531">
+			<onup condition="Control.IsVisible(6914)">6914</onup>
+			<onup condition="Control.IsVisible(6915)">6915</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="531" />
+				<param name="Container850Position" value="19" />
+				<param name="AddonType" value="AddMoreCategoryBtn11" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon12">
+		<control type="list" id="532">
+			<onup condition="Control.IsVisible(6916)">6916</onup>
+			<onup condition="Control.IsVisible(6917)">6917</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="532" />
+				<param name="Container850Position" value="20" />
+				<param name="AddonType" value="AddMoreCategoryBtn12" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon13">
+		<control type="list" id="533">
+			<onup condition="Control.IsVisible(6918)">6918</onup>
+			<onup condition="Control.IsVisible(6919)">6919</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="533" />
+				<param name="Container850Position" value="21" />
+				<param name="AddonType" value="AddMoreCategoryBtn13" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon14">
+		<control type="list" id="534">
+			<onup condition="Control.IsVisible(6920)">6920</onup>
+			<onup condition="Control.IsVisible(6921)">6921</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="534" />
+				<param name="Container850Position" value="22" />
+				<param name="AddonType" value="AddMoreCategoryBtn14" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon15">
+		<control type="list" id="535">
+			<onup condition="Control.IsVisible(6922)">6922</onup>
+			<onup condition="Control.IsVisible(6923)">6923</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="535" />
+				<param name="Container850Position" value="23" />
+				<param name="AddonType" value="AddMoreCategoryBtn15" />
+			</include>
+		</control>
+	</include>
+	
+	<include name="HomeCustomAddon16">
+		<control type="list" id="536">
+			<onup condition="Control.IsVisible(6924)">6924</onup>
+			<onup condition="Control.IsVisible(6925)">6925</onup>
+			<onup>555</onup>
+			<include content="HomeAddonShortcutsLayout">
+				<param name="id" value="536" />
+				<param name="Container850Position" value="24" />
+				<param name="AddonType" value="AddMoreCategoryBtn16" />
+			</include>
+		</control>
+	</include>
+	
 	<include name="HomeAddonShortcuts">
 		<control type="group" id="556">
 			<control type="list" id="541">
@@ -2199,6 +2407,23 @@
 					<param name="AddonType" value="Games" />
 				</include>
 			</control>
+			
+			<include condition="Skin.HasSetting(EnableCustomCategory1)">HomeCustomAddon1</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory2)">HomeCustomAddon2</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory3)">HomeCustomAddon3</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory4)">HomeCustomAddon4</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory5)">HomeCustomAddon5</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory6)">HomeCustomAddon6</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory7)">HomeCustomAddon7</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory8)">HomeCustomAddon8</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory9)">HomeCustomAddon9</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory10)">HomeCustomAddon10</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory11)">HomeCustomAddon11</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory12)">HomeCustomAddon12</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory13)">HomeCustomAddon13</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory14)">HomeCustomAddon14</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory15)">HomeCustomAddon15</include>
+			<include condition="Skin.HasSetting(EnableCustomCategory16)">HomeCustomAddon16</include>
 		</control>
 	</include>
 	
@@ -2207,6 +2432,7 @@
 			<left>10</left>
 			<width>1260</width>
 			<height>34</height>
+			<onup condition="Control.IsVisible(556)">556</onup>
 			<onup condition="Control.IsVisible($PARAM[onup])">$PARAM[onup]</onup>
 			<onup condition="Control.IsVisible(6930)">6931</onup>
 			<onup>555</onup>
@@ -2281,7 +2507,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6890)">6890</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2397,7 +2623,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6873)">6873</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2519,7 +2745,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6888)">6888</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2629,7 +2855,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6889)">6889</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -2952,7 +3178,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6880)">6880</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -3148,7 +3374,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6883)">6883</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -3312,7 +3538,7 @@
 				<left>10</left>
 				<width>1260</width>
 				<height>34</height>
-				<onup condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onup>
+				<onup condition="Control.IsVisible(556)">556</onup>
 				<onup condition="Control.IsVisible(6878)">6878</onup>
 				<onup condition="Control.IsVisible(6930)">6931</onup>
 				<onup>555</onup>
@@ -4484,13 +4710,13 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<onup>6930</onup>
-						<onleft condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onleft>
+						<onleft condition="Control.IsVisible(556)">556</onleft>
 						<onleft condition="Control.IsVisible(110)">110</onleft>
 						<onleft>850</onleft>
-						<onright condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</onright>
+						<onright condition="Control.IsVisible(556)">556</onright>
 						<onright condition="Control.IsVisible(110)">110</onright>
 						<onright>850</onright>
-						<ondown condition="Control.IsVisible(541) | Control.IsVisible(542) | Control.IsVisible(543) | Control.IsVisible(544) | Control.IsVisible(545) | Control.IsVisible(546) | Control.IsVisible(547) | Control.IsVisible(548)">556</ondown>
+						<ondown condition="Control.IsVisible(556)">556</ondown>
 						<ondown condition="Control.IsVisible(110)">110</ondown>
 						<ondown>850</ondown>
 						<usecontrolcoords>true</usecontrolcoords>

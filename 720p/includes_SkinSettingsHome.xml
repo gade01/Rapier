@@ -284,6 +284,76 @@
 					<label>$LOCALIZE[573] - [COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]IconPath][/COLOR]</label>
 					<onclick>$VAR[AddMoreCategoryBtn$PARAM[number]IconPathReset]</onclick>
 					<onclick>$VAR[AddMoreCategoryBtn$PARAM[number]IconPathClick]</onclick>
+					<enable>[Skin.HasSetting(ExpandAddMoreCategorySettings) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number]Addon1)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number]Addon2)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number]Addon3)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number]Addon4)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number]Addon5)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number]Addon6))] | 
+					[Skin.HasSetting(ExpandAddMoreCategorySettings2) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number2]Addon1)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number2]Addon2)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number2]Addon3)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number2]Addon4)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number2]Addon5)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number2]Addon6))] | 
+					[Skin.HasSetting(ExpandAddMoreCategorySettings3) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number3]Addon1)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number3]Addon2)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number3]Addon3)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number3]Addon4)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number3]Addon5)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number3]Addon6))] | 
+					[Skin.HasSetting(ExpandAddMoreCategorySettings4) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number4]Addon1)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number4]Addon2)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number4]Addon3)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number4]Addon4)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number4]Addon5)) + String.IsEmpty(Skin.String(AddMoreCategoryBtn$PARAM[number4]Addon6))]</enable>
+				</control>
+				<control type="button" id="2380">
+					<description>Custom Addon Shortcuts Label</description>
+					<width>561</width>
+					<include>ExpandedSettingsHeaderBtn</include>
+					<label>$LOCALIZE[31921]</label>
+				</control>
+				<control type="button" id="2381">
+					<description>Custom Addon Shortcut 1</description>
+					<width>561</width>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[24000] $NUMBER[1][COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]Addon1Label][/COLOR]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number]Addon1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number2]Addon1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number3]Addon1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number4]Addon1,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+				</control>
+				<control type="button" id="2382">
+					<description>Custom Addon Shortcut 2</description>
+					<width>561</width>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[24000] $NUMBER[2][COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]Addon2Label][/COLOR]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number]Addon2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number2]Addon2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number3]Addon2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number4]Addon2,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+				</control>
+				<control type="button" id="2383">
+					<description>Custom Addon Shortcut 3</description>
+					<width>561</width>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[24000] $NUMBER[3][COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]Addon3Label][/COLOR]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number]Addon3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number2]Addon3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number3]Addon3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number4]Addon3,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+				</control>
+				<control type="button" id="2384">
+					<description>Custom Addon Shortcut 4</description>
+					<width>561</width>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[24000] $NUMBER[4][COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]Addon4Label][/COLOR]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number]Addon4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number2]Addon4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number3]Addon4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number4]Addon4,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+				</control>
+				<control type="button" id="2385">
+					<description>Custom Addon Shortcut 5</description>
+					<width>561</width>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[24000] $NUMBER[5][COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]Addon5Label][/COLOR]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number]Addon5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number2]Addon5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number3]Addon5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number4]Addon5,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+				</control>
+				<control type="button" id="2386">
+					<description>Custom Addon Shortcut 6</description>
+					<width>561</width>
+					<include>ExpandedSettingsListBtn</include>
+					<label>$LOCALIZE[24000] $NUMBER[6][COLOR=DefaultColor2]$VAR[AddMoreCategoryBtn$PARAM[number]Addon6Label][/COLOR]</label>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number]Addon6,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number2]Addon6,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number3]Addon6,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
+					<onclick condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">Skin.SetAddon(AddMoreCategoryBtn$PARAM[number4]Addon6,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.executable,xbmc.addon.image,kodi.gameclient,kodi.addon.game)</onclick>
 				</control>
 				<control type="button" id="2342">
 					<description>Custom Panel Path Label</description>
@@ -2989,6 +3059,48 @@
 		[Skin.HasSetting(ExpandAddMoreCategorySettings4) + !String.IsEmpty(Skin.String(Custom13PanelPlaylist))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31085],message=$LOCALIZE[31720])</onclick>
 	</include>
 
+	<variable name="AddMoreCategoryBtn1Addon1Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn1Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn5Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn9Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn13Addon1), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn1Addon2Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn1Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn5Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn9Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn13Addon2), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn1Addon3Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn1Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn5Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn9Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn13Addon3), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn1Addon4Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn1Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn5Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn9Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn13Addon4), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn1Addon5Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn1Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn5Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn9Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn13Addon5), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn1Addon6Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn1Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn5Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn9Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn13Addon6), - ,]</value>
+	</variable>
+	
 	<variable name="AddMoreCategoryBtn1PanelTypeLabel">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,2)">$LOCALIZE[342]</value>
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom1PanelType,3)">$LOCALIZE[20343]</value>
@@ -3392,6 +3504,48 @@
 		[Skin.HasSetting(ExpandAddMoreCategorySettings3) + !String.IsEmpty(Skin.String(Custom10PanelPlaylist))] | 
 		[Skin.HasSetting(ExpandAddMoreCategorySettings4) + !String.IsEmpty(Skin.String(Custom14PanelPlaylist))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31085],message=$LOCALIZE[31720])</onclick>
 	</include>
+	
+	<variable name="AddMoreCategoryBtn2Addon1Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn2Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn6Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn10Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn14Addon1), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn2Addon2Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn2Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn6Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn10Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn14Addon2), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn2Addon3Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn2Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn6Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn10Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn14Addon3), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn2Addon4Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn2Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn6Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn10Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn14Addon4), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn2Addon5Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn2Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn6Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn10Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn14Addon5), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn2Addon6Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn2Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn6Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn10Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn14Addon6), - ,]</value>
+	</variable>
 
 	<variable name="AddMoreCategoryBtn2PanelTypeLabel">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom2PanelType,2)">$LOCALIZE[342]</value>
@@ -3796,6 +3950,48 @@
 		[Skin.HasSetting(ExpandAddMoreCategorySettings3) + !String.IsEmpty(Skin.String(Custom11PanelPlaylist))] | 
 		[Skin.HasSetting(ExpandAddMoreCategorySettings4) + !String.IsEmpty(Skin.String(Custom15PanelPlaylist))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31085],message=$LOCALIZE[31720])</onclick>
 	</include>
+	
+	<variable name="AddMoreCategoryBtn3Addon1Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn3Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn7Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn11Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn15Addon1), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn3Addon2Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn3Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn7Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn11Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn15Addon2), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn3Addon3Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn3Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn7Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn11Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn15Addon3), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn3Addon4Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn3Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn7Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn11Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn15Addon4), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn3Addon5Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn3Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn7Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn11Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn15Addon5), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn3Addon6Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn3Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn7Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn11Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn15Addon6), - ,]</value>
+	</variable>
 
 	<variable name="AddMoreCategoryBtn3PanelTypeLabel">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom3PanelType,2)">$LOCALIZE[342]</value>
@@ -4200,6 +4396,48 @@
 		[Skin.HasSetting(ExpandAddMoreCategorySettings3) + !String.IsEmpty(Skin.String(Custom12PanelPlaylist))] | 
 		[Skin.HasSetting(ExpandAddMoreCategorySettings4) + !String.IsEmpty(Skin.String(Custom16PanelPlaylist))]">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31085],message=$LOCALIZE[31720])</onclick>
 	</include>
+	
+	<variable name="AddMoreCategoryBtn4Addon1Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn4Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn8Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn12Addon1), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn16Addon1), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn4Addon2Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn4Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn8Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn12Addon2), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn16Addon2), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn4Addon3Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn4Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn8Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn12Addon3), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn16Addon3), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn4Addon4Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn4Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn8Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn12Addon4), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn16Addon4), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn4Addon5Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn4Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn8Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn12Addon5), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn16Addon5), - ,]</value>
+	</variable>
+	
+	<variable name="AddMoreCategoryBtn4Addon6Label">
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings)">$INFO[Skin.String(AddMoreCategoryBtn4Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings2)">$INFO[Skin.String(AddMoreCategoryBtn8Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings3)">$INFO[Skin.String(AddMoreCategoryBtn12Addon6), - ,]</value>
+		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings4)">$INFO[Skin.String(AddMoreCategoryBtn16Addon6), - ,]</value>
+	</variable>
 
 	<variable name="AddMoreCategoryBtn4PanelTypeLabel">
 		<value condition="Skin.HasSetting(ExpandAddMoreCategorySettings) + Skin.String(Custom4PanelType,2)">$LOCALIZE[342]</value>
