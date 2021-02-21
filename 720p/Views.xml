@@ -95,6 +95,16 @@
 		<value>$INFO[ListItem.Episode,, $LOCALIZE[20359]]</value>
 	</variable>
 	
+	<variable name="SeasonsPropertyVar">
+		<value condition="!String.IsEmpty(ListItem.Property(TotalSeasons))">$INFO[ListItem.Property(TotalSeasons)]</value>
+		<value>$INFO[ListItem.Season]</value>
+	</variable>
+	
+	<variable name="EpisodesPropertyVar">
+		<value condition="!String.IsEmpty(ListItem.Property(TotalEpisodes))">$INFO[ListItem.Property(TotalEpisodes)]</value>
+		<value>$INFO[ListItem.Episode]</value>
+	</variable>
+	
 	<variable name="ListTallStyleLabel">
 		<value condition="ListItem.IsBoxset + !String.IsEqual(ListItem.Album,ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Album,  (,)]</value>
 		<value condition="Container.Content(Albums) + !String.IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
