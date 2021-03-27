@@ -84,7 +84,7 @@
 					<include>SettingsContentToggleBtn</include>
 					<label>$LOCALIZE[31133]</label>
 					<altlabel>$LOCALIZE[31134]</altlabel>
-					<usealttexture>Skin.HasSetting(EnableQuickJump) + System.HasAddon(script.skin.helper.service)</usealttexture>
+					<usealttexture>Skin.HasSetting(EnableQuickJump) + System.HasAddon(script.embuary.helper)</usealttexture>
 					<onclick condition="System.AddonIsEnabled(script.embuary.helper)">Skin.ToggleSetting(EnableQuickJump)</onclick>
 					<onclick condition="!System.HasAddon(script.embuary.helper)">InstallAddon(script.embuary.helper)</onclick>
 					<onclick condition="System.HasAddon(script.embuary.helper) + !System.AddonIsEnabled(script.embuary.helper)">EnableAddon(script.embuary.helper)</onclick>
