@@ -299,6 +299,7 @@
 				<onclick condition="Control.IsVisible(52)">Skin.SetString(CurrentViewMode,52)</onclick>
 				<onclick condition="Control.IsVisible(53)">Skin.SetString(CurrentViewMode,53)</onclick>
 				<onclick condition="Control.IsVisible(54)">Skin.SetString(CurrentViewMode,54)</onclick>
+				<onclick condition="Control.IsVisible(55)">Skin.SetString(CurrentViewMode,55)</onclick>
 				<onclick condition="Control.IsVisible(58)">Skin.SetString(CurrentViewMode,58)</onclick>
 				<onclick condition="Control.IsVisible(59)">Skin.SetString(CurrentViewMode,59)</onclick>
 				<onclick condition="Control.IsVisible(60)">Skin.SetString(CurrentViewMode,60)</onclick>
@@ -1800,22 +1801,6 @@
 				<include>MenuBarSeparator</include>
 				<visible>Control.IsVisible(12)</visible>
 			</control>
-			<!--
-			<control type="button" id="128">
-				<description>Get Artwork</description>
-				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$LOCALIZE[31302][/UPPERCASE]</label>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,artist)">RunScript(script.artwork.beef,mode=gui,mediatype=artist,dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">RunScript(script.artwork.beef,mode=gui,mediatype=album,dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,song)">RunScript(script.artwork.beef,mode=gui,mediatype=song,dbid=$INFO[ListItem.DBID])</onclick>
-				<enable>!Skin.HasSetting(EnableKioskMode)</enable>
-				<visible>System.AddonIsEnabled(script.artwork.beef)</visible>
-			</control>
-			<control type="image" id="129">
-				<include>MenuBarSeparator</include>
-				<visible>System.AddonIsEnabled(script.artwork.beef)</visible>
-			</control>
-			-->
 			<control type="button" id="7">
 				<description>Set My Rating</description>
 				<include>MenuBarSettingsBtn</include>
