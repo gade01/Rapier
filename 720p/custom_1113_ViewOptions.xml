@@ -659,7 +659,7 @@
 				<onclick>Skin.ToggleSetting(DisableVideosClearLogo)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
-				<enable>![Skin.String(CurrentViewMode,55) + [[Window.IsActive(Videos) + Skin.String(VideosFanartViewStyle,2)] | [Window.IsActive(Music) + Skin.String(MusicFanartViewStyle,2)]]]</enable>
+				<enable>![Skin.String(CurrentViewMode,55) + [[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,2)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,2)] | [Container.Content(Artists) + Skin.String(ArtistsFanartViewStyle,2)]]]</enable>
 				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(musicvideos) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(Seasons) | [Window.IsActive(Videos) + Skin.String(CurrentViewMode,585) + [String.Contains(Container.FolderPath,/genres/) | String.Contains(Container.FolderPath,/years/) | String.Contains(Container.FolderPath,/actors/) | String.Contains(Container.FolderPath,/directors/) | String.Contains(Container.FolderPath,/studios/) | String.Contains(Container.FolderPath,/countries/) | String.Contains(Container.FolderPath,/tags/)]]] + !Skin.String(CurrentViewMode,588)</visible>
 			</control>
 			<control type="radiobutton" id="2087">
@@ -916,15 +916,17 @@
 				<description>Common DVD Thumbs / Fanart View Use Style 1 (Normal)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31418]</label>
-				<selected>[Skin.String(CurrentViewMode,54) + [Skin.String(CommonDVDThumbsStyle,1) | String.IsEmpty(Skin.String(CommonDVDThumbsStyle))]] | [Skin.String(CurrentViewMode,55) + [[Window.IsActive(Videos) + [Skin.String(VideosFanartViewStyle,1) | String.IsEmpty(Skin.String(VideosFanartViewStyle))]] | [Window.IsActive(Music) + [Skin.String(MusicFanartViewStyle,1) | String.IsEmpty(Skin.String(MusicFanartViewStyle))]]]]</selected>
+				<selected>[Skin.String(CurrentViewMode,54) + [Skin.String(CommonDVDThumbsStyle,1) | String.IsEmpty(Skin.String(CommonDVDThumbsStyle))]] | [Skin.String(CurrentViewMode,55) + [[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(MoviesFanartViewStyle,1) | String.IsEmpty(Skin.String(MoviesFanartViewStyle))]] | [Container.Content(TVShows) + [Skin.String(TVShowsFanartViewStyle,1) | String.IsEmpty(Skin.String(TVShowsFanartViewStyle))]] | [Container.Content(Artists) + [Skin.String(ArtistsFanartViewStyle,1) | String.IsEmpty(Skin.String(ArtistsFanartViewStyle))]] | [Container.Content(Albums) + [Skin.String(AlbumsFanartViewStyle,1) | String.IsEmpty(Skin.String(AlbumsFanartViewStyle))]]]]</selected>
 				<onclick condition="Skin.String(CurrentViewMode,54)">Skin.SetString(CommonDVDThumbsStyle,1)</onclick>
-				<onclick condition="Window.IsActive(Videos) + Skin.String(CurrentViewMode,55)">Skin.SetString(VideosFanartViewStyle,1)</onclick>
-				<onclick condition="Window.IsActive(Music) + Skin.String(CurrentViewMode,55)">Skin.SetString(MusicFanartViewStyle,1)</onclick>
+				<onclick condition="[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,55)">Skin.SetString(MoviesFanartViewStyle,1)</onclick>
+				<onclick condition="Container.Content(TVShows) + Skin.String(CurrentViewMode,55)">Skin.SetString(TVShowsFanartViewStyle,1)</onclick>
+				<onclick condition="Container.Content(Artists) + Skin.String(CurrentViewMode,55)">Skin.SetString(ArtistsFanartViewStyle,1)</onclick>
+				<onclick condition="Container.Content(Albums) + Skin.String(CurrentViewMode,55)">Skin.SetString(AlbumsFanartViewStyle,1)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
 				<onclick condition="Skin.String(CurrentViewMode,54)">Container.SetViewMode(54)</onclick>
 				<onclick condition="Skin.String(CurrentViewMode,55)">Container.SetViewMode(55)</onclick>
-				<visible>Skin.String(CurrentViewMode,54) | [Skin.String(CurrentViewMode,55) + !Container.Content(Albums)]</visible>
+				<visible>Skin.String(CurrentViewMode,54) | Skin.String(CurrentViewMode,55)</visible>
 			</control>
 			<control type="radiobutton" id="3051">
 				<description>Common DVD Thumbs Use Style 2 (Small)</description>
@@ -941,10 +943,11 @@
 				<description>TV Shows / Seasons / Movies / Sets DVD Thumbs Use Style 3 (Clear Logo) / Fanart View Use Style 2 (Clear Logo)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31508]</label>
-				<selected>[Skin.String(CurrentViewMode,54) + Skin.String(CommonDVDThumbsStyle,3)] | [Skin.String(CurrentViewMode,55) + [[Window.IsActive(Videos) + Skin.String(VideosFanartViewStyle,2)] | [Window.IsActive(Music) + Skin.String(MusicFanartViewStyle,2)]]]</selected>
+				<selected>[Skin.String(CurrentViewMode,54) + Skin.String(CommonDVDThumbsStyle,3)] | [Skin.String(CurrentViewMode,55) + [[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,2)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,2)] | [Container.Content(Artists) + Skin.String(ArtistsFanartViewStyle,2)]]]</selected>
 				<onclick condition="Skin.String(CurrentViewMode,54)">Skin.SetString(CommonDVDThumbsStyle,3)</onclick>
-				<onclick condition="Window.IsActive(Videos) + Skin.String(CurrentViewMode,55)">Skin.SetString(VideosFanartViewStyle,2)</onclick>
-				<onclick condition="Window.IsActive(Music) + Skin.String(CurrentViewMode,55)">Skin.SetString(MusicFanartViewStyle,2)</onclick>
+				<onclick condition="[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,55)">Skin.SetString(MoviesFanartViewStyle,2)</onclick>
+				<onclick condition="Container.Content(TVShows) + Skin.String(CurrentViewMode,55)">Skin.SetString(TVShowsFanartViewStyle,2)</onclick>
+				<onclick condition="Container.Content(Artists) + Skin.String(CurrentViewMode,55)">Skin.SetString(ArtistsFanartViewStyle,2)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
 				<onclick condition="Skin.String(CurrentViewMode,54)">Container.SetViewMode(54)</onclick>
@@ -955,14 +958,29 @@
 				<description>TV Shows / Seasons / Movies / Sets DVD Thumbs Use Style 4 (Clear Art) / Fanart View Use Style 3 (Clear Art)</description>
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31507]</label>
-				<selected>[Skin.String(CurrentViewMode,54) + Skin.String(CommonDVDThumbsStyle,4)] | [Skin.String(CurrentViewMode,55) + Skin.String(VideosFanartViewStyle,3)]</selected>
+				<selected>[Skin.String(CurrentViewMode,54) + Skin.String(CommonDVDThumbsStyle,4)] | [Skin.String(CurrentViewMode,55) + [[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,3)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,3)]]]</selected>
 				<onclick condition="Skin.String(CurrentViewMode,54)">Skin.SetString(CommonDVDThumbsStyle,4)</onclick>
-				<onclick condition="Skin.String(CurrentViewMode,55)">Skin.SetString(VideosFanartViewStyle,3)</onclick>
+				<onclick condition="[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,55)">Skin.SetString(MoviesFanartViewStyle,3)</onclick>
+				<onclick condition="Container.Content(TVShows) + Skin.String(CurrentViewMode,55)">Skin.SetString(TVShowsFanartViewStyle,3)</onclick>
 				<onclick>ReloadSkin()</onclick>
 				<include>ReloadSkinNotification</include>
 				<onclick condition="Skin.String(CurrentViewMode,54)">Container.SetViewMode(54)</onclick>
 				<onclick condition="Skin.String(CurrentViewMode,55)">Container.SetViewMode(55)</onclick>
 				<visible>[[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(Sets)] + Skin.String(CurrentViewMode,54)] | [Window.IsActive(Videos) + Skin.String(CurrentViewMode,55)]</visible>
+			</control>
+			<control type="radiobutton" id="3095">
+				<description>TV Shows / Movies / Sets / Artists / Albums Fanart View Style 4 (Label)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[21899]</label>
+				<selected>[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,4)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,4)] | [Container.Content(Artists) + Skin.String(ArtistsFanartViewStyle,4)] | [Container.Content(Albums) + Skin.String(AlbumsFanartViewStyle,4)]</selected>
+				<onclick condition="Container.Content(Movies) | Container.Content(Sets)">Skin.SetString(MoviesFanartViewStyle,4)</onclick>
+				<onclick condition="Container.Content(TVShows)">Skin.SetString(TVShowsFanartViewStyle,4)</onclick>
+				<onclick condition="Container.Content(Artists)">Skin.SetString(ArtistsFanartViewStyle,4)</onclick>
+				<onclick condition="Container.Content(Albums)">Skin.SetString(AlbumsFanartViewStyle,4)</onclick>
+				<onclick>ReloadSkin()</onclick>
+				<include>ReloadSkinNotification</include>
+				<onclick>Container.SetViewMode(55)</onclick>
+				<visible>Skin.String(CurrentViewMode,55)</visible>
 			</control>
 			<control type="radiobutton" id="3094">
 				<description>TV Shows / Seasons / Movies / Sets DVD Thumbs Use Style 5 (TV Thumb)</description>

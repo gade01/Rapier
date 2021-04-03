@@ -29,8 +29,8 @@
 			<control type="list" id="55">
 				<viewtype label="20445">icon</viewtype>
 				<top>202</top>
-				<left>410</left>
-				<width>460</width>
+				<left>35</left>
+				<width>1210</width>
 				<height>300</height>
 				<pagecontrol>91302</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -41,10 +41,64 @@
 				<animation effect="slide" end="0,-22" time="100" condition="Skin.HasSetting(ShowFanartViewScrollbar)">Conditional</animation>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Albums) | Container.Content(Artists)</visible>
 				<itemlayout />
-				<include condition="Window.IsActive(Videos) + [Skin.String(VideosFanartViewStyle,1) | String.IsEmpty(Skin.String(VideosFanartViewStyle))]">FanartViewPosterStyleLayout</include>
-				<include condition="Window.IsActive(Videos) + Skin.String(VideosFanartViewStyle,2)">FanartViewClearlogoStyleLayout</include>
-				<include condition="Window.IsActive(Videos) + Skin.String(VideosFanartViewStyle,3)">FanartViewClearartStyleLayout</include>
+				<include condition="Window.IsActive(Videos)">FanartViewVideoLayout</include>
 				<include condition="Window.IsActive(Music)">FanartViewMusicLayout</include>
+				<focusedlayout condition="[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,2)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,2)] | [Container.Content(Artists) + Skin.String(ArtistsFanartViewStyle,2)]">
+					<control type="group">
+						<depth>DepthContent+</depth>
+						<top>92</top>
+						<left>375</left>
+						<animation effect="zoom" start="100" end="80" center="605,160" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
+						<include content="FanartViewLayout">
+							<param name="width" value="460" />
+							<param name="height" value="178" />
+							<param name="cover_visible" value="false" />
+							<param name="actualicon_visible" value="String.IsEmpty(ListItem.Art(clearlogo))" />
+							<param name="actualicon_bg_visible" value="false" />
+							<param name="image" value="$INFO[ListItem.Art(clearlogo)]" />
+							<param name="bordersize" value="0" />
+							<param name="actualicon_bordersize" value="12" />
+						</include>
+						<include content="FanartMoviesOverlays">
+							<param name="top" value="10" />
+							<param name="left" value="425" />
+							<param name="size" value="26" />
+						</include>
+						<include content="FanartTVShowsOverlays">
+							<param name="top" value="10" />
+							<param name="left" value="425" />
+						</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,4)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,4)] | [Container.Content(Artists) + Skin.String(ArtistsFanartViewStyle,4)] | [Container.Content(Albums) + Skin.String(AlbumsFanartViewStyle,4)]">
+					<control type="group">
+						<depth>DepthContent+</depth>
+						<include>MissingVideoFadeAnim</include>
+						<animation effect="zoom" start="100" end="80" center="605,158" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
+						<animation effect="fade" start="0" end="100" time="400" condition="Container.OnNext | Container.OnPrevious">Focus</animation>
+						<top>190</top>
+						<control type="label">
+							<description>Label</description>
+							<width>1210</width>
+							<align>center</align>
+							<font>DefaultHeadFont2</font>
+							<textcolor>SelectedColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<aligny>center</aligny>
+							<info>ListItem.Label</info>
+							<scroll>true</scroll>
+						</control>
+						<include content="FanartMoviesOverlays">
+							<param name="top" value="10" />
+							<param name="left" value="675" />
+							<param name="size" value="26" />
+						</include>
+						<include content="FanartTVShowsOverlays">
+							<param name="top" value="10" />
+							<param name="left" value="675" />
+						</include>
+					</control>
+				</focusedlayout>
 			</control>
 			
 			<include condition="Window.IsActive(Videos)">VideosFanartView</include>		
@@ -96,9 +150,12 @@
 				<description>Bottom Bar Area</description>
 				<top>BottomPaneOffsetY</top>
 				<!--<include>InfoPaneImage</include>-->
-				<include condition="Window.IsActive(Videos) + !Skin.HasSetting(DisableVideosClearLogo) + !Skin.String(VideosFanartViewStyle,2)">InfoPaneClearLogoVideos</include>
 				<control type="group">
-					<visible>Container.Content(Albums) | [Container.Content(Artists) + !Skin.String(MusicFanartViewStyle,2)]</visible>
+					<visible>![[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,2)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,2)]]</visible>
+					<include condition="Window.IsActive(Videos) + !Skin.HasSetting(DisableVideosClearLogo)">InfoPaneClearLogoVideos</include>
+				</control>
+				<control type="group">
+					<visible>![Container.Content(Artists) + Skin.String(ArtistsFanartViewStyle,2)]</visible>
 					<include condition="Window.IsActive(Music) + !Skin.HasSetting(EnableMusicLibraryClearLogos)">InfoPaneClearLogoMusic</include>
 				</control>
 				<include>InfoPaneMediaDetails</include>
@@ -289,12 +346,12 @@
 		</control>
 	</include>
 	
-	<include name="FanartViewPosterStyleLayout">
-		<focusedlayout width="680">
+	<include name="FanartViewVideoLayout">
+		<focusedlayout condition="[[Container.Content(Movies) | Container.Content(Sets)] + [Skin.String(MoviesFanartViewStyle,1) | String.IsEmpty(Skin.String(MoviesFanartViewStyle))]] | [Container.Content(TVShows) + [Skin.String(TVShowsFanartViewStyle,1) | String.IsEmpty(Skin.String(TVShowsFanartViewStyle))]]">
 			<control type="group">
 				<depth>DepthContent+</depth>
-				<left>135.5</left>
-				<animation effect="zoom" start="100" end="80" center="230,155" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
+				<left>510.5</left>
+				<animation effect="zoom" start="100" end="80" center="605,155" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
 				<include content="FanartViewLayout">
 					<param name="width" value="189" />
 					<param name="height" value="270" />
@@ -316,44 +373,12 @@
 				</include>
 			</control>
 		</focusedlayout>
-	</include>
-	
-	<include name="FanartViewClearlogoStyleLayout">
-		<focusedlayout width="460">
-			<control type="group">
-				<depth>DepthContent+</depth>
-				<top>92</top>
-				<animation effect="zoom" start="100" end="80" center="230,160" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
-				<include content="FanartViewLayout">
-					<param name="width" value="460" />
-					<param name="height" value="178" />
-					<param name="cover_visible" value="false" />
-					<param name="actualicon_visible" value="String.IsEmpty(ListItem.Art(clearlogo))" />
-					<param name="actualicon_bg_visible" value="false" />
-					<param name="image" value="$INFO[ListItem.Art(clearlogo)]" />
-					<param name="bordersize" value="0" />
-					<param name="actualicon_bordersize" value="12" />
-				</include>
-				<include content="FanartMoviesOverlays">
-					<param name="top" value="10" />
-					<param name="left" value="425" />
-					<param name="size" value="26" />
-				</include>
-				<include content="FanartTVShowsOverlays">
-					<param name="top" value="10" />
-					<param name="left" value="425" />
-				</include>
-			</control>
-		</focusedlayout>
-	</include>
-	
-	<include name="FanartViewClearartStyleLayout">
-		<focusedlayout width="460">
+		<focusedlayout condition="[[Container.Content(Movies) | Container.Content(Sets)] + Skin.String(MoviesFanartViewStyle,3)] | [Container.Content(TVShows) + Skin.String(TVShowsFanartViewStyle,3)]">
 			<control type="group">
 				<depth>DepthContent+</depth>
 				<top>45</top>
-				<left>30</left>
-				<animation effect="zoom" start="100" end="80" center="215,158" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
+				<left>405</left>
+				<animation effect="zoom" start="100" end="80" center="590,158" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
 				<include content="FanartViewLayout">
 					<param name="width" value="400" />
 					<param name="height" value="225" />
@@ -378,12 +403,12 @@
 	</include>
 	
 	<include name="FanartViewMusicLayout">
-		<focusedlayout width="460" condition="Container.Content(Albums) | [Container.Content(Artists) + [Skin.String(MusicFanartViewStyle,1) | String.IsEmpty(Skin.String(MusicFanartViewStyle))]]">
+		<focusedlayout condition="[Container.Container(Artists) + [Skin.String(ArtistsFanartViewStyle,1) | String.IsEmpty(Skin.String(ArtistsFanartViewStyle))]] | [Container.Container(Albums) + [Skin.String(AlbumsFanartViewStyle,1) | String.IsEmpty(Skin.String(AlbumsFanartViewStyle))]]">
 			<control type="group">
 				<depth>DepthContent+</depth>
 				<top>60</top>
-				<left>125</left>
-				<animation effect="zoom" start="100" end="80" center="230,158" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
+				<left>500</left>
+				<animation effect="zoom" start="100" end="80" center="605,158" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
 				<include content="FanartViewLayout">
 					<param name="width" value="210" />
 					<param name="height" value="210" />
@@ -393,23 +418,6 @@
 					<param name="image" value="$INFO[ListItem.Thumb]" />
 					<param name="bordersize" value="10" />
 					<param name="actualicon_bordersize" value="22" />
-				</include>
-			</control>
-		</focusedlayout>
-		<focusedlayout width="460" condition="Container.Content(Artists) + Skin.String(MusicFanartViewStyle,2)">
-			<control type="group">
-				<depth>DepthContent+</depth>
-				<top>92</top>
-				<animation effect="zoom" start="100" end="80" center="230,160" time="300" tween="back" easing="out" condition="!Control.HasFocus(55)">Conditional</animation>
-				<include content="FanartViewLayout">
-					<param name="width" value="460" />
-					<param name="height" value="178" />
-					<param name="cover_visible" value="false" />
-					<param name="actualicon_visible" value="String.IsEmpty(ListItem.Art(clearlogo))" />
-					<param name="actualicon_bg_visible" value="false" />
-					<param name="image" value="$INFO[ListItem.Art(clearlogo)]" />
-					<param name="bordersize" value="0" />
-					<param name="actualicon_bordersize" value="12" />
 				</include>
 			</control>
 		</focusedlayout>
