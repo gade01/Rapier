@@ -1046,6 +1046,51 @@
 		</control>
 	</include>
 	
+	<include name="PlayerSubtitleAudioMediaFlags">
+		<control type="group" id="1">
+			<visible>!String.IsEmpty(VideoPlayer.AudioLanguage)</visible>
+			<width>76</width>
+			<control type="image" id="1">
+				<width>76</width>
+				<height>35</height>
+				<texture border="6">flagging/$VAR[MediaFlagTheme]/audio/audio_language2.png</texture>
+			</control>							
+			<control type="label" id="1">
+				<description>Audio Streams Count Label</description>
+				<left>33</left>
+				<width>38</width>
+				<height>35</height>
+				<font>DialogMediaInfoFont</font>
+				<textcolor>SelectedColor</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[VideoPlayer.AudioLanguage]</label>
+				<animation effect="fade" end="60" condition="true">Conditional</animation>
+			</control>
+		</control>
+		<control type="group" id="1">
+			<visible>!String.IsEmpty(VideoPlayer.SubtitlesLanguage) + VideoPlayer.SubtitlesEnabled</visible>
+			<width>76</width>
+			<control type="image" id="1">
+				<width>76</width>
+				<height>35</height>
+				<texture border="6">flagging/$VAR[MediaFlagTheme]/subtitle/subtitle2.png</texture>
+			</control>							
+			<control type="label" id="1">
+				<description>Subtitle Count Label</description>
+				<left>33</left>
+				<width>38</width>
+				<height>35</height>
+				<font>DialogMediaInfoFont</font>
+				<textcolor>SelectedColor</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[VideoPlayer.SubtitlesLanguage]</label>
+				<animation effect="fade" end="60" condition="true">Conditional</animation>
+			</control>
+		</control>
+	</include>
+	
 	<include name="PlayerRatingMediaFlags">
 		<control type="image" id="661">
 			<description>Rated General</description>
