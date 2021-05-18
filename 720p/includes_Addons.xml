@@ -974,6 +974,14 @@
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
 			<visible>String.Contains(Window.Property(VideoCodec),flv)</visible>
 		</control>
+		<control type="image" id="731">
+			<description>AV1 Codec</description>
+			<width>61</width>
+			<height>35</height>
+			<texture>flagging/$VAR[MediaFlagTheme]/video/av1.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>String.Contains(Window.Property(VideoCodec),av1)</visible>
+		</control>
 		<control type="image" id="620">
 			<description>Video Resolution</description>
 			<left>-5</left>
@@ -1920,6 +1928,14 @@
 			<texture>flagging/$VAR[MediaFlagTheme]/video/flv.png</texture>
 			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
 			<visible>String.Contains(Container(10051).ListItem.VideoCodec,flv)</visible>
+		</control>
+		<control type="image" id="731">
+			<description>AV1 Codec</description>
+			<width>61</width>
+			<height>35</height>
+			<texture>flagging/$VAR[MediaFlagTheme]/video/av1.png</texture>
+			<!--<fadetime>MediaFlagsCrossfadeTime</fadetime>-->
+			<visible>String.Contains(Container(10051).ListItem.VideoCodec,av1)</visible>
 		</control>
 		<control type="image" id="620">
 			<description>Video Resolution</description>
