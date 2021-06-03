@@ -49,17 +49,6 @@
 					<textwidth>290</textwidth>
 					<include>ContextMenuBtn</include>
 				</control>
-				<control type="button" id="983">
-					<description>Search TheMovieDB</description>
-					<label>$LOCALIZE[31912]</label>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo)">Dialog.Close(1107)</onclick>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=moviedbbrowser,search=True)</onclick>
-					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
-					<width>300</width>
-					<textwidth>290</textwidth>
-					<include>ContextMenuBtn</include>
-				</control>
 				<control type="button" id="984">
 					<description>Search Add-ons</description>
 					<label>$LOCALIZE[31909]</label>

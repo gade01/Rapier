@@ -1,363 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>	
-	<!-- TV Show Next Aired -->
-	<variable name="NextAiredTotal">
-		<value condition="Control.HasFocus(215) + !String.IsEqual(Container(215).NumItems,1)">$INFO[Container(215).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.215.Wday), ,]$INFO[Window(home).Property(NextAired.215.Date), ,]</value>
-		<value condition="Control.HasFocus(215) + String.IsEqual(Container(215).NumItems,1)">$INFO[Container(215).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.215.Wday), ,]$INFO[Window(home).Property(NextAired.215.Date), ,]</value>
-		<value condition="Control.HasFocus(214) + !String.IsEqual(Container(214).NumItems,1)">$INFO[Container(214).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.214.Wday), ,]$INFO[Window(home).Property(NextAired.214.Date), ,]</value>
-		<value condition="Control.HasFocus(214) + String.IsEqual(Container(214).NumItems,1)">$INFO[Container(214).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.214.Wday), ,]$INFO[Window(home).Property(NextAired.214.Date), ,]</value>
-		<value condition="Control.HasFocus(213) + !String.IsEqual(Container(213).NumItems,1)">$INFO[Container(213).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.213.Wday), ,]$INFO[Window(home).Property(NextAired.213.Date), ,]</value>
-		<value condition="Control.HasFocus(213) + String.IsEqual(Container(213).NumItems,1)">$INFO[Container(213).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.213.Wday), ,]$INFO[Window(home).Property(NextAired.213.Date), ,]</value>
-		<value condition="Control.HasFocus(212) + !String.IsEqual(Container(212).NumItems,1)">$INFO[Container(212).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.212.Wday), ,]$INFO[Window(home).Property(NextAired.212.Date), ,]</value>
-		<value condition="Control.HasFocus(212) + String.IsEqual(Container(212).NumItems,1)">$INFO[Container(212).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.212.Wday), ,]$INFO[Window(home).Property(NextAired.212.Date), ,]</value>
-		<value condition="Control.HasFocus(211) + !String.IsEqual(Container(211).NumItems,1)">$INFO[Container(211).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.211.Wday), ,]$INFO[Window(home).Property(NextAired.211.Date), ,]</value>
-		<value condition="Control.HasFocus(211) + String.IsEqual(Container(211).NumItems,1)">$INFO[Container(211).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.211.Wday), ,]$INFO[Window(home).Property(NextAired.211.Date), ,]</value>
-		<value condition="Control.HasFocus(210) + !String.IsEqual(Container(210).NumItems,1)">$INFO[Container(210).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.210.Wday), ,]$INFO[Window(home).Property(NextAired.210.Date), ,]</value>
-		<value condition="Control.HasFocus(210) + String.IsEqual(Container(210).NumItems,1)">$INFO[Container(210).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.210.Wday), ,]$INFO[Window(home).Property(NextAired.210.Date), ,]</value>
-		<value condition="Control.HasFocus(209) + !String.IsEqual(Container(209).NumItems,1)">$INFO[Container(209).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.209.Wday), ,]$INFO[Window(home).Property(NextAired.209.Date), ,]</value>
-		<value condition="Control.HasFocus(209) + String.IsEqual(Container(209).NumItems,1)">$INFO[Container(209).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.209.Wday), ,]$INFO[Window(home).Property(NextAired.209.Date), ,]</value>
-		<value condition="Control.HasFocus(208) + !String.IsEqual(Container(208).NumItems,1)">$INFO[Container(208).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.208.Wday), ,]$INFO[Window(home).Property(NextAired.208.Date), ,]</value>
-		<value condition="Control.HasFocus(208) + String.IsEqual(Container(208).NumItems,1)">$INFO[Container(208).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.208.Wday), ,]$INFO[Window(home).Property(NextAired.208.Date), ,]</value>
-		<value condition="Control.HasFocus(207) + !String.IsEqual(Container(207).NumItems,1)">$INFO[Container(207).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.207.Wday), ,]$INFO[Window(home).Property(NextAired.207.Date), ,]</value>
-		<value condition="Control.HasFocus(207) + String.IsEqual(Container(207).NumItems,1)">$INFO[Container(207).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.207.Wday), ,]$INFO[Window(home).Property(NextAired.207.Date), ,]</value>
-		<value condition="Control.HasFocus(206) + !String.IsEqual(Container(206).NumItems,1)">$INFO[Container(206).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.206.Wday), ,]$INFO[Window(home).Property(NextAired.206.Date), ,]</value>
-		<value condition="Control.HasFocus(206) + String.IsEqual(Container(206).NumItems,1)">$INFO[Container(206).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.206.Wday), ,]$INFO[Window(home).Property(NextAired.206.Date), ,]</value>
-		<value condition="Control.HasFocus(205) + !String.IsEqual(Container(205).NumItems,1)">$INFO[Container(205).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.205.Wday), ,]$INFO[Window(home).Property(NextAired.205.Date), ,]</value>
-		<value condition="Control.HasFocus(205) + String.IsEqual(Container(205).NumItems,1)">$INFO[Container(205).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.205.Wday), ,]$INFO[Window(home).Property(NextAired.205.Date), ,]</value>
-		<value condition="Control.HasFocus(204) + !String.IsEqual(Container(204).NumItems,1)">$INFO[Container(204).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.204.Wday), ,]$INFO[Window(home).Property(NextAired.204.Date), ,]</value>
-		<value condition="Control.HasFocus(204) + String.IsEqual(Container(204).NumItems,1)">$INFO[Container(204).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.204.Wday), ,]$INFO[Window(home).Property(NextAired.204.Date), ,]</value>
-		<value condition="Control.HasFocus(203) + !String.IsEqual(Container(203).NumItems,1)">$INFO[Container(203).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.203.Wday), ,]$INFO[Window(home).Property(NextAired.203.Date), ,]</value>
-		<value condition="Control.HasFocus(203) + String.IsEqual(Container(203).NumItems,1)">$INFO[Container(203).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.203.Wday), ,]$INFO[Window(home).Property(NextAired.203.Date), ,]</value>
-		<value condition="Control.HasFocus(202) + !String.IsEqual(Container(202).NumItems,1)">$INFO[Container(202).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.202.Wday), ,]$INFO[Window(home).Property(NextAired.202.Date), ,]</value>
-		<value condition="Control.HasFocus(202) + String.IsEqual(Container(202).NumItems,1)">$INFO[Container(202).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.202.Wday), ,]$INFO[Window(home).Property(NextAired.202.Date), ,]</value>
-		<value condition="Control.HasFocus(201) + !String.IsEqual(Container(201).NumItems,1)">$INFO[Container(201).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.201.Wday), ,]$INFO[Window(home).Property(NextAired.201.Date), ,]</value>
-		<value condition="Control.HasFocus(201) + String.IsEqual(Container(201).NumItems,1)">$INFO[Container(201).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.201.Wday), ,]$INFO[Window(home).Property(NextAired.201.Date), ,]</value>
-		<value condition="Control.HasFocus(200) + !String.IsEqual(Container(200).NumItems,1)">$INFO[Container(200).NumItems,, $LOCALIZE[20343]]$INFO[Window(home).Property(NextAired.200.Wday), ,]$INFO[Window(home).Property(NextAired.200.Date), ,]</value>
-		<value condition="Control.HasFocus(200) + String.IsEqual(Container(200).NumItems,1)">$INFO[Container(200).NumItems,, $LOCALIZE[20364]]$INFO[Window(home).Property(NextAired.200.Wday), ,]$INFO[Window(home).Property(NextAired.200.Date), ,]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget0">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(0).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(0).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(0).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget1">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(1).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(1).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(1).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget2">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(2).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(2).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(2).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget3">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(3).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(3).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(3).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget4">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(4).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(4).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(4).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget5">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(5).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(5).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(5).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget6">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(6).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(6).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(6).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget7">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(7).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(7).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(7).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget8">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(8).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(8).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(8).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget9">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(9).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(9).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(9).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget10">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(10).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(10).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(10).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget11">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(11).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(11).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(11).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget12">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(12).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(12).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(12).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget13">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(13).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(13).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(13).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget14">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(14).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(14).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(14).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget15">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(15).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(15).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(15).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget16">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(16).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(16).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(16).Art(banner)]</value>
-	</variable>
-	
-	<variable name="NextAiredWidget17">
-		<value condition="!String.IsEmpty(Container(3570).ListItemNoWrap(17).Art(clearlogo))">$INFO[Container(3570).ListItemNoWrap(17).Art(clearlogo)]</value>
-		<value>$INFO[Container(3570).ListItemNoWrap(17).Art(banner)]</value>
-	</variable>
-
-	<include name="NextAiredColumnImage">
-		<width>120</width>
-		<height>114</height>
-		<texture>white.png</texture>
-		<include>NextAiredColumnFadeAnim</include>
-	</include>
-
-	<include name="NextAiredTimeLabel2">
-		<control type="label">
-			<left>5</left>
-			<top>85</top>
-			<width>110</width>
-			<height>20</height>
-			<aligny>center</aligny>
-			<align>center</align>
-			<font>NextAiredTimeFont</font>
-			<textcolor>DefaultColor2</textcolor>
-			<shadowcolor>ShadowColor</shadowcolor>
-			<label>$INFO[ListItem.Property(ShortTime),,  &#x2022;  ]$INFO[ListItem.Property(NextSeasonNumber),S,]$INFO[ListItem.Property(NextEpisodeNumber),E,]</label>
-		</control>
-	</include>
-
-	<include name="NextAiredItemLayout">
-		<control type="image">
-			<description>Thumb</description>
-			<left>7</left>
-			<top>8</top>
-			<width>106</width>
-			<height>76</height>
-			<aspectratio>keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Property(Art(poster))]</texture>
-			<visible>String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)</visible>
-		</control>
-
-		<control type="image">
-			<description>Banner</description>
-			<left>7</left>
-			<top>27</top>
-			<width>106</width>
-			<height>40</height>
-			<aspectratio>keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Property(Art(banner))]</texture>
-			<visible>String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)</visible>
-		</control>
-
-		<control type="image">
-			<description>Logo</description>
-			<left>7</left>
-			<top>27</top>
-			<width>106</width>
-			<height>40</height>
-			<aspectratio>keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Property(Art(clearlogo))]</texture>
-			<visible>String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)</visible>
-		</control>
-	</include>
-
-	<include name="NextAiredInfoImage">
-		<width>336</width>
-		<height>30</height>
-		<texture>white.png</texture>
-		<include>NextAiredInfoFadeAnim</include>
-	</include>
-
-	<include name="NextAiredTitleLabel">
-		<width>340</width>
-		<height>55</height>
-		<font>MediaInfoFont</font>
-		<textcolor>DefaultColor</textcolor>
-		<shadowcolor>ShadowColor</shadowcolor>
-		<aligny>center</aligny>
-		<align>center</align>
-		<scroll>true</scroll>
-	</include>
-	
-	<include name="NextAiredDayArea">
-		<control type="group">
-			<description>$PARAM[description]</description>
-			<visible>!String.IsEqual(Window(Home).Property(NextAired.$PARAM[id].Wday),)</visible>
-			<width>120</width>
-			<height>525</height>
-
-			<control type="image">
-				<width>120</width>
-				<height>55</height>
-				<texture>white.png</texture>
-				<include>NextAiredHeaderFadeAnim</include>
-			</control>
-		
-			<control type="image">
-				<left>-5</left>
-				<top>-5</top>
-				<width>130</width>
-				<height>65</height>
-				<texture background="true" border="12">covers/cover-case-focus.png</texture>
-				<animation effect="fade" end="30" condition="true">Conditional</animation>
-				<visible>String.IsEqual(System.Date(d mmm),Window(Home).Property(NextAired.$PARAM[id].Date))</visible>
-			</control>
-			
-			<control type="group">
-				<top>60</top>
-				<control type="image">
-					<include>NextAiredColumnImage</include>
-				</control>
-
-				<control type="image">
-					<top>116</top>
-					<include>NextAiredColumnImage</include>
-				</control>
-
-				<control type="image">
-					<top>232</top>
-					<include>NextAiredColumnImage</include>
-				</control>
-
-				<control type="image">
-					<top>348</top>
-					<include>NextAiredColumnImage</include>
-				</control>
-			</control>
-
-			<control type="label">
-				<description>Day</description>
-				<width>120</width>
-				<height>30</height>
-				<font>NextAiredDayFont</font>
-				<textcolor>DefaultColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>
-				<align>center</align>
-				<label>$INFO[Window(Home).Property(NextAired.$PARAM[id].Wday)]</label>
-			</control>
-
-			<control type="label">
-				<description>Date</description>
-				<top>26</top>
-				<width>120</width>
-				<height>25</height>
-				<font>NextAiredDateFont</font>
-				<textcolor>DefaultColor2</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>
-				<align>center</align>
-				<label>$INFO[Window(Home).Property(NextAired.$PARAM[id].Date)]</label>
-			</control>
-
-			<control type="list" id="$PARAM[id]">
-				<top>60</top>
-				<width>120</width>
-				<height>465</height>
-				<orientation>vertical</orientation>
-				<scrolltime tween="sine" easing="inout">300</scrolltime>
-				<onup>850</onup>
-				<ondown>$PARAM[id]</ondown>
-				<onleft>$PARAM[onleft]</onleft>
-				<onright>$PARAM[onright]</onright>
-				<itemlayout height="116">
-					<include>NextAiredTimeLabel2</include>
-					<include>NextAiredItemLayout</include>
-				</itemlayout>
-				<focusedlayout height="116">
-					<control type="group">
-						<control type="image">
-							<left>-6</left>
-							<top>-5</top>
-							<width>132</width>
-							<height>124</height>
-							<texture background="true" border="12">covers/cover-case-focus.png</texture>
-						</control>
-						<control type="image">
-							<left>-6</left>
-							<top>-5</top>
-							<width>132</width>
-							<height>124</height>
-							<texture background="true" border="2">black.png</texture>
-							<bordersize>11</bordersize>
-							<animation effect="fade" end="60" condition="true">Conditional</animation>
-						</control>
-						<control type="label">
-							<left>5</left>
-							<top>85</top>
-							<width>110</width>
-							<height>20</height>
-							<aligny>center</aligny>
-							<align>center</align>
-							<font>NextAiredTimeFont</font>
-							<textcolor>GreyColor</textcolor>
-							<shadowcolor>ShadowColor</shadowcolor>
-							<label>$INFO[ListItem.Property(ShortTime),,  &#x2022;  ]$INFO[ListItem.Property(NextSeasonNumber),S,]$INFO[ListItem.Property(NextEpisodeNumber),E,]</label>
-						</control>
-						<visible>Control.HasFocus($PARAM[id])</visible>
-					</control>
-					<control type="group">
-						<include>NextAiredTimeLabel2</include>
-						<visible>!Control.HasFocus($PARAM[id])</visible>
-					</control>
-					<include>NextAiredItemLayout</include>
-				</focusedlayout>
-			</control>
-		</control>
-	</include>
-	
-	<include name="NextAiredInfoGrouplist">
-		<control type="grouplist">
-			<description>$PARAM[description]</description>
-			<left>9</left>
-			<top>$PARAM[top]</top>
-			<width>322</width>
-			<orientation>horizontal</orientation>
-			<control type="label">
-				<width min="0" max="$PARAM[labelwidth]">auto</width>
-				<height>30</height>
-				<font>MediaInfoFont</font>
-				<textcolor>MediaInfoItemColor</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>
-				<label>$PARAM[label]</label>
-			</control>
-			<control type="label">
-				<width min="0" max="330">auto</width>
-				<height>30</height>
-				<font>MediaInfoFont</font>
-				<textcolor>MediaInfoItemColor2</textcolor>
-				<shadowcolor>ShadowColor</shadowcolor>
-				<aligny>center</aligny>
-				<scroll>true</scroll>
-				<label fallback="31001">$PARAM[info]</label>
-			</control>
-		</control>
-	</include>
-	<!-- END TV Show Next Aired -->
-	
 	<!-- Global Search -->
 	<variable name="GlobalSearchNumItems">
 		<value condition="Control.IsVisible(991)">$LOCALIZE[31156]</value>
@@ -710,20 +352,13 @@
         <value condition="Skin.String(MusicInfoMenubar,Discography) + String.IsEmpty(Container(968).ListItem.Label)">$LOCALIZE[31099]</value>
     </variable>
 	
-	<variable name="ExtraVideoInfoLabel">
-		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">$LOCALIZE[31616]</value>
-		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">$LOCALIZE[31617]</value>
-		<value condition="String.IsEqual(ListItem.DBTYPE,season)">$LOCALIZE[31618]</value>
-		<value>$LOCALIZE[31038]</value>
-	</variable>
-	
 	<variable name="SimilarVideos">
-		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">plugin://script.embuary.helper/?info=getsimilar&amp;dbid=$INFO[ListItem.DBID]&amp;type=movie</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">plugin://script.embuary.helper/?info=getsimilar&amp;dbid=$INFO[ListItem.DBID]&amp;type=tvshow</value>
 	</variable>
 	
 	<variable name="SimilarVideosLabel">
-		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set)">$LOCALIZE[31614]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,movie) | Window.IsActive(Home)">$LOCALIZE[31614]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,tvshow)">$LOCALIZE[31615]</value>
 	</variable>
 	
@@ -732,24 +367,6 @@
 		<value condition="String.Contains(Window.Property(type),tvshow)">$LOCALIZE[20364]</value>
 		<value condition="String.Contains(Window.Property(type),episode)">$LOCALIZE[20359]</value>
 		<value condition="String.Contains(Window.Property(type),season)">$LOCALIZE[20373]</value>
-	</variable>
-	
-	<variable name="ExtendedInfoYoutubeActualIcon">
-		<value condition="String.IsEqual(Window.Property(type),video)">DefaultVideo.png</value>
-		<value condition="String.IsEqual(Window.Property(type),playlist)">DefaultPlaylist.png</value>
-		<value condition="String.IsEqual(Window.Property(type),channel)">DefaultTVShows.png</value>
-	</variable>
-	
-	<variable name="ExtendedInfoYoutubeVideoQualityFocus">
-		<value condition="String.IsEqual(ListItem.Property(definition),hd)">OverlayHDAlt.png</value>
-		<value condition="String.IsEqual(ListItem.Property(definition),sd)">OverlaySDAlt.png</value>
-		<value>DefaultTVShows.png.png</value>
-	</variable>
-	
-	<variable name="ExtendedInfoYoutubeVideoQualityUnfocus">
-		<value condition="String.IsEqual(ListItem.Property(definition),hd)">OverlayHD.png</value>
-		<value condition="String.IsEqual(ListItem.Property(definition),sd)">OverlaySD.png</value>
-		<value>DefaultTVShows.png.png</value>
 	</variable>
 	
 	<!--
@@ -2315,6 +1932,79 @@
 		</control>
 	</include>
 	<!-- END Embuary Info -->
+	
+	<!-- The Movie DB Helper -->
+	<include name="TheMovieDBHelperNextAired">
+		<control type="list" id="5055">
+			<left>2000</left>
+			<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
+			<itemlayout />
+			<focusedlayout />
+			<content>plugin://plugin.video.themoviedb.helper/?info=details&amp;type=tv&amp;query=$INFO[ListItem.TVShowTitle]</content>
+		</control>
+	</include>
+	
+	<include name="DialogVideoInfoTheMovieDBHelperTVShow">
+		<control type="list" id="5056">
+			<left>2000</left>
+			<visible>Container.Content(TVShows)</visible>
+			<itemlayout />
+			<focusedlayout />
+			<content>plugin://plugin.video.themoviedb.helper/?info=details&amp;type=tv&amp;query=$INFO[ListItem.TVShowTitle]</content>
+		</control>
+	</include>
+	
+	<include name="DialogVideoInfoTheMovieDBHelperMovie">
+		<control type="list" id="5057">
+			<left>2000</left>
+			<visible>Container.Content(Movies)</visible>
+			<itemlayout />
+			<focusedlayout />
+			<content>plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;query=$INFO[ListItem.Title]</content>
+		</control>
+	</include>
+	
+	<variable name="TheMovieDBHelperLastVar">
+		<value condition="Integer.IsEqual(Container(5055).ListItem.Property(Last_Aired.Season),0) + Integer.IsGreater(Container(5055).ListItem.Property(Last_Aired.Episode),9) + !String.IsEmpty(Container(5055).ListItem.Property(Last_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5055).ListItem.Property(Last_Aired.Episode),E,]</value>
+		<value condition="Integer.IsEqual(Container(5055).ListItem.Property(Last_Aired.Season),0) + !Integer.IsGreater(Container(5055).ListItem.Property(Last_Aired.Episode),9) + !String.IsEmpty(Container(5055).ListItem.Property(Last_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5055).ListItem.Property(Last_Aired.Episode),E0,]</value>
+		<value condition="Integer.IsLessOrEqual(Container(5055).ListItem.Property(Last_Aired.Season),9) + Integer.IsLessOrEqual(Container(5055).ListItem.Property(Last_Aired.Episode),9)">$INFO[Container(5055).ListItem.Property(Last_Aired.Season),S0,]$INFO[Container(5055).ListItem.Property(Last_Aired.Episode),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5055).ListItem.Property(Last_Aired.Season),9)">$INFO[Container(5055).ListItem.Property(Last_Aired.Season),S0,]$INFO[Container(5055).ListItem.Property(Last_Aired.Episode),E,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5055).ListItem.Property(Last_Aired.Episode),9)">$INFO[Container(5055).ListItem.Property(Last_Aired.Season),S,]$INFO[Container(5055).ListItem.Property(Last_Aired.Episode),E0,]</value> 
+		<value>$INFO[Container(5055).ListItem.Property(Last_Aired.Season),S,]$INFO[Container(5055).ListItem.Property(Last_Aired.Episode),E,]</value>
+	</variable>
+	
+	<variable name="TheMovieDBHelperNextVar">
+		<value condition="Integer.IsEqual(Container(5055).ListItem.Property(Next_Aired.Season),0) + Integer.IsGreater(Container(5055).ListItem.Property(Next_Aired.Episode),9) + !String.IsEmpty(Container(5055).ListItem.Property(Next_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5055).ListItem.Property(Next_Aired.Episode),E,]</value>
+		<value condition="Integer.IsEqual(Container(5055).ListItem.Property(Next_Aired.Season),0) + !Integer.IsGreater(Container(5055).ListItem.Property(Next_Aired.Episode),9) + !String.IsEmpty(Container(5055).ListItem.Property(Next_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5055).ListItem.Property(Next_Aired.Episode),E0,]</value>
+		<value condition="Integer.IsLessOrEqual(Container(5055).ListItem.Property(Next_Aired.Season),9) + Integer.IsLessOrEqual(Container(5055).ListItem.Property(Next_Aired.Episode),9)">$INFO[Container(5055).ListItem.Property(Next_Aired.Season),S0,]$INFO[Container(5055).ListItem.Property(Next_Aired.Episode),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5055).ListItem.Property(Next_Aired.Season),9)">$INFO[Container(5055).ListItem.Property(Next_Aired.Season),S0,]$INFO[Container(5055).ListItem.Property(Next_Aired.Episode),E,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5055).ListItem.Property(Next_Aired.Episode),9)">$INFO[Container(5055).ListItem.Property(Next_Aired.Season),S,]$INFO[Container(5055).ListItem.Property(Next_Aired.Episode),E0,]</value> 
+		<value>$INFO[Container(5055).ListItem.Property(Next_Aired.Season),S,]$INFO[Container(5055).ListItem.Property(Next_Aired.Episode),E,]</value>
+	</variable>
+	
+	<variable name="DialogVideoInfoTheMovieDBHelperLastVar">
+		<value condition="Integer.IsEqual(Container(5056).ListItem.Property(Last_Aired.Season),0) + Integer.IsGreater(Container(5056).ListItem.Property(Last_Aired.Episode),9) + !String.IsEmpty(Container(5056).ListItem.Property(Last_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5056).ListItem.Property(Last_Aired.Episode),E,]</value>
+		<value condition="Integer.IsEqual(Container(5056).ListItem.Property(Last_Aired.Season),0) + !Integer.IsGreater(Container(5056).ListItem.Property(Last_Aired.Episode),9) + !String.IsEmpty(Container(5056).ListItem.Property(Last_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5056).ListItem.Property(Last_Aired.Episode),E0,]</value>
+		<value condition="Integer.IsLessOrEqual(Container(5056).ListItem.Property(Last_Aired.Season),9) + Integer.IsLessOrEqual(Container(5056).ListItem.Property(Last_Aired.Episode),9)">$INFO[Container(5056).ListItem.Property(Last_Aired.Season),S0,]$INFO[Container(5056).ListItem.Property(Last_Aired.Episode),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5056).ListItem.Property(Last_Aired.Season),9)">$INFO[Container(5056).ListItem.Property(Last_Aired.Season),S0,]$INFO[Container(5056).ListItem.Property(Last_Aired.Episode),E,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5056).ListItem.Property(Last_Aired.Episode),9)">$INFO[Container(5056).ListItem.Property(Last_Aired.Season),S,]$INFO[Container(5056).ListItem.Property(Last_Aired.Episode),E0,]</value> 
+		<value>$INFO[Container(5056).ListItem.Property(Last_Aired.Season),S,]$INFO[Container(5056).ListItem.Property(Last_Aired.Episode),E,]</value>
+	</variable>
+	
+	<variable name="DialogVideoInfoTheMovieDBHelperNextVar">
+		<value condition="Integer.IsEqual(Container(5056).ListItem.Property(Next_Aired.Season),0) + Integer.IsGreater(Container(5056).ListItem.Property(Next_Aired.Episode),9) + !String.IsEmpty(Container(5056).ListItem.Property(Next_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5056).ListItem.Property(Next_Aired.Episode),E,]</value>
+		<value condition="Integer.IsEqual(Container(5056).ListItem.Property(Next_Aired.Season),0) + !Integer.IsGreater(Container(5056).ListItem.Property(Next_Aired.Episode),9) + !String.IsEmpty(Container(5056).ListItem.Property(Next_Aired.Episode))">$LOCALIZE[31213] $INFO[Container(5056).ListItem.Property(Next_Aired.Episode),E0,]</value>
+		<value condition="Integer.IsLessOrEqual(Container(5056).ListItem.Property(Next_Aired.Season),9) + Integer.IsLessOrEqual(Container(5056).ListItem.Property(Next_Aired.Episode),9)">$INFO[Container(5056).ListItem.Property(Next_Aired.Season),S0,]$INFO[Container(5056).ListItem.Property(Next_Aired.Episode),E0,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5056).ListItem.Property(Next_Aired.Season),9)">$INFO[Container(5056).ListItem.Property(Next_Aired.Season),S0,]$INFO[Container(5056).ListItem.Property(Next_Aired.Episode),E,]</value> 
+		<value condition="Integer.IsLessOrEqual(Container(5056).ListItem.Property(Next_Aired.Episode),9)">$INFO[Container(5056).ListItem.Property(Next_Aired.Season),S,]$INFO[Container(5056).ListItem.Property(Next_Aired.Episode),E0,]</value> 
+		<value>$INFO[Container(5056).ListItem.Property(Next_Aired.Season),S,]$INFO[Container(5056).ListItem.Property(Next_Aired.Episode),E,]</value>
+	</variable>
+	
+	<variable name="DialogVideoInfoTVShowStatusVar">
+		<value condition="!String.IsEmpty(Container(5056).ListItem.Status)">$INFO[Container(5056).ListItem.Status]</value>
+		<value>$INFO[ListItem.Status]</value>
+	</variable>
+	<!-- END The Movie DB Helper -->
 	
 	<!-- Upnext -->
 	<variable name="UpnextInfoPlayButton">

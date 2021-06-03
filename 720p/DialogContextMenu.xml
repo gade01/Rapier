@@ -95,13 +95,13 @@
 				<control type="button" id="2001">
 					<description>ExtendedInfo</description>
 					<label>$VAR[ContextMenuLabel2001]</label>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</onclick>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Container.Content(Movies)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Container.Content(TVShows)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + Container.Content(Seasons) + !String.IsEmpty(ListItem.Season)">RunScript(script.extendedinfo,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season])</onclick>
-					<onclick condition="System.AddonIsEnabled(script.extendedinfo) + [[Container.Content(Seasons) + String.IsEmpty(ListItem.Season)] | Container.Content(Episodes)]">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container.ShowTitle])</onclick>
-					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+					<onclick condition="System.AddonIsEnabled(script.embuary.info) + Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)">RunScript(script.embuary.info,call=person,query='"$INFO[ListItem.Label]"')</onclick>
+					<onclick condition="System.AddonIsEnabled(script.embuary.info) + Container.Content(Movies)">RunScript(script.embuary.info,info=embuary.info,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
+					<onclick condition="System.AddonIsEnabled(script.embuary.info) + Container.Content(TVShows)">RunScript(script.embuary.info,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],id=$INFO[ListItem.Property(id)])</onclick>
+					<onclick condition="System.AddonIsEnabled(script.embuary.info) + Container.Content(Seasons) + !String.IsEmpty(ListItem.Season)">RunScript(script.embuary.info,info=seasoninfo,tvshow=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season])</onclick>
+					<onclick condition="System.AddonIsEnabled(script.embuary.info) + [[Container.Content(Seasons) + String.IsEmpty(ListItem.Season)] | Container.Content(Episodes)]">RunScript(script.embuary.info,info=extendedtvinfo,name=$INFO[Container.ShowTitle])</onclick>
+					<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+					<onclick condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onclick>
 					<include>ContextMenuBtn</include>
 					<visible>[Container.Content(Artists) | [[Container.Content(Actors) | Container.Content(Directors) | [Container.Content(Movies) + !ListItem.IsCollection] | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !System.AddonIsEnabled(context.extendedinfo.dialog)]] + !Skin.HasSetting(ContextMenuExtendedInformation)</visible>
 				</control>

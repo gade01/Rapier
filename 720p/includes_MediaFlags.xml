@@ -1434,6 +1434,12 @@
 		</control>
 	</include>
 	
+	<variable name="TVShowStatusVar">
+		<value condition="String.IsEqual(Container(5055).ListItem.Status,Cancelled/Ended) | String.IsEqual(ListItem.Status,Cancelled/Ended)">$LOCALIZE[31965]</value>
+		<value condition="!String.IsEmpty(Container(5055).ListItem.Status)">$INFO[Container(5055).ListItem.Status]</value>
+		<value>$INFO[ListItem.Status]</value>
+	</variable>
+	
 	<include name="NextAiredStatusMediaFlag">
 		<control type="group">
 		<animation effect="slide" end="-495,0" condition="Container.Content(Episodes)">Conditional</animation>
@@ -1445,11 +1451,11 @@
 				<texture border="6">flagging/$VAR[MediaFlagTheme]/flag-big-bg.png</texture>
 				<include>MediaFlagFadeAnim</include>
 				<animation effect="fade" time="200">VisibleChange</animation>
-				<visible>!String.IsEmpty(Window(Home).Property(NextAired.Status))</visible>
+				<visible>![String.IsEmpty(Container(5055).ListItem.Status) + String.IsEmpty(ListItem.Status)]</visible>
 			</control>
 					
 			<control type="label">
-				<description>Next Aired Status</description>
+				<description>TVShow Status</description>
 				<left>1085</left>
 				<top>3</top>
 				<width>100</width>
@@ -1459,25 +1465,8 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<wrapmultiline>true</wrapmultiline>
-				<label>$INFO[Window(Home).Property(NextAired.Status)]</label>
+				<label>$VAR[TVShowStatusVar]</label>
 				<animation effect="fade" end="50" condition="true">Conditional</animation>
-				<visible>!String.IsEqual(Window(Home).Property(NextAired.StatusID),1)</visible>
-			</control>
-			
-			<control type="label">
-				<description>Next Aired Status Cancelled/Ended</description>
-				<left>1085</left>
-				<top>3</top>
-				<width>100</width>
-				<height>35</height>
-				<font>NextAiredTimeFont</font>
-				<textcolor>SelectedColor</textcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<wrapmultiline>true</wrapmultiline>
-				<label>$LOCALIZE[31965]</label>
-				<animation effect="fade" end="50" condition="true">Conditional</animation>
-				<visible>String.IsEqual(Window(Home).Property(NextAired.StatusID),1)</visible>
 			</control>
 		</control>
 	</include>

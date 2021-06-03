@@ -25,10 +25,10 @@
 			</control>
 		</control>
 		
-		<include condition="![[Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(MovieInformation) | Window.IsActive(DialogMusicInfo.xml)] + !String.IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
+		<include condition="![[Window.IsActive(script-embuary-person.xml) | Window.IsActive(MovieInformation) | Window.IsActive(DialogMusicInfo.xml)] + !String.IsEmpty(Window.Property(Fanart))]">FSMediaInfoBackgroundDim2</include>
 		
 		<control type="group">
-			<visible>!Window.IsActive(script-script.extendedinfo-DialogInfo.xml)</visible>
+			<visible>!Window.IsActive(script-embuary-person.xml)</visible>
 			<include>MediaInfoOpenCloseAnim</include>
 			
 			<control type="group">

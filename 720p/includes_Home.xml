@@ -2968,9 +2968,10 @@
 					<item id="7">
 						<description>TV Show Next Aired</description>
 						<label>$LOCALIZE[4]</label>
-						<onclick condition="System.HasAddon(script.tv.show.next.aired) + !System.AddonIsEnabled(script.tv.show.next.aired)">EnableAddon(script.tv.show.next.aired)</onclick>
-						<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired)</onclick>
-						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn7) + System.HasAddon(script.tv.show.next.aired)</visible>
+						<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+						<onclick condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onclick>
+						<onclick condition="System.AddonIsEnabled(script.embuary.info)">ActivateWindow(1124)</onclick>
+						<visible>!Skin.HasSetting(EditTVShowsSubMenuBtn7)</visible>
 					</item>
 					<item id="7">
 						<description>Custom Button</description>
@@ -5924,7 +5925,7 @@
 					<onright>850</onright>
 					<onleft>6929</onleft>
 					<include>ContainerPosition1</include>
-					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Label])</onclick>
+					<onclick>Info</onclick>
 					<visible>Integer.IsGreater(Container(6928).NumItems,0) | Container(6928).IsUpdating</visible>
 					<include content="WidgetContainerLayout">
 						<param name="width" value="345" />
@@ -5932,7 +5933,7 @@
 						<param name="label" value="$INFO[ListItem.Label]$INFO[ListItem.Premiered, (,)]" />
 						<param name="id" value="6928" />
 					</include>
-					<include>CustomPanelInCinemas</include>
+					<include condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">CustomPanelInCinemas</include>
 				</control>
 			</control>
 			
@@ -5963,7 +5964,7 @@
 					<onright>850</onright>
 					<onleft>6928</onleft>
 					<include>ContainerPosition1</include>
-					<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Label])</onclick>
+					<onclick>Info</onclick>
 					<visible>Integer.IsGreater(Container(6929).NumItems,0) | Container(6929).IsUpdating</visible>
 					<include content="WidgetContainerLayout">
 						<param name="width" value="345" />
@@ -5971,7 +5972,7 @@
 						<param name="label" value="$INFO[ListItem.Label]$INFO[ListItem.Premiered, (,)]" />
 						<param name="id" value="6929" />
 					</include>
-					<include>CustomPanelUpcomingMovies</include>
+					<include condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">CustomPanelUpcomingMovies</include>
 				</control>
 			</control>
 		</control>

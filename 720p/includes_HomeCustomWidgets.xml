@@ -150,11 +150,7 @@
 	</include>
 	
 	<include name="CustomPanelOnclick2">
-		<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[ListItem.Label])</onclick>
-	</include>
-	
-	<include name="CustomPanelOnclick3">
-		<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Label])</onclick>
+		<onclick>Info</onclick>
 	</include>
 	
 	<include name="CustomPanelContent">
@@ -334,8 +330,7 @@
 					<onright>850</onright>
 					<include>ContainerPosition1</include>
 					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,6)">CustomPanelOnclick1</include>
-					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,10) | Skin.String($PARAM[CustomPanelNumber]Type,11)">CustomPanelOnclick2</include>
-					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,12)">CustomPanelOnclick3</include>
+					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,10) | Skin.String($PARAM[CustomPanelNumber]Type,11) | Skin.String($PARAM[CustomPanelNumber]Type,12)">CustomPanelOnclick2</include>
 					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,2)">CustomPanelRandomStraitLayout</include>
 					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,3)">CustomPanelRandomWideLayout</include>
 					<include condition="Skin.String($PARAM[CustomPanelNumber]Type,4)">CustomPanelRandomStraitLayout</include>
@@ -603,14 +598,14 @@
 	<include name="CustomPanelTopRatedMoviesTitle">
 		<include content="CustomPanelTitle">
 			<param name="width" value="360" />
-			<param name="label" value="$ADDON[script.extendedinfo 32046]" />
+			<param name="label" value="$LOCALIZE[31599]" />
 		</include>
 	</include>
 	
 	<include name="CustomPanelTopRatedTVShowsTitle">
 		<include content="CustomPanelTitle">
 			<param name="width" value="360" />
-			<param name="label" value="$ADDON[script.extendedinfo 32040]" />
+			<param name="label" value="$LOCALIZE[31598]" />
 		</include>
 	</include>
 	
@@ -2250,27 +2245,27 @@
 	</include>
 	
 	<include name="CustomPanelInCinemas">
-		<content target="video" sortorder="descending" sortby="year">plugin://script.extendedinfo?info=incinemamovies</content>
+		<content target="video" sortorder="descending" sortby="year">plugin://plugin.video.themoviedb.helper?info=now_playing&amp;type=movie&amp;nextpage=False</content>
 	</include>
 	
 	<include name="CustomPanelUpcomingMovies">
-		<content target="video" sortorder="descending" sortby="year">plugin://script.extendedinfo?info=upcomingmovies</content>
+		<content target="video" sortorder="descending" sortby="year">plugin://plugin.video.themoviedb.helper?info=upcoming&amp;type=movie&amp;nextpage=False</content>
 	</include>
 	
 	<include name="CustomPanelTopRatedMovies">
-		<content target="video" sortorder="descending" sortby="rating">plugin://script.extendedinfo?info=topratedmovies</content>
+		<content target="video" sortorder="descending" sortby="rating">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=movie&amp;nextpage=False</content>
 	</include>
 	
 	<include name="CustomPanelTopRatedTVShows">
-		<content target="video" sortorder="descending" sortby="rating">plugin://script.extendedinfo?info=topratedtvshows</content>
+		<content target="video" sortorder="descending" sortby="rating">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=tv&amp;nextpage=False</content>
 	</include>
 	
 	<include name="CustomPanelTrendingMovies">
-		<content target="video">plugin://script.extendedinfo?info=trendingmovies</content>
+		<content target="video">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=movie&amp;nextpage=False</content>
 	</include>
 	
 	<include name="CustomPanelTrendingShows">
-		<content target="video">plugin://script.extendedinfo?info=trendingshows</content>
+		<content target="video">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=tv&amp;nextpage=False</content>
 	</include>
 	
 	<include name="Custom1PanelFavouriteTopWidget">

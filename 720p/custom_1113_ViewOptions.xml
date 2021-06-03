@@ -497,10 +497,10 @@
 				<include>DropDownMenuRadioBtn</include>
 				<label>$LOCALIZE[31968]</label>
 				<selected>!Skin.HasSetting(EnableNextAiredInfo)</selected>
-				<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">Skin.ToggleSetting(EnableNextAiredInfo)</onclick>
-				<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">ReloadSkin()</onclick>
-				<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
-				<onclick condition="System.HasAddon(script.tv.show.next.aired) + !System.AddonIsEnabled(script.tv.show.next.aired)">EnableAddon(script.tv.show.next.aired)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">Skin.ToggleSetting(EnableNextAiredInfo)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">ReloadSkin()</onclick>
+				<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
+				<onclick condition="System.HasAddon(plugin.video.themoviedb.helper) + !System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onclick>
 				<include>ReloadSkinNotification</include>
 				<visible>$EXP[TVShowsSeasonsEpisodes] + [Skin.String(CurrentViewMode,585) | Skin.String(CurrentViewMode,588) | Skin.String(CurrentViewMode,60) | Skin.String(CurrentViewMode,58) | Skin.String(CurrentViewMode,65)]</visible>
 			</control>

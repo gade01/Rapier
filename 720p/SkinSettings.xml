@@ -402,15 +402,6 @@
 							<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
 							<onclick condition="System.HasAddon(script.artistslideshow) + !System.AddonIsEnabled(script.artistslideshow)">EnableAddon(script.artistslideshow)</onclick>
 						</control>
-						<control type="button" id="7011">
-							<description>script.tv.show.next.aired</description>
-							<include>SettingsContentBtn</include>
-							<label>TV Show - Next Aired</label>
-							<label2>$VAR[StatusTVShowNextAiredVar]</label2>
-							<onclick condition="System.AddonIsEnabled(script.tv.show.next.aired)">Addon.OpenSettings(script.tv.show.next.aired)</onclick>
-							<onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
-							<onclick condition="System.HasAddon(script.tv.show.next.aired) + !System.AddonIsEnabled(script.tv.show.next.aired)">EnableAddon(script.tv.show.next.aired)</onclick>
-						</control>
 						<control type="button" id="7012">
 							<description>script.globalsearch</description>
 							<include>SettingsContentBtn</include>
@@ -500,15 +491,6 @@
 							<onclick condition="System.AddonIsEnabled(script.user.rating)">Addon.OpenSettings(script.user.rating)</onclick>
 							<onclick condition="!System.HasAddon(script.user.rating)">InstallAddon(script.user.rating)</onclick>
 							<onclick condition="System.HasAddon(script.user.rating) + !System.AddonIsEnabled(script.user.rating)">EnableAddon(script.user.rating)</onclick>
-						</control>
-						<control type="button" id="7019">
-							<description>weather.weatherbit.io</description>
-							<include>SettingsContentBtn</include>
-							<label>Weatherbit IO</label>
-							<label2>$VAR[StatusWeatherbitVar]</label2>
-							<onclick condition="System.AddonIsEnabled(weather.weatherbit.io)">Addon.OpenSettings(weather.weatherbit.io)</onclick>
-							<onclick condition="!System.HasAddon(weather.weatherbit.io)">InstallAddon(weather.weatherbit.io)</onclick>
-							<onclick condition="System.HasAddon(weather.weatherbit.io) + !System.AddonIsEnabled(weather.weatherbit.io)">EnableAddon(weather.weatherbit.io)</onclick>
 						</control>
 						<control type="button" id="7018">
 							<description>weather.multi</description>

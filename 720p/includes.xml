@@ -81,7 +81,7 @@
 	<expression name="TVShowsSeasonsEpisodes">Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</expression>
 	<expression name="SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums">Container.Content(Sets) | Container.Content(Genres) | Container.Content(Years) | Container.Content(Actors) | Container.Content(Directors) | Container.Content(Studios) | Container.Content(Countries) | Container.Content(Tags) | Container.Content(Seasons) | Container.Content(Artists) | Container.Content(Albums)</expression>
 	<expression name="AllInfoDialogs">Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(DialogPVRInfo.xml)</expression>
-	<expression name="ExtendedinfoInfoDialogs">Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)</expression>
+	<expression name="ExtendedinfoInfoDialogs">Window.IsActive(script-embuary-person.xml) | Window.IsActive(script-embuary-video.xml)</expression>
 	<expression name="EmbuaryInfoDialogs">Window.IsActive(script-embuary-person.xml) | Window.IsActive(script-embuary-video.xml)</expression>
 	<expression name="HideTopBar">![System.IdleTime(3) + !Control.IsVisible(505) + Skin.HasSetting(HideTopBar) + !Control.HasFocus(555)]</expression>
 	<expression name="UnwatchedEpisodes99-">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsLessOrEqual(ListItem.Property(UnWatchedEpisodes),99)</expression>
@@ -291,7 +291,6 @@
 		<value condition="Control.HasFocus(7007)">$LOCALIZE[31443]</value>
 		<value condition="Control.HasFocus(7008)">$LOCALIZE[31450]</value>
 		<value condition="Control.HasFocus(7009)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31472]</value>
-		<value condition="Control.HasFocus(7011)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31446]</value>
 		<value condition="Control.HasFocus(7012)">$LOCALIZE[31447]</value>
 		<value condition="Control.HasFocus(7013)">$LOCALIZE[31448]</value>
 		<value condition="Control.HasFocus(7015)">$LOCALIZE[31488]</value>
@@ -303,7 +302,6 @@
 		<value condition="Control.HasFocus(7023)">$LOCALIZE[31454]</value>
 		<value condition="Control.HasFocus(7025)">$LOCALIZE[31455]</value>
 		<value condition="Control.HasFocus(7018)">$LOCALIZE[31458]</value>
-		<value condition="Control.HasFocus(7019)">$LOCALIZE[31458]</value>
 		<value condition="Control.HasFocus(7020)">$LOCALIZE[31461]</value>
 		<value condition="Control.HasFocus(7021)">$LOCALIZE[31460]</value>
 		<value condition="Control.HasFocus(7028)">$LOCALIZE[31464]</value>
@@ -951,11 +949,6 @@
 		</control>
 	</include>
 	
-	<variable name="TVShowStatusVar">
-		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.Status))">$INFO[Window(Home).Property(NextAired.Status)]</value>
-		<value>$INFO[ListItem.Status]</value>
-	</variable>
-	
 	<!-- DialogAddonInfo.xml -->
 	<variable name="AddonInfoTextbox">
 		<value condition="Skin.String(AddonInfoContentToggle,news)">$INFO[ListItem.AddonNews]</value>
@@ -966,7 +959,7 @@
 	
 	<!-- DialogVideoInfo.xml -->
 	<variable name="DialogVideoInfoActorImage">
-		<value condition="Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.AddonIsEnabled(script.extendedinfo)">$INFO[Container(50).ListItem.Thumb]</value>
+		<value condition="Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Thumb) + !System.AddonIsEnabled(plugin.video.themoviedb.helper)">$INFO[Container(50).ListItem.Thumb]</value>
 		<value>$VAR[PosterThumb]</value>
 	</variable>
 	
@@ -2088,12 +2081,6 @@
 		<value>$LOCALIZE[31492]</value>
 	</variable>
 	
-	<variable name="StatusTVShowNextAiredVar">
-		<value condition="System.AddonIsEnabled(script.tv.show.next.aired)">$INFO[System.AddonVersion(script.tv.show.next.aired)] $LOCALIZE[31437]</value>
-		<value condition="System.HasAddon(script.tv.show.next.aired) + !System.AddonIsEnabled(script.tv.show.next.aired)">$LOCALIZE[24023]</value>
-		<value>$LOCALIZE[31492]</value>
-	</variable>
-	
 	<variable name="StatusGlobalSearchVar">
 		<value condition="System.AddonIsEnabled(script.globalsearch)">$INFO[System.AddonVersion(script.globalsearch)] $LOCALIZE[31437]</value>
 		<value condition="System.HasAddon(script.globalsearch) + !System.AddonIsEnabled(script.globalsearch)">$LOCALIZE[24023]</value>
@@ -2139,12 +2126,6 @@
 	<variable name="StatusAutoCompletionVar">
 		<value condition="System.AddonIsEnabled(plugin.program.autocompletion)">$INFO[System.AddonVersion(plugin.program.autocompletion)] $LOCALIZE[31437]</value>
 		<value condition="System.HasAddon(plugin.program.autocompletion) + !System.AddonIsEnabled(plugin.program.autocompletion)">$LOCALIZE[24023]</value>
-		<value>$LOCALIZE[31492]</value>
-	</variable>
-	
-	<variable name="StatusWeatherbitVar">
-		<value condition="System.AddonIsEnabled(weather.weatherbit.io)">$INFO[System.AddonVersion(weather.weatherbit.io)] $LOCALIZE[31437]</value>
-		<value condition="System.HasAddon(weather.weatherbit.io) + !System.AddonIsEnabled(weather.weatherbit.io)">$LOCALIZE[24023]</value>
 		<value>$LOCALIZE[31492]</value>
 	</variable>
 	
