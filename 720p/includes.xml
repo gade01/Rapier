@@ -260,12 +260,9 @@
 	</variable>
 	
 	<variable name="ContextMenuLabel2001">
-        <value condition="Container.Content(Artists) + Window.IsVisible(Music)">$ADDON[script.extendedinfo 32010]</value>
+        <value condition="Container.Content(Artists) + Window.IsVisible(Music)">$LOCALIZE[31397]</value>
         <value condition="Container.Content(Actors)">$LOCALIZE[31035]</value>
         <value condition="Container.Content(Directors)">$LOCALIZE[31036]</value>
-        <value condition="Container.Content(Movies) | Container.Content(TVShows)">$LOCALIZE[31087]</value>
-        <value condition="Container.Content(Seasons) + !String.IsEmpty(ListItem.Season)">$LOCALIZE[31045]</value>
-        <value condition="[Container.Content(Seasons) + String.IsEmpty(ListItem.Season)] | Container.Content(Episodes)">$LOCALIZE[31299]</value>
         <value>$LOCALIZE[21891]</value>
     </variable>
 	
@@ -292,7 +289,6 @@
 		<value condition="Control.HasFocus(7008)">$LOCALIZE[31450]</value>
 		<value condition="Control.HasFocus(7009)">&#x5b;$LOCALIZE[31462]&#x5d; $LOCALIZE[31472]</value>
 		<value condition="Control.HasFocus(7012)">$LOCALIZE[31447]</value>
-		<value condition="Control.HasFocus(7013)">$LOCALIZE[31448]</value>
 		<value condition="Control.HasFocus(7015)">$LOCALIZE[31488]</value>
 		<value condition="Control.HasFocus(7017)">$LOCALIZE[31487]</value>
 		<value condition="Control.HasFocus(7022)">$LOCALIZE[31449]</value>
@@ -306,7 +302,6 @@
 		<value condition="Control.HasFocus(7021)">$LOCALIZE[31460]</value>
 		<value condition="Control.HasFocus(7028)">$LOCALIZE[31464]</value>
 		<value condition="Control.HasFocus(7029)">$LOCALIZE[31465]</value>
-		<value condition="Control.HasFocus(7031)">$LOCALIZE[31467]</value>
 		<value condition="Control.HasFocus(7032)">$LOCALIZE[31471]</value>
 	</variable>
 	
@@ -763,15 +758,6 @@
 			<texture>views/fanart-dim.png</texture>
 			<include>MediaViewOpenCloseAnim</include>
 			<animation effect="fade" end="80" condition="true">Conditional</animation>
-		</control>
-	</include>
-	
-	<include name="FSMediaInfoBackgroundDim3">
-		<control type="image">
-			 <include>BackgroundSize</include>
-			 <texture>views/fanart-dim.png</texture>
-			 <include>MediaViewOpenCloseAnim</include>
-			 <animation effect="fade" end="70" condition="true">Conditional</animation>
 		</control>
 	</include>
 	
@@ -1349,7 +1335,9 @@
 		<width>482</width>
 		<height>300</height>
 		<onup>987</onup>
-		<onright condition="System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(50).ListItem.Title])</onright>
+		<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+		<onclick condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onclick>
+		<onright condition="System.AddonIsEnabled(script.embuary.info)">RunScript(script.embuary.info,call=movie,query='"$INFO[Container(50).ListItem.Title]"')</onright>
 		<itemlayout height="30">
 			<control type="image">
 				<top>28</top>
@@ -2023,6 +2011,126 @@
 		<value condition="ListItem.IsBoxset">$INFO[ListItem.Property(Album_Type)]$INFO[ListItem.TotalDiscs, (, $LOCALIZE[14087])]</value>
 		<value>$INFO[ListItem.Property(Album_Type)]</value>
 	</variable>
+	
+	<include name="MusicVideosPanel">
+		<control type="panel" id="969">
+			<description>Music Videos</description>
+			<left>100</left>
+			<top>459</top>
+			<width>1084</width>
+			<height>173</height>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>61</pagecontrol>
+			<orientation>horizontal</orientation>
+			<onleft>987</onleft>
+			<ondown condition="Control.IsVisible(61)">61</ondown>
+			<onup>901</onup>
+			<onright condition="Control.IsVisible(61)">61</onright>
+			<onclick>Dialog.Close(musicinformation)</onclick>
+			<onclick>PlayMedia($INFO[ListItem.FolderPath])</onclick>
+			<include>FSMediaInfoOpenCloseAnim</include>
+			<visible>$PARAM[visible]</visible>
+			<itemlayout height="173" width="271">
+				<control type="image">
+					<width>268</width>
+					<height>173</height>
+					<bordertexture border="4">covers/cover-case2.png</bordertexture>
+					<bordersize>4</bordersize>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Thumb]</texture>
+				</control>
+				<control type="image">
+					<width>268</width>
+					<height>173</height>
+					<texture border="4">covers/cover-case2.png</texture>
+					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<top>2</top>
+					<width>268</width>
+					<height>142</height>
+					<texture background="true">DefaultAudio.png</texture>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>137</top>
+					<width>248</width>
+					<height>27</height>
+					<texture border="8">views/genre-background.png</texture>
+					<visible>!String.IsEmpty(ListItem.Label)</visible>
+				</control>
+				<control type="label">
+					<left>15</left>
+					<top>141</top>
+					<width>238</width>
+					<align>center</align>
+					<font>SubMenuArrowFont</font>
+					<textcolor>WhiteColor</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!String.IsEmpty(ListItem.Label)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout height="173" width="271">
+				<control type="group">
+					<include>ListViewCoverFocusAnim</include>
+					<control type="image">
+						<width>268</width>
+						<height>173</height>
+						<texture border="4">covers/cover-case-noshadow-focus.png</texture>
+						<include>ListViewOverlayFadeAnim</include>
+					</control>
+					<control type="image">
+						<width>268</width>
+						<height>173</height>
+						<texture border="4">black.png</texture>
+						<bordersize>3</bordersize>
+						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<top>2</top>
+						<width>268</width>
+						<height>142</height>
+						<texture background="true">DefaultAudio.png</texture>
+						<aspectratio align="center" aligny="top">keep</aspectratio>
+						<visible>String.IsEmpty(ListItem.Thumb)</visible>
+					</control>
+					<control type="image">
+						<top>2</top>
+						<left>2</left>
+						<width>264</width>
+						<height>169</height>
+						<bordertexture border="4">black.png</bordertexture>
+						<bordersize>2</bordersize>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>137</top>
+						<width>248</width>
+						<height>27</height>
+						<texture border="8">views/genre-background.png</texture>
+						<visible>!String.IsEmpty(ListItem.Label)</visible>
+					</control>
+					<control type="label">
+						<left>15</left>
+						<top>141</top>
+						<width>238</width>
+						<align>center</align>
+						<font>SubMenuArrowFont</font>
+						<textcolor>SelectedColor2</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!String.IsEmpty(ListItem.Label)</visible>
+					</control>
+				</control>
+			</focusedlayout>
+			<content target="video">$PARAM[content]</content>
+		</control>
+	</include>
 	<!-- END DialogMusicInfo.xml -->
 	
 	<!-- Skin Settings -->
@@ -2105,12 +2213,6 @@
 		<value>$LOCALIZE[31492]</value>
 	</variable>
 	
-	<variable name="StatusExtendedInfoVar">
-		<value condition="System.AddonIsEnabled(script.extendedinfo)">$INFO[System.AddonVersion(script.extendedinfo)] $LOCALIZE[31437]</value>
-		<value condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">$LOCALIZE[24023]</value>
-		<value>$LOCALIZE[31492]</value>
-	</variable>
-	
 	<variable name="StatusEmbuaryInfoVar">
 		<value condition="System.AddonIsEnabled(script.embuary.info)">$INFO[System.AddonVersion(script.embuary.info)] $LOCALIZE[31437]</value>
 		<value condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info)">$LOCALIZE[24023]</value>
@@ -2180,12 +2282,6 @@
 	<variable name="StatusMyPicsDBVar">
 		<value condition="System.AddonIsEnabled(plugin.image.mypicsdb)">$INFO[System.AddonVersion(plugin.image.mypicsdb)] $LOCALIZE[31437]</value>
 		<value condition="System.HasAddon(plugin.image.mypicsdb) + !System.AddonIsEnabled(plugin.image.mypicsdb)">$LOCALIZE[24023]</value>
-		<value>$LOCALIZE[31492]</value>
-	</variable>
-	
-	<variable name="StatusYoutubeBrowserVar">
-		<value condition="System.AddonIsEnabled(script.youtube.browser)">$INFO[System.AddonVersion(script.youtube.browser)] $LOCALIZE[31437]</value>
-		<value condition="System.HasAddon(script.youtube.browser) + !System.AddonIsEnabled(script.youtube.browser)">$LOCALIZE[24023]</value>
 		<value>$LOCALIZE[31492]</value>
 	</variable>
 	<!-- END Skin Settings -->
@@ -2515,14 +2611,6 @@
 	
 	<include name="TVGuideFullscreenWidth">
 		<width>271</width>
-	</include>
-	
-	<include name="TVGuideNormalWidth3">
-		<width>475</width>
-	</include>
-	
-	<include name="TVGuideFullscreenWidth3">
-		<width>204</width>
 	</include>
 	
 	<include name="TVGuideNormalWidth4">

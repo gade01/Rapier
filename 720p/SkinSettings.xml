@@ -411,15 +411,6 @@
 							<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
 							<onclick condition="System.HasAddon(script.globalsearch) + !System.AddonIsEnabled(script.globalsearch)">EnableAddon(script.globalsearch)</onclick>
 						</control>
-						<control type="button" id="7013">
-							<description>script.extendedinfo</description>
-							<include>SettingsContentBtn</include>
-							<label>ExtendedInfo Script</label>
-							<label2>$VAR[StatusExtendedInfoVar]</label2>
-							<onclick condition="System.AddonIsEnabled(script.extendedinfo)">Addon.OpenSettings(script.extendedinfo)</onclick>
-							<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-							<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
-						</control>
 						<control type="button" id="7015">
 							<description>script.embuary.info</description>
 							<include>SettingsContentBtn</include>
@@ -541,15 +532,6 @@
 							<onclick condition="System.AddonIsEnabled(plugin.image.mypicsdb)">Addon.OpenSettings(plugin.image.mypicsdb)</onclick>
 							<onclick condition="!System.HasAddon(plugin.image.mypicsdb)">Notification(My Pictures Database,$LOCALIZE[31498],4500,)</onclick>
 							<onclick condition="System.HasAddon(plugin.image.mypicsdb) + !System.AddonIsEnabled(plugin.image.mypicsdb)">EnableAddon(plugin.image.mypicsdb)</onclick>
-						</control>
-						<control type="button" id="7031">
-							<description>script.youtube.browser</description>
-							<include>SettingsContentBtn</include>
-							<label>Youtube Browser</label>
-							<label2>$VAR[StatusYoutubeBrowserVar]</label2>
-							<onclick condition="System.AddonIsEnabled(script.youtube.browser)">Addon.OpenSettings(script.youtube.browser)</onclick>
-							<onclick condition="!System.HasAddon(script.youtube.browser)">Notification(Youtube Browser,$LOCALIZE[31498],4500,)</onclick>
-							<onclick condition="System.HasAddon(script.youtube.browser) + !System.AddonIsEnabled(script.youtube.browser)">EnableAddon(script.youtube.browser)</onclick>
 						</control>
 					</control>
 					

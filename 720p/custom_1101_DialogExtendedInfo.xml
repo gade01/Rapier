@@ -72,7 +72,8 @@
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[20389]</label>
 				<onclick>Dialog.Close(1101)</onclick>
-				<onclick>Skin.SetString(MusicInfoMenubar,MusicVideos)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,artist)">Skin.SetString(MusicInfoMenubar,MusicVideosArtist)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">Skin.SetString(MusicInfoMenubar,MusicVideosAlbum)</onclick>
 			</control>
 			<control type="button" id="786">
 				<description>Search Youtube</description>
@@ -80,12 +81,12 @@
 				<textwidth>137</textwidth>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[31092]</label>
-				<onclick>Dialog.Close(1101)</onclick>
 				<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
 				<onclick condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">EnableAddon(plugin.video.youtube)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">Dialog.Close(1101)</onclick>
 				<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">Dialog.Close(musicinformation)</onclick>
-				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,artist)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/$INFO[ListItem.Artist]/",return)</onclick>
-				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,album)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/$INFO[ListItem.Album]/",return)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,artist)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist]/",return)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,album)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Album]/",return)</onclick>
 			</control>
 			<control type="image" id="787">
 				<width>173</width>
@@ -184,12 +185,12 @@
 				<textwidth>149</textwidth>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[31092]</label>
-				<onclick>Dialog.Close(1101)</onclick>
-				<onclick>Dialog.Close(movieinformation)</onclick>
-				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + !String.IsEqual(ListItem.DBTYPE,season)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Label])</onclick>
-				<onclick condition="System.AddonIsEnabled(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,season)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label])</onclick>
-				<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-				<onclick condition="System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">Dialog.Close(1101)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">Dialog.Close(movieinformation)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + !String.IsEqual(ListItem.DBTYPE,season)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Label]/",return)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,season)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle] $INFO[ListItem.Label]/",return)</onclick>
+				<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
+				<onclick condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">EnableAddon(plugin.video.youtube)</onclick>
 			</control>
 			<control type="image" id="798">
 				<width>173</width>

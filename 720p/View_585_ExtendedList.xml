@@ -957,11 +957,11 @@
 				<ondown>584</ondown>
 				<onleft>585</onleft>
 				<onright condition="!Control.IsVisible(91305) + !String.IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
-				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + ![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] trailer)</onright>
-				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer)</onright>
-				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
-				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
-				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + ![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + System.AddonIsEnabled(plugin.video.youtube)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Label] trailer/",return)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/) + System.AddonIsEnabled(plugin.video.youtube)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer/",return)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://) + System.AddonIsEnabled(plugin.video.youtube)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Label] music video/",return)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onright>
+				<onright condition="!Control.IsVisible(91305) + String.IsEmpty(Container(584).ListItem.Trailer) + System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">EnableAddon(plugin.video.youtube)</onright>
 				<onright condition="Control.IsVisible(91305)">91305</onright>
 				<visible>!ListItem.IsParentFolder</visible>
 				<visible>$EXP[SetsGenresYearsActorsDirectorsStudiosCountriesTagsSeasonsArtistsAlbums]</visible>
@@ -1118,11 +1118,11 @@
 				<onup>850</onup>
 				<onleft>584</onleft>
 				<onright condition="!String.IsEmpty(Container(584).ListItem.Trailer)">PlayMedia($ESCINFO[Container(584).ListItem.Trailer],noresume)</onright>
-				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + ![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] trailer)</onright>
-				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label])</onright>
-				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://) + System.AddonIsEnabled(script.extendedinfo)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(584).ListItem.Label] music video)</onright>
-				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onright>
-				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + System.HasAddon(script.extendedinfo) + !System.AddonIsEnabled(script.extendedinfo)">EnableAddon(script.extendedinfo)</onright>
+				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + ![String.Contains(Container.FolderPath,videodb://musicvideos/) | String.Contains(Container.FolderPath,musicdb://)] + System.AddonIsEnabled(plugin.video.youtube)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Label] trailer/",return)</onright>
+				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,videodb://musicvideos/) + System.AddonIsEnabled(plugin.video.youtube)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Artist] $INFO[Container(584).ListItem.Label] trailer/",return)</onright>
+				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + String.Contains(Container.FolderPath,musicdb://) + System.AddonIsEnabled(plugin.video.youtube)">ActivateWindow(videos,"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(584).ListItem.Label] music video/",return)</onright>
+				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + !System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onright>
+				<onright condition="String.IsEmpty(Container(584).ListItem.Trailer) + System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">EnableAddon(plugin.video.youtube)</onright>
 				<visible>!ListItem.IsParentFolder</visible>
 			</control>
 			

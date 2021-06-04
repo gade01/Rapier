@@ -2218,7 +2218,7 @@
 						<onclick condition="System.AddonIsEnabled(script.embuary.info) + String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.Title]"')</onclick>
 						<include>FSMediaInfoOpenCloseAnim</include>
 						<visible>Skin.String(VideoInfoMenubar,SimilarVideos)</visible>
-						<include condition="String.IsEqual(ListItem.DBTYPE,movie) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]">DialogVideoInfoPoster</include>
+						<include condition="String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,set) | [String.IsEqual(ListItem.DBTYPE,tvshow) + Skin.HasSetting(UseTVShowsPosterCover)]">DialogVideoInfoPoster</include>
 						<include condition="String.IsEqual(ListItem.DBTYPE,tvshow) + !Skin.HasSetting(UseTVShowsPosterCover)">DialogVideoInfoBanner</include>
 						<content>$VAR[SimilarVideos]</content>
 					</control>
