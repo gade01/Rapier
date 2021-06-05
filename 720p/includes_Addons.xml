@@ -1089,6 +1089,226 @@
 			<visible>[String.IsEqual(Container(10051).ListItem.Mpaa,NR) | [String.IsEmpty(Container(10051).ListItem.Mpaa) + !String.IsEqual(Container(10051).ListItem.DBType,tvshow) + !String.IsEqual(Container(10051).ListItem.DBType,season)]] + !String.Contains(Container(10051).ListItem.FileNameAndPath,.unrated)</visible>
 		</control>
 	</include>
+	
+	<include name="NextAiredColumnImage">
+		<width>120</width>
+		<height>114</height>
+		<texture>white.png</texture>
+		<include>NextAiredColumnFadeAnim</include>
+	</include>
+	
+	<include name="NextAiredTimeLabel2">
+		<control type="label">
+			<left>5</left>
+			<top>85</top>
+			<width>110</width>
+			<height>20</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>NextAiredTimeFont</font>
+			<textcolor>DefaultColor2</textcolor>
+			<shadowcolor>ShadowColor</shadowcolor>
+			<label>$INFO[ListItem.Property(AirTime),,  &#x2022;  ]$VAR[SeasonEpisodesNumberVar]</label>
+		</control>
+	</include>
+	
+	<include name="NextAiredItemLayout">
+		<control type="image">
+			<description>Thumb</description>
+			<left>7</left>
+			<top>8</top>
+			<width>106</width>
+			<height>76</height>
+			<aspectratio>keep</aspectratio>
+			<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+			<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+		</control>
+		<control type="image">
+			<description>Logo</description>
+			<left>7</left>
+			<top>27</top>
+			<width>106</width>
+			<height>40</height>
+			<aspectratio>keep</aspectratio>
+			<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+			<visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
+		</control>
+	</include>
+	
+	<include name="NextAiredTitleLabel">
+		<width>340</width>
+		<height>55</height>
+		<font>MediaInfoFont</font>
+		<textcolor>DefaultColor</textcolor>
+		<shadowcolor>ShadowColor</shadowcolor>
+		<aligny>center</aligny>
+		<align>center</align>
+		<scroll>true</scroll>
+	</include>
+	
+	<include name="NextAiredInfoImage">
+		<width>336</width>
+		<height>30</height>
+		<texture>white.png</texture>
+		<include>NextAiredInfoFadeAnim</include>
+	</include>
+	
+	<include name="NextAiredInfoGrouplist">
+		<control type="grouplist">
+			<description>$PARAM[description]</description>
+			<left>9</left>
+			<top>$PARAM[top]</top>
+			<width>322</width>
+			<orientation>horizontal</orientation>
+			<control type="label">
+				<width min="0" max="$PARAM[labelwidth]">auto</width>
+				<height>30</height>
+				<font>MediaInfoFont</font>
+				<textcolor>MediaInfoItemColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>
+				<label>$PARAM[label]</label>
+			</control>
+			<control type="label">
+				<width min="0" max="330">auto</width>
+				<height>30</height>
+				<font>MediaInfoFont</font>
+				<textcolor>MediaInfoItemColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label fallback="31001">$PARAM[info]</label>
+			</control>
+		</control>
+	</include>
+	
+	<include name="NextAiredDayArea">
+		<control type="group">
+			<description>$PARAM[description]</description>
+			<width>120</width>
+			<height>525</height>
+
+			<control type="image">
+				<width>120</width>
+				<height>55</height>
+				<texture>white.png</texture>
+				<include>NextAiredHeaderFadeAnim</include>
+			</control>
+		
+			<control type="image">
+				<left>-5</left>
+				<top>-5</top>
+				<width>130</width>
+				<height>65</height>
+				<texture background="true" border="12">covers/cover-case-focus.png</texture>
+				<animation effect="fade" end="30" condition="true">Conditional</animation>
+				<visible>String.IsEqual(System.Date(DDD),Container($PARAM[id]).ListItemAbsolute(0).Property(AirDay))</visible>
+			</control>
+			
+			<control type="group">
+				<top>60</top>
+				<control type="image">
+					<include>NextAiredColumnImage</include>
+				</control>
+
+				<control type="image">
+					<top>116</top>
+					<include>NextAiredColumnImage</include>
+				</control>
+
+				<control type="image">
+					<top>232</top>
+					<include>NextAiredColumnImage</include>
+				</control>
+
+				<control type="image">
+					<top>348</top>
+					<include>NextAiredColumnImage</include>
+				</control>
+			</control>
+
+			<control type="label">
+				<description>Day</description>
+				<width>120</width>
+				<height>30</height>
+				<font>NextAiredDayFont</font>
+				<textcolor>DefaultColor</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+				<label>$INFO[Container($PARAM[id]).ListItemAbsolute(0).Property(AirDay)]</label>
+			</control>
+
+			<control type="label">
+				<description>Date</description>
+				<top>26</top>
+				<width>120</width>
+				<height>25</height>
+				<font>NextAiredDateFont</font>
+				<textcolor>DefaultColor2</textcolor>
+				<shadowcolor>ShadowColor</shadowcolor>
+				<aligny>center</aligny>
+				<align>center</align>
+				<label>$INFO[Container($PARAM[id]).ListItemAbsolute(0).Premiered]</label>
+			</control>
+
+			<control type="list" id="$PARAM[id]">
+				<top>60</top>
+				<width>120</width>
+				<height>465</height>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="inout">300</scrolltime>
+				<onup>555</onup>
+				<ondown>$PARAM[id]</ondown>
+				<onleft>$PARAM[onleft]</onleft>
+				<onright>$PARAM[onright]</onright>
+				<!--<oninfo>RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.TVShowTitle]"')</oninfo>-->
+				<itemlayout height="116">
+					<include>NextAiredTimeLabel2</include>
+					<include>NextAiredItemLayout</include>
+				</itemlayout>
+				<focusedlayout height="116">
+					<control type="group">
+						<control type="image">
+							<left>-6</left>
+							<top>-5</top>
+							<width>132</width>
+							<height>124</height>
+							<texture background="true" border="12">covers/cover-case-focus.png</texture>
+						</control>
+						<control type="image">
+							<left>-6</left>
+							<top>-5</top>
+							<width>132</width>
+							<height>124</height>
+							<texture background="true" border="2">black.png</texture>
+							<bordersize>10</bordersize>
+							<animation effect="fade" end="60" condition="true">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>5</left>
+							<top>85</top>
+							<width>110</width>
+							<height>20</height>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>NextAiredTimeFont</font>
+							<textcolor>GreyColor</textcolor>
+							<shadowcolor>ShadowColor</shadowcolor>
+							<label>$INFO[ListItem.Property(AirTime),,  &#x2022;  ]$VAR[SeasonEpisodesNumberVar]</label>
+						</control>
+						<visible>Control.HasFocus($PARAM[id])</visible>
+					</control>
+					<control type="group">
+						<include>NextAiredTimeLabel2</include>
+						<visible>!Control.HasFocus($PARAM[id])</visible>
+					</control>
+					<include>NextAiredItemLayout</include>
+				</focusedlayout>
+				<content>$PARAM[content]</content>
+			</control>
+		</control>
+	</include>
 	<!-- END Embuary Info -->
 	
 	<!-- Embuary Helper -->

@@ -1050,6 +1050,37 @@
 		</control>
 	</include>
 	
+	<include name="BreadCrumbNextAired">
+		<control type="grouplist">
+			<left>10</left>
+			<top>StatusBartop</top>
+			<height>43</height>
+			<width>740</width>
+			<itemgap>8</itemgap>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="button" id="555">
+				<ondown>500</ondown>
+				<onright>500</onright>
+				<include>BreadCrumbHomeIcon</include>
+				<include>BreadCrumbSlideLvl1Anim</include>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl1Anim</include>
+			</control>
+			<control type="label">
+				<include>BreadCrumbLabel</include>
+				<label>[UPPERCASE]$LOCALIZE[4][/UPPERCASE]</label>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+		</control>
+	</include>
+	
 	<include name="BreadCrumbGlobalSearch">
 		<control type="grouplist">
 			<left>10</left>
