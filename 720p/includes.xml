@@ -88,6 +88,7 @@
 	<expression name="UnwatchedEpisodes99+">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),99)</expression>
 	<expression name="UnwatchedEpisodesOverlay">!String.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))</expression>
 	<expression name="AddonLifecycleType">String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</expression>
+	<expression name="IsSplashScreenImage">String.EndsWith(Skin.String(SplashScreen),.jpg) | String.EndsWith(Skin.String(SplashScreen),.jpeg) | String.EndsWith(Skin.String(SplashScreen),.png) | String.EndsWith(Skin.String(SplashScreen),.tiff) | String.EndsWith(Skin.String(SplashScreen),.tif) | String.EndsWith(Skin.String(SplashScreen),.bmp) | String.EndsWith(Skin.String(SplashScreen),.gif) | String.EndsWith(Skin.String(SplashScreen),.png)</expression>
 	
 	<variable name="DurationVar">
 		<value condition="ListItem.IsCollection + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Runtime))">$VAR[SkinHelperDurationVar]</value>
@@ -2661,6 +2662,11 @@
 		<value condition="!String.IsEmpty(Slideshow.EXIFDescription)">$INFO[Slideshow.EXIFDescription]</value>
 		<value condition="!String.IsEmpty(Slideshow.EXIFComment)">$INFO[Slideshow.EXIFComment]</value>
 		<value condition="!String.IsEmpty(Slideshow.Caption)">$INFO[Slideshow.Caption]</value>
+	</variable>
+	
+	<variable name="SplashScreenImageDuration">
+		<value condition="!String.IsEmpty(Skin.String(SplashScreenImageDuration))">$INFO[Skin.String(SplashScreenImageDuration)]</value>
+		<value>5</value>
 	</variable>
 	<!-- END SlideShow -->
 	

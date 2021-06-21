@@ -71,5 +71,13 @@
 				<include>Notifications</include>
 			</control>
 		</control>
+		
+		<!-- video control for splash -->
+		<control type="videowindow">
+			<depth>DepthContent</depth>
+			<width>100%</width>
+			<height>100%</height>
+			<visible>!String.IsEmpty(Skin.String(SplashScreen)) + ![$EXP[IsSplashScreenImage]]</visible>
+		</control>
 	</controls>
 </window>
