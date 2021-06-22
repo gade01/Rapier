@@ -65,9 +65,9 @@
 						<height>320</height>
 						<onup>34</onup>
 						<ondown>20</ondown>
-						<onleft>30</onleft>
-						<onright condition="Control.IsVisible(31)">31</onright>
-						<onright condition="!Control.IsVisible(31)">8000</onright>
+						<onleft condition="Control.IsEnabled(31)">31</onleft>
+						<onleft condition="!Control.IsEnabled(31)">30</onleft>
+						<onright>8000</onright>
 						<pagecontrol>60</pagecontrol>
 						<scrolltime>200</scrolltime>
 						<itemlayout height="40">
@@ -185,29 +185,6 @@
 							</control>
 						</focusedlayout>
 					</control>
-
-					<control type="button" id="31">
-						<description>Add Channel Button</description>
-						<left>437</left>
-						<width>40</width>
-						<height>40</height>
-						<onup>20</onup>
-						<onleft>20</onleft>
-						<onright>8000</onright>
-						<ondown>20</ondown>
-						<label />
-						<texturenofocus border="0">pvr/button_Inline-add.png</texturenofocus>
-						<texturefocus border="0">pvr/button_Inline-add-focus.png</texturefocus>
-						<animation effect="slide" end="0,40" time="150" condition="Container(20).Row(1)">Conditional</animation>
-						<animation effect="slide" end="0,80" time="150" condition="Container(20).Row(2)">Conditional</animation>
-						<animation effect="slide" end="0,120" time="150" condition="Container(20).Row(3)">Conditional</animation>
-						<animation effect="slide" end="0,160" time="150" condition="Container(20).Row(4)">Conditional</animation>
-						<animation effect="slide" end="0,200" time="150" condition="Container(20).Row(5)">Conditional</animation>
-						<animation effect="slide" end="0,240" time="150" condition="Container(20).Row(6)">Conditional</animation>
-						<animation effect="slide" end="0,280" time="150" condition="Container(20).Row(7)">Conditional</animation>
-						<animation effect="slide" end="0,320" time="150" condition="Container(20).Row(8)">Conditional</animation>
-						<visible>!Container(20).Scrolling</visible>
-					</control>
 				</control>
 
 				<control type="grouplist" id="8000">
@@ -301,19 +278,24 @@
 			
 			<control type="grouplist" id="9000">
 				<description>Dialog Button Area</description>
-				<left>192.5</left>
+				<left>107.5</left>
 				<top>420</top>
 				<onup>20</onup>
 				<ondown>34</ondown>
 				<orientation>horizontal</orientation>
 				<itemgap>0</itemgap>
+				<control type="button" id="31">
+					<description>Add Channel</description>
+					<include>DialogMenuBarBtn</include>
+					<label>$LOCALIZE[19204]</label>
+				</control>
 				<control type="button" id="30">
 					<description>Group Manager</description>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[19205]</label>
 				</control>
 				<control type="label" id="1">
-					<width>228</width>
+					<width>143</width>
 				</control>
 				<control type="button" id="5">
 					<description>Apply changes</description>
