@@ -44,6 +44,12 @@ jobs:
           echo ::set-output name=changes::$changes
         working-directory: ${{ github.event.repository.name }}
 
+      - name: Remove Unwanted Files
+        run: |
+          mv .git ..
+          mv .github ..
+        working-directory: ${{ github.event.repository.name }}
+
       - name: Create Zip (Matrix)
         id: zip-matrix
         run: |
