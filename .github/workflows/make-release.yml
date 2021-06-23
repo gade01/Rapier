@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'
+      - '*-dev'
 
 jobs:
   release:
@@ -17,6 +18,12 @@ jobs:
         id: release
         run: |
           version=${GITHUB_REF/refs\/tags\//}
+          if [[ $version == *-dev ]] ;
+          then
+            echo ::set-output name=pre-release::true
+          else
+            echo ::set-output name=pre-release::false
+          fi
 
       - name: Checkout Add-on
         uses: actions/checkout@v2
