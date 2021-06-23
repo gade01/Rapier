@@ -33,4 +33,4 @@ jobs:
       - name: Kodi Add-on Checker
         id: kodi-addon-checker
         run: |
-          kodi-addon-checker ${{ github.event.repository.name }} --branch=master
+          kodi-addon-checker ${{ github.event.repository.name }} --branch=matrix
