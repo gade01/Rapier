@@ -17,12 +17,6 @@ jobs:
         id: release
         run: |
           version=${GITHUB_REF/refs\/tags\//}
-          if [[ $version == v12.* ]] ;
-          then
-            echo ::set-output name=Matrix::true
-          else
-            echo ::set-output name=Matrix::false
-          fi
 
       - name: Checkout Add-on
         uses: actions/checkout@v2
