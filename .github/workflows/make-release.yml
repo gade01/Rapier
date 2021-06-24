@@ -37,7 +37,7 @@ jobs:
           changes="${changes//$'\r'/'%0D'}"
           changes="${changes//$'[B]'/'**'}"
           changes="${changes//$'[/B]'/'**'}"
-          changes="${changes//$'[I]'/'%0A%0A*'}"
+          changes="${changes//$'[I]'/'%0A%0A%0A*'}"
           changes="${changes//$'[/I]'/'*'}"
           echo ::set-output name=changes::$changes
         working-directory: ${{ github.event.repository.name }}
@@ -52,7 +52,7 @@ jobs:
         id: zip-matrix
         run: |
           version=$(xmlstarlet sel -t -v 'string(/addon/@version)' addon.xml)
-          filename=${{ github.event.repository.name }}-${version}.zip
+          filename=skin.rapier-${version}.zip
           cd ..
           zip -r $filename ${{ github.event.repository.name }}
           echo ::set-output name=filename::$filename
@@ -65,7 +65,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          release_name: Matrix ${{ github.ref }}
           body: ${{ steps.changelog.outputs.changes }}
           draft: false
           prerelease: ${{ steps.release.outputs.pre-release }}
