@@ -37,7 +37,7 @@ jobs:
           changes="${changes//$'\r'/'%0D'}"
           changes="${changes//$'[B]'/'**'}"
           changes="${changes//$'[/B]'/'**'}"
-          changes="${changes//$'[I]'/'*'}"
+          changes="${changes//$'[I]'/'%0A%0A*'}"
           changes="${changes//$'[/I]'/'*'}"
           echo ::set-output name=changes::$changes
         working-directory: ${{ github.event.repository.name }}
