@@ -686,7 +686,7 @@
 				<height>20</height>
 				<texture background="true">$INFO[ListItem.Overlay]</texture>
 				<aspectratio align="right">keep</aspectratio>
-				<include condition="!Skin.HasSetting(DisableListFocusAnim)">ListViewCoverFocusAnim</include>
+				<include>ListViewCoverFocusAnim</include>
 				<visible>!Skin.HasSetting(HideTVShowsListInfo2Overlay) + !Container.Content(Seasons)</visible>
 			</control>
 			<control type="group">
@@ -849,7 +849,7 @@
 				<aspectratio>stretch</aspectratio>
 				<visible>Control.HasFocus(59)</visible>
 				<include>ListViewSelectFadeAnim</include>
-				<include condition="!Skin.HasSetting(DisableListScrollAnim) + [String.IsEmpty(Skin.String(TVShowsListInfo2Style)) | Skin.String(TVShowsListInfo2Style,3)]">ListViewScrollAnim</include>
+				<include condition="String.IsEmpty(Skin.String(TVShowsListInfo2Style)) | Skin.String(TVShowsListInfo2Style,3)">ListViewScrollAnim</include>
 			</control>
 			<control type="image">
 				<width>630</width>
