@@ -112,7 +112,7 @@
 						<control type="image">
 							<width>120</width>
 							<height>64</height>
-							<texture>$INFO[Listitem.Icon]</texture>
+							<texture>$VAR[DialogSelectImage]</texture>
 							<bordersize>8</bordersize>
 							<aspectratio>keep</aspectratio>
 						</control>
@@ -170,7 +170,7 @@
 						<control type="image">
 							<width>120</width>
 							<height>64</height>
-							<texture>$INFO[Listitem.Icon]</texture>
+							<texture>$VAR[DialogSelectImage]</texture>
 							<bordersize>8</bordersize>
 							<aspectratio>keep</aspectratio>
 						</control>
@@ -253,9 +253,8 @@
 						<top>5</top>
 						<width>394</width>
 						<height>394</height>
-						<info>Container(6).ListItem.Icon</info>
+						<texture background="true">$VAR[DialogSelectImage]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<visible>!String.IsEmpty(Container(6).ListItem.Icon)</visible>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<include>ControlsOpenCloseAnim</include>
 					</control>

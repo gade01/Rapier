@@ -311,6 +311,11 @@
 		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	
+	<variable name="DialogSelectImage">
+		<value condition="!String.IsEmpty(Container(6).ListItem.Art(poster))">$INFO[Container(6).ListItem.Art(poster)]</value>
+		<value>$INFO[Container(6).ListItem.Icon]</value>
+	</variable>
+	
 	<variable name="ViewOptionsScrollbarLabel">
 		<value condition="Skin.HasSetting(EnableQuickJump)">$LOCALIZE[31135]</value>
 		<value>$LOCALIZE[31025]</value>
