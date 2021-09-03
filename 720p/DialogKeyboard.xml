@@ -172,7 +172,23 @@
 						<top>57</top>
 						<control type="button" id="309">
 							<description>Layout button</description>
-							<left>150</left>
+							<left>50</left>
+							<width>200</width>
+							<height>35</height>
+							<label>20177</label>
+							<onup condition="!Control.IsVisible(5000)">904</onup>
+							<onup condition="Control.IsVisible(5000)">5000</onup>
+							<ondown>902</ondown>
+							<onright condition="Control.IsVisible(310)">310</onright>
+							<onright condition="!Control.IsVisible(310)">305</onright>
+							<onleft>306</onleft>
+							<include>KeyboardBigBtn</include>
+							<animation effect="slide" end="100,0" condition="!Control.IsVisible(310)">Conditional</animation>
+						</control>
+						
+						<control type="button" id="310">
+							<description>Password button</description>
+							<left>300</left>
 							<width>200</width>
 							<height>35</height>
 							<label>20177</label>
@@ -180,13 +196,13 @@
 							<onup condition="Control.IsVisible(5000)">5000</onup>
 							<ondown>902</ondown>
 							<onright>305</onright>
-							<onleft>306</onleft>
+							<onleft>309</onleft>
 							<include>KeyboardBigBtn</include>
 						</control>
 						
 						<control type="button" id="305">
 							<description>Previous Key</description>
-							<left>450</left>
+							<left>550</left>
 							<width>98</width>
 							<height>35</height>
 							<font>DialogTitleFont</font>
@@ -195,13 +211,15 @@
 							<onup condition="!Control.IsVisible(5000)">904</onup>
 							<onup condition="Control.IsVisible(5000)">5000</onup>
 							<ondown>902</ondown>
-							<onleft>309</onleft>
+							<onleft condition="Control.IsVisible(310)">310</onleft>
+							<onleft condition="!Control.IsVisible(310)">309</onleft>
 							<onright>306</onright>
+							<animation effect="slide" end="-100,0" condition="!Control.IsVisible(310)">Conditional</animation>
 						</control>
 						
 						<control type="button" id="306">
 							<description>Next Key</description>
-							<left>550</left>
+							<left>650</left>
 							<width>98</width>
 							<height>35</height>
 							<font>DialogTitleFont</font>
@@ -212,6 +230,7 @@
 							<ondown>902</ondown>
 							<onleft>305</onleft>
 							<onright>309</onright>
+							<animation effect="slide" end="-100,0" condition="!Control.IsVisible(310)">Conditional</animation>
 						</control>
 					</control>
 
@@ -252,25 +271,29 @@
 							<control type="button" id="103">
 								<description>(0,3) key button</description>
 								<include>KeyboardSmallBtn</include>
-								<onup>309</onup>
+								<onup condition="Control.IsVisible(310)">310</onup>
+								<onup condition="!Control.IsVisible(310)">309</onup>
 								<ondown>123</ondown>
 							</control>
 							<control type="button" id="104">
 								<description>(0,4) key button</description>
 								<include>KeyboardSmallBtn</include>
-								<onup>309</onup>
+								<onup condition="Control.IsVisible(310)">310</onup>
+								<onup condition="!Control.IsVisible(310)">309</onup>
 								<ondown>124</ondown>
 							</control>
 							<control type="button" id="105">
 								<description>(0,5) key button</description>
 								<include>KeyboardSmallBtn</include>
-								<onup>305</onup>
+								<onup condition="Control.IsVisible(310)">310</onup>
+								<onup condition="!Control.IsVisible(310)">305</onup>
 								<ondown>125</ondown>
 							</control>
 							<control type="button" id="106">
 								<description>(0,6) key button</description>
 								<include>KeyboardSmallBtn</include>
-								<onup>305</onup>
+								<onup condition="Control.IsVisible(310)">310</onup>
+								<onup condition="!Control.IsVisible(310)">305</onup>
 								<ondown>126</ondown>
 							</control>
 							<control type="button" id="107">
