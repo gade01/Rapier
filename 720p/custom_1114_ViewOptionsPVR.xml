@@ -89,6 +89,14 @@
 				<include>ReloadSkinNotification</include>
 				<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 			</control>
+			<control type="radiobutton" id="483">
+				<description>Genre Colours (Guide)</description>
+				<include>DropDownMenuRadioBtn</include>
+				<label>$LOCALIZE[31062]</label>
+				<selected>!Skin.HasSetting(DisablePVRGuideColours)</selected>
+				<onclick>Skin.ToggleSetting(DisablePVRGuideColours)</onclick>
+				<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+			</control>
 			<control type="image" id="781">
 				<include>DropDownMenuBottomBorder</include>
 			</control>
