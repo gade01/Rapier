@@ -664,7 +664,8 @@
 							<onleft>987</onleft>
 							<onright condition="Control.IsVisible(61)">61</onright>
 							<onright condition="!Control.IsVisible(61)">987</onright>
-							<ondown condition="Control.IsVisible(61)">61</ondown>
+							<ondown condition="Control.IsVisible(966)">966</ondown>
+							<ondown condition="!Control.IsVisible(966) + Control.IsVisible(61)">61</ondown>
 							<itemlayout height="29">
 								<control type="image">
 									<top>27</top>
@@ -763,7 +764,7 @@
 									<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
 									<onclick condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onclick>
 									<onclick condition="System.AddonIsEnabled(script.embuary.info)">RunScript(script.embuary.info,call=person,query='"$INFO[Window(home).Property(SkinHelper.ListItem.Director)]"')</onclick>
-									<visible>System.AddonIsEnabled(script.skin.helper.service)</visible>
+									<visible>System.AddonIsEnabled(script.skin.helper.service) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Director))</visible>
 								</item>
 								<item id="3">
 									<description>Writer</description>
@@ -772,7 +773,7 @@
 									<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
 									<onclick condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onclick>
 									<onclick condition="System.AddonIsEnabled(script.embuary.info)">RunScript(script.embuary.info,call=person,query='"$INFO[Window(home).Property(SkinHelper.ListItem.Writer)]"')</onclick>
-									<visible>System.AddonIsEnabled(script.skin.helper.service)</visible>
+									<visible>System.AddonIsEnabled(script.skin.helper.service) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Writer))</visible>
 								</item>
 								<item id="4">
 									<description>Year</description>
@@ -796,13 +797,13 @@
 									<description>Studio</description>
 									<label>$LOCALIZE[572]</label>
 									<label2>$INFO[Window(home).Property(SkinHelper.ListItem.Studio)]</label2>
-									<visible>System.AddonIsEnabled(script.skin.helper.service)</visible>
+									<visible>System.AddonIsEnabled(script.skin.helper.service) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Studio))</visible>
 								</item>
 								<item id="8">
 									<description>Country</description>
 									<label>$LOCALIZE[574]</label>
 									<label2>$INFO[Window(home).Property(SkinHelper.ListItem.Country)]</label2>
-									<visible>System.AddonIsEnabled(script.skin.helper.service)</visible>
+									<visible>System.AddonIsEnabled(script.skin.helper.service) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Country))</visible>
 								</item>
 							</content>
 						</control>
