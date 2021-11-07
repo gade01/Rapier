@@ -721,7 +721,7 @@
 				<visible>!Window.IsActive(MyPVRGuide.xml)</visible>
 			</control>
 			<control type="image">
-				<visible>!String.IsEmpty(Control.GetLabel(29)) + !Window.IsActive(MyPVRGuide.xml)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(29)) + ![Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRSearch.xml)]</visible>
 				<include>BreadCrumbSeparator</include>
 				<include>BreadCrumbSlideLvl3Anim</include>
 			</control>

@@ -4,7 +4,7 @@
 
 	<coordinates>
 		<system>1</system>
-		<origin x="203" y="95">true</origin>
+		<origin x="203" y="80">true</origin>
 	</coordinates>
 
 	<controls>
@@ -14,7 +14,7 @@
 			
 			<include content="DialogWithCloseBtn">
 				<param name="width" value="875"/>
-				<param name="height" value="530" />
+				<param name="height" value="570" />
 				<param name="left" value="815" />
 			</include>
 
@@ -28,8 +28,9 @@
 
 			<control type="grouplist" id="9000">
 				<description>Dialog Button Area</description>
-				<left>183</left>
-				<top>477</top>
+				<top>517</top>
+				<width>875</width>
+				<align>center</align>
 				<onup>27</onup>
 				<ondown>9</ondown>
 				<orientation>horizontal</orientation>
@@ -43,6 +44,11 @@
 					<description>Cancel Button</description>
 					<include>DialogMenuBarBtn</include>
 					<label>$LOCALIZE[222]</label>
+				</control>
+				<control type="button" id="29">
+					<description>Save Button</description>
+					<include>DialogMenuBarBtn</include>
+					<label>$LOCALIZE[190]</label>
 				</control>
 				<control type="button" id="26">
 					<description>Search Button</description>
@@ -80,12 +86,13 @@
 				<control type="textbox">
 					<description>Search help</description>
 					<left>3</left>
-					<top>37</top>
+					<top>45</top>
 					<width>800</width>
 					<height>58</height>
 					<aligny>top</aligny>
-					<align>justify</align>
+					<align>center</align>
 					<wrapmultiline>true</wrapmultiline>
+					<font>SettingsContentFont2</font>
 					<include>DialogContentLabel</include>
 					<label>$LOCALIZE[19001] $LOCALIZE[19002]</label>
 					<include>ControlsOpenCloseAnim</include>
@@ -122,6 +129,12 @@
 						<textwidth>385</textwidth>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[19129]</label>
+					</control>
+					<control type="radiobutton" id="30">
+						<description>Ignore finished broadcasts</description>
+						<width>400</width>
+						<include>DialogContentLabel</include>
+						<label>$LOCALIZE[19339]</label>
 					</control>
 					<control type="spincontrolex" id="18">
 						<description>Genre</description>
@@ -181,6 +194,12 @@
 						<textwidth>385</textwidth>
 						<include>DialogContentLabel</include>
 						<label>$LOCALIZE[19127]</label>
+					</control>
+					<control type="radiobutton" id="31">
+						<description>Ignore future broadcasts</description>
+						<width>400</width>
+						<include>DialogContentLabel</include>
+						<label>$LOCALIZE[19340]</label>
 					</control>
 					<control type="radiobutton" id="19">
 						<description>avoid repeats</description>
