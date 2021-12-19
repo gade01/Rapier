@@ -741,6 +741,7 @@
 				</control>
 			</control>
 			
+			<!--
 			<control type="panel" id="966">
 				<description>Most Loved Tracks</description>
 				<left>100</left>
@@ -755,7 +756,7 @@
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>Skin.String(MusicInfoMenubar,MostLovedTracks)</visible>
+				<visible>System.AddonIsEnabled(script.extendedinfo) + Skin.String(MusicInfoMenubar,MostLovedTracks)</visible>
 				<itemlayout height="173" width="271">
 					<control type="image">
 						<width>268</width>
@@ -869,7 +870,7 @@
 				<ondown condition="Control.IsVisible(61)">61</ondown>
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
-				<visible>Skin.String(MusicInfoMenubar,SimilarArtists)</visible>
+				<visible>System.AddonIsEnabled(script.extendedinfo) + Skin.String(MusicInfoMenubar,SimilarArtists)</visible>
 				<itemlayout height="173" width="155">
 					<control type="image">
 						<width>152</width>
@@ -985,7 +986,7 @@
 				<onup>901</onup>
 				<onright condition="Control.IsVisible(61)">61</onright>
 				<include>FSMediaInfoOpenCloseAnim</include>
-				<visible>Skin.String(MusicInfoMenubar,Discography)</visible>
+				<visible>System.AddonIsEnabled(script.extendedinfo) + Skin.String(MusicInfoMenubar,Discography)</visible>
 				<itemlayout height="173" width="181">
 					<control type="image">
 						<width>173</width>
@@ -1086,6 +1087,7 @@
 				</focusedlayout>
 				<content sortorder="ascending" sortby="year">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]&amp;&amp;limit=20</content>
 			</control>
+			-->
 			
 			<include content="MusicVideosPanel">
 				<param name="visible" value="Skin.String(MusicInfoMenubar,MusicVideosArtist)" />
@@ -1097,6 +1099,7 @@
 				<param name="content" value="plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist] $INFO[ListItem.Album] music video/" />
 			</include>
 			
+			<!--
 			<control type="textbox">
 				<description>No popular tracks / similar artists / discography Label</description>
 				<left>100</left>
@@ -1111,6 +1114,7 @@
 				<visible>[Skin.String(MusicInfoMenubar,MostLovedTracks) + String.IsEmpty(Container(966).ListItem.Label)] | [Skin.String(MusicInfoMenubar,SimilarArtists) + String.IsEmpty(Container(967).ListItem.Label)] | [Skin.String(MusicInfoMenubar,Discography) + String.IsEmpty(Container(968).ListItem.Label)]</visible>
 				<include>FSMediaInfoOpenCloseAnim</include>
 			</control>
+			-->
 			
 			<control type="image">
 				<top>651</top>
