@@ -20,10 +20,11 @@
 		<include condition="!Skin.HasSetting(HideWidgetBackgrounds)">HomePanelFanart</include>
 		
 		<control type="group">
-			<visible>![$EXP[ExtendedinfoInfoDialogs]]</visible>
+			<visible>![Window.IsActive(1117) | $EXP[ExtendedinfoInfoDialogs] | $EXP[EmbuaryInfoDialogs]]</visible>
 			<include>BackgroundVisibleAnim</include>
 			
 			<control type="group">
+				<visible>!Window.IsActive(MovieInformation) + !Window.IsActive(AddonInformation)</visible>
 				<depth>DepthContent</depth>
 				<include condition="!Skin.HasSetting(HideRecentlyAddedHomePanel)">RecentlyAddedPanel</include>
 				<include condition="!Skin.HasSetting(HideRecentlyAddedHomePanel) + !Skin.HasSetting(HideWatchListHomePanel)">WatchListPanel</include>
@@ -47,6 +48,7 @@
 						
 			<control type="group" id="510">
 				<description>Menu Area</description>
+				<visible>!Window.IsActive(MovieInformation) + !Window.IsActive(AddonInformation)</visible>
 				<depth>DepthHomeMenu</depth>
 				<top>606</top>
 				<include>HomeMenuPaneImage</include>
