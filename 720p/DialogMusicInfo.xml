@@ -9,9 +9,6 @@
 	<controls>
 		<control type="group">
 			<depth>DepthBackground</depth>
-			<include>BackgroundDefault</include>
-			<include condition="[[!String.IsEmpty(Skin.String(CustomMusicBGPath)) + [Skin.String(CustomMusicBGType,2) | Skin.String(CustomMusicBGType,3)]] 
-			| Skin.String(CustomMusicBGType,4)] + Skin.HasSetting(ApplyAllMusicCustomBG)">BackgroundMusic</include>
 			<include>BackgroundMusicFanart</include>
 			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
 			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
@@ -20,7 +17,7 @@
 		</control>
 		
 		<control type="group">
-			<visible>![$EXP[ExtendedinfoInfoDialogs]]</visible>
+			<visible>![$EXP[EmbuaryInfoDialogs]]</visible>
 			<depth>DepthContent</depth>
 			
 			<control type="group">
