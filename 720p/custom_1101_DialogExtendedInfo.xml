@@ -73,9 +73,11 @@
 				<textwidth>137</textwidth>
 				<include>DropDownMenuBtn</include>
 				<label>$LOCALIZE[20389]</label>
-				<onclick>Dialog.Close(1101)</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,artist)">Skin.SetString(MusicInfoMenubar,MusicVideosArtist)</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">Skin.SetString(MusicInfoMenubar,MusicVideosAlbum)</onclick>
+				<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
+				<onclick condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">EnableAddon(plugin.video.youtube)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">Dialog.Close(1101)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,artist)">Skin.SetString(MusicInfoMenubar,MusicVideosArtist)</onclick>
+				<onclick condition="System.AddonIsEnabled(plugin.video.youtube) + String.IsEqual(ListItem.DBTYPE,album)">Skin.SetString(MusicInfoMenubar,MusicVideosAlbum)</onclick>
 			</control>
 			<control type="button" id="786">
 				<description>Search Youtube</description>
