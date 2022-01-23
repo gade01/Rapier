@@ -60,22 +60,51 @@
 			<texturenofocus border="10">settings/calibrate-pixelratio-nofocus.png</texturenofocus>
 		</control>
 		
+		<control type="mover" id="12">
+			<description>Reset Calibration</description>
+			<left>0</left>
+			<top>620</top>
+			<width>100</width>
+			<height>100</height>
+			<texturefocus>settings/calibrate-reset-focus.png</texturefocus>
+			<texturenofocus colordiffuse="66ffffff">settings/calibrate-reset-nofocus.png</texturenofocus>
+		</control>
+		
 		<control type="group">
-			<top>50</top>
+			<top>14</top>
+			
+			<control type="label">
+				<description>Window Title</description>
+				<width>ScreenWidth</width>
+				<font>ProfileNameFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<align>center</align>
+				<label>[B]$LOCALIZE[214][/B]</label>
+			</control>
 			
 			<control type="label" id="2">
 				<description>Coordinates</description>
+				<top>34</top>
 				<width>ScreenWidth</width>
-				<font>ScreenCalibrationFont</font>
+				<font>DialogTitleFont</font>
 				<textcolor>GreyColor2</textcolor>
 				<align>center</align>
 			</control>
 			
 			<control type="label" id="3">
 				<description>Help Information</description>
-				<top>40</top>
+				<top>71</top>
 				<width>ScreenWidth</width>
 				<font>ScreenCalibrationFont</font>
+				<textcolor>GreyColor2</textcolor>
+				<align>center</align>
+			</control>
+			
+			<control type="label" id="4">
+				<description>Calibration Value</description>
+				<top>119</top>
+				<width>ScreenWidth</width>
+				<font>DialogTitleFont</font>
 				<textcolor>GreyColor2</textcolor>
 				<align>center</align>
 			</control>
