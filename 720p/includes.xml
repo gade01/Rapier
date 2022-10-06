@@ -5,10 +5,10 @@
 	<include file="includes_Animations.xml"/>
 	<include file="includes_Backgrounds.xml"/>
 	<include file="includes_BreadCrumbs.xml"/>
-	<include file="includes_Controllers.xml"/>
 	<include file="includes_Dialogs.xml"/>
 	<include file="includes_DialogSelect.xml"/>
 	<include file="includes_Fonts.xml"/>
+	<include file="includes_Games.xml"/>
 	<include file="includes_Home.xml"/>
 	<include file="includes_HomeCustomWidgets.xml"/>
 	<include file="includes_InfoPane.xml"/>
@@ -2148,6 +2148,11 @@
 		<value>$LOCALIZE[31438]</value>
 	</variable>
 	
+	<variable name="SkinSettingOSDAutoCloseTime">
+		<value condition="!String.IsEmpty(Skin.String(OSDAutoCloseTime))">$INFO[Skin.String(OSDAutoCloseTime)]</value>
+		<value>4</value>
+	</variable>
+	
 	<variable name="StatusUISoundsVar">
 		<value condition="System.AddonIsEnabled(resource.uisounds.rapier)">$INFO[System.AddonVersion(resource.uisounds.rapier)] $LOCALIZE[31437]</value>
 		<value condition="System.HasAddon(resource.uisounds.rapier) + !System.AddonIsEnabled(resource.uisounds.rapier)">$LOCALIZE[24023]</value>
@@ -2306,7 +2311,7 @@
 	<variable name="SeekbarLabels">
 		<value condition="Player.Caching">$INFO[Player.CacheLevel,,%]</value>
 		<value condition="!String.IsEmpty(Player.SeekStepSize)">$INFO[Player.SeekStepSize]</value>
-		<value condition="!String.IsEmpty(Player.SeekOffset) + Player.DisplayAfterSeek">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
+		<value condition="!String.IsEmpty(Player.SeekOffset) + Player.HasPerformedSeek(3)">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
 		<value condition="Player.Paused">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
 		<value condition="Player.Forwarding2x">+2X</value>
 		<value condition="Player.Forwarding4x">+4X</value>
