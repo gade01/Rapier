@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">500</defaultcontrol>
+	<menucontrol>850</menucontrol>
+	<views>63,52</views>
+	
+	<controls>
+		<control type="group">
+			<depth>DepthBackground</depth>
+			<include>BackgroundDefault</include>
+			<include condition="!Skin.HasSetting(DisableVideoPlayingBG)">BackgroundVideoPlaying</include>
+			<include condition="!Skin.HasSetting(DisableMusicPlayingBG)">BackgroundMusicPlaying</include>
+			<include>BackgroundOpenCloseAnim</include>
+		</control>
+		
+		<control type="group">
+			<depth>DepthContent</depth>
+			<include>MediaInfoOpenCloseAnim</include>
+			<include>AlbumThumbsView</include> <!-- 63 -->
+			<include>ListView</include> <!-- 52 -->
+		</control>
+		
+		<include>MediaMenuBar</include>
+		
+		<control type="group">
+			<description>Top Bar Area</description>
+			<depth>DepthTopBar</depth>
+			<include>TopBarImage</include>
+			<include>TopBarOpenCloseAnim</include>
+			<include>BreadCrumbFavourites</include>
+			<include>Notifications</include>
+			<include>SortLetterNotification</include>
+		</control>
+	</controls>
+</window>

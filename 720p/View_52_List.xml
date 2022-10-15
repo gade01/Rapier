@@ -479,7 +479,7 @@
 			<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 			<bordersize>5</bordersize>
 			<texture background="true" colordiffuse="ffdddddd">$PARAM[texture]</texture>
-			<aspectratio>scale</aspectratio>
+			<aspectratio>$PARAM[texture_aspectratio]</aspectratio>
 		</control>
 		<control type="group">
 			<include>MissingVideoFadeAnim</include>
@@ -561,7 +561,7 @@
 			<bordertexture border="7">covers/cover-case-nofocus.png</bordertexture>
 			<bordersize>5</bordersize>
 			<texture background="true">$PARAM[texture]</texture>
-			<aspectratio>scale</aspectratio>
+			<aspectratio>$PARAM[texture_aspectratio]</aspectratio>
 			<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ListViewCoverFocusAnim</include>
 		</control>
 		<control type="group">
@@ -722,6 +722,7 @@
 				<param name="width" value="53" />
 				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />
 				<param name="label_width" value="555" />
@@ -752,6 +753,7 @@
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -781,6 +783,7 @@
 				<param name="width" value="53" />
 				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />
 				<param name="label_width" value="555" />
@@ -809,6 +812,7 @@
 				<param name="width" value="53" />
 				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />
 				<param name="label_width" value="555" />
@@ -833,6 +837,7 @@
 				<param name="width" value="97" />
 				<param name="height" value="65" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="104" />
 				<param name="label_width" value="511" />
@@ -861,6 +866,7 @@
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -878,6 +884,7 @@
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -896,12 +903,27 @@
 				<info>ListItem.Property(Addon.Status)</info>
 			</control>
 		</itemlayout>
+		<itemlayout condition="Container.Content(Favourites)" height="74">
+			<include content="ListTallStyleItemlayoutContent">
+				<param name="top" value="0" />
+				<param name="width" value="73" />
+				<param name="height" value="73" />
+				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="keep" />
+				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				<param name="label_left" value="80" />
+				<param name="label_width" value="535" />
+				<param name="label" value="$INFO[ListItem.Label]" />
+				<param name="label2" value="$INFO[ListItem.Property(favourite.action),$LOCALIZE[15217]: ,]$INFO[ListItem.Property(favourite.provider), - $LOCALIZE[15225]: ,]" />
+			</include>
+		</itemlayout>
 		<itemlayout height="74">
 			<include content="ListTallStyleItemlayoutContent">
 				<param name="top" value="0" />
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb) + ![[Container.Content(Genres) | Container.Content(Countries)] + !ListItem.IsParentFolder]" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -959,6 +981,7 @@
 				<param name="width" value="53" />
 				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />
 				<param name="label_width" value="555" />
@@ -989,6 +1012,7 @@
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -1018,6 +1042,7 @@
 				<param name="width" value="53" />
 				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />
 				<param name="label_width" value="555" />
@@ -1045,6 +1070,7 @@
 				<param name="width" value="53" />
 				<param name="height" value="73" />
 				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="60" />
 				<param name="label_width" value="555" />
@@ -1068,6 +1094,7 @@
 				<param name="width" value="97" />
 				<param name="height" value="65" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="104" />
 				<param name="label_width" value="511" />
@@ -1096,6 +1123,7 @@
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -1113,6 +1141,7 @@
 				<param name="width" value="73" />
 				<param name="height" value="73" />
 				<param name="texture" value="$INFO[ListItem.Thumb]" />
+				<param name="texture_aspectratio" value="scale" />
 				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
 				<param name="label_left" value="80" />
 				<param name="label_width" value="535" />
@@ -1130,6 +1159,20 @@
 				<align>right</align>
 				<info>ListItem.Property(Addon.Status)</info>
 			</control>
+		</focusedlayout>
+		<focusedlayout condition="Container.Content(Favourites)" height="74">
+			<include content="ListTallStyleFocusedlayoutContent">
+				<param name="top" value="0" />
+				<param name="width" value="73" />
+				<param name="height" value="73" />
+				<param name="texture" value="$VAR[PosterThumb]" />
+				<param name="texture_aspectratio" value="keep" />
+				<param name="visible_actualicon" value="String.IsEmpty(ListItem.Thumb)" />
+				<param name="label_left" value="80" />
+				<param name="label_width" value="535" />
+				<param name="label" value="$INFO[ListItem.Label]" />
+				<param name="label2" value="$INFO[ListItem.Property(favourite.action),$LOCALIZE[15217]: ,]$INFO[ListItem.Property(favourite.provider), - $LOCALIZE[15225]: ,]" />
+			</include>
 		</focusedlayout>
 		<focusedlayout height="74">
 			<include content="ListTallStyleFocusedlayoutContent">

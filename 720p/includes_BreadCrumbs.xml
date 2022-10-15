@@ -803,6 +803,36 @@
 		</control>
 	</include>
 	
+	<include name="BreadCrumbFavourites">
+		<control type="grouplist">
+			<left>10</left>
+			<top>StatusBartop</top>
+			<height>43</height>
+			<width>740</width>
+			<itemgap>8</itemgap>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="button" id="555">
+				<include>BreadCrumbHomeIcon</include>
+				<include>BreadCrumbSlideLvl1Anim</include>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl1Anim</include>
+			</control>
+			<control type="label" id="5501">
+				<description>Favourites</description>
+				<include>BreadCrumbLabel</include>
+				<label>[UPPERCASE]$LOCALIZE[1036][/UPPERCASE]</label>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+			<control type="image">
+				<include>BreadCrumbSeparator</include>
+				<include>BreadCrumbSlideLvl2Anim</include>
+			</control>
+		</control>
+	</include>
+	
 	<include name="BreadCrumbSettings">
 		<control type="grouplist">
 			<left>10</left>

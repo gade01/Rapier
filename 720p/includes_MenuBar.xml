@@ -221,6 +221,8 @@
 				<texturefocus>gui/menu-bar-favourites-focus.png</texturefocus>
 				<texturenofocus>gui/menu-bar-favourites-nofocus.png</texturenofocus>
 				<onclick>ActivateWindow(Favourites)</onclick>
+				<animation effect="fade" start="100" end="60" condition="Window.IsActive(favouritesbrowser)">Conditional</animation>
+				<enable>!Window.IsActive(favouritesbrowser)</enable>
 			</control>
 			<control type="togglebutton" id="347">
 				<description>Extra Options</description>

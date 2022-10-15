@@ -32,7 +32,7 @@
 				<onclick>Container.SetViewMode(50)</onclick>
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)
-				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)]</visible>
+				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons) | Container.Content(favourites)]</visible>
 			</control>
 
 			<control type="button" id="3">
@@ -40,10 +40,10 @@
 				<include>DropDownMenuViewModeBtn</include>
 				<label>$LOCALIZE[31103]</label>
 				<onclick condition="Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)">Container.SetViewMode(54)</onclick>
-				<onclick condition="Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)">Container.SetViewMode(63)</onclick>
+				<onclick condition="Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons) | Container.Content(favourites)">Container.SetViewMode(63)</onclick>
 				<onclick>Dialog.Close(1112)</onclick>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)
-				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
+				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons) | Container.Content(favourites)</visible>
 			</control>
 
 			<control type="button" id="4">
@@ -190,7 +190,7 @@
 				<texture>gui/view-icon.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | Container.Content(TVShows)
-				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)]</visible>
+				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons) | Container.Content(favourites)]</visible>
 			</control>
 			<control type="image">
 				<width>38</width>
@@ -205,7 +205,7 @@
 				<texture>gui/view-thumbnail.png</texture>
 				<aspectratio align="left">stretch</aspectratio>
 				<visible>Container.Content(Movies) | Container.Content(Sets) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(UseTVShowsPosterCover)]
-				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons)</visible>
+				| Container.Content(Albums) | Container.Content(Songs) | Window.IsActive(MusicPlaylist) | Container.Content(Addons) | Container.Content(favourites)</visible>
 			</control>
 			<control type="image">
 				<width>38</width>

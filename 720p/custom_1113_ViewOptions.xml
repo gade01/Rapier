@@ -67,7 +67,7 @@
 				<label>$LOCALIZE[31042]</label>
 				<selected>Skin.HasSetting(HideAlbumThumbsLabel)</selected>
 				<onclick>Skin.ToggleSetting(HideAlbumThumbsLabel)</onclick>
-				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists) | Container.Content(Addons) | Container.Content(Games)]</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Container.Content(Albums) | Container.Content(Songs) | Container.Content(Artists) | Container.Content(Addons) | Container.Content(Games) | Container.Content(favourites)]</visible>
 			</control>
 			<control type="radiobutton" id="3089">
 				<description>Thumbnail Show Year (Movies) (Sets) (TVShows) (Seasons)</description>
@@ -712,7 +712,7 @@
 				<label>$VAR[ViewOptionsScrollbarLabel]</label>
 				<selected>!Skin.HasSetting(ShowThumbnailViewScrollbar)</selected>
 				<onclick>Skin.ToggleSetting(ShowThumbnailViewScrollbar)</onclick>
-				<visible>Skin.String(CurrentViewMode,63) + [Window.IsActive(Music) | Container.Content(Addons) | Container.Content(Games)]</visible>
+				<visible>Skin.String(CurrentViewMode,63) + [Window.IsActive(Music) | Container.Content(Addons) | Container.Content(Games) | Container.Content(favourites)]</visible>
 			</control>
 			<control type="radiobutton" id="2062">
 				<description>Thumbnail Hide Scrollbar</description>

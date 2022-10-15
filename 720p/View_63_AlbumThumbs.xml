@@ -51,6 +51,7 @@
 	</variable>
 	
 	<variable name="AlbumThumbsLabel2">
+		<value condition="Container.Content(favourites)">$INFO[ListItem.Property(favourite.provider),$LOCALIZE[15225]: ,]</value>
 		<value condition="Container.Content(Addons)">$INFO[ListItem.AddonVersion]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
@@ -71,7 +72,7 @@
 			<height>$PARAM[size]</height>
 			<bordersize>$PARAM[image_bordersize]</bordersize>
 			<texture background="true">$INFO[ListItem.Thumb]</texture>
-			<aspectratio>scale</aspectratio>
+			<aspectratio>$PARAM[image_aspectratio]</aspectratio>
 		</control>
 		<control type="image">
 			<description>Default Cover</description>
@@ -122,19 +123,49 @@
 			<ondown>63</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist)</visible>
-			<itemlayout height="270" width="249">
+			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist) | Container.Content(favourites)</visible>
+			<itemlayout height="270" width="249" condition="Container.Content(favourites)">
 				<include content="AlbumThumbsContainerLayout">
 					<param name="left" value="10" />
 					<param name="size" value="231" />
 					<param name="cover_texture" value="covers/cover-case-thumbnail-nofocus.png" />
 					<param name="image_bordersize" value="14" />
+					<param name="image_aspectratio" value="keep" />
 					<param name="actualicon_bordersize" value="45" />
 					<param name="actualicon_fade" value="true" />
 					<param name="textbox_top" value="24" />
 					<param name="textbox_size" value="203" />
 				</include>
 			</itemlayout>
+			<itemlayout height="270" width="249">
+				<include content="AlbumThumbsContainerLayout">
+					<param name="left" value="10" />
+					<param name="size" value="231" />
+					<param name="cover_texture" value="covers/cover-case-thumbnail-nofocus.png" />
+					<param name="image_bordersize" value="14" />
+					<param name="image_aspectratio" value="scale" />
+					<param name="actualicon_bordersize" value="45" />
+					<param name="actualicon_fade" value="true" />
+					<param name="textbox_top" value="24" />
+					<param name="textbox_size" value="203" />
+				</include>
+			</itemlayout>
+			<focusedlayout height="270" width="249" condition="Container.Content(favourites)">
+				<control type="group">
+					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim3</include>
+					<include content="AlbumThumbsContainerLayout">
+						<param name="left" value="10" />
+						<param name="size" value="231" />
+						<param name="cover_texture" value="covers/cover-case-thumbnail-focus.png" />
+						<param name="image_bordersize" value="14" />
+						<param name="image_aspectratio" value="keep" />
+						<param name="actualicon_bordersize" value="45" />
+						<param name="actualicon_fade" value="false" />
+						<param name="textbox_top" value="24" />
+						<param name="textbox_size" value="203" />
+					</include>
+				</control>
+			</focusedlayout>
 			<focusedlayout height="270" width="249">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim3</include>
@@ -143,6 +174,7 @@
 						<param name="size" value="231" />
 						<param name="cover_texture" value="covers/cover-case-thumbnail-focus.png" />
 						<param name="image_bordersize" value="14" />
+						<param name="image_aspectratio" value="scale" />
 						<param name="actualicon_bordersize" value="45" />
 						<param name="actualicon_fade" value="false" />
 						<param name="textbox_top" value="24" />
@@ -167,19 +199,49 @@
 			<ondown>63</ondown>
 			<onleft>850</onleft>
 			<onright>150</onright>
-			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist)</visible>
-			<itemlayout height="177" width="177">
+			<visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Window.IsActive(MusicPlaylist) | Container.Content(favourites)</visible>
+			<itemlayout height="177" width="177" condition="Container.Content(favourites)">
 				<include content="AlbumThumbsContainerLayout">
 					<param name="left" value="5" />
 					<param name="size" value="168" />
 					<param name="cover_texture" value="covers/cover-case-thumbnail-nofocus.png" />
 					<param name="image_bordersize" value="12" />
+					<param name="image_aspectratio" value="keep" />
 					<param name="actualicon_bordersize" value="33" />
 					<param name="actualicon_fade" value="true" />
 					<param name="textbox_top" value="17" />
 					<param name="textbox_size" value="144" />
 				</include>
 			</itemlayout>
+			<itemlayout height="177" width="177">
+				<include content="AlbumThumbsContainerLayout">
+					<param name="left" value="5" />
+					<param name="size" value="168" />
+					<param name="cover_texture" value="covers/cover-case-thumbnail-nofocus.png" />
+					<param name="image_bordersize" value="12" />
+					<param name="image_aspectratio" value="scale" />
+					<param name="actualicon_bordersize" value="33" />
+					<param name="actualicon_fade" value="true" />
+					<param name="textbox_top" value="17" />
+					<param name="textbox_size" value="144" />
+				</include>
+			</itemlayout>
+			<focusedlayout height="177" width="177" condition="Container.Content(favourites)">
+				<control type="group">
+					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim2</include>
+					<include content="AlbumThumbsContainerLayout">
+						<param name="left" value="5" />
+						<param name="size" value="168" />
+						<param name="cover_texture" value="covers/cover-case-thumbnail-focus.png" />
+						<param name="image_bordersize" value="12" />
+						<param name="image_aspectratio" value="keep" />
+						<param name="actualicon_bordersize" value="33" />
+						<param name="actualicon_fade" value="false" />
+						<param name="textbox_top" value="17" />
+						<param name="textbox_size" value="144" />
+					</include>
+				</control>
+			</focusedlayout>
 			<focusedlayout height="177" width="177">
 				<control type="group">
 					<include condition="![Skin.String(LowCPUPowerMode,Animations) | Skin.String(LowCPUPowerMode,Full)]">ThumbnailViewCoverFocusAnim2</include>
@@ -188,6 +250,7 @@
 						<param name="size" value="168" />
 						<param name="cover_texture" value="covers/cover-case-thumbnail-focus.png" />
 						<param name="image_bordersize" value="12" />
+						<param name="image_aspectratio" value="scale" />
 						<param name="actualicon_bordersize" value="33" />
 						<param name="actualicon_fade" value="false" />
 						<param name="textbox_top" value="17" />

@@ -25,7 +25,7 @@
 				<oninfo condition="!System.HasAddon(script.embuary.info) + [Container.Content(Actors) | Container.Content(Directors)]">InstallAddon(script.embuary.info)</oninfo>
 				<oninfo condition="System.HasAddon(script.embuary.info) + !System.AddonIsEnabled(script.embuary.info) + [Container.Content(Actors) | Container.Content(Directors)]">EnableAddon(script.embuary.info)</oninfo>
 				<oninfo condition="Window.IsActive(Programs)">ActivateWindow(1122)</oninfo>
-				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games)]</visible>
+				<visible>![Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games) | Container.Content(favourites)]</visible>
 				<itemlayout height="185" width="203" condition="Container.Content(Countries)">
 					<include content="IconPanelCountriesLayout">
 						<param name="case_texture" value="covers/cover-case-thumbnail2-nofocus.png" />
