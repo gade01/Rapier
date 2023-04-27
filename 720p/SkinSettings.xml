@@ -492,15 +492,6 @@
 							<onclick condition="!System.HasAddon(weather.multi)">InstallAddon(weather.multi)</onclick>
 							<onclick condition="System.HasAddon(weather.multi) + !System.AddonIsEnabled(weather.multi)">EnableAddon(weather.multi)</onclick>
 						</control>
-						<control type="button" id="7021">
-							<description>script.cinemavision</description>
-							<include>SettingsContentBtn</include>
-							<label>CinemaVision</label>
-							<label2>$VAR[StatusCinemaVisionVar]</label2>
-							<onclick condition="System.AddonIsEnabled(script.cinemavision)">Addon.OpenSettings(script.cinemavision)</onclick>
-							<onclick condition="!System.HasAddon(script.cinemavision)">InstallAddon(script.cinemavision)</onclick>
-							<onclick condition="System.HasAddon(script.cinemavision) + !System.AddonIsEnabled(script.cinemavision)">EnableAddon(script.cinemavision)</onclick>
-						</control>
 						<control type="button" id="7020">
 							<description>plugin.video.specialfeatures</description>
 							<include>SettingsContentBtn</include>
@@ -514,6 +505,15 @@
 							<description>Manual installation Label</description>
 							<include>SettingsHeaderBtn</include>
 							<label>$LOCALIZE[31500]</label>
+						</control>
+						<control type="button" id="7021">
+							<description>script.preshowexperience</description>
+							<include>SettingsContentBtn</include>
+							<label>PreShow Experience</label>
+							<label2>$VAR[StatusPreShowExperienceVar]</label2>
+							<onclick condition="System.AddonIsEnabled(script.preshowexperience)">Addon.OpenSettings(script.preshowexperience)</onclick>
+							<onclick condition="!System.HasAddon(script.preshowexperience)">Notification(PreShow Experience,$LOCALIZE[31498],4500,)</onclick>
+							<onclick condition="System.HasAddon(script.preshowexperience) + !System.AddonIsEnabled(script.preshowexperience)">EnableAddon(script.preshowexperience)</onclick>
 						</control>
 						<control type="button" id="7028">
 							<description>script.libraryeditor</description>

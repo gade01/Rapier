@@ -187,13 +187,13 @@
 						<onclick>Skin.ToggleSetting(ContextMenuMovieSetInformation)</onclick>
 					</control>
 					<control type="radiobutton" id="6204">
-						<description>Cinema Vision</description>
+						<description>PreShow Experience</description>
 						<include>SettingsContentRadioBtn</include>
 						<label>$LOCALIZE[31128]</label>
-						<selected>!Skin.HasSetting(ContextMenuCinema) + System.AddonIsEnabled(script.cinemavision)</selected>
-						<onclick condition="System.AddonIsEnabled(script.cinemavision)">Skin.ToggleSetting(ContextMenuCinema)</onclick>
-						<onclick condition="!System.HasAddon(script.cinemavision)">InstallAddon(script.cinemavision)</onclick>
-						<onclick condition="System.HasAddon(script.cinemavision) + !System.AddonIsEnabled(script.cinemavision)">EnableAddon(script.cinemavision)</onclick>
+						<selected>!Skin.HasSetting(ContextMenuPreShowExperience) + System.AddonIsEnabled(script.preshowexperience)</selected>
+						<onclick condition="System.AddonIsEnabled(script.preshowexperience)">Skin.ToggleSetting(ContextMenuPreShowExperience)</onclick>
+						<onclick condition="!System.HasAddon(script.preshowexperience)">InstallAddon(script.preshowexperience)</onclick>
+						<onclick condition="System.HasAddon(script.preshowexperience) + !System.AddonIsEnabled(script.preshowexperience)">EnableAddon(script.preshowexperience)</onclick>
 					</control>
 					<control type="radiobutton" id="6205">
 						<description>Library Editor</description>

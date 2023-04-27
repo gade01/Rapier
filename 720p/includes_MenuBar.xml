@@ -1588,12 +1588,12 @@
 				<visible>Control.IsVisible(214)</visible>
 			</control>
 			<control type="button" id="210">
-				<description>CinemaVision</description>
+				<description>PreShowExperience</description>
 				<include>MenuBarSettingsBtn</include>
-				<label>[UPPERCASE]$INFO[System.AddonTitle(script.cinemavision)][/UPPERCASE]</label>
+				<label>[UPPERCASE]$INFO[System.AddonTitle(script.preshowexperience)][/UPPERCASE]</label>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
-				<onclick>RunScript(script.cinemavision,experience)</onclick>
-				<visible>System.AddonIsEnabled(script.cinemavision) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
+				<onclick>RunScript(script.preshowexperience,experience)</onclick>
+				<visible>System.AddonIsEnabled(script.preshowexperience) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
 			</control>
 			<control type="image" id="122">
 				<include>MenuBarSeparator</include>
@@ -1634,8 +1634,9 @@
 				<description>Play</description>
 				<include>MenuBarSettingsBtn</include>
 				<label>[UPPERCASE]$LOCALIZE[208][/UPPERCASE]</label>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,song)">PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
-				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
+				<onclick condition="Player.HasAudio">PlayerControl(stop)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,song)">PlayMedia($INFO[ListItem.FolderPath])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,album)">PlayMedia(musicdb://albums/$INFO[ListItem.DBID]/)</onclick>
 				<visible>String.IsEqual(ListItem.DBTYPE,song) | String.IsEqual(ListItem.DBTYPE,album)</visible>
 			</control>
 			<control type="image" id="127">
