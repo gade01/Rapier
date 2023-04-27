@@ -5394,7 +5394,7 @@
 					<onright condition="Control.IsVisible(110)">110</onright>
 					<onright>850</onright>
 					<include>ContainerPosition1</include>
-					<onclick>PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
+					<onclick>PlayMedia(musicdb://albums/$INFO[ListItem.DBID]/)</onclick>
 					<visible>Integer.IsGreater(Container(6890).NumItems,0) | Container(6890).IsUpdating</visible>
 					<include content="WidgetContainerLayout">
 						<param name="width" value="309" />
@@ -5696,7 +5696,7 @@
 					<onleft>850</onleft>
 					<onright>6890</onright>
 					<include>ContainerPosition1</include>
-					<onclick>PlayMedia($INFO[ListItem.FolderPath],isdir)</onclick>
+					<onclick>PlayMedia(musicdb://albums/$INFO[ListItem.DBID]/)</onclick>
 					<include content="WidgetContainerLayout">
 						<param name="width" value="309" />
 						<param name="focus_width" value="319" />
@@ -5909,7 +5909,7 @@
 				</include>
 				
 				<include content="WidgetPosterContent">
-					<param name="image" value="$INFO[Container(6928).ListItem.Thumb]" />
+					<param name="image" value="$INFO[Container(6928).ListItem.Art(poster)]" />
 					<param name="label" value="$LOCALIZE[31607]" />
 				</include>
 				
@@ -5946,7 +5946,7 @@
 				</include>
 				
 				<include content="WidgetPosterContent">
-					<param name="image" value="$INFO[Container(6929).ListItem.Thumb]" />
+					<param name="image" value="$INFO[Container(6929).ListItem.Art(poster)]" />
 					<param name="label" value="$LOCALIZE[31608]" />
 				</include>
 				
